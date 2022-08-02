@@ -1,3 +1,6 @@
-baseURL = "http://example.org/"
-languageCode = "en-us"
-title = "My New Hugo Site"
+baseURL = 'https://fivexl.netlify.app/'
+languageCode = 'en-us'
+title = 'FivexL New Site'
+
+# this is just a place holder theme. please remove it later
+theme = "example"
