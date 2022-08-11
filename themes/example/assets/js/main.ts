@@ -1,4 +1,4 @@
-window.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('load', () => {
   var menuBtn = document.querySelector(".hdr-NavigationTrigger");
 
   const escToExit = function(e) {
