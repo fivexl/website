@@ -1,0 +1,12 @@
+$maxContentWidth: 1600px;
+$accentColor: #18AEF0;
+$accentText: #ffffff;
+$textPrimary: #111;
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+@import 'normalize.scss';
+@import 'header.scss';
+@import 'DoublePanel.scss';

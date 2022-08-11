@@ -4,3 +4,26 @@ title = 'FivexL New Site'
 
 # this is just a place holder theme. please remove it later
 theme = "example"
+
+
+# Main navigation
+[menu]
+[[menu.main]]
+  url = '/services'
+  name = 'Services'
+  weight = 10
+[[menu.main]]
+  url = '/about'
+  name = 'About'
+  weight = 20
+[[menu.main]]
+  url = '/blog'
+  name = 'Blog'
+  weight = 30
+[[menu.main]]
+  url = '/contact'
+  name = 'Contact'
+  weight = 40
+  [menu.main.params]
+    class = "hdr-NavigationItem_Contact"
+

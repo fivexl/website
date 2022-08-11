@@ -1,0 +1,23 @@
+<header class="hdr">
+    <img class="hdr-logo" src="logo_medium.png" alt="">
+    <button class="hdr-NavigationTrigger" aria-pressed="false">
+        <svg class="hdr-NavigationTrigger_Menu" width="38" height="38" viewBox="0 0 38 38" xmlns="https://www.w3.org/2000/svg">
+            <title>Open</title>
+            <path class="h t" d="M10.5 10l17 0"/>
+            <path d="M10.5 19l17 0"/>
+            <path class="h b" d="M10.5 28l17 0"/>
+            <path class="x" d="M19 10.5l0 17"/>
+        </svg>
+        <span>Menu</span>
+    </button>
+    <nav class="hdr-Navigation">
+        <ul class="hdr-NavigationList">
+            {{ range .Site.Menus.main }}
+            <li class="hdr-NavigationItem">
+                <a href="{{ .ConfiguredURL }}" {{ with .Params.class }}class="{{ . }}"{{ end }}>{{ .Name }}</a>
+            </li>
+            {{ end }}
+        </ul>
+    </nav>
+</header>
+
