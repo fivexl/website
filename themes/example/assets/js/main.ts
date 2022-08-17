@@ -43,11 +43,15 @@ window.addEventListener('load', () => {
   const doublePanels = document.querySelectorAll('.dp');
 
   doublePanels !== null && doublePanels.forEach(function(el) {
-    const container = el.querySelector('.dp-PanelContent_Left');
-    const shape = el.querySelector('.dp-PanelContent_Shape');
-    if (shape === null) return null;
+    const container = el.querySelector<HTMLElement | null>('.dp-PanelContent_Left');
+    if (container === null) return null;
+    const absWidth = (window.innerWidth * 11) / 100;
+    console.log({ absWidth });
     const containerHeight = Math.round(container.getClientRects()[0].height);
-    const shapeHeight = Math.round(shape.getClientRects()[0].height);
-    shape.style.transform = `scaleY(${ containerHeight / shapeHeight })`;
+    const skewAngle = window.innerWidth < 768 
+      ? Math.atan(64/window.innerWidth)/(Math.PI / 180)
+      : Math.atan(absWidth/containerHeight)/(Math.PI / 180)
+    container.style.setProperty('--dpAngle', `-${ skewAngle }deg`);
+    console.log({skewAngle});
   });
 });
