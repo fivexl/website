@@ -2,6 +2,7 @@ $maxContentWidth: 1600px;
 $accentColor: #18AEF0;
 $accentText: #ffffff;
 $textPrimary: #111;
+$textSecondary: #F13687;
 
 body {
   font-family: 'Montserrat', sans-serif;
@@ -10,3 +11,8 @@ body {
 @import 'normalize.scss';
 @import 'Header.scss';
 @import 'DoublePanel.scss';
+@import 'ContentList.scss';
+
+* {
+  box-sizing: border-box;
+}
