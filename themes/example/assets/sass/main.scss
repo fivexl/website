@@ -3,6 +3,7 @@ $accentColor: #18AEF0;
 $accentText: #ffffff;
 $textPrimary: #111;
 $textSecondary: #F13687;
+$textAccent: #18AEF0;
 
 body {
   font-family: 'Montserrat', sans-serif;
@@ -12,6 +13,7 @@ body {
 @import 'Header.scss';
 @import 'DoublePanel.scss';
 @import 'ContentList.scss';
+@import 'BlogSingle.scss';
 
 * {
   box-sizing: border-box;
