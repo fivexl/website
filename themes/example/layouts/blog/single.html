@@ -4,22 +4,6 @@
         <section class="bls-Content">
             {{- .Content -}}
         </section>
-        <section class="bls-Sidebar">
-            <img class="bls-SidebarAuthor_Portrait" src="/image-33.png" alt="Author protrait">
-            <h1 class="bls-SidebarAuthor">AUTHOR NAME</h1>
-            <span class="bls-SidebarAuthor_Role">Role Role Role Role </span>
-            <span class="bls-SidebarAuthor_Role">Role Role Role Role </span>
-            <span class="bls-SidebarAuthor_Role">Role Role Role Role </span>
-            <a class="bls-SidebarAuthor_ReadMore">Read More</a>
-            <h2 class="bls-SidebarTags">Tags</h2>
-            <div class="bls-SidebarTaglist">
-                <a class="bls-Sidebar_Tag">Tag Here Tag Here</a>
-                <a class="bls-Sidebar_Tag">Tag Here</a>
-                <a class="bls-Sidebar_Tag">Tag</a>
-                <a class="bls-Sidebar_Tag">Tag Here Here</a>
-            </div>
-            <h2 class="bls-SidebarShare_Heading">Share Blog</h2>
-            <img src="/social-media-placeholder.png" alt="" style="width: 50%; height: auto; margin-left: 1rem;">
-        </section>
+        {{- partial "AuthorSidebar.html" -}}
     </article>
 {{ end }}
