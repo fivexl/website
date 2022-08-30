@@ -1,0 +1,23 @@
+// Author Certifications = auc
+
+
+.auc {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-inline: 1rem;
+  margin-bottom: 2rem;
+  max-width: $maxContentWidth;
+  padding-inline: 1rem;
+  @media (min-width: 768px) {
+    margin-inline: auto;
+    margin-bottom: 6rem;
+  }
+
+  img {
+    max-width: 8rem;
+    height: auto;
+    object-fit: contain;
+  }
+}

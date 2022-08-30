@@ -1,0 +1,38 @@
+<div class="adp">
+    <section class="adp-Panel_Left">
+        <div class="adp-PanelContent_Wrapper">
+            <h1 class="adp-Heading">{{ .Params.name }}</h1>
+            {{- with .Params.roles -}}
+            <div class="adp-RolesWrapper">
+                {{ range . }}
+                <p class="adp-Role">{{- . -}}</p>
+                {{ end }}
+            </div>
+            {{- end -}}
+            {{- with .Params.information -}}
+            <div class="adp-InformationWrapper">
+                {{ range . }}
+                <p class="adp-InformationItem">{{- . -}}</p>
+                {{ end }}
+            </div>
+            {{- end -}}
+            {{- with .Params.links -}}
+            <div class="adp-Links">
+                {{ range . }}
+                <a class="adp-Link adp-{{- .icon -}}" href="{{- .url -}}">
+                    {{ readFile (printf "/static/%v.svg" .icon) | safeHTML }}
+                </a>
+                {{ end }}
+            </div>
+            {{- end -}}
+        </div>
+    </section>
+    <section class="adp-Panel_Right">
+        {{ with .Params.author_video }} 
+            <video muted="true" loop src="{{- . -}}" autoplay="true">
+        {{ else }}
+            <img src="/blue-circle-man-with-laptops.png">
+        {{ end }}
+    </section>
+</div>
+

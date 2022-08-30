@@ -5,7 +5,7 @@
   position: relative;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 4rem 60vw;
+  grid-template-rows: 1fr var(--doublePanelMobileOverlap) 60vw;
   overflow: hidden;
   margin-bottom: 2rem;
   @media (min-width: 768px) {

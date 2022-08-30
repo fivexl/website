@@ -5,6 +5,19 @@ $textPrimary: #111;
 $textSecondary: #F13687;
 $textAccent: #18AEF0;
 
+:root {
+  --doublePanelMobileOverlap: 3.5rem;
+}
+
+@mixin base-text {
+  max-width: $maxContentWidth;
+  line-height: 1.25;
+  margin: 0 1rem 1.5em;
+  @media (min-width: 768px) {
+    margin-inline: auto;
+  }
+}
+
 body {
   font-family: 'Montserrat', sans-serif;
 }
@@ -15,6 +28,10 @@ body {
 @import 'ContentList.scss';
 @import 'BlogSingle.scss';
 @import 'AuthorSidebar.scss';
+@import 'AuthorDoublePanel.scss';
+@import 'AuthorCertifications.scss';
+@import 'AuthorContent.scss';
+@import 'CaseStudies.scss';
 
 * {
   box-sizing: border-box;

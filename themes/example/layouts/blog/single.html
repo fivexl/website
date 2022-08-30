@@ -1,9 +1,9 @@
 {{ define "main" }}
-    {{- partial "DoublePanel.html" -}}
+    {{- partial "DoublePanel.html" . -}}
     <article class="bls">
         <section class="bls-Content">
             {{- .Content -}}
         </section>
-        {{- partial "AuthorSidebar.html" -}}
+        {{- partial "AuthorSidebar.html" . -}}
     </article>
 {{ end }}

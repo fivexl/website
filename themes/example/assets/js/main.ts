@@ -1,4 +1,4 @@
-window.addEventListener('load', () => {
+window.addEventListener('DOMContentLoaded', () => {
   var menuBtn = document.querySelector(".hdr-NavigationTrigger");
 
   const escToExit = function(e) {
@@ -40,16 +40,22 @@ window.addEventListener('load', () => {
     menuBtn.addEventListener("click", clicked);
   }
 
-  const doublePanels = document.querySelectorAll('.dp');
+  const doublePanels = document.querySelectorAll('.dp,.adp');
 
+  console.log({ doublePanels });
   doublePanels !== null && doublePanels.forEach(function(el) {
-    const container = el.querySelector<HTMLElement | null>('.dp-PanelContent_Left');
+    const container = el.querySelector<HTMLElement | null>('.dp-PanelContent_Left, .adp-Panel_Left');
     if (container === null) return null;
     const absWidth = (window.innerWidth * 11) / 100;
     console.log({ absWidth });
     const containerHeight = Math.round(container.getClientRects()[0].height);
+    const mobileOverlapHeight = getComputedStyle(document.documentElement)
+      .getPropertyValue('--doublePanelMobileOverlap').replace('rem','');
+      console.log({mobileOverlapHeight});
     const skewAngle = window.innerWidth < 768 
-      ? Math.atan(64/window.innerWidth)/(Math.PI / 180)
+      ? Math.atan(
+        (16 * Number.parseFloat(mobileOverlapHeight)) /window.innerWidth
+      )/(Math.PI / 180)
       : Math.atan(absWidth/containerHeight)/(Math.PI / 180)
     container.style.setProperty('--dpAngle', `-${ skewAngle }deg`);
     console.log({skewAngle});

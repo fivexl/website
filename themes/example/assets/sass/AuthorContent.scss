@@ -1,0 +1,35 @@
+// Author Content = au
+
+.au-Content {
+  margin-bottom: 2rem;
+  @media (min-width: 768px) {
+    margin-bottom: 6rem;
+  }
+
+  p, h1, h2, h3, h4, h5, h6, span, blockquote, figure, {
+    @include base-text;
+    padding-inline: 1rem;
+  }
+  ul, ol{
+    @include base-text;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 0.75em;
+  }
+
+  h1 {
+    color: $textSecondary;
+    font-size: 3.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+    color: $textAccent;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    color: #333;
+  }
+}

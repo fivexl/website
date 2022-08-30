@@ -1,13 +1,15 @@
 <div class="dp">
     <section class="dp-PanelContent_Left">
         <div class="dp-PanelContent_Wrapper">
-            <h2 class="dp-PanelContent_SubHeading">FiveXL BLOG</h2>
-            <h1 class="dp-PanelContent_Heading">BLOG POST ONE TITLE</h1>
-            <a class="dp-PanelContent_CTA" href="#">READ BLOG POST</a>
+            <h2 class="dp-PanelContent_SubHeading">{{ default "FiveXL BLOG" .Params.sub_heading }}</h2>
+            <h1 class="dp-PanelContent_Heading">{{ default "BLOG POST ONE TITLE" .Title }}</h1>
+            {{ if ne .Page.Section "blog" }}
+            <a class="dp-PanelContent_CTA" href="{{ default "#" .Permalink }}">READ BLOG POST</a>
+            {{ end }}
         </div>
     </section>
     <section class="dp-PanelImage_Right">
-        <img src="/blue-circle-man-with-laptops.png">
+        <img src="{{- default "/blue-circle-man-with-laptops.png" .Params.panel_image -}}">
     </section>
 </div>
 

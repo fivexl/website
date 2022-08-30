@@ -1,0 +1,18 @@
+{{- with where 
+        (where site.RegularPages "Params.author_id" .)
+        "Params.case_study" true 
+-}}
+<section class="cst">
+    <h1 class="cst-Heading">Case Studies</h1>
+    <div class="cst-ListWrapper">
+    {{- range . -}}
+        <div class="cst-Case">
+            <img src="{{ .Params.image }}" alt="">
+            <h2 class="cst-CaseHeading">{{ .Title }}</h2>
+            <p class="cst-Summary">{{ .Params.summary }}</p>
+            <a class="cst-ReadMore" href="{{ .Permalink }}">Read more</a>
+        </div>
+    {{- end -}}
+    </div>
+</section>
+{{- end -}}

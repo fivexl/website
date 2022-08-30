@@ -1,5 +1,7 @@
 ---
 title: blog post one title
+case_study: true
+author_id: johndoe
 ---
 
 # title title

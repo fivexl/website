@@ -1,0 +1,7 @@
+{{ with .Params.certifications }}
+<section class="auc">
+    {{- range . -}}
+    <img alt="{{- . -}}" src="{{- . -}}">
+    {{- end -}}
+</section>
+{{ end }}

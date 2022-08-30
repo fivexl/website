@@ -1,0 +1,12 @@
+{{ define "main" }}
+    {{- partial "AuthorDoublePanel" . -}}
+
+    {{- partial "AuthorCertifications" . -}}
+
+    <section class="au-Content">
+        {{- .Content -}}
+    </section>
+
+    {{- partial "CaseStudies" .Params.author_id -}}
+
+{{ end }}
