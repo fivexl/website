@@ -39,19 +39,18 @@ window.addEventListener('load', () => {
   if (menuBtn) {
     menuBtn.addEventListener("click", clicked);
   }
+})
 
+window.addEventListener('load', () => {
   const doublePanels = document.querySelectorAll('.dp,.adp');
 
-  console.log({ doublePanels });
   doublePanels !== null && doublePanels.forEach(function(el) {
     const container = el.querySelector<HTMLElement | null>('.dp-PanelContent_Left, .adp-Panel_Left');
     if (container === null) return null;
     const absWidth = (window.innerWidth * 11) / 100;
-    console.log({ absWidth });
     const containerHeight = Math.round(container.getClientRects()[0].height);
     const mobileOverlapHeight = getComputedStyle(document.documentElement)
       .getPropertyValue('--doublePanelMobileOverlap').replace('rem','');
-      console.log({mobileOverlapHeight});
     const skewAngle = window.innerWidth < 768 
       ? Math.atan(
         (16 * Number.parseFloat(mobileOverlapHeight)) /window.innerWidth
