@@ -1,17 +1,33 @@
+{{ $author := index 
+                (
+                    where 
+                        (where site.Pages "Section" "author")
+                        "Params.author_id" .Params.author_id 
+                )
+                0
+}}
+
 <section class="asb">
-    <img class="asb-Author_Portrait" src="/image-33.png" alt="Author protrait">
-    <h1 class="asb-Author"><a href="#">AUTHOR NAME</a></h1>
-    <span class="asb-Author_Role">Role Role Role Role </span>
-    <span class="asb-Author_Role">Role Role Role Role </span>
-    <span class="asb-Author_Role">Role Role Role Role </span>
-    <a class="asb-Author_ReadMore" href="#">Read More</a>
+    <img class="asb-Author_Portrait" src="{{- $author.Params.author_headshot -}}" alt="Author protrait">
+    <h1 class="asb-Author"><a href="#">{{ $author.Params.name }}</a></h1>
+    {{ range $author.Params.roles }}
+    <span class="asb-Author_Role">{{ . }}</span>
+    {{ end }}
+    <a class="asb-Author_ReadMore" href="{{ $author.Permalink }}">Read More</a>
+
+    {{ with .Params.tags }}
     <h2 class="asb-Tags">Tags</h2>
     <div class="asb-Taglist">
-        <a class="asb-Tag">Tag Here Tag Here</a>
-        <a class="asb-Tag">Tag Here</a>
-        <a class="asb-Tag">Tag</a>
-        <a class="asb-Tag">Tag Here Here</a>
+        {{ range . }}
+        <a class="asb-Tag" href="/tags/{{- . -}}">{{ . }}</a>
+        {{ end }}
     </div>
+    {{ end }}
     <h2 class="asb-Share_Heading">Share Blog</h2>
-    <img src="/social-media-placeholder.png" alt="" style="width: 50%; height: auto; margin-left: 1rem;">
+    <div class="asb-ShareList">
+        <a class="asb-ShareButton" href="">{{ readFile "/static/twitter.svg" | safeHTML }}</a>
+        <a class="asb-ShareButton" href="">{{ readFile "/static/linkedin.svg" | safeHTML }}</a>
+        <a class="asb-ShareButton" href="mailto:">{{ readFile "/static/email.svg" | safeHTML }}</a>
+        <a class="asb-ShareButton" href="">{{ readFile "/static/reddit.svg" | safeHTML }}</a>
+    </div>
 </section>

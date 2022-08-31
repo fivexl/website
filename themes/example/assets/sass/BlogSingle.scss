@@ -21,22 +21,27 @@
 // Font setting
 .bls-Content {
   h1 {
+    @include base-text;
     font-size: 2.5rem;
     color: $textSecondary;
   }
   h2 {
+    @include base-text;
     font-size: 1.75rem;
     color: $textAccent;
   }
   h3 {
+    @include base-text;
     font-size: 1.5rem;
     color: $textPrimary;
   }
   h4, h5, h6 {
+    @include base-text;
     font-size: 1.25rem;
     color: $textPrimary;
   }
   p {
+    @include base-text;
     font-size: 1rem;
     color: $textPrimary;
     margin-bottom: 2rem;
@@ -52,6 +57,7 @@
     }
   }
   ul li {
+    @include base-text;
     margin-bottom: 1rem;
   }
 

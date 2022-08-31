@@ -1,4 +1,5 @@
 {{ define "main" }}
-    {{- partial "DoublePanel.html" -}}
-    {{- partial "ContentList.html" . -}}
+{{ $blogs := where site.RegularPages "Section" "blog" }}
+    {{- partial "DoublePanel.html" (index $blogs 0) -}}
+    {{- partial "ContentList.html" (dict "pages" $blogs) -}}
 {{ end }}

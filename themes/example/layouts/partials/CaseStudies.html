@@ -5,9 +5,11 @@
 <section class="cst">
     <h1 class="cst-Heading">Case Studies</h1>
     <div class="cst-ListWrapper">
-    {{- range . -}}
+    {{- range first 3 . -}}
         <div class="cst-Case">
-            <img src="{{ .Params.image }}" alt="">
+            {{- with .Resources.GetMatch .Params.panel_image -}}
+            <img src="{{- .Permalink -}}" class="cst-Image" alt="{{ .Name }}">
+            {{- end -}}
             <h2 class="cst-CaseHeading">{{ .Title }}</h2>
             <p class="cst-Summary">{{ .Params.summary }}</p>
             <a class="cst-ReadMore" href="{{ .Permalink }}">Read more</a>

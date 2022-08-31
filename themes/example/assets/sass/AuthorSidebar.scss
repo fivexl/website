@@ -66,9 +66,25 @@
     margin-bottom: 1.5rem;
   }
 
-  &-Share_List {
-    display: flex;
-    gap: 1.5rem;
-    flex-wrap: wrap;
+  &-ShareList {
+    display: grid;
+    grid-template-columns: repeat(2, min-content);
+    gap: 1rem;
+    padding-inline: 1rem;
+  }
+
+  &-ShareButton {
+    height: 54px;
+    width: 54px;
+    background-color: black;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+
+    & svg {
+      fill: #fff;
+      width: 36px;
+      height: 36px;
+    }
   }
 }

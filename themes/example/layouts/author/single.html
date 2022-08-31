@@ -9,4 +9,7 @@
 
     {{- partial "CaseStudies" .Params.author_id -}}
 
+    {{ $pages := where (where site.RegularPages "Params.author_id" .Params.author_id) "Section" "blog" }}
+    {{ $case_studies :=  where $pages "Params.case_study" true }}
+    {{- partial "ContentList" (dict "pages" ($pages | symdiff $case_studies)) -}}
 {{ end }}

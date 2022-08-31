@@ -1,57 +1,33 @@
-    <section class="cl">
-        <h2 class="cl-Heading">BLOGS</h2>
-        <div class="cl-TagsList">
-            <a class="cl-Tag" href="#">Tag 1</a>
-            <a class="cl-Tag" href="#">Tag Here</a>
-            <a class="cl-Tag" href="#">Some long tag</a>
-            <a class="cl-Tag" href="#">An even longer long tag</a>
+<section class="cl">
+    <h2 class="cl-Heading">BLOGS</h2>
+    <div class="cl-TagsList">
+        <a class="cl-Tag" href="#">Tag 1</a>
+        <a class="cl-Tag" href="#">Tag Here</a>
+        <a class="cl-Tag" href="#">Some long tag</a>
+        <a class="cl-Tag" href="#">An even longer long tag</a>
+    </div>
+    <div class="cl-ContentWrapper">
+        {{ range .pages }}
+        <div class="cl-ContentItem">
+            {{ with .Resources.GetMatch .Params.panel_image }}
+            <img class="cl-ContentItem_Image" src="{{ .Permalink }}" alt="">
+            {{ end }}
+            <span class="cl-ContentItem_Date">{{ time.Format "February 2, 2006" .Params.date }}</span>
+            <h1 class="cl-ContentItem_Heading">{{ .Title }}</h1>
+            <p class="cl-ContentItem_Summary">{{ .Summary }}</p>
+            <a class="cl-ContentItem_ReadMore" href="{{ .Permalink }}">Read More</a>
         </div>
-        <div class="cl-ContentWrapper">
-            <div class="cl-ContentItem">
-                <img class="cl-ContentItem_Image" src="/testemonials-4.png" alt="">
-                <span class="cl-ContentItem_Date">Date</span>
-                <h1 class="cl-ContentItem_Heading">WHAT IS CLOUDTRAIL, AND WHY DO YOU NEED IT</h1>
-                <p class="cl-ContentItem_Summary">Find out how the CloudTrail-to-Slack Terraform module by FivexL solves this problem for startups and small teams.</p>
-                <a class="cl-ContentItem_ReadMore" href="#">Read More</a>
-            </div>
-            <div class="cl-ContentItem">
-                <img class="cl-ContentItem_Image" src="/blue-circle-man-with-laptops.png" alt="">
-                <span class="cl-ContentItem_Date">Date</span>
-                <h1 class="cl-ContentItem_Heading">SECURITY BASICS IN AWS </h1>
-                <p class="cl-ContentItem_Summary">How To Get Rid of Hardcoded Credential and Reduce Data Leakage Risks with aws-vault</p>
-                <a class="cl-ContentItem_ReadMore" href="#">Read More</a>
-            </div>
-            <div class="cl-ContentItem">
-                <img class="cl-ContentItem_Image" src="/home-man-circle4.png" alt="">
-                <span class="cl-ContentItem_Date">Date</span>
-                <h1 class="cl-ContentItem_Heading">HOW TO SAVE RESOURCES WITH THE TERRAFORM MODULE FOR AWS SPOT INSTANCES</h1>
-                <p class="cl-ContentItem_Summary">Saving money on Amazon Web Services (AWS) Spot Instances can be a challenging task.</p>
-                <a class="cl-ContentItem_ReadMore" href="#">Read More</a>
-            </div>
-            <div class="cl-ContentItem">
-                <img class="cl-ContentItem_Image" src="/who-fivexl-with-circle.png" alt="">
-                <span class="cl-ContentItem_Date">Date</span>
-                <h1 class="cl-ContentItem_Heading">BLOG 4</h1>
-                <p class="cl-ContentItem_Summary">Blog 1 Blog 1blog 1 Blog 1blog 1blog 1Blog 1 Blog 1blog 1 Blog 1blog 1blog 1</p>
-                <a class="cl-ContentItem_ReadMore" href="#">Read More</a>
-            </div>
-            <div class="cl-ContentItem">
-                <img class="cl-ContentItem_Image" src="/services-cloud-man-circle.png" alt="">
-                <span class="cl-ContentItem_Date">Date</span>
-                <h1 class="cl-ContentItem_Heading">WHAT IS CLOUDTRAIL, AND WHY DO YOU NEED IT</h1>
-                <p class="cl-ContentItem_Summary">Find out how the CloudTrail-to-Slack Terraform module by FivexL solves this problem for startups and small teams.</p>
-                <a class="cl-ContentItem_ReadMore" href="#">Read More</a>
-            </div>
-        </div>
-        <div class="cl-Pagination">
-            <a class="cl-Pagination_Previous" href="#">Previous</a>
-            <a class="cl-Pagination_Page" href="#">1</a>
-            <a class="cl-Pagination_Spacer" href="#">...</a>
-            <a class="cl-Pagination_Page" href="#">4</a>
-            <a class="cl-Pagination_Page cl-Pagination_Current" href="#">5</a>
-            <a class="cl-Pagination_Page" href="#">6</a>
-            <a class="cl-Pagination_Spacer" href="#">...</a>
-            <a class="cl-Pagination_Page" href="#">36</a>
-            <a class="cl-Pagination_Next" href="#">Next</a>
-        </div>
-    </section>
+        {{ end }}
+    </div>
+    <div class="cl-Pagination">
+        <a class="cl-Pagination_Previous" href="#">Previous</a>
+        <a class="cl-Pagination_Page" href="#">1</a>
+        <a class="cl-Pagination_Spacer" href="#">...</a>
+        <a class="cl-Pagination_Page" href="#">4</a>
+        <a class="cl-Pagination_Page cl-Pagination_Current" href="#">5</a>
+        <a class="cl-Pagination_Page" href="#">6</a>
+        <a class="cl-Pagination_Spacer" href="#">...</a>
+        <a class="cl-Pagination_Page" href="#">36</a>
+        <a class="cl-Pagination_Next" href="#">Next</a>
+    </div>
+</section>

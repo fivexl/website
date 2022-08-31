@@ -1,8 +1,8 @@
 ---
 title: 'blog 4'
-author: 'johndoe'
+author_id: 'johndoe'
 summary: 'Blog 1 Blog 1blog 1 Blog 1blog 1blog 1Blog 1 Blog 1blog 1 Blog 1blog 1blog 1'
-date: May-22-2022
+date: 2022-05-22
 author: johndoe
 panel_image: blog-1-image.png
 ---

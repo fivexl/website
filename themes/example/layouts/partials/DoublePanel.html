@@ -2,14 +2,18 @@
     <section class="dp-PanelContent_Left">
         <div class="dp-PanelContent_Wrapper">
             <h2 class="dp-PanelContent_SubHeading">{{ default "FiveXL BLOG" .Params.sub_heading }}</h2>
-            <h1 class="dp-PanelContent_Heading">{{ default "BLOG POST ONE TITLE" .Title }}</h1>
-            {{ if ne .Page.Section "blog" }}
+            <h1 class="dp-PanelContent_Heading">{{ default "BLOG POST ONE TITLE" .Params.title }}</h1>
+            {{ if .IsSection }}
             <a class="dp-PanelContent_CTA" href="{{ default "#" .Permalink }}">READ BLOG POST</a>
             {{ end }}
         </div>
     </section>
     <section class="dp-PanelImage_Right">
-        <img src="{{- default "/blue-circle-man-with-laptops.png" .Params.panel_image -}}">
+        {{ with .Resources.GetMatch .Params.panel_image }}
+        <img src="{{- .Permalink -}}" alt="{{ .Name }}">
+        {{ else }}
+        <img src="/blue-circle-man-with-laptops.png" alt="a placeholder stock image">
+        {{ end }}
     </section>
 </div>
 

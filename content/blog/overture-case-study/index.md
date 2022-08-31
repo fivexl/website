@@ -2,9 +2,9 @@
 title: 'Ovrture Case Study'
 author_id: 'johndoe'
 summary: 'The secure migration of a private communications platform to a modernized digital infrastructure on the AWS cloud'
-date: Feb-24-2022
+date: 2022-02-24
 author: johndoe
-image: blog-1-image.png
+panel_image: blog-1-image.png
 case_study: true
 ---
 

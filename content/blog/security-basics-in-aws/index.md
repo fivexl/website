@@ -1,10 +1,10 @@
 ---
 title: 'Security Basics in AWS '
-author: 'johndoe'
+author_id: 'johndoe'
 summary: 'How To Get Rid of Hardcoded Credential and Reduce Data Leakage Ri sks with aws-vaul'
-date: May-24-2022
+date: 2022-05-24
 author: johndoe
-panel_image: blog-1-image.png
+panel_image: who-fivexl-with-circle.png
 ---
 Find out how the CloudTrail-to-Slack Terraform module by FivexL solves this problem for startups and small teams.
 
