@@ -29,7 +29,7 @@
     </section>
     <section class="adp-Panel_Right">
         {{ with .Params.author_video }} 
-            <video muted="true" loop src="{{- . -}}" autoplay="true">
+            <video muted="true" loop src="{{- . -}}" controls="true">
         {{ else }}
             <img src="/blue-circle-man-with-laptops.png">
         {{ end }}
