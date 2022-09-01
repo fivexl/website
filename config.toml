@@ -2,6 +2,8 @@ baseURL = 'https://fivexl.netlify.app/'
 languageCode = 'en-us'
 title = 'FivexL New Site'
 
+paginate = 1
+
 # this is just a place holder theme. please remove it later
 theme = "example"
 

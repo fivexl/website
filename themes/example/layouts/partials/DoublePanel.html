@@ -3,7 +3,7 @@
         <div class="dp-PanelContent_Wrapper">
             <h2 class="dp-PanelContent_SubHeading">{{ default "FiveXL BLOG" .Params.sub_heading }}</h2>
             <h1 class="dp-PanelContent_Heading">{{ default "BLOG POST ONE TITLE" .Params.title }}</h1>
-            {{ if .IsSection }}
+            {{ if or .IsSection .IsHome }}
             <a class="dp-PanelContent_CTA" href="{{ default "#" .Permalink }}">READ BLOG POST</a>
             {{ end }}
         </div>

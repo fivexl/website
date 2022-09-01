@@ -19,15 +19,39 @@
         </div>
         {{ end }}
     </div>
+    {{ with .Paginator }}
     <div class="cl-Pagination">
-        <a class="cl-Pagination_Previous" href="#">Previous</a>
-        <a class="cl-Pagination_Page" href="#">1</a>
-        <a class="cl-Pagination_Spacer" href="#">...</a>
-        <a class="cl-Pagination_Page" href="#">4</a>
-        <a class="cl-Pagination_Page cl-Pagination_Current" href="#">5</a>
-        <a class="cl-Pagination_Page" href="#">6</a>
-        <a class="cl-Pagination_Spacer" href="#">...</a>
-        <a class="cl-Pagination_Page" href="#">36</a>
-        <a class="cl-Pagination_Next" href="#">Next</a>
+        {{ if .HasPrev }}
+        <a class="cl-Pagination_Previous" href="{{ .Prev.URL }}">Previous</a>
+        {{ end }}
+        {{ if gt (sub (math.Round .PageNumber) 2) .First.PageNumber }}
+        <a class="cl-Pagination_Page" href="{{ .First.URL }}">{{ .First.PageNumber }}</a>
+        <span class="cl-Pagination_Spacer">...</span>
+        <a class="cl-Pagination_Page" href="{{ .Prev.URL }}">{{ .Prev.PageNumber }}</a>
+        {{ else }}
+        {{ with .Prev }}
+            {{ with .Prev }}
+        <a class="cl-Pagination_Page" href="{{ .URL }}">{{ .PageNumber }}</a>
+            {{ end }}
+        <a class="cl-Pagination_Page" href="{{ .URL }}">{{ .PageNumber }}</a>
+        {{ end }}
+        {{ end }}
+        <a class="cl-Pagination_Page cl-Pagination_Current" href="#">{{ .PageNumber }}</a>
+        {{ if lt (add (math.Round .PageNumber) 2) .Last.PageNumber }}
+        <a class="cl-Pagination_Page" href="{{ .Next.URL }}">{{ .Next.PageNumber }}</a>
+        <span class="cl-Pagination_Spacer">...</span>
+        <a class="cl-Pagination_Page" href="{{ .Last.URL }}">{{ .Last.PageNumber }}</a>
+        {{ else }}
+        {{ with .Next }}
+        <a class="cl-Pagination_Page" href="{{ .URL }}">{{ .PageNumber }}</a>
+            {{ with .Next }}
+        <a class="cl-Pagination_Page" href="{{ .URL }}">{{ .PageNumber }}</a>
+            {{ end }}
+        {{ end }}
+        {{ end }}
+        {{ if .HasNext }}
+        <a class="cl-Pagination_Next" href="{{ .Next.URL }}">Next</a>
+        {{ end }}
     </div>
+    {{ end }}
 </section>

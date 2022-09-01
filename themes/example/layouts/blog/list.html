@@ -11,5 +11,5 @@
         "IsSection" .IsSection
     ) -}}
 
-    {{- partial "ContentList.html" (dict "pages" $blogs) -}}
+    {{- partial "ContentList.html" (dict "pages" .Paginator.Pages "Paginator" .Paginator) -}}
 {{ end }}

@@ -113,12 +113,19 @@
     color: #333;
   }
 
-  &_Page, &_Spacer, &_Previous, &_Next {
+  &_Page, &_Previous, &_Next {
     padding: 1rem 0.75rem;
     background: #eee;
     font-weight: 700;
     min-width: 50px;
     text-align: center;
+  }
+
+  &_Spacer {
+    padding: 1rem 0;
+    font-weight: 700;
+    user-select: none;
+    color: #484848;
   }
 
   &_Current {

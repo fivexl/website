@@ -1,5 +1,13 @@
 {{ define "main" }}
-{{ $blogs := where site.RegularPages "Section" "blog" }}
-    {{- partial "DoublePanel.html" (index $blogs 0) -}}
+    {{ $blogs := where site.RegularPages "Section" "blog" }}
+    {{ $newest_blog := index $blogs 0 }}
+
+    {{- partial "DoublePanel.html"
+        (dict
+            "Params" $newest_blog.Params
+            "Permalink" $newest_blog.Permalink
+            "IsHome" .IsHome
+        )
+    -}}
     {{- partial "ContentList.html" (dict "pages" $blogs) -}}
 {{ end }}
