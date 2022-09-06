@@ -28,5 +28,5 @@ fi
 
 tar xvf hugo.tar.gz hugo
 
-sudo mv hugo /usr/bin/hugo
+sudo mv hugo /usr/local/bin/hugo
 rm -rf hugo.tar.gz
