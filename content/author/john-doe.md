@@ -1,8 +1,8 @@
 ---
-name: John Doe
+name: Andrey Devyatkin
 roles:
-  - Role Role Role Role Role Role Role 
-  - Role 2
+  - Senior Cloud Engineering Consultant
+  - AWS Community Builder
 information:
   - Author information 1
   - AUTHOR INFO

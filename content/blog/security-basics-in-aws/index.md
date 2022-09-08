@@ -65,13 +65,13 @@ Security control. You can specify compliance and other regulations for each acco
 Facilitated billing. You can easily monitor how many resources each workload or team uses, which simplifies resources allocation and management.
 ### 4. Monitoring ###
 Before you let your developers and the rest of the team in, set up monitoring tools. 
-**CloudTrail** is a 24/7 security camera that records what is happening at your doorstep. In other words, it records every click and API call and collects the data in the Amazon S3 bucket.
-**NEED A PICTURE**
+* **CloudTrail** is a 24/7 security camera that records what is happening at your doorstep. In other words, it records every click and API call and collects the data in the Amazon S3 bucket.  
+**NEED A PICTURE**  
 Here are some best practices to get the most of CloudTrail:
 * **Set Cloudtrail up as an organizational trail** (**LINK**). It will take around 15 minutes, and you will have all the trails in one account to carry out comprehensive audits quickly.
-**Prohibit subsidiary accounts from deactivating CloudTrail.** This is the first thing any cybercriminal tries to do.
-**Set up notifications.** By default, CloudTrail can send you email alerts. To improve productivity and get only meaningful notifications, activate the CloudTrail-to-Slack
-**Terraform module from FivexL.** It will show you who keeps trying to get access to sensitive resources, what misconfigurations may increase your Amazon bills, and more.  
+* **Prohibit subsidiary accounts from deactivating CloudTrail.** This is the first thing any cybercriminal tries to do.
+* **Set up notifications.** By default, CloudTrail can send you email alerts. To improve productivity and get only meaningful notifications, activate the CloudTrail-to-Slack
+* **Terraform module from FivexL.** It will show you who keeps trying to get access to sensitive resources, what misconfigurations may increase your Amazon bills, and more.  
 You can use default rules or customize them to get the important alerts only. Find more about the CloudTrail-to-Slack module here (link).
 * **Deploy Amazon Athena.** It empowers detailed security research, allowing you to create an SKL order to dive deeper into CloudTrail’s records. While it’s not mandatory at the beginning of your security journey, you will find it useful later to investigate any account-related anomalies or unauthorized access incidents.
 One more useful monitoring tool is GuardDuty – an ML-based watchdog that barks if it notices anything abnormal—for instance, if someone grants themselves more privileges than allowed. On the one side, it analyses everything, including VPC Flow logs, DNS logs, and CloudTrail logs, and delivers too many findings. On the other side, you can react quickly and prevent serious security incidents.  
