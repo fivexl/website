@@ -20,7 +20,7 @@ certifications:
   - '/terraform-badge.png'
   - '/csm-badge.png'
 author_video: '/public-asset.mp4'
-author_headshot: '/image-33.png'
+author_headshot: '/vladimir.png'
 author_id: Vladimir Samoylov
 ---
 
