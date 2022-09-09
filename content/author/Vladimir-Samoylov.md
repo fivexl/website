@@ -1,5 +1,5 @@
 ---
-name: Andrey Devyatkin
+name: Vladimir Samoylov
 roles:
   - Senior Cloud Engineering Consultant
   - AWS Community Builder
@@ -21,7 +21,7 @@ certifications:
   - '/csm-badge.png'
 author_video: '/public-asset.mp4'
 author_headshot: '/image-33.png'
-author_id: Andrey Devyatkin
+author_id: Vladimir Samoylov
 ---
 
 **About Author About Author About Author About Author About Author About Author About Author About Author**
