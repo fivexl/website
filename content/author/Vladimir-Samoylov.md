@@ -21,23 +21,22 @@ author_headshot: '/vladimir.png'
 author_id: Vladimir Samoylov
 ---
 
-**About Author About Author About Author About Author About Author About Author About Author About Author**
+**Vladimir is highly professional AWS community builder, certified AWS Solutions Architect, certified ScrumMaster, and certified Terraform associate.**
 
 # About author
 
-About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author 
+Vladimir works 2,5 years for FivexL. He is the team's soul, full of energy and ideas, with a constant smile on his face.  
+His broad 10+ years of experience is from HTML/CSS-coder, Senior System Administrator to Technical Director, and Cloud Engineering Independent consultant.
+It gives a three-dimensional view of the problem he is working on and allows him to offer a unique solution. He thinks outside of the box.
+Vladimir, a resident of Thailand and a fan of Asian culture, develops the Asian AWS community and participates in regional cloud engineering events. 
 
-## About author
-About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author
 
-* Item
-* Next Item
-* Hello Item
 
-1. hello
-2. World
-3. TEAM
+## In FivexL Vladimir leaded 
+* a project on building modernized digital
+infrastructure on the AWS cloud in the US healthcare and educational sector, 
+* a project on migrating and developing secure infrastructure ready for the business growth for a Norwegian cryptocurrency company. 
+* Add about McFly
 
-### About author
-About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author 
+
 
