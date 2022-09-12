@@ -8,13 +8,10 @@ information:
   - AUTHOR INFO
   - AUTHOR Information
 links:
-  - { icon: facebook, url: 'https://john-doe.com' }
-  - { icon: twitter, url: 'https://john-doe.com' }
-  - { icon: spotify, url: 'https://john-doe.com' }
-  - { icon: twitter, url: 'https://john-doe.com' }
-  - { icon: linkedin, url: 'https://john-doe.com' }
-  - { icon: telegram, url: 'https://john-doe.com' }
-  - { icon: website, url: 'https://john-doe.com' }
+  
+  - { icon: linkedin, url: 'https://www.linkedin.com/in/vladimirsamoylov/' }
+  - { icon: telegram, url: 'https://t.me/cageyv/' }
+  - { icon: website, url: 'https://cageyv.dev/' }
 certifications:
   - '/aws-badge.png'
   - '/terraform-badge.png'
