@@ -4,7 +4,7 @@ author_id: 'Vladimir Samoylov'
 summary: 'Find out how the CloudTrail-to-Slack Terraform module by FivexL solves this problem for startups and small teams.'
 date: 2022-05-25
 author: Vladimir Samoylov
-panel_image: save_pig.png
+panel_image: Piggy_bank.png
 ---
 Saving money on Amazon Web Services (AWS) Spot Instances can be a challenging task. Keep in mind that it is essentially an auction. Although prices don’t fluctuate as rapidly as on exchanges, they can still increase until they reach the on-demand rate. Sometimes it lasts for a day or two, but other times — up to several months, which can double the cost.  
 
