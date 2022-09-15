@@ -6,6 +6,7 @@ date: 2022-02-19
 author: johndoe
 panel_image: case-3.png
 case_study: true
+tags: ['test', 'popularTag']
 ---
 Find out how the CloudTrail-to-Slack Terraform module by FivexL solves this problem for startups and small teams.
 

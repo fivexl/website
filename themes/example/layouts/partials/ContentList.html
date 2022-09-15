@@ -1,10 +1,9 @@
 <section class="cl">
     <h2 class="cl-Heading">BLOGS</h2>
     <div class="cl-TagsList">
-        <a class="cl-Tag" href="#">Tag 1</a>
-        <a class="cl-Tag" href="#">Tag Here</a>
-        <a class="cl-Tag" href="#">Some long tag</a>
-        <a class="cl-Tag" href="#">An even longer long tag</a>
+        {{ range site.Taxonomies.tags.ByCount }}
+            <a class="cl-Tag" href="{{ .Page.Permalink }}">{{ .Page.Name }}</a>
+        {{ end }}
     </div>
     <div class="cl-ContentWrapper">
         {{ range .pages }}
