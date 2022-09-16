@@ -27,12 +27,14 @@
             {{- end -}}
         </div>
     </section>
-    <section class="adp-Panel_Right">
+    <section class="adp-Panel_Right {{ if not .Params.author_video }}ImagePanel{{ end }}">
         {{ with .Params.author_video }} 
-            <video muted="true" loop src="{{- . -}}" controls="true">
-        {{ else }}
-            <img src="/blue-circle-man-with-laptops.png">
-        {{ end }}
+        <video muted="true" loop src="{{- . -}}" controls="true">
+            {{ else }}
+            <div class="adp-Headshot">
+                <img src="{{ .Params.author_headshot }}">
+            </div>
+            {{ end }}
     </section>
 </div>
 
