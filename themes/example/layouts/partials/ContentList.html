@@ -8,13 +8,13 @@
     <div class="cl-ContentWrapper">
         {{ range .pages }}
         <div class="cl-ContentItem">
+            {{ $permalink := .Permalink }}
             {{ with .Resources.GetMatch .Params.panel_image }}
-            <img class="cl-ContentItem_Image" src="{{ .Permalink }}" alt="">
+            <a href="{{ $permalink }}"><img class="cl-ContentItem_Image" src="{{ .Permalink }}" alt=""></a>
             {{ end }}
             <span class="cl-ContentItem_Date">{{ time.Format "January 2, 2006" .Params.date }}</span>
-            <h1 class="cl-ContentItem_Heading">{{ .Title }}</h1>
+            <h1 class="cl-ContentItem_Heading"><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
             <p class="cl-ContentItem_Summary">{{ .Summary }}</p>
-            <a class="cl-ContentItem_ReadMore" href="{{ .Permalink }}">Read More</a>
         </div>
         {{ end }}
     </div>

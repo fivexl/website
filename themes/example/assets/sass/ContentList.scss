@@ -86,6 +86,10 @@
 
     &_Heading {
       color: $textSecondary;
+      a {
+        color: $textSecondary;
+        text-decoration: none;
+      }
     }
 
     &_ReadMore {
