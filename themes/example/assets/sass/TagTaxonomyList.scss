@@ -1,0 +1,32 @@
+.ttl {
+  max-width: $maxContentWidth; 
+  margin: 0 auto;
+  display: grid;
+  padding-bottom: 6rem;
+
+  &-Heading {
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  &-TermPill {
+    display: block;
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    border: 1px solid $textPrimary;
+    width: max-content;
+  }
+
+  &-Articles {
+    margin-left: -1rem;
+    margin-top: 1.5rem;
+  }
+
+  &-ArticleLink {
+    a {
+      color: $textPrimary;
+      line-height: 2;
+      font-weight: 700;
+    }
+  }
+}

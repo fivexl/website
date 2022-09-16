@@ -49,7 +49,6 @@
   &-ContentWrapper {
     display: grid;
     max-width: $maxContentWidth;
-    // grid-template-columns: minmax(90%, 650px);
     gap: 2rem;
     @include layoutCenter;
     @media (min-width: 768px) {

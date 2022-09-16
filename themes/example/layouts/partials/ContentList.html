@@ -1,10 +1,12 @@
 <section class="cl">
-    <h2 class="cl-Heading">BLOGS</h2>
+    <h2 class="cl-Heading">{{ default "BLOGS" .heading }}</h2>
+    {{ if .show_tags }}
     <div class="cl-TagsList">
         {{ range site.Taxonomies.tags.ByCount }}
             <a class="cl-Tag" href="{{ .Page.Permalink }}">{{ .Page.Name }}</a>
         {{ end }}
     </div>
+    {{ end }}
     <div class="cl-ContentWrapper">
         {{ range .pages }}
         <div class="cl-ContentItem">
