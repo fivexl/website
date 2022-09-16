@@ -11,7 +11,7 @@
             {{ with .Resources.GetMatch .Params.panel_image }}
             <img class="cl-ContentItem_Image" src="{{ .Permalink }}" alt="">
             {{ end }}
-            <span class="cl-ContentItem_Date">{{ time.Format "February 2, 2006" .Params.date }}</span>
+            <span class="cl-ContentItem_Date">{{ time.Format "January 2, 2006" .Params.date }}</span>
             <h1 class="cl-ContentItem_Heading">{{ .Title }}</h1>
             <p class="cl-ContentItem_Summary">{{ .Summary }}</p>
             <a class="cl-ContentItem_ReadMore" href="{{ .Permalink }}">Read More</a>
