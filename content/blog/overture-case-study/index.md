@@ -6,6 +6,7 @@ date: 2022-02-24
 author: Andrey Devyatkin
 panel_image: blog-1-image.png
 case_study: true
+tags: ['anotherTag', 'popularTag']
 ---
 
 Case Study Blog 1blog 1 Blog 1blog 1blog 1Blog 1 Blog 1blog 1 Blog 1blog 1blog 1

@@ -1,7 +1,13 @@
 <div class="dp">
     <section class="dp-PanelContent_Left">
         <div class="dp-PanelContent_Wrapper">
-            <h2 class="dp-PanelContent_SubHeading">{{ default "FiveXL BLOG" .Params.sub_heading }}</h2>
+            {{ with .Params.sub_heading  }}
+            <h2 class="dp-PanelContent_SubHeading">{{ . }}</h2>
+            {{ else }}
+                {{ if eq .Params.Section "blog" }}
+                <h2 class="dp-PanelContent_SubHeading">FIVEXL BLOG</h2>
+                {{ end }}
+            {{ end }}
             <h1 class="dp-PanelContent_Heading">{{ default "BLOG POST ONE TITLE" .Params.title }}</h1>
             {{ if or .IsSection .IsHome }}
             <a class="dp-PanelContent_CTA" href="{{ default "#" .Permalink }}">READ BLOG POST</a>

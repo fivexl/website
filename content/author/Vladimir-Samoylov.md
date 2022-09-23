@@ -16,7 +16,6 @@ certifications:
   - '/aws-badge.png'
   - '/terraform-badge.png'
   - '/csm-badge.png'
-author_video: '/public-asset.mp4'
 author_headshot: '/vladimir.png'
 author_id: Vladimir Samoylov
 ---

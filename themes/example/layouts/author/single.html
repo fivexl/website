@@ -11,5 +11,5 @@
 
     {{ $pages := where (where site.RegularPages "Params.author_id" .Params.author_id) "Section" "blog" }}
     {{ $case_studies :=  where $pages "Params.case_study" true }}
-    {{- partial "ContentList" (dict "pages" ($pages | symdiff $case_studies)) -}}
+    {{- partial "ContentList" (dict "pages" ($pages | symdiff $case_studies) "show_tags" true) -}}
 {{ end }}

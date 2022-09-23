@@ -2,7 +2,7 @@ baseURL = 'https://fivexl.netlify.app/'
 languageCode = 'en-us'
 title = 'FivexL New Site'
 
-paginate = 1
+paginate = 6
 
 # this is just a place holder theme. please remove it later
 theme = "example"
@@ -29,3 +29,4 @@ theme = "example"
   [menu.main.params]
     class = "hdr-NavigationItem_Contact"
 
+disableKinds = ['category'] # Categories disabled initially

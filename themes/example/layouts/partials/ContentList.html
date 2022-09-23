@@ -1,21 +1,22 @@
 <section class="cl">
-    <h2 class="cl-Heading">BLOGS</h2>
+    <h2 class="cl-Heading">{{ default "BLOGS" .heading }}</h2>
+    {{ if .show_tags }}
     <div class="cl-TagsList">
-        <a class="cl-Tag" href="#">Tag 1</a>
-        <a class="cl-Tag" href="#">Tag Here</a>
-        <a class="cl-Tag" href="#">Some long tag</a>
-        <a class="cl-Tag" href="#">An even longer long tag</a>
+        {{ range site.Taxonomies.tags.ByCount }}
+            <a class="cl-Tag" href="{{ .Page.Permalink }}">{{ .Page.Name }}</a>
+        {{ end }}
     </div>
+    {{ end }}
     <div class="cl-ContentWrapper">
         {{ range .pages }}
         <div class="cl-ContentItem">
+            {{ $permalink := .Permalink }}
             {{ with .Resources.GetMatch .Params.panel_image }}
-            <img class="cl-ContentItem_Image" src="{{ .Permalink }}" alt="">
+            <a href="{{ $permalink }}"><img class="cl-ContentItem_Image" src="{{ .Permalink }}" alt=""></a>
             {{ end }}
-            <span class="cl-ContentItem_Date">{{ time.Format "February 2, 2006" .Params.date }}</span>
-            <h1 class="cl-ContentItem_Heading">{{ .Title }}</h1>
+            <span class="cl-ContentItem_Date">{{ time.Format "January 2, 2006" .Params.date }}</span>
+            <h1 class="cl-ContentItem_Heading"><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
             <p class="cl-ContentItem_Summary">{{ .Summary }}</p>
-            <a class="cl-ContentItem_ReadMore" href="{{ .Permalink }}">Read More</a>
         </div>
         {{ end }}
     </div>
