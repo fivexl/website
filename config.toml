@@ -30,3 +30,6 @@ theme = "example"
     class = "hdr-NavigationItem_Contact"
 
 disableKinds = ['category'] # Categories disabled initially
+
+[params]
+  relatedBlogsLength = 10
