@@ -1,11 +1,10 @@
 // Author Certifications = auc
+@import "variables.scss";
+@import "node_modules/@glidejs/glide/dist/css/glide.core.min";
+@import "node_modules/@glidejs/glide/dist/css/glide.theme.min";
 
 
 .auc {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  align-items: center;
   margin-inline: 1rem;
   margin-bottom: 2rem;
   max-width: $maxContentWidth;
@@ -13,11 +12,18 @@
   @media (min-width: 768px) {
     margin-inline: auto;
     margin-bottom: 6rem;
+    padding-left: 8rem;
+    padding-right: 8rem;
   }
-
+//
   img {
     max-width: 8rem;
     height: auto;
     object-fit: contain;
+  }
+
+  .glide__arrow {
+    background-color: $accentColor;
+    color: #444;
   }
 }

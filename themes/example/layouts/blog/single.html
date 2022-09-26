@@ -28,12 +28,11 @@
                 </ul>
 
             {{ else }}
-
-            <ul>
-                {{ range first $.Site.Params.relatedBlogsLength (where .Site.RegularPages "Section" "blog") }}
-                <li><a href="{{ .Permalink }}">{{ .Params.title }}</a></li>
-                {{ end }}
-            </ul>
+                <ul>
+                    {{ range first $.Site.Params.relatedBlogsLength (where .Site.RegularPages "Section" "blog") }}
+                    <li><a href="{{ .Permalink }}">{{ .Params.title }}</a></li>
+                    {{ end }}
+                </ul>
             {{ end }}
 
         </section>
