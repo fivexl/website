@@ -35,3 +35,65 @@ Besides allowing startups to stay on top of CloudTrail events, the Terraform mod
 Startups are known to have little to no time because of limited human resources. To facilitate module setup, there is a set of default rules; they are Python strings that are evaluated during the runtime and designed to return the bool value. The CloudTrail event is flattened prior to processing and should be referenced as an event variable.
 
 Rules can also be ignored. In this case, an event is ignored by Lambda, and no notification is sent to Slack. “Ignore rules” has the same syntax as default ones. But it is highly recommended to fix alerts instead of ignoring them. This approach should be implemented only when there is no opportunity to fix the alert. Here is how you can do this. 
+```hcl
+locals {
+  cloudtrail_ignore_rules = [
+      "'userIdentity.accountId' in event and event['userIdentity.accountId'] == '11111111111'",
+    ]
+}
+# we recomend storing hook url in SSM Parameter store and not commit it to the repo
+data "aws_ssm_parameter" "hook" {
+  name = "/cloudtrail-to-slack/hook"
+}
+module "cloudtrail_to_slack" {
+  source                         = "fivexl/cloudtrail-to-slack/aws"
+  version                        = "2.3.0"
+  default_slack_hook_url         = data.aws_ssm_parameter.hook.value
+  cloudtrail_logs_s3_bucket_name = aws_s3_bucket.cloudtrail.id
+  ignore_rules                   = join(",", local.cloudtrail_ignore_rules)
+}
+```
+
+### Customizing Notifications
+You may not want all team members to receive security alerts from the Terraform module. Some may use the information to their advantage, while others may merely be bumped with tons of irrelevant notifications, which disrupts productivity and isn’t affordable for a startup. Here’s why the module gives an opportunity to customize notifications. For example, they can be sent to different Slack channels for different accounts according to the event account ID. 
+
+### User-Defined Rules To Match Events
+
+If the default rules don’t cover all your needs, you can set up user-defined rules to stay in control of what’s going on in CloudTrail. Here’s how to deploy the module with a list of the events that are necessary to track. 
+
+```hcl
+data "aws_ssm_parameter" "hook" {
+  name = "/cloudtrail-to-slack/hook"
+}
+locals {
+  # CloudTrail events
+  cloudtrail = "DeleteTrail,StopLogging,UpdateTrail"
+  # EC2 Instance connect and EC2 events
+  ec2 = "SendSSHPublicKey"
+  # Config
+  config = "DeleteConfigRule,DeleteConfigurationRecorder,DeleteDeliveryChannel,DeleteEvaluationResults"
+  # All events
+  events_to_track = "${local.cloudtrail},${local.ec2},${local.config}"
+}
+
+module "cloudtrail_to_slack" {
+  source                         = "fivexl/cloudtrail-to-slack/aws"
+  version                        = "2.0.0"
+  default_slack_hook_url         = data.aws_ssm_parameter.hook.value
+  cloudtrail_logs_s3_bucket_name = aws_s3_bucket.cloudtrail.id
+  events_to_track                = local.events_to_track
+}
+
+resource "aws_cloudtrail" "main" {
+  name           = "main"
+  s3_bucket_name = aws_s3_bucket.cloudtrail.id
+  ...
+}
+resource "aws_s3_bucket" "cloudtrail" {
+  ....
+}
+```
+
+## Conclusion 
+The FivexL Cloudtrail-to-Slack Terraform module is a simple tool for you to stay on top of your CloudTrail events and ensure your Amazon Console is secure and properly set up. You can be notified about actions performed by a root account, failed API permissions, and console logins without MFA. Besides this, you can specify which sensitive events you wish to track, set up new rules to extend monitoring beyond default rules, and adjust who receives the notifications. For more info about the Cloudtrail-to-Slack Terraform module, please, check out [FivexL's GitHub](https://github.com/fivexl/terraform-aws-cloudtrail-to-slack).
+As a result, startups and small teams can focus on core operations while being sure their data and business are safe. However, if your CloudTrail records too many events, FivexL Terraform Module may be insufficient. 
