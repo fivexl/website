@@ -8,13 +8,11 @@ information:
   - AUTHOR INFO
   - AUTHOR Information
 links:
-  - { icon: facebook, url: 'https://john-doe.com' }
-  - { icon: twitter, url: 'https://john-doe.com' }
-  - { icon: spotify, url: 'https://john-doe.com' }
-  - { icon: twitter, url: 'https://john-doe.com' }
-  - { icon: linkedin, url: 'https://john-doe.com' }
-  - { icon: telegram, url: 'https://john-doe.com' }
-  - { icon: website, url: 'https://john-doe.com' }
+  - { icon: twitter, url: 'https://twitter.com/Andrey9kin' }
+  - { icon: spotify, url: 'https://open.spotify.com/show/4tGYslKaJU9d8Fg3Qf9gaO' }
+  - { icon: linkedin, url: 'https://www.linkedin.com/in/andreydevyatkin/' }
+  - { icon: telegram, url: 'https://t.me/andrey9kin/' }
+  - { icon: website, url: 'https://andreydevyatkin.com/' }
 certifications:
   - '/aws-badge.png'
   - '/terraform-badge.png'
