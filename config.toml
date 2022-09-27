@@ -32,4 +32,4 @@ theme = "example"
 disableKinds = ['category'] # Categories disabled initially
 
 [params]
-  relatedBlogsLength = 10
+  relatedBlogsLength = 3

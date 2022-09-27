@@ -1,9 +1,4 @@
-$maxContentWidth: 1600px;
-$accentColor: #18AEF0;
-$accentText: #ffffff;
-$textPrimary: #111;
-$textSecondary: #F13687;
-$textAccent: #18AEF0;
+@import 'variables.scss';
 
 :root {
   --doublePanelMobileOverlap: 3.5rem;
@@ -29,7 +24,6 @@ body {
 @import 'BlogSingle.scss';
 @import 'AuthorSidebar.scss';
 @import 'AuthorDoublePanel.scss';
-@import 'AuthorCertifications.scss';
 @import 'AuthorContent.scss';
 @import 'CaseStudies.scss';
 @import 'TagTaxonomyList.scss';

@@ -1,0 +1,18 @@
+{{ $width := .Get "width" }}
+{{ $align := .Get "align" }}
+{{ $alt := default "An image" (.Get "alt") }}
+{{ $style := default "" (.Get "style") }}
+
+{{ if eq $align "left" }}
+    {{ $align = "image-left" }}
+{{ else if eq $align "right" }}
+    {{ $align = "image-right" }}
+{{ else }}
+    {{ $align = "image-center" }}
+{{ end }}
+
+{{ if $width }}
+    {{ $style = print $style (print `; max-width: ` $width) }}
+{{ end }}
+
+<img src="{{ .Get "src" }}" class="{{ $align }}" {{ with $style }}style="{{ . | safeCSS }}"{{ end }} />
