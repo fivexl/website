@@ -76,7 +76,7 @@ You can use default rules or customize them to get the important alerts only. Fi
 * **Deploy Amazon Athena.** It empowers detailed security research, allowing you to create an SKL order to dive deeper into CloudTrail’s records. While it’s not mandatory at the beginning of your security journey, you will find it useful later to investigate any account-related anomalies or unauthorized access incidents.
 One more useful monitoring tool is GuardDuty – an ML-based watchdog that barks if it notices anything abnormal—for instance, if someone grants themselves more privileges than allowed. On the one side, it analyses everything, including VPC Flow logs, DNS logs, and CloudTrail logs, and delivers too many findings. On the other side, you can react quickly and prevent serious security incidents.  
 
-![AWS Guarduty](aws_guardduty.png) 
+{{< image src="aws_guardduty.png" alt="How to save" width="50%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}} 
 Here is how to set up AWS GuardDuty to Slack.  
 ![AWS Guarduty](AWS%20Guarduty.png)  
 
