@@ -24,7 +24,7 @@ Sending notifications about AWS CloudTrail events to Slack is a useful feature f
 * Console logins without MFA
 * Sensitive events like IAM, network, and data storage access changes 
 
-{{< image src="1.jpeg" alt="How to save" width="70%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}}  
+{{< image src="1.png" alt="How to save" width="70%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}}  
 As a result, you are always aware if something odd is going on in your AWS Console without investing extra time and effort. Chief Cloud Economist at The Duckbill Group, Corey Quinn, who helps companies decrease their AWS bills, mentioned the module in [his podcast dedicated to security awareness training](https://www.lastweekinaws.com/podcast/aws-morning-brief/security-awareness-training-in-five-minutes/): ‘I found a Terraform module that [deploys Lambda](https://github.com/fivexl/Terraform-aws-CloudTrail-to-Slack) to watch CloudTrail and report to Slack - got all that? Good lord - whenever certain things happen. Those things include root logins, console logins without MFA, API calls that failed due to lack of permissions, and more. This might get noisy, but I’d consider deploying at least the big important ones’. This makes the module worth paying attention to.
 
 Please, note: there is an approximate 5-10 minutes alert delivery delay because the current version is built upon parsing of S3 notifications. 
