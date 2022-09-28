@@ -1,6 +1,10 @@
 <meta charset="utf-8">
 <link rel="canonical" href="{{ .Permalink }}">
+<title>{{ default .Site.Title .Params.title }}</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="{{ default "FiveXL Blog" (default .Site.Params.description (default .Summary .Params.description)) }}">
+<link rel="canonical" href="{{ .Permalink }}">
+
 {{ $styles := resources.Get "sass/main.scss" | resources.ToCSS }}
 <link rel="stylesheet" href="{{ $styles.RelPermalink }}">
 {{ $js := resources.Get "js/main.ts" | js.Build }}

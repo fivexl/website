@@ -59,6 +59,7 @@
         {{ with $srcset }} srcset="{{ . }}" {{ end }}
         src="{{ $image.Permalink }}"
         class="{{ .class }} {{ $align }}"
+        alt="{{ default .alt $image.Name }}"
         {{ with $style }}style="{{ . | safeCSS }}"{{ end }}
     />
 

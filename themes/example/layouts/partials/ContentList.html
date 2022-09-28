@@ -13,7 +13,7 @@
             {{ $permalink := .Permalink }}
             {{ with .Resources.GetMatch .Params.panel_image }}
             <a href="{{ $permalink }}">
-                {{ partial "img" (dict "class" "cl-ContentItem_Image" "src" .Permalink "image" .) }}
+                {{ partial "img" (dict "class" "cl-ContentItem_Image" "src" .Permalink "image" . "alt" .Name) }}
             </a>
             {{ end }}
             <span class="cl-ContentItem_Date">{{ time.Format "January 2, 2006" .Params.date }}</span>
