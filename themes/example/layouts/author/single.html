@@ -13,22 +13,13 @@
     {{ $case_studies :=  where $pages "Params.case_study" true }}
     {{- partial "ContentList" (dict "pages" ($pages | symdiff $case_studies) "show_tags" true) -}}
 
-
 {{ end }}
 
 
 
-{{ define "headScripts" }}
-    {{ $js := resources.Get "js/slider.ts" | js.Build }}
-    <script type="application/javascript" src="{{ $js.RelPermalink }}" defer></script>
-{{ end }}
 
 
-
-{{ define "headStyles" }}
-    {{ $options := (dict "includePaths" (slice "node_modules")) }}
-
-    {{ $core := resources.Get "sass/AuthorCertifications.scss" | resources.ToCSS $options }}
-
-    <link rel="stylesheet" href="{{ $core.RelPermalink }}">
+{{ define "bodyScripts" }}
+    <script type="text/javascript" src="/js/carousel.js"></script>
+    <link rel="stylesheet" href="/css/carousel.css">
 {{ end }}

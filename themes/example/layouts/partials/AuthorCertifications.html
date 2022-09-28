@@ -1,16 +1,9 @@
 {{ with .Params.certifications }}
-<section class="auc glide">
-    <div class="glide__track" data-glide-el="track">
-        <ul class="glide__slides">
-            {{- range . -}}
-            <li class="glide__slide"><img alt="{{- . -}}" src="{{- . -}}"></li>
-            {{- end -}}
-        </ul>
-  <div class="glide__arrows" data-glide-el="controls">
-    <button class="glide__arrow glide__arrow--left" data-glide-dir="<">❮</button>
-    <button class="glide__arrow glide__arrow--right" data-glide-dir=">">❯</button>
-  </div>
-
-    </div>
-</section>
+    {{ $images := slice }}
+    {{- range . -}}
+        {{ $images = $images | append (dict "image" .) }}
+    {{- end -}}
+    <section class="auc">
+        {{ partial "carousel" (dict "context" (dict "images" $images) "items" "6" "height" "128" "unit" "px" "duration" "4000") }}
+    </section>
 {{ end }}

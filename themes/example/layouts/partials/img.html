@@ -1,0 +1,75 @@
+{{ $align := "" }}
+{{ $style := .style }}
+{{ if eq .align "left" }}
+    {{ $align = "image-left" }}
+{{ else if eq .align "right" }}
+    {{ $align = "image-right" }}
+{{ else }}
+    {{ $align = "image-center" }}
+{{ end }}
+
+{{ $image := or .image (or (resources.Get .src) (.Page.Resources.GetMatch .src)) }}
+
+{{ if $image }}
+
+    {{ $sizes := slice 350 700 1400 2000 3000 }}
+    {{ $images := slice }}
+    {{ $activeSizes := slice }}
+
+    <!--   Optimized versions generation -->
+    {{ range $sizes }}
+        {{ if gt $image.Width . }}
+
+            {{ if ne "webp" $image.MediaType.SubType }}
+                {{ $images = $images | append 
+                    ( printf "%s %dw" 
+                        ($image.Resize ( printf "%dx webp" . )).Permalink .) }}
+            {{ end }}
+
+            {{ $images = $images | append 
+                (printf "%s %dw"
+                    ($image.Resize ( printf "%dx" . )).Permalink .) }}
+
+            {{ $activeSizes = $activeSizes | append . }}
+
+        {{ end }}
+    {{ end }}
+
+    {{ $srcset := delimit $images ", " }}
+    {{ $sizesAttribute := "" }}
+
+    {{ with $activeSizes }}
+        {{ range $activeSizes }}
+            {{ $sizesAttribute = printf "%s (max-width: %d) %dpx," $sizesAttribute . . }}
+        {{ end }}
+        {{ $sizesAttribute = printf "%s %dpx" $sizesAttribute $image.Width }}
+        {{ if ne "webp" $image.MediaType.SubType }}
+            {{ $srcset = printf "%s, %s" $srcset ($image.Resize 
+                ( printf "%dx%d webp" $image.Width $image.Height )
+                ).Permalink }}
+        {{ end }}
+        {{ $srcset = printf "%s, %s" $srcset $image.Permalink }}
+    {{ end }}
+
+    {{ if .maxWidth }}
+        {{ $style = print $style (print `; max-width: ` .maxWidth) }}
+    {{ end }}
+
+    <img
+        {{ with $srcset }} srcset="{{ . }}" {{ end }}
+        src="{{ $image.Permalink }}"
+        class="{{ .class }} {{ $align }}"
+        {{ with $style }}style="{{ . | safeCSS }}"{{ end }}
+    />
+
+{{ end }}
+
+
+
+
+    {{/*
+    {{ with $activeSizes }}
+    {{ range first (sub (len $activeSizes) 1) $activeSizes }}
+        {{ $sizesAttribute = printf "%s (max-width: %d) %dpx," $sizesAttribute . . }}
+    {{ end }}
+    {{ end }} */}}

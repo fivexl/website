@@ -39,7 +39,7 @@
         <video muted="true" loop src="{{- . -}}" controls="true">
             {{ else }}
             <div class="adp-Headshot">
-                <img src="{{ .Params.author_headshot }}">
+                {{ partial "img" (dict "src" .Params.author_headshot "Page" .Page) }}
             </div>
             {{ end }}
     </section>

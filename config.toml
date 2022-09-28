@@ -33,3 +33,6 @@ disableKinds = ['category'] # Categories disabled initially
 
 [params]
   relatedBlogsLength = 3
+
+[imaging]
+  quality = 80

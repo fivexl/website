@@ -8,7 +8,9 @@
 }}
 
 <section class="asb">
-    <img class="asb-Author_Portrait" src="{{- $author.Params.author_headshot -}}" alt="Author protrait">
+    {{ with $author.Resources.GetMatch $author.Params.author_headshot }}
+        {{ partial "img" (dict "class" "asb-Author_Portrait" "src" $author.Params.author_headshot "alt" "Author protrait" "image" .) }}
+    {{ end }}
     <h1 class="asb-Author"><a href="#">{{ $author.Params.name }}</a></h1>
     {{ range $author.Params.roles }}
     <span class="asb-Author_Role">{{ . }}</span>

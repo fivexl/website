@@ -1,18 +1,8 @@
-{{ $width := .Get "width" }}
-{{ $align := .Get "align" }}
+{{ $maxWidth := default false (.Get "maxWidth") }}
+{{ $align := default false (.Get "align") }}
 {{ $alt := default "An image" (.Get "alt") }}
 {{ $style := default "" (.Get "style") }}
+{{ $src := default "" (.Get "src") }}
+{{ $class := .Get "class" }}
 
-{{ if eq $align "left" }}
-    {{ $align = "image-left" }}
-{{ else if eq $align "right" }}
-    {{ $align = "image-right" }}
-{{ else }}
-    {{ $align = "image-center" }}
-{{ end }}
-
-{{ if $width }}
-    {{ $style = print $style (print `; max-width: ` $width) }}
-{{ end }}
-
-<img src="{{ .Get "src" }}" class="{{ $align }}" {{ with $style }}style="{{ . | safeCSS }}"{{ end }} />
+{{- partial "img" (dict "maxWidth" $maxWidth "align" $align "alt" $alt "style" $style "src" $src "Page" .Page "class" $class) -}}

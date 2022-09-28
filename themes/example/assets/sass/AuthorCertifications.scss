@@ -1,8 +1,4 @@
 // Author Certifications = auc
-@import "variables.scss";
-@import "node_modules/@glidejs/glide/dist/css/glide.core.min";
-@import "node_modules/@glidejs/glide/dist/css/glide.theme.min";
-
 
 .auc {
   margin-inline: 1rem;
@@ -15,15 +11,32 @@
     padding-left: 8rem;
     padding-right: 8rem;
   }
-//
-  img {
-    max-width: 8rem;
-    height: auto;
-    object-fit: contain;
+
+
+  & .carousel {
+    ul {
+      background: transparent;
+      img { object-fit: contain; }
+    }
+
+    ol {
+      bottom: -35px;
+      padding-left: 0;
+
+      a {
+        background-color: #666;
+        transition: all 0.12s ease-in;
+        box-shadow: 0 0 3px 0 rgba(23, 0, 55, 0.3);
+      }
+
+      .selected {
+        a {
+          border-color: #666;
+          background-color: #666;
+        }
+      }
+    }
+
   }
 
-  .glide__arrow {
-    background-color: $accentColor;
-    color: #444;
-  }
 }

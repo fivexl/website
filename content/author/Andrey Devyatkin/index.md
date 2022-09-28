@@ -17,8 +17,8 @@ certifications:
   - '/aws-badge.png'
   - '/terraform-badge.png'
   - '/csm-badge.png'
-author_video: '/public-asset.mp4'
-author_headshot: '/image-33.png'
+author_video: 'public-asset.mp4'
+author_headshot: 'image-33.png'
 author_id: Andrey Devyatkin
 ---
 

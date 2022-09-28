@@ -1,0 +1,26 @@
+{{ $height := .height }}
+{{ $unit := .unit }}
+{{ $items := .items }}
+
+<div id="carousel10" class="carousel" duration="{{ .duration }}" items="{{ $items }}">
+    <ul>
+        {{ range $index, $slide := .context.images }}
+            <li id="c10_slide{{ add $index 1}}"
+                style="min-width: calc(100%/{{ $items }}); padding-bottom: {{ $height }}{{ $unit }};">
+                <img src="{{ $slide.image }}" alt="" />
+                {{ with $slide.content_html }}
+                    <div>
+                        <div>{{ . }}</div>
+                    </div>
+                {{ end }}
+            </li>
+        {{ end }}
+    </ul>
+    <ol>
+      {{ range $index, $page := .context.images }}
+        <li><a href="#c10_slide{{ add $index 1 }}"></a></li>
+      {{ end }}
+    </ol>
+    <div class="prev">&lsaquo;</div>
+    <div class="next">&rsaquo;</div>
+</div>

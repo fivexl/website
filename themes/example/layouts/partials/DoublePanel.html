@@ -16,9 +16,9 @@
     </section>
     <section class="dp-PanelImage_Right">
         {{ with .Resources.GetMatch .Params.panel_image }}
-        <img src="{{- .Permalink -}}" alt="{{ .Name }}">
+        {{ partial "img" (dict "src" .Permalink "alt" .Name "image" .) }}
         {{ else }}
-        <img src="/blue-circle-man-with-laptops.png" alt="a placeholder stock image">
+        {{ partial "img" (dict "src" "blue-circle-man-with-laptops.png" "alt" "default image")}}
         {{ end }}
     </section>
 </div>
