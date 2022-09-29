@@ -32,3 +32,15 @@ body {
 * {
   box-sizing: border-box;
 }
+
+.highlight {
+  max-width: 100%;
+  overflow: hidden;
+
+  pre {
+    overflow-x: scroll;
+    padding: 1.5rem;
+    border-radius: 3px;
+  }
+}
+

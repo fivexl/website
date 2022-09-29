@@ -104,13 +104,6 @@
   .image-right { margin-left: auto; }
   .image-center { margin-inline: auto; }
 
-  overflow-x: hidden;
-  .highlight {
-    max-width: 100%;
-    width: auto;
-    overflow-x: scroll;
-  }
-
   @media (min-width: 768px) {
     h1, h2, h3, h4, h5, h6, p, ol, ol li, ul, ul li {
       margin-inline: initial;
