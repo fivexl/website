@@ -64,6 +64,7 @@
     margin-bottom: 0.25rem;
     margin-top: 1rem;
     line-height: 1.5;
+    word-break: break-word;
   }
 
   a {
@@ -82,9 +83,9 @@
 
   ol li, ul li {
     @include base-text;
-    margin-top: 1.25rem;
+    margin-top: 1rem;
     margin-bottom: 0rem;
-    line-height: 1;
+    line-height: 1.5;
   }
 
   ol li:first-child,
@@ -102,6 +103,13 @@
   .image-left { margin-right: auto; }
   .image-right { margin-left: auto; }
   .image-center { margin-inline: auto; }
+
+  overflow-x: hidden;
+  .highlight {
+    max-width: 100%;
+    width: auto;
+    overflow-x: scroll;
+  }
 
   @media (min-width: 768px) {
     h1, h2, h3, h4, h5, h6, p, ol, ol li, ul, ul li {
