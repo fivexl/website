@@ -120,6 +120,7 @@
 
 .bls-Related {
 
+  padding: 2rem;
   grid-area: 2 / 1 / 3 / 3;
 
   h2 { color: $textAccent; font-size: 2.5rem;}
@@ -128,4 +129,5 @@
 
   a { color: $textPrimary; font-weight: 700; }
 
+  @media (min-width: 768px) { padding: 0; }
 }
