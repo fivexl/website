@@ -9,6 +9,7 @@
   }
 
   &-Author_Portrait {
+    display: block;
     width: 50%;
     height: auto;
     background: url('/xl-nobg.png');
@@ -16,6 +17,10 @@
     background-repeat: no-repeat;
     background-position: center;
     object-fit: scale-down;
+    margin-inline: auto;
+    @media (min-width: 1024px) {
+      margin-inline: 1rem;
+    }
   }
 
   &-Author_Role {

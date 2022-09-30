@@ -28,6 +28,7 @@
                 </ul>
 
             {{ else }}
+                <h2>Recommended for you</h2>
                 <ul>
                     {{ range first $.Site.Params.relatedBlogsLength (where .Site.RegularPages "Section" "blog") }}
                     <li><a href="{{ .Permalink }}">{{ .Params.title }}</a></li>
