@@ -6,12 +6,12 @@ date: 2022-05-24
 author: Vladimir Samoylov
 panel_image: Ovrture_2.png
 case_study: true
-tags: ['Case study', 'aws cloud']
+tags: ['case study', 'aws cloud']
 ---
 
 ## “FivexL deployed a completely immutable infrastructure thus reducing operating costs, enhancing resilience and providing the ability to scale. Ultimately, we achieved our most important goal: delivering the latest changes as quickly as possible. Our infrastructure is light years ahead of where most small businesses would expect to be". 
-Lead consultant for the project
-Andrey Devyatkin, Senior Cloud Engineering Specialist 
+**Lead consultant for the project**  
+**Vladimir Samoylov, Senior Cloud Engineering Specialist**  
 
 {{< image src="Ovrture_1.png" alt="How to save" width="70%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}} 
 

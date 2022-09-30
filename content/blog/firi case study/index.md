@@ -6,6 +6,7 @@ date: 2022-09-12
 author: Vladimir Samoylov
 panel_image: case 11.png
 case_study: true
+tags: ['case study', 'aws cloud']
 ---
 ## “FivexL helped us migrate all our services to a new infrastructure; the change was seamless. They think outside the box and are always there when we need them”  
 **Lead consultant for the project**  
