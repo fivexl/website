@@ -4,16 +4,16 @@ author_id: 'Vladimir Samoylov'
 summary: 'The secure migration of a private communications platform to a modernized digital infrastructure on the AWS cloud'
 date: 2022-02-24
 author: Vladimir Samoylov
-panel_image: blog-1-image.png
+panel_image: Vova_author_page.png
 case_study: true
 tags: ['Case study', 'aws cloud']
 ---
 
 ## “FivexL deployed a completely immutable infrastructure thus reducing operating costs, enhancing resilience and providing the ability to scale. Ultimately, we achieved our most important goal: delivering the latest changes as quickly as possible. Our infrastructure is light years ahead of where most small businesses would expect to be". 
-**Lead consultant for the project**
-**Andrey Devyatkin, Senior Cloud Engineering Specialist**
+Lead consultant for the project
+Andrey Devyatkin, Senior Cloud Engineering Specialist
+{{< image src="Ovrture_1.png" alt="How to save" width="70%" align="right" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}} 
 
-Ovrture is a philanthropic communications platform, with clients in the healthcare and education sectors. Replacing paper processes, it provides a secure, private and customizable channel to engage and steward major benefactors. 
 ## Challenge 
 Ovrture needed to safely migrate its platform to a modernised digital infrastructure on the AWS cloud and be able to continuously deploy and evolve. “FivexL were able to help us implement our infrastructure as code using HashiCorp Packer and HashiCorp Terraform,” reveals Chris Picht, IT Operations Manager & Senior Information Security Officer at Ovrture. “We needed to achieve this level of flexibility while simultaneously maintaining our security profile to service our clients.” Continuing support from FivexL in meeting this goal is vital as Ovrture look to expand outside the US to markets in Canada and Australia. “Without functional infrastructure as code, we couldn’t easily duplicate our infrastructure to serve clients in different regions,” explains Picht. “Our clients require their data to be stored and served from their own countries so it’s really helpful to have FivexL onboard helping us push forward plans for expansion by making it easy to deploy in new markets.”  
 ## Solution
