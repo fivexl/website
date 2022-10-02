@@ -4,7 +4,7 @@ author_id: 'Vladimir Samoylov'
 summary: 'The secure migration of a private communications platform to a modernized digital infrastructure on the AWS cloud'
 date: 2022-05-24
 author: Vladimir Samoylov
-panel_image: Ovrture_2.png
+panel_image: Ovrture_page.png
 case_study: true
 tags: ['case study', 'aws cloud']
 ---
