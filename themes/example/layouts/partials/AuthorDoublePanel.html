@@ -34,14 +34,18 @@
         </div>
     </section>
 
-    <section class="adp-Panel_Right {{ if not .Params.author_video }}ImagePanel{{ end }}">
-        {{ with .Params.author_video }} 
-        <video muted="true" loop src="{{- . -}}" controls="true">
-            {{ else }}
+    <section class="adp-Panel_Right {{ if .Params.panel_image }}AltImage{{ end }} {{ if not .Params.author_video }}ImagePanel{{ end }}">
+        {{ if .Params.panel_image }}
+            <div class="adp-AltImage">
+                {{ partial "img" (dict "src" .Params.panel_image "Page" .Page) }}
+            </div>
+        {{ else if .Params.author_video }}
+            <video muted="true" loop src="{{- .Params.author_video -}}" controls="true">
+        {{ else }}
             <div class="adp-Headshot">
                 {{ partial "img" (dict "src" .Params.author_headshot "Page" .Page) }}
             </div>
-            {{ end }}
+        {{ end }}
     </section>
 
 </div>

@@ -20,7 +20,8 @@ certifications:
   - '/aws-badge.png'
   - '/terraform-badge.png'
   - '/csm-badge.png'
-author_video: 'public-asset.mp4'                # Video takes precedence over headshot
-author_headshot: 'image-33.png'                 # Mandatory field (needed for the author sidebar, even if its demoted from the double panel by a video)
+panel_image: 'someimage.png'                    # Custom panel Image, fallbacks are author_video and author_headshot in that same order
+author_video: 'somevideo.mp4'                # Video takes precedence over headshot
+author_headshot: 'headshot.png'                 # Mandatory field (needed for the author sidebar, even if its demoted from the double panel by a video)
 author_id: johndoe                               # Author ID used to create relation to  blogs
 ---
