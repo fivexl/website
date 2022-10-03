@@ -13,15 +13,12 @@ links:
   - { icon: telegram, url: 'https://t.me/cageyv/' }
   - { icon: website, url: 'https://cageyv.dev/' }
 certifications:
-  - '/aws-badge.png'
-  - '/terraform-badge.png'
-  - '/csm-badge.png'
-  - '/aws-badge.png'
-  - '/terraform-badge.png'
-  - '/csm-badge.png'
-  - '/aws-badge.png'
-  - '/terraform-badge.png'
-  - '/csm-badge.png'
+  - 'architect.png'
+  - 'cloud-practitioner.png'
+  - 'seal-csm.png'
+  - 'terraform.png'
+  - 'fivexl.png'
+  - 'AWS_community.png'
 author_headshot: 'vladimir.png'
 author_id: Vladimir Samoylov
 ---
