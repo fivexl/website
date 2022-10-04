@@ -14,9 +14,14 @@ links:
   - { icon: telegram, url: 'https://t.me/andrey9kin/' }
   - { icon: website, url: 'https://andreydevyatkin.com/' }
 certifications:
-  - '/aws-badge.png'
-  - '/terraform-badge.png'
-  - '/csm-badge.png'
+  - 'Security.png'
+  - 'Terraform-Badge.png'
+  - 'SolArchitect.png'
+  - 'SysOpAdmin.png'
+  - 'Developer.png'
+  - 'AWS_community.png'
+  - 'fivexl.png'
+
 author_video: 'public-asset.mp4'
 author_headshot: 'image-33.png'
 author_id: Andrey Devyatkin
