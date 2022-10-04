@@ -3,13 +3,11 @@
 .auc {
   margin-inline: 1rem;
   margin-bottom: 2rem;
-  max-width: $maxContentWidth;
+  max-width: 600px;
   padding-inline: 1rem;
   @media (min-width: 768px) {
     margin-inline: auto;
     margin-bottom: 6rem;
-    padding-left: 8rem;
-    padding-right: 8rem;
   }
 
 
