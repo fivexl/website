@@ -1,9 +1,9 @@
 ---
 title: 'Security Basics in AWS '
-author_id: 'johndoe'
+author_id: 'Maria Zubchenko'
 summary: 'How To Get Rid of Hardcoded Credential and Reduce Data Leakage Ri sks with aws-vaul'
 date: 2022-05-24
-author: johndoe
+author: Maria Zubchenko
 panel_image: Masha_article.png
 ---
 Security Manual for Startups: How To Secure Your AWS Account in Several Steps
