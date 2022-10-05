@@ -4,6 +4,6 @@
         {{ $images = $images | append (dict "image" .) }}
     {{- end -}}
     <section class="auc">
-        {{ partial "carousel" (dict "context" (dict "images" $images) "items" "3" "height" "128" "unit" "px" "duration" "4000") }}
+        {{ partial "carousel" (dict "context" (dict "images" $images) "items" "5" "height" "128" "unit" "px" "duration" "4000") }}
     </section>
 {{ end }}
