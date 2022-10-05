@@ -19,7 +19,7 @@ certifications:
   - 'terraform.png'
   - 'fivexl.png'
   - 'AWS_community.png'
-  - 'architect.png'
+  
 panel_image: 'Vova_page.png'
 author_headshot: 'vladimir.png'
 author_id: Vladimir Samoylov

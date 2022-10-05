@@ -15,7 +15,7 @@ certifications:
   - 'Technical.png'
   - 'practitioner.png'
 panel_image: 'Masha_article.png'
-author_headshot: 'image-33.png'
+author_headshot: 'Masha_head.png'
 author_id: Maria Zubchenko
 ---
 
