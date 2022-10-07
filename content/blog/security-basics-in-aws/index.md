@@ -27,8 +27,7 @@ We will avoid obvious steps you’ll encounter when creating an AWS account and 
 * **Password.** While we are the advocates of no-password policies with a focus on AWS IAM Identity Center , you can’t set up an account without one. When generating a password, avoid using sensitive data like your phone number, ID details, or any other personal information like your pet’s name. If such a password leaks, your data will too. Go for long combinations where used words make no sense. The ideal choice is to use a password manager that will free you up from sharing passwords via sensitive channels like email or messengers. For example, 1Password generates passwords that are 60+ symbols long.
 * **MFA (Multi-factor authentication).** It’s a must for any service, including GitHub. You can use anything as the second authentication – a token, an SMS, a call to your private number, or biometrics. The best choice is a physical token, which is almost impossible to steal.
 * **Don’t use a root account.** Although you can’t create an AWS account without root users, avoid using it later. If you generate root user credentials but lose them, consider signing your house over to a stranger. You hardly share them with anyone.
-
-{{< image src="1.png" alt="Root account" width="50%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}}
+{{< image src="1.jpeg" alt="How to save" width="50%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}} 
 
 ### 2. IAM Console ###
 Now you are in. Go to the IAM console. Amazon recommends creating IAM users with groups and policies.
@@ -81,10 +80,7 @@ You can use default rules or customize them to get the important alerts only. Fi
 * **Deploy Amazon Athena.** It empowers detailed security research, allowing you to create an SKL order to dive deeper into CloudTrail’s records. While it’s not mandatory at the beginning of your security journey, you will find it useful later to investigate any account-related anomalies or unauthorized access incidents.
 One more useful monitoring tool is GuardDuty – an ML-based watchdog that barks if it notices anything abnormal—for instance, if someone grants themselves more privileges than allowed. On the one side, it analyses everything, including VPC Flow logs, DNS logs, and CloudTrail logs, and delivers too many findings. On the other side, you can react quickly and prevent serious security incidents.  
 
-{{< image src="aws_guardduty.png" alt="How to save" width="70%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}}  
- 
- Here is how to set up AWS GuardDuty to Slack. 
- {{< image src="AWS%20Guarduty.png" alt="How to save" width="70%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}}  
+{{< image src="aws_guardduty.png" alt="How to save" width="50%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}}  
 
 ### 5. Access for Developers
 In order to safeguard your developer’s work, you need to know what to beware of. The majority of AWS-related incidents fall into three categories:
