@@ -27,6 +27,9 @@ We will avoid obvious steps you’ll encounter when creating an AWS account and 
 * **Password.** While we are the advocates of no-password policies with a focus on AWS IAM Identity Center , you can’t set up an account without one. When generating a password, avoid using sensitive data like your phone number, ID details, or any other personal information like your pet’s name. If such a password leaks, your data will too. Go for long combinations where used words make no sense. The ideal choice is to use a password manager that will free you up from sharing passwords via sensitive channels like email or messengers. For example, 1Password generates passwords that are 60+ symbols long.
 * **MFA (Multi-factor authentication).** It’s a must for any service, including GitHub. You can use anything as the second authentication – a token, an SMS, a call to your private number, or biometrics. The best choice is a physical token, which is almost impossible to steal.
 * **Don’t use a root account.** Although you can’t create an AWS account without root users, avoid using it later. If you generate root user credentials but lose them, consider signing your house over to a stranger. You hardly share them with anyone.
+
+{{< image src="1.png" alt="Root account" width="70%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}}
+
 ### 2. IAM Console ###
 Now you are in. Go to the IAM console. Amazon recommends creating IAM users with groups and policies.
 <br/>
@@ -56,7 +59,7 @@ Instead of using root accounts, set up an AWS organization with several accounts
 ### 4. Monitoring ###
 Before you let your developers and the rest of the team in, set up monitoring tools. 
 CloudTrail is a 24/7 security camera that records what is happening at your doorstep. In other words, it records every click and API call and collects the data in the Amazon S3 bucket.  
-**NEED A PICTURE**
+
 ### 3. AWS Organization Setup ###
 Instead of using root accounts, set up an AWS organization with several accounts targeted for specific tasks. For example, you can begin with two accounts: development and production. Here are the main benefits your startup will experience:
 Isolation and control. Each workload is managed and monitored in a specific account that facilitates resource optimization. 
@@ -66,13 +69,16 @@ Facilitated billing. You can easily monitor how many resources each workload or 
 ### 4. Monitoring ###
 Before you let your developers and the rest of the team in, set up monitoring tools. 
 * **CloudTrail** is a 24/7 security camera that records what is happening at your doorstep. In other words, it records every click and API call and collects the data in the Amazon S3 bucket.  
-**NEED A PICTURE**  
+
+{{< image src="2-2.png" alt="S3 bucket" width="70%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}}  
+
 Here are some best practices to get the most of CloudTrail:
 * **Set Cloudtrail up as an organizational trail** (**LINK**). It will take around 15 minutes, and you will have all the trails in one account to carry out comprehensive audits quickly.
 * **Prohibit subsidiary accounts from deactivating CloudTrail.** This is the first thing any cybercriminal tries to do.
 * **Set up notifications.** By default, CloudTrail can send you email alerts. To improve productivity and get only meaningful notifications, activate the CloudTrail-to-Slack
 * **Terraform module from FivexL.** It will show you who keeps trying to get access to sensitive resources, what misconfigurations may increase your Amazon bills, and more.  
 You can use default rules or customize them to get the important alerts only. Find more about the CloudTrail-to-Slack module here (link).
+{{< image src="3.png" alt="Cloud Trail" width="70%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}}  
 * **Deploy Amazon Athena.** It empowers detailed security research, allowing you to create an SKL order to dive deeper into CloudTrail’s records. While it’s not mandatory at the beginning of your security journey, you will find it useful later to investigate any account-related anomalies or unauthorized access incidents.
 One more useful monitoring tool is GuardDuty – an ML-based watchdog that barks if it notices anything abnormal—for instance, if someone grants themselves more privileges than allowed. On the one side, it analyses everything, including VPC Flow logs, DNS logs, and CloudTrail logs, and delivers too many findings. On the other side, you can react quickly and prevent serious security incidents.  
 
