@@ -15,6 +15,10 @@
     margin-bottom: 4rem;
     max-height: 31rem;
   }
+  @media (min-width: 2500px) {
+    grid-template-rows: 3rem 25vw 3rem;
+    max-height: initial;
+  }
 
   &-PanelContent_Right,
   &-PanelImage_Right {
