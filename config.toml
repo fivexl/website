@@ -23,7 +23,7 @@ theme = "example"
   name = 'Blog'
   weight = 30
 [[menu.main]]
-  url = '/contact'
+  url = '/#contact'
   name = 'Contact'
   weight = 40
   [menu.main.params]
