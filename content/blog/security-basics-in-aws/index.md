@@ -4,7 +4,7 @@ author_id: 'Maria Zubchenko'
 summary: 'How To Get Rid of Hardcoded Credential and Reduce Data Leakage Ri sks with aws-vaul'
 date: 2022-05-24
 author: Maria Zubchenko
-panel_image: Masha_article.png
+panel_image: Masha_article_5.png
 ---
 Security Manual for Startups: How To Secure Your AWS Account in Several Steps
 =============================================================================
