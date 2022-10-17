@@ -1,0 +1,50 @@
+.ftr {
+  background: $bgSecondary;
+  padding: 4rem;
+  
+  &-Logo {
+    width: 100%;
+    height: auto;
+    max-height: 4rem;
+    object-fit: contain;
+    object-position: left top;
+    display: block;
+    margin-bottom: 2rem;
+  }
+}
+
+.ftr-NavMenu {
+  margin-bottom: 2rem;
+  &_List {
+    padding-left: 0;
+    li { list-style: none; padding-left: 0;}
+    a, a:visited, a:active {
+      color: white;
+      text-decoration: none;
+      font-weight: 400;
+      line-height: 1.5;
+      font-size: 20px;
+    }
+  }
+  &_ListHeading {
+    font-weight: 700 !important;
+    display: block;
+    padding-bottom: 0.5rem !important;
+  }
+}
+
+.ftr-ExternalLinks {
+  h2 { margin-bottom: 0; }
+  .ftr-ExternalLinks_Heading { font-weight: 700; }
+  ul { padding-left: 0; margin-top: 0.25rem; }
+  li { list-style: none; padding-left: 0;}
+  a, a:visited, a:active {
+    color: white;
+    text-decoration: none;
+    font-weight: 400;
+    line-height: 1.75;
+    font-size: 20px;
+  }
+}
+
+.ftr-Copyright { color: white; }

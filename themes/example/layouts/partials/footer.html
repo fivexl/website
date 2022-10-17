@@ -1,0 +1,37 @@
+<footer id="footer" class="ftr" itemscope="itemscope" itemtype="https://schema.org/WPFooter" role="contentinfo">
+
+{{ $logo := resources.Get "/img/full-logo_white_transparent.png" }}
+<img width="1920" height="901" src="{{ $logo.Permalink }}" class="ftr-Logo" alt="FivexL logo" loading="lazy">	</a>
+
+<nav class="ftr-NavMenu">
+    <ul class="ftr-NavMenu_List">
+        {{ range $i, $v := .Site.Menus.footer_nav }}
+            <li>
+                <a
+                    {{ if eq $i 0}}class='ftr-NavMenu_ListHeading'{{ end }}
+                    href="{{ .ConfiguredURL }}">{{ .Name }}</a>
+            </li>
+        {{ end }}
+    </ul>
+</nav>
+
+<nav class="ftr-ExternalLinks">
+    <h2><a href="/about" class="ftr-ExternalLinks_Heading">Follow Us</a></h2>
+    <ul>
+        <li class="elementor-icon-list-item">
+            <a href="https://www.linkedin.com/company/5xl/" target="_blank">
+                <span class="elementor-icon-list-icon"><i aria-hidden="true" class="fab fa-linkedin-in"></i></span>
+                <span class="elementor-icon-list-text">Linkedin</span>
+            </a>
+        </li>
+        <li class="elementor-icon-list-item">
+            <a href="https://github.com/fivexl" target="_blank">
+                <span class="elementor-icon-list-icon"><i aria-hidden="true" class="fab fa-github-alt"></i></span>
+                <span class="elementor-icon-list-text">GitHub</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+<span id="copyright" class="ftr-Copyright" role="contentinfo">Copyright &copy;{{ now.Format "2006" }} FivexL</span>
+
+</footer>

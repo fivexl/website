@@ -28,6 +28,19 @@ theme = "example"
   weight = 40
   [menu.main.params]
     class = "hdr-NavigationItem_Contact"
+# Footer nav menu
+[[menu.footer_nav]]
+  url = '/about'
+  name = 'FivexL'
+  weight = 10
+[[menu.footer_nav]]
+  url = '/about'
+  name = 'About'
+  weight = 20
+[[menu.footer_nav]]
+  url = '/#contact'
+  name = 'Contact'
+  weight = 30
 
 disableKinds = ['category'] # Categories disabled initially
 
