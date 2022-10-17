@@ -18,7 +18,7 @@ panel_image: 'Masha_article.png'
 author_headshot: 'Masha_head.png'
 author_id: Maria Zubchenko
 ---
-AWS Solutions Engineer with the focus on  building secure, immutable, scale-ready, and cost-effective infrastructure for startup
+AWS Solutions Engineer with the focus on  building secure, immutable, scale-ready, and cost-effective infrastructure for startups.
 ### Specialization
 Security · DevOps  · Terraform
 ### Recent success story
@@ -37,8 +37,13 @@ Security · DevOps  · Terraform
 Contribution to Open Source Terraform modules and other tools developed by FivexL
 ### Education
 Master of Information Security in Telecommunications, Povolzhskiy State University of Telecommunications and Informatics
-### Before FivexL/ The story of how she came to FivexL
-After graduating the university Maria joined online summer bootcamp, that FivexL organized in 2020.  Maria was a young mother with baby, she tried to find a job  in the specialty. But it was difficult because she lived in small town in Kazakhstan.  Maria combined taking care of the son with studying all the necessary technologies for the successful  internship compliting. She joined the team as a full-time member in  the fall of 2020. 
+### Before FivexL
+After graduating from the university, Maria joined the online summer Bootcamp that FivexL organized in 2020. Maria was a young mother with a baby, she tried to find a job in the specialty. But it was difficult because she lived in a small town in Kazakhstan. Maria combined caring for her son with studying all the necessary technologies for a successful internship completing. She joined the team as a full-time member in the fall of 2020. 
 ### Personality
-Maria likes reading, playing the guitar and running. She participates Uralsk Runners UR7. Her an outstanding trait is diligence, perseverance  and optimism. It took a lot of work and courage for a young mother to enter the labor market. 
+Maria likes reading, playing rock songs on the guitar, hiking, and running. She participates in Runners club UR7. She ran her first 20 km trail with the FivexL team on Lycian Way, Turkey. 
+Her outstanding trait is diligence, perseverance, and optimism. It took a lot of work and courage for a young mother to enter the labor market.  
+</br>
+</br>  
+{{< image src="Masha_with_medal.png" alt="Masha_with_medal" width="40%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}}  
+
 ### References from colleagues
