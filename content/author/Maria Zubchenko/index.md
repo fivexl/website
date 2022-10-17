@@ -44,6 +44,6 @@ Maria likes reading, playing rock songs on the guitar, hiking, and running. She 
 Her outstanding trait is diligence, perseverance, and optimism. It took a lot of work and courage for a young mother to enter the labor market.  
 </br>
 </br>  
-{{< image src="Masha_with_medal.png" alt="Masha_with_medal" width="40%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}}  
+{{< image src="Masha_with_medal.png" alt="Masha_with_medal" width="40%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}}   {{< image src="FivexL_sport_team.png" alt="Masha_with_medal" width="40%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}}    
 
 ### References from colleagues
