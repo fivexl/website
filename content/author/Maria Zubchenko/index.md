@@ -33,7 +33,7 @@ Security · DevOps  · Terraform
 * AWS Partner: Cloud Economics Accreditation
 
 ### Public activity
-[Security for Startups on Devops Pro Conference](https://www.youtube.com/watch?v=knBumfenPM4&list=PLW754DqmnnYWGrtX5nGTEYTecQyYwLdYN&index=5)
+[Security for Startups on Devops Pro Conference](https://www.youtube.com/watch?v=knBumfenPM4&list=PLW754DqmnnYWGrtX5nGTEYTecQyYwLdYN&index=5)  
 Contribution to Open Source Terraform modules and other tools developed by FivexL
 ### Education
 Master of Information Security in Telecommunications, Povolzhskiy State University of Telecommunications and Informatics
@@ -44,6 +44,21 @@ Maria likes reading, playing rock songs on the guitar, hiking, and running. She 
 Her outstanding trait is diligence, perseverance, and optimism. It took a lot of work and courage for a young mother to enter the labor market.  
 </br>
 </br>  
-{{< image src="Masha_with_medal.png" alt="Masha_with_medal" width="40%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}}   {{< image src="FivexL_sport_team.png" alt="Masha_with_medal" width="40%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}}    
+{{< image src="Masha_with_medal.png" alt="Masha_with_medal" width="40%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}} {{< image src="FivexL_sport_team.png" alt="Masha_with_medal" width="40%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}}    
 
 ### References from colleagues
+"Maria is an extremely organized professional. In addition to working as a consultant, she manages to raise a child and constantly develops."  
+Consultant [Ivan Razzhivin](https://www.linkedin.com/in/ivan-razzhivin-97ab61240/)  
+"Maria's superpower is perseverance. She figured out the necessary tools and practices from scratch, and even if something did not work out, she never gave up. I think this is a critical quality in our profession."  
+Senior Consultant, Co-Founder[Artem Zhelezov](https://www.linkedin.com/in/artem-zhelezov-70228093/)  
+Motivation
+Attitude
+Resolute
+Intelligence
+Ambition  
+Senior Consultant, Co-Founder [Andrey Devyatkin](https://www.linkedin.com/in/andreydevyatkin/)
+"Maria's professional area of interest is security. Her knowledge helps to build secure systems from the very first steps. Other engineers ask Maria when they need security advice. Masha is a very responsive person, ready to help. It is a great pleasure to work with her."  
+Marketing Director [Vera Zhukova](https://www.linkedin.com/in/zhukovavera/)  
+
+
+
