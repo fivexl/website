@@ -48,17 +48,23 @@ Her outstanding trait is diligence, perseverance, and optimism. It took a lot of
 
 ### References from colleagues
 "Maria is an extremely organized professional. In addition to working as a consultant, she manages to raise a child and constantly develops."  
-Consultant [Ivan Razzhivin](https://www.linkedin.com/in/ivan-razzhivin-97ab61240/)  
+*Consultant [Ivan Razzhivin](https://www.linkedin.com/in/ivan-razzhivin-97ab61240/)*  
+</br>  
+</br>
 "Maria's superpower is perseverance. She figured out the necessary tools and practices from scratch, and even if something did not work out, she never gave up. I think this is a critical quality in our profession."  
-Senior Consultant, Co-Founder[Artem Zhelezov](https://www.linkedin.com/in/artem-zhelezov-70228093/)  
-Motivation
-Attitude
-Resolute
-Intelligence
+*Senior Consultant, Co-Founder [Artem Zhelezov](https://www.linkedin.com/in/artem-zhelezov-70228093/)*  
+</br>  
+</br>
+Motivation  
+Attitude  
+Resolute  
+Intelligence  
 Ambition  
-Senior Consultant, Co-Founder [Andrey Devyatkin](https://www.linkedin.com/in/andreydevyatkin/)
+*Senior Consultant, Co-Founder [Andrey Devyatkin](https://www.linkedin.com/in/andreydevyatkin/)*  
+</br>  
+</br>
 "Maria's professional area of interest is security. Her knowledge helps to build secure systems from the very first steps. Other engineers ask Maria when they need security advice. Masha is a very responsive person, ready to help. It is a great pleasure to work with her."  
-Marketing Director [Vera Zhukova](https://www.linkedin.com/in/zhukovavera/)  
+*Marketing Director [Vera Zhukova](https://www.linkedin.com/in/zhukovavera/)*  
 
 
 
