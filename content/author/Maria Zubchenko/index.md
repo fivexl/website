@@ -46,7 +46,7 @@ Her outstanding trait is diligence, perseverance, and optimism. It took a lot of
 </br>  
 {{< image src="Masha_with_medal.png" alt="Masha_with_medal" width="40%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}} {{< image src="FivexL_sport_team.png" alt="Masha_with_medal" width="40%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}}    
 
-### References from colleagues
+### Recommendations
 "Maria is an extremely organized professional. In addition to working as a consultant, she manages to raise a child and constantly develops."  
 *Consultant [Ivan Razzhivin](https://www.linkedin.com/in/ivan-razzhivin-97ab61240/)*  
 </br>  
@@ -65,6 +65,3 @@ Ambition
 </br>
 "Maria's professional area of interest is security. Her knowledge helps to build secure systems from the very first steps. Other engineers ask Maria when they need security advice. Masha is a very responsive person, ready to help. It is a great pleasure to work with her."  
 *Marketing Director [Vera Zhukova](https://www.linkedin.com/in/zhukovavera/)*  
-
-
-
