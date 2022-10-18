@@ -63,5 +63,5 @@ Ambition
 *Senior Consultant, Co-Founder [Andrey Devyatkin](https://www.linkedin.com/in/andreydevyatkin/)*  
 </br>  
 </br>
-"Maria's professional area of interest is security. Her knowledge helps to build secure systems from the very first steps. Other engineers ask Maria when they need security advice. Masha is a very responsive person, ready to help. It is a great pleasure to work with her."  
+"Maria's professional area of interest is security. Her knowledge helps to build secure systems from the very first steps. In the team, she serves as the chief security expert. Masha is a very responsive person, ready to help. It is a great pleasure to work with her."  
 *Marketing Director [Vera Zhukova](https://www.linkedin.com/in/zhukovavera/)*  
