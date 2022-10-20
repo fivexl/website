@@ -1,17 +1,16 @@
 ---
 name: Andrey Devyatkin
 roles:
-  - Senior Cloud Engineering Consultant
-  - AWS Community Builder
+  - co-founder of FivexL
+  - Principal Cloud Engineering Consultant
 information:
-  - Author information 1
-  - AUTHOR INFO
-  - AUTHOR Information
+  - 15+ years in development, automation and leadership roles
+  - AWS Community Builder
+  - Public speaker
+  - Podcast co-host
 links:
   - { icon: twitter, url: 'https://twitter.com/Andrey9kin' }
-  - { icon: spotify, url: 'https://open.spotify.com/show/4tGYslKaJU9d8Fg3Qf9gaO' }
   - { icon: linkedin, url: 'https://www.linkedin.com/in/andreydevyatkin/' }
-  - { icon: telegram, url: 'https://t.me/andrey9kin/' }
   - { icon: website, url: 'https://andreydevyatkin.com/' }
 certifications:
   - 'Security.png'
@@ -24,26 +23,39 @@ certifications:
 
 author_video: 'public-asset.mp4'
 author_headshot: 'image-33.png'
-author_id: Andrey Devyatkin
+author_id: Andrey_Devyatkin
 ---
+AWS Solutions Engineer with a focus on building secure, immutable, scale-ready, and cost-effective infrastructure for startups.
 
-**About Author About Author About Author About Author About Author About Author About Author About Author**
+### Specialization
 
-# About author
+AWS · Infrastructure as code · CI/CD
 
-About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author 
+### Recent success story
+TBD
 
-## About author
-About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author
+### Certifications
+* AWS Certified Solutions Architect Associate
+* AWS Certified Developer Associate
+* AWS Certified SysOps Associate
+* AWS Certified Security Speciality
+* HashiCorp Certified Terraform Associate
 
-* Item
-* Next Item
-* Hello Item
+### Public activity
+- Configuration synchronisation vs Immutable infrastructure (DevOpsDays Kraków 2021)
+- Why I do not recommend people learning Ansible? (DevOoops Piter 2020)
+- Vault Configuration as Code via Terraform: Stories from Trenches (DevOpsPro Moscow 2019, HashiTalks 2020, DevOpsDays Madrid 2020, DevOpsPro EU 2020, HashiConf Digital EU 2020)
+- Integrating HashiCorp Vault and Kubernetes apps (HashiTalks 2019)
+- Getting Git Right (GitMerge 2018)
+- Introduction to Continuous Delivery (RemoteForeverSummit 2017)
+- Patterns of Continuous Delivery (Continuous Delivery Conference Stockholm 2017)
 
-1. hello
-2. World
-3. TEAM
+### Education
+Master of Computer Science, Lobachevsky State University of Nizhny Novgorod
+### Before FivexL
+Before FivexL, Andrey worked as an independent consultant and, before that, was CEO of a regional branch of a Danish consulting company.
+### Personality
+Andrey likes reading, traveling, and running. He is a full Ironman and sub-2:45 marathoner.
 
-### About author
-About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author About Author 
-
+### Recommendations
+TBD
