@@ -25,7 +25,7 @@ Security · DevOps  · Terraform
 
 - Implement client needs as scalable solutions described as infrastructure as code
 - Cloud cost optimization and consulting clients on cost-effective solutions
- - Improve infrastructure and operations security
+- Improve infrastructure and operations security
 - Implement CI/CD pipelines to speed development and release of new features and reduce risks of issues in production
 ### Certifications
 * AWS Certified Cloud Practitioner
