@@ -132,6 +132,7 @@
   border-radius: 8px;
   min-width: 10rem;
   text-align: center;
+  line-height: 1.15;
   @media (min-width: 768px) {
     min-width: initial;
   padding: 0.4rem 1rem;
@@ -144,7 +145,7 @@
   color: $textPrimary;
 }
 
-a.hdr-NavigationItem_Contact {
+.hdr-NavigationItem a.hdr-NavigationItem_Contact {
   color: white;
   background: $accentColor;
 }

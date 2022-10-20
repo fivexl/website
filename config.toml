@@ -1,4 +1,4 @@
-baseURL = 'https://fivexl.netlify.app/'
+baseURL = '/'
 languageCode = 'en-us'
 title = 'FivexL New Site'
 
@@ -23,11 +23,36 @@ theme = "example"
   name = 'Blog'
   weight = 30
 [[menu.main]]
-  url = '/contact'
+  url = '/#contact'
   name = 'Contact'
   weight = 40
   [menu.main.params]
     class = "hdr-NavigationItem_Contact"
+# Footer nav menu
+[[menu.footer_nav]]
+  url = '/about'
+  name = 'FivexL'
+  weight = 10
+[[menu.footer_nav]]
+  url = '/about'
+  name = 'About'
+  weight = 20
+[[menu.footer_nav]]
+  url = '/#contact'
+  name = 'Contact'
+  weight = 30
+[[menu.footer_external]]
+  url = 'https://www.linkedin.com/company/5xl/'
+  name = 'Linkedin'
+  weight = 10
+  [menu.footer_external.params]
+    icon = 'linkedin'
+[[menu.footer_external]]
+  url = 'https://github.com/fivexl'
+  name = 'Github'
+  weight = 20
+  [menu.footer_external.params]
+    icon = 'github'
 
 disableKinds = ['category'] # Categories disabled initially
 

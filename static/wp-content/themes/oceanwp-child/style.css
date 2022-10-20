@@ -1,0 +1,43 @@
+/*
+Theme Name: OceanWP Child
+Theme URI: https://oceanwp.org/
+Description: OceanWP WordPress theme example child theme.
+Author: Nick
+Author URI: https://oceanwp.org/
+Template: oceanwp
+Version: 1.0
+*/
+
+/* Parent stylesheet should be loaded from functions.php not using @import */
+
+/*
+ Custom contact form
+*/
+.wpcf7 input[type="text"],
+.wpcf7 input[type="email"],
+.wpcf7 textarea
+{
+  border-radius: 2px;
+  border: solid 1px #282524;
+	font-family: Montserrat;
+	font-size: 18px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.22;
+  letter-spacing: normal;
+  color: #989797;
+}
+
+.wpcf7 input[type="submit"] {
+	width: 100%;
+  height: 60px;
+  opacity: 0.24;
+  background-color: #282524;
+	font-family: Montserrat;
+  font-size: 20px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+}

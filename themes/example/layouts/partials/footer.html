@@ -1,0 +1,40 @@
+<footer class="ftr" itemscope="itemscope" itemtype="https://schema.org/WPFooter" role="contentinfo">
+
+    <div class="ftr-ContentWrapper">
+
+        {{ $logo := resources.Get "/img/full-logo_white_transparent.png" }}
+        <img width="1920" height="901" src="{{ $logo.Permalink }}" class="ftr-Logo" alt="FivexL logo" loading="lazy">	</a>
+
+        <nav class="ftr-NavMenu">
+            <ul class="ftr-NavMenu_List">
+                {{ range $i, $v := .Site.Menus.footer_nav }}
+                    <li>
+                        <a
+                            {{ if eq $i 0}}class='ftr-NavMenu_ListHeading'{{ end }}
+                            href="{{ .ConfiguredURL }}">{{ .Name }}</a>
+                    </li>
+                {{ end }}
+            </ul>
+        </nav>
+
+        <nav class="ftr-ExternalLinks">
+            <h2 class="ftr-ExternalLinks_Heading"><a href="/about">Follow Us</a></h2>
+            <ul>
+                {{ range .Site.Menus.footer_external }}
+                    {{ $icon := resources.Get (printf "/icons/%s.svg" .Params.icon) }}
+                    <li>
+                        <a href="{{ .ConfiguredURL }}" class="ftr-ExternalLinks_Link" target="_blank">
+                            <span class="ftr-ExternalLinks_Icon">
+                                {{ $icon.Content | safeHTML }}
+                            </span>
+                            {{ .Name }}
+                        </a>
+                    </li>
+                {{ end }}
+            </ul>
+        </nav>
+    </div>
+
+<span class="ftr-Copyright" role="contentinfo">Copyright &copy;{{ now.Format "2006" }} FivexL</span>
+
+</footer>
