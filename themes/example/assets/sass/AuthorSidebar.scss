@@ -15,12 +15,9 @@
     background: url('/xl-nobg.png');
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: left;
     object-fit: scale-down;
-    margin-inline: auto;
-    @media (min-width: 1024px) {
-      margin-inline: 1rem;
-    }
+    margin-left: 1rem;
   }
 
   &-Author_Role {
