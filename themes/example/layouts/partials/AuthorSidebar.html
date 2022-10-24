@@ -21,15 +21,17 @@
     <h2 class="asb-Tags">Tags</h2>
     <div class="asb-Taglist">
         {{ range . }}
-        <a class="asb-Tag" href="/tags/{{- . -}}">{{ . }}</a>
+        <a class="asb-Tag" href="/tags/{{- . | urlize -}}">{{ . }}</a>
         {{ end }}
     </div>
     {{ end }}
     <h2 class="asb-Share_Heading">Share Blog</h2>
     <div class="asb-ShareList">
-        <a class="asb-ShareButton" href="https://twitter.com/intent/tweet?text={{- .Params.summary }}: @ {{- .Permalink -}}" target="_blank">{{ readFile "/static/twitter.svg" | safeHTML }}</a>
+        <a class="asb-ShareButton" href="https://twitter.com/intent/tweet?text={{- .Params.summary }}: @ {{- urlquery .Permalink -}}" target="_blank">{{ readFile "/static/twitter.svg" | safeHTML }}</a>
         <a class="asb-ShareButton" href="https://www.linkedin.com/sharing/share-offsite/?url={{- .Permalink -}}" target="_blank">{{ readFile "/static/linkedin.svg" | safeHTML }}</a>
-        <a class="asb-ShareButton" href="mailto:?subject=Article: {{- .Params.title -}}&body=Check this article from fiveXl: {{- .Permalink -}}: {{- .Params.summary -}}" target="_blank">{{ readFile "/static/email.svg" | safeHTML }}</a>
+        {{ $email_body := printf "Check this article from FivexL, %s:\n\n%s\n\n%s" .Title .Permalink .Summary }}
+        {{ $email_subject := printf "Article: %s" .Title }}
+        <a class="asb-ShareButton" href="mailto:?subject={{ $email_subject }}&body={{ $email_body }}" target="_blank">{{ readFile "/static/email.svg" | safeHTML }}</a>
         <a class="asb-ShareButton" href="https://www.reddit.com/submit?url={{- .Permalink -}}" target="_blank">{{ readFile "/static/reddit.svg" | safeHTML }}</a>
     </div>
 </section>
