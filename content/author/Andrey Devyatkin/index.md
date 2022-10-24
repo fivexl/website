@@ -21,7 +21,8 @@ certifications:
   - 'AWS_community.png'
   - 'fivexl.png'
 
-author_video: 'public-asset.mp4'
+[//]: # (author_video: 'public-asset.mp4')
+panel_image: 'Andrey_author_page.png'
 author_headshot: 'image-33.png'
 author_id: Andrey_Devyatkin
 ---
