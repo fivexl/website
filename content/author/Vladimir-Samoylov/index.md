@@ -41,8 +41,8 @@ infrastructure on the AWS cloud in the [US healthcare and educational sector](ht
 ### Public activity
 [HashiConf 2021 Global](https://youtu.be/hDkAfjCCXRc)  
 [HashiConf EU 2021](https://youtu.be/MHlp-sxQONw)  
-AWS meetup [AWS Sport pricing and best price selection automation via Terraform](https://youtu.be/7ak4uLIfMh0?t=3356)  
-HashiCorp User Group [Hashicorp, Consul and Terraform Certification](https://youtu.be/3WQMSQBUBuQ)  
+[AWS meetup](https://youtu.be/7ak4uLIfMh0?t=3356) "AWS Sport pricing and best price selection automation via Terraform"  
+[HashiCorp User Group](https://youtu.be/3WQMSQBUBuQ): "Hashicorp, Consul and Terraform Certification"  
 Vladimir created Open Source Terraform modules.
 
 Vladimir works almost 3 years for FivexL. He is the team's soul, full of energy and ideas, with a constant smile on his face.  
