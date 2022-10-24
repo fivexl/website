@@ -31,8 +31,8 @@ Maria built an infrastructure for a software development company Limavi AB that 
 * AWS Partner: Cloud Economics Accreditation
 
 ### Public activity
-[Security for Startups on Devops Pro Conference](https://www.youtube.com/watch?v=knBumfenPM4&list=PLW754DqmnnYWGrtX5nGTEYTecQyYwLdYN&index=5)  
-Contribution to Open Source Terraform modules and other tools developed by FivexL
+[Security for Startups on Devops Pro Conference](https://www.youtube.com/watch?v=knBumfenPM4&list=PLW754DqmnnYWGrtX5nGTEYTecQyYwLdYN&index=5).  
+Contribution to Open Source Terraform modules and other tools developed by FivexL.
 ### Education
 Master of Information Security in Telecommunications, Povolzhskiy State University of Telecommunications and Informatics
 ### Before FivexL

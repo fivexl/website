@@ -26,7 +26,7 @@ author_id: Vladimir Samoylov
 ---
 Highly professional AWS community builder, certified AWS Solutions Architect, certified ScrumMaster, and certified Terraform associate.
 ### Specialization
-AWS · DevOps  · Terraform
+AWS · DevOps · Terraform
 ### Recent success story
 * a project on building modernized digital
 infrastructure on the AWS cloud in the [US healthcare and educational sector](https://fivexl.netlify.app/blog/overture-case-study/). 
@@ -39,10 +39,10 @@ infrastructure on the AWS cloud in the [US healthcare and educational sector](ht
 * Certified ScrumMaster
 * certified Terraform associate 
 ### Public activity
-[HashiConf 2021 Global](https://youtu.be/hDkAfjCCXRc)  
-[HashiConf EU 2021](https://youtu.be/MHlp-sxQONw)  
-[AWS meetup](https://youtu.be/7ak4uLIfMh0?t=3356) "AWS Sport pricing and best price selection automation via Terraform"  
-[HashiCorp User Group](https://youtu.be/3WQMSQBUBuQ): "Hashicorp, Consul and Terraform Certification"  
+[HashiConf 2021 Global](https://youtu.be/hDkAfjCCXRc).  
+[HashiConf EU 2021](https://youtu.be/MHlp-sxQONw).  
+[AWS meetup](https://youtu.be/7ak4uLIfMh0?t=3356): "AWS Sport pricing and best price selection automation via Terraform."  
+[HashiCorp User Group](https://youtu.be/3WQMSQBUBuQ): "Hashicorp, Consul and Terraform Certification."  
 Vladimir created Open Source Terraform modules.
 
 Vladimir works almost 3 years for FivexL. He is the team's soul, full of energy and ideas, with a constant smile on his face.  
