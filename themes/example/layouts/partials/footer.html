@@ -3,7 +3,9 @@
     <div class="ftr-ContentWrapper">
 
         {{ $logo := resources.Get "/img/full-logo_white_transparent.png" }}
-        <img width="1920" height="901" src="{{ $logo.Permalink }}" class="ftr-Logo" alt="FivexL logo" loading="lazy">	</a>
+        <a href="{{ .Site.BaseURL }}" alt="Link to homepage">
+            <img width="500" height="500" src="{{ $logo.Permalink }}" class="ftr-Logo" alt="FivexL logo" loading="lazy">
+        </a>
 
         <nav class="ftr-NavMenu">
             <ul class="ftr-NavMenu_List">
