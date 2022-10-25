@@ -2,6 +2,7 @@
 name: Artem Zhelezov
 roles:
   - Role1
+  - Molodec
 information:
   - Info1
   
