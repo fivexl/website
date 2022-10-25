@@ -5,7 +5,7 @@ roles:
 information:
   - Info1
   
-panel_image: 'artem_zhelezov.png'
+panel_image: 'Artem_author_page.png'
 author_headshot: 'artem.png'
 author_id: Artem Zhelezov
 ---

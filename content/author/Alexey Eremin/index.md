@@ -5,7 +5,7 @@ roles:
 information:
   - Info1
   
-panel_image: 'alexey_eremin.png'
+panel_image: 'Aleksey_author_page.png'
 author_headshot: 'alexey.png'
 author_id: Alexey Eremin
 ---
