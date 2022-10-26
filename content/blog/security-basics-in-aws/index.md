@@ -5,6 +5,7 @@ summary: 'How To Get Rid of Hardcoded Credential and Reduce Data Leakage Ri sks 
 date: 2022-05-24
 author: Maria Zubchenko
 panel_image: Masha_article_5.png
+tags: ['security', 'aws cloud']
 ---
 Security Manual for Startups: How To Secure Your AWS Account in Several Steps
 =============================================================================
