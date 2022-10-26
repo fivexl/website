@@ -1,7 +1,7 @@
 ---
 title: 'How To Save Resources with the Terraform Module for AWS Spot Instances'
 author_id: 'Vladimir Samoylov'
-summary: 'Find out how the CloudTrail-to-Slack Terraform module by FivexL solves this problem for startups and small teams.'
+summary: 'Saving money on Amazon Web Services (AWS) Spot Instances can be a challenging task.'
 date: 2022-09-13
 author: Vladimir Samoylov
 panel_image: Piggy_bank.png

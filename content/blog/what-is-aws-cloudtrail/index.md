@@ -1,10 +1,11 @@
 ---
 title: 'What Is AWS CloudTrail, and Why Do You Need It'
 author_id: 'Andrey_Devyatkin'
-summary: 'Find out how the CloudTrail-to-Slack Terraform module by FivexL solves this problem for startups and small teams.'
+summary: 'Find out how the CloudTrail-to-Slack Terraform module by FivexL solves problems for startups and small teams.'
 date: 2022-05-23
 author: Andrey Devyatkin
 panel_image: Cloud_trail_article.png
+tags: ['CloudTrail', 'aws cloud''Terraform']
 ---
 Don’t have enough resources to set up a security department but want to stay on top of your AWS CloudTrail events? Find out how the CloudTrail-to-Slack Terraform module by FivexL solves this problem for startups and small teams. 
 ## Terraform Module for AWS CloudTrail — An Effective Security Tool 

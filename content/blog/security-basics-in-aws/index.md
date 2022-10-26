@@ -1,7 +1,7 @@
 ---
 title: 'Security Basics in AWS '
 author_id: 'Maria Zubchenko'
-summary: 'How To Get Rid of Hardcoded Credential and Reduce Data Leakage Ri sks with aws-vaul'
+summary: 'How To Get Rid of Hardcoded Credential and Reduce Data Leakage Risks with aws-vault'
 date: 2022-05-24
 author: Maria Zubchenko
 panel_image: Masha_article_5.png
