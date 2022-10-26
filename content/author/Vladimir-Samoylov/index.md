@@ -21,7 +21,7 @@ certifications:
   - 'AWS_community.png'
   
 panel_image: 'Vova_page.png'
-author_headshot: 'vladimir.png'
+author_headshot: 'Vova_bnw2.png'
 author_id: Vladimir Samoylov
 ---
 Highly professional AWS community builder, certified AWS Solutions Architect, certified ScrumMaster, and certified Terraform associate.
