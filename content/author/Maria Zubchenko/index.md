@@ -22,9 +22,8 @@ AWS Solutions Engineer with the focus on  building secure, immutable, scale-read
 ### Specialization
 Security · DevOps  · Terraform
 ### Recent success story
-Maria built an infrastructure for a software development company Limavi AB that focused on Computer Vision and Artificial Intelligence.
-- prepared infrastructure in AWS with Terraform for working with Newstream SDK, one-of-a-kind computer vision technology that provides accurate skeleton measurements in real-time. The system measures all body motions and presents the result of any movement in inches, angles, and seconds.
-- built security and immutable infrastructure for several Limavi AB clients' projects. This software development and IT consulting firm offers services to public, commercial, and not-for-profit organizations.
+Maria built an infrastructure for a software development company Newstream that focused on Computer Vision and Artificial Intelligence.
+She prepared infrastructure in AWS with Terraform for working with Newstream SDK, one-of-a-kind computer vision technology that provides accurate skeleton measurements in real-time. The system measures all body motions and presents the result of any movement in inches, angles, and seconds.
 ### Certifications
 * AWS Certified Cloud Practitioner
 * AWS Partner: Accreditation (Technical)
