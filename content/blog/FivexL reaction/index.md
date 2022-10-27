@@ -4,7 +4,7 @@ author_id: 'Andrey_Devyatkin'
 summary: 'FivexL shares its outlook on AWS Security Guidelines for startups. Find out how to improve your AWS security efficiently.'
 date: 2022-05-22
 author: Andrey_Devyatkin
-panel_image: blog-1-image.png
+panel_image: Reaction3.png
 tags: ['AWS', 'security']
 ---
 BIn Spring 2022, AWS released [AWS Startup Security Baseline](https://docs.aws.amazon.com/pdfs/prescriptive-guidance/latest/aws-startup-security-baseline/aws-startup-security-baseline.pdf) – security guidelines for startups on how to use AWS capabilities without compromising corporate security. FivexL, which specializes in delivering well-architected AWS infra solutions for startups, has wide, hands-on experience in setting up secure AWS cloud infrastructure in regulated industries like healthcare or finance. We have decided to analyze the provided guidelines and compare them with our recommendations.
