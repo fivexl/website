@@ -6,7 +6,7 @@ date: 2022-05-24
 author: Vladimir Samoylov
 panel_image: Ovrture_page.png
 case_study: true
-tags: ['case study', 'aws cloud']
+tags: ['case study', 'AWS']
 ---
 
 ## “FivexL deployed a completely immutable infrastructure thus reducing operating costs, enhancing resilience and providing the ability to scale. Ultimately, we achieved our most important goal: delivering the latest changes as quickly as possible. Our infrastructure is light years ahead of where most small businesses would expect to be." 

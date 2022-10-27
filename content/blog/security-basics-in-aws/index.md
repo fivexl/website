@@ -5,7 +5,7 @@ summary: 'Security Manual for Startups: How To Secure Your AWS Account in Severa
 date: 2022-05-24
 author: Maria Zubchenko
 panel_image: Masha_article_5.png
-tags: ['security', 'aws cloud']
+tags: ['security', 'AWS']
 ---
 Security Manual for Startups: How To Secure Your AWS Account in Several Steps
 =============================================================================
