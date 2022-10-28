@@ -1,12 +1,15 @@
 ---
 name: Vera Zhukova
 roles:
-  - Role1
+  - Marketing Director
 information:
   - Info1
-  
-panel_image: 'vera_zhukova.png'
+links:
+  - { icon: linkedin, url: 'https://www.linkedin.com/in/zhukovavera/' }
+  - { icon: telegram, url: 'https://t.me/relevanto/' }  
+panel_image: 'Vera_page2.png'
 author_headshot: 'vera.png'
 author_id: Vera Zhukova
+
 ---
 # TBD
