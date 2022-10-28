@@ -5,7 +5,7 @@ summary: 'FivexL shares its outlook on AWS Security Guidelines for startups. Fin
 date: 2022-05-22
 author: Andrey_Devyatkin
 panel_image: Reaction3.png
-tags: ['AWS', 'security']
+tags: ['AWS', 'security','CloudTrail']
 ---
 BIn Spring 2022, AWS released [AWS Startup Security Baseline](https://docs.aws.amazon.com/pdfs/prescriptive-guidance/latest/aws-startup-security-baseline/aws-startup-security-baseline.pdf) – security guidelines for startups on how to use AWS capabilities without compromising corporate security. FivexL, which specializes in delivering well-architected AWS infra solutions for startups, has wide, hands-on experience in setting up secure AWS cloud infrastructure in regulated industries like healthcare or finance. We have decided to analyze the provided guidelines and compare them with our recommendations.
 Overall we find provided guidelines a solid piece of advice though there are certain things that we would do differently:
@@ -21,7 +21,7 @@ Working with temporary credentials might feel confusing at first thus, we recomm
 * ACCT.07. Deliver CloudTrail logs to a protected S3 bucket. We believe this guideline should be expanded with AWS organization usage. Here’s a brief overview of how to facilitate CloudTrail setup and improve its efficiency: 
   1) **Enable CloudTrail on the organization level** - this will enable CloudTrail for every member account. An additional benefit is that member accounts won’t be able to disable CloudTrail on their own. And the only way to stop CloudTrail logging would be to leave the organization. But we do prevent it with SCP mentioned above; 
   2) Since the S3 bucket is also on the organization level, **replicate it to a security account**. This allows your security researchers (or those who are in charge of cybercrime investigations) to access CloudTrail logs without entering the organizational account; And have a copy of all CloudTrail logs in a safe place.
-  3) Deploy the CloudTrail-to-Slack lambda that will parse all the notifications to your Slack. 
+  3) Deploy the [CloudTrail-to-Slack](/blog/what-is-aws-cloudtrail/) lambda that will parse all the notifications to your Slack. 
 It’s advisable to enable an integrity check when setting up CloudTrail to ensure nothing was changed. 
 </br> 
   
@@ -44,7 +44,7 @@ Going forward, FivexL will follow this advice and try removing the default VPC. 
 * WKLD.05. Detect and remediate exposed secrets. The advised CodeGuru may be too expensive. Store your secrets in Secrets Manager or SSM Parameter Store and have your code fetch them dynamically. See the limitations of those services to understand which is more suitable for your use case. 
 </br> 
  
-* WKLD.07. Log data events for S3 buckets with sensitive data. By default, CloudTrail doesn’t log data events. You may enable logging if your S3 bucket contains sensitive data worth guarding. However, those who operate with large data volumes will suffer from huge bills. You might consider using S3 access logs as an alternative is a far more affordable option that will cope with the majority of data (if not all). Find more information here and see what works for you https://docs.aws.amazon.com/AmazonS3/latest/userguide/logging-with-S3.html
+* WKLD.07. Log data events for S3 buckets with sensitive data. By default, CloudTrail doesn’t log data events. You may enable logging if your S3 bucket contains sensitive data worth guarding. However, those who operate with large data volumes will suffer from huge bills. You might consider using S3 access logs as an alternative is a far more affordable option that will cope with the majority of data (if not all). [Find more information here](https://docs.aws.amazon.com/AmazonS3/latest/userguide/logging-with-S3.html) and see what works for you.
 </br> 
  
 * WKLD.12. Use VPC endpoints to access supported services. This is solid advice. Users should definitely use Gateway VPC endpoints for DynamoDB and S3. Those are free and will keep your sensitive data from traversing a public internet and save money on data transfer via NAT. Though for other services, AWS offers interface endpoints and those you need to provision to subnets, they actually cost money. Not a lot, but if you do not send any sensitive data to the service (for example, ECS control plane) and data volume is low, then you will pay more than you save and not gain any security benefits.
