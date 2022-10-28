@@ -2,7 +2,7 @@
 title: 'Firi Case Study'
 author_id: 'Vladimir Samoylov'
 summary: 'Fast infrastructure improvements delivered securely and with pain-free predictability.'
-date: 2022-03-12
+date: 2022-07-12
 author: Vladimir Samoylov
 panel_image: Firi_page.png
 case_study: true
