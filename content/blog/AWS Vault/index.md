@@ -7,7 +7,7 @@ author: Vladimir Samoylov
 panel_image: risk.png 
 tags: ['AWS', 'security', 'aws-vault']
 ---
-Developers often hardcode credentials on a public or private GitHub repository, ramping up data leakage risks. It’s hardly better to store static credentials in the .aws/credentials folder on a server or a local operator machine. As american cryptographer, writer, and computer security specialist, Bruce Schneier, says: . “Only amateurs attackWe machines; professionals target people.” Therefore, you, not your hardware, is at risk.
+Developers often hardcode credentials on a public or private GitHub repository, ramping up data leakage risks. It’s hardly better to store static credentials in the .aws/credentials folder on a server or a local operator machine. As american cryptographer, writer, and computer security specialist, Bruce Schneier, says: “Only amateurs attackWe machines; professionals target people.” Therefore, you, not your hardware, is at risk.
 
 By executing fraudulent software, cybercriminals can easily steal all the data from the folder or a whole directory with your, your friends’, and clients’ credentials. Even the AWS support team is exhausted with constant tickets regarding stolen credentials from public Git repos. Here’s why if you commit keys, expect an email in 3-5 minutes saying that the IAM policy has been applied. It means that you can’t get rid of the policy or destroy exposed credentials.  
 {{< image src="1.png" alt="AWS Access key" width="50%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}}  
