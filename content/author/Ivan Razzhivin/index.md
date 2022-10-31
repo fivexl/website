@@ -15,7 +15,7 @@ certifications:
   - 'gitops.png'
   - 'practitioner.png'  
 panel_image: 'Ivan_author_page.png'
-author_headshot: 'ivan.png'
+author_headshot: 'Ivan.png'
 author_id: Ivan Razzhivin
 ---
 Result-oriented AWS Solutions Architect with the focus on building scale-ready, secure, and cost-efficient infrastructure for startups.
