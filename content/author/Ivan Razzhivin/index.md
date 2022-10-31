@@ -37,3 +37,22 @@ Bachelor of Computer Science - Applied Mathematics and Information Science, HSE 
 ### Personality
 ## TBD
 ### Recommendations
+"Ivan has excellent self-organization. He is a quick learner - after the summer practice, he started working independently on the project, made a bootstrap of the project, and brought it to a steady state."  
+*Senior Consultant, Co-Founder [Artem Zhelezov](https://www.linkedin.com/in/artem-zhelezov-70228093/)*  
+</br>  
+</br>
+"Ivan explains complex things in an accessible way. I admire his systematic approach to working on projects and organizing his workflow. 
+Ivan has a lot of ambitions and aspirations for new knowledge and experience. He is easygoing, always ready for adventure, and loves enduro, cycling, and traveling."  
+*Marketing Director [Vera Zhukova](https://www.linkedin.com/in/zhukovavera/)*
+</br>  
+</br>
+"Ivan is responsible and intelligent; he has independently learned a broad range of technologies. He is ready to share his knowledge and is always available to tell or explain something complicated in simple words. Recently Ivan also began to participate in conferences where he shares his exper."  
+*Consultant, [Maria Zubchenko](https://www.linkedin.com/in/mariazubchenko/)* 
+</br>  
+</br>
+"Excellent self-organization is necessary for successful remote work, and the desire to learn is one of the root values of FivexL. By the end of his studies at the university, Ivan successfully implemented his first project with FivexL."  
+*Senior Consultant, Co-Founder [Andrey Devyatkin](https://www.linkedin.com/in/andreydevyatkin/)*  
+</br>  
+</br>
+"Ivan is a great specialist and mentor. He helped me a lot to dive into the project. He explains complex things in an accessible way and is always ready to help. It is enjoyable to work with Ivan in a team. He likes to ride scooters)"  
+*Consultant [Alexey Eremin](https://www.linkedin.com/in/alexey-eremin/)*  
