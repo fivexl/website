@@ -1,11 +1,11 @@
 ---
 name: Olga Devyatkina
 roles:
-  - Role1
+  - Financial and administrative manager 
 information:
-  - Info1
+  - A multifunctional professional with more than 30 years of experience in the digital world.
   
-panel_image: 'olga_devyatkina.png'
+panel_image: 'Olga.png'
 author_headshot: 'olga.png'
 author_id: Olga Devyatkina
 ---
