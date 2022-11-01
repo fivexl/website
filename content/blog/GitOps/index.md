@@ -30,7 +30,7 @@ The controller can be triggered by a variety of events. If you set up webhooks i
 Before GitOps, the environments were delivered to a cluster through CI/CD, there was no drift control, and all the specifications were stored in Git.  
 ### How Does the ArgoCD Solution Work?  
 Here is the proposed architecture:  
-{{< image src="g4.png" alt="Architecture" width="50%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}}  
+{{< image src="g3.png" alt="Architecture" width="50%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}}  
 * The apps (clients) in Kubernetes communicate with external services like Redis, S3, DB, and others.
 * To deliver new clients to the cluster, we place YAML files into the GitOps repository. The YAML files describe the manifest.
 * A repository’s webhook triggers ArgoCD.
@@ -69,7 +69,7 @@ As a result, we create an app that reads the helm chart. ArgoCD spots the change
 ### GitOps to Manage Apps Automatically
 Configuring each app is time- and energy-consuming. To facilitate the creation of dynamic environments, let’s create an **App of Apps**. It will monitor the specific folder and deploy a new app when a new manifest appears. Here’s a step-by-step guide:
 * **Deploy ArgoCD through a helm** chart. Specify value files for configuration and a path to monitor the repo.  
-{{< image src="g11.png" alt="ArgoCD" width="50%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}}  
+{{< image src="g11.png" alt="ArgoCD" width="66%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}}  
 * Create an ArgoCD app. Set up its name, namespace, project, path, destination, if the directory should be recursively checked, where to deploy manifests from the app, and sync policies.  
 {{< image src="g12.png" alt="Practice" width="50%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}}  
 * Here’s what you will receive once it’s deployed:  
