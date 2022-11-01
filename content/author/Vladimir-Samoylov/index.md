@@ -29,8 +29,8 @@ Highly professional AWS community builder, certified AWS Solutions Architect, ce
 AWS · DevOps · Terraform
 ### Recent success story
 * a project on building modernized digital
-infrastructure on the AWS cloud in the [US healthcare and educational sector](https://fivexl.netlify.app/blog/overture-case-study/). 
-* a project on migrating and developing secure infrastructure ready for the business growth for a [Norwegian cryptocurrency company](https://fivexl.netlify.app/blog/firi-case-study/). 
+infrastructure on the AWS cloud in the [US healthcare and educational sector](https://fivexl.io/blog/overture-case-study/). 
+* a project on migrating and developing secure infrastructure ready for the business growth for a [Norwegian cryptocurrency company](https://fivexl.io/blog/firi-case-study/). 
 ### Certifications
 * AWS Certified Solutions Architect
 * AWS Technical Professional
