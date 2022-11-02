@@ -9,4 +9,4 @@ panel_image: 'Olga.png'
 author_headshot: 'olga.png'
 author_id: Olga Devyatkina
 ---
-# TBD
+Olga is the first person who welcomes a new member of the FivexL team. Her experience in accounting in private business is a fundamental part of her success as a financial controller and project assistant at FivexL.

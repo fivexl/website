@@ -16,7 +16,7 @@ Cross-functional professional with 15 years of experience in marketing and brand
 ### Specialization
 Brand management · Digital marketing  
 ### Education
-Master in Marketing management, Russian New University, Moscow
+Master in Marketing management, Russian New University, Moscow  
 Course of Brand management at London Business School   
 ### Before FivexL
 
