@@ -4,7 +4,7 @@ roles:
   - Senior Cloud Engineering Consultant
   - AWS Community Builder
 information:
-  - 2,8 years in FivexL
+  - Certified AWS Architect
   - 10+ years experience in ops, infra automation, development
   - Python/Machine Learning Enthusiast, Immutable Infrastructure Advocate
 links:
