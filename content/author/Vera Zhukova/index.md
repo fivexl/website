@@ -12,4 +12,12 @@ author_headshot: 'vera.png'
 author_id: Vera Zhukova
 
 ---
-# TBD
+Cross-functional professional with 15 years of experience in marketing and brand management. 
+### Specialization
+Brand management · Digital marketing  
+### Education
+Master in Marketing management, Russian New University, Moscow
+Course of Brand management at London Business School   
+### Before FivexL
+
+### Personality

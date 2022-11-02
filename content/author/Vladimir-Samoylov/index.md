@@ -61,7 +61,7 @@ I also want to note he finds time and helps all the other members of the team. G
 </br>
 "Vladimir is always full of energy and ideas. His extensive experience gives a unique perspective on the task and allows him to find solutions outside the framework.
 Vova's Superpower is openness, striving for new knowledge and challenges. He is in demand as a speaker at professional events, where he shares knowledge and shows how to put it into practice."  
-*Marketing Director [Vera Zhukova](https://www.linkedin.com/in/zhukovavera/)*
+*Marketing Director [Vera Zhukova](https://www.linkedin.com/in/zhukovavera/)*  
 </br>  
 </br>
 "You only know a hardworking person if you have worked with Vladimir, and he has a vast experience behind him. He is a kind colleague and friend. Vladimir will always help with advice and help out in difficult situations. He is always on the trend of new technologies. He plays tennis in virtual reality and flies quadcopters."  
