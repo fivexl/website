@@ -21,3 +21,11 @@ Course of Brand management at London Business School
 ### Before FivexL
 
 ### Personality
+
+### Recommendations
+"Self-driven, professional, and super motivated to do a good job. Vera is not afraid to change subject areas and does it successfully. Her successful work with FivexL and parallel business ventures inspires the whole team. She confidently develops consulting brand FivexL and, at the same time, is looking for new business development directions."  
+*Principal Consultant, Co-Founder [Andrey Devyatkin](https://www.linkedin.com/in/andreydevyatkin/)*  
+</br>  
+</br>  
+"Vera is very kind and knows how to win over anyone. Looks at the problem from different angles, offers new ideas and motivates the team."  
+*Consultant, [Maria Zubchenko](https://www.linkedin.com/in/mariazubchenko/)* 

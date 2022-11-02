@@ -52,7 +52,7 @@ Vladimir, a resident of Thailand and a fan of Asian culture, develops the Asian 
 ### Recommendations
 "Vladimir is the person who reads the documentation and has phenomenal attention to detail that allows him to be highly successful in any business. In FivexL, the expectation bar is very high, and Vladimir constantly beats it.
 I also want to note he finds time and helps all the other members of the team. Generally, Vladimir kicks ass. One man team kind of person."  
-*Senior Consultant, Co-Founder [Andrey Devyatkin](https://www.linkedin.com/in/andreydevyatkin/)*  
+*Principal Consultant, Co-Founder [Andrey Devyatkin](https://www.linkedin.com/in/andreydevyatkin/)*  
 </br>  
 </br>
 "Vladimir is very friendly and always ready to help. And given his experience and knowledge - he will help with anything." 

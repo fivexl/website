@@ -51,7 +51,7 @@ Ivan has a lot of ambitions and aspirations for new knowledge and experience. He
 </br>  
 </br>
 "Excellent self-organization is necessary for successful remote work, and the desire to learn is one of the root values of FivexL. By the end of his studies at the university, Ivan successfully implemented his first project with FivexL."  
-*Senior Consultant, Co-Founder [Andrey Devyatkin](https://www.linkedin.com/in/andreydevyatkin/)*  
+*Principal Consultant, Co-Founder [Andrey Devyatkin](https://www.linkedin.com/in/andreydevyatkin/)*  
 </br>  
 </br>
 "Ivan is a great specialist and mentor. He helped me a lot to dive into the project. He explains complex things in an accessible way and is always ready to help. It is enjoyable to work with Ivan in a team. He likes to ride scooters)"  
