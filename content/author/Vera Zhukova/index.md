@@ -28,4 +28,12 @@ Course of Brand management at London Business School
 </br>  
 </br>  
 "Vera is very kind and knows how to win over anyone. Looks at the problem from different angles, offers new ideas and motivates the team."  
-*Consultant, [Maria Zubchenko](https://www.linkedin.com/in/mariazubchenko/)* 
+*Consultant, [Maria Zubchenko](https://www.linkedin.com/in/mariazubchenko/)*  
+</br>  
+</br>   
+"The kindest person, knows how to look at familiar things from a different angle, which is very important for a marketer. Vera is an athlete, has been to many places, travels a lot, and is an interesting interlocutor. She knows how to implement things that no one has done before."  
+*Consultant [Ivan Razzhivin](https://www.linkedin.com/in/ivan-razzhivin-97ab61240/)*  
+</br>  
+</br>  
+"Vera is a professional in her field. She promotes excellent ideas that help customers understand that FivexL is the one who is definitely worth working with."  
+*Senior Consultant, Co-Founder [Artem Zhelezov](https://www.linkedin.com/in/artem-zhelezov-70228093/)*  

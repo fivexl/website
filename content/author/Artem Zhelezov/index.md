@@ -1,13 +1,13 @@
 ---
 name: Artem Zhelezov
 roles:
-  - Role1
-  - Molodec
+  - Senior Cloud Engineering Consultant 
+  - Co-Founder of FivexL
 information:
-  - Info1
+  - Certified AWS Architect
   
 panel_image: 'Artem_author_page.png'
 author_headshot: 'artem.png'
 author_id: Artem Zhelezov
 ---
-# TBD
+Result-oriented AWS Solutions Architect with the focus on building scale-ready, secure, and cost-efficient infrastructure for startups. 
