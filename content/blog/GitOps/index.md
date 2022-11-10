@@ -49,7 +49,35 @@ The first Lambda generates a client license key.
 Let’s set up a demo infrastructure in Amazon with Terraform. We have VPC, EKS (Kubernetes as AWS knows it), a basic cluster on two nodes, and Ingress – nginx, policies. When we deploy ArgoCD, it will be done through a helm chart.  
 ### The Kubernetes Approach in Practice
 Here’s a demo application that deploys an image and a service that manages traffic on a pod.  
-{{< image src="g5.png" alt="Practice" width="50%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}}  
+```hcl
+{{- if empty .Values.env.open.BLOBSTORAGE_S3_BUCKET -}}
+{{- $s3_hash := .Release.Namespace | b64enc | lower | trimAll "=" }}
+{{- $s3_name := print "production-" $s3_hash }}
+apiVersion: s3.aws.crossplane.io/v1beta1
+kind: Bucket
+metadata:
+  name: {{ $s3_name }}
+spec:
+  deletionPolicy: Orphan
+  forProvider:
+    locationConstraint: eu-central-1
+    acl: private
+    versioningConfiguration:
+              status: Enabled
+    serverSideEncryptionConfiguration:
+      rules:
+        - applyServerSideEncryptionByDefault:
+            sseAlgorithm: AES256
+    tagging:
+              tagSet: 
+                - key: kubernetes_namespace
+                  value: {{ .Release.Namespace }}
+  providerConfigRef:
+    name: aws-provider
+  providerRef:
+    name: provider-aws
+{{- end -}}
+```   
 We used **kubectl apply -f banana.yaml** to deploy an app: a pod transfers to Kuber, and a pod appears in a default namespace.  
 ### The GitOps (ArgoCD) Approach in Practice
 To deploy an app into a cluster and port-forwarding it to the ArgoCD server, you must move the workload to a browser and fill in the following criteria:  
@@ -68,10 +96,41 @@ As a result, we create an app that reads the helm chart. ArgoCD spots the change
 {{< image src="git10.png" alt="ArgoCD" width="70%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}}  
 ### GitOps to Manage Apps Automatically
 Configuring each app is time- and energy-consuming. To facilitate the creation of dynamic environments, let’s create an **App of Apps**. It will monitor the specific folder and deploy a new app when a new manifest appears. Here’s a step-by-step guide:
-* **Deploy ArgoCD through a helm** chart. Specify value files for configuration and a path to monitor the repo.  
-{{< image src="g11.png" alt="ArgoCD" width="66%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}}  
-* Create an ArgoCD app. Set up its name, namespace, project, path, destination, if the directory should be recursively checked, where to deploy manifests from the app, and sync policies.  
-{{< image src="g12.png" alt="Practice" width="50%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}}  
+* **Deploy ArgoCD through a helm** chart. Specify value files for configuration and a path to monitor the repo.
+```hcl
+resource "helm_release" "argocd" {
+  name = "argocd"
+
+  repository       = "https://argoproj.github.io/argo-helm"
+  chart            = "argo-cd"
+  namespace        = "argocd"
+  version          = "4.9.7"
+  create_namespace = true
+
+  values = [
+    file("argo-cd-config.yaml")
+  ]
+ ``` 
+* Create an ArgoCD app. Set up its name, namespace, project, path, destination, if the directory should be recursively checked, where to deploy manifests from the app, and sync policies.
+```hcl
+server:
+  additionalApplications:
+   - name: apps
+     namespace: argocd
+     project: default
+     source:
+       repoURL: https://github.com/irazzhivin/argocd-apps.git
+       targetRevision: HEAD
+       path: apps/
+       directory:
+         recurse: true
+     destination:
+       server: https://kubernetes.default.svc
+     syncPolicy:
+       automated:
+         prune: false
+         selfHeal: false
+```     
 * Here’s what you will receive once it’s deployed:  
 {{< image src="git13.png" alt="PracticeArgoCD" width="70%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}}  
 If you alter any parameter, commit the changes into a repo (for example, update the mobile app version). Since you don’t have webhooks set, change syncs are manual on the App of Apps level. After completing the synchronization, ArgoCD terminates an old pod and initiates a new one; the changes will be successfully delivered to a cluster.  
