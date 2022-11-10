@@ -56,16 +56,16 @@ To deploy an app into a cluster and port-forwarding it to the ArgoCD server, you
 * Type in the **Application name** and **Project**  
 * Set up **sync policies** (automated or manual depending on the webhooks)  
 * Specify the **sync options**  
-{{< image src="g6.png" alt="Practice" width="50%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}}  
+{{< image src="g6.png" alt="Practice" width="70%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}}  
 Adding a **repository URL**. Specifying **Branches** and **Path**.  
-{{< image src="g7.png" alt="Practice" width="50%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}}  
+{{< image src="g7.png" alt="Practice" width="70%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}}  
 Setting up a **Cluster URL**: Choose a default one. Add a namespace. To foster corporate compliance and consistency, the **namespace** should be the same as the application name.  
-{{< image src="g8.png" alt="Practice" width="50%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}}  
+{{< image src="g8.png" alt="Practice" width="70%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}}  
 ArgoCD realizes that we are transferring the helm in a repo and allows us to change the app’s value files. 
 You can set up the controller by writing a YAML if you don’t like the UI editor.  
-{{< image src="g9.png" alt="Practice" width="50%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}}  
+{{< image src="g9.png" alt="Practice" width="70%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}}  
 As a result, we create an app that reads the helm chart. ArgoCD spots the changes, and we manually initiate the sync.  
-{{< image src="g10.png" alt="ArgoCD" width="50%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}}  
+{{< image src="g10.png" alt="ArgoCD" width="70%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}}  
 ### GitOps to Manage Apps Automatically
 Configuring each app is time- and energy-consuming. To facilitate the creation of dynamic environments, let’s create an **App of Apps**. It will monitor the specific folder and deploy a new app when a new manifest appears. Here’s a step-by-step guide:
 * **Deploy ArgoCD through a helm** chart. Specify value files for configuration and a path to monitor the repo.  
@@ -73,7 +73,7 @@ Configuring each app is time- and energy-consuming. To facilitate the creation o
 * Create an ArgoCD app. Set up its name, namespace, project, path, destination, if the directory should be recursively checked, where to deploy manifests from the app, and sync policies.  
 {{< image src="g12.png" alt="Practice" width="50%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}}  
 * Here’s what you will receive once it’s deployed:  
-{{< image src="g13.png" alt="PracticeArgoCD" width="50%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}}  
+{{< image src="g13.png" alt="PracticeArgoCD" width="70%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}}  
 If you alter any parameter, commit the changes into a repo (for example, update the mobile app version). Since you don’t have webhooks set, change syncs are manual on the App of Apps level. After completing the synchronization, ArgoCD terminates an old pod and initiates a new one; the changes will be successfully delivered to a cluster.  
 ### Final Thoughts
 The GitOps approach provides a range of benefits compared to the traditional Kubernetes approach:  
