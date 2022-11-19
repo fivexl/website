@@ -4,7 +4,7 @@ author_id: 'Ivan Razzhivin'
 summary: 'look at Spot Instance allocation strategies and see how you can use the Terraform module with no issues and save money at the same time.'
 date: 2022-10-31
 author: Ivan Razzhivin
-panel_image: Gitops.png
+panel_image: Gitops.jpg
 tags: ['GitOps', 'AWS', 'Kubernetes']
 ---
 FivexL successfully helped a startup scale its on-premise solution to SaaS with GitOps instead of the traditional Kubernetes approach. This allowed us to deliver cost-effective product testing with minimum human resources (since the majority of the workload was delegated to a cloud provider). In this article, we will review the case and show how to implement such a solution. 
@@ -132,7 +132,7 @@ server:
          selfHeal: false
 ```     
 * Here’s what you will receive once it’s deployed:  
-{{< image src="git13.png" alt="PracticeArgoCD" width="70%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}}  
+{{< image src="git13.jpg" alt="PracticeArgoCD" width="70%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}}  
 If you alter any parameter, commit the changes into a repo (for example, update the mobile app version). Since you don’t have webhooks set, change syncs are manual on the App of Apps level. After completing the synchronization, ArgoCD terminates an old pod and initiates a new one; the changes will be successfully delivered to a cluster.  
 ### Final Thoughts
 The GitOps approach provides a range of benefits compared to the traditional Kubernetes approach:  

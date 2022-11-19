@@ -12,7 +12,7 @@ certifications:
   - 'hashicorp.png'
   - 'seal-csm.png'
   - 'fivexl.png'
-  - 'gitops.png'
+  - 'gitops.jpg'
   - 'practitioner.png'  
 panel_image: 'Ivan_author_page.png'
 author_headshot: 'Ivan.png'
