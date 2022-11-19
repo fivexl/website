@@ -1,3 +1,4 @@
+timeout = 60000
 baseURL = '/'
 languageCode = 'en-us'
 title = 'FivexL. Cloud Engineering Specialists'
