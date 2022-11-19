@@ -1,7 +1,7 @@
 ---
 title: 'How GitOps Helped a Startup Scale an On-Premise Solution to SaaS'
 author_id: 'Ivan Razzhivin'
-summary: 'FivexL successfully helped a startup scale its on-premise solution to SaaS with GitOps instead of the traditional Kubernetes approach.'
+summary: 'look at Spot Instance allocation strategies and see how you can use the Terraform module with no issues and save money at the same time.'
 date: 2022-10-31
 author: Ivan Razzhivin
 panel_image: Gitops.jpg
@@ -141,15 +141,6 @@ The GitOps approach provides a range of benefits compared to the traditional Kub
 * **Simple implementation**, which is based on key DevOps skills the majority of developers possess. 
 * **Increased productivity and security** compared to DevOps and CI/CD implementations.  
 As a result, the GitOps approach allows for more flexibility, enhanced productivity and security, optimized workflows, hence, reduced time and costs. 
-
-
-
-
-
-
-
-
-
 
 
 
