@@ -6,3 +6,9 @@
   HUGO_VERSION = "0.103.0"
   NODE_VERSION = "18.7.0"
   HUGO_BASEURL = "https://fivexl.io"
+
+[[redirects]]
+  from = "/blog/overture-case-study/"
+  to = "/blog/ovrture-case-study/"
+  status = 301
+  force = false
