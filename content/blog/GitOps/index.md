@@ -4,7 +4,7 @@ author_id: 'Ivan Razzhivin'
 summary: 'look at Spot Instance allocation strategies and see how you can use the Terraform module with no issues and save money at the same time.'
 date: 2022-10-31
 author: Ivan Razzhivin
-panel_image: Gitops.jpg
+panel_image: new_image.png
 tags: ['AWS', 'GitOps','Kubernetes']
 ---
 FivexL successfully helped a startup scale its on-premise solution to SaaS with GitOps instead of the traditional Kubernetes approach. This allowed us to deliver cost-effective product testing with minimum human resources (since the majority of the workload was delegated to a cloud provider). In this article, we will review the case and show how to implement such a solution. 
