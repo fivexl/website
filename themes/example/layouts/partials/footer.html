@@ -40,3 +40,7 @@
 <span class="ftr-Copyright" role="contentinfo">Copyright &copy;{{ now.Format "2006" }} FivexL</span>
 
 </footer>
+
+{{ if hugo.IsProduction }}
+{{ partial "cloudflareinsights.html" . }}
+{{ end }}

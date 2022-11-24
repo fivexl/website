@@ -7,6 +7,9 @@
   NODE_VERSION = "18.7.0"
   HUGO_BASEURL = "https://fivexl.io"
 
+[context.production.environment]
+  HUGO_ENV = "production"
+
 [[redirects]]
   from = "/blog/overture-case-study/"
   to = "/blog/ovrture-case-study/"
