@@ -27,7 +27,7 @@ AWS · DevOps · Terraform
 - AWS Partner: Cloud Economics Accreditation
 
 ### Recommendations
-*“Alexey's superpowers are attention to detail and thoughtfulness. You can trust Alexey with the most complex projects - he will methodically and thoughtfully look into the problem and collect all the data necessary to solve it once and for all. You should also add to this excellent communication with the customer, which is necessary for any successful consultant.”*
+> *“Alexey's superpowers are attention to detail and thoughtfulness. You can trust Alexey with the most complex projects - he will methodically and thoughtfully look into the problem and collect all the data necessary to solve it once and for all. You should also add to this excellent communication with the customer, which is necessary for any successful consultant.”*
 </br>
 Principal Consultant, Co-Founder [@Andrey Devyatkin](https://www.linkedin.com/in/andreydevyatkin/)
 </br>
