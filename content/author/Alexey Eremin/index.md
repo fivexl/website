@@ -18,6 +18,7 @@ panel_image: 'Aleksey_author_page.png'
 author_headshot: 'alexey.png'
 author_id: Alexey Eremin
 ---
+AWS Solutions Architect with the focus on building secure, immutable, scale-ready, and cost-effective infrastructure for startups.
 ### Specialization
 AWS · DevOps · Terraform
 
@@ -40,7 +41,7 @@ Marketing Director [@Vera Zhukova](https://www.linkedin.com/in/zhukovavera/)
 
 
 *“Alexey is very erudite and calm. Very thoughtful, without unnecessary emotions and panic, he would always find a way out of any situation. Responsive, always supportive, and easy to talk to on any topic.”*  
-Consultant, [@Maria Zubchenko](https://www.linkedin.com/in/mariazubchenko/)  
+Consultant [@Maria Zubchenko](https://www.linkedin.com/in/mariazubchenko/)  
 
 
 *A kind and honest colleague with great potential, and a bright mind. Alexey is able to understand complicated things in detail. He loves rock climbing and is always ready for adventure.”*  
