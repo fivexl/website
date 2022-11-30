@@ -4,7 +4,7 @@ author_id: 'Vladimir Samoylov'
 summary: 'look at Spot Instance allocation strategies and see how you can use the Terraform module with no issues and save money at the same time.'
 date: 2022-08-13
 author: Vladimir Samoylov
-panel_image: Piggy_bank.png
+panel_image: Pigggy_bank.png
 tags: ['CloudTrail', 'AWS', 'Terraform']
 ---
 Saving money on Amazon Web Services (AWS) Spot Instances can be a challenging task. Keep in mind that it is essentially an auction. Although prices don’t fluctuate as rapidly as on exchanges, they can still increase until they reach the on-demand rate. Sometimes it lasts for a day or two, but other times — up to several months, which can double the cost.  
