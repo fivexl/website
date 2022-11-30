@@ -54,10 +54,6 @@ Instead of using root accounts, set up an AWS organization with several accounts
 * **Security.** If hackers access one account, it’ll be hard for them to access a second one. You will have a competitive advantage – time to react and prevent unauthorized access with minimized losses. 
 * **Security control.** You can specify compliance and other regulations for each account to facilitate management and quality assurance. 
 * **Facilitated billing.** You can easily monitor how many resources each workload or team uses, which simplifies resources allocation and management.
-### 4. Monitoring ###
-Before you let your developers and the rest of the team in, set up monitoring tools. 
-CloudTrail is a 24/7 security camera that records what is happening at your doorstep. In other words, it records every click and API call and collects the data in the Amazon S3 bucket.  
-
 ### 3. AWS Organization Setup ###
 Instead of using root accounts, set up an AWS organization with several accounts targeted for specific tasks. For example, you can begin with two accounts: development and production. Here are the main benefits your startup will experience:
 Isolation and control. Each workload is managed and monitored in a specific account that facilitates resource optimization. 
