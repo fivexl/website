@@ -489,30 +489,7 @@
             <div class="elementor-widget-wrap">
             <div class="elementor-element elementor-element-7af52efd elementor-widget elementor-widget-heading" data-id="7af52efd" data-element_type="widget" data-widget_type="heading.default">
             <div class="elementor-widget-container">
-    
-                <script type="text/javascript">var submitted=false;</script>
-                <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" 
-                onload="if(submitted) {window.location='/thankyou';}"></iframe>
-    
-                <form action="https://docs.google.com/forms/d/e/1FAIpQLSf-V8L0tEbh-tI8Se4AibWDjJJYR1pmGSqm9IuJVphh7a9A-w/formResponse" 
-                method="post" target="hidden_iframe" onsubmit="submitted=true;" id="contact">
-                <div class="cf-turnstile" data-sitekey="0x4AAAAAAABbGaideoQ1O15c" data-theme="light"></div>
-                </form>
-    
-                <form action="https://docs.google.com/forms/d/e/1FAIpQLSf-V8L0tEbh-tI8Se4AibWDjJJYR1pmGSqm9IuJVphh7a9A-w/formResponse" method="post" target="hidden_iframe" onsubmit="submitted=true">
-                    <label>Name*</label>
-                          <input type="text" placeholder="Name*" class="form-input" name="entry.102823658" required>
-                  
-                    <label>Email*</label>
-                          <input type="email" placeholder="Email address*" class="form-input" name="entry.1974499157" required>
-                  
-                     <label>Your Request*</label>
-                          <textarea rows="7" placeholder="Your Request*" class="form-input" name="entry.1975381217" required></textarea>
-                    <br>
-                    <div class="cf-turnstile" data-sitekey="0x4AAAAAAABbGaideoQ1O15c" data-theme="light"></div>
-                    <button type="submit">Go to The Cloud</button>
-                  </form>
-            
+                {{ partial "form_contact" . }}
             </div>
     
             </div>
