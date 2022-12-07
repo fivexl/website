@@ -5,8 +5,9 @@
 
 <section class="asb">
     {{ range $author }}
+        {{ $Permalink := .Permalink }}
         {{ with .Resources.GetMatch .Params.author_headshot }}
-        <a href="{{ .Permalink }}" alt="{{ .Params.name }}'s author page">
+        <a href="{{ $Permalink }}" alt="{{ .Params.name }}'s author page">
             {{ partial "img" (dict "class" "asb-Author_Portrait" "src" .Params.author_headshot "alt" "Author protrait" "image" .) }}
         </a>
         {{ end }}
