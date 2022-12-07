@@ -1,7 +1,16 @@
-{{- with where 
-        (where site.RegularPages "Params.author_id" .)
+{{- $caseStudies := where
+        (where site.RegularPages "Section" "blog" )
         "Params.case_study" true 
 -}}
+
+{{ $results := slice }}
+{{ range $caseStudies }}
+    {{ if in .Params.author_id $ }}
+        {{ $results = $results | append (slice .) }}
+    {{ end }}
+{{ end }}
+
+{{ with $results }}
 <section class="cst">
     <h1 class="cst-Heading">Case Studies</h1>
     <div class="cst-ListWrapper">

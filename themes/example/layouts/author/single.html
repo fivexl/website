@@ -9,13 +9,16 @@
 
     {{- partial "CaseStudies" .Params.author_id -}}
 
-    {{ $pages := where (where site.RegularPages "Params.author_id" .Params.author_id) "Section" "blog" }}
+    {{ $pages := slice }}
+    {{ range where site.RegularPages "Section" "blog" }}
+        {{ if in .Params.author_id $.Params.author_id }}
+            {{ $pages = $pages | append (slice .) }}
+        {{ end }}
+    {{ end }}
     {{ $case_studies :=  where $pages "Params.case_study" true }}
     {{- partial "ContentList" (dict "pages" ($pages | symdiff $case_studies) "show_tags" true) -}}
 
 {{ end }}
-
-
 
 
 
