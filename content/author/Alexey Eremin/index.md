@@ -15,7 +15,7 @@ certifications:
   - 'Technical.png'
 
 panel_image: 'Aleksey_author_page.png'
-author_headshot: 'alexey.png'
+author_headshot: 'Lesha_head.png'
 author_id: Alexey Eremin
 ---
 AWS Solutions Architect with the focus on building secure, immutable, scale-ready, and cost-effective infrastructure for startups.
