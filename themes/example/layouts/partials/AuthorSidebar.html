@@ -1,21 +1,36 @@
-{{ $author := where
-                (where site.Pages "Section" "author")
-                "Params.author_id" "in" .Params.author_id
-}}
-
 <section class="asb">
-    {{ range $author }}
-        {{ $Permalink := .Permalink }}
-        {{ with .Resources.GetMatch .Params.author_headshot }}
-        <a href="{{ $Permalink }}" alt="{{ .Params.name }}'s author page">
-            {{ partial "img" (dict "class" "asb-Author_Portrait" "src" .Params.author_headshot "alt" "Author protrait" "image" .) }}
-        </a>
+    {{ if reflect.IsSlice .Params.author_id }}
+        {{ range .Params.author_id }}
+            {{ range where (where site.Pages "Section" "author") "Params.author_id" "in" .  }}
+
+                {{ $Permalink := .Permalink }}
+                {{ with .Resources.GetMatch .Params.author_headshot }}
+                <a href="{{ $Permalink }}" alt="{{ .Params.name }}'s author page">
+                    {{ partial "img" (dict "class" "asb-Author_Portrait" "src" .Params.author_headshot "alt" "Author protrait" "image" .) }}
+                </a>
+                {{ end }}
+                <h1 class="asb-Author"><a href="{{ .Permalink }}">{{ .Params.name }}</a></h1>
+                {{ range .Params.roles }}
+                <span class="asb-Author_Role">{{ . }}</span>
+                {{ end }}
+                <a class="asb-Author_ReadMore" href="{{ .Permalink }}">Read More</a>
+
+            {{ end }}
         {{ end }}
-        <h1 class="asb-Author"><a href="{{ .Permalink }}">{{ .Params.name }}</a></h1>
-        {{ range .Params.roles }}
-        <span class="asb-Author_Role">{{ . }}</span>
+    {{ else }}
+        {{ range where (where site.Pages "Section" "author") "Params.author_id" "in" .Params.author_id  }}
+            {{ $Permalink := .Permalink }}
+            {{ with .Resources.GetMatch .Params.author_headshot }}
+            <a href="{{ $Permalink }}" alt="{{ .Params.name }}'s author page">
+                {{ partial "img" (dict "class" "asb-Author_Portrait" "src" .Params.author_headshot "alt" "Author protrait" "image" .) }}
+            </a>
+            {{ end }}
+            <h1 class="asb-Author"><a href="{{ .Permalink }}">{{ .Params.name }}</a></h1>
+            {{ range .Params.roles }}
+            <span class="asb-Author_Role">{{ . }}</span>
+            {{ end }}
+            <a class="asb-Author_ReadMore" href="{{ .Permalink }}">Read More</a>
         {{ end }}
-        <a class="asb-Author_ReadMore" href="{{ .Permalink }}">Read More</a>
     {{ end }}
 
     {{ with .Params.tags }}

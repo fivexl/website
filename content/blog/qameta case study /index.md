@@ -1,6 +1,8 @@
 ---
 title: 'Qameta Case Study'
-author_id: 'Ivan Razzhivin''Alexey Eremin'
+author_id:
+  - 'Ivan Razzhivin'
+  - 'Alexey Eremin'
 summary: 'FivexL successfully designed and implemented a cost-efficient, scalable, and secure Cloud-based SaaS version of AllureTestOps software.'
 date: 2022-11-28
 author:  Ivan Razzhivin Alexey Eremin
