@@ -1,7 +1,6 @@
 ---
 name: Ivan Razzhivin
 roles:
-  - Cloud Engineering Consultant
   - Certified AWS Architect
 information:
   - Kubernetes and GitOps Expert
