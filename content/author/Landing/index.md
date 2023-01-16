@@ -17,7 +17,7 @@ certifications:
   
 author_video: explainer.mp4'
 author_headshot: 'Vova_bnw2.png'
-author_id: Vladimir Samoylov
+author_id: 
 ---
 1. **We lay a strong security base for your future growth**
 2. **We create Infra as code which prevents human mistakes in infrastructure operations** 
