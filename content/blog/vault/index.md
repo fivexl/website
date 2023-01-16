@@ -4,7 +4,7 @@ author_id: 'Vladimir Samoylov'
 summary: 'Security basics in AWS or how to get rid of hardcoded credential and reduce data leakage risks with aws-vault.'
 date: 2022-07-22
 author: Vladimir Samoylov
-panel_image: fivexl-01.png
+panel_image: risk.png
 tags: ['AWS', 'security', 'aws-vault']
 ---
 Developers often hardcode credentials on a public or private GitHub repository, ramping up data leakage risks. It’s hardly better to store static credentials in the .aws/credentials folder on a server or a local operator machine. As american cryptographer, writer, and computer security specialist, Bruce Schneier, says: “Only amateurs attackWe machines; professionals target people.” Therefore, you, not your hardware, is at risk.
