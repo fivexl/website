@@ -24,7 +24,7 @@ What FivexL can do for your startup?
 1. **We lay a strong security base for your future scale and growth.**
 2. **We create Infra as code which prevents human mistakes in infrastructure operations.** 
 3. **We know how to optimize costs on AWS.**
-4. **We'll identify potential system bottlenecks and proactively prevent issues from arising.** 
+4. **We identify potential system bottlenecks and proactively prevent issues from arising.** 
 5. **We practice Agile, transparency, and comprehensive documentation for effective knowledge transfer.**
 
 *you message*  
