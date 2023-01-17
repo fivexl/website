@@ -1,7 +1,7 @@
 ---
-title: ' lprobe: A Secure, Open-Source Local Health Check Solution'
+title: 'lprobe: A Secure, Open-Source Local Health Check Solution'
 author_id: 'Vladimir Samoylov'
-summary: 'Find out how to securely conduct a local health check without wget, curl, or your proprietary code. Iprobe is a reliable open-source solution.'
+summary: 'Find out how to securely conduct a local health check without wget, curl, or your proprietary code. lprobe is a reliable open-source solution.'
 date: 2023-01-16
 author: Vladimir Samoylov
 panel_image: Vova_article.png
@@ -24,9 +24,9 @@ If you Google how to conduct a local health check, the top results will keep sho
   
 **Docker Health Check**   
 If you need a command to make docker ensure your container is performing correctly, 99% of guides recommend using a traditional CMD curl or CMD wget, like in this [example](https://docs.docker.com/engine/reference/builder/#healthcheck).
-```hcl
+```dockerfile
 HEALTCHECK --interval=5m --timeout=3s \
-    CMD curl -f http:localhost/ || exit 1
+    CMD curl -f http://localhost/ || exit 1
 ``` 
 In terms of code, you need to pay attention to the output. Set up only two outputs: 0 - for a successful health check, meaning everything is working as it should, and 1 - for an unhealthy status.  
   
@@ -46,7 +46,7 @@ Here, once again, all the tribute goes to an infamous wget (a standard command p
 Even AI can’t find a better option than using insecure commands or third-party tools that are vulnerable to intruders. To prove this, we asked ChatGPT for a health check solution. The FivexL team requested the following:  
 *“I want you to act as a Cloud Engineer with a focus on AWS and Container Security. You will give advice about Docker Containers and Dockerfiles and help to create the most secure Dockerfile, and it will not be an empty one. My first request is, "I need a Dockerfile with a HEALTHCHECK instruction in it. Please use the most secure tool or command to run the health check"*  
 Here’s what ChatGPT suggested:  
-```hcl 
+```dockerfile 
 FROM alpine:latest
 RUN apk add --no-cache curl
 HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 \
