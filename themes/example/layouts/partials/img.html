@@ -62,6 +62,8 @@
         alt="{{ default .alt $image.Name }}"
         {{ with $style }}style="{{ . | safeCSS }}"{{ end }}
     />
+{{ else }}
+<img src="{{ .src }}" alt="{{ .src }}" style="{{ with .maxWidth }}max-width: {{. }}{{ else }}width: 100%{{ end }}; height: auto">
 
 {{ end }}
 

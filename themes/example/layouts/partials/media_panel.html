@@ -1,0 +1,23 @@
+{{ $input := urls.Parse .url }}
+{{- with .image -}}
+    {{ if (isset $ "url") }}
+        <a class="dp-MediaPanel_Link" href="{{ $.url }}">
+            <img class="dp-MediaPanel_Image" src="{{ . }}" alt="{{ default . $.alt }}">
+        </a>
+    {{ else }}
+        <img class="dp-MediaPanel_Image" src="{{ . }}" alt="{{ default . $.alt }}">
+    {{ end }}
+{{- else -}}
+    {{ if (strings.Contains $input.Path "youtube.com") }}
+        {{ printf "%#v" $input }}
+        <iframe class="dp-MediaPanel_Embed" width="560" height="315" src="https://www.youtube.com/embed/{{ after 2 $input.RawQuery }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    {{ else if (strings.Contains $input.Host `youtu.be`) }}
+        {{ printf "%#v" $input }}
+        <iframe class="dp-MediaPanel_Embed" width="560" height="315" src="https://www.youtube.com/embed{{ $input.Path }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    {{ else if (strings.Contains $input.Host `vimeo.com`) }}
+    <iframe src="https://player.vimeo.com/video{{ $input.Path }}?title=0&byline=0&portrait=0" class="dp-MediaPanel_Embed" width="640" height="338" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+    {{ else }}
+        {{ printf "%#v" $input }}
+        {{ .url | safeHTML }}
+    {{ end }}
+{{- end -}}

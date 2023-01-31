@@ -1,0 +1,19 @@
+<section class="section ss">
+    {{- with .Params -}}
+
+    {{- if isset . "heading" -}}
+        <h2 class="ss-Heading
+        {{ if eq .heading_color "pink" }} pink_heading{{ end }}">
+            {{ .heading }}</h2>
+    {{- end -}}
+
+    {{- with .image -}} 
+    <aside class="ss-Image">
+        <img src="{{ . }}" alt="{{ . }}">
+    </aside> {{- end -}}
+    {{- end -}}
+
+    <div class="ss-Content">
+       {{- .Inner | safeHTML -}}
+    </div>
+</section>

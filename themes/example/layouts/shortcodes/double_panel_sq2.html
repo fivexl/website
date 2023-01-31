@@ -1,0 +1,9 @@
+{{ with .Params }}
+    <section class="dp-Sq2{{ with .classes }} {{ . }}{{ end }}"{{ with .styles }} style="{{ . }}"{{ end }}>
+        {{ .Inner }}
+    </section>
+{{- else -}}
+    <section class="dp-Sq2">
+        {{ .Inner }}
+    </section>
+{{- end -}}

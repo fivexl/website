@@ -1,0 +1,18 @@
+@import 'icon_link.scss';
+@import 'button_cta.scss';
+@import 'double_panel.scss';
+@import 'split_section.scss';
+
+.section {
+  max-width: $maxContentWidth;
+  padding: 0 1rem 1rem;
+  margin-top: 2rem;
+  margin-inline: auto;
+}
+
+.blue_heading {
+  color: $accentColor;
+}
+.pink_heading {
+  color: $textSecondary;
+}

@@ -1,0 +1,20 @@
+@import 'variables';
+
+.ButtonCTA {
+  display: block;
+  background: $accentColor;
+  color: $accentText;
+  font-weight: 700;
+  border-radius: 8px;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  margin: 1.5rem 0;
+  width: max-content;
+  &:visited,
+  &:active,
+  &:hover,
+  &:focus {
+    color: $accentText;
+  }
+}
+

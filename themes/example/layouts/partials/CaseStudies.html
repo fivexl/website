@@ -1,17 +1,16 @@
-{{- $caseStudies := where
+{{ $caseStudies := where
         (where site.RegularPages "Section" "blog" )
         "Params.case_study" true 
--}}
+}}
 
+{{ printf "%#v" $caseStudies }}
 {{ $results := slice }}
 {{ range $caseStudies }}
     {{ if in .Params.author_id $ }}
         {{ $results = $results | append (slice .) }}
     {{ end }}
 {{ end }}
-
-{{ with $results }}
-<section class="cst">
+{{ with $results }} <section class="cst">
     <h1 class="cst-Heading">Case Studies</h1>
     <div class="cst-ListWrapper">
     {{- range first 3 . -}}
@@ -26,4 +25,20 @@
     {{- end -}}
     </div>
 </section>
-{{- end -}}
+{{ else }}
+<section class="cst">
+    <h1 class="cst-Heading">Hello</h1>
+    <div class="cst-ListWrapper">
+    {{ range first 3 $caseStudies }}
+        <div class="cst-Case">
+            {{- with .Resources.GetMatch (default .Params.panel_image .Params.alt_image) -}}
+            <img src="{{- .Permalink -}}" class="cst-Image" alt="{{ .Name }}">
+            {{- end -}}
+            <h2 class="cst-CaseHeading">{{ .Title }}</h2>,pf
+            <p class="cst-Summary">{{ .Params.summary }}</p>
+            <a class="cst-ReadMore" href="{{ .Permalink }}">Read more</a>
+        </div>
+    {{ end }}
+    </div>
+</section>
+{{ end }}

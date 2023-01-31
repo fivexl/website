@@ -1,0 +1,3 @@
+<a class="ButtonCTA{{ with .classes }} {{ . }}{{ end }}" href="{{ .url }}" 
+     {{- with .style -}}style="{{ . | safeCSS }}"{{- end -}}
+ >{{ .text }}</a>

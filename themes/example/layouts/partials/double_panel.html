@@ -1,0 +1,15 @@
+<section class="dp-Sq" >
+    <section class="dp-SummaryPanel">
+        {{ with .heading }}<h2>{{ . }}</h2>{{ end }}
+        {{ with .subheading }}<h3>{{ . }}</h3>{{ end }}
+        {{ with .icon_links }}
+            <div class="dp-Links">
+                {{- range . -}}{{ partial "icon_link" . }}{{- end -}}
+            </div>
+        {{ end }}
+        {{ with .button_cta }}{{ partial "button_cta" . }}{{ end }}
+    </section>
+    <div class="dp-sq2">
+        {{ partial "media_panel" .media_panel }}
+    </div>
+</section>
