@@ -5,14 +5,18 @@
 
 .section {
   max-width: $maxContentWidth;
-  padding: 0 1rem 1rem;
+  padding: 0 1rem;
   margin-top: 2rem;
   margin-inline: auto;
 }
 
 .blue_heading {
   color: $accentColor;
+  &.big { font-size: 32px; }
+  &.bigger { font-size: 48px; }
 }
 .pink_heading {
   color: $textSecondary;
+  &.big { font-size: 32px; }
+  &.bigger { font-size: 48px; }
 }

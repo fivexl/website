@@ -63,8 +63,7 @@
         {{ with $style }}style="{{ . | safeCSS }}"{{ end }}
     />
 {{ else }}
-<img src="{{ .src }}" alt="{{ .src }}" style="{{ with .maxWidth }}max-width: {{. }}{{ else }}width: 100%{{ end }}; height: auto">
-
+    <img src="{{ .src }}" alt="{{ .src }}" style="{{ with .maxWidth }}max-width: {{. }}{{ else }}width: 100%{{ end }}; height: auto;{{ with .style }}{{ . | safeCSS }}{{ end }}">
 {{ end }}
 
 
