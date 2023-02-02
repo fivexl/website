@@ -67,7 +67,7 @@ There’s no problem that we can’t solve together!
 
 {{< image src="/testemonials-4.png" width="100%" style="max-height: 500px !important; width: 100%; object-fit: cover;">}}
 
-{{< md >}}### HOW IT WORK{{< /md >}}
+{{< md >}}### HOW IT WORKS{{< /md >}}
 
 {{< button_cta url="/booking" text="Book a consultation" >}}
 
