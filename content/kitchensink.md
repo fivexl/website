@@ -10,6 +10,7 @@ double_panel:
     - { url: "/home", icon: "email" }
   button_cta: { url: "/#contact", text: "Book a consultation" }
   media_panel: { image: "/testemonials-4.png" }
+draft: true
 ---
 Adding a frontmatter entry with:
 ```
