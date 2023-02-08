@@ -9,10 +9,9 @@ double_panel:
     - { url: "/home", icon: "linkedin" }
     - { url: "/home", icon: "email" }
   button_cta: { url: "/#contact", text: "Book a consultation" }
-  media_panel: { image: "/testemonials-4.png" }
+  media_panel: { url: "https://youtu.be/uruLy1goNW0" }
 
 ---
-
 
 {{< split_section image="/who-fivexl-with-circle.png" heading="FivexL - Cloud Engineering Specialists." heading_color="pink" >}}
 {{< md >}}
@@ -31,7 +30,7 @@ Agile, transparency, and comprehensive documentation for effective knowledge tra
 {{< /split_section >}}
 
 
-{{< case_studies heading="dyanmic heading" global="true" >}}
+{{< case_studies heading="Case Studies" global="true" >}}
 
 
 {{< section >}}
@@ -46,7 +45,7 @@ Work with any of us and you will have the support of the whole team. With more t
 There’s no problem that we can’t solve together!
 {{< /md >}}
 
-{{< image src="/testemonials-4.png" width="100%" style="max-height: 500px !important; width: 100%; object-fit: cover;">}}
+{{< image src="/fivexl_team.png" width="100%" style="max-height: 500px !important; width: 100%; object-fit: cover;">}}
 
 {{< md >}}### HOW IT WORKS{{< /md >}}
 
