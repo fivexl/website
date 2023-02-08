@@ -30,7 +30,7 @@
 </section>
 {{- else -}}
 
-{{ if (isset . "global") }}
+{{ if and (reflect.IsMap .) (isset . "global") }}
 <section class="cst">
     <h1 class="cst-Heading">{{ .heading }}</h1>
     <div class="cst-ListWrapper">

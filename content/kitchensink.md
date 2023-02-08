@@ -12,6 +12,11 @@ double_panel:
   media_panel: { image: "/testemonials-4.png" }
 draft: true
 ---
+
+{{< double_panel >}}
+{{< /double_panel >}}
+
+
 Adding a frontmatter entry with:
 ```
 layout: landing_page
