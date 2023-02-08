@@ -12,26 +12,7 @@ double_panel:
   media_panel: { image: "/testemonials-4.png" }
 draft: true
 ---
-Adding a frontmatter entry with:
-```
-layout: landing_page
-```
-Will toggle the use of the landing page layout, more generally, all shortcodes placed here can be use anywhere on the site, though some layouts might not behave correctly, however the following are safe to use pretty much anywhere:
-- icon_link
-- pink_heading
-- blue_heading
-- button_cta
 
-
-The media_panel in the frontmatter, accepts two properties: **url**, **image**.
-
-If **image** is present then url, becomes a wrapping link around the image to navigate to a different target.
-
-Otherwise only **url** is necessary to populate the media_panel with either a youtube or vimeo video (each of this two have special handling), if none of the previous sites is inferreded from the input, it is rendered raw openning up to use embed codes from any other possible source.
-
-Use the "md" shortcode to wrap/render blocks of content within any section. 
-
-Also please note that the closing segment of wrapping shortcodes need to be prepended with a **"/"**
 
 {{< split_section image="/who-fivexl-with-circle.png" heading="FivexL - Cloud Engineering Specialists." heading_color="pink" >}}
 {{< md >}}
