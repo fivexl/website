@@ -31,7 +31,7 @@
 {{- else -}}
 
 {{ if and (reflect.IsMap .) (isset . "global") }}
-<section class="cst">
+<section class="cst" style="margin-top: clamp(1rem, 4vw, 4rem);">
     <h1 class="cst-Heading">{{ .heading }}</h1>
     <div class="cst-ListWrapper">
     {{ range first 3 $caseStudies }}
