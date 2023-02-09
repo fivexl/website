@@ -1,4 +1,4 @@
-<section class="section ss" {{ with (.Get "image_width") }}style="--image_width: {{ . | safeCSS }}" {{ end }}>
+<section class="section ss" {{ with .Params.image_width }}style="--image_width: {{ . | safeCSS }}" {{ end }}>
     {{- with .Params -}}
 
     {{- if isset . "heading" -}}
