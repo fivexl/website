@@ -19,7 +19,7 @@
     {{- range first 3 . -}}
         <div class="cst-Case">
             {{- with .Resources.GetMatch .Params.panel_image -}}
-            <img src="{{- .Permalink -}}" class="cst-Image" alt="{{ .Name }}">
+            {{ partial "CaseStudiesImage" . }}
             {{- end -}}
             <h2 class="cst-CaseHeading">{{ .Title }}</h2>
             <p class="cst-Summary">{{ .Params.summary }}</p>
@@ -37,7 +37,7 @@
     {{ range first 3 $caseStudies }}
         <div class="cst-Case">
             {{- with .Resources.GetMatch (default .Params.panel_image .Params.alt_image) -}}
-            <img src="{{- .Permalink -}}" class="cst-Image" alt="{{ .Name }}">
+            {{ partial "CaseStudiesImage" . }}
             {{- end -}}
             <h2 class="cst-CaseHeading">{{ .Title }}</h2>
             <p class="cst-Summary">{{ .Params.summary }}</p>
@@ -49,3 +49,21 @@
 {{ end }}
 
 {{- end -}}
+
+{{ define "partials/CaseStudiesImage.html" }}
+<picture>
+    <source type="image/webp"
+        srcset="{{ (.Resize `500x q80 webp`).Permalink }} 500w, 
+                {{ (.Resize `750x q80 webp`).Permalink }} 750w,
+                {{- if ge .Width 1000 -}}{{ (.Resize `1000x q80 webp`).Permalink }} 1000w, {{- end -}}
+                {{- if ge .Width 1500 -}}{{ (.Resize `1500x q80 webp`).Permalink }} 1500w, {{- end -}}
+                {{- if ge .Width 2000 -}}{{ (.Resize `2000x q80 webp`).Permalink }} 2000w, {{- end -}}
+                {{ (.Resize (printf `%dx%d q80 webp` .Width .Height)).Permalink }} {{ .Width }}w"
+                 >
+    <img
+        src="{{- .Permalink -}}"
+        class="cst-Image"
+        sizes="(max-width: 703px) 100vw, 500px"
+        alt="{{ .Name }}">
+</picture>
+{{ end }}

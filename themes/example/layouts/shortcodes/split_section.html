@@ -3,14 +3,14 @@
 
     {{- if isset . "heading" -}}
         <h2 class="ss-Heading
-        {{ if eq .heading_color "pink" }} pink_heading{{ end }}">
+        {{ if eq .heading_color "pink" }} pink_heading{{ end }}" style="margin-bottom: 0">
             {{ .heading }}</h2>
     {{- end -}}
 
     {{- with .image -}} 
     <aside class="ss-Image">
-        <img src="{{ . }}" alt="{{ . }}">
-    </aside> {{- end -}}
+        {{ partial "img" (dict "src" . "style" "margin-top: 1rem") }}
+    </aside>{{- end -}}
     {{- end -}}
 
     <div class="ss-Content">
