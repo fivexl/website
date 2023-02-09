@@ -1,19 +1,16 @@
 .ss {
+  --image_width: 30%;
   
   @media (min-width: 820px) {
     display: grid;
     gap: 1rem;
-    grid-template-columns: minmax(auto, 30%) 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-template: "heading heading"
-      "image content";
+    grid-template-columns: minmax(auto, var(--image_width)) 1fr;
   }
   &-Heading {
-    grid-area: heading;
+    grid-area: span 1 / span 2;
   }
 
   &-Image {
-    grid-area: image;
     img {
       width: 100%;
       height: auto;
@@ -22,6 +19,5 @@
   }
 
   &-Content {
-    grid-area: content;
   }
 }

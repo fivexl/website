@@ -14,7 +14,7 @@ double_panel:
 
 ---
 
-{{< split_section image="/magic.png" heading="FivexL - Cloud Engineering Specialists." heading_color="pink" >}}
+{{< split_section image="/magic.png" image_width="30%" heading="FivexL - Cloud Engineering Specialists." heading_color="pink" >}}
 {{< md >}}
 #### ADD FIVEXL MAGIC TO YOUR CLOUD INFRASTRUCTURE
 
