@@ -1,1 +1,1 @@
-<h3 class="blue_heading{{ with .Get "big" }} big{{ end }}">{{ .Params.text }}</h3>
+<h3 class="blue_heading{{ with .Get "big" }} big{{ end }}"><span>{{ .Params.text | safeHTML }}<span></h3>
