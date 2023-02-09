@@ -2,6 +2,7 @@
 title: Kitchensink
 layout: landing_page
 double_panel:
+  fluid_layout: true
   heading: "WE BUILD INFRASTRUCTURE IN AWS"
   subheading: "TO EMPOWER YOUR IDEAS"
   icon_links:
