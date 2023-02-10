@@ -5,6 +5,7 @@ summary: 'FivexL rebuilt and migrated infrastructure to AWS Elastic Container Se
 date: 2022-07-12
 author: Vladimir Samoylov
 panel_image: Firi_page.png
+alt_image: quote_firi.png
 case_study: true
 tags: ['case study', 'aws']
 ---

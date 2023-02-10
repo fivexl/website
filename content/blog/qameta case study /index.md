@@ -7,7 +7,7 @@ summary: 'FivexL designed and implemented a cost-efficient, scalable, and secure
 date: 2022-11-28
 author:  Ivan Razzhivin Alexey Eremin 
 panel_image: qameta.png
-alt_image: firi_second.png
+alt_image: quote_qameta.png
 case_study: true
 tags: ['case study', 'aws']
 ---
