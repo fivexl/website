@@ -1,5 +1,5 @@
 ---
-title: 'Building SaaS Case Study'
+title: 'Qameta Case Study'
 author_id:
   - 'Ivan Razzhivin'
   - 'Alexey Eremin'

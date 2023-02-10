@@ -1,5 +1,5 @@
 ---
-title: 'Scalability and Security Case Study'
+title: 'Ovrture Case Study'
 author_id: 'Vladimir Samoylov'
 summary: 'FivexL implemented infrastructure as code, reduced costs, and provided the ability to scale for a philanthropic communications platform.'
 date: 2022-06-14
