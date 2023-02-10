@@ -14,7 +14,7 @@ double_panel:
 
 ---
 
-{{< split_section image="/magic.png" image_width="30%" heading="FivexL - Cloud Engineering Specialists." heading_color="pink" >}}
+{{< split_section image="/magic.png" image_width="30%" heading="FivexL - Cloud Engineering Specialists" heading_color="blue" >}}
 {{< md >}}
 #### ADD FIVEXL MAGIC TO YOUR CLOUD INFRASTRUCTURE
 
@@ -46,7 +46,7 @@ Work with any of us and you will have the support of the whole team. With more t
 There’s no problem that we can’t solve together!
 {{< /md >}}
 
-{{< image src="/fivexl_team.png" width="100%" style="max-height: 500px !important; width: 100%; object-fit: cover;">}}
+{{< image src="/fivexl_team.png" width="100%" style="max-height: 450px !important; width: 100%; object-fit: cover;">}}
 
 {{< md >}}### HOW IT WORKS{{< /md >}}
 
@@ -63,7 +63,8 @@ There’s no problem that we can’t solve together!
 {{< /md >}}
 
 {{< blue_heading text="This way, you can focus on what you do best <br> without worrying about the underlying infrastructure." big="big" >}}
-
+  
+  
 {{< /section >}}
 
 
