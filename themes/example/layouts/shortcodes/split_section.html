@@ -2,8 +2,10 @@
     {{- with .Params -}}
 
     {{- if isset . "heading" -}}
-        <h2 class="ss-Heading
-        {{ if eq .heading_color "pink" }} pink_heading{{ end }}" style="margin-bottom: 0">
+        <h2 class="ss-Heading 
+        {{- if eq .heading_color "pink" }} pink_heading{{ end -}}
+        {{- if eq .heading_color "blue" }} blue_heading{{ end -}}
+        " style="margin-bottom: 0">
             {{ .heading }}</h2>
     {{- end -}}
 

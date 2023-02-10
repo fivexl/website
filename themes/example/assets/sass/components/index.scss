@@ -12,11 +12,11 @@
 
 .blue_heading {
   color: $accentColor;
-  &.big { font-size: 32px; }
-  &.bigger { font-size: 48px; }
+  &.big span { font-size: 32px; }
+  &.bigger span { font-size: 48px; }
 }
 .pink_heading {
   color: $textSecondary;
-  &.big { font-size: 32px; }
-  &.bigger { font-size: 48px; }
+  &.big span { font-size: 32px; }
+  &.bigger span { font-size: 48px; }
 }

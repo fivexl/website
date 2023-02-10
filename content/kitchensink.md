@@ -62,9 +62,8 @@ There’s no problem that we can’t solve together!
 7. Providing cloud engineering training for your team or assist with hiring.
 {{< /md >}}
 
-{{< blue_heading text="This way, you can focus on what you do best <br> without worrying about the underlying infrastructure." big="big" >}}
-  
-  
+{{< blue_heading sizes="big" text="This way, you can focus on what you do best <br> without worrying about the underlying infrastructure." >}}
+
 {{< /section >}}
 
 
