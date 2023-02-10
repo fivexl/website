@@ -31,7 +31,7 @@ Agile, transparency, and comprehensive documentation for effective knowledge tra
 {{< /split_section >}}
 
 
-{{< case_studies heading="Case Studies" global="true" >}}
+{{< case_studies heading="Case Studies" global="true" mt="4">}}
 
 
 {{< section >}}

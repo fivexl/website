@@ -12,11 +12,25 @@
 
 .blue_heading {
   color: $accentColor;
+  font-size: 24px;
   &.big span { font-size: 32px; }
   &.bigger span { font-size: 48px; }
 }
+
 .pink_heading {
   color: $textSecondary;
+  font-size: 24px;
   &.big span { font-size: 32px; }
   &.bigger span { font-size: 48px; }
 }
+
+.mt-1 { margin-top: clamp(0.75rem, 3vw, 1rem); }
+.mt-2 { margin-top: clamp(1rem, 3vw, 1.5rem); }
+.mt-3 { margin-top: clamp(1.25rem, 4vw, 2.5rem); }
+.mt-4 { margin-top: clamp(1.5rem, 5vw, 4rem); }
+.mt-5 { margin-top: clamp(2rem, 6vw, 6.5rem); }
+.mb-1 { margin-bottom: clamp(0.75rem, 3vw, 1rem); }
+.mb-2 { margin-bottom: clamp(1rem, 3vw, 1.5rem); }
+.mb-3 { margin-bottom: clamp(1.25rem, 4vw, 2.5rem); }
+.mb-4 { margin-bottom: clamp(1.5rem, 5vw, 4rem); }
+.mb-5 { margin-bottom: clamp(2rem, 6vw, 6.5rem); }

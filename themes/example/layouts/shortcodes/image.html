@@ -1,8 +1,3 @@
 {{ $maxWidth := default false (.Get "width") }}
-{{ $align := default false (.Get "align") }}
-{{ $alt := default "An image" (.Get "alt") }}
-{{ $style := default "" (.Get "style") }}
-{{ $src := default "" (.Get "src") }}
-{{ $class := .Get "class" }}
 
-{{- partial "img" (dict "maxWidth" $maxWidth "align" $align "alt" $alt "style" $style "src" $src "Page" .Page "class" $class) -}}
+{{- partial "img" (dict "maxWidth" $maxWidth | merge .Params) -}}

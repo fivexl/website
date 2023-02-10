@@ -1,0 +1,14 @@
+{{- $classes := "" -}}
+{{- $has_top := or (isset . "mt") (isset .Params "mt") -}}
+{{- $has_bottom := or (isset . "mb") (isset .Params "mb") -}}
+
+{{- if $has_top -}}
+    {{- $top := default .Params.mt .mt -}}
+    {{- $classes = printf `%s mt-%s` $classes $top -}}
+{{- end -}}
+
+{{- if $has_bottom -}}
+    {{- $bottom := default .Params.mb .mb -}}
+    {{- $classes = printf `%s mb-%s` $classes $bottom -}}
+{{- end -}}
+{{ return $classes }}
