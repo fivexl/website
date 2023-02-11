@@ -1,2 +1,2 @@
 {{ $src := .Destination | safeURL }}
-{{- partial "img" (dict "src" $src "alt" .Text "Page" .Page) -}}
+{{- partial "img" (dict "src" $src "alt" .Text "Page" .Page "IsContentImage" true "lazy" true) -}}
