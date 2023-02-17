@@ -1,5 +1,5 @@
 ---
-title: Kitchensink
+title: Services
 layout: landing_page
 double_panel:
   fluid_layout: true
