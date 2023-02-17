@@ -46,7 +46,7 @@ There’s no problem that we can’t solve together!
 
 {{< image src="/fivexl_team.png" width="100%" mt="2" style="max-height: 450px !important; width: 100%; object-fit: cover;">}}
 
-{{< button_cta url="/booking" text="Book a consultation" mb="3">}}
+{{< button_cta url="/#contact" text="Book a consultation" mb="3">}}
 
 {{< md >}}### HOW IT WORKS{{< /md >}}
 
