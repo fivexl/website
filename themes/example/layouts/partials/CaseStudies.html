@@ -17,11 +17,12 @@
     <h1 class="cst-Heading">Case Studies</h1>
     <div class="cst-ListWrapper">
     {{- range first 3 . -}}
+        {{ $page_URL := .Permalink }}
         <div class="cst-Case">
             {{- with .Resources.GetMatch .Params.panel_image -}}
-            <img src="{{- .Permalink -}}" class="cst-Image" alt="{{ .Name }}">
+            <a href="{{ $page_URL }}"> {{ partial "CaseStudiesImage" . }} </a>
             {{- end -}}
-            <h2 class="cst-CaseHeading">{{ .Title }}</h2>
+            <a href="{{ $page_URL }}"> <h2 class="cst-CaseHeading">{{ .Title }}</h2> </a>
             <p class="cst-Summary">{{ .Params.summary }}</p>
             <a class="cst-ReadMore" href="{{ .Permalink }}">Read more</a>
         </div>
@@ -31,15 +32,16 @@
 {{- else -}}
 
 {{ if and (reflect.IsMap .) (isset . "global") }}
-<section class="cst">
+<section class="cst {{ partial "fn/spacing_classes" . }}">
     <h1 class="cst-Heading">{{ .heading }}</h1>
     <div class="cst-ListWrapper">
     {{ range first 3 $caseStudies }}
+        {{ $page_URL := .Permalink }}
         <div class="cst-Case">
             {{- with .Resources.GetMatch (default .Params.panel_image .Params.alt_image) -}}
-            <img src="{{- .Permalink -}}" class="cst-Image" alt="{{ .Name }}">
+            <a href="{{ $page_URL }}"> {{ partial "CaseStudiesImage" . }} </a>
             {{- end -}}
-            <h2 class="cst-CaseHeading">{{ .Title }}</h2>
+            <a href="{{ $page_URL }}"> <h2 class="cst-CaseHeading">{{ .Title }}</h2> </a>
             <p class="cst-Summary">{{ .Params.summary }}</p>
             <a class="cst-ReadMore" href="{{ .Permalink }}">Read more</a>
         </div>
@@ -49,3 +51,21 @@
 {{ end }}
 
 {{- end -}}
+
+{{ define "partials/CaseStudiesImage.html" }}
+<picture>
+    <source type="image/webp"
+        srcset="{{ (.Resize `500x q80 webp`).Permalink }} 500w, 
+                {{ (.Resize `750x q80 webp`).Permalink }} 750w,
+                {{- if ge .Width 1000 -}}{{ (.Resize `1000x q80 webp`).Permalink }} 1000w, {{- end -}}
+                {{- if ge .Width 1500 -}}{{ (.Resize `1500x q80 webp`).Permalink }} 1500w, {{- end -}}
+                {{- if ge .Width 2000 -}}{{ (.Resize `2000x q80 webp`).Permalink }} 2000w, {{- end -}}
+                {{ (.Resize (printf `%dx%d q80 webp` .Width .Height)).Permalink }} {{ .Width }}w"
+                 >
+    <img
+        src="{{- .Permalink -}}"
+        class="cst-Image"
+        sizes="(max-width: 703px) 100vw, 500px"
+        alt="{{ .Name }}">
+</picture>
+{{ end }}

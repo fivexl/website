@@ -1,4 +1,4 @@
-<a class="IconLink IconLink-{{- .icon -}}{{ with .classes }} {{ . }}{{ end }}" href="{{- .url -}}"
+<a class="IconLink IconLink-{{- .icon -}}{{ with .classes }} {{ . }}{{ end }} {{ partial "fn/spacing_classes" . }}" href="{{- .url -}}"
      {{- with .style -}}style="{{ . | safeCSS }}"{{- end -}}>{{-
         readFile (printf "/static/%v.svg" .icon) | safeHTML 
      -}}</a>

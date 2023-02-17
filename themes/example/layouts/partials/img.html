@@ -58,12 +58,12 @@
     <img
         {{ with $srcset }} srcset="{{ . }}" {{ end }}
         src="{{ $image.Permalink }}"
-        class="{{ .class }} {{ $align }}"
+        class="{{ .class }} {{ $align }} {{ partial "fn/spacing_classes" . }}"
         alt="{{ default .alt $image.Name }}"
         {{ with $style }}style="{{ . | safeCSS }}"{{ end }}
     />
 {{ else }}
-    <img src="{{ .src }}" alt="{{ .src }}" style="{{ with .maxWidth }}max-width: {{. }}{{ else }}width: 100%{{ end }}; height: auto;{{ with .style }}{{ . | safeCSS }}{{ end }}">
+    <img src="{{ .src }}" class="{{ partial "fn/spacing_classes" . }}" alt="{{ .src }}" style="{{ with .maxWidth }}max-width: {{. }}{{ else }}width: 100%{{ end }}; height: auto;{{ with .style }}{{ . | safeCSS }}{{ end }}">
 {{ end }}
 
 

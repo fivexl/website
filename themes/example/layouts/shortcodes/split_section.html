@@ -1,16 +1,18 @@
-<section class="section ss">
+<section class="section ss {{ partial "fn/spacing_classes" .Params }}" {{ with .Params.image_width }}style="--image_width: {{ . | safeCSS }}" {{ end }}>
     {{- with .Params -}}
 
     {{- if isset . "heading" -}}
-        <h2 class="ss-Heading
-        {{ if eq .heading_color "pink" }} pink_heading{{ end }}">
+        <h2 class="ss-Heading 
+        {{- if eq .heading_color "pink" }} pink_heading{{ end -}}
+        {{- if eq .heading_color "blue" }} blue_heading{{ end -}}
+        " style="margin-bottom: 0">
             {{ .heading }}</h2>
     {{- end -}}
 
     {{- with .image -}} 
     <aside class="ss-Image">
-        <img src="{{ . }}" alt="{{ . }}">
-    </aside> {{- end -}}
+        {{ partial "img" (dict "src" . "style" "margin-top: 1rem") }}
+    </aside>{{- end -}}
     {{- end -}}
 
     <div class="ss-Content">

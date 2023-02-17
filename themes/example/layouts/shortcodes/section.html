@@ -1,1 +1,5 @@
+{{- if .IsNamedParams -}}
+<section class="section {{ partial "fn/spacing_classes" .Params }}">{{ .Inner }}</section>
+{{- else -}}
 <section class="section">{{ .Inner }}</section>
+{{- end -}}
