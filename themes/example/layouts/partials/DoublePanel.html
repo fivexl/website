@@ -18,7 +18,7 @@
         {{ with .Resources.GetMatch .Params.panel_image }}
         {{ partial "img" (dict "src" .Permalink "alt" .Name "image" .) }}
         {{ else }}
-        {{ partial "img" (dict "src" "blue-circle-man-with-laptops.png" "alt" "default image")}}
+        {{ partial "img" (dict "src" "blue-circle-man-with-laptops.png" "alt" "default image" "sizes" "(max-width: 767px) 100vw, 50vw")}}
         {{ end }}
     </section>
 </div>
