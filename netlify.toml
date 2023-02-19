@@ -17,7 +17,7 @@
   force = false
 
 [[redirects]]
-  from = "/blog/qameta-case-study--/"
+  from = "/blog/qameta-case-study-/"
   to = "/blog/qameta-case-study/"
   status = 301
   force = false
