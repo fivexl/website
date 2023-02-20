@@ -16,5 +16,11 @@
   status = 301
   force = false
 
+[[redirects]]
+  from = "/blog/qameta-case-study-/"
+  to = "/blog/qameta-case-study/"
+  status = 301
+  force = false
+
 [context.deploy-preview.environment]
   HUGO_BASEURL = "/"
