@@ -6,9 +6,8 @@ double_panel:
   heading: "GREAT PRODUCT NEEDS GREAT INFRASTRUCTURE"
   subheading: "We build best in class AWS infrastructure to empower your ideas"
   icon_links:
-    - { url: "/home", icon: "github" }
-    - { url: "/home", icon: "linkedin" }
-    - { url: "/home", icon: "email" }
+    - { url: "https://github.com/fivexl", icon: "github" }
+    - { url: "https://www.linkedin.com/company/5xl", icon: "linkedin" }
   button_cta: { url: "/#contact", text: "Book a consultation" }
   media_panel: { url: "https://youtu.be/uruLy1goNW0" }
 
