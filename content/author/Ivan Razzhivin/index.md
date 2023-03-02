@@ -21,7 +21,7 @@ Result-oriented AWS Solutions Architect with the focus on building scale-ready, 
 ### Specialization
 AWS · Terraform · Containers · CI/CD
 ### Recent success story
-- Supported AWS and CI/CD infrastrucrture for Swedish enterprise e-commerce profit data platform. Customer case study is pending.
+- Supported AWS and CI/CD infrastructure for Swedish enterprise e-commerce profit data platform. The customer case study is pending.
 - Built and managed all infrastructure from the ground up for SaaS product [Allure TestOps](https://qameta.io). [Customer case study](https://fivexl.io/blog/qameta-case-study/).
 ### Certifications
 * AWS Solutions Architect Associate
