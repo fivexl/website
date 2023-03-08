@@ -13,6 +13,8 @@ double_panel:
 
 ---
 
+{{< case_studies heading="Our happy customers" global="true" mt="3" mb="3">}}
+
 {{< split_section image="/Ivan_one.png" image_width="15%" heading="FivexL - Cloud Engineering Specialists" heading_color="blue" >}}
 {{< md >}}
 ### WHAT CAN WE DO FOR YOUR STARTUP?  
@@ -30,10 +32,6 @@ Identification of potential system bottlenecks and proactively prevent issues fr
 Agile, transparency, and comprehensive documentation for effective knowledge transfer.
 {{< /md >}}
 {{< /split_section >}}
-
-
-{{< case_studies heading="Case Studies" global="true" mt="3" mb="3">}}
-
 
 {{< section >}}
 
