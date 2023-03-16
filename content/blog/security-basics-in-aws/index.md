@@ -4,7 +4,7 @@ author_id: 'Maria Zubchenko'
 summary: 'Security Manual for Startups: How To Secure Your AWS Account in Several Steps'
 date: 2022-08-24
 author: Maria Zubchenko
-panel_image: Maria.png
+panel_image: security_basics.png
 tags: ['security', 'AWS']
 ---
 Security Manual for Startups: How To Secure Your AWS Account in Several Steps
