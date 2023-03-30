@@ -62,7 +62,7 @@
     display: grid;
     grid-template-columns: minmax(1rem, 1fr) minmax(auto, 733px) 9vw;
     padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding-bottom: 5rem;
     &::before {
       content: "";
       width: 100%;
@@ -73,7 +73,6 @@
       left: 0;
       background: white;
       box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.505882);
-      transform: skew(0deg, var(--dpAngle));
       transform-origin: bottom right;
       transition: transform 0.26s ease-in;
     }
