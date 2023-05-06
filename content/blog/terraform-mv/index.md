@@ -4,7 +4,7 @@ author_id: 'Andrey_Devyatkin'
 summary: 'Find out how the CloudTrail-to-Slack Terraform module by FivexL solves problems for startups and small teams.'
 date: 2023-05-05
 author: Andrey Devyatkin
-panel_image: Cloud_trail_article.png
+panel_image: Andrew_Terraform.png
 tags: ['AWS','Terraform']
 ---
 ### Introduction
