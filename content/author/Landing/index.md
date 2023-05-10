@@ -5,8 +5,7 @@ roles:
 
 links:
   - { icon: github, url: 'https://github.com/fivexl' }
-  - { icon: linkedin, url: 'https://www.linkedin.com/company/65597450/admin' }
-  - { icon: email, url: 'https://fivexl.io/#contact' }
+  - { icon: linkedin, url: 'https://www.linkedin.com/company/5xl' }
 certifications:
   - 'architect.png'
   - 'cloud-practitioner.png'

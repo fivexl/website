@@ -21,20 +21,23 @@ Result-oriented AWS Solutions Architect with the focus on building scale-ready, 
 ### Specialization
 AWS · Terraform · Containers · CI/CD
 ### Recent success story
-Built all infrastructure from the ground up for SaaS product [Allure TestOps](https://qameta.io). Customer case study is pending.
+- Supported AWS and CI/CD infrastructure for Swedish enterprise e-commerce profit data platform. The customer case study is pending.
+- Built and managed all infrastructure from the ground up for SaaS product [Allure TestOps](https://qameta.io). [Customer case study](https://fivexl.io/blog/qameta-case-study/).
 ### Certifications
 * AWS Solutions Architect Associate
 * HashiCorp Cloud Engineer Certification - Terraform Associate
 * SCRUM ALLIANCE - Certified Scrum Master
-* Codefresh - GitOps Fundamentals 
+* Codefresh - GitOps Fundamentals
+* Certified Calico Operator - AWS Expert (CCO-L2-AWS)
 ### Public activity
-[DevOps by Rebrain](https://www.youtube.com/watch?v=d54ZPek6wWM): GitOps for Startups.
+- [Presentation at DevOps by Rebrain](https://www.youtube.com/watch?v=d54ZPek6wWM): GitOps for Startups.
+- [Article at FivexL Blog](https://fivexl.io/blog/gitops/) - How GitOps Helped a Startup Scale an On-Premise Solution to SaaS
 ### Education
 Bachelor of Computer Science - Applied Mathematics and Information Science, HSE University, Nizhny Novgorod, Russia, 2020.
 ### Before FivexL
-## TBD
+Built, maintained, and rented servers for online games; defended the servers from DDoS and other attacks.
 ### Personality
-## TBD
+I'm an easy-going, organized, lifetime learner. I like to read books and am interested in investment schemes, self-improvement, and travel.
 ### Recommendations
 "Ivan has excellent self-organization. He is a quick learner - after the summer practice, he started working independently on the project, made a bootstrap of the project, and brought it to a steady state."  
 *Senior Consultant, Co-Founder [Artem Zhelezov](https://www.linkedin.com/in/artem-zhelezov-70228093/)*  
