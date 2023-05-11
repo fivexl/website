@@ -39,26 +39,24 @@ The second approach, which we recommend, is to use the ```terraform state mv``` 
 To use this approach, follow these steps:
 
 1.  Pull the destination state file locally using ```terraform state pull```. Save the output to a file named ```destination.tfstate```. This step will ensure that you have the most recent version of the destination state file:  
-```terraform state pull > destination.tfstate```
+```shell
+terraform state pull > destination.tfstate
+```
 
 2.  Use the ```terraform state mv``` command to move resources from the source to the destination state file. Specify the ```--state``` flag to provide the source state file and the   ```--state-out``` flag to provide the destination state file. This command takes the resource address in the source state and the resource address in the destination state as its arguments:  
-```python
-terraform state mv -state=source.tfstate 
--state-out=destination.tfstate source_resource_address 
-destination_resource_address
+```shell
+terraform state mv -state=source.tfstate -state-out=destination.tfstate source_resource_address destination_resource_address
 ```
 
 3.  Replace ```source.tfstate``` with the filename of your source state, and ```source_resource_address``` and ```destination_resource_address``` with the appropriate resource addresses.\
     If you're working with a remote state, you can use the ```-state``` flag to reference the local copy of the state file you pulled in step 1, and the ```--state-out``` flag to reference the destination.tfstate file: 
-```python 
-terraform state mv -state=source.tfstate  
--state-out=destination.tfstate aws_instance.example1  
-aws_instance.example2
+```shell 
+terraform state mv -state=source.tfstate -state-out=destination.tfstate aws_instance.example1 aws_instance.example2
 ```
   In this example, an AWS instance with the address ```aws_instance.example1``` in the source state file is moved to the address ```aws_instance.example2``` in the destination state file.
 
 4.  Push the updated destination state file back to the remote backend using ```terraform state push```. This step is essential for ensuring that the remote state reflects the changes made locally:  
-```python
+```shell
 terraform state push destination.tfstate
 ```
 
