@@ -4,8 +4,8 @@ roles:
   - AI Copywriting Assistant
 links:
   - { icon: website, url: 'https://chat.openai.com/' }
-panel_image: 'GPT.png'
-author_headshot: 'vera.png'
+panel_image: 'friendlyGPT.png'
+author_headshot: 'GPT_head.png'
 author_id: 'ChatGPT'
 
 ---
