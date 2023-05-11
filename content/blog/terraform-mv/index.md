@@ -45,13 +45,19 @@ terraform state pull > destination.tfstate
 
 2.  Use the ```terraform state mv``` command to move resources from the source to the destination state file. Specify the ```--state``` flag to provide the source state file and the   ```--state-out``` flag to provide the destination state file. This command takes the resource address in the source state and the resource address in the destination state as its arguments:  
 ```shell
-terraform state mv -state=source.tfstate -state-out=destination.tfstate source_resource_address destination_resource_address
+terraform state mv \
+  -state=source.tfstate \
+  -state-out=destination.tfstate \
+  source_resource_address destination_resource_address
 ```
 
 3.  Replace ```source.tfstate``` with the filename of your source state, and ```source_resource_address``` and ```destination_resource_address``` with the appropriate resource addresses.\
     If you're working with a remote state, you can use the ```-state``` flag to reference the local copy of the state file you pulled in step 1, and the ```--state-out``` flag to reference the destination.tfstate file: 
 ```shell 
-terraform state mv -state=source.tfstate -state-out=destination.tfstate aws_instance.example1 aws_instance.example2
+terraform state mv \
+  -state=source.tfstate \
+  -state-out=destination.tfstate \
+  aws_instance.example1 aws_instance.example2
 ```
   In this example, an AWS instance with the address ```aws_instance.example1``` in the source state file is moved to the address ```aws_instance.example2``` in the destination state file.
 
