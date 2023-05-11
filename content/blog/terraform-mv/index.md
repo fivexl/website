@@ -2,6 +2,7 @@
 title: 'Moving Terraform Managed Resources Between States for Scaling AWS Infrastructure in Startups'
 author_id: 
   - 'Andrey_Devyatkin'
+  - 'Ivan Razzhivin'
   - 'ChatGPT'
 summary: 'Find out how the CloudTrail-to-Slack Terraform module by FivexL solves problems for startups and small teams.'
 date: 2023-05-05
