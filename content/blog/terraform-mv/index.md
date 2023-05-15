@@ -4,7 +4,7 @@ author_id:
   - 'Andrey_Devyatkin'
   - 'Ivan Razzhivin'
   - 'ChatGPT'
-summary: 'Find out how the CloudTrail-to-Slack Terraform module by FivexL solves problems for startups and small teams.'
+summary: 'Comprehensive comparison and a step-by-step guide for implementing two methods for moving Terraform managed resources between states in AWS infrastructure in terms of speed, reliability and scalability.'
 date: 2023-05-05
 author: Andrey Devyatkin ChatGPT
 panel_image: Andrew_Terraform.png
