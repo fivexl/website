@@ -27,8 +27,11 @@ Ivan also has a designated workspace setup with a laptop on an inclined stand, a
 4. **Tackling Procrastination**  
 Overcoming procrastination is a common challenge for remote workers.
 Vladimir Samoylov uses music to help him get into the focused mode and has a unique technique for overcoming inertia. He suggests that if you can't start working, then repeat the process of closing the computer, leaving the office, taking a walk for about 5 minutes, and coming back.  
-Alexey takes a different approach. He pulls away from what he's working on and asks himself whether he enjoys the task, what problem he's solving, and whether it's a priority. He also keeps a working and personal journal to structure his thoughts while making.
-?  
+Alexey takes a different approach. He pulls away from what he's working on and asks himself whether he enjoys the task, what problem he's solving, and whether it's a priority. He also keeps a working and personal journal to structure his thoughts while making.  
+For me, having a daily plan that aligns with long-term goals and using the Pomodoro technique to manage work are effective ways to tackle procrastination.  
+
+{{< image src="team.png" alt="How to save" width="70%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}}  
+
 ### Building and Nurturing Remote Teams at FivexL
 Creating a positive remote working culture is about more than just individual strategies - it's about building and nurturing a strong remote team.
 The key to our success in creating an effective remote team lies in the similarities in our team members' answers. Despite the geographical distances, our team shares common values, goals, and interaction styles. This is not by chance but the result of careful planning and execution.
