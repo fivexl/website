@@ -1,10 +1,10 @@
 ---
-title:  'Managing Temporary Elevated Access to AWS Environment: Introducing the Open-Source Terraform AWS SSO Elevator Module with Slack Integration'
+title:  'Introducing the Open-Source Terraform AWS SSO Elevator Module with Slack Integration'
 author_id: 'Alexey Eremin'
 summary: 'Open-source Terraform AWS SSO Elevator tool allows requesting and granting temporary elevated access for AWS SSO through a Slack request/approval workflow.'
-date: 2023-05-22
+date: 2023-06-02
 author: Alexey Eremin
-panel_image: remote.png
+panel_image: Alexey.png
 tags: [ 'AWS', 'SSO Elevator', 'open sourse','Slack']
 ---
 In our work with startups, we have noticed a common challenge that many teams face when managing AWS IAM Identity Center - the inability to temporarily assign permission sets to users. Startups want to move fast but at the same time it is hard to strike a balance between the speed and security. To address this problem, we have created the open-source [Terraform AWS SSO Elevator module](https://github.com/fivexl/terraform-aws-sso-elevator). This tool ensures a more efficient and secure approach to access management by providing a way of temporary elevating users access while avoiding permanent too-permisive access. We are excited to share this module with the broader AWS community, especially after seeing its successful implementation with our startup customers.
@@ -19,7 +19,7 @@ For more information on temporary elevated access visit [Managing temporary elev
 The key difference between the terraform-aws-sso-elevator module and the option described in the blog post above is that the module enables requesting access elevation via a Slack form. We hope that this implementation may inspire AWS to incorporate native support for temporary access elevation in AWS IAM Identity Center or to add Slack as is another option.
 
 ### How It Works 
-{{< image src="sso-elevator.png" alt="How to save" width="70%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}}
+{{< image src="sso-elevator.png" alt="How to save" width="70%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}}  
 The module deploys two AWS Lambda functions: access-requester and access-revoker. The access-requester handles requests from Slack, creating user-level permission set assignments and an Amazon EventBridge trigger that activates the access-revoker Lambda when it is time to revoke access. The access-revoker revokes user access when triggered by EventBridge and also runs daily to revoke any user-level permission set assignments without an associated EventBridge trigger. Group-level permission sets are not affected.  
 For auditing purposes, information about all access grants and revocations is stored in S3. See [documentation here](https://github.com/fivexl/terraform-aws-sso-elevator/tree/main/athena_query) to find out how to configure AWS Athena to query audit logs.  
 Additionally, the access-revoker continuously reconciles the revocation schedule with all user-level permission set assignments and issues warnings if it detects assignments without a revocation schedule (presumably created by someone manually). By default, the access-revoker will automatically revoke all unknown user-level permission set assignments daily. However, you can configure it to operate more or less frequently.
