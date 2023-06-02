@@ -3,7 +3,7 @@ name: Ivan Razzhivin
 roles:
   - Certified AWS Architect
 information:
-  - Kubernetes and GitOps Expert
+  - AWS ECS and Terraform Expert
 links:
  - { icon: linkedin, url: 'https://www.linkedin.com/in/ivan-razzhivin-97ab61240/' }
 certifications:
@@ -19,18 +19,19 @@ author_id: Ivan Razzhivin
 ---
 Result-oriented AWS Solutions Architect with the focus on building scale-ready, secure, and cost-efficient infrastructure for startups.
 ### Specialization
-AWS · Terraform · Containers · CI/CD
+AWS · Terraform · Containers (AWS ECS) · CI/CD (GitHub Actions)
 ### Recent success story
-- Supported AWS and CI/CD infrastructure for Swedish enterprise e-commerce profit data platform. The customer case study is pending.
-- Built and managed all infrastructure from the ground up for SaaS product [Allure TestOps](https://qameta.io). [Customer case study](https://fivexl.io/blog/qameta-case-study/).
+- Supported AWS and CI/CD infrastructure for Swedish enterprise e-commerce profit data platform (AWS ECS / AWS Lambda / AWS Batch / AWS Kinesis and Firehose / GitHub Actions). The customer case study is pending.
+- Supported AWS and CI/CD infrastructure for Swedish computer vision platform (AWS ECS Anywhere / AWS Lambda / AWS Batch / AWS EC2 / GitLab CI ).
+- Built and managed all infrastructure from the ground up for SaaS product [Allure TestOps](https://qameta.io) (AWS EKS / AWS Lambda / GitHub Actions / Crossplane / ArgoCD). [Customer case study](https://fivexl.io/blog/qameta-case-study/).
 ### Certifications
-* AWS Solutions Architect Associate
+* AWS Solutions Architect - Associate
 * HashiCorp Cloud Engineer Certification - Terraform Associate
 * SCRUM ALLIANCE - Certified Scrum Master
 * Codefresh - GitOps Fundamentals
 * Certified Calico Operator - AWS Expert (CCO-L2-AWS)
 ### Public activity
-- [Presentation at DevOps by Rebrain](https://www.youtube.com/watch?v=d54ZPek6wWM): GitOps for Startups.
+- [Presentation at DevOps by Rebrain (in Russian)](https://www.youtube.com/watch?v=d54ZPek6wWM): GitOps for Startups.
 - [Article at FivexL Blog](https://fivexl.io/blog/gitops/) - How GitOps Helped a Startup Scale an On-Premise Solution to SaaS
 ### Education
 Bachelor of Computer Science - Applied Mathematics and Information Science, HSE University, Nizhny Novgorod, Russia, 2020.
