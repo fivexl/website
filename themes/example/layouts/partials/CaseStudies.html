@@ -16,12 +16,14 @@
 <section class="cst">
     <h1 class="cst-Heading">Case Studies</h1>
     <div class="cst-ListWrapper">
-    {{- range first 3 . -}}
+    {{- range $i, $v := first 3 . -}}
         {{ $page_URL := .Permalink }}
         <div class="cst-Case">
             {{- with .Resources.GetMatch .Params.panel_image -}}
             <a href="{{ $page_URL }}"> {{ partial "CaseStudiesImage" . }} </a>
             {{- end -}}
+            {{- $wave := resources.Get (printf `assets/wave-%d.svg` $i) -}}
+            <p>{{ printf "%#v" $wave }}</p>
             <a href="{{ $page_URL }}"> <h2 class="cst-CaseHeading">{{ .Title }}</h2> </a>
             <p class="cst-Summary">{{ .Params.summary }}</p>
             <a class="cst-ReadMore" href="{{ .Permalink }}">Read more</a>
@@ -33,7 +35,7 @@
 
 {{ if and (reflect.IsMap .) (isset . "global") }}
 <section class="cst {{ partial "fn/spacing_classes" . }}">
-    <h1 class="cst-Heading">{{ .heading }}</h1>
+    <h1 class="cst-Heading"> asdasdsad as das {{ .heading }}</h1>
     <div class="cst-ListWrapper">
     {{ range first 3 $caseStudies }}
         {{ $page_URL := .Permalink }}

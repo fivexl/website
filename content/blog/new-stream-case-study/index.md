@@ -10,6 +10,9 @@ panel_image: new_stream.png
 alt_image: quote_new_stream.png
 case_study: true
 tags: ['case study', 'aws']
+testimonial: 'As our needs and product changed FivexL remained flexible and fully involved in the project'  
+testimonial_author: 'Andrey Kolpakov'
+testimonial_author_position: 'CTO at New Stream'
 ---
 ## “FivexL built a scalable and secure infrastructure defined in code for a Mobile Computer Vision & AI solutions software company.”  
 **Two lead consultants for the project**  

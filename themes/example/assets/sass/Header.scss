@@ -20,7 +20,7 @@
     margin: 0 auto;
   }
 
-  &-logo {
+  &-Logo {
     max-height: 3rem;
     background: #fff;
     object-fit: cover;
@@ -29,6 +29,28 @@
   &-Navigation {
     display: flex;
     align-items: center;
+  }
+}
+
+.hdr_Transparent {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  padding: 1.5rem clamp(1.5rem, 2vw, 2rem);
+  transform: translateX(-50%);
+  max-width: 1600px;
+
+  .hdr-Logo {
+    background: initial;
+  }
+
+  .hdr-NavigationTrigger {
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .hdr-NavigationItem {
+    a, a:visited { color: white; }
   }
 }
 

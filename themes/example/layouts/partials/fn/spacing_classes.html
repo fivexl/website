@@ -1,6 +1,6 @@
 {{- $classes := "" -}}
-{{- $has_top := or (isset . "mt") (isset .Params "mt") -}}
-{{- $has_bottom := or (isset . "mb") (isset .Params "mb") -}}
+{{- $has_top := or (ne nil .mt) (ne nil .Params.mt) -}}
+{{- $has_bottom := or (ne nil .mb) (ne nil .Params.mb) -}}
 
 {{- if $has_top -}}
     {{- $top := default .Params.mt .mt -}}

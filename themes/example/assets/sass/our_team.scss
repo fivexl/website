@@ -1,0 +1,78 @@
+.ot {
+  position: relative;
+  overflow: hidden;
+
+  &-Wrapper {
+    padding: 3.25rem clamp(3rem, 15vw, 17rem) 0;
+    max-width: 1920px;
+    margin-inline: auto;
+  }
+
+  &-BottomWrapper {
+    padding: 0 clamp(3rem, 15vw, 17rem) 0;
+    max-width: 1920px;
+    margin-inline: auto;
+    @media (min-width: 440px) {
+      padding: 0 clamp(3rem, 15vw, 17rem) 0;
+    }
+  }
+
+  &-Heading {
+    color: $textSecondary;
+    font-size: clamp(2.125rem,4vw, 3.4rem);
+    margin-top: 0;
+    margin-bottom: clamp(1rem, 4vw, 5.5rem);
+  }
+
+  h2, h3, h4, h5 {
+    margin-top: 0;
+    line-height: 1.375;
+    max-width: 600px;
+  }
+  p {
+    margin-top: 0;
+    font-size: clamp(0.875rem, 1vw, 1.25rem);
+    font-weight: 300;
+    line-height: 1.25;
+    max-width: clamp(280px, calc(50vw - 5rem), 640px);
+    @media (min-width:1024px) {
+      font-weight: 500;
+      line-height: 1.5;
+    }
+  }
+
+  .ButtonCTA {
+    border-radius: 4rem;
+    padding: clamp(1rem, 2vw, 1.25rem) clamp(1.25rem, 2vw, 1.75rem);
+    margin-bottom: 3rem;
+    font-size: clamp(1rem, 1.5vw, 1.875rem);
+    margin-top: clamp(1.5rem, 3vw, 3rem);
+  }
+
+  &-TeamLogo {
+    position: absolute;
+    width: calc(100vw - 3rem - 150px);
+    height: auto;
+    right: -20%;
+    bottom: 0;
+    @media (min-width: 440px) {
+      width: 45vw;
+      right: -5%;
+    }
+    @media (min-width: 768px) {
+      width: 50vw;
+    }
+    @media (min-width: 1440px) {
+      height: calc(100% - 6rem);
+      object-fit: contain;
+    }
+  }
+
+  &-TeamCutout {
+    position: relative;
+    width: 100%;
+    height: auto;
+    object-position: center bottom;
+    transform: translateY(5px);
+  }
+}

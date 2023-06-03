@@ -8,6 +8,9 @@ panel_image: Firi_page.png
 alt_image: quote_firi_black.png
 case_study: true
 tags: ['case study', 'aws']
+testimonial: 'FivexL helped us migrate all our services to a new infrastructure; the change was seamless. They think outside the box and are always there when we need them.'
+testimonial_author: 'Thuc Tuan Hoang'
+testimonial_author_position: 'CEO at Firi'
 ---
 ## “FivexL helped us migrate all our services to a new infrastructure; the change was seamless. They think outside the box and are always there when we need them.”  
 **Lead consultant for the project**  

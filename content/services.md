@@ -2,64 +2,61 @@
 title: Services
 layout: landing_page
 double_panel:
-  fluid_layout: true
-  heading: "GREAT PRODUCT NEEDS GREAT INFRASTRUCTURE"
-  subheading: "We build best in class AWS infrastructure to empower your ideas"
+  layout: 'services'
+  heading: "Great Product Needs Great Infrastructure"
+  subheading: "We Build Best In Class AWS Infrastructure To Empower Your Ideas"
   icon_links:
     - { url: "https://github.com/fivexl", icon: "github" }
     - { url: "https://www.linkedin.com/company/5xl", icon: "linkedin" }
   button_cta: { url: "/#contact", text: "Book a consultation" }
   media_panel: { url: "https://youtu.be/uruLy1goNW0" }
-
+transparent_nav: true
 ---
 
-{{< case_studies heading="Our happy customers" global="true" mt="3" mb="3">}}
+{{< case_studies_cards heading="Our happy customers" mb="3">}}
 
-{{< split_section image="/Ivan_one.png" image_width="15%" heading="FivexL - Cloud Engineering Specialists" heading_color="blue" >}}
-{{< md >}}
-### WHAT CAN WE DO FOR YOUR STARTUP?  
+{{< two_columns heading="FivexL - Cloud Engineering Specialists" >}}
+{{< column >}}
+### What Can We Do For Your Startup?  
 You did the first prototype and ready to scale but your infra is a mess - We will take it to the next level.  
 Your cloud cost is out of control - We bring predictability and make sure there are no nasty surprises.  
 You have a lot of legacy and no one knows how it works - We rebuild your infra as code and deal with all your skeletons in the closet.  
 Security auditors are calling - We build the infra which will pass any audit while still keeping developers productive.  
-&zwnj;
+{{< /column >}}
 
-### ADD FIVEXL MAGIC TO YOUR CLOUD INFRASTRUCTURE  
+{{< column >}}
+### Add Fivexl Magic To Your Cloud Infrastructure  
 Strong security base for your future scale and growth.   
 Infrastructure as code which prevents human mistakes.   
 Costs optimization on AWS.  
 Identification of potential system bottlenecks and proactively prevent issues from arising.  
 Agile, transparency, and comprehensive documentation for effective knowledge transfer.
-{{< /md >}}
-{{< /split_section >}}
+{{< /column >}}
+{{< /two_columns >}}
 
-{{< section >}}
 
+{{< our_team heading="Our Team" cta_url="/#contact" cta_text="Book a consultation" >}}
 {{< md >}}
-### OUR TEAM
 At FivexL we’re focused on being the best at what we do as a small, remote first and agile team. Work with any of us and you will have the support of the whole team. With more than 50+ years of combined multidisciplinary expertise in cloud engineering.  
+
 There’s no problem that we can’t solve together!
 {{< /md >}}
+{{< /our_team >}}
 
-{{< image src="/fivexl_team.png" width="100%" mt="2" style="max-height: 450px !important; width: 100%; object-fit: cover;">}}
 
-{{< button_cta url="/#contact" text="Book a consultation" mb="3">}}
+{{< steps_section heading="How It Works" >}}
 
-{{< md >}}### HOW IT WORKS{{< /md >}}
+{{< steps_section_item number=1 text="Initial meeting to discussing business goals and obstacles." >}}
+{{< steps_section_item number=2 text="Creating a proposal: fixed fee offer with no hidden costs, presenting an infrastructure plan with implementation stages." >}}
+{{< steps_section_item number=3 text="Conducting an audit and identifying potential system bottlenecks." >}}
+{{< steps_section_item number=4 text="Architecting cloud infrastructure to your current state and prepared for rapid scaling." >}}
+{{< steps_section_item number=5 text="Providing AWS security with zero-trust networking, dynamic credentials, consolidation of secrets. Our goal is to give developers secure infrastructure and tools for handling sensitive data safely." >}}
+{{< steps_section_item number=6 text="Optimizing AWS bills and reducing monthly costs." >}}
+{{< steps_section_item number=7 text="Providing cloud engineering training for your team or assisting with hiring." >}}
 
-{{< md >}}
-1. Initial meeting to discussing business goals and obstacles.
-2. Creating a proposal: fixed fee offer with no hidden costs, presenting an infrastructure plan with implementation stages.
-3. Conducting an audit and identifying potential system bottlenecks.
-4. Architecting cloud infrastructure to your current state and prepared for rapid scaling. 
-5. Providing AWS security with zero-trust networking, dynamic credentials, consolidation of secrets. Our goal is to give developers secure infrastructure and tools for handling sensitive data safely.
-6. Optimizing AWS bills and reducing monthly costs.
-7. Providing cloud engineering training for your team or assisting with hiring.
-{{< /md >}}
+{{< /steps_section >}}
 
-{{< blue_heading sizes="small" mb="4" text="This way, you can focus on what you do best <br> without worrying about the underlying infrastructure." >}}
-
-{{< /section >}}
+{{< callout_cta heading="This way, you can focus on what you do best <br> without worrying about the underlying infrastructure." cta_url="/#contact" cta_text="Book a consultation" >}}
 
 
 <!-- {{< case_studies heading="dyanmic heading" global="true" >}} -->

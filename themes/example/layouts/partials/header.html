@@ -1,13 +1,13 @@
-<header class="hdr">
+<header class="hdr {{- if .Params.transparent_nav }} hdr_Transparent{{ end -}}">
     <a href="/">
         <picture>
-            {{ $logo := resources.Get "logo_medium.png" }}
+            {{ $logo := resources.Get "img/full-logo_white_transparent.png" }}
             <source
                 type="image/webp"
                 srcset="{{ ($logo.Resize `200x q75 webp`).Permalink }} 200w,
                 {{ ($logo.Resize `400x q75 webp`).Permalink }} 400w,
                 {{ ($logo.Resize `600x q75 webp`).Permalink }} 600w">
-            <img class="hdr-logo" src="{{ $logo.Permalink }}" 
+            <img class="hdr-Logo" src="{{ $logo.Permalink }}" 
                 sizes="155px" width="155" height="48" alt="FivexL logo">
         </picture>
     </a>

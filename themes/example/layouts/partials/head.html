@@ -6,14 +6,20 @@
 <link rel="canonical" href="{{ .Permalink }}">
 
 {{ $styles := resources.Get "sass/main.scss" | resources.ToCSS }}
+{{- if site.IsServer -}}
+<link rel="stylesheet" href="{{ (fingerprint $styles).RelPermalink }}">
+{{- else -}}
 <link rel="stylesheet" href="{{ $styles.RelPermalink }}">
+{{- end -}}
 {{ $js := resources.Get "js/main.ts" | js.Build }}
 <script type="application/javascript" src="{{ $js.RelPermalink }}" defer></script>
 
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+{{- $font_href := "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,700&display=swap" -}}
+{{- $font_cache_key := print $font_href (now.Format "2006-01-02") -}}
+{{- $google_font_stylesheet := resources.GetRemote $font_href (dict "key" $font_cache_key) -}}
+<style>{{ $google_font_stylesheet.Content | safeCSS }}</style>
 
 {{ template "_internal/opengraph.html" . }}
 {{ template "_internal/twitter_cards.html" . }}

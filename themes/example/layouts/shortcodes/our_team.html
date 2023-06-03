@@ -1,0 +1,13 @@
+<section class="ot">
+    <div class="ot-Wrapper">
+        <h2 class="ot-Heading">{{ .Params.heading }}</h2>
+        {{ .Inner }}
+    </div>
+    <div class="ot-ImageWrapper">
+        <div class="ot-BottomWrapper">
+            {{ partial "button_cta" (dict "url" .Params.cta_url "text" .Params.cta_text) }}
+        </div>
+        {{ partial "img" (dict "src" "inverted_logo_badge.png" "class" "ot-TeamLogo") }}
+        {{ partial "img" (dict "src" "fivexl_team_cutout.png" "class" "ot-TeamCutout") }}
+    </div>
+</section>

@@ -1,0 +1,30 @@
+{{- $caseStudies := where
+        (where site.RegularPages "Section" "blog" )
+        "Params.case_study" true 
+-}}
+
+<section class="cst_Cards {{ partial "fn/spacing_classes" . }}">
+    <h1 class="cst-Heading">{{ .heading }}</h1>
+    <div class="cst-ListWrapper">
+    {{ range $i, $v := first 3 $caseStudies }}
+        {{ $page_URL := .Permalink }}
+        <div class="cst-CaseWrapper">
+            <div class="cst-Case">
+                <div class="cst-TestimonialWrapper">
+                    <img class="cst-QuoteMark" src="{{ printf `/images/quote-%d.png` $i }}" alt="">
+                    <p class="cst-Testimonial"><em>{{ .Params.testimonial }}</em></p>
+                    <span class="cst-TestimonialAuthor">{{ .Params.testimonial_author }}</span>
+                    <span class="cst-TestimonialAuthor">{{ .Params.testimonial_author_position }}</span>
+                </div>
+                {{- $wave := resources.Get (printf `wave-%d.svg` $i) -}}
+                <div class="cst-ArticleInfo">
+                <img src="{{ printf `/images/wave-%d.png` $i }}" />
+                <a href="{{ $page_URL }}"> <h2 class="cst-CaseHeading">{{ .Title }}</h2> </a>
+                <p class="cst-Summary">{{ .Params.summary }}</p>
+                <a class="cst-ReadMore" href="{{ .Permalink }}">Read more</a>
+                </div>
+            </div>
+        </div>
+    {{ end }}
+    </div>
+</section>

@@ -1,0 +1,58 @@
+.ste {
+  position: relative;
+  overflow: hidden;
+  background: #f4f4f4;
+
+  &-Wrapper {
+    padding: 6.5rem 2rem 4rem;
+    max-width: 1920px;
+    margin-inline: auto;
+    @media (min-width: 540px) {
+      padding: clamp(6.5rem, 10vw, 11rem) clamp(3rem, 15vw, 17rem) ;
+    }
+  }
+
+  &-Heading {
+    color: $textSecondary;
+    margin-top: 0;
+    margin-bottom: 3rem;
+    font-size: clamp(2.125rem,4vw, 3.4rem);
+  }
+
+  &-StepsWrapper {
+    @media (min-width: 1440px) {
+      column-count: 2;
+      column-gap: clamp(2rem, 3vw, 3rem);
+      p:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &-Step {
+    display: flex;
+    background: white;
+    border-radius: 15rem;
+    gap: clamp(0.5rem, 2vw, 2rem);
+    align-items: center;
+    padding: clamp(1rem, 2vw, 1.5rem) clamp(1rem, 2vw, 2rem) clamp(1rem, 2vw, 1.5rem) clamp(1.5rem, 3vw, 4rem);
+    break-inside: avoid-column;
+    margin-bottom: clamp(1rem, 2vw, 2.5rem);
+  }
+
+  &-StepNumber {
+    color: $textAccent;
+    font-weight: 700;
+    font-size: clamp(2.25rem, 3.5vw, 3.75rem);
+    min-width: 3rem;
+    text-align: right;
+  }
+
+  &-StepText {
+    color: $textPrimary;
+    font-size: clamp(0.875rem, 2vw, 1.25rem);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.5;
+  }
+}

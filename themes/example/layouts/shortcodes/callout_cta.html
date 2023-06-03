@@ -1,0 +1,4 @@
+<section class="ccta">
+    <h2 class="ccta-Heading">{{ .Params.heading | markdownify }}</h2>
+    {{ partial "button_cta" (dict "url" .Params.cta_url "text" .Params.cta_text) }}
+</section>
