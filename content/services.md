@@ -58,7 +58,3 @@ There’s no problem that we can’t solve together!
 
 {{< callout_cta heading="This way, you can focus on what you do best <br> without worrying about the underlying infrastructure." cta_url="/#contact" cta_text="Book a consultation" >}}
 
-
-<!-- {{< case_studies heading="dyanmic heading" global="true" >}} -->
-
-

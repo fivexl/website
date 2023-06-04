@@ -177,7 +177,18 @@ a:has(.cst-CaseHeading) { text-decoration: none; }
         display: none !important;
       }
     }
-    .next { right: -8px; }
-    .prev { left: -8px; }
+
+    .next {
+      right: -8px;
+      @media (min-width: 830px) { right: 1vw; }
+      @media (min-width: 1180px) { right: calc(1vw - 8px) }
+    }
+
+    .prev {
+      left: -8px;
+      @media (min-width: 830px) { left: 1vw; }
+      @media (min-width: 1180px) { left: calc(1vw - 68x) }
+    }
+
   }
 }
