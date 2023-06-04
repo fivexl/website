@@ -15,9 +15,6 @@
     margin-inline: auto;
     text-align: center;
     line-height: 1.15;
-    letter-spacing: -0.03em;
-    padding-left: 1rem;
-    padding-right: 1rem;
     @media (min-width: 768px) {
       margin-bottom: 0.25rem;
     }
@@ -27,22 +24,27 @@
 .cst {
   &-CaseWrapper {
     padding: 2rem;
+    max-width: 360px;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
   }
 
   &-Case {
     box-shadow: 35px 25px 40px rgba(0,0,0,0.2);
+    background: white;
   }
 
   &-ListWrapper {
-    display: grid;
+    //display: grid;
     gap: 2rem;
-    padding-inline: 1rem;
+    //padding-inline: 1rem;
     max-width: $maxContentWidth;
     margin-inline: auto;
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     margin-top: 3rem;
   }
 
+  /*
   &-ListWrapper {
     div:first-child {
       margin-top: 0;
@@ -51,6 +53,7 @@
       }
     }
   }
+  */
 
   &-Image {
     width: 100%;
@@ -77,7 +80,7 @@
 
   &-TestimonialWrapper {
     padding: 1.5rem 1.5rem 1rem;
-    height: 14rem;
+    height: 19rem;
   }
 
   &-Testimonial {
@@ -143,4 +146,38 @@ a:has(.cst-CaseHeading) { text-decoration: none; }
 .cst_Cards {
   background-color: white;
   padding-top: 3rem;
+  overflow: hidden;
+}
+
+
+
+.cst_Cards {
+  .carousel {
+    .carousel-slide {
+      text-align: center;
+      min-width: 100%;
+      padding-bottom: 45rem;
+      @media (min-width: 768px) {
+        min-width: 50%;
+      }
+      @media (min-width: 1180px) {
+        min-width: calc(100% / 3);
+      }
+      @media (min-width: 1440px) {
+        min-width: 25%;
+      }
+    }
+
+    ol { display: none; }
+
+    .prev, .next {
+      color: $textSecondary;
+      display: block;
+      @media (min-width: 1440px) {
+        display: none !important;
+      }
+    }
+    .next { right: -8px; }
+    .prev { left: -8px; }
+  }
 }
