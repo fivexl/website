@@ -22,7 +22,7 @@
                         {{- $wave := resources.Get (printf `wave-%d.svg` $i) -}}
                         <div class="cst-ArticleInfo">
                         <img src="{{ printf `/images/wave-%d.png` $i }}" />
-                        <a href="{{ $page_URL }}"> <h2 class="cst-CaseHeading">{{ .Title }}</h2> </a>
+                        <a href="{{ $page_URL }}"> <h2 class="cst-CaseHeading">{{ replaceRE `(?i)case` "<br>Case" .Title | safeHTML }}</h2> </a>
                         <p class="cst-Summary">{{ .Params.summary }}</p>
                         <a class="cst-ReadMore" href="{{ .Permalink }}">Read more</a>
                         </div>

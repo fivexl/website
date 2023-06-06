@@ -27,6 +27,10 @@
     max-width: 360px;
     left: 50% !important;
     transform: translateX(-50%) !important;
+    @media (min-width: 1440px) {
+      max-width: 413px;
+    }
+
   }
 
   &-Case {
@@ -35,12 +39,8 @@
   }
 
   &-ListWrapper {
-    //display: grid;
-    gap: 2rem;
-    //padding-inline: 1rem;
-    max-width: $maxContentWidth;
+    max-width: 1686px;
     margin-inline: auto;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     margin-top: 3rem;
   }
 
@@ -71,6 +71,12 @@
     text-align: center;
     width: clamp(9rem, 10vw, 24rem);
     margin-inline: auto;
+    margin-bottom: 0;
+    @media (min-width: 1440px) {
+      width: auto;
+      font-size: 27px;
+      margin-bottom: 0.5rem;
+    }
   }
 
   &-ReadMore {
@@ -83,13 +89,20 @@
     height: 19rem;
   }
 
+  &-QuoteMark {
+    float: left;
+    margin-right: -1rem;
+  }
   &-Testimonial {
     font-weight: 700;
     color: #555;
     text-align: center;
     font-size: 1.125rem;
-    margin-top: 0.5rem;
+    margin-top: 2rem;
     color: #707070;
+    @media (min-width: 1440px) {
+      font-size: 21px;
+    }
     &:after {
       content: "”";
       margin-left: 0.125rem;
@@ -101,17 +114,26 @@
     color: #666;
     font-size: 14px;
     text-align: center;
-    font-weight: 600;
+    font-weight: 500;
     margin-top: 0.125rem;
+    @media (min-width: 1440px) {
+      font-size: 1rem;
+    }
   }
 
   &-ArticleInfo {
     position: relative;
     z-index: 0;
     overflow: hidden;
-    padding: 3.25rem 2rem 3rem;
+    padding: 3.875rem 2rem 3rem;
     height: 19rem;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    @media (min-width: 1440px) {
+      padding-top: 4.25rem;
+      height: 22rem;
+    }
     img {
       position: absolute;
       inset: 0;
@@ -125,6 +147,7 @@
     color: white;
     text-align: center;
     font-size: 14px;
+    font-weight: 500;
   }
 
   &-ReadMore {
@@ -138,6 +161,7 @@
     text-align: center;
     margin-inline: auto;
     color: $textPrimary;
+    margin-top: auto;
   }
 }
 
@@ -146,6 +170,7 @@ a:has(.cst-CaseHeading) { text-decoration: none; }
 .cst_Cards {
   background-color: white;
   padding-top: 3rem;
+  padding-top: clamp(3.25rem, 6vw, 6.75rem);
   overflow: hidden;
 }
 
@@ -164,7 +189,8 @@ a:has(.cst-CaseHeading) { text-decoration: none; }
         min-width: calc(100% / 3);
       }
       @media (min-width: 1440px) {
-        min-width: 25%;
+        min-width: 413px;
+        padding-bottom: 48rem;
       }
     }
 
