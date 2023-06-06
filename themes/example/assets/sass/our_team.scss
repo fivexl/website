@@ -4,6 +4,7 @@
 
   &-Wrapper {
     padding: 3.25rem clamp(3rem, 15vw, 17rem) 0;
+    padding: clamp(3.25rem, 6vw, 6.75rem) clamp(3rem, 15vw, 17rem) 0;
     max-width: 1920px;
     margin-inline: auto;
   }
