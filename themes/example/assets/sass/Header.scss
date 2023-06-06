@@ -50,7 +50,9 @@
   }
 
   .hdr-NavigationItem {
-    a, a:visited { color: white; }
+    @media (min-width: 768px) {
+      a, a:visited { color: white; }
+    }
   }
 }
 
