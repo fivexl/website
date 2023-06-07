@@ -10,6 +10,9 @@ panel_image: qameta.png
 alt_image: quote_qameta.png
 case_study: true
 tags: ['case study', 'aws']
+testimonial: "By developing infrastructure FivexL allows us to focus on our core business: Product development hypothesis testing and roadmap generation."  
+testimonial_author: "Artem Eroshenko"
+testimonial_author_position: "Co-founder and CEO at Qameta Software"
 ---
 ## “FivexL successfully designed and implemented a cost-efficient, scalable, and secure Cloud-based SaaS version of AllureTestOps software.”  
 **Two lead consultants for the project**  

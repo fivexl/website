@@ -1,0 +1,44 @@
+{{- $caseStudies := where
+        (where site.RegularPages "Section" "blog" )
+        "Params.case_study" true 
+-}}
+
+<section class="csc_Cards {{ partial "fn/spacing_classes" . }}">
+    <h1 class="csc-Heading">{{ .heading }}</h1>
+    <div class="csc-ListWrapper carousel" duration="6000" items="1">
+        <ul style="background: transparent">
+        {{ range $i, $v := first 4 $caseStudies }}
+            {{ $page_URL := .Permalink }}
+
+            <li id="csc-slide_{{ add $i 1 }}" class="carousel-slide">
+                <div class="csc-CaseWrapper">
+                    <div class="csc-Case">
+                        <div class="csc-TestimonialWrapper">
+                            <img class="csc-QuoteMark" src="{{ printf `/images/quote-%d.png` $i }}" alt="">
+                            <p class="csc-Testimonial"><em>{{ .Params.testimonial }}</em></p>
+                            <span class="csc-TestimonialAuthor">{{ .Params.testimonial_author }}</span>
+                            <span class="csc-TestimonialAuthor">{{ .Params.testimonial_author_position }}</span>
+                        </div>
+                        {{- $wave := resources.Get (printf `wave-%d.svg` $i) -}}
+                        <div class="csc-ArticleInfo">
+                        <img src="{{ printf `/images/wave-%d.png` $i }}" />
+                        <a href="{{ $page_URL }}"> <h2 class="csc-CaseHeading">{{ replaceRE `(?i)case` "<br>Case" .Title | safeHTML }}</h2> </a>
+                        <p class="csc-Summary">{{ .Params.summary }}</p>
+                        <a class="csc-ReadMore" href="{{ .Permalink }}">Read more</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+        {{ end }}
+        </ul>
+        <ol>
+          {{ range $i, $v := first 4 $caseStudies }}
+            <li><a href="#csc-slide_{{ add $i 1 }}"></a></li>
+          {{ end }}
+        </ol>
+        <div class="prev" style="display: block">&#9666;</div>
+        <div class="next" style="display: block">&#9656;</div>
+    </div>
+</section>
+

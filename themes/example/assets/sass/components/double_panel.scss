@@ -41,3 +41,67 @@
     width: 100%
   }
 }
+
+.dp-Wrapper_Services {
+    padding: 7.75rem 1.5rem 3rem;
+    max-width: 1600px;
+    margin-inline: auto;
+    @media (min-width: 1024px) {
+      padding: 5.75rem clamp(1.5rem, 2vw, 2rem) clamp(3rem, 6vw, 7rem);
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 1rem clamp(3rem, 5vw, 6rem);
+    }
+}
+.dp_Services {
+  background: linear-gradient(160deg, #f13687, #1d96f1);
+  color: white;
+
+  .dp-SummaryPanel {
+    padding: 0;
+    h2 {
+      font-size: clamp(2.75rem, 4.5vw, 4.5rem);
+      line-height: 1.15;
+      margin-bottom: 2rem;
+      margin-top: 0;
+      @media (min-width: 1024px) {
+        margin-bottom: clamp(2rem, 4.5vw, 5rem);
+      }
+    }
+    span {
+      font-weight: 600;
+      line-height: 1.25;
+      font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+      margin-bottom: 3rem;
+      @media (min-width: 768px) {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .dp-MediaPanel_Embed {
+    width: 100%;
+    height: auto;
+    min-height: initial;
+    aspect-ratio: 16/9;
+  }
+
+  .dp-MediaPanel {
+    @media (min-width: 1024px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  .ButtonCTA {
+    border-radius: 4rem;
+    padding: clamp(1rem, 2vw, 1.25rem) clamp(1.25rem, 2vw, 1.75rem);
+    margin-bottom: 3rem;
+    font-size: clamp(1rem, 1.5vw, 1.875rem);
+    margin-top: 1.5rem;
+    @media (min-width: 1024px) {
+      margin-bottom: 0;
+    }
+  }
+}

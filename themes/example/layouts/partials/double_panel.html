@@ -1,3 +1,15 @@
+{{ if and (ne nil .layout) (eq "services" .layout) }}
+<section class="dp_Services" >
+    <div class="dp-Wrapper_Services">
+        <div class="dp-SummaryPanel">
+            {{ with .heading }}<h2>{{ . }}</h2>{{ end }}
+            {{ with .subheading }}<span>{{ . }}</span>{{ end }}
+        </div>
+        {{ partial "media_panel" .media_panel }}
+        {{ with .button_cta }}{{ partial "button_cta" . }}{{ end }}
+    </div>
+</section>
+{{ else }}
 <section class="dp-Sq {{ with .fluid_layout }}dp__Fluid{{ end }}" >
     <section class="dp-SummaryPanel">
         {{ with .heading }}<h2>{{ . }}</h2>{{ end }}
@@ -11,3 +23,4 @@
     </section>
     {{ partial "media_panel" .media_panel }}
 </section>
+{{ end }}

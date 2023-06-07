@@ -1,0 +1,31 @@
+.ccta {
+  position: relative;
+  overflow: hidden;
+  padding: 3rem;
+  max-width: 1920px;
+  margin-inline: auto;
+  @media (min-width: 540px) {
+    padding: 6.5rem clamp(3rem, 15vw, 17rem) clamp(3rem, 4vw, 6rem);
+  }
+
+  &-Heading {
+    color: $textSecondary;
+    font-size: clamp(2.125rem,4vw, 3.4rem);
+    margin-top: 0;
+    margin-bottom: clamp(3rem, 5vw, 6rem);
+    line-height: 1.25;
+    text-align: center;
+    padding-left: clamp(0px, 2vw, 1rem);
+    padding-right: clamp(0px, 2vw, 1rem);
+  }
+
+  .ButtonCTA {
+    margin-inline: auto;
+    border-radius: 4rem;
+    padding: clamp(1rem, 2vw, 1.25rem) clamp(1.25rem, 2vw, 1.75rem);
+    margin-bottom: 3rem;
+    font-size: clamp(1rem, 1.5vw, 1.875rem);
+    margin-top: clamp(1.5rem, 3vw, 3rem);
+  }
+
+}

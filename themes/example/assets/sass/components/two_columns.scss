@@ -1,0 +1,38 @@
+.twc {
+  background: #DDDDDD53;
+  box-sizing: border-box;
+  &-Heading {
+    color: $textSecondary;
+    font-size: clamp(2.125rem,4vw, 3.4rem);
+    margin-top: 0;
+  }
+
+  &-Container {
+    padding: clamp(3.25rem, 9vw, 10rem) clamp(3rem, 15vw, 17rem);
+    max-width: 1920px;
+    margin-inline: auto;
+  }
+
+  &-ColumnsWrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2.5rem;
+
+    h2, h3, h4, h5 {
+      margin-top: 0;
+      line-height: 1.375;
+    }
+    h3 {
+      font-size: clamp(19px, 2.5vw, 2.5rem);
+    }
+    p {
+      font-size: clamp(0.875rem, 1vw, 1.25rem);
+      font-weight: 300;
+      line-height: 1.25;
+      @media (min-width:1024px) {
+        font-weight: 500;
+        line-height: 1.5;
+      }
+    }
+  }
+}

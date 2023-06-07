@@ -13,19 +13,7 @@ enableRobotsTXT = true
 # Main navigation
 [menu]
 [[menu.main]]
-  url = '/services'
-  name = 'Services'
-  weight = 10
-[[menu.main]]
-  url = '/about'
-  name = 'About'
-  weight = 20
-[[menu.main]]
-  url = '/blog'
-  name = 'Blog'
-  weight = 30
-[[menu.main]]
-  url = '/#contact'
+  url = 'https://sales.fivexl.io/schedule-a-call'
   name = 'Contact'
   weight = 40
   [menu.main.params]
@@ -40,7 +28,7 @@ enableRobotsTXT = true
   name = 'About'
   weight = 20
 [[menu.footer_nav]]
-  url = '/#contact'
+  url = 'https://sales.fivexl.io/schedule-a-call'
   name = 'Contact'
   weight = 30
 [[menu.footer_external]]
