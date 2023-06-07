@@ -1,6 +1,6 @@
 ---
-title: Services
-layout: landing_page
+title: "FivexL: Cloud Engineering Specialists"
+description: "We architect and build scalable cloud-based production-ready application delivery platforms for startups so they can launch fast."
 double_panel:
   layout: 'services'
   heading: "Great Product Needs Great Infrastructure"
@@ -11,11 +11,7 @@ double_panel:
   button_cta: { url: "https://sales.fivexl.io/schedule-a-call", text: "Book a consultation" }
   media_panel: { url: "https://youtu.be/uruLy1goNW0" }
 transparent_nav: true
-menu:
-  main:
-    name: Services
-    weight: 10
-    url: /services
+images: [ 'featured.png' ]
 ---
 
 {{< case_studies_cards heading="Our happy customers" mb="3">}}

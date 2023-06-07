@@ -22,8 +22,6 @@
             {{- with .Resources.GetMatch .Params.panel_image -}}
             <a href="{{ $page_URL }}"> {{ partial "CaseStudiesImage" . }} </a>
             {{- end -}}
-            {{- $wave := resources.Get (printf `assets/wave-%d.svg` $i) -}}
-            <p>{{ printf "%#v" $wave }}</p>
             <a href="{{ $page_URL }}"> <h2 class="cst-CaseHeading">{{ .Title }}</h2> </a>
             <p class="cst-Summary">{{ .Params.summary }}</p>
             <a class="cst-ReadMore" href="{{ .Permalink }}">Read more</a>
