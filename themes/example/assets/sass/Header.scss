@@ -30,6 +30,10 @@
     display: flex;
     align-items: center;
   }
+
+  &-NavigationItem_Active {
+    color: $textAccent !important;
+  }
 }
 
 .hdr_Transparent {
@@ -39,9 +43,30 @@
   padding: 1.5rem clamp(1.5rem, 2vw, 2rem);
   transform: translateX(-50%);
   max-width: 1600px;
+  z-index: 1;
+  @media (min-width: 768px) {
+    position: relative;
+    margin-inline: auto;
+    left: initial;
+    transform: initial;
+    padding: 4rem 1rem;
+  }
 
+  .hdr-Logo_Transparent, .hdr-Logo {
+    max-height: 3rem;
+    object-fit: cover;
+  }
+  .hdr-Logo_Transparent {
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
   .hdr-Logo {
-    background: initial;
+    background: #fff;
+    display: none;
+    @media (min-width: 768px) {
+      display: block;
+    }
   }
 
   .hdr-NavigationTrigger {
@@ -49,11 +74,6 @@
     box-shadow: none;
   }
 
-  .hdr-NavigationItem {
-    @media (min-width: 768px) {
-      a, a:visited { color: white; }
-    }
-  }
 }
 
 .hdr-NavigationTrigger {

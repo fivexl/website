@@ -11,6 +11,11 @@ double_panel:
   button_cta: { url: "/#contact", text: "Book a consultation" }
   media_panel: { url: "https://youtu.be/uruLy1goNW0" }
 transparent_nav: true
+menu:
+  main:
+    name: Services
+    weight: 10
+    url: /services
 ---
 
 {{< case_studies_cards heading="Our happy customers" mb="3">}}

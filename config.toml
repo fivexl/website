@@ -13,18 +13,6 @@ enableRobotsTXT = true
 # Main navigation
 [menu]
 [[menu.main]]
-  url = '/services'
-  name = 'Services'
-  weight = 10
-[[menu.main]]
-  url = '/about'
-  name = 'About'
-  weight = 20
-[[menu.main]]
-  url = '/blog'
-  name = 'Blog'
-  weight = 30
-[[menu.main]]
   url = '/#contact'
   name = 'Contact'
   weight = 40
