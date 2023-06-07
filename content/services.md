@@ -8,7 +8,7 @@ double_panel:
   icon_links:
     - { url: "https://github.com/fivexl", icon: "github" }
     - { url: "https://www.linkedin.com/company/5xl", icon: "linkedin" }
-  button_cta: { url: "/#contact", text: "Book a consultation" }
+  button_cta: { url: "https://sales.fivexl.io/schedule-a-call", text: "Book a consultation" }
   media_panel: { url: "https://youtu.be/uruLy1goNW0" }
 transparent_nav: true
 menu:
@@ -40,7 +40,7 @@ Agile, transparency, and comprehensive documentation for effective knowledge tra
 {{< /two_columns >}}
 
 
-{{< our_team heading="Our Team" cta_url="/#contact" cta_text="Book a consultation" >}}
+{{< our_team heading="Our Team" cta_url="https://sales.fivexl.io/schedule-a-call" cta_text="Book a consultation" >}}
 {{< md >}}
 At FivexL we’re focused on being the best at what we do as a small, remote first and agile team. Work with any of us and you will have the support of the whole team. With more than 50+ years of combined multidisciplinary expertise in cloud engineering.  
 
@@ -61,5 +61,5 @@ There’s no problem that we can’t solve together!
 
 {{< /steps_section >}}
 
-{{< callout_cta heading="This way, you can focus on what you do best <br> without worrying about the underlying infrastructure." cta_url="/#contact" cta_text="Book a consultation" >}}
+{{< callout_cta heading="This way, you can focus on what you do best <br> without worrying about the underlying infrastructure." cta_url="https://sales.fivexl.io/schedule-a-call" cta_text="Book a consultation" >}}
 
