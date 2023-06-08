@@ -8,7 +8,7 @@ panel_image: Ovrture_page.png
 alt_image: quote_ovrture_white.png
 case_study: true
 tags: ['case study', 'AWS']
-testimonial: 'The collaboration was highly professional, and our transition was seamless. Our infrastructure is light years ahead of where most small businesses would expect to be.'
+testimonial: 'The transition was seamless. Our infrastructure is light years ahead of where most small businesses would expect to be.'
 testimonial_author: 'Chris Picht'
 testimonial_author_position: 'IT Operations Manager & Senior Information Security Officer'
 ---
