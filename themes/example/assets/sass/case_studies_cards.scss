@@ -39,7 +39,7 @@
   }
 
   &-ListWrapper {
-    max-width: 1686px;
+    max-width: 1600px;
     margin-inline: auto;
     margin-top: 3rem;
   }
@@ -86,7 +86,7 @@
 
   &-TestimonialWrapper {
     padding: 1.5rem 1.5rem 1rem;
-    height: 19rem;
+    height: 20rem;
   }
 
   &-QuoteMark {
@@ -189,8 +189,8 @@ a:has(.csc-CaseHeading) { text-decoration: none; }
         min-width: calc(100% / 3);
       }
       @media (min-width: 1440px) {
-        min-width: 413px;
-        padding-bottom: 48rem;
+        min-width: 390px;
+        padding-bottom: 49rem;
       }
     }
 
