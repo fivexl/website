@@ -1,9 +1,13 @@
 ---
 title:  'Introducing the Open-Source Terraform AWS SSO Elevator Module with Slack Integration'
-author_id: 'Alexey Eremin'
+author_id: 
+ - 'Andrey_Devyatkin'
+ - 'Alexey Eremin'
 summary: 'Open-source Terraform AWS SSO Elevator tool allows requesting and granting temporary elevated access for AWS SSO through a Slack request/approval workflow.'
 date: 2023-06-02
-author: Alexey Eremin
+author: 
+ - 'Andrey_Devyatkin'
+ - 'Alexey Eremin'
 panel_image: Alexey.png
 tags: [ 'AWS', 'SSO Elevator', 'open sourse','Slack']
 ---
