@@ -8,9 +8,9 @@ panel_image: Ovrture_page.png
 alt_image: quote_ovrture_white.png
 case_study: true
 tags: ['case study', 'AWS']
-testimonial: 'This needs a testimonial'
-testimonial_author: 'Testimonial author'
-testimonial_author_position: 'Testimonial author position'
+testimonial: 'The transition was seamless. Our infrastructure is light years ahead of where most small businesses would expect to be.'
+testimonial_author: 'Chris Picht'
+testimonial_author_position: 'IT Operations Manager & Senior Information Security Officer'
 ---
 
 ## “FivexL deployed a completely immutable infrastructure thus reducing operating costs, enhancing resilience and providing the ability to scale. Ultimately, we achieved our most important goal: delivering the latest changes as quickly as possible. Our infrastructure is light years ahead of where most small businesses would expect to be." 
