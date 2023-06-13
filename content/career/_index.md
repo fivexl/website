@@ -30,7 +30,7 @@ Could that person be you?
 {{< /md >}}
 {{< /our_team >}}
 
-{{< two_columns heading="Exploring a future with FivexL? Let's talk it over!" >}}
+{{< two_columns heading="Exploring a future with FivexL? <br> Let's talk it over!" >}}
 {{< column >}}
 ### Ready to Share Your Expertise?  
 **Key Skills:**  
@@ -70,15 +70,14 @@ Have an understanding of software development processes (Agile/Kanban/Lean);
 Understand concepts such as: Infrastructure as Code, Immutable infrastructure, Configuration drift, Continuous Integration, Continuous Delivery.
 {{< /column >}}
 {{< /two_columns >}}
-
-
-
 {{< steps_section heading="What need to do?" >}}
 
-{{< steps_section_item number=1 text="English Test." >}}
-{{< steps_section_item number=2 text="Personality Test." >}}
+{{< steps_section_item number=1 text="Fill the form, tell us about your motivation." >}}
+{{< steps_section_item number=2 text="Take the English Test." >}}
+{{< steps_section_item number=3 text="Take the Personality Test." >}}
+{{< steps_section_item number=4 text="Meet the team and share your experience." >}}
 
 {{< /steps_section >}}
 
-{{< callout_cta heading="Are you still interesting?<br> Push the button :)" cta_url="https://sales.fivexl.io/schedule-a-call" cta_text="Contact" >}}
+{{< callout_cta heading="Exploring FivexL as Your Next Step? <br> Let's Start a Conversation!" cta_url="https://sales.fivexl.io/schedule-a-call" cta_text="Contact" >}}
 
