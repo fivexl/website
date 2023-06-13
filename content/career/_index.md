@@ -18,9 +18,19 @@ double_panel:
 transparent_nav: true
 images: [ 'featured.png' ]
 ---
+{{< our_team heading="About FivexL" cta_url="https://sales.fivexl.io/schedule-a-call" cta_text="Join Us!" >}}
+{{< md >}}
+We understand the solitude of being the only specialist in your field within a company. It often feels like no one comprehends what you do, and there's no one to share your thoughts with or discuss issues.  
+We know what it's like to work tirelessly in outsourcing without the freedom to choose your projects or technology.  
+We also know what it's like to provide support for legacy infrastructure while witnessing new technologies evolve around you.  
+**This is exactly why we founded FivexL, to create a company where we ourselves would want to work.**  
+Let's be clear: FivexL isn't a fit for everyone. It takes a unique blend of ambition, skill, and dedication. But, for the right person, it could be the ideal environment to truly unleash your potential.    
 
+Could that person be you?
+{{< /md >}}
+{{< /our_team >}}
 
-{{< two_columns heading="Currently Not Hiring, Yet Open for Future Connections" >}}
+{{< two_columns heading="Exploring a future with FivexL? Let's talk it over!" >}}
 {{< column >}}
 ### Ready to Share Your Expertise?  
 **Key Skills:**  
@@ -61,18 +71,6 @@ Understand concepts such as: Infrastructure as Code, Immutable infrastructure, C
 {{< /column >}}
 {{< /two_columns >}}
 
-
-{{< our_team heading="About FivexL" cta_url="https://sales.fivexl.io/schedule-a-call" cta_text="Join Us!" >}}
-{{< md >}}
-We understand the solitude of being the only specialist in your field within a company. It often feels like no one comprehends what you do, and there's no one to share your thoughts with or discuss issues.  
-We know what it's like to work tirelessly in outsourcing without the freedom to choose your projects or technology.  
-We also know what it's like to provide support for legacy infrastructure while witnessing new technologies evolve around you.  
-**This is exactly why we founded FivexL, to create a company where we ourselves would want to work.**  
-Let's be clear: FivexL isn't a fit for everyone. It takes a unique blend of ambition, skill, and dedication. But, for the right person, it could be the ideal environment to truly unleash your potential.    
-
-Could that person be you?
-{{< /md >}}
-{{< /our_team >}}
 
 
 {{< steps_section heading="What need to do?" >}}
