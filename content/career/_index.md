@@ -9,35 +9,68 @@ menu:
 double_panel:
   layout: 'services'
   heading: "Join Us"
-  subheading: "We Build Best In Class AWS Infrastructure To Empower Your Ideas"
+  subheading: "FivexL: Where Your Skills Help Startups Excel with AWS Infrastructure"
   icon_links:
     - { url: "https://github.com/fivexl", icon: "github" }
     - { url: "https://www.linkedin.com/company/5xl", icon: "linkedin" }
-  button_cta: { url: "https://sales.fivexl.io/schedule-a-call", text: "Push the button" }
+  button_cta: { url: "https://sales.fivexl.io/schedule-a-call", text: "Get Started!" }
   media_panel: { url: "https://youtu.be/uruLy1goNW0" }
 transparent_nav: true
 images: [ 'featured.png' ]
 ---
 
 
-{{< two_columns heading="We are not hiring at the moment" >}}
+{{< two_columns heading="Currently Not Hiring, Yet Open for Future Connections" >}}
 {{< column >}}
-### What Can We Offer?  
-Generated text for future teammates
+### Ready to Share Your Expertise?  
+**Key Skills:**  
+AWS Solutions Engineering,  
+Docker,  
+Terraform,  
+Python/Golang,  
+English proficiency: B2+  
+  
+**Responsibilities:**  
+Analyzing the customer's business challenges that can be addressed through infrastructure solutions.  
+  
+Proposing infrastructure solutions that solve business tasks or enhance the productivity of the customer's team.  
+  
+Implementing proposed solutions or overseeing their implementation.  
+  
+Training the customer's staff in tools, technologies, concepts, and approaches.
 {{< /column >}}
 
 {{< column >}}
-### And why we are looking for you? 
-Another generated text here
+### Could You Be the Next Star of FivexL Team?  
+**Yes, If You:**  
+Are independent, self-organized, and have experience with remote work;  
+  
+Are positive, ambitious, and proactive;  
+  
+Have a desire to grow, learn, and excel in your field;  
+  
+Understand that the core of work is human interaction, with technology serving as a context;  
+  
+Can approach work from the perspective of solving customer business problems, not just focusing on technology;  
+  
+Understand change management processes within an organization and can organize them;  
+  
+Have an understanding of software development processes (Agile/Kanban/Lean);  
+  
+Understand concepts such as: Infrastructure as Code, Immutable infrastructure, Configuration drift, Continuous Integration, Continuous Delivery.
 {{< /column >}}
 {{< /two_columns >}}
 
 
-{{< our_team heading="Our Team" cta_url="https://sales.fivexl.io/schedule-a-call" cta_text="Book a consultation" >}}
+{{< our_team heading="About FivexL" cta_url="https://sales.fivexl.io/schedule-a-call" cta_text="Join Us!" >}}
 {{< md >}}
-At FivexL we’re focused on being the best at what we do as a small, remote first and agile team. Work with any of us and you will have the support of the whole team. With more than 50+ years of combined multidisciplinary expertise in cloud engineering.  
+We understand the solitude of being the only specialist in your field within a company. It often feels like no one comprehends what you do, and there's no one to share your thoughts with or discuss issues.  
+We know what it's like to work tirelessly in outsourcing without the freedom to choose your projects or technology.  
+We also know what it's like to provide support for legacy infrastructure while witnessing new technologies evolve around you.  
+**This is exactly why we founded FivexL, to create a company where we ourselves would want to work.**  
+Let's be clear: FivexL isn't a fit for everyone. It takes a unique blend of ambition, skill, and dedication. But, for the right person, it could be the ideal environment to truly unleash your potential.    
 
-There’s no problem that we can’t solve together!
+Could that person be you?
 {{< /md >}}
 {{< /our_team >}}
 
