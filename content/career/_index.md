@@ -13,7 +13,7 @@ double_panel:
   icon_links:
     - { url: "https://github.com/fivexl", icon: "github" }
     - { url: "https://www.linkedin.com/company/5xl", icon: "linkedin" }
-  button_cta: { url: "https://sales.fivexl.io/schedule-a-call", text: "Get Started!" }
+  
   media_panel: { url: "https://youtu.be/uruLy1goNW0" }
 transparent_nav: true
 images: [ 'featured.png' ]
@@ -30,7 +30,7 @@ Could that person be you?
 {{< /md >}}
 {{< /our_team >}}
 
-{{< two_columns heading="Exploring a future with FivexL? <br> Let's talk it over!" >}}
+{{< two_columns heading="Exploring a future with FivexL? Let's talk it over!" >}}
 {{< column >}}
 ### Ready to Share Your Expertise?  
 **Key Skills:**  
@@ -78,6 +78,5 @@ Understand concepts such as: Infrastructure as Code, Immutable infrastructure, C
 {{< steps_section_item number=4 text="Meet the team and share your experience." >}}
 
 {{< /steps_section >}}
-
-{{< callout_cta heading="Exploring FivexL as Your Next Step? <br> Let's Start a Conversation!" cta_url="https://sales.fivexl.io/schedule-a-call" cta_text="Contact" >}}
+{{< callout_cta heading="Exploring FivexL as Your Next Step? <br> Let's Start a Conversation!" cta_url="https://sales.fivexl.io/schedule-a-call-0" cta_text="Join us!" >}}
 
