@@ -18,7 +18,7 @@ double_panel:
 transparent_nav: true
 images: [ 'featured.png' ]
 ---
-{{< our_team heading="About FivexL" cta_url="https://sales.fivexl.io/schedule-a-call" cta_text="Join Us!" >}}
+{{< our_team heading="About FivexL" >}}
 {{< md >}}
 We understand the solitude of being the only specialist in your field within a company. It often feels like no one comprehends what you do, and there's no one to share your thoughts with or discuss issues.  
 We know what it's like to work tirelessly in outsourcing without the freedom to choose your projects or technology.  
@@ -78,5 +78,5 @@ Understand concepts such as: Infrastructure as Code, Immutable infrastructure, C
 {{< steps_section_item number=4 text="Meet the team and share your experience." >}}
 
 {{< /steps_section >}}
-{{< callout_cta heading="Exploring FivexL as Your Next Step? <br> Let's Start a Conversation!" cta_url="https://sales.fivexl.io/schedule-a-call-0" cta_text="Join us!" >}}
+{{< callout_cta heading="Let's talk about how FivexL can be your next step forward." cta_url="https://sales.fivexl.io/schedule-a-call-0" cta_text="Meet the team!" >}}
 
