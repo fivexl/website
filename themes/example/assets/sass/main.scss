@@ -29,6 +29,8 @@ body {
 @import 'AuthorCertifications.scss';
 @import 'CaseStudies.scss';
 @import 'TagTaxonomyList.scss';
+@import 'FeaturedCaseStudy.scss';
+@import 'CaseStudiesInfinite.scss';
 @import 'components';
 
 * {
@@ -45,4 +47,3 @@ body {
     border-radius: 3px;
   }
 }
-

@@ -40,7 +40,10 @@
     {{ end }}
 
     <picture>
-        <source type="image/webp" {{ with $srcset }}srcset="{{ . }}"{{ end }}>
+        <source type="image/webp" 
+            {{- with $srcset }} srcset="{{ . }}"{{ end -}}
+            {{- if isset . "IsContentImage" -}}sizes="(max-width: 768px) 100vw, 1184px"{{- end -}}
+            >
         <img
             src="{{ $image.Permalink }}"
             class="{{ .class }} {{ $align }}"
@@ -48,7 +51,6 @@
             height="{{ $image.Height }}"
             width="{{ $image.Width }}"
             {{- with .sizes }}sizes="{{ . }}"{{- end -}}
-            {{- if isset . "IsContentImage" -}}sizes="(max-width: 768px) 100vw, 1184px"{{- end -}}
             {{ with $style }}style="{{ . | safeCSS }}"{{ end }}
             {{- if .lazy }}loading="lazy"{{ end -}}
         />
@@ -56,4 +58,3 @@
 {{ else }}
     <img src="{{ .src }}" class="{{ partial "fn/spacing_classes" . }}" alt="{{ .src }}" style="{{ with .maxWidth }}max-width: {{. }}{{ else }}width: 100%{{ end }}; height: auto;{{ with .style }}{{ . | safeCSS }}{{ end }}">
 {{ end }}
-

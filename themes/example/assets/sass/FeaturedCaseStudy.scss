@@ -1,0 +1,106 @@
+.fcs {
+  padding: clamp(3rem, 7vw, 8rem) 0;
+
+  .container { padding: 0 1.5rem; }
+
+  &-Wrapper {
+    width: auto;
+    max-width: 100%;
+  }
+
+  &-Image {
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &-ImageWrapper {
+    grid-column: 1 / 3;
+    margin-bottom: 0.75rem;
+  }
+
+  &-Content {
+    grid-column: 3 / 4;
+    @media (min-width: 1180px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(2rem, 3.5vw, 4rem) 0;
+    }
+  }
+
+  &-Date {
+    font-size: 12px;
+    margin-bottom: 0.5rem;
+    @media (min-width: 1180px) {
+      font-size: 14px;
+      margin-bottom: 1rem;
+      display: block;
+    }
+  }
+
+  &-Heading {
+    margin-top: 0;
+    color: $textSecondary;
+    margin-bottom: 0.75rem;
+    @media (min-width: 1180px) {
+      font-size: clamp(2rem, 2.5vw, 3.5rem);
+      margin-bottom: clamp(1rem, 1.5vw, 1.5rem);
+    }
+  }
+
+  &-Summary {
+    margin-top: 0;
+    font-size: 14px;
+    @media (min-width: 1180px) {
+      font-size: clamp(16px, 1vw, 18px);
+    }
+  }
+
+  &-More {
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: $textPrimary;
+    display: block;
+    font-size: 14px;
+  }
+
+  &-AuthorWrapper {
+    display: flex;
+    align-content: center;
+    gap: clamp(1rem, 1vw, 2rem);
+    margin-bottom: 0.75rem;
+    width: max-content;
+  }
+
+
+
+  &-Author_Portrait {
+    display: block;
+    width: clamp(4rem, 5vw, 6rem);
+    height: auto;
+    background: url('/xl-nobg.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left;
+    object-fit: scale-down;
+    margin-left: 1rem;
+    border-radius: 50%;
+  }
+
+  &-Author {
+    a, a:visited {
+      color: $textPrimary;
+      font-weight: 700;
+      text-decoration: none;
+    }
+  }
+
+  @media (min-width: 992px) {
+    &-Wrapper {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+  }
+}

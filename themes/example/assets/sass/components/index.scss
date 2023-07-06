@@ -8,6 +8,12 @@
 @import 'callout_cta.scss';
 @import 'case_studies_cards.scss';
 
+.container {
+  max-width: $maxContentWidth;
+  padding: 0 1rem;
+  margin-inline: auto;
+}
+
 .section {
   max-width: $maxContentWidth;
   padding: 0 1rem;
