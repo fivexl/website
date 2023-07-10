@@ -1,4 +1,4 @@
-{{- $pages := after 1 (where (where .Site.RegularPages "Section" "blog") "Params.case_study" true) -}}
+{{- $pages := (where (where .Site.RegularPages "Section" "blog") "Params.case_study" true) -}}
 
 <section class="csi">
     <div class="container">
