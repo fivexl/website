@@ -17,6 +17,9 @@
   &-ImageWrapper {
     grid-column: 1 / 3;
     margin-bottom: 0.75rem;
+    @media (min-width: 992px) {
+      margin-bottom: 0;
+    }
   }
 
   &-Content {
@@ -25,7 +28,7 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: clamp(2rem, 3.5vw, 4rem) 0;
+      padding: clamp(2rem, 3.5vw, 4rem) 0 0;
     }
   }
 
@@ -63,13 +66,25 @@
     color: $textPrimary;
     display: block;
     font-size: 14px;
+    @media (min-width: 1024px) {
+      margin-bottom: 0;
+    }
+  }
+
+  &-Authors {
+    display: flex;
+    gap: 1rem 3rem;
+    flex-wrap: wrap;
+    @media (min-width: 1024px) {
+      padding: clamp(2.5rem, 3.5vw, 5rem) 0;
+    }
   }
 
   &-AuthorWrapper {
     display: flex;
-    align-content: center;
+    align-items: center;
     gap: clamp(1rem, 1vw, 2rem);
-    margin-bottom: 0.75rem;
+    margin-bottom: 0;
     width: max-content;
   }
 
@@ -84,11 +99,12 @@
     background-repeat: no-repeat;
     background-position: left;
     object-fit: scale-down;
-    margin-left: 1rem;
+    //margin-left: 1rem;
     border-radius: 50%;
   }
 
   &-Author {
+    width: min-content;
     a, a:visited {
       color: $textPrimary;
       font-weight: 700;

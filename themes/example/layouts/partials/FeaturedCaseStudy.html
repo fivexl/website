@@ -13,6 +13,7 @@
                 <p class="fcs-Summary">{{ .Summary }}</p>
                 <a class="fcs-More" href="{{ .Permalink }}">Read More</a>
                 {{ if reflect.IsSlice .Page.Params.author_id }}
+                    <div class="fcs-Authors">
                     {{ range .Page.Params.author_id }}
                         {{ range where (where site.Pages "Section" "author") "Params.author_id" "in" .  }}
                             <div class="fcs-AuthorWrapper">
@@ -39,6 +40,7 @@
                             <p class="fcs-Author"><a href="{{ .Permalink }}">{{ .Params.name }}</a></p>
                         </div>
                     {{ end }}
+                    </div>
                 {{ end }}
             </div>
         </div>
