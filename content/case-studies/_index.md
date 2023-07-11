@@ -12,4 +12,9 @@ double_panel:
   media_panel: { url: "https://youtu.be/uruLy1goNW0" }
 transparent_nav: true
 images: [ 'featured.png' ]
+menu:
+  main:
+    name: Case Studies
+    weight: 10
+    url: /case-studies
 ---
