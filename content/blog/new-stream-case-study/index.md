@@ -6,7 +6,7 @@ author_id:
 summary: 'FivexL built a scalable and secure infrastructure defined in code for a Mobile Computer Vision & AI solutions software company.'
 date: 2023-03-16
 author:  Artem Zhelezov Maria Zubchenko 
-panel_image: new_stream.png
+panel_image: Artem.png
 alt_image: quote_new_stream.png
 case_study: true
 tags: ['case study', 'aws']
