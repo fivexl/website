@@ -7,7 +7,9 @@
         <div class="csi-ItemsWrapper">
             {{ range $paginator.Pages }}
             <div class="csi-ItemWrapper">
-                {{- partial "img" (dict "src" .Params.panel_image "Page" . "IsContentImage" true "class" "csi-Image") -}}
+                <a href="{{ .Permalink }}">
+                    {{- partial "img" (dict "src" .Params.alt_image "Page" . "IsContentImage" true "class" "csi-Image") -}}
+                </a>
                 <h1 class="csi-ItemHeading">{{ .Title }}</h1>
                 <p class="csi-ItemSummary">{{ default .Summary .Params.description }}</p>
                 <a class="csi-ReadMore" href="{{ .Permalink }}">Read More</a>
