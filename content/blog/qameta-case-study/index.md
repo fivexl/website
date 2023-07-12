@@ -7,7 +7,7 @@ summary: 'FivexL designed and implemented a cost-efficient, scalable, and secure
 date: 2022-11-28
 author:  Ivan Razzhivin Alexey Eremin 
 panel_image: Alex_Vanya.png
-alt_image: quote_qameta.png
+alt_image: alex_ivan_small.png
 case_study: true
 tags: ['case study', 'aws']
 testimonial: "By developing infrastructure FivexL allows us to focus on our core business: Product development hypothesis testing and roadmap generation."  

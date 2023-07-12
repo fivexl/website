@@ -7,7 +7,7 @@ summary: 'FivexL built a scalable and secure infrastructure defined in code for 
 date: 2023-03-16
 author:  Artem Zhelezov Maria Zubchenko 
 panel_image: Artem.png
-alt_image: quote_new_stream.png
+alt_image: artem_small.png
 case_study: true
 tags: ['case study', 'aws']
 testimonial: 'As our needs and product changed FivexL remained flexible and fully involved in the project'  
