@@ -13,21 +13,18 @@
   }
 
   &-ItemsWrapper {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 2fr));
     gap: 2rem;
-    flex-wrap: wrap;
     @media (min-width: 1280px) {
-      gap: 3rem 4rem;
+      gap: 4rem;
+      grid-template-columns: repeat(3, minmax(290px, 1fr));
     }
   }
   
   &-ItemWrapper {
     display: flex;
     flex-direction: column;
-    flex: 1 1 280px;
-    @media (min-width: 1280px) {
-      max-width: 344px;
-    }
   }
 
   &-Image {

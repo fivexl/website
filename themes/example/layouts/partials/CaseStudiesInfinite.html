@@ -1,15 +1,16 @@
-{{- $pages := (where (where .Site.RegularPages "Section" "blog") "Params.case_study" true) -}}
+{{- $pages := after 1 (where (where .Site.RegularPages "Section" "blog") "Params.case_study" true) -}}
+{{- $paginator := .Paginate $pages 10 -}}
 
 <section class="csi">
     <div class="container">
         <h2 class="csi-Heading">More case studies</h2>
         <div class="csi-ItemsWrapper">
-            {{ range $pages }}
+            {{ range $paginator.Pages }}
             <div class="csi-ItemWrapper">
                 {{- partial "img" (dict "src" .Params.panel_image "Page" . "IsContentImage" true "class" "csi-Image") -}}
                 <h1 class="csi-ItemHeading">{{ .Title }}</h1>
                 <p class="csi-ItemSummary">{{ default .Summary .Params.description }}</p>
-                <a class="csi-ReadMore" href="">Read More</a>
+                <a class="csi-ReadMore" href="{{ .Permalink }}">Read More</a>
             </div>
             {{ end }}
         </div>
