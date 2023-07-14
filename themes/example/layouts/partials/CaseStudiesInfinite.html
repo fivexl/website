@@ -1,14 +1,15 @@
-{{- $pages := after 1 (where (where .Site.RegularPages "Section" "blog") "Params.case_study" true) -}}
-{{- $paginator := .Paginate $pages 10 -}}
+{{- $pages := (where (where .Site.RegularPages "Section" "blog") "Params.case_study" true) -}}
+{{- $paginator := .Paginate $pages 1 -}}
 
 <section class="csi">
     <div class="container">
         <h2 class="csi-Heading">More case studies</h2>
-        <div class="csi-ItemsWrapper">
+        <div class="csi-ItemsWrapper" data-page="1">
             {{ range $paginator.Pages }}
             <div class="csi-ItemWrapper">
                 <a href="{{ .Permalink }}">
-                    {{- partial "img" (dict "src" .Params.alt_image "Page" . "IsContentImage" true "class" "csi-Image") -}}
+                    {{- partial "img" (dict "src" .Params.alt_image "Page" . "IsContentImage" true "class" "csi-Image")
+                    -}}
                 </a>
                 <h1 class="csi-ItemHeading">{{ .Title }}</h1>
                 <p class="csi-ItemSummary">{{ default .Summary .Params.description }}</p>
@@ -18,3 +19,48 @@
         </div>
     </div>
 </section>
+
+<template id="case_study_card_template">
+    <div class="csi-ItemWrapper">
+        <a href="">
+            <img src="" alt="" class="csi-Image">
+        </a>
+        <h1 class="csi-ItemHeading"></h1>
+        <p class="csi-ItemSummary"></p>
+        <a class="csi-ReadMore" href="">Read More</a>
+    </div>
+</template>
+
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.intersectionRatio > 0) {
+                const container = document.querySelector('.csi-ItemsWrapper');
+                fetch(`/case-studies/page/${Number(container.dataset.page) + 1}/index.json`)
+                    .then((res) => {
+                        return res.json()
+                    })
+                    .then((data) => {
+                        const template = document.querySelector('#case_study_card_template');
+
+                        data.items.forEach((item) => {
+                            const content = template.content.cloneNode(true);
+                            content.querySelector('a').setAttribute('href', item.url);
+                            content.querySelector('.csi-ItemHeading').textContent = item.title;
+                            content.querySelector('.csi-ItemSummary').textContent = item.summary;
+                            content.querySelector('.csi-ReadMore').setAttribute('href', item.url);
+                            content.querySelector('.csi-Image').setAttribute('src', item.image);
+                            container.appendChild(content);
+                        });
+                        container.dataset.page = data.page;
+                    });
+            }
+        });
+    });
+
+    // Element to observe
+    const elementToObserve = document.querySelector('.csi-ItemsWrapper');
+
+    // Start observing the element
+    observer.observe(elementToObserve);
+</script>
