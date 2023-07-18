@@ -1,5 +1,5 @@
-{{- $pages := (where (where .Site.RegularPages "Section" "blog") "Params.case_study" true) -}}
-{{- $paginator := .Paginate $pages 1 -}}
+{{- $pages := after 1 (where (where .Site.RegularPages "Section" "blog") "Params.case_study" true) -}}
+{{- $paginator := .Paginate $pages 12 -}}
 
 {
   "page": "{{ $paginator.PageNumber }}",
