@@ -1,0 +1,51 @@
+{{- $pages := where (where .Site.RegularPages "Section" "blog") "Params.case_study" true -}}
+
+<section class="fcs">
+    <div class="container">
+        {{ with index (first 1 $pages) 0 }}
+        <div class="fcs-Wrapper">
+            <div class="fcs-ImageWrapper">
+                <a href="{{ .Permalink }}">
+                {{- partial "img" (dict "src" .Params.panel_image "Page" . "IsContentImage" true "class" "fcs-Image") -}}
+                </a>
+            </div>
+            <div class="fcs-Content">
+                <span class="fcs-Date">{{ .Date.Format "January 02, 2006" }}</span>
+                <h2 class="fcs-Heading"><a href="{{ .Permalink }}" style="color: inherit; text-decoration: none;">{{ .Title }}</a></h2>
+                <p class="fcs-Summary">{{ .Summary }}</p>
+                <a class="fcs-More" href="{{ .Permalink }}">Read More</a>
+                {{ if reflect.IsSlice .Page.Params.author_id }}
+                    <div class="fcs-Authors">
+                    {{ range .Page.Params.author_id }}
+                        {{ range where (where site.Pages "Section" "author") "Params.author_id" "in" .  }}
+                            <div class="fcs-AuthorWrapper">
+                                {{ $Permalink := .Permalink }}
+                                {{ with .Resources.GetMatch .Params.author_headshot }}
+                                <a href="{{ $Permalink }}" alt="{{ .Params.name }}'s author page">
+                                    {{ partial "img" (dict "class" "fcs-Author_Portrait" "src" .Params.author_headshot "alt" "Author portrait" "image" . "sizes" "145px" "lazy" true) }}
+                                </a>
+                                {{ end }}
+                                <p class="fcs-Author"><a href="{{ .Permalink }}">{{ .Params.name }}</a></p>
+                            </div>
+
+                        {{ end }}
+                    {{ end }}
+                {{ else }}
+                    {{ range where (where site.Pages "Section" "author") "Params.author_id" "in" .Page.Params.author_id  }}
+                        <div class="fcs-AuthorWrapper">
+                            {{ $Permalink := .Permalink }}
+                            {{ with .Resources.GetMatch .Params.author_headshot }}
+                            <a href="{{ $Permalink }}" alt="{{ .Params.name }}'s author page">
+                                {{ partial "img" (dict "class" "fcs-Author_Portrait" "src" .Params.author_headshot "alt" "Author portrait" "image" . "sizes" "145px" "lazy" true) }}
+                            </a>
+                            {{ end }}
+                            <p class="fcs-Author"><a href="{{ .Permalink }}">{{ .Params.name }}</a></p>
+                        </div>
+                    {{ end }}
+                    </div>
+                {{ end }}
+            </div>
+        </div>
+        {{- end -}}
+    </div>
+</section>

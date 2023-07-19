@@ -1,0 +1,17 @@
+{{- $pages := after 1 (where (where .Site.RegularPages "Section" "blog") "Params.case_study" true) -}}
+{{- $paginator := .Paginate $pages 12 -}}
+
+{
+  "page": "{{ $paginator.PageNumber }}",
+  "items": [
+    {{ range $i, $v := $paginator.Pages }}
+    {{- if gt $i 0 -}},{{- end -}}
+    {
+      "url": "{{ .Permalink }}",
+      "image": "{{ (.Resources.GetMatch .Params.alt_image).Permalink }}",
+      "title": "{{ .Title }}",
+      "summary": "{{ default .Summary .Params.description }}"
+    }
+    {{ end }}
+  ]
+}

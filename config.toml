@@ -51,3 +51,6 @@ disableKinds = ['category'] # Categories disabled initially
 
 [imaging]
   quality = 80
+
+[outputs]
+  section = ['HTML', 'JSON']

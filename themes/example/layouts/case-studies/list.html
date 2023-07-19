@@ -1,0 +1,14 @@
+{{ define "main" }}
+{{ with .Params.double_panel }}{{ partial "double_panel" . }}{{ end }}
+
+    {{ .Content }}
+    {{- partial "FeaturedCaseStudy.html" . -}}
+    {{- partial "CaseStudiesInfinite" . -}}
+{{ end }}
+
+{{ define "bodyScripts" }}
+    {{- if .HasShortcode "case_studies_cards" -}}
+        <script type="text/javascript" src="/js/carousel.js"></script>
+        <link rel="stylesheet" href="/css/carousel.css">
+    {{- end -}}
+{{ end }}

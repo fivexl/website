@@ -3,9 +3,8 @@ title: about
 menu:
   main:
     name: About
-    weight: 20
+    weight: 30
     url: /about
 ---
-
 
 

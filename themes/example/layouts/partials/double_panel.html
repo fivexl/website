@@ -1,4 +1,15 @@
-{{ if and (ne nil .layout) (eq "services" .layout) }}
+{{ if and (ne nil .layout) (eq "case-studies" .layout) }}
+<section class="dp_CaseStudies" >
+    <div class="dp-Wrapper_CaseStudies">
+        <div class="dp-SummaryPanel">
+            {{ with .heading }}<h2>{{ . }}</h2>{{ end }}
+            {{ with .subheading }}<span>{{ . }}</span>{{ end }}
+            {{ with .button_cta }}{{ partial "button_cta" . }}{{ end }}
+        </div>
+        {{ partial "media_panel" .media_panel }}
+    </div>
+</section>
+{{ else if and (ne nil .layout) (eq "services" .layout) }}
 <section class="dp_Services" >
     <div class="dp-Wrapper_Services">
         <div class="dp-SummaryPanel">
