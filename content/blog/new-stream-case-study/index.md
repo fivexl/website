@@ -7,12 +7,33 @@ summary: 'FivexL built a scalable and secure infrastructure defined in code for 
 date: 2023-03-16
 author:  Artem Zhelezov Maria Zubchenko 
 panel_image: Artem_gradient.png
+authors_heading: 'Two lead consultants for the project'
 alt_image: artem_small.png
 case_study: true
 tags: ['case study', 'aws']
 testimonial: 'As our needs and product changed FivexL remained flexible and fully involved in the project'  
 testimonial_author: 'Andrey Kolpakov'
 testimonial_author_position: 'CTO at New Stream'
+testimonial_author_portrait: kolpakov-1.png
+testimonial_cta_url: 'https://sales.fivexl.io/schedule-a-call'
+testimonial_long: |
+  “**As our needs and product changed and as we moved from golf to basketball and then to workouts, FivexL remained flexible and fully involved in the project, practically becoming the member of our own team.** Now the entire infrastructure for the project is set up, we have migrated to the cloud, implemented autoscaling, and distributed everything that was needed among services. As a result, the system is operating stable.”
+about_company:
+  logo: 'new_stream_logo.png'
+  heading: 'About New Stream'
+  text: |
+    '**New Stream is a Mobile Computer Vision & AI solutions software company that created SDK for sports technology companies, personal trainers.**
+
+    Newstream SDK is a one-of-a-kind computer vision tehcnology that provides accurate skeleton measurements in real-time. The system measures all body motions and presents the result of any movment in inches, angles and seconds.'
+double_panel:
+  layout: 'case-studies'
+  heading: "CASE STUDIES"
+  subheading: "SaaS, AI, health care, and financial startups trust FivexL to build their infrastructure in AWS, empowering their businesses to grow faster. Learn how."
+  icon_links:
+    - { url: "https://github.com/fivexl", icon: "github" }
+    - { url: "https://www.linkedin.com/company/5xl", icon: "linkedin" }
+  button_cta: { url: "https://sales.fivexl.io/schedule-a-call", text: "Book a consultation" }
+  media_panel: { url: "https://youtu.be/uruLy1goNW0" }
 ---
 ## “FivexL built a scalable and secure infrastructure defined in code for a Mobile Computer Vision & AI solutions software company.”  
 **Two lead consultants for the project**  
