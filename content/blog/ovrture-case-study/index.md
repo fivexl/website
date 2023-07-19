@@ -5,7 +5,7 @@ summary: 'FivexL implemented infrastructure as code, reduced costs, and provided
 date: 2022-06-14
 author: Vladimir Samoylov
 panel_image: vova_small.png
-alt_image: quote_ovrture_white.png
+alt_image: vova_small.png
 case_study: true
 tags: ['case study', 'AWS']
 testimonial: 'The transition was seamless. Our infrastructure is light years ahead of where most small businesses would expect to be.'
