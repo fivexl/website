@@ -4,7 +4,7 @@ author_id: 'Vladimir Samoylov'
 summary: 'FivexL implemented infrastructure as code, reduced costs, and provided the ability to scale for a philanthropic communications platform.'
 date: 2022-06-14
 author: Vladimir Samoylov
-panel_image: Vova_1.png
+panel_image: vova_small.png
 alt_image: quote_ovrture_white.png
 case_study: true
 tags: ['case study', 'AWS']

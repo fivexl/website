@@ -5,7 +5,7 @@ summary: 'FivexL rebuilt and migrated infrastructure to AWS Elastic Container Se
 date: 2022-07-12
 author: Vladimir Samoylov
 panel_image: Vova_2.png
-alt_image: quote_firi_black.png
+alt_image: vova_sm.png
 case_study: true
 tags: ['case study', 'aws']
 testimonial: 'FivexL helped us migrate all our services to a new infrastructure; the change was seamless. They think outside the box and are always there when we need them.'
