@@ -192,3 +192,109 @@ a:has(.cst-CaseHeading) { text-decoration: none; }
     padding: 1.5rem;
   }
 }
+
+.cst-Challenge {
+  justify-content: start;
+  background: #f4f4f4;
+  .cst-Container {
+    width: 100%;
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    line-height: 1.5;
+  }
+  .cst-ColumnsWrapper {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+  }
+  .cst-PinkSquare {
+    height: calc(100% + (clamp(2.25rem, 5vw, 6rem) * 2 ));
+    background: $textSecondary;
+    width: 100%;
+    display: none;
+  }
+  .pink_heading {
+    span {
+      font-size: clamp(1.75rem, 2vw, 2.25rem) !important;
+    }
+  }
+  @media (min-width: 1024px) {
+    margin-bottom: calc(clamp(2.25rem, 9vw, 8.5rem) * 2);
+    .cst-PinkSquare {
+      display: block;
+      margin-top: 5rem;
+      width: calc(100% + 7rem);
+    }
+  }
+}
+
+.cst-Solution {
+  justify-content: start;
+
+  .cst-Heading {
+    font-size: clamp(1.75rem, 2vw, 2.25rem);
+    margin-bottom: clamp(1rem, 2vw, 2.5rem);
+    margin-left: 0;
+  }
+  .cst-Container {
+    width: 100%;
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    line-height: 1.5;
+    padding-top: clamp(2.25rem, 8vw, 8rem)
+  }
+  .cst-ColumnsWrapper {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+  }
+  @media (min-width: 1024px) {
+    background: #f4f4f4;
+  }
+}
+
+.cst-Benefits {
+  justify-content: start;
+  background: #f4f4f4;
+  .cst-Container {
+    width: 100%;
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    line-height: 1.5;
+  }
+  .cst-ColumnsWrapper {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+  }
+  .cst-PinkSquare {
+    height: 100%;
+    background: $textSecondary;
+    width: 100%;
+    display: none;
+  }
+  .pink_heading {
+    span {
+      font-size: clamp(1.75rem, 2vw, 2.25rem) !important;
+    }
+  }
+  .ButtonCTA {
+    border-radius: 3rem;
+    margin-top: 2.5rem;
+    display: block;
+  }
+  .cst-PinkSquare_Text {
+    color: white;
+    font-weight: 700;
+    font-style: italic;
+    width: calc(100% - 14rem);
+    display: block;
+    margin-inline: auto;
+    font-size: 1.5rem;
+    margin-top: 14rem;
+  }
+  @media (min-width: 1024px) {
+    margin-bottom: calc(clamp(2.25rem, 9vw, 8.5rem) * 2);
+    .cst-PinkSquare {
+      display: block;
+      width: calc(100% + 7rem);
+    }
+  }
+
+}
+
+.section.cst-Section {
+  padding: clamp(2.25rem, 5vw, 6rem) 1.5rem;
+  max-width: 1300px;
+}
