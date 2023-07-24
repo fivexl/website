@@ -35,7 +35,7 @@ double_panel:
   button_cta: { url: "https://sales.fivexl.io/schedule-a-call", text: "Book a consultation" }
   media_panel: { url: "https://youtu.be/uruLy1goNW0" }
 ---
-{{< case_study/challenge >}}
+{{< case_study/challenge  image="kolpakov-1.png" >}}
 {{< pink_heading text="Challenge"  sizes="bigger">}}
 The startup started development with a focus on golf. "There were 18 cameras on the golf course, which were connected to the server, where everything was processed via fiber optics," recalls the CTO of New Stream, Andrey Kolpakov. New Stream built a hybrid infrastructure, meaning it was partially built on the hardware-based servers in the fields, and the other part was on virtual servers at Digital Ocean.
 
@@ -69,6 +69,7 @@ The team also improved overall infrastructure security by separating AWS account
     cta_text="Start Your Success Story"
     cta_url="https://sales.fivexl.io/schedule-a-call"
     square_text="New products and their changing needs required a dynamic approach to infrastructure."
+    image="kolpakov-1.png"
     >}}
 {{< pink_heading text="Benefits" >}}
 FivexL's flexibility and ability to come up with unique solutions and build scalable infrastructure help businesses make pivots in search of their niche.<br/>

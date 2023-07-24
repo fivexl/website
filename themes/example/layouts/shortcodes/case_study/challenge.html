@@ -1,10 +1,20 @@
+{{- $page := .Page -}}
 <section class="cst-Challenge">
     <div class="cst-Container">
         <div class="cst-ColumnsWrapper">
         <div>
             {{ .Inner }}
         </div>
-        <div class="cst-PinkSquare"></div>
+        <div class="cst-PinkSquare">
+            {{- with .Get "image" -}}
+                {{- partial "img" (dict 
+                    "src" .
+                    "IsContentImage" true
+                    "Page" $page
+                    "class" "cst-ChallengeImage"
+                    ) -}} 
+            {{- end -}}
+        </div>
         </div>
     </div>
 </section>
