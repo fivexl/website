@@ -130,7 +130,7 @@ a:has(.cst-CaseHeading) { text-decoration: none; }
 
   &Container {
     padding: clamp(2.25rem, 5vw, 6rem) clamp(3rem, 15vw, 17rem);
-    max-width: 1500px;
+    max-width: 1410px;
     margin-inline: auto;
   }
 
@@ -148,6 +148,7 @@ a:has(.cst-CaseHeading) { text-decoration: none; }
     .asb {
       flex: 0 1 min-content;
       padding: clamp(1.5rem, 3vw, 3rem) clamp(1.5rem, 3vw, 4rem);
+      box-shadow: 35px 25px 40px rgba(0, 0, 0, 0.2);
     }
     .asb-Author_Portrait {
       width: calc(100% - 3rem);
