@@ -10,6 +10,7 @@ panel_image: Artem_gradient.png
 authors_heading: 'Two lead consultants for the project'
 alt_image: artem_small.png
 case_study: true
+layout: 'case_study'
 tags: ['case study', 'aws']
 testimonial: 'As our needs and product changed FivexL remained flexible and fully involved in the project'  
 testimonial_author: 'Andrey Kolpakov'

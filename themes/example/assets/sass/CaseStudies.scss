@@ -93,6 +93,7 @@ a:has(.cst-CaseHeading) { text-decoration: none; }
 
   &-TestimonialText {
     margin-bottom: clamp(1.5rem, 3vw, 3rem);
+    line-height: 1.5;
   }
 
   &-TestimonialPosition {
@@ -323,6 +324,10 @@ a:has(.cst-CaseHeading) { text-decoration: none; }
 }
 
 .section.cst-Section {
-  padding: clamp(2.25rem, 5vw, 6rem) 1.5rem;
+  margin-top: 1rem;
+  padding:  0 1.5rem clamp(4rem, 5vw, 6rem);
   max-width: 1300px;
+  @media (min-width: 1024px) {
+    padding-top: clamp(4rem, 5vw, 6rem);
+  }
 }

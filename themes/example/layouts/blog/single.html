@@ -1,6 +1,6 @@
 {{ define "main" }}
 
-    {{ if .Params.case_study }}
+    {{ if and .Params.case_study (ne nil .Params.layout) (eq .Params.layout "case_study") }}
 
     {{- partial "case_study_layout" . -}}
 
