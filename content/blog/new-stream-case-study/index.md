@@ -23,7 +23,7 @@ about_company:
   logo: 'ns_2.png'
   heading: 'About New Stream'
   text: |
-    '**New Stream is a Mobile Computer Vision & AI solutions software company that created SDK for sports technology companies, personal trainers.**
+    **New Stream is a Mobile Computer Vision & AI solutions software company that created SDK for sports technology companies, personal trainers.**
 
     Newstream SDK is a one-of-a-kind computer vision tehcnology that provides accurate skeleton measurements in real-time. The system measures all body motions and presents the result of any movment in inches, angles and seconds.'
 double_panel:
@@ -36,7 +36,7 @@ double_panel:
   button_cta: { url: "https://sales.fivexl.io/schedule-a-call", text: "Book a consultation" }
   media_panel: { url: "https://youtu.be/uruLy1goNW0" }
 ---
-{{< case_study/challenge  image="kolpakov-1.png" >}}
+{{< case_study/challenge  image="challenge_ns.png" >}}
 {{< pink_heading text="Challenge"  sizes="bigger">}}
 The startup started development with a focus on golf. "There were 18 cameras on the golf course, which were connected to the server, where everything was processed via fiber optics," recalls the CTO of New Stream, Andrey Kolpakov. New Stream built a hybrid infrastructure, meaning it was partially built on the hardware-based servers in the fields, and the other part was on virtual servers at Digital Ocean.
 
@@ -69,8 +69,8 @@ The team also improved overall infrastructure security by separating AWS account
 {{< case_study/benefits
     cta_text="Start Your Success Story"
     cta_url="https://sales.fivexl.io/schedule-a-call"
-    square_text="New products and their changing needs required a dynamic approach to infrastructure."
-    image="kolpakov-1.png"
+  
+    image="benefits_ns.png"
     >}}
 {{< pink_heading text="Benefits" >}}
 FivexL's flexibility and ability to come up with unique solutions and build scalable infrastructure help businesses make pivots in search of their niche.<br/>
