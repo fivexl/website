@@ -1,0 +1,8 @@
+<section class="cst-Solution">
+    <div class="cst-Container">
+        {{ with .Get "heading" }}<h2 class="cst-Heading">{{ . }}</h2>{{ end }}
+        <div class="cst-ColumnsWrapper">
+            {{ .Inner }}
+        </div>
+    </div>
+</section>

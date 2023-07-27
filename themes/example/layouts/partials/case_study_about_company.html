@@ -1,0 +1,15 @@
+{{ with .Params.about_company }}
+<section class="cst-AboutCompany">
+    <div class="container">
+        <div class="twc-ColumnsWrapper">
+            {{- partial "img" (dict "src" .logo "Page" $ "IsContentImage" true "class" "cst-AboutImage") -}}
+            <div>
+                <h2 class="cst-AboutHeading">{{ .heading }}</h2>
+                <div class="cst-AboutText">
+                    {{ markdownify .text }}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{ end }}

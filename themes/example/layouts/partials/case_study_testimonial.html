@@ -1,0 +1,16 @@
+<section>
+    <div class="cst-Container">
+        <div class="cst-ColumnsWrapper">
+            {{- partial "img" (dict "IsContentImage" true "src" .Params.testimonial_author_portrait "class" "cst-TestimonialPortrait" "Page" .) -}}
+            <div class="cst-TestimonialContent">
+                <div class="cst-TestimonialText">
+                    {{ markdownify .Params.testimonial_long }}
+                </div>
+                <span class="cst-TestimonialPosition">
+                    <span>{{ .Params.testimonial_author }}</span>&nbsp;<span>{{ .Params.testimonial_author_position }}</span>
+                </span>
+                {{- partial "button_cta" (dict "text" "Book a consultation" "classes" "cst-CTA" "url" .Params.testimonial_cta_url) -}}
+            </div>
+        </div>
+    </div>
+</section>

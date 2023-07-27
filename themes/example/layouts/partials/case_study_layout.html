@@ -1,0 +1,8 @@
+{{ with .Params.double_panel }}{{ partial "double_panel" . }}{{ end }}
+{{- partial "case_study_testimonial" . -}}
+{{- partial "case_study_authors" . -}}
+{{- partial "case_study_about_company" . -}}
+{{- .Content -}}
+{{- partial "CaseStudiesCards" (dict "heading" "Our happy customers") }}
+<script type="text/javascript" src="/js/carousel.js"></script>
+<link rel="stylesheet" href="/css/carousel.css">

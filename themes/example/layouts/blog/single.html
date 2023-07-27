@@ -1,43 +1,57 @@
 {{ define "main" }}
-    {{- partial "DoublePanel.html" . -}}
-    <article class="bls">
-        <section class="bls-Content">
-            {{- .Content -}}
-        </section>
 
-        <section class="bls-Related">
+    {{ if and .Params.case_study (ne nil .Params.layout) (eq .Params.layout "case_study") }}
 
-            {{ if .Params.tags }}
+    {{- partial "case_study_layout" . -}}
 
-                {{ $pages := slice }}
-                {{ range $tag := .Params.tags }}
-                    {{ range site.Taxonomies.tags }}
-                        {{ range .Pages }}
-                            {{ if and (in .Params.tags $tag) (ne .Permalink $.Permalink) }}
-                                {{  $pages = union $pages (slice .) }}
+    {{ else }}
+        {{- partial "DoublePanel.html" . -}}
+        <article class="bls">
+            <section class="bls-Content">
+                {{- .Content -}}
+            </section>
+
+            <section class="bls-Related">
+
+                {{ if .Params.tags }}
+
+                    {{ $pages := slice }}
+                    {{ range $tag := .Params.tags }}
+                        {{ range site.Taxonomies.tags }}
+                            {{ range .Pages }}
+                                {{ if and (in .Params.tags $tag) (ne .Permalink $.Permalink) }}
+                                    {{  $pages = union $pages (slice .) }}
+                                {{ end }}
                             {{ end }}
                         {{ end }}
                     {{ end }}
-                {{ end }}
 
-                <h2>See also in {{ delimit .Params.tags ", " " and " }}</h2>
-                <ul>
-                {{ range first $.Site.Params.relatedBlogsLength $pages }}
-                    <li><a href="{{ .Permalink }}">{{ .Params.title }}</a></li>
-                {{ end }}
-                </ul>
-
-            {{ else }}
-                <h2>Recommended for you</h2>
-                <ul>
-                    {{ range first $.Site.Params.relatedBlogsLength (where .Site.RegularPages "Section" "blog") }}
-                    <li><a href="{{ .Permalink }}">{{ .Params.title }}</a></li>
+                    <h2>See also in {{ delimit .Params.tags ", " " and " }}</h2>
+                    <ul>
+                    {{ range first $.Site.Params.relatedBlogsLength $pages }}
+                        <li><a href="{{ .Permalink }}">{{ .Params.title }}</a></li>
                     {{ end }}
-                </ul>
-            {{ end }}
+                    </ul>
 
-        </section>
+                {{ else }}
+                    <h2>Recommended for you</h2>
+                    <ul>
+                        {{ range first $.Site.Params.relatedBlogsLength (where .Site.RegularPages "Section" "blog") }}
+                        <li><a href="{{ .Permalink }}">{{ .Params.title }}</a></li>
+                        {{ end }}
+                    </ul>
+                {{ end }}
 
-        {{- partial "AuthorSidebar.html" . -}}
-    </article>
+            </section>
+
+            {{- partial "AuthorSidebar.html" . -}}
+        </article>
+    {{ end }}
+{{ end }}
+
+{{ define "bodyScripts" }}
+    {{- if .HasShortcode "case_studies_cards" -}}
+        <script type="text/javascript" src="/js/carousel.js"></script>
+        <link rel="stylesheet" href="/css/carousel.css">
+    {{- end -}}
 {{ end }}

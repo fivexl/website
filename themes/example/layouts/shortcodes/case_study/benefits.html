@@ -1,0 +1,31 @@
+{{- $page := .Page -}}
+<section class="cst-Benefits">
+    <div class="cst-Container">
+        <div class="cst-ColumnsWrapper">
+            <div>
+                {{ .Inner }}
+            </div>
+            <div class="cst-PinkSquare">
+                {{- with .Get "image" -}}
+                    {{- partial "img" (dict 
+                        "src" .
+                        "IsContentImage" true
+                        "Page" $page
+                        "class" "cst-BenefitsImage"
+                        ) -}} 
+                {{- end -}}
+                {{ with .Get "square_text" }}
+                <span class="cst-PinkSquare_Text">{{ . }}</span>
+                {{ end }}
+            </div>
+        </div>
+        {{- if .Get "cta_text" -}}
+            {{- partial "button_cta"
+                (dict 
+                    "text" (.Get "cta_text")
+                    "url" (.Get "cta_url")
+                )
+            -}}
+        {{- end -}}
+    </div>
+</section>
