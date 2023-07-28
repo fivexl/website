@@ -5,16 +5,18 @@
         <div>
             {{ .Inner }}
         </div>
-        <div class="cst-PinkSquare">
-            {{- with .Get "image" -}}
+        {{- with .Get "image" -}}
+            <div class="cst-PinkSquare_Image">
                 {{- partial "img" (dict 
                     "src" .
                     "IsContentImage" true
                     "Page" $page
                     "class" "cst-ChallengeImage"
                     ) -}} 
-            {{- end -}}
-        </div>
+            </div>
+        {{- else -}}
+            <div class="cst-PinkSquare"></div>
+        {{- end -}}
         </div>
     </div>
 </section>

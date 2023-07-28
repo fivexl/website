@@ -210,12 +210,21 @@ a:has(.cst-CaseHeading) { text-decoration: none; }
       font-size: clamp(1rem, 2vw, 1.45rem);
     }
   }
-  .cst-PinkSquare {
-    height: calc(100% + (clamp(2.25rem, 5vw, 6rem) * 2 ));
+  .cst-PinkSquare, .cst-PinkSquare_Image {
     background: $textSecondary;
     width: 100%;
     display: none;
     position: relative;
+  }
+  .cst-PinkSquare {
+    height: calc(100% + (clamp(2.25rem, 5vw, 6rem) * 2 ));
+  }
+  .cst-PinkSquare_Image {
+    height: 100%;
+    .cst-ChallengeImage {
+      height: calc(100% + (clamp(2.25rem, 5vw, 6rem) * 1 ));
+      position: absolute;
+    }
   }
   .pink_heading {
     span {
@@ -228,8 +237,8 @@ a:has(.cst-CaseHeading) { text-decoration: none; }
     object-fit: cover;
   }
   @media (min-width: 1024px) {
-    margin-bottom: calc(clamp(2.25rem, 9vw, 8.5rem) * 2);
-    .cst-PinkSquare {
+    margin-bottom: calc(clamp(2.25rem, 9vw, 8.5rem) * 1.5);
+    .cst-PinkSquare, .cst-PinkSquare_Image {
       display: block;
       margin-top: 5rem;
       width: calc(100% + 7rem);
