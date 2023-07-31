@@ -222,7 +222,7 @@ a:has(.cst-CaseHeading) { text-decoration: none; }
   .cst-PinkSquare_Image {
     height: 100%;
     .cst-ChallengeImage {
-      height: calc(100% + (clamp(2.25rem, 5vw, 6rem) * 1 ));
+      height: calc(100% + (clamp(2.25rem, 5vw, 6rem) * 1 ) - 2rem);
       position: absolute;
     }
   }
@@ -240,7 +240,7 @@ a:has(.cst-CaseHeading) { text-decoration: none; }
     margin-bottom: calc(clamp(2.25rem, 9vw, 8.5rem) * 1.5);
     .cst-PinkSquare, .cst-PinkSquare_Image {
       display: block;
-      margin-top: 5rem;
+      margin-top: clamp(6rem, 6.75vw, 6.875rem);
       width: calc(100% + 7rem);
     }
   }
