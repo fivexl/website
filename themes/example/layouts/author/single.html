@@ -15,8 +15,7 @@
             {{ $pages = $pages | append (slice .) }}
         {{ end }}
     {{ end }}
-    {{ $case_studies :=  where $pages "Params.case_study" true }}
-    {{- partial "ContentList" (dict "pages" ($pages | symdiff $case_studies) "show_tags" true) -}}
+    {{- partial "ContentList" (dict "pages" $pages "show_tags" true) -}}
 
 {{ end }}
 
