@@ -1,4 +1,4 @@
-{{- $pages := after 1 (where (where .Site.RegularPages "Section" "blog") "Params.case_study" true) -}}
+{{- $pages := after 1 .Pages -}}
 {{- $paginator := .Paginate $pages 12 -}}
 
 <section class="csi">
