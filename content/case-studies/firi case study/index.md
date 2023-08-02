@@ -18,10 +18,10 @@ testimonial_long: |
   “It was really hard to find a partner with expertise in both cloud and security, combined with the agility to meet our infrastructure needs.  
   FivexL helped us migrate all our services to a new infrastructure; the change was seamless. They think outside the box and are always there when we need them.”
 about_company:
-  logo: 'ns_2.png'
+  logo: 'firi.png'
   heading: 'About Firi'
   text: |
-    'Firi takes its name from the Norse word for lighthouse. In less than two years it has become the leading light cryptocurrency exchange and custodial solution in Norway with over 150,000 customers enjoying the peace of mind provided by a fully insured platform. Registered with Finanstilsynet (the Financial Supervisory Authority of Norway), and focused on building trust into the complex world of crypto, Firi aims to build safe products with a localised infrastructure delivering the same assurances as a traditional bank.'
+    Firi takes its name from the Norse word for lighthouse. In less than two years it has become the leading light cryptocurrency exchange and custodial solution in Norway with over 150,000 customers enjoying the peace of mind provided by a fully insured platform. Registered with Finanstilsynet (the Financial Supervisory Authority of Norway), and focused on building trust into the complex world of crypto, Firi aims to build safe products with a localised infrastructure delivering the same assurances as a traditional bank.
 double_panel:
   layout: 'case-studies'
   heading: "CASE STUDIES"
