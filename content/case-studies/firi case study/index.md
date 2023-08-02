@@ -15,14 +15,13 @@ testimonial_author_position: 'CEO at Firi'
 testimonial_author_portrait: Thuc.png
 testimonial_cta_url: 'https://sales.fivexl.io/schedule-a-call'
 testimonial_long: |
-  “It was really hard to find a partner with expertise in both cloud and security, combined with the agility to meet our infrastructure needs.”
+  “It was really hard to find a partner with expertise in both cloud and security, combined with the agility to meet our infrastructure needs.  
+  FivexL helped us migrate all our services to a new infrastructure; the change was seamless. They think outside the box and are always there when we need them.”
 about_company:
   logo: 'ns_2.png'
   heading: 'About Firi'
   text: |
-    '**New Stream is a Mobile Computer Vision & AI solutions software company that created SDK for sports technology companies, personal trainers.**
-
-    Newstream SDK is a one-of-a-kind computer vision tehcnology that provides accurate skeleton measurements in real-time. The system measures all body motions and presents the result of any movment in inches, angles and seconds.'
+    'Firi takes its name from the Norse word for lighthouse. In less than two years it has become the leading light cryptocurrency exchange and custodial solution in Norway with over 150,000 customers enjoying the peace of mind provided by a fully insured platform. Registered with Finanstilsynet (the Financial Supervisory Authority of Norway), and focused on building trust into the complex world of crypto, Firi aims to build safe products with a localised infrastructure delivering the same assurances as a traditional bank.'
 double_panel:
   layout: 'case-studies'
   heading: "CASE STUDIES"
@@ -33,26 +32,31 @@ double_panel:
   button_cta: { url: "https://sales.fivexl.io/schedule-a-call", text: "Book a consultation" }
   media_panel: { url: "https://youtu.be/uruLy1goNW0" }
 ---
-
----
-## “FivexL helped us migrate all our services to a new infrastructure; the change was seamless. They think outside the box and are always there when we need them.”  
-**Lead consultant for the project**  
-**Vladimir Samoylov, Senior Cloud Engineering Specialist**  
-  
-{{< image src="Firi_1.png" alt="How to save" width="70%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}}  
-
-  
-**Challenge**  
-“It was really hard to find a partner with expertise in both cloud and security, combined with the agility to meet our infrastructure needs,”recalls Firi’s CEO Thuc Tuan Hoang. Scaling that infrastructure proved difficult when traffic began to increase exponentially as the business grew with 48,000 customers onboarded in March 2021. “It takes time to rebuild infrastructure and migrate it,” notes Tuan Hoang. “I knew the approach we needed to take but we didn’t have that time or the in-house skills to deliver that change.”  
+{{< case_study/challenge  image="challenge3.png" >}}
+{{< pink_heading text="Challenge"  sizes="bigger">}}
+“It was really hard to find a partner with expertise in both cloud and security, combined with the agility to meet our infrastructure needs,”recalls Firi’s CEO Thuc Tuan Hoang. Scaling that infrastructure proved difficult when traffic began to increase exponentially as the business grew with 48,000 customers onboarded in March 2021. “It takes time to rebuild infrastructure and migrate it,” notes Tuan Hoang. “I knew the approach we needed to take but we didn’t have that time or the in-house skills to deliver that change.”<br/>
+<br/>  
 As a rapidly growing startup, Firi faced three key challenges. The business needed to break free from its single point of error, a manual approach where everything had to go through Tuan Hong – bill pipelines, deployment, infrastructure set up... Meanwhile, time was of the essence – Firi needed dedicated support from a proven source. Thirdly, being able to trust a partner to deliver that support, without fail, was vital.  
-  
-**Solution**  
-Supported by FivexL, Firi was able to transition from a fragile, manually configured EC2-based setup to a platform - like solution based on the AWS Elastic Container Service. “We moved from only one person being able to deploy to having a governance team ready to deploy, which makes it so much easier for our developers,” says Tuan Hoang of an architecture that had grown way too fast for the Firi team to be able to manage by themselves. Now, thanks to an infrastructure-as-code approach, developers are able to use infrastructure templates and rapidly develop and set up new services, enabling Firi to quickly iterate and innovate.
+{{</ case_study/challenge >}}  
+
+{{< case_study/solution heading="Solution" >}}
+{{< case_study/column >}}
+Supported by FivexL, Firi was able to transition from a fragile, manually configured EC2-based setup to a platform - like solution based on the AWS Elastic Container Service. “We moved from only one person being able to deploy to having a governance team ready to deploy, which makes it so much easier for our developers,” says Tuan Hoang of an architecture that had grown way too fast for the Firi team to be able to manage by themselves.<br/> 
+Now, thanks to an infrastructure-as-code approach, developers are able to use infrastructure templates and rapidly develop and set up new services, enabling Firi to quickly iterate and innovate.
+{{</ case_study/column >}}
+{{< case_study/column >}}
 Following two weeks of planning, FivexL was able to hot swap Firi’s infrastructure without downtime by using Terraform, Hashicorp’s infrastructure-as-code tool. “It was an essential approach for us to be able to scale moving forward,” says Firi’s CEO. “FivexL’s AWS expertise meant the migration process was a smooth one with the first application deployed in just two weeks.”  
-  
-**Benefits**  
-“The change was seamless,” recalls Tuan Hoang of a process carried out with pain-free predictability. “Everything just worked... There were no hidden surprises and it was reassuring to know we had support whenever we needed it. FivexL helped us develop better credential management, tune our security groups and IAM policies, improving the security of the whole system. It wasn’t just a single job but a holistic approach to infrastructure that will deliver lasting benefits. Our new CTO was really impressed with the solutions FivexL implemented. We got way more than we asked for; they think outside the box and are always there when we need them.”  
-The speed with which FivexL was able to update the infrastructure allowed Firi to deliver its latest changes as quickly as possible without the risk of application downtime; this gave its team the flexibility to scale in line with the increasing volume of traffic during a year that saw the startup grow to employ 50 full time staff. “We needed a partner who could go on that journey with us, find the weak spots of our software management and help us improve,” says Tuan Hoang. “They give us the same level of support we offer to our own customers and have allowed us to maximise the efficiency of our approach to Amazon’s services instead of just throwing money at the issue.”  
-  
-{{< image src="Quote for Firi study.png" alt="How to save" width="70%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}} 
+{{</ case_study/column >}}
+{{</ case_study/solution >}} 
+{{< case_study/benefits
+    cta_text="Start Your Success Story"
+    cta_url="https://sales.fivexl.io/schedule-a-call"
+    image="benefits_ns.png"
+    >}}
+{{< pink_heading text="Benefits" >}}
+“The change was seamless,” recalls Tuan Hoang of a process carried out with pain-free predictability. “Everything just worked... There were no hidden surprises and it was reassuring to know we had support whenever we needed it. FivexL helped us develop better credential management, tune our security groups and IAM policies, improving the security of the whole system. It wasn’t just a single job but a holistic approach to infrastructure that will deliver lasting benefits. Our new CTO was really impressed with the solutions FivexL implemented. We got way more than we asked for.”<br/>   
+The speed with which FivexL was able to update the infrastructure allowed Firi to deliver its latest changes as quickly as possible without the risk of application downtime; this gave its team the flexibility to scale in line with the increasing volume of traffic during a year that saw the startup grow to employ 50 full time staff. “We needed a partner who could go on that journey with us, find the weak spots of our software management and help us improve,” says Tuan Hoang.<br/> 
+“They give us the same level of support we offer to our own customers and have allowed us to maximise the efficiency of our approach to Amazon’s services instead of just throwing money at the issue.”  
+{{</ case_study/benefits >}}  
+
 
