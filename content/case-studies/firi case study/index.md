@@ -51,7 +51,7 @@ Following two weeks of planning, FivexL was able to hot swap Firi’s infrastruc
 {{< case_study/benefits
     cta_text="Start Your Success Story"
     cta_url="https://sales.fivexl.io/schedule-a-call"
-    image="benefits_ns.png"
+    image="benefits_firi.png"
     >}}
 {{< pink_heading text="Benefits" >}}
 “The change was seamless,” recalls Tuan Hoang of a process carried out with pain-free predictability. “Everything just worked... There were no hidden surprises and it was reassuring to know we had support whenever we needed it. FivexL helped us develop better credential management, tune our security groups and IAM policies, improving the security of the whole system. It wasn’t just a single job but a holistic approach to infrastructure that will deliver lasting benefits. Our new CTO was really impressed with the solutions FivexL implemented. We got way more than we asked for.”<br/>   
