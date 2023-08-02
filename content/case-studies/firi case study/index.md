@@ -15,7 +15,7 @@ testimonial_author_position: 'CEO at Firi'
 testimonial_author_portrait: Thuc.png
 testimonial_cta_url: 'https://sales.fivexl.io/schedule-a-call'
 testimonial_long: |
-  “**It was really hard to find a partner with expertise in both cloud and security, combined with the agility to meet our infrastructure needs.”
+  “It was really hard to find a partner with expertise in both cloud and security, combined with the agility to meet our infrastructure needs.”
 about_company:
   logo: 'ns_2.png'
   heading: 'About Firi'
