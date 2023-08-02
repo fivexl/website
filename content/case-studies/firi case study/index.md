@@ -5,12 +5,35 @@ summary: 'FivexL rebuilt and migrated infrastructure to AWS Elastic Container Se
 date: 2022-11-12
 author: Vladimir Samoylov
 panel_image: Vova_2.png
+authors_heading: 'Senior consultant leading the project'
 alt_image: vova_small_bnw.png
 case_study: true
 tags: ['case study', 'aws']
 testimonial: 'FivexL helped us migrate all our services to a new infrastructure; the change was seamless. They think outside the box and are always there when we need them.'
 testimonial_author: 'Thuc Tuan Hoang'
 testimonial_author_position: 'CEO at Firi'
+testimonial_author_portrait: Thuc.png
+testimonial_cta_url: 'https://sales.fivexl.io/schedule-a-call'
+testimonial_long: |
+  “**It was really hard to find a partner with expertise in both cloud and security, combined with the agility to meet our infrastructure needs.”
+about_company:
+  logo: 'ns_2.png'
+  heading: 'About Firi'
+  text: |
+    '**New Stream is a Mobile Computer Vision & AI solutions software company that created SDK for sports technology companies, personal trainers.**
+
+    Newstream SDK is a one-of-a-kind computer vision tehcnology that provides accurate skeleton measurements in real-time. The system measures all body motions and presents the result of any movment in inches, angles and seconds.'
+double_panel:
+  layout: 'case-studies'
+  heading: "CASE STUDIES"
+  subheading: "SaaS, AI, health care, and financial startups trust FivexL to build their infrastructure in AWS, empowering their businesses to grow faster. Learn how."
+  icon_links:
+    - { url: "https://github.com/fivexl", icon: "github" }
+    - { url: "https://www.linkedin.com/company/5xl", icon: "linkedin" }
+  button_cta: { url: "https://sales.fivexl.io/schedule-a-call", text: "Book a consultation" }
+  media_panel: { url: "https://youtu.be/uruLy1goNW0" }
+---
+
 ---
 ## “FivexL helped us migrate all our services to a new infrastructure; the change was seamless. They think outside the box and are always there when we need them.”  
 **Lead consultant for the project**  
