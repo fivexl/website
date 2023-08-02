@@ -32,7 +32,7 @@ double_panel:
   button_cta: { url: "https://sales.fivexl.io/schedule-a-call", text: "Book a consultation" }
   media_panel: { url: "https://youtu.be/uruLy1goNW0" }
 ---
-{{< case_study/challenge  image="challenge3.png" >}}
+{{< case_study/challenge  image="challenge_firi.png" >}}
 {{< pink_heading text="Challenge"  sizes="bigger">}}
 “It was really hard to find a partner with expertise in both cloud and security, combined with the agility to meet our infrastructure needs,”recalls Firi’s CEO Thuc Tuan Hoang. Scaling that infrastructure proved difficult when traffic began to increase exponentially as the business grew with 48,000 customers onboarded in March 2021. “It takes time to rebuild infrastructure and migrate it,” notes Tuan Hoang. “I knew the approach we needed to take but we didn’t have that time or the in-house skills to deliver that change.”<br/>
 <br/>  
