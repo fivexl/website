@@ -69,7 +69,6 @@ The team also improved overall infrastructure security by separating AWS account
 {{< case_study/benefits
     cta_text="Start Your Success Story"
     cta_url="https://sales.fivexl.io/schedule-a-call"
-    square_text="New products and their changing needs required a dynamic approach to infrastructure."
     image="benefits_ns.png"
     >}}
 {{< pink_heading text="Benefits" >}}
