@@ -288,7 +288,8 @@ a:has(.cst-CaseHeading) { text-decoration: none; }
       font-size: clamp(1rem, 2vw, 1.45rem);
     }
   }
-  .cst-PinkSquare {
+  .cst-PinkSquare,
+  .cst-PinkSquare_Image {
     height: 100%;
     background: $textSecondary;
     width: 100%;
@@ -325,9 +326,13 @@ a:has(.cst-CaseHeading) { text-decoration: none; }
   }
   @media (min-width: 1024px) {
     margin-bottom: calc(clamp(2.25rem, 9vw, 1.5rem) * 2);
-    .cst-PinkSquare {
+    .cst-PinkSquare,
+    .cst-PinkSquare_Image {
       display: block;
       width: calc(100% + 7rem);
+    }
+    .cst-PinkSquare_Image {
+      margin-top: clamp(6rem, 6.75vw, 6.875rem);
     }
     & + .csc_Cards {
       padding-bottom: 8.5rem;

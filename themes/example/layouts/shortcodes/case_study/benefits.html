@@ -5,7 +5,7 @@
             <div>
                 {{ .Inner }}
             </div>
-            <div class="cst-PinkSquare">
+            <div class="{{ if (.Get "image") }}cst-PinkSquare_Image{{else }}cst-PinkSquare{{ end }}">
                 {{- with .Get "image" -}}
                     {{- partial "img" (dict 
                         "src" .
