@@ -21,9 +21,7 @@ about_company:
   logo: 'ns_2.png'
   heading: 'About Qameta'
   text: |
-    '**New Stream is a Mobile Computer Vision & AI solutions software company that created SDK for sports technology companies, personal trainers.**
-
-    Newstream SDK is a one-of-a-kind computer vision tehcnology that provides accurate skeleton measurements in real-time. The system measures all body motions and presents the result of any movment in inches, angles and seconds.'
+    Qameta Software is a B2B software productivity brand and an innovative test management solutions developer. Its portfolio includes a popular open-source framework called Allure Report and a flagship DevOps-ready testing platformknown as Allure TestOps.
 double_panel:
   layout: 'case-studies'
   heading: "CASE STUDIES"
