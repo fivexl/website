@@ -21,7 +21,7 @@ about_company:
   logo: 'firi.png'
   heading: 'About Firi'
   text: |
-    Firi takes its name from the Norse word for lighthouse. In less than two years it has become the leading light cryptocurrency exchange and custodial solution in Norway with over 150,000 customers enjoying the peace of mind provided by a fully insured platform. Registered with Finanstilsynet (the Financial Supervisory Authority of Norway), and focused on building trust into the complex world of crypto, Firi aims to build safe products with a localised infrastructure delivering the same assurances as a traditional bank.
+    Firi takes its name from the Norse word for lighthouse. In less than two years it has become the leading light cryptocurrency exchange and custodial solution in Norway with over 185,000 customers enjoying the peace of mind provided by a fully insured platform. Registered with Finanstilsynet (the Financial Supervisory Authority of Norway), and focused on building trust into the complex world of crypto, Firi aims to build safe products with a localised infrastructure delivering the same assurances as a traditional bank.
 double_panel:
   layout: 'case-studies'
   heading: "CASE STUDIES"
@@ -47,7 +47,12 @@ Now, thanks to an infrastructure-as-code approach, developers are able to use in
 {{< case_study/column >}}
 Following two weeks of planning, FivexL was able to hot swap Firi’s infrastructure without downtime by using Terraform, Hashicorp’s infrastructure-as-code tool. “It was an essential approach for us to be able to scale moving forward,” says Firi’s CEO. “FivexL’s AWS expertise meant the migration process was a smooth one with the first application deployed in just two weeks.”  
 {{</ case_study/column >}}
-{{</ case_study/solution >}} 
+{{</ case_study/solution >}}
+
+{{< case_study/section >}}
+{{< md >}}![diagram](diagram_firi.png){{</ md >}}
+{{</ case_study/section >}}
+
 {{< case_study/benefits
     cta_text="Start Your Success Story"
     cta_url="https://sales.fivexl.io/schedule-a-call"
