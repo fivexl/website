@@ -214,11 +214,30 @@ a:has(.cst-CaseHeading) { text-decoration: none; }
       font-size: clamp(1rem, 2vw, 1.45rem);
     }
   }
-  .cst-PinkSquare, .cst-PinkSquare_Image {
+  .cst-PinkSquare, .cst-PinkSquare_Image,
+  .cst-BlockquoteWrapper {
     background: $textSecondary;
     width: 100%;
     display: none;
     position: relative;
+  }
+  .cst-BlockquoteWrapper {
+    background: linear-gradient(150deg, #f13786,  #f180b0a1 50%, transparent), #2c8fea;
+    padding: clamp(1rem, 1vw, 1.5rem);
+    line-height: 1.25;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .cst-Blockquote {
+    font-weight: 700;
+    color: white;
+    margin-top: -2rem;
+  }
+  .cst-BlockquoteAuthor {
+    font-weight: 700;
+    text-align: right;
+    color: #222;
+    margin-top: 5rem;
   }
   .cst-PinkSquare {
     height: calc(100% + (clamp(2.25rem, 5vw, 6rem) * 2 ));
@@ -244,6 +263,11 @@ a:has(.cst-CaseHeading) { text-decoration: none; }
     margin-bottom: calc(clamp(2.25rem, 9vw, 8.5rem) * 1.5);
     .cst-PinkSquare, .cst-PinkSquare_Image {
       display: block;
+      margin-top: clamp(6rem, 6.75vw, 6.875rem);
+      width: calc(100% + 7rem);
+    }
+    .cst-BlockquoteWrapper {
+      display: flex;
       margin-top: clamp(6rem, 6.75vw, 6.875rem);
       width: calc(100% + 7rem);
     }
@@ -290,12 +314,31 @@ a:has(.cst-CaseHeading) { text-decoration: none; }
     }
   }
   .cst-PinkSquare,
-  .cst-PinkSquare_Image {
+  .cst-PinkSquare_Image,
+  .cst-BlockquoteWrapper {
     height: 100%;
     background: $textSecondary;
-    width: 100%;
+    width: calc(100% + 7rem);
     display: none;
     position: relative;
+  }
+  .cst-BlockquoteWrapper {
+    background: linear-gradient(150deg, #f13786,  #f180b0a1 50%, transparent), #2c8fea;
+    padding: clamp(1rem, 1vw, 1.5rem);
+    line-height: 1.25;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .cst-Blockquote {
+    font-weight: 700;
+    color: white;
+    margin-top: -2rem;
+  }
+  .cst-BlockquoteAuthor {
+    font-weight: 700;
+    text-align: right;
+    color: #222;
+    margin-top: 5rem;
   }
   .pink_heading {
     span {
@@ -330,9 +373,12 @@ a:has(.cst-CaseHeading) { text-decoration: none; }
     .cst-PinkSquare,
     .cst-PinkSquare_Image {
       display: block;
-      width: calc(100% + 7rem);
     }
-    .cst-PinkSquare_Image {
+    .cst-BlockquoteWrapper {
+      display: flex;
+    }
+    .cst-PinkSquare_Image,
+    .cst-BlockquoteWrapper {
       margin-top: clamp(6rem, 6.75vw, 6.875rem);
     }
     & + .csc_Cards {
