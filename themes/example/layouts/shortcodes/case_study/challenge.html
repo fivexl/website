@@ -15,13 +15,14 @@
                 </blockquote>
             </div>
         {{- else -}}
-            {{- with .Get "image" -}}
+            {{- if .Get "image" -}}
                 <div class="cst-PinkSquare_Image">
                     {{- partial "img" (dict 
-                        "src" .
+                        "src" (.Get "image")
                         "IsContentImage" true
                         "Page" $page
                         "class" "cst-ChallengeImage"
+                        "style" (.Get "image_css")
                         ) -}} 
                 </div>
             {{- else -}}

@@ -207,6 +207,13 @@ a:has(.cst-CaseHeading) { text-decoration: none; }
     width: 100%;
     font-size: clamp(1rem, 2vw, 1.25rem);
     line-height: 1.5;
+    @media (min-width: 1024px) {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+    @media (min-width: 1250px) {
+      padding: clamp(2.25rem, 5vw, 6rem) clamp(3rem, 13vw, 17rem);
+    }
   }
   .cst-ColumnsWrapper {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
