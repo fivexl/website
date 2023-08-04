@@ -5,7 +5,7 @@
         <div>
             {{ .Inner }}
         </div>
-        {{- if ne nil (.Get "blockquote") -}}
+        {{- if .Get "blockquote" -}}
             <div class="cst-BlockquoteWrapper">
                 <blockquote>
                     <div class="cst-Blockquote">
