@@ -176,6 +176,7 @@ a:has(.cst-CaseHeading) { text-decoration: none; }
 
     .cst-AboutText {
       font-size: clamp(1rem, 2vw, 1.45rem);
+      line-height: 1.5;
       p {
         font-size: inherit;
       }
