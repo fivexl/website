@@ -57,6 +57,12 @@ Following two weeks of planning, FivexL was able to hot swap Firi’s infrastruc
     cta_text="Start Your Success Story"
     cta_url="https://sales.fivexl.io/schedule-a-call"
     image="benefits_firi.png"
+    blockquote=`FivexL have given us the peace of mind to plan for the future as we aim to expand outside Norway across the Nordics
+
+Firi's platform will be focused on building more around payments so security will play a much larger role as we make upgrades on the database to improve our ability to handle trades in miliseconds.
+
+It's been such an impressive feat to get where we are, with FivexL's involvement it has opened up a whole new world for the business.`
+    blockquote_author="Tuan Hoang CEO at Firi"
     >}}
 {{< pink_heading text="Benefits" >}}
 “The change was seamless,” recalls Tuan Hoang of a process carried out with pain-free predictability. “Everything just worked... There were no hidden surprises and it was reassuring to know we had support whenever we needed it. FivexL helped us develop better credential management, tune our security groups and IAM policies, improving the security of the whole system. It wasn’t just a single job but a holistic approach to infrastructure that will deliver lasting benefits. Our new CTO was really impressed with the solutions FivexL implemented. We got way more than we asked for.”<br/>   

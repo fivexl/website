@@ -3,6 +3,7 @@
     {{- partial "head.html" . -}}
     {{- block "headStyles" . -}}{{- end -}}
     {{- block "headScripts" . -}}{{- end -}}
+    {{ hugo.Generator }}
     <body>
         {{- partial "header.html" . -}}
         <div id="content">

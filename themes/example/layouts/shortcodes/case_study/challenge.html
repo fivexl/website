@@ -5,17 +5,29 @@
         <div>
             {{ .Inner }}
         </div>
-        {{- with .Get "image" -}}
-            <div class="cst-PinkSquare_Image">
-                {{- partial "img" (dict 
-                    "src" .
-                    "IsContentImage" true
-                    "Page" $page
-                    "class" "cst-ChallengeImage"
-                    ) -}} 
+        {{- if .Get "blockquote" -}}
+            <div class="cst-BlockquoteWrapper">
+                <blockquote>
+                    <div class="cst-Blockquote">
+                        {{ .Get "blockquote" | markdownify }}
+                    </div>
+                    {{ with .Get "blockquote_author" }}<footer class="cst-BlockquoteAuthor">{{ . }}</footer>{{ end }}
+                </blockquote>
             </div>
         {{- else -}}
-            <div class="cst-PinkSquare"></div>
+            {{- if .Get "image" -}}
+                <div class="cst-PinkSquare_Image">
+                    {{- partial "img" (dict 
+                        "src" (.Get "image")
+                        "IsContentImage" true
+                        "Page" $page
+                        "class" "cst-ChallengeImage"
+                        "style" (.Get "image_css")
+                        ) -}} 
+                </div>
+            {{- else -}}
+                <div class="cst-PinkSquare"></div>
+            {{- end -}}
         {{- end -}}
         </div>
     </div>
