@@ -34,7 +34,7 @@ double_panel:
   button_cta: { url: "https://sales.fivexl.io/schedule-a-call", text: "Book a consultation" }
   media_panel: { url: "https://youtu.be/uruLy1goNW0" }
 ---
-{{< case_study/challenge  image="challenge3.png" image_css="object-position: center 10%">}}
+{{< case_study/challenge  image="challenge_ns.png" image_css="object-position: center 10%">}}
 {{< pink_heading text="Challenge"  sizes="bigger">}}
 The startup started development with a focus on golf. "There were 18 cameras on the golf course, which were connected to the server, where everything was processed via fiber optics," recalls the CTO of New Stream, Andrey Kolpakov. New Stream built a hybrid infrastructure, meaning it was partially built on the hardware-based servers in the fields, and the other part was on virtual servers at Digital Ocean.<br/>
 <br/>
