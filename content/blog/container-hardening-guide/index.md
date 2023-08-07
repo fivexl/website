@@ -1,6 +1,6 @@
 ---
 title: 'FivexL Container Hardening Guide for Binary Compilable Apps'
-author_id: 'Vladimir Samoylov'
+author_id: 'Vladimir-Samoylov'
 summary: 'Do you want the security of your binary app to excel by adding a couple of defense layers? Read our guide on container hardening for binary compilable apps.'
 date: 2023-03-30
 author: Vladimir Samoylov

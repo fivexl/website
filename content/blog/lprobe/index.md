@@ -1,6 +1,6 @@
 ---
 title: 'LProbe: A Secure, Open-Source Local Health Check Solution'
-author_id: 'Vladimir Samoylov'
+author_id: 'Vladimir-Samoylov'
 summary: 'Find out how to securely conduct a local health check without wget, curl, or your proprietary code. LProbe is a reliable open-source solution.'
 date: 2023-01-16
 author: Vladimir Samoylov
