@@ -13,15 +13,15 @@ tags: ['case study', 'AWS']
 testimonial: 'The transition was seamless. Our infrastructure is light years ahead of where most small businesses would expect to be.'
 testimonial_author: 'Chris Picht'
 testimonial_author_position: 'IT Operations Manager & Senior Information Security Officer'
-testimonial_author_portrait: kolp.png
+testimonial_author_portrait: chris.png
 testimonial_cta_url: 'https://sales.fivexl.io/schedule-a-call'
 testimonial_long: |
-  “**As our needs and product changed and as we moved from golf to basketball and then to workouts, FivexL remained flexible and fully involved in the project, practically becoming the member of our own team.** Now the entire infrastructure for the project is set up, we have migrated to the cloud, implemented autoscaling, and distributed everything that was needed among services. As a result, the system is operating stable.”
+  “The collaboration was highly professional and our transition was seamless. Our infrastructure is light years ahead of where most small businesses would expect to be. Ovrture is now faster, more flexible, and more secure than ever.”
 about_company:
-  logo: 'ns_2.png'
+  logo: 'ovrture.png'
   heading: 'About Ovrture'
   text: |
-    Ovrture is a philanthropic communications platform, with clients in the healthcare and education sectors. Replacing paper processes, it provides a secure, private and customizable channel to engage and steward major benefactors.
+    Ovrture is a cloud based digital platform from Pennsylvania, USA, that enables philanthropies to share personalized cultivation and stewardship microsites with their most essential prospects and donors. Replacing paper processes, it provides a secure, private and customizable channel to engage and steward major benefactors. The Ovrture platform is used by leading philanthropies within the healthcare, higher-education, and cultural sectors.
 double_panel:
   layout: 'case-studies'
   heading: "CASE STUDIES"
