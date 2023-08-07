@@ -33,7 +33,7 @@ double_panel:
   button_cta: { url: "https://sales.fivexl.io/schedule-a-call", text: "Book a consultation" }
   media_panel: { url: "https://youtu.be/uruLy1goNW0" }
 ---
-{{< case_study/challenge  image="challenge_q.png" image_css="object-position: 9%" >}}
+{{< case_study/challenge  image="challenge_q.png" >}}
 {{< pink_heading text="Challenge"  sizes="bigger">}}
 The ultimate challenge was to promptly launch a Cloud version of Qameta’s on-prem solution – Allure TestOps – with scalability and security requirements in mind. It all started with an MVP and then transformed into a fully-fledged product.<br/> 
 <br/> 
