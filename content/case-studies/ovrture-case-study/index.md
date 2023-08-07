@@ -38,7 +38,9 @@ Ovrture needed to safely migrate its platform to a modernised digital infrastruc
 <br/>
 “FivexL were able to help us implement our infrastructure as code using HashiCorp Packer and HashiCorp Terraform,” reveals Chris Picht, IT Operations Manager & Senior Information Security Officer at Ovrture. “We needed to achieve this level of flexibility while simultaneously maintaining our security profile to service our clients.”<br/>
 <br/> 
-Continuing support from FivexL in meeting this goal is vital as Ovrture look to expand outside the US to markets in Canada and Australia. “Without functional infrastructure as code, we couldn’t easily duplicate our infrastructure to serve clients in different regions,” explains Picht. “Our clients require their data to be stored and served from their own countries so it’s really helpful to have FivexL onboard helping us push forward plans for expansion by making it easy to deploy in new markets.” 
+Continuing support from FivexL in meeting this goal is vital as Ovrture look to expand outside the US to markets in Canada and Australia.<br/>
+“Without functional infrastructure as code, we couldn’t easily duplicate our infrastructure to serve clients in different regions,” explains Picht.<br/>
+“Our clients require their data to be stored and served from their own countries so it’s really helpful to have FivexL onboard helping us push forward plans for expansion by making it easy to deploy in new markets.” 
 {{</ case_study/challenge >}}
 
 {{< case_study/solution heading="Solution" >}}
