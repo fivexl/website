@@ -1,6 +1,6 @@
 ---
 title: 'How to Reduce Data Leakage Risks with aws-vault'
-author_id: 'Vladimir Samoylov'
+author_id: 'Vladimir-Samoylov'
 summary: 'Security basics in AWS or how to get rid of hardcoded credential and reduce data leakage risks with aws-vault.'
 date: 2022-07-22
 author: Vladimir Samoylov

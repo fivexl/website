@@ -4,10 +4,11 @@ author_id: 'Vladimir-Samoylov'
 summary: 'FivexL rebuilt and migrated infrastructure to AWS Elastic Container Service for the Norwegian cryptocurrency exchange.'
 date: 2022-11-12
 author: Vladimir Samoylov
-panel_image: Vova_2.png
+panel_image: firi1.png
 authors_heading: 'Senior consultant leading the project'
 alt_image: vova_small_bnw.png
 case_study: true
+layout: 'case_study'
 tags: ['case study', 'aws']
 testimonial: 'FivexL helped us migrate all our services to a new infrastructure; the change was seamless. They think outside the box and are always there when we need them.'
 testimonial_author: 'Thuc Tuan Hoang'

@@ -1,6 +1,6 @@
 ---
 title: 'How To Save Resources with the Terraform Module for AWS Spot Instances'
-author_id: 'Vladimir Samoylov'
+author_id: 'Vladimir-Samoylov'
 summary: 'look at Spot Instance allocation strategies and see how you can use the Terraform module with no issues and save money at the same time.'
 date: 2022-08-13
 author: Vladimir Samoylov
