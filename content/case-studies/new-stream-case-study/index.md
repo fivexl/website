@@ -18,14 +18,12 @@ testimonial_author_position: 'CTO at New Stream'
 testimonial_author_portrait: kolp.png
 testimonial_cta_url: 'https://sales.fivexl.io/schedule-a-call'
 testimonial_long: |
-  “**As our needs and product changed and as we moved from golf to basketball and then to workouts, FivexL remained flexible and fully involved in the project, practically becoming the member of our own team.** Now the entire infrastructure for the project is set up, we have migrated to the cloud, implemented autoscaling, and distributed everything that was needed among services. As a result, the system is operating stable.”
+  “As our needs and product changed and as we moved from golf to basketball and then to workouts, FivexL remained flexible and fully involved in the project. Now the entire infrastructure for the project is set up, we have migrated to the cloud, implemented autoscaling, and distributed everything that was needed among services. As a result, the system is operating stable.”
 about_company:
   logo: 'ns_2.png'
   heading: 'About New Stream'
   text: |
-    '**New Stream is a Mobile Computer Vision & AI solutions software company that created SDK for sports technology companies, personal trainers.**
-
-    Newstream SDK is a one-of-a-kind computer vision tehcnology that provides accurate skeleton measurements in real-time. The system measures all body motions and presents the result of any movment in inches, angles and seconds.'
+    New Stream, a Swedish Mobile Computer Vision & AI solutions software company, created New stream SDK, a technology that provides real-time accurate skeleton measurements. Tailored to sports technology companies and personal trainers, it is the world's first Biomechanics Analysis Technology for mobile phones. The system measures all body motions, presenting the results in inches, angles, and seconds. Used by over 60 sports teams, New Stream's innovation reflects a belief in the potential of artificial intelligence combined with computer vision to improve the quality of life.
 double_panel:
   layout: 'case-studies'
   heading: "CASE STUDIES"
