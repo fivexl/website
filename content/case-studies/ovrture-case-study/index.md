@@ -34,11 +34,12 @@ double_panel:
 ---
 {{< case_study/challenge  image="challenge_ovrture.png" >}}
 {{< pink_heading text="Challenge"  sizes="bigger">}} 
-Ovrture needed to safely migrate its platform to a modernised digital infrastructure on the AWS cloud and be able to continuously deploy and evolve.<br/>
+Ovrture is a Major Donor Communications Software. Company needed to safely migrate its platform to a modernised digital infrastructure on the AWS cloud and be able to continuously deploy and evolve.<br/>
 <br/>
 “FivexL were able to help us implement our infrastructure as code using HashiCorp Packer and HashiCorp Terraform,” reveals Chris Picht, IT Operations Manager & Senior Information Security Officer at Ovrture. “We needed to achieve this level of flexibility while simultaneously maintaining our security profile to service our clients.”<br/>
 <br/> 
 Continuing support from FivexL in meeting this goal is vital as Ovrture look to expand outside the US to markets in Canada and Australia.<br/>
+<br/>
 “Without functional infrastructure as code, we couldn’t easily duplicate our infrastructure to serve clients in different regions,” explains Picht.<br/>
 “Our clients require their data to be stored and served from their own countries so it’s really helpful to have FivexL onboard helping us push forward plans for expansion by making it easy to deploy in new markets.” 
 {{</ case_study/challenge >}}
