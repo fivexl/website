@@ -32,9 +32,12 @@ double_panel:
   button_cta: { url: "https://sales.fivexl.io/schedule-a-call", text: "Book a consultation" }
   media_panel: { url: "https://youtu.be/uruLy1goNW0" }
 ---
-{{< case_study/challenge  image="challenge3.png" >}}
+{{< case_study/challenge  image="challenge_ovrture.png" >}}
 {{< pink_heading text="Challenge"  sizes="bigger">}} 
-Ovrture needed to safely migrate its platform to a modernised digital infrastructure on the AWS cloud and be able to continuously deploy and evolve. “FivexL were able to help us implement our infrastructure as code using HashiCorp Packer and HashiCorp Terraform,” reveals Chris Picht, IT Operations Manager & Senior Information Security Officer at Ovrture. “We needed to achieve this level of flexibility while simultaneously maintaining our security profile to service our clients.” 
+Ovrture needed to safely migrate its platform to a modernised digital infrastructure on the AWS cloud and be able to continuously deploy and evolve.<br/>
+<br/>
+“FivexL were able to help us implement our infrastructure as code using HashiCorp Packer and HashiCorp Terraform,” reveals Chris Picht, IT Operations Manager & Senior Information Security Officer at Ovrture. “We needed to achieve this level of flexibility while simultaneously maintaining our security profile to service our clients.”<br/>
+<br/> 
 Continuing support from FivexL in meeting this goal is vital as Ovrture look to expand outside the US to markets in Canada and Australia. “Without functional infrastructure as code, we couldn’t easily duplicate our infrastructure to serve clients in different regions,” explains Picht. “Our clients require their data to be stored and served from their own countries so it’s really helpful to have FivexL onboard helping us push forward plans for expansion by making it easy to deploy in new markets.” 
 {{</ case_study/challenge >}}
 
@@ -51,8 +54,12 @@ A key issue they solved for us was building a complex elastic load balancer set 
 {{< case_study/benefits
     cta_text="Start Your Success Story"
     cta_url="https://sales.fivexl.io/schedule-a-call"
-    image="benefits_ns.png"
+    image="benefits_ovrture.png"
     >}}
 {{< pink_heading text="Benefits" >}}
-Infrastructure defined in code now makes it easier for Ovrture to work with clients and their security consultants who can see the wise choices they’re making to manage data. Picht remembers that prior to the successful collaboration with FivexL, outsourcing was a miserable box-ticking exercise with little impact and no thought to how the platform would actually work. “Gaps in our knowledge weren’t a problem for FivexL,” he reflects. “They were engaged in the process and took pride in the outcome; we’re interested in each other’s success. We see them as a partner on our continuous improvement journey already underway with the launch of new Java applications.” 
+Infrastructure defined in code now makes it easier for Ovrture to work with clients and their security consultants who can see the wise choices they’re making to manage data. Picht remembers that prior to the successful collaboration with FivexL, outsourcing was a miserable box-ticking exercise with little impact and no thought to how the platform would actually work.<br/>
+<br/>  
+“Gaps in our knowledge weren’t a problem for FivexL,” he reflects. “They were engaged in the process and took pride in the outcome; we’re interested in each other’s success. We see them as a partner on our continuous improvement journey already underway with the launch of new Java applications.”<br/>
+<br/>
+“Overall, the collaboration was highly professional and our transition was seamless,” maintains Picht. “Our infrastructure is light years ahead of where most small businesses would expect to be. Ovrture is now faster, more flexible, and more secure than ever.” 
 {{</ case_study/benefits >}}
