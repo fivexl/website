@@ -32,7 +32,7 @@ double_panel:
   button_cta: { url: "https://sales.fivexl.io/schedule-a-call", text: "Book a consultation" }
   media_panel: { url: "https://youtu.be/uruLy1goNW0" }
 ---
-{{< case_study/challenge  image="challenge_ovrture.png" >}}
+{{< case_study/challenge  image="challenge_o.png" >}}
 {{< pink_heading text="Challenge"  sizes="bigger">}} 
 Ovrture is a Major Donor Communications Software. Company needed to safely migrate its platform to a modernised digital infrastructure on the AWS cloud and be able to continuously deploy and evolve.<br/>
 <br/>
