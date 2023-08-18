@@ -46,23 +46,24 @@ Moreover, the startup faced difficulties accessing their Amazon account. Despite
 {{< case_study/solution heading="Solution" >}}
 {{< case_study/column >}}
 The project was carried out in several stages.<br/> 
-**Foundation:**<br/>  
+**Foundation - Set Up AWS Organization**<br/>  
 To prevent future issues with lost access to AWS and to centrally manage and govern the AWS environment during growth and scaling, FivexL established an AWS organization. This foundational step is crucial for ensuring the safety and stable evolution of the product. AWS Organization was configured according to best practices, and security measures like AWS CloudTrail and GuardDuty were set up.
-To foster efficiency and transparency, FivexL set up daily sync/demo/backlog review calls and Kanban board for tasks tracking. 
+To foster efficiency and transparency, FivexL set up daily sync/demo/backlog review calls and Kanban board for tasks tracking.<br/>  
+**First App - Establishing a Microservices Platform**<br/> 
+At this stage FivexL empowered Wings developers to build and deploy applications with enhanced security features in a fast, standardized, compliant, and cost-efficient manner using Amazon Elastic Container Service (Amazon ECS).
+FivexL consultants sep up a microservices platform for Wings that simplifies deployment, management, and scaling of containerized applications.  They also created a Dockerfile and launched the first application within the ECS cluster.<br/>  
 
-This text will be changed. Qameta received Allure TestOps Cloud – an architected solution based on the on-prem Allure TestOps software – in time. To minimize in-house development, therefore, further maintenance, FivexL used as many ready-to-use components and managed services as possible. Artem Eroshenko said: “By developing infrastructure, FivexL allowed us to focus on our core business: product development, hypothesis testing, feedback collection from real users, and roadmap generation.”  
-FivexL engaged in the project two of its AWS Solutions Architects. Firstly, Ivan Razzhivin built an MVP and Serverless API that allowed it to launch environments with a single click. To create and control specific client resources in a cloud provider from the EKS cluster, Crossplane (dynamic resources controller) and ArgoCD were used. As a result, Allure TestOps evolved from Kubernetes helm charts to a cloud-based SaaS offering.   
-After Stage 1, Qameta released a Beta-version to test it on real users.
-The prototype functioned well and was in demand, which led to Stage 2 – a full-fledged product launch. FivexL involved a second consultant – Alexey Eremin – who integrated monitoring features to prevent possible incidents with a massive flow of users.
+
 {{</ case_study/column >}}
 {{< case_study/column >}}
-He incorporated an alerting stack in AWS Managed Grafana, Betteruptime, Prometheus, and Cloud Watch and created a new, improved API version to manage client environments.  
-As with many small teams, Qameta aimed to control prices and optimize budget allocation. The startup Co-Founder recalls: “We valued flexibility, cost-controlled cloud services to meet the MVP testing budget and the self-sufficiency of vendors.”  
-To adhere to the budget limits, FivexL implemented an elastic and robust configuration that allowed to leverage shared resources to maximize agility and minimize costs. As a result, the client’s costs decreased by 40%, which is cheaper compared to Digital Ocean compute offerings.  
-FivexL transferred knowledge and best practices on the implemented AWS infrastructure to Qameta’s engineer.<br/> 
+This text will be changed<br/> 
+Database Migration: preparation of RDS instances followed industry-best practices for security and operations, ensuring a seamless migration process that accommodated potential roll-backs if necessary.<br/>
+Frontend: Described existing CloudFront deployments and lambdas as code<br/>
+Availability: Configured Global Accelerator for Gateway API service to accelerate client traffic to it and Configured WAF allow-list and OWASP top 10 rules for WAF to defend from the most frequent attacks.<br/>
+Developer Productivity: A concerted effort was made to enhance the productivity of developers through tools like AWS X-Ray and various alerting mechanisms, customized log streaming, and training on ECS features and metrics.
+Security: a range of security features was implemented, such as AWS Config, IAM Access analyzers, automated encryption, Security Hub, and container hardening, coupled with basic security training for the team.<br/>
+Cost Optimization: <br/> 
 <br/>   
-[Qameta launched](https://qameta.io/blog/allure-testops-cloud-is-generally-available-to-all-dev-teams/) a fully-fledged solution in July 2022. Many clients waited in line to use the Allure TestOps Cloud.   
-It was a major success! The number of clients grew rapidly.
  {{</ case_study/column >}}
 {{</ case_study/solution >}} 
 
