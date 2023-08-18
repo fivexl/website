@@ -49,19 +49,19 @@ The project was carried out in several stages.<br/>
 **Foundation - Set Up AWS Organization**<br/>  
 To prevent future issues with lost access to AWS and to centrally manage and govern the AWS environment during growth and scaling, FivexL established an AWS organization. This foundational step is crucial for ensuring the safety and stable evolution of the product. AWS Organization was configured according to best practices, and security measures like AWS CloudTrail and GuardDuty were set up.
 To foster efficiency and transparency, FivexL set up daily sync/demo/backlog review calls and Kanban board for tasks tracking.<br/>  
-**First App - Establishing a Microservices Platform**<br/> 
+**First App - Establishing a Microservices Platform**<br/>   
 At this stage FivexL empowered Wings developers to build and deploy applications with enhanced security features in a fast, standardized, compliant, and cost-efficient manner using Amazon Elastic Container Service (Amazon ECS).
 FivexL consultants sep up a microservices platform for Wings that simplifies deployment, management, and scaling of containerized applications.  They also created a Dockerfile and launched the first application within the ECS cluster.<br/>  
 
 
 {{</ case_study/column >}}
 {{< case_study/column >}}
-This text will be changed<br/> 
-Database Migration: preparation of RDS instances followed industry-best practices for security and operations, ensuring a seamless migration process that accommodated potential roll-backs if necessary.<br/>
-Frontend: Described existing CloudFront deployments and lambdas as code<br/>
-Availability: Configured Global Accelerator for Gateway API service to accelerate client traffic to it and Configured WAF allow-list and OWASP top 10 rules for WAF to defend from the most frequent attacks.<br/>
-Developer Productivity: A concerted effort was made to enhance the productivity of developers through tools like AWS X-Ray and various alerting mechanisms, customized log streaming, and training on ECS features and metrics.
-Security: a range of security features was implemented, such as AWS Config, IAM Access analyzers, automated encryption, Security Hub, and container hardening, coupled with basic security training for the team.<br/>
+This text will be changed<br/>  
+Database Migration: preparation of RDS instances followed industry-best practices for security and operations, ensuring a seamless migration process that accommodated potential roll-backs if necessary.<br/>  
+Frontend: Described existing CloudFront deployments and lambdas as code<br/>  
+Availability: Configured Global Accelerator for Gateway API service to accelerate client traffic to it and Configured WAF allow-list and OWASP top 10 rules for WAF to defend from the most frequent attacks.<br/>  
+Developer Productivity: A concerted effort was made to enhance the productivity of developers through tools like AWS X-Ray and various alerting mechanisms, customized log streaming, and training on ECS features and metrics.  
+Security: a range of security features was implemented, such as AWS Config, IAM Access analyzers, automated encryption, Security Hub, and container hardening, coupled with basic security training for the team.<br/>  
 Cost Optimization: <br/> 
 <br/>   
  {{</ case_study/column >}}
