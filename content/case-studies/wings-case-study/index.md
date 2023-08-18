@@ -56,6 +56,9 @@ FivexL consultants sep up a microservices platform for Wings that simplifies dep
 
 {{</ case_study/column >}}
 {{< case_study/column >}}
+**Infrastructure as Code**<br/>  
+FivexL adopts a DevOps-centric approach to infrastructure, treating it the same way developers handle code. By providing Wings with infrastructure as code, they enhanced efficiency and productivity for developers and architects. This approach speeds up processes by eliminating manual tasks and reducing delays. 
+
 This text will be changed<br/>  
 Database Migration: preparation of RDS instances followed industry-best practices for security and operations, ensuring a seamless migration process that accommodated potential roll-backs if necessary.<br/>  
 Frontend: Described existing CloudFront deployments and lambdas as code<br/>  
