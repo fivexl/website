@@ -17,7 +17,7 @@ testimonial_author: "Steve"
 testimonial_author_position: "Founder at Wings"
 testimonial_author_portrait: steve.png
 testimonial_long: |
-  This text will be changed. “Self-sufficiency, a deep understanding of our needs, a result-oriented approach, and the delivery of a working solution within a short timeframe – all these factors make FivexL a team of professionals.”
+  "Transparency, flexibility, and speed are what make working with FivexL exceptionally comfortable. They have meticulously organized every process, from crafting a scope of work with milestones based on our requests to  task tracking, demo calls, and transferring knowledge to our team."
 about_company:
   logo: 'apple.png'
   heading: 'About Wings'
@@ -45,6 +45,11 @@ Moreover, the startup faced difficulties accessing their Amazon account. Despite
  
 {{< case_study/solution heading="Solution" >}}
 {{< case_study/column >}}
+The project was carried out in several stages.<br/> 
+**Foundation:**<br/>  
+To prevent future issues with lost access to AWS and to centrally manage and govern the AWS environment during growth and scaling, FivexL established an AWS organization. This foundational step is crucial for ensuring the safety and stable evolution of the product. AWS Organization was configured according to best practices, and security measures like AWS CloudTrail and GuardDuty were set up.
+To foster efficiency and transparency, FivexL set up daily sync/demo/backlog review calls and Kanban board for tasks tracking. 
+
 This text will be changed. Qameta received Allure TestOps Cloud – an architected solution based on the on-prem Allure TestOps software – in time. To minimize in-house development, therefore, further maintenance, FivexL used as many ready-to-use components and managed services as possible. Artem Eroshenko said: “By developing infrastructure, FivexL allowed us to focus on our core business: product development, hypothesis testing, feedback collection from real users, and roadmap generation.”  
 FivexL engaged in the project two of its AWS Solutions Architects. Firstly, Ivan Razzhivin built an MVP and Serverless API that allowed it to launch environments with a single click. To create and control specific client resources in a cloud provider from the EKS cluster, Crossplane (dynamic resources controller) and ArgoCD were used. As a result, Allure TestOps evolved from Kubernetes helm charts to a cloud-based SaaS offering.   
 After Stage 1, Qameta released a Beta-version to test it on real users.
@@ -67,10 +72,9 @@ It was a major success! The number of clients grew rapidly.
     image="qameta_benefits.png"
     >}}
 {{< pink_heading text="Benefits" >}}
-This text will be changed. “FivexL heavily supported us in launching a Cloud Allure TestOps version. Self-sufficiency, a deep understanding of our needs, a result-oriented approach, and the delivery of a working solution within a short timeframe – all these factors make FivexL a team of professionals”, says Artem Eroshenko, co-founder and CPO at Qameta Software.<br/>
-<br/>    
-The product is easy to maintain, scale, and develop thanks to the infrastructure implemented as a code. This also allows Terraform specifications to be used as documentation and facilitates knowledge transfer across the team. Aligned teamwork allowed Qameta to launch a performant MVP that delivers on time.<br/>
-<br/>  
-“After a successful MVP launch, FivexL and us continued providing maintenance and optimizing cloud services” recalls the Qameta Co-founder Artem Eroshenko. 
+These concerted efforts have not only created the technical architecture but have also fostered a culture of security consciousness, innovation, and agile response to changing needs, positioning the organization for scalable growth and resilience against threats.<br/>
+<br/>
+FivexL during 4 years of working on cutting-edge cloud technologies and building infra for Scandinavian startups collected a set of best practices and modules that were used to speed up the process several times. Collective experience of the team is more than 50 years in clouds allows to build infra from scratch for 3-4 months versus the year which leaves one specialist working inside the team. 
+
 {{</ case_study/benefits >}}
 
