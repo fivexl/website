@@ -73,12 +73,14 @@ Cost Optimization: <br/>
 {{< case_study/benefits
     cta_text="Start Your Success Story"
     cta_url="https://sales.fivexl.io/schedule-a-call"
-    image="qameta_benefits.png"
+    image="quote_wings.png"
     >}}
 {{< pink_heading text="Benefits" >}}
 These concerted efforts have not only created the technical architecture but have also fostered a culture of security consciousness, innovation, and agile response to changing needs, positioning the organization for scalable growth and resilience against threats.<br/>
 <br/>
-FivexL during 4 years of working on cutting-edge cloud technologies and building infra for Scandinavian startups collected a set of best practices and modules that were used to speed up the process several times. Collective experience of the team is more than 50 years in clouds allows to build infra from scratch for 3-4 months versus the year which leaves one specialist working inside the team. 
+FivexL during 4 years of working on cutting-edge cloud technologies and building infra for Scandinavian startups collected a set of best practices and modules that were used to speed up the process several times. Collective experience of the team is more than 50 years in clouds allows to build infra from scratch for 3-4 months versus the year which leaves one specialist working inside the team.<br/> 
+<br/>
+"With FivexL we quickly achieved predictable results and completed the project sooner than we initially anticipated." recalls Steve, founder at Wings.
 
 {{</ case_study/benefits >}}
 
