@@ -76,11 +76,16 @@ Cost Optimization: <br/>
     image="quote_wings.png"
     >}}
 {{< pink_heading text="Benefits" >}}
-These concerted efforts have not only created the technical architecture but have also fostered a culture of security consciousness, innovation, and agile response to changing needs, positioning the organization for scalable growth and resilience against threats.<br/>
+Through their collaboration with FivexL, Wings benefited from a novel approach to infrastructure. This granted Wings the flexibility to manage all resources via code, enhancing the system's security, predictability, and rapid scalability. The team can now easily gather metrics, view statistics, and make updates or changes with greater convenience.<br/>
 <br/>
-FivexL during 4 years of working on cutting-edge cloud technologies and building infra for Scandinavian startups collected a set of best practices and modules that were used to speed up the process several times. Collective experience of the team is more than 50 years in clouds allows to build infra from scratch for 3-4 months versus the year which leaves one specialist working inside the team.<br/> 
+FivexL adheres to advanced industry standards and provides recorded demos explaining decision-making logic and system operation principles. This ensures a seamless transition when another professional joins the Wings team for continued system development.<br/>
 <br/>
-"With FivexL we quickly achieved predictable results and completed the project sooner than we initially anticipated." recalls Steve, founder at Wings.
+Steve, from Wings, reflects on the experience: "With FivexL, we saw predictable results and finished the project earlier than expected."<br/> 
+<br/>
+
+FivexL has been working on cutting-edge cloud technologies and building infrastructure for Scandinavian startups for the past four years, accumulating a set of best practices and modules. These have been used to accelerate this project several times over. The team's collective experience enables them to build infrastructure from scratch in 3-4 months, compared to the typical year required by a single in-house specialist.<br/> 
+<br/>
+
 
 {{</ case_study/benefits >}}
 
