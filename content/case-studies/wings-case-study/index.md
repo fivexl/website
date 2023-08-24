@@ -64,10 +64,8 @@ FivexL adopts a DevOps-centric approach to infrastructure, treating it the same 
 FivexL sped up client traffic to microservices by enabling AWS Global Accelerator. A concerted effort was made to enhance the productivity of developers through tools like X-Ray and various alerting mechanisms, customized log streaming, ECS features and metrics.<br/>
 
 **Security**  
-To protect the system from the most frequent types of cyberattacks, FivexL configured WAF allow-list and OWASP top 10 rules for WAF. Beyond these, FivexL implemented a range of security features (AWS Config, IAM Access analyzers, automated encryption, and Security Hub) and hardened containers. After that, FivexL equipped the Wings team with basic security training.
- <br/> 
-<br/>   
- {{</ case_study/column >}}
+To protect the system from the most frequent types of cyberattacks, FivexL configured WAF allow-list and OWASP top 10 rules for WAF. Beyond these, FivexL implemented a range of security features (AWS Config, IAM Access analyzers, automated encryption, and Security Hub) and hardened containers. After that, FivexL equipped the Wings team with basic security training.<br/>   
+{{</ case_study/column >}}
 {{</ case_study/solution >}} 
 
 {{< case_study/benefits
@@ -76,12 +74,13 @@ To protect the system from the most frequent types of cyberattacks, FivexL confi
     image="quote_wings.png"
     >}}
 {{< pink_heading text="Benefits" >}}
-The FivexL collective experience enables them to build infrastructure from scratch in 3-4 months, compared to the typical year required by a single in-house specialist.  
-Through their collaboration with FivexL, Wings benefited from a novel approach to infrastructure. This granted Wings the flexibility to manage all resources via code, enhancing the system's security, predictability, and rapid scalability. The team can now easily gather metrics, view statistics, and make updates or changes with greater convenience.<br/>
+The FivexL collective experience enables to build infrastructure from scratch in 3-4 months, compared to the typical year required by a single in-house specialist.<br/>  
+<br/>  
+Through collaboration with FivexL, Wings benefited from a novel approach to infrastructure. This granted Wings the flexibility to manage all resources via code, enhancing the system's security, predictability, and rapid scalability. The team can now easily gather metrics, view statistics, and make updates or changes with greater convenience.<br/>
 <br/>
 FivexL adheres to advanced industry standards and provides recorded demos explaining decision-making logic and system operation principles. This ensures a seamless transition when another professional joins the Wings team for continued system development.<br/>
 <br/>
-Steve, from Wings, reflects on the experience: "With FivexL, we saw predictable results and finished the project earlier than expected."<br/> 
+Steve, from Wings, reflected on the experience: "With FivexL, we saw predictable results and finished the project earlier than expected."<br/> 
 <br/>
 FivexL has been working on cutting-edge cloud technologies and building infrastructure for Scandinavian startups for the past four years, accumulating a set of best practices and modules. These have been used to accelerate this project several times over.<br/> 
 <br/>
