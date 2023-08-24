@@ -48,7 +48,8 @@ Moreover, the startup faced difficulties accessing their Amazon account. Despite
 The project was carried out in several stages.<br/> 
 **Foundation - Set Up AWS Organization**<br/>  
 To prevent future issues with lost access to AWS and to centrally manage and govern the AWS environment during growth and scaling, FivexL established an AWS organization. This foundational step is crucial for ensuring the safety and stable evolution of the product. AWS Organization was configured according to best practices, and security measures like AWS CloudTrail and GuardDuty were set up.
-To foster efficiency and transparency, FivexL set up daily sync/demo/backlog review calls and Kanban board for tasks tracking.<br/>  
+To foster efficiency and transparency, FivexL set up daily sync/demo/backlog review calls and Kanban board for tasks tracking.<br/>
+
 **First App - Establishing a Microservices Platform**<br/>   
 At this stage FivexL empowered Wings developers to build and deploy applications with enhanced security features in a fast, standardized, compliant, and cost-efficient manner using Amazon Elastic Container Service (Amazon ECS).
 FivexL consultants sep up a microservices platform for Wings that simplifies deployment, management, and scaling of containerized applications.  They also created a Dockerfile and launched the first application within the ECS cluster.<br/>  
@@ -57,15 +58,14 @@ FivexL consultants sep up a microservices platform for Wings that simplifies dep
 {{</ case_study/column >}}
 {{< case_study/column >}}
 **Infrastructure as Code**<br/>  
-FivexL adopts a DevOps-centric approach to infrastructure, treating it the same way developers handle code. By providing Wings with infrastructure as code, they enhanced efficiency and productivity for developers and architects. This approach speeds up processes by eliminating manual tasks and reducing delays. 
+FivexL adopts a DevOps-centric approach to infrastructure, treating it the same way developers handle code. By providing Wings with infrastructure as code, they enhanced efficiency and productivity for developers and architects. This approach speeds up processes by eliminating manual tasks and reducing delays. <br/> 
 
-This text will be changed<br/>  
-Database Migration: preparation of RDS instances followed industry-best practices for security and operations, ensuring a seamless migration process that accommodated potential roll-backs if necessary.<br/>  
-Frontend: Described existing CloudFront deployments and lambdas as code<br/>  
-Availability: Configured Global Accelerator for Gateway API service to accelerate client traffic to it and Configured WAF allow-list and OWASP top 10 rules for WAF to defend from the most frequent attacks.<br/>  
-Developer Productivity: A concerted effort was made to enhance the productivity of developers through tools like AWS X-Ray and various alerting mechanisms, customized log streaming, and training on ECS features and metrics.  
-Security: a range of security features was implemented, such as AWS Config, IAM Access analyzers, automated encryption, Security Hub, and container hardening, coupled with basic security training for the team.<br/>  
-Cost Optimization: <br/> 
+**Availability and Monitoring**  
+FivexL sped up client traffic to microservices by enabling AWS Global Accelerator. A concerted effort was made to enhance the productivity of developers through tools like X-Ray and various alerting mechanisms, customized log streaming, ECS features and metrics.<br/>
+
+**Security**  
+To protect the system from the most frequent types of cyberattacks, FivexL configured WAF allow-list and OWASP top 10 rules for WAF. Beyond these, FivexL implemented a range of security features (AWS Config, IAM Access analyzers, automated encryption, and Security Hub) and hardened containers. After that, FivexL equipped the Wings team with basic security training.
+ <br/> 
 <br/>   
  {{</ case_study/column >}}
 {{</ case_study/solution >}} 
@@ -76,14 +76,14 @@ Cost Optimization: <br/>
     image="quote_wings.png"
     >}}
 {{< pink_heading text="Benefits" >}}
+The FivexL collective experience enables them to build infrastructure from scratch in 3-4 months, compared to the typical year required by a single in-house specialist.  
 Through their collaboration with FivexL, Wings benefited from a novel approach to infrastructure. This granted Wings the flexibility to manage all resources via code, enhancing the system's security, predictability, and rapid scalability. The team can now easily gather metrics, view statistics, and make updates or changes with greater convenience.<br/>
 <br/>
 FivexL adheres to advanced industry standards and provides recorded demos explaining decision-making logic and system operation principles. This ensures a seamless transition when another professional joins the Wings team for continued system development.<br/>
 <br/>
 Steve, from Wings, reflects on the experience: "With FivexL, we saw predictable results and finished the project earlier than expected."<br/> 
 <br/>
-
-FivexL has been working on cutting-edge cloud technologies and building infrastructure for Scandinavian startups for the past four years, accumulating a set of best practices and modules. These have been used to accelerate this project several times over. The team's collective experience enables them to build infrastructure from scratch in 3-4 months, compared to the typical year required by a single in-house specialist.<br/> 
+FivexL has been working on cutting-edge cloud technologies and building infrastructure for Scandinavian startups for the past four years, accumulating a set of best practices and modules. These have been used to accelerate this project several times over.<br/> 
 <br/>
 
 
