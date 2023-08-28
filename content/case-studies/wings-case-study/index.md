@@ -7,7 +7,7 @@ summary: 'FivexL designed and implemented a cost-efficient, scalable, and secure
 date: 2023-8-17
 author:  Ivan Razzhivin Vladimir-Samoylov 
 panel_image: Alex_Vanya.png
-authors_heading: 'Two lead consultants for the project'
+authors_heading: 'Project Success: Managed by Vladimir Samoylov, Architected by Ivan Razzhivin'
 alt_image: alex_ivan_bnw.png
 case_study: true
 layout: 'case_study'
