@@ -74,7 +74,7 @@ To protect the system from the most frequent types of cyberattacks, FivexL confi
     image="quote_wings.png"
     >}}
 {{< pink_heading text="Benefits" >}}
-The FivexL collective experience enables to build infrastructure from scratch in 3-4 months, compared to the typical year required by a single in-house specialist.<br/>  
+The FivexL collective experience enabled setting up of a solid infrastructure foundation from scratch in just 2-3 months, compared to the typical year required by a single in-house specialist. Assuming that the specialist has a deep understanding of AWS and has experience building AWS Organisations that would scale over time. Otherwise, such setup might take even longer.<br/>  
 <br/>  
 Through collaboration with FivexL, Wings benefited from a novel approach to infrastructure. This granted Wings the flexibility to manage all resources via code, enhancing the system's security, predictability, and rapid scalability. The team can now easily gather metrics, view statistics, and make updates or changes with greater convenience.<br/>
 <br/>
