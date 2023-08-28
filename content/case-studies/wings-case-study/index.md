@@ -3,12 +3,12 @@ title: 'Wings Case Study'
 author_id:
   - 'Ivan Razzhivin'
   - 'Vladimir-Samoylov'
-summary: 'FivexL designed and implemented a cost-efficient, scalable, and secure Cloud-based SaaS.'
+summary: 'FivexL built a scalable and secure infrastructure in AWS from the ground up in just 3 months for a smart expense management service.'
 date: 2023-8-17
 author:  Ivan Razzhivin Vladimir-Samoylov 
-panel_image: Alex_Vanya.png
+panel_image: Artboard.png
 authors_heading: 'Project Success: Managed by Vladimir Samoylov, Architected by Ivan Razzhivin'
-alt_image: alex_ivan_bnw.png
+alt_image: wings_bnw.png
 case_study: true
 layout: 'case_study'
 tags: ['case study', 'aws']
@@ -22,7 +22,7 @@ about_company:
   logo: 'apple.png'
   heading: 'About Wings'
   text: |
-    Wings is a fintech startup that addresses the challenges of online payments. They have developed a smart Expense Management service for corporate clients, enabling the issuance of virtual bank cards. Wings embarked on a journey to launch their MVP (Minimum Viable Product) to validate their unique business proposition. The initial infrastructure in AWS was built in-house by the Wings team. However, as the idea proved its viability, the need for a more robust and scalable infrastructure became evident.
+    Wings is a fintech startup that addresses the challenges of online payments. They have developed a smart expense anagement service for corporate clients, enabling the issuance of virtual bank cards. Wings embarked on a journey to launch their MVP (Minimum Viable Product) to validate their unique business proposition. The initial infrastructure in AWS was built in-house by the Wings team. However, as the idea proved its viability, the need for a more robust and scalable infrastructure became evident.
 double_panel:
   layout: 'case-studies'
   heading: "CASE STUDIES"
