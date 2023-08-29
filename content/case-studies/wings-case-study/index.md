@@ -17,12 +17,13 @@ testimonial_author: "Steve"
 testimonial_author_position: "Founder at Wings"
 testimonial_author_portrait: steve.png
 testimonial_long: |
-  "With a professionally set up AWS Organization and access control, along with launching applications using AWS ECS, our team can move faster in product development. Transparency, flexibility, and speed make the collaboration with FivexL highly effective."
+  "I'm really impressed with how FivexL has helped our team to.....   
+  With a professionally set up AWS Organization and access control, along with launching applications using AWS ECS, our team can move faster in product development. Transparency, flexibility, and speed make the collaboration with FivexL highly effective."
 about_company:
   logo: 'apple.png'
   heading: 'About Wings'
   text: |
-    Wings is a fintech startup that addresses the challenges of online payments. They have developed a smart expense anagement service for corporate clients, enabling the issuance of virtual bank cards. Wings embarked on a journey to launch their MVP (Minimum Viable Product) to validate their unique business proposition. The initial infrastructure in AWS was built in-house by the Wings team. However, as the idea proved its viability, the need for a more robust and scalable infrastructure became evident.
+    Wings is a fintech startup that addresses the challenges of online payments with groundbreaking solutions. Led by an innovative and active remote team, the company has developed a smart expense management service tailored for corporate clients. This service enables the issuance of virtual bank cards, offering a seamless and secure way to manage company expenses. With a relentless focus on innovation and agility, the team at Wings aims to disrupt the conservative world of finance, challenging the status quo and setting new standards for digital financial transactions.
 double_panel:
   layout: 'case-studies'
   heading: "CASE STUDIES"
@@ -35,6 +36,8 @@ double_panel:
 ---
 {{< case_study/challenge  image="challenge_q.png" image_css="object-position: 18%" >}}
 {{< pink_heading text="Challenge"  sizes="bigger">}}
+Wings embarked on a journey to launch their MVP (Minimum Viable Product) to validate their unique business proposition. The initial infrastructure in AWS was built in-house by the Wings team. However, as the idea proved its viability, the need for a more robust and scalable infrastructure became evident.<br/>
+<br/>  
 The first iteration of the application was built by the Wings team using a monolithic approach with the help of Elastic Beanstalk. While this allowed the team to launch the MVP quickly, it posed challenges for product modifications and scalability. Economically, this approach was not sustainable. It led to the creation of separate instances for each new client, consuming significant Amazon resources and resulting in high infrastructure costs.<br/> 
 <br/>  
 Recognizing the limitations of the monolithic architecture, Wings decided to seek experts to transition towards a microservice multi-tenant architecture. This architecture allows companies to save money on infrastructure costs by using the same hardware resources for several instances of the same application for multiple tenants.<br/>
