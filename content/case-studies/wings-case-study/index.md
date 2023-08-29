@@ -17,13 +17,13 @@ testimonial_author: "Steve"
 testimonial_author_position: "Founder at Wings"
 testimonial_author_portrait: steve.png
 testimonial_long: |
-  "I'm really impressed with how FivexL has helped our team to.....   
+  "I'm really impressed with how FivexL has helped our team to.....
   With a professionally set up AWS Organization and access control, along with launching applications using AWS ECS, our team can move faster in product development. Transparency, flexibility, and speed make the collaboration with FivexL highly effective."
 about_company:
   logo: 'apple.png'
   heading: 'About Wings'
   text: |
-    Wings is a fintech startup that addresses the challenges of online payments with groundbreaking solutions. Led by an innovative and active remote team, the company has developed a smart expense management service tailored for corporate clients. This service enables the issuance of virtual bank cards, offering a seamless and secure way to manage company expenses. With a relentless focus on innovation and agility, the team at Wings aims to disrupt the conservative world of finance, challenging the status quo and setting new standards for digital financial transactions.
+    Wings is a fintech startup that addresses the challenges of online payments. They have developed a smart expense anagement service for corporate clients, enabling the issuance of virtual bank cards. The acquaintance between Wings and FivexL began with a problem the startup faced. They lost access to their AWS account and sought help on various platforms and in AWS specialist communities. Confused by responses like 'nothing can be done' and faced with costly, risky proposals, the team was worried they had lost access to their data. FivexL senior consultant Vladimir, after reading about the startup's issues, quickly understood the problem and, on a volunteer basis, helped Wings regain access in just 20 minutes. This marked the beginning of a successful collaboration.
 double_panel:
   layout: 'case-studies'
   heading: "CASE STUDIES"
@@ -36,14 +36,13 @@ double_panel:
 ---
 {{< case_study/challenge  image="challenge_q.png" image_css="object-position: 18%" >}}
 {{< pink_heading text="Challenge"  sizes="bigger">}}
-Wings embarked on a journey to launch their MVP (Minimum Viable Product) to validate their unique business proposition. The initial infrastructure in AWS was built in-house by the Wings team. However, as the idea proved its viability, the need for a more robust and scalable infrastructure became evident.<br/>
-<br/>  
+Wings embarked on a journey to launch their MVP (Minimum Viable Product) to validate their unique business proposition. The initial infrastructure in AWS was built in-house by the Wings team. However, as the idea proved its viability, the need for a more robust and scalable infrastructure became evident.  
+  
 The first iteration of the application was built by the Wings team using a monolithic approach with the help of Elastic Beanstalk. While this allowed the team to launch the MVP quickly, it posed challenges for product modifications and scalability. Economically, this approach was not sustainable. It led to the creation of separate instances for each new client, consuming significant Amazon resources and resulting in high infrastructure costs.<br/> 
 <br/>  
-Recognizing the limitations of the monolithic architecture, Wings decided to seek experts to transition towards a microservice multi-tenant architecture. This architecture allows companies to save money on infrastructure costs by using the same hardware resources for several instances of the same application for multiple tenants.<br/>
+Recognizing the limitations of the monolithic architecture, Wings decided to engage experts to transition towards a microservice multi-tenant architecture. This architecture allows companies to save money on infrastructure costs by using the same hardware resources for several instances of the same application for multiple tenants.<br/>
 <br/>  
-Moreover, the startup faced difficulties accessing their Amazon account. Despite seeking solutions on various platforms and in AWS specialist communities, no one was willing to address this issue. The team was worried that the data was lost and could not be recovered.<br/>  
-<br/>The FivexL expert quickly and voluntarily helped Wings with restoring access to AWS Organization. This marked the beginning of the collaboration. The founder of Wings recalls, "We were impressed by how quickly and freely the FivexL specialist assisted us. It became clear that they were experts in their field and could be trusted to build a scalable and secure infrastructure that would meet not only our current needs but also future challenges."  
+ The founder of Wings recalls, "We were impressed by how quickly and freely the FivexL specialist assisted us. It became clear that they were experts in their field and could be trusted to build a scalable and secure infrastructure that would meet not only our current needs but also future challenges."  
 {{</ case_study/challenge >}}
  
 {{< case_study/solution heading="Solution" >}}
