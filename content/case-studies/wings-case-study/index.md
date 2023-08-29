@@ -35,7 +35,7 @@ double_panel:
 ---
 {{< case_study/challenge  image="challenge_q.png" image_css="object-position: 18%" >}}
 {{< pink_heading text="Challenge"  sizes="bigger">}}
-The first iteration of the infrastructure was built by the Wings team using a monolithic approach with the help of Elastic Beanstalk. While this allowed the team to launch the MVP quickly, it posed challenges for product modifications and scalability. Economically, this approach was not sustainable. It led to the creation of separate instances for each new client, consuming significant Amazon resources and resulting in high infrastructure costs.<br/> 
+The first iteration of the application was built by the Wings team using a monolithic approach with the help of Elastic Beanstalk. While this allowed the team to launch the MVP quickly, it posed challenges for product modifications and scalability. Economically, this approach was not sustainable. It led to the creation of separate instances for each new client, consuming significant Amazon resources and resulting in high infrastructure costs.<br/> 
 <br/>  
 Recognizing the limitations of the monolithic architecture, Wings decided to seek experts to transition towards a microservice multi-tenant architecture. This architecture allows companies to save money on infrastructure costs by using the same hardware resources for several instances of the same application for multiple tenants.<br/>
 <br/>  
@@ -54,14 +54,16 @@ To foster efficiency and transparency, FivexL set up daily sync/demo/backlog rev
 At this stage FivexL empowered Wings developers to build and deploy applications with enhanced security features in a fast, standardized, compliant, and cost-efficient manner using Amazon Elastic Container Service (Amazon ECS).
 FivexL consultants sep up a microservices platform for Wings that simplifies deployment, management, and scaling of containerized applications.  They also created a Dockerfile and launched the first application within the ECS cluster.<br/>  
 
+**Infrastructure as Code**<br/>  
+FivexL adopts a DevOps-centric approach to infrastructure, treating it the same way developers handle code. Utilizing Terraform’s open-source IaC tool and community-driven modules, FivexL created Wings’ infrastructure for both speed and reliability.  
 
 {{</ case_study/column >}}
 {{< case_study/column >}}
-**Infrastructure as Code**<br/>  
-FivexL adopts a DevOps-centric approach to infrastructure, treating it the same way developers handle code. By providing Wings with infrastructure as code, they enhanced efficiency and productivity for developers and architects. This approach speeds up processes by eliminating manual tasks and reducing delays. <br/> 
+This standardization not only minimizes manual tasks and human error but also speeds up infrastructure development process. The adoption of high-quality community standards also ensures that the infrastructure is easily understandable, making for a smoother transition for any future engineers on the project. <br/> 
 
 **Availability and Monitoring**  
-FivexL sped up client traffic to microservices by enabling AWS Global Accelerator. A concerted effort was made to enhance the productivity of developers through tools like X-Ray and various alerting mechanisms, customized log streaming, ECS features and metrics.<br/>
+FivexL sped up client traffic to microservices by enabling AWS Global Accelerator. A concerted effort was made to enhance the productivity of developers through tools like X-Ray and various alerting mechanisms, customized log streaming, ECS features and metrics.  
+Having key metrics, log data, analytics, and user interactions at hand, the team gains the ability to speed up the debugging process and minimize the average time needed for issue resolution.<br/>
 
 **Security**  
 To protect the system from the most frequent types of cyberattacks, FivexL configured WAF allow-list and OWASP top 10 rules for WAF. Beyond these, FivexL implemented a range of security features (AWS Config, IAM Access analyzers, automated encryption, and Security Hub) and hardened containers. After that, FivexL equipped the Wings team with basic security training.<br/>   
