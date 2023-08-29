@@ -17,7 +17,7 @@ testimonial_author: "Steve"
 testimonial_author_position: "Founder at Wings"
 testimonial_author_portrait: steve.png
 testimonial_long: |
-  "Transparency, flexibility, and speed are what make working with FivexL exceptionally comfortable. They have meticulously organized every process, from crafting a scope of work with milestones based on our requests to  task tracking, demo calls, and transferring knowledge to our team."
+  "With a professionally set up AWS Organization and access control, along with launching applications using AWS ECS, our team can move faster in product development. Transparency, flexibility, and speed make the collaboration with FivexL highly effective."
 about_company:
   logo: 'apple.png'
   heading: 'About Wings'
@@ -39,8 +39,8 @@ The first iteration of the application was built by the Wings team using a monol
 <br/>  
 Recognizing the limitations of the monolithic architecture, Wings decided to seek experts to transition towards a microservice multi-tenant architecture. This architecture allows companies to save money on infrastructure costs by using the same hardware resources for several instances of the same application for multiple tenants.<br/>
 <br/>  
-Moreover, the startup faced difficulties accessing their Amazon account. Despite seeking solutions on various platforms and in AWS specialist communities, no one was willing to address this issue.<br/>  
-<br/>An expert from FivexL responded to Wings' plea for help. The founder of Wings recalls, "We were impressed by how quickly and freely the FivexL specialist assisted us. It became clear that they were experts in their field and could be trusted to build a scalable and secure infrastructure that would meet not only our current needs but also future challenges."  
+Moreover, the startup faced difficulties accessing their Amazon account. Despite seeking solutions on various platforms and in AWS specialist communities, no one was willing to address this issue. The team was worried that the data was lost and could not be recovered.<br/>  
+<br/>The FivexL expert quickly and voluntarily helped Wings with restoring access to AWS Organization. This marked the beginning of the collaboration. The founder of Wings recalls, "We were impressed by how quickly and freely the FivexL specialist assisted us. It became clear that they were experts in their field and could be trusted to build a scalable and secure infrastructure that would meet not only our current needs but also future challenges."  
 {{</ case_study/challenge >}}
  
 {{< case_study/solution heading="Solution" >}}
@@ -84,8 +84,7 @@ FivexL adheres to advanced industry standards and provides recorded demos explai
 <br/>
 Steve, from Wings, reflected on the experience: "With FivexL, we saw predictable results and finished the project earlier than expected."<br/> 
 <br/>
-FivexL has been working on cutting-edge cloud technologies and building infrastructure for Scandinavian startups for the past four years, accumulating a set of best practices and modules. These have been used to accelerate this project several times over.<br/> 
-<br/>
+
 
 
 {{</ case_study/benefits >}}
