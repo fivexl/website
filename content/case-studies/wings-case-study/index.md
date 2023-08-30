@@ -17,8 +17,7 @@ testimonial_author: "Steve"
 testimonial_author_position: "Founder at Wings"
 testimonial_author_portrait: steve.png
 testimonial_long: |
-  "I'm really impressed with how FivexL has helped our team to.....
-  With a professionally set up AWS Organization and access control, along with launching applications using AWS ECS, our team can move faster in product development. Transparency, flexibility, and speed make the collaboration with FivexL highly effective."
+  "I'm genuinely amazed by the transformative impact FivexL has had on our team's workflow. In three months, with expertly configured AWS Organization, access control, and streamlined launches of multiple applications via AWS ECS, we've established a solid foundation for our future growth. This implementation has empowered our development team to focus on innovation and rapid iteration."
 about_company:
   logo: 'apple.png'
   heading: 'About Wings'
