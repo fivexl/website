@@ -4,7 +4,7 @@ author_id:
   - 'Ivan Razzhivin'
   - 'Vladimir-Samoylov'
 summary: 'FivexL built a scalable and secure infrastructure in AWS from the ground up in just 3 months for a smart expense management service.'
-date: 2023-8-17
+date: 2023-08-17 
 author:  Ivan Razzhivin Vladimir-Samoylov 
 panel_image: Artboard.png
 authors_heading: 'Project Success: Managed by Vladimir Samoylov, Architected by Ivan Razzhivin'
