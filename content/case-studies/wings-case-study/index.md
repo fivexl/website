@@ -46,9 +46,12 @@ Recognizing the limitations of the monolithic architecture, Wings decided to eng
  
 {{< case_study/solution heading="Solution" >}}
 {{< case_study/column >}}
-The project was carried out in several stages.<br/> 
+Even when a startup is at the very beginning of its journey, FivexL treats it as a future breakthrough. FivexL establishes a solid base for the upcoming thousands of users and the challenges associated with growth, layering one foundation upon another: AWS Organization, Amazon ECS, Terraform, Availability, Monitoring, and Security.  
+Work on the Wings project proceeded through these stages.
+<br/>  
+
 **Foundation - Set Up AWS Organization**<br/>  
-To prevent future issues with lost access to AWS and to centrally manage and govern the AWS environment during growth and scaling, FivexL established an AWS organization. This foundational step is crucial for ensuring the safety and stable evolution of the product. AWS Organization was configured according to best practices, and security measures like AWS CloudTrail and GuardDuty were set up.
+To prevent future issues with lost access to AWS and to centrally manage and govern the AWS environment during growth and scaling, FivexL established an AWS organization. This foundational step is crucial for ensuring the safety and stable evolution of the product. AWS Organization was configured according to best practices, and security measures like [AWS CloudTrail](https://fivexl.io/blog/what-is-aws-cloudtrail/) and GuardDuty were set up.
 To foster efficiency and transparency, FivexL set up daily sync/demo/backlog review calls and Kanban board for tasks tracking.<br/>
 
 **First App - Establishing a Microservices Platform**<br/>   
@@ -56,18 +59,18 @@ At this stage FivexL empowered Wings developers to build and deploy applications
 FivexL consultants sep up a microservices platform for Wings that simplifies deployment, management, and scaling of containerized applications.  They also created a Dockerfile and launched the first application within the ECS cluster.<br/>  
 
 **Infrastructure as Code**<br/>  
-FivexL adopts a DevOps-centric approach to infrastructure, treating it the same way developers handle code. Utilizing Terraform’s open-source IaC tool and community-driven modules, FivexL created Wings’ infrastructure for both speed and reliability.  
+FivexL adopts a DevOps-centric approach to infrastructure, treating it the same way developers handle code. 
 
 {{</ case_study/column >}}
 {{< case_study/column >}}
-This standardization not only minimizes manual tasks and human error but also speeds up infrastructure development process. The adoption of high-quality community standards also ensures that the infrastructure is easily understandable, making for a smoother transition for any future engineers on the project. <br/> 
+Utilizing Terraform’s open-source IaC tool and community-driven modules, FivexL created Wings’ infrastructure for both speed and reliability.  This standardization not only minimizes manual tasks and human error but also speeds up infrastructure development process. The adoption of high-quality community standards also ensures that the infrastructure is easily understandable, making for a smoother transition for any future engineers on the project. <br/> 
 
 **Availability and Monitoring**  
 FivexL sped up client traffic to microservices by enabling AWS Global Accelerator. A concerted effort was made to enhance the productivity of developers through tools like X-Ray and various alerting mechanisms, customized log streaming, ECS features and metrics.  
 Having key metrics, log data, analytics, and user interactions at hand, the team gains the ability to speed up the debugging process and minimize the average time needed for issue resolution.<br/>
 
 **Security**  
-To protect the system from the most frequent types of cyberattacks, FivexL configured WAF allow-list and OWASP top 10 rules for WAF. Beyond these, FivexL implemented a range of security features (AWS Config, IAM Access analyzers, automated encryption, and Security Hub) and hardened containers. After that, FivexL equipped the Wings team with basic security training.<br/>   
+To protect the system from the most frequent types of cyberattacks, FivexL configured WAF allow-list and OWASP top 10 rules for WAF. Beyond these, FivexL implemented a range of [security features](https://fivexl.io/blog/security-basics-in-aws/) (AWS Config, IAM Access analyzers, automated encryption, and Security Hub) and hardened containers. After that, FivexL equipped the Wings team with basic security training.<br/>   
 {{</ case_study/column >}}
 {{</ case_study/solution >}} 
 
