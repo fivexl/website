@@ -50,7 +50,7 @@ Even when a startup is at the very beginning of its journey, FivexL treats it as
 Work on the Wings project proceeded through these stages.
 <br/>  
 
-**Foundation - Set Up AWS Organization**<br/>  
+**Set Up AWS Organization**<br/>  
 To prevent future issues with lost access to AWS and to centrally manage and govern the AWS environment during growth and scaling, FivexL established an AWS organization. This foundational step is crucial for ensuring the safety and stable evolution of the product. AWS Organization was configured according to best practices, and security measures like [AWS CloudTrail](https://fivexl.io/blog/what-is-aws-cloudtrail/) and GuardDuty were set up.
 To foster efficiency and transparency, FivexL set up daily sync/demo/backlog review calls and Kanban board for tasks tracking.<br/>
 
