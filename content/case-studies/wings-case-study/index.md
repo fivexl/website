@@ -22,7 +22,7 @@ about_company:
   logo: 'apple.png'
   heading: 'About Wings'
   text: |
-    Wings is a fintech startup that addresses the challenges of online payments. They have developed a smart expense anagement service for corporate clients, enabling the issuance of virtual bank cards. The acquaintance between Wings and FivexL began with a problem the startup faced. They lost access to their AWS account and sought help on various platforms and in AWS specialist communities. Confused by responses like 'nothing can be done' and faced with costly, risky proposals, the team was worried they had lost access to their data. FivexL senior consultant Vladimir, after reading about the startup's issues, quickly understood the problem and, on a volunteer basis, helped Wings regain access in just 20 minutes. This marked the beginning of a successful collaboration.
+    Wings is a fintech startup that addresses the challenges of online payments. They have developed a smart expense management service for corporate clients, enabling the issuance of virtual bank cards. The acquaintance between Wings and FivexL began with a problem the startup faced. They lost access to their AWS account and sought help on various forums and in AWS professional communities. Confused by responses like 'nothing can be done' and faced with costly, risky proposals, the team was worried they had lost access to their data for good. FivexL senior consultant Vladimir, after reading about the startup's issues, quickly understood the problem and, on a volunteer basis, helped Wings regain access in just 20 minutes. This marked the beginning of a successful collaboration.
 double_panel:
   layout: 'case-studies'
   heading: "CASE STUDIES"
@@ -35,13 +35,13 @@ double_panel:
 ---
 {{< case_study/challenge  image="challenge_q.png" image_css="object-position: 18%" >}}
 {{< pink_heading text="Challenge"  sizes="bigger">}}
-Wings embarked on a journey to launch their MVP (Minimum Viable Product) to validate their unique business proposition. The initial infrastructure in AWS was built in-house by the Wings team. However, as the idea proved its viability, the need for a more robust and scalable infrastructure became evident.<br/>  
+Wings embarked on a journey to launch their MVP (Minimum Viable Product) to validate their unique business proposition. The initial infrastructure in AWS was clicked manually in AWS web UI by the Wings team. However, as the idea proved its viability, the need for a more robust, repeatable, and scalable infrastructure became evident.<br/>  
 <br/> 
-The first iteration of the application was built by the Wings team using a monolithic approach with the help of Elastic Beanstalk. While this allowed the team to launch the MVP quickly, it posed challenges for product modifications and scalability. Economically, this approach was not sustainable. It led to the creation of separate instances for each new client, consuming significant Amazon resources and resulting in high infrastructure costs.<br/> 
+The first iteration of the application was built by the Wings team using a monolithic approach using AWS Elastic Beanstalk as a computing platform. While this allowed the team to launch the MVP quickly, it posed product modifications and scalability challenges. Economically, this approach was not sustainable because every new client got a separate instance, causing resource usage overhead and higher-than-optimal infrastructure costs.<br/> 
 <br/>  
-Recognizing the limitations of the monolithic architecture, Wings decided to engage experts to transition towards a microservice multi-tenant architecture. This architecture allows companies to save money on infrastructure costs by using the same hardware resources for several instances of the same application for multiple tenants.<br/>
+Recognizing the limitations of the monolithic architecture, Wings decided to engage experts to transition towards a microservice multi-tenant architecture. This architecture allows companies to save money on infrastructure costs by using the same computing resources for several clients residing within the same multi-tenant application deployment.<br/>
 <br/>  
- The founder of Wings recalls, "We were impressed by how quickly and freely the FivexL specialist assisted us. It became clear that they were experts in their field and could be trusted to build a scalable and secure infrastructure that would meet not only our current needs but also future challenges."  
+ The founder of Wings recalls, "We were impressed by how quickly and freely the FivexL specialist assisted us. It became clear that they were experts in their field and could be trusted to build a scalable and secure infrastructure that would meet our current needs and future challenges."  
 {{</ case_study/challenge >}}
  
 {{< case_study/solution heading="Solution" >}}
