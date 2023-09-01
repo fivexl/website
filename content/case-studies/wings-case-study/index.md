@@ -75,7 +75,7 @@ To protect the system from the most frequent types of cyberattacks, FivexL confi
 {{</ case_study/solution >}} 
 
 {{< case_study/section >}}
-{{< md >}}![diagram](Foundation_w.png){{</ md >}}
+{{< md >}}![diagram](Foundation.png){{</ md >}}
 {{</ case_study/section >}}
 
 {{< case_study/benefits
