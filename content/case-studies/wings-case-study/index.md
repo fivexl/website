@@ -41,13 +41,26 @@ The first iteration of the application was built by the Wings team using a monol
 <br/>  
 Recognizing the limitations of the monolithic architecture, Wings decided to engage experts to transition towards a microservice multi-tenant architecture. This architecture allows companies to save money on infrastructure costs by using the same computing resources for several clients residing within the same multi-tenant application deployment.<br/>
 <br/>  
- The founder of Wings recalls, "We were impressed by how quickly and freely the FivexL specialist assisted us. It became clear that they were experts in their field and could be trusted to build a scalable and secure infrastructure that would meet our current needs and future challenges."  
+ The founder of Wings recalls, "We were impressed by how quickly and freely the FivexL specialist assisted us. It became clear that they were experts in their field and could be trusted to build a scalable and secure infrastructure to meet our current needs and future challenges."  
 {{</ case_study/challenge >}}
  
 {{< case_study/solution heading="Solution" >}}
 {{< case_study/column >}}
-Even when a startup is at the very beginning of its journey, FivexL treats it as a future breakthrough. FivexL establishes a solid base for the upcoming thousands of users and the challenges associated with growth, layering one foundation upon another: AWS Organization, Amazon ECS, Terraform, Availability, Monitoring, and Security.  
-Work on the Wings project proceeded through these stages.
+Creating the first AWS accounts and deploying the first applications is easy. Scaling AWS infrastructure to meet increasing demands in customer traffic, market changes, and compliance requirements is not a trivial task, and it becomes even more complicated when you do not have the right foundation to build on.
+
+That is why FivexL treats every customer as a future unicorn regardless of where they are on their journey. FivexL establishes a solid base for the upcoming thousands of users and the challenges associated with growth, layering one foundation block upon another:
+- AWS Organization for management and governance at scale
+- AWS Security to ensure customer data safety from day one, intrusion prevention and detection
+- AWS Networking for secure and scalable deployments
+- Application deployment platform based on Amazon ECS to allow quick spin-up of new applications as well as updating already running ones with new features
+- Application and infrastructure observability to proactively find and mitigate bottlenecks to prevent incidents affecting users
+
+The above is delivered as infrastructure as code based on open-source templates and delivered using best-in-class CI/CD pipelines.
+
+It might sound like a lot of work, but not getting it right or not doing it all from the beginning will cause even more work since redoing it, later on, can get very complicated and costly. Moreover, the person implementing those foundation blocks must have a good understanding of every part and stay up to date with the latest feature releases from AWS. Otherwise, doing it for the first time will take a lot of time (months) and potentially will not be done optimally, thus requiring costly rework. This is exactly the reason why in most of cases it is usually not done at all, and many startups build on a shaky, ad-hoc foundation that later would hinder or stop completely scaling of the product. FivexL specialists have been through that process many times and, over the years, developed the set of IaC templates implementing foundation blocks mentioned above that follow best practices outlined in AWS Well-Architected Frameworks as well as innovations coming from FivexL experience and experimentation with other customers. Those IaC templates allow delivery of AWS infrastructure foundation blocks in a matter of weeks compared to months, and potentially years, it would take an in-house specialist to build from scratch.
+
+FivexL specialists recognized that Wings would greatly benefit from using FivexLs IaC AWS foundational infra templates to establish an application delivery platform that would allow them to productize MVP and take the company to the next level of scale.
+
 <br/>  
 
 **Set Up AWS Organization**<br/>  
