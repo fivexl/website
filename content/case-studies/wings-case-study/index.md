@@ -15,11 +15,11 @@ tags: ['case study', 'aws']
 testimonial: "By developing infrastructure FivexL allows us to focus on our core business: Product development hypothesis testing and roadmap generation."  
 testimonial_author: "Steve"
 testimonial_author_position: "Founder at Wings"
-testimonial_author_portrait: steve.png
+testimonial_author_portrait: steve1.png
 testimonial_long: |
   "I'm genuinely amazed by the transformative impact FivexL has had on our team's workflow. In three months, with expertly configured AWS Organization, access control, and streamlined launches of multiple applications via AWS ECS, we've established a solid foundation for our future growth. This implementation has empowered our development team to focus on innovation and rapid iteration."
 about_company:
-  logo: 'apple.png'
+  logo: 'startup.png'
   heading: 'About Wings'
   text: |
     Wings is a fintech startup that addresses the challenges of online payments. They have developed a smart expense management service for corporate clients, enabling the issuance of virtual bank cards. The acquaintance between Wings and FivexL began with a problem the startup faced. They lost access to their AWS account and sought help on various forums and in AWS professional communities. Confused by responses like 'nothing can be done' and faced with costly, risky proposals, the team was worried they had lost access to their data for good. FivexL senior consultant Vladimir, after reading about the startup's issues, quickly understood the problem and, on a volunteer basis, helped Wings regain access in just 20 minutes. This marked the beginning of a successful collaboration.
@@ -46,20 +46,10 @@ Recognizing the limitations of the monolithic architecture, Wings decided to eng
  
 {{< case_study/solution heading="Solution" >}}
 {{< case_study/column >}}
-Creating the first AWS accounts and deploying the first applications is easy. Scaling AWS infrastructure to meet increasing demands in customer traffic, market changes, and compliance requirements is not a trivial task, and it becomes even more complicated when you do not have the right foundation to build on.
-
-That is why FivexL treats every customer as a future unicorn regardless of where they are on their journey. FivexL establishes a solid base for the upcoming thousands of users and the challenges associated with growth, layering one foundation block upon another:
-- AWS Organization for management and governance at scale
-- AWS Security to ensure customer data safety from day one, intrusion prevention and detection
-- AWS Networking for secure and scalable deployments
-- Application deployment platform based on Amazon ECS to allow quick spin-up of new applications as well as updating already running ones with new features
-- Application and infrastructure observability to proactively find and mitigate bottlenecks to prevent incidents affecting users
-
-The above is delivered as infrastructure as code based on open-source templates and delivered using best-in-class CI/CD pipelines.
-
-It might sound like a lot of work, but not getting it right or not doing it all from the beginning will cause even more work since redoing it, later on, can get very complicated and costly. Moreover, the person implementing those foundation blocks must have a good understanding of every part and stay up to date with the latest feature releases from AWS. Otherwise, doing it for the first time will take a lot of time (months) and potentially will not be done optimally, thus requiring costly rework. This is exactly the reason why in most of cases it is usually not done at all, and many startups build on a shaky, ad-hoc foundation that later would hinder or stop completely scaling of the product. FivexL specialists have been through that process many times and, over the years, developed the set of IaC templates implementing foundation blocks mentioned above that follow best practices outlined in AWS Well-Architected Frameworks as well as innovations coming from FivexL experience and experimentation with other customers. Those IaC templates allow delivery of AWS infrastructure foundation blocks in a matter of weeks compared to months, and potentially years, it would take an in-house specialist to build from scratch.
-
-FivexL specialists recognized that Wings would greatly benefit from using FivexLs IaC AWS foundational infra templates to establish an application delivery platform that would allow them to productize MVP and take the company to the next level of scale.
+FivexL treats every customer as a future unicorn regardless of where they are on their journey.  
+FivexL specialists recognized that Wings would greatly benefit from using FivexLs IaC AWS foundational infra templates to establish an application delivery platform that would allow them to productize MVP and take the company to the next level of scale.  
+  
+FivexL established a solid base for the upcoming thousands of users and the challenges associated with growth, layering one foundation block upon another.
 
 <br/>  
 
@@ -70,12 +60,10 @@ To foster efficiency and transparency, FivexL set up daily sync/demo/backlog rev
 **First App - Establishing a Microservices Platform**<br/>   
 At this stage FivexL empowered Wings developers to build and deploy applications with enhanced security features in a fast, standardized, compliant, and cost-efficient manner using Amazon Elastic Container Service (Amazon ECS).
 FivexL consultants sep up a microservices platform for Wings that simplifies deployment, management, and scaling of containerized applications.  They also created a Dockerfile and launched the first application within the ECS cluster.<br/>  
-
-**Infrastructure as Code**<br/>  
-FivexL adopts a DevOps-centric approach to infrastructure, treating it the same way developers handle code. 
-
 {{</ case_study/column >}}
 {{< case_study/column >}}
+**Infrastructure as Code**<br/>  
+FivexL adopts a DevOps-centric approach to infrastructure, treating it the same way developers handle code. 
 Utilizing Terraform’s open-source IaC tool and community-driven modules, FivexL created Wings’ infrastructure for both speed and reliability.  This standardization not only minimizes manual tasks and human error but also speeds up infrastructure development process. The adoption of high-quality community standards also ensures that the infrastructure is easily understandable, making for a smoother transition for any future engineers on the project. <br/> 
 
 **Availability and Monitoring**  
