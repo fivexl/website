@@ -55,11 +55,6 @@ This set of recommendations is simple to complete and can be performed within a 
 
 5.  **Set up a reliable process** for accessing your secrets from a container. If you hide credentials as environment variables, they could be read unless you run a root. Consider allowing an app to read them directly by letting it know where they are stored. However, it may complicate local testing. You could also make a fallback: if there are environment variables, read them; if not, source them from production. 
 
-
-```markdown
-{{< dockerfile-content >}}
-```
-
 ### Stage 4#. Long-Term Security Defense Layering
 
 The following initiatives should be carried out regularly to ensure your container is secured in the long term.

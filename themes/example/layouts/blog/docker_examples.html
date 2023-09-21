@@ -1,8 +1,0 @@
-{{ $json := getJSON "path/to/your/dockerfile.json" }}
-{{ with $json.Dockerfile }}
-  \`\`\`dockerfile
-  {{ . | safeHTML }}
-  \`\`\`
-{{ else }}
-  Dockerfile content not available.
-{{ end }}
