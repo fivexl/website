@@ -26,10 +26,15 @@ At this stage, you will discover potential vulnerabilities that can be tackled i
 This set of recommendations is simple to complete and can be performed within a workday. It mostly focuses on adjusting the Docker Image. Here are some initiatives, categorized from simple to complex. 
 
 1.  **Use copy, instead of add a docker image**.
+{{< test keyword="copy_example">}}
 
-2.  **Use verified images** to get your deps from trusted sources only. Before downloading some random docker image, ensure its creator is real and reliable: check the official site, etc. This way, you can eliminate the risk of downloading an image with malicious code. 
+   
+
+2.  **Use verified images** to get your deps from trusted sources only. Before downloading some random docker image, ensure its creator is real and reliable: check the official site, etc. This way, you can eliminate the risk of downloading an image with malicious code. Additionally, some image distributors, like Distroless, offer the opportunity to verify the image's integrity using tools such as cosign.
 
 3.  **Fix or pin all build dependencies** to avoid fetching the latest version by mistake.
+{{< test keyword="hardcoding_deps">}}
+{{< test keyword="hardcoding_image">}}
 
 4.  **Get rid of any valuable files on disk inside the container** with .dockerignore. When building an app, you often store credentials and other important data necessary for a container build. You need to clean up .git and .n files, as well as credentials, to prevent an intruder from accessing valuable data easily. Run .dockerignore and skip the files.  Beware of recursive copy.
 

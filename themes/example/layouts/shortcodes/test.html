@@ -1,0 +1,42 @@
+{{ $keyword := .Get "keyword" }}
+{{ $u := "" }}
+{{ $startLine := 0 }}
+{{ $endLine := 0 }}
+
+{{ if eq $keyword "copy_example" }}
+  {{ $u = "https://raw.githubusercontent.com/fivexl/secure-container-image/main/Dockerfile.base-python3-distroless-debian-11" }}
+  {{ $startLine = 46 }}
+  {{ $endLine = 53 }}
+{{ else if eq $keyword "hardcoding_deps" }}
+  {{ $u = "https://raw.githubusercontent.com/fivexl/secure-container-image/main/examples/python_examples/Dockerfile.py-app-poetry" }}
+  {{ $startLine = 4 }}
+  {{ $endLine = 15 }}
+{{ else if eq $keyword "hardcoding_image" }}
+  {{ $u = "https://raw.githubusercontent.com/fivexl/secure-container-image/main/examples/python_examples/Dockerfile.py-app-poetry" }}
+  {{ $startLine = 28}}
+  {{ $endLine = 29 }}
+{{ else }}
+  {{ errorf "Invalid keyword." }}
+{{ end }}
+
+{{ with resources.GetRemote $u }}
+  {{ with .Err }}
+    {{ errorf "%s" . }}
+  {{ else }}
+    {{ $lines := split .Content "\n" }}
+    {{ $linesAfterStart := after $startLine $lines }}
+    {{ $selectedLines := first (add (sub $endLine $startLine) 1) $linesAfterStart }}
+    {{ $filteredLines := slice }}
+    {{ range $selectedLines }}
+      {{ if ne . "" }}
+        {{ $trimmedLine := trim . "" }}
+        {{ $filteredLines = $filteredLines | append $trimmedLine }}
+      {{ end }}
+    {{ end }}
+    {{ $formattedContent := delimit $filteredLines "\n" }}
+    {{ highlight $formattedContent "dockerfile" "" }}
+  {{ end }}
+{{ else }}
+  {{ errorf "Unable to get remote resource." }}
+{{ end }}
+
