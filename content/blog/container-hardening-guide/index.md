@@ -19,7 +19,7 @@ At this stage, you will discover potential vulnerabilities that can be tackled i
 
 1.  **Run Linter for a DockerFile**, for example, Hadolint, to ensure you create small, secure, efficient, and maintainable Docker images. If you fail to meet best practices, the tool will provide relevant recommendations. 
 
-2.  **Run a CVE Check** to detect vulnerabilities.
+2. **Run a CVE Check to detect vulnerabilities**. Tools like Snyk, Trivy can be used to scan your container images for known vulnerabilities. These tools cross-reference your image against various CVE databases and provide a report, helping you to remediate any potential security issues.
 
 ### Stage 2#. Build Level
 
@@ -64,7 +64,7 @@ This set of recommendations is simple to complete and can be performed within a 
     FROM ghcr.io/fivexl/secure-container-image-base-python3-distroless-debian-11:${PYTHON_RUNTIME_IMAGE_TAG} AS runtime
     ```
 
-4.  **Get rid of any valuable files on disk inside the container** with .dockerignore. When building an app, you often store credentials and other important data necessary for a container build. You need to clean up .git and .n files, as well as credentials, to prevent an intruder from accessing valuable data easily. Run .dockerignore and skip the files.  Beware of recursive copy.
+4.  **Get rid of any valuable files on disk inside the container** with .dockerignore. When building an app, you often store credentials and other important data necessary for a container build. You need to clean up .git and .n files, as well as credentials, to prevent an intruder from accessing valuable data easily. Run .dockerignore and skip the files.  Beware of recursive copy. Example of .dockerignore content:
     ```dockerfile
     # Ignore Git directory
     .git/
@@ -97,7 +97,7 @@ This set of recommendations is simple to complete and can be performed within a 
 
     ```
 
-6.  **Run containers as a non-root user**. Link Dockerfiles to look for the USER directive and fail the build if it's missing.
+6.  **Run containers as a non-root user**. Link Dockerfiles to look for the USER directive and fail the build if it's missing. Example of setting up a user, and copying it from the loader image:
     ```dockerfile
     # Set user information
     ENV APP_USER_NAME=app
