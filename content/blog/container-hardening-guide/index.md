@@ -27,7 +27,7 @@ This set of recommendations is simple to complete and can be performed within a 
 
 1.  **Use copy, instead of add a docker image**.
     ```dockerfile
-    # Copy necessary files from loader image
+    # Copy necessary files from loader image to runtime image
     COPY --from=loader /loader/group /etc/group 
     COPY --from=loader /loader/passwd /etc/passwd 
     COPY --from=loader /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
@@ -127,11 +127,9 @@ This set of recommendations is simple to complete and can be performed within a 
 
 7.  **Add fake files to trick an intruder and get an alert**. When building, add an ls or wget utility that will run differently from the expected command, for example, exit 1, which means the container falls once the utility is run. Besides, add canary.tools or honeypot tools that create tokens. When they are used, you will receive a notification which is useful for spotting an attack without an intrusion detection system.  
 
-8. **Consider a Multi-Stage Build** to ensure your Docker history has no saved secrets. When building you can use any verified image with pinned dependencies. However, it should be removed at the next stages when the binary compilable app is ready. For this, the second-stage build should be either based on scratch images that contain nothing or distroless images with minimal data. To discard the first stage with all the information for building, like Amazon files with temporary credentials, copy (what?) from the first stage into the second one.
+8. **Consider Using Multi-Stage Builds**: Multi-stage builds are an effective way to enhance container security. In the first stage, you can use any verified image with specific dependencies to build your binary application. For the second stage, opt for a base image that is either a scratch image devoid of additional files or a minimal distroless image. This strategy ensures that your final Docker image is free of unnecessary data and potential secrets. To execute this, simply copy only the compiled application and essential runtime files from the first stage into the second stage, effectively leaving out any sensitive information, such as temporary credentials, used in the first stage.
 
-9. **Consider a Multi-Stage Build** they are an effective way to enhance container security. In the first stage, you can use any verified image with specific dependencies to build your binary application. For the second stage, use a base image that's either a scratch image with no additional files or a minimal distroless image. This approach ensures that your final Docker image is free from unnecessary data and potential secrets. To implement this, simply copy only the compiled application and essential runtime files from the first stage into the second stage. This leaves out any sensitive information, such as temporary credentials, that might have been used in the first stage.
-
-10. **Try using scratch images as much as possible**. Scratch images are essentially empty and contain no operating system or shell. This minimizes the avenues an attacker has to run commands, launch utilities like curl or wget, or use package managers. The lack of an operating system also leaves the attacker uncertain about the system's specifics, further enhancing your container's security.
+10.  **Try using scratch images as much as possible**. Scratch images are essentially empty and contain no operating system or shell. This minimizes the avenues an attacker has to run commands, launch utilities like curl or wget, or use package managers. The lack of an operating system also leaves the attacker uncertain about the system's specifics, further enhancing your container's security.
 
 ### Stage 3#. Run-Time Level
 
@@ -163,11 +161,11 @@ The following initiatives should be carried out regularly to ensure your contain
 
 The provided set of instructions allows you to layer up your defense strategy for compilable binary apps. As a result, it will be much harder for an intruder to wander around your app, which often makes them abandon an attack. Besides, the provided measures facilitate attack detection, which helps you proactively address it.
 
-## Example of a base image:
+## Base Image Creation Example:
 
 {{< test keyword="base_image_example">}}
 
-## Example of building app:
+## Python App Creation Example Using Base Image:
 
 {{< test keyword="python_app_image_example">}}
 
