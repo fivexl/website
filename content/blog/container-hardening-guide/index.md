@@ -25,7 +25,9 @@ At this stage, you will discover potential vulnerabilities that can be tackled i
 
 This set of recommendations is simple to complete and can be performed within a workday. It mostly focuses on adjusting the Docker Image. Here are some initiatives, categorized from simple to complex. 
 
-1.  **Use copy, instead of add a docker image**.
+1.  **Use verified images** to get your deps from trusted sources only. Before downloading some random docker image, ensure its creator is real and reliable: check the official site, etc. This way, you can eliminate the risk of downloading an image with malicious code. Additionally, some image distributors, like Distroless, offer the opportunity to verify the image's integrity using tools such as cosign.
+
+2.  **Use copy, instead of add a docker image**.
     ```dockerfile
     # Copy necessary files from loader image to runtime image
     COPY --from=loader /loader/group /etc/group 
@@ -35,9 +37,6 @@ This set of recommendations is simple to complete and can be performed within a 
     COPY --from=loader /loader/lprobe /usr/bin/lprobe
     ```
    
-
-2.  **Use verified images** to get your deps from trusted sources only. Before downloading some random docker image, ensure its creator is real and reliable: check the official site, etc. This way, you can eliminate the risk of downloading an image with malicious code. Additionally, some image distributors, like Distroless, offer the opportunity to verify the image's integrity using tools such as cosign.
-
 3.  **Fix or pin all build dependencies** to avoid fetching the latest version by mistake. 
     ```dockerfile
     ARG POETRY_VERSION=1.6.1
