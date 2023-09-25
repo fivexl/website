@@ -157,9 +157,6 @@ The following initiatives should be carried out regularly to ensure your contain
 
 5.  **Drop canary tokens to containers** to spot intrusion early.
 
-## Summing Up
-
-The provided set of instructions allows you to layer up your defense strategy for compilable binary apps. As a result, it will be much harder for an intruder to wander around your app, which often makes them abandon an attack. Besides, the provided measures facilitate attack detection, which helps you proactively address it.
 
 ## Base Image Creation Example:
 
@@ -281,3 +278,6 @@ HEALTHCHECK --interval=1m --timeout=3s \
 ENTRYPOINT ["/.venv/bin/uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "80"]
 ```
 
+## Summing Up
+
+The provided set of instructions allows you to layer up your defense strategy for compilable binary apps. As a result, it will be much harder for an intruder to wander around your app, which often makes them abandon an attack. Besides, the provided measures facilitate attack detection, which helps you proactively address it.
