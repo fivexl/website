@@ -26,27 +26,112 @@ At this stage, you will discover potential vulnerabilities that can be tackled i
 This set of recommendations is simple to complete and can be performed within a workday. It mostly focuses on adjusting the Docker Image. Here are some initiatives, categorized from simple to complex. 
 
 1.  **Use copy, instead of add a docker image**.
-{{< test keyword="copy_example">}}
-
+    ```dockerfile
+    # Copy necessary files from loader image
+    COPY --from=loader /loader/group /etc/group 
+    COPY --from=loader /loader/passwd /etc/passwd 
+    COPY --from=loader /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
+    COPY --from=loader /etc/os-release /etc/os-release
+    COPY --from=loader /loader/lprobe /usr/bin/lprobe
+    ```
    
 
 2.  **Use verified images** to get your deps from trusted sources only. Before downloading some random docker image, ensure its creator is real and reliable: check the official site, etc. This way, you can eliminate the risk of downloading an image with malicious code. Additionally, some image distributors, like Distroless, offer the opportunity to verify the image's integrity using tools such as cosign.
 
-3.  **Fix or pin all build dependencies** to avoid fetching the latest version by mistake.
-{{< test keyword="hardcoding_deps">}}
-{{< test keyword="hardcoding_image">}}
+3.  **Fix or pin all build dependencies** to avoid fetching the latest version by mistake. 
+    ```dockerfile
+    ARG POETRY_VERSION=1.6.1
+    ARG LIBPYTHON3_VERSION=3.9.2-3
+    ARG GCC_VERSION=4:10.2.1-1
+    ARG PYTHON3_VERSION=3.9.2-3
+    ARG PYTHON3_PIP_VERSION=20.3.4-4+deb11u1
+
+    RUN apt-get update && \
+      apt-get install --no-install-suggests --no-install-recommends --yes \
+      python3=${PYTHON3_VERSION} \
+      python3-pip=${PYTHON3_PIP_VERSION} \
+      gcc=${GCC_VERSION} \
+      libpython3-dev=${LIBPYTHON3_VERSION} && \
+      apt-get clean && \
+      rm -rf /var/lib/apt/lists/* && \
+      pip install --no-cache-dir "poetry==${POETRY_VERSION}"
+    ```
+
+    Additionally, it is advisable to use a specific version of the image rather than the 'latest' tag. By doing so, you can minimize the risk of inadvertently downloading a new version that may contain not aknowledjet CVEs or bugs.
+
+    ```dockerfile
+    ARG PYTHON_RUNTIME_IMAGE_TAG=b67186b00dc766a298ceb9dd981ef02ae0530c29
+    FROM ghcr.io/fivexl/secure-container-image-base-python3-distroless-debian-11:${PYTHON_RUNTIME_IMAGE_TAG} AS runtime
+    ```
 
 4.  **Get rid of any valuable files on disk inside the container** with .dockerignore. When building an app, you often store credentials and other important data necessary for a container build. You need to clean up .git and .n files, as well as credentials, to prevent an intruder from accessing valuable data easily. Run .dockerignore and skip the files.  Beware of recursive copy.
+    ```dockerfile
+    # Ignore Git directory
+    .git/
+    # Ignore all markdown files
+    *.md
+    # Ignore all .n files
+    *.n
+    # Ignore credentials
+    credentials.json
+    # Ignore temporary files
+    *.tmp
+    ```
+
 
 5.  **Use [lprobe](https://fivexl.io/blog/lprobe/) instead of wget/curl for Health Checks**. wget and curl commands open a window of opportunity for an intruder to download and run some malicious software. [lprobe](https://fivexl.io/blog/lprobe/) is FivexL's alternative to securely run health checks without compromising your security by creating your own health check CMD. 
+    ```dockerfile
+    # Loader image:
+    FROM debian:${DEBIAN_VERSION} as loader
+    # Install lprobe
+    COPY --from=ghcr.io/fivexl/lprobe:0.0.8 /lprobe lprobe
+    
+    # Runtime image:
+    FROM ghcr.io/fivexl/secure-container-image-base-python3-distroless-debian-11:${PYTHON_RUNTIME_IMAGE_TAG} AS runtime
+
+    # Copy lprobe from loader image
+    COPY --from=loader /lprobe /usr/bin/lprobe
+    # Set lprobe as health check
+    HEALTHCHECK --interval=1m --timeout=3s \
+    CMD ["lprobe", "-mode=http", "-endpoint=/", "-port=80"]
+
+    ```
 
 6.  **Run containers as a non-root user**. Link Dockerfiles to look for the USER directive and fail the build if it's missing.
+    ```dockerfile
+    # Set user information
+    ENV APP_USER_NAME=app
+    ENV APP_USER_ID=2323
+    ENV APP_USER_HOME=/app
+
+    # Create the user
+    RUN groupadd -g ${APP_USER_ID} ${APP_USER_NAME} \
+    && useradd -l -m -d ${APP_USER_HOME} -u ${APP_USER_ID} -g ${APP_USER_NAME} ${APP_USER_NAME} \
+    
+    # Prepare files for the runtime image
+    && cp /etc/group /loader/group && cp /etc/passwd /loader/passwd 
+
+    # Copy the user from the loader image
+    FROM gcr.io/distroless/python3-debian11:${DISTROLESS_VERSION}
+    COPY --from=loader /loader/group /etc/group 
+    COPY --from=loader /loader/passwd /etc/passwd
+    
+    # Set the user
+    USER app
+    ```
+    Additionally, some distributions, like Distroless, offer the option to run containers as a non-root user by default. You can achieve this by using the "nonroot" tag in the image.
+    ```dockerfile
+    FROM gcr.io/distroless/python3-debian11:nonroot
+    ```
+
 
 7.  **Add fake files to trick an intruder and get an alert**. When building, add an ls or wget utility that will run differently from the expected command, for example, exit 1, which means the container falls once the utility is run. Besides, add canary.tools or honeypot tools that create tokens. When they are used, you will receive a notification which is useful for spotting an attack without an intrusion detection system.  
 
-8.  **Consider a Multi-Stage Build** to ensure your Docker history has no saved secrets. When building you can use any verified image with pinned dependencies. However, it should be removed at the next stages when the binary compilable app is ready. For this, the second-stage build should be either based on scratch images that contain nothing or distroless images with minimal data. To discard the first stage with all the information for building, like Amazon files with temporary credentials, copy (what?) from the first stage into the second one.
+8. **Consider a Multi-Stage Build** to ensure your Docker history has no saved secrets. When building you can use any verified image with pinned dependencies. However, it should be removed at the next stages when the binary compilable app is ready. For this, the second-stage build should be either based on scratch images that contain nothing or distroless images with minimal data. To discard the first stage with all the information for building, like Amazon files with temporary credentials, copy (what?) from the first stage into the second one.
 
-9.  **Try using scratch images as much as possible**. They should have no shell, which makes it more complicated for an attacker to run commands or launch standard utilities to upload additional ones like curl or wget or package managers to gain access to system info (is it Linux? What is the image?). 
+9. **Consider a Multi-Stage Build** they are an effective way to enhance container security. In the first stage, you can use any verified image with specific dependencies to build your binary application. For the second stage, use a base image that's either a scratch image with no additional files or a minimal distroless image. This approach ensures that your final Docker image is free from unnecessary data and potential secrets. To implement this, simply copy only the compiled application and essential runtime files from the first stage into the second stage. This leaves out any sensitive information, such as temporary credentials, that might have been used in the first stage.
+
+10. **Try using scratch images as much as possible**. Scratch images are essentially empty and contain no operating system or shell. This minimizes the avenues an attacker has to run commands, launch utilities like curl or wget, or use package managers. The lack of an operating system also leaves the attacker uncertain about the system's specifics, further enhancing your container's security.
 
 ### Stage 3#. Run-Time Level
 
@@ -77,3 +162,12 @@ The following initiatives should be carried out regularly to ensure your contain
 ## Summing Up
 
 The provided set of instructions allows you to layer up your defense strategy for compilable binary apps. As a result, it will be much harder for an intruder to wander around your app, which often makes them abandon an attack. Besides, the provided measures facilitate attack detection, which helps you proactively address it.
+
+## Example of a base image:
+
+{{< test keyword="base_image_example">}}
+
+## Example of building app:
+
+{{< test keyword="python_app_image_example">}}
+
