@@ -57,7 +57,7 @@ This set of recommendations is simple to complete and can be performed within a 
       pip install --no-cache-dir "poetry==${POETRY_VERSION}"
     ```
 
-    Additionally, it is advisable to use a specific version of the image rather than the 'latest' tag. By doing so, you can minimize the risk of inadvertently downloading a new version that may contain not aknowledjet CVEs or bugs.
+    Additionally, it is advisable to use a specific version of the image instead of the 'latest' tag. By doing so, you can minimize the risk of inadvertently downloading a new version that may contain unacknowledged CVEs or bugs.
 
     ```dockerfile
     ARG PYTHON_RUNTIME_IMAGE_TAG=b67186b00dc766a298ceb9dd981ef02ae0530c29
