@@ -127,9 +127,9 @@ This set of recommendations is simple to complete and can be performed within a 
 
 7.  **Add fake files to trick an intruder and get an alert**. When building, add an ls or wget utility that will run differently from the expected command, for example, exit 1, which means the container falls once the utility is run. Besides, add canary.tools or honeypot tools that create tokens. When they are used, you will receive a notification which is useful for spotting an attack without an intrusion detection system.  
 
-8. **Consider Using Multi-Stage Builds**: Multi-stage builds are an effective way to enhance container security. In the first stage, you can use any verified image with specific dependencies to build your binary application. For the second stage, opt for a base image that is either a scratch image devoid of additional files or a minimal distroless image. This strategy ensures that your final Docker image is free of unnecessary data and potential secrets. To execute this, simply copy only the compiled application and essential runtime files from the first stage into the second stage, effectively leaving out any sensitive information, such as temporary credentials, used in the first stage.
+8. **Consider Using Multi-Stage Builds**: Multi-stage builds are an effective way to enhance container security. In the first stage, you can use any verified image with specific dependencies to build your binary application. For the second stage, opt for a base image that is either a scratch image devoid of additional files or a minimal distroless image. This strategy ensures that your final Docker image is free of unnecessary data and potential secrets. To execute this, copy only the compiled application and essential runtime files from the first stage into the second stage, effectively leaving out any sensitive information, such as temporary credentials, used in the first stage. In the end of the blog post, you can find an example of a multi-stage build for a Python application.
 
-10.  **Try using scratch images as much as possible**. Scratch images are essentially empty and contain no operating system or shell. This minimizes the avenues an attacker has to run commands, launch utilities like curl or wget, or use package managers. The lack of an operating system also leaves the attacker uncertain about the system's specifics, further enhancing your container's security.
+9. **Try using scratch images as much as possible**. Scratch images are essentially empty and contain no operating system or shell. This minimizes the avenues an attacker has to run commands, launch utilities like curl or wget, or use package managers. The lack of an operating system also leaves the attacker uncertain about the system's specifics, further enhancing your container's security.
 
 ### Stage 3#. Run-Time Level
 
@@ -163,9 +163,9 @@ The provided set of instructions allows you to layer up your defense strategy fo
 
 ## Base Image Creation Example:
 
-{{< test keyword="base_image_example">}}
+{{< pull_docker_from_git keyword="base_image_example">}}
 
 ## Python App Creation Example Using Base Image:
 
-{{< test keyword="python_app_image_example">}}
+{{< pull_docker_from_git keyword="python_app_image_example">}}
 
