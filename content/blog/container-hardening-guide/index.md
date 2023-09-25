@@ -163,9 +163,121 @@ The provided set of instructions allows you to layer up your defense strategy fo
 
 ## Base Image Creation Example:
 
-{{< pull_docker_from_git keyword="base_image_example">}}
+```dockerfile
+# Arguments
+ARG DEBIAN_VERSION=12
+ARG DISTROLESS_VERSION=nonroot
+
+### LOADER IMAGE ###
+FROM debian:${DEBIAN_VERSION} as loader
+WORKDIR /loader
+
+# Update and install required base software
+# hadolint ignore=DL3008
+RUN apt-get update && apt-get upgrade -y \
+    && apt-get install --no-install-recommends -y build-essential dumb-init wget tzdata ca-certificates \
+    && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# Get the latest updates for pre-installed packages
+# to deal with potential CVEs
+# hadolint ignore=DL3009
+RUN apt-get update && apt-get upgrade -y && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# User setup
+ENV APP_USER_NAME=app
+ENV APP_USER_ID=2323
+ENV APP_USER_HOME=/app
+
+# Create app user/group/home
+RUN groupadd -g ${APP_USER_ID} ${APP_USER_NAME} \
+    && useradd -l -m -d ${APP_USER_HOME} -u ${APP_USER_ID} -g ${APP_USER_NAME} ${APP_USER_NAME} \
+    && cp /etc/group /loader/group && cp /etc/passwd /loader/passwd 
+
+# Remove unnecessary accounts, excluding current app user and root
+RUN sed -i -r "/^($APP_USER_NAME|root|nobody)/!d" /loader/group \
+    && sed -i -r "/^($APP_USER_NAME|root|nobody)/!d" /loader/passwd 
+
+# TLS/SSL for AWS RDS
+RUN wget --quiet https://truststore.pki.rds.amazonaws.com/global/global-bundle.pem -O /etc/ssl/certs/aws-rds.crt \
+    && cat /etc/ssl/certs/aws-rds.crt >> /etc/ssl/certs/ca-certificates.crt
+
+# Health Check Tool
+COPY --from=ghcr.io/fivexl/lprobe:0.0.8 /lprobe lprobe
+
+USER app
+RUN mkdir -m 0700 /tmp/tmp
+
+### RUN IMAGE ###
+FROM gcr.io/distroless/python3-debian11:${DISTROLESS_VERSION}
+
+# Copy necessary files from loader
+COPY --from=loader /loader/group /etc/group 
+COPY --from=loader /loader/passwd /etc/passwd 
+COPY --from=loader /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
+COPY --from=loader /etc/os-release /etc/os-release
+COPY --from=loader /loader/lprobe /usr/bin/lprobe
+COPY --from=loader --chown=app:app --chmod=0700 /tmp/tmp /app/tmp
+
+# Set ENV
+ENV PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+ENV TMPDIR="/app/tmp/"
+ENV SSL_CERT_FILE="/etc/ssl/certs/ca-certificates.crt"
+
+# Set user
+USER app
+WORKDIR /app
+```
 
 ## Python App Creation Example Using Base Image:
 
-{{< pull_docker_from_git keyword="python_app_image_example">}}
+```dockerfile
+ARG DEBIAN_VERSION=11
+
+ARG PYTHON_RUNTIME_IMAGE_TAG=b67186b00dc766a298ceb9dd981ef02ae0530c29
+
+FROM debian:${DEBIAN_VERSION} AS build
+
+ARG POETRY_VERSION=1.6.1
+ARG LIBPYTHON3_VERSION=3.9.2-3
+ARG GCC_VERSION=4:10.2.1-1
+ARG PYTHON3_VERSION=3.9.2-3
+ARG PYTHON3_PIP_VERSION=20.3.4-4+deb11u1
+
+RUN apt-get update && \
+  apt-get install --no-install-suggests --no-install-recommends --yes \
+  python3=${PYTHON3_VERSION} \
+  python3-pip=${PYTHON3_PIP_VERSION} \
+  gcc=${GCC_VERSION} \
+  libpython3-dev=${LIBPYTHON3_VERSION} && \
+  apt-get clean && \
+  rm -rf /var/lib/apt/lists/* && \
+  pip install --no-cache-dir "poetry==${POETRY_VERSION}"
+
+# Copy just the pyproject.toml and poetry.lock files to install dependencies
+COPY ./py_src/pyproject.toml ./py_src/poetry.lock /
+
+# Set up the virtualenv and install dependencies
+RUN poetry config virtualenvs.create true && \
+  poetry config virtualenvs.in-project true && \
+  # Disable pip and setuptools installs in the virtualenv
+  poetry config virtualenvs.options.no-pip true && \
+  poetry config virtualenvs.options.no-setuptools true && \
+  # Install dependencies
+  poetry install
+
+
+# Copy the rest of the project over and build the app
+FROM ghcr.io/fivexl/secure-container-image-base-python3-distroless-debian-11:${PYTHON_RUNTIME_IMAGE_TAG} AS runtime
+
+
+COPY --from=build /.venv /.venv
+WORKDIR /app
+COPY ./py_src ./app
+EXPOSE 80
+
+HEALTHCHECK --interval=1m --timeout=3s \
+  CMD ["lprobe", "-mode=http", "-endpoint=/", "-port=80"]
+
+ENTRYPOINT ["/.venv/bin/uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "80"]
+```
 
