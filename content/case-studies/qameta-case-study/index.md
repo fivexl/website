@@ -60,6 +60,10 @@ It was a major success! The number of clients grew rapidly.
  {{</ case_study/column >}}
 {{</ case_study/solution >}} 
 
+{{< case_study/section >}}
+{{< md >}}![diagram](Qameta_infra.png){{</ md >}}
+{{</ case_study/section >}}
+
 {{< case_study/benefits
     cta_text="Start Your Success Story"
     cta_url="https://sales.fivexl.io/schedule-a-call"
