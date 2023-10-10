@@ -54,6 +54,10 @@ A key issue they solved for us was building a complex elastic load balancer set 
 {{</ case_study/column >}}
 {{</ case_study/solution >}}
 
+{{< case_study/section >}}
+{{< md >}}![diagram](infra-diagram.png){{</ md >}}
+{{</ case_study/section >}}
+
 {{< case_study/benefits
     cta_text="Start Your Success Story"
     cta_url="https://sales.fivexl.io/schedule-a-call"
