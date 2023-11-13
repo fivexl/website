@@ -8,6 +8,7 @@ date: 2023-06-02
 author: 
  - 'Andrey_Devyatkin'
  - 'Alexey Eremin'
+ - 'Anton Eremin' 
 panel_image: Alexey.png
 tags: [ 'AWS', 'SSO Elevator', 'open sourse','Slack']
 ---
