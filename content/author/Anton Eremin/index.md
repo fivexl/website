@@ -23,10 +23,13 @@ AWS · DevOps · Terraform · Python
 
 ### Recent success story
 Anton played a significant role in the FivexL development team on the Terraform AWS SSO Elevator project, making a notable contribution.
-[The Terraform AWS SSO Elevator](https://github.com/fivexl/terraform-aws-sso-elevator) is an open-source module designed for implementing temporary elevated access via the AWS IAM Identity Center (the successor to AWS Single Sign-On) and integrates with Slack.
+[The Terraform AWS SSO Elevator](https://github.com/fivexl/terraform-aws-sso-elevator) is an open-source module designed for implementing temporary elevated access via the AWS IAM Identity Center (the successor to AWS Single Sign-On) and Slack.
 
 ### Certifications
 - AWS Certified Solutions Architect
+
+### Education
+Anton is currently pursuing his Bachelor of Information Technology at North-Caucasus Federal University.
 
  
 
