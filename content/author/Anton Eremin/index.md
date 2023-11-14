@@ -13,8 +13,8 @@ certifications:
   - 'fivexl.png'
  
 
-panel_image: 'Aleksey_author_page.png'
-author_headshot: 'Lesha_head.png'
+panel_image: 'Anton.png'
+author_headshot: 'Anton_head.png'
 author_id: Anton Eremin
 ---
 AWS Solutions Architect with the focus on building secure, immutable, scale-ready, and cost-effective infrastructure for startups.
