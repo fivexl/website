@@ -17,7 +17,7 @@ panel_image: 'Anton.png'
 author_headshot: 'Anton_head.png'
 author_id: Anton Eremin
 ---
-AWS Solutions Architect with the focus on building secure, immutable, scale-ready, and cost-effective infrastructure for startups.
+Maria was a part of FivexL team from June 2020 until April 2023.
 ### Specialization
 AWS · DevOps · Terraform · Python
 
