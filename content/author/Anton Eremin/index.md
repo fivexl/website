@@ -31,6 +31,9 @@ Anton played a significant role in the FivexL development team on the Terraform 
 ### Education
 Anton is currently pursuing his Bachelor of Information Technology at North-Caucasus Federal University.
 
+### Personality
+Anton is a 3D artist engaged in both personal projects and small-scale collaborative efforts. His primary focus is on character creation, where he has developed a keen understanding of anatomy to produce lifelike figures. He also specializes in texturing, ensuring surfaces have the right look and feel, and in prop design, creating detailed items that add depth to scenes. Visit his portfolio at [ArtStation](https://www.artstation.com/antoneremin).
+
  
 
 
