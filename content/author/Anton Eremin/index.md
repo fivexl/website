@@ -13,7 +13,7 @@ certifications:
   - 'fivexl.png'
  
 
-panel_image: 'Anton.png'
+panel_image: 'Anton_author_page.png'
 author_headshot: 'Anton_head.png'
 author_id: Anton Eremin
 ---
