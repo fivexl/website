@@ -47,3 +47,9 @@ WHERE
 This way Athena will only scan the logs for the specified date and will not incur any additional cost for scanning the entire log bucket (as it happens by default).
 
 If you have any questions or suggestions, feel free to leave a comment below or contact me on [Twitter](https://twitter.com/alexanderbelet1).
+
+# TODO:
+- [ ] Add link to the terraform module
+- [ ] Update link to the terraform module in tf.hcl after module published to the registry
+- [ ] obfuscate some info in images
+- [ ] add selection / poiters to images
