@@ -7,6 +7,8 @@ author: Alexey Eremin
 panel_image: lesha_s3c.png
 tags: [ 'S3', 'Athena', 'logs', 'partitioning', 'AWS']
 ---
+In a recent project for a Swedish startup, we've taken a leap forward in optimizing cloud storage solutions largely due to the utilization of Athena partitioning. In this article, I will describe how to use the same idea in the context of S3 access logs.  
+
 Amazon S3 server access logging now [supports](https://aws.amazon.com/about-aws/whats-new/2023/11/amazon-s3-server-access-logging-date-partitioning/) automatic date-based partitioning for log delivery. This allows services like Amazon Athena to improve performance and reduce cost when querying logs.  
 {{< image src="get-ready-to-slice-and-dice-your-s3-logs.png" alt="Slice and Dice Your S3 logs" width="55%" align="left" style="border-radius: 5px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}}
 
@@ -49,7 +51,7 @@ WHERE
 ```
 This way Athena will only scan the logs for the specified date and will not incur any additional cost for scanning the entire log bucket (as it happens by default).
 
-If you have any questions or suggestions, feel free to contact me on [LinkedIn](https://www.linkedin.com/in/alexey-eremin/).
+If you have any questions or suggestions, feel free to contact me on [LinkedIn](https://www.linkedin.com/in/alexey-eremin/), or on [Twitter](https://twitter.com/AA_Eremin)
 
 # TODO:
 - [ ] Add link to the terraform module
