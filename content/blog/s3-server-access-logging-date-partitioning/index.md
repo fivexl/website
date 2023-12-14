@@ -2,19 +2,22 @@
 title:  'Get Ready to Slice and Dice Your S3 Logs: Amazon S3 server access logging now supports automatic date-based partitioning'
 author_id: 'Alexey Eremin'
 summary: 'Amazon S3 server access logging now supports automatic date-based partitioning for log delivery. This allows services like Amazon Athena to improve performance and reduce cost when querying logs.'
-date: 2023-05-22
+date: 2023-12-14
 author: Alexey Eremin
-panel_image: get-ready-to-slice-and-dice-your-s3-logs.png.png
-tags: [ 'S3', 'Athena', 'logs', 'partitioning']
+panel_image: lesha_s3c.png
+tags: [ 'S3', 'Athena', 'logs', 'partitioning', 'AWS']
 ---
-![Alt text](<get-ready-to-slice-and-dice-your-s3-logs.png>)
-Amazon S3 server access logging now [supports](https://aws.amazon.com/about-aws/whats-new/2023/11/amazon-s3-server-access-logging-date-partitioning/) automatic date-based partitioning for log delivery. This allows services like Amazon Athena to improve performance and reduce cost when querying logs.
+Amazon S3 server access logging now [supports](https://aws.amazon.com/about-aws/whats-new/2023/11/amazon-s3-server-access-logging-date-partitioning/) automatic date-based partitioning for log delivery. This allows services like Amazon Athena to improve performance and reduce cost when querying logs.  
+{{< image src="get-ready-to-slice-and-dice-your-s3-logs.png" alt="Slice and Dice Your S3 logs" width="55%" align="left" style="border-radius: 5px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}}
 
 ### How to enable log delivery with date-based partitioning?
 
-1. Go to the Properties tab of the source bucket: ![s3 bucket properties tab](bucket-properties.png)
-2. Find the section for server access logging: ![s3 server access logging section](server-access-logging.png)
-3. Specify the target bucket and prefix where you want to store the logs and set log object key format to the second option. ![S3 server access logging configuration. Date based partitioning.](server-access-logging-configuration.png)
+1. Go to the Properties tab of the source bucket:  
+{{< image src="bucket-properties.png" alt="s3 bucket properties tab" width="55%" align="left" style="border-radius: 5px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}}
+2. Find the section for server access logging:  
+{{< image src="server-access-logging.png" alt="s3 server access logging section" width="80%" align="left" style="border-radius: 5px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}}
+3. Specify the target bucket and prefix where you want to store the logs and set log object key format to the second option.  
+{{< image src="server-access-logging-configuration.png" alt="S3 server access logging configuration. Date based partitioning.n" width="80%" align="left" style="border-radius: 5px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}}
 
 
 You can find more details here: [How do I enable log delivery?](https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerLogs.html#server-access-logging-overview)
@@ -46,7 +49,7 @@ WHERE
 ```
 This way Athena will only scan the logs for the specified date and will not incur any additional cost for scanning the entire log bucket (as it happens by default).
 
-If you have any questions or suggestions, feel free to leave a comment below or contact me on [Twitter](https://twitter.com/alexanderbelet1).
+If you have any questions or suggestions, feel free to contact me on [LinkedIn](https://www.linkedin.com/in/alexey-eremin/).
 
 # TODO:
 - [ ] Add link to the terraform module
