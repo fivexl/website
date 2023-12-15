@@ -34,29 +34,44 @@ double_panel:
 ---
 {{< case_study/challenge  image="challenge_o.png" >}}
 {{< pink_heading text="Challenge"  sizes="bigger">}} 
-Ovrture is a Major Donor Communications Software. Company needed to safely migrate its platform to a modernised digital infrastructure on the AWS cloud and be able to continuously deploy and evolve.<br/>
-<br/>
-“FivexL were able to help us implement our infrastructure as code using HashiCorp Packer and HashiCorp Terraform,” reveals Chris Picht, IT Operations Manager & Senior Information Security Officer at Ovrture. “We needed to achieve this level of flexibility while simultaneously maintaining our security profile to service our clients.”<br/>
-<br/> 
-Continuing support from FivexL in meeting this goal is vital as Ovrture look to expand outside the US to markets in Canada and Australia.<br/>
-<br/>
-“Without functional infrastructure as code, we couldn’t easily duplicate our infrastructure to serve clients in different regions,” explains Picht.<br/>
-“Our clients require their data to be stored and served from their own countries so it’s really helpful to have FivexL onboard helping us push forward plans for expansion by making it easy to deploy in new markets.” 
+Kuvio built its MVP and successfully validated its market-product fit. They were looking for a partner who could take their MPV AWS infrastructure and take it to production-grade level, ensuring availability, high performance, elastic scaling, and self-healing.<br/>
+<br/>  
+Henrik Segersven, the CTO of Kuvio, reflects on the outset of our partnership: "Our partner Dev Stark, with whom we still work, recommended FivexL to us; it was a perfect recommendation. Prior experiences taught us the importance of working with trustworthy and competent partners."<br/>
+<br/>  
+Initially, Kuvio's system was based on AWS Lightsail, and there were serious concerns about its scalability. The scaling process involved the manual provision of additional LightSail instances; there were issues with database performance and networking decisions that would be very costly to rework later on. At this crucial time, as Kuvio anticipated onboarding a major corporate client, there were worries that their system might not withstand the increased workload. The capacity to handle significant traffic was uncertain.<br/>
+<br/>  
+Henrik Segersven, CTO of Kuvio, states: "Our commitment to ensuring 100% availability is non-negotiable, especially given the critical role our service plays in large corporations' marketing campaigns. Any downtime leads to irreplaceable data loss, which is simply unacceptable in our field. Before partnering with FivexL, achieving consistent uptime was a challenge. However, since our collaboration, we've proudly maintained an unbroken uptime record of over 400 days." 
 {{</ case_study/challenge >}}
 
 {{< case_study/solution heading="Solution" >}}
 {{< case_study/column >}}
-Ovrture is enterprise class and partnered with FivexL to speed up its transformation and bring Terraform expertise in-house. “Working with Vladimir and the team helped us identify a low maintenance solution,” recalls Picht. “We considered Kubernetes but opted for Amazon’s Elastic Container Service (ECS) so we could best benefit from automation and save time by remaining as hands-off as possible. 
-“FivexL were familiar with every aspect of AWS. They pulled in Global Accelerator, Shield and the Web Application Firewall. 
+Andrey Devyatkin, co-founder and principal consultant at FivexL, led this project. The primary task was to enable the startup to grow and increase the number of customers, which required an elastic and scalable infrastructure.<br/>  
+Henrik Segersven, CTO of Kuvio, reflects, "Before FivexL, our product faced scalability and stability issues. Their solutions not only eradicated these problems but also enabled us to sell our service and expand our client base significantly".<br/>  
+FivexL adheres to the AWS Well-Architected Framework, focusing on its six pillars: Operational Excellence, Security, Reliability, Performance Efficiency, Cost Optimization, and Sustainability. That is why FivexL proactively included cost optimization and security objectives, even though they were not explicitly requested, ensuring a comprehensive infrastructure setup.<br/>  
+<br/>  
+**Scalability**<br/>  
+The migration from Lightsail to AWS ECS (Amazon Elastic Container Service) marked a pivotal change for Kuvio. FivexL utilized AWS ECS on Fargate, a powerful combination of Amazon's container orchestration service and a serverless compute engine, which simplified the management and deployment of containerized applications. This shift to Fargate brought several critical advantages for the startup: it significantly reduced the need for maintenance, as AWS handled security and upkeep, and there was no requirement for patching virtual machines. This streamlined operations and enhanced overall efficiency.  
+Through their partnership with FivexL, Kuvio developed a scalable, robust infrastructure, now fully defined as code using Terraform. Their API efficiently auto-scales to meet demand with predictable bandwidth and self-healing capabilities, enabling the business to plan client onboarding and extend its client base without concerns about system reliability. The database setup underwent a significant update: it was reconfigured using Terraform, right-scaled for the load, and moved from the default VPC to a new, more secure network without internet access.  
+The API's infrastructure, being entirely defined in code, provides flexibility for replication or restoration from scratch, which is essential for expanding into new regions or for swift disaster recovery and business continuity. This setup also facilitates collaborative work through pull requests and maintains a history of changes for auditing purposes.<br/>  
+<br/>  
+
+ 
 {{</ case_study/column >}}
 {{< case_study/column >}}
-A key issue they solved for us was building a complex elastic load balancer set up so we could achieve a flexible configuration capable of supporting multiple certificates.” The resulting automation of the application build process now guarantees efficiency with repeatable results freeing up dev time and reducing costs. Packaging applications into containers reduces maintenance, migration and security risks with independence from the host system.
+**Developer productivity**<br/>  
+Developers saw a boost in productivity following FivexL's implementation of automated Continuous Integration and Continuous Deployment (CI/CD) pipelines for container building, testing, and deployment. Andrey Devyatkin implemented alerting on production issues, enabling developers to address and resolve any arising challenges quickly. Developers received easy access to all metrics/logs they needed, along with the availability of a separate environment for experiments and testing. So the Kuvio team can focus on developing new business capabilities.  
+
+**Security**  
+Kuvio received AWS infrastructure with all essential security controls implemented. Andrey Devyatkin set up an AWS Organization, separating production and development into different accounts. FivexL also implemented AWS CloudTrail and CloudTrail to Slack, alerting for suspicious activity alerts, along with AWS GuardDuty for intrusion detection. Service Control policies were configured to guard against common security threats.  
+In addition, FivexL integrated AWS Config and AWS Security Hub to enhance Kuvio's security posture management. AWS Config provided Kuvio with a way to assess, audit, and evaluate the configurations of their resources, ensuring compliance and governance. AWS Security Hub offered a unified view of its security alerts and security posture, making it easier for the startup to manage its security strategy and respond promptly to potential threats.<br/>   
+<br/>  
+**Cost optimization**  
+The FivexL team understands that startups often operate with limited resources. Their consultants consistently focus on building cost-effective solutions as well as optimizing cloud spending for existing resources. For Kuvio, FivexL utilized savings plans for Fargate and reserved instances for RDS, along with the automated removal of unused resources, to achieve cost efficiency.
+Additionally, Andrey Devyatkin configured budget and cost anomaly detection alerts and proactively monitored the infrastructure costs, making adjustments where possible to ensure continued efficiency.  
+FivexL also educated Kuvio's developers about more cost-optimal solutions, equipping them with the knowledge to maintain cost-effectiveness in their ongoing operations.
+
 {{</ case_study/column >}}
 {{</ case_study/solution >}}
-
-{{< case_study/section >}}
-{{< md >}}![diagram](infra-diagram.png){{</ md >}}
-{{</ case_study/section >}}
 
 {{< case_study/benefits
     cta_text="Start Your Success Story"
@@ -64,9 +79,15 @@ A key issue they solved for us was building a complex elastic load balancer set 
     image="benefits_ovrture.png"
     >}}
 {{< pink_heading text="Benefits" >}}
-Infrastructure defined in code now makes it easier for Ovrture to work with clients and their security consultants who can see the wise choices they’re making to manage data. Picht remembers that prior to the successful collaboration with FivexL, outsourcing was a miserable box-ticking exercise with little impact and no thought to how the platform would actually work.<br/>
+With a high-performing, production-ready, and secure infrastructure built by FivexL, Kuvio has confidently expanded its operations.<br/>  
 <br/>  
-“Gaps in our knowledge weren’t a problem for FivexL,” he reflects. “They were engaged in the process and took pride in the outcome; we’re interested in each other’s success. We see them as a partner on our continuous improvement journey already underway with the launch of new Java applications.”<br/>
-<br/>
-“Overall, the collaboration was highly professional and our transition was seamless,” maintains Picht. “Our infrastructure is light years ahead of where most small businesses would expect to be. Ovrture is now faster, more flexible, and more secure than ever.” 
+The concerns that once shadowed their growth potential—scalability, infrastructure stability, and the ability to handle increased workloads—have been effectively resolved by FivexL. Load tests have revealed that the system is capable of handling increased traffic, providing Kuvio with the assurance needed to support their continued growth and success. This transformation has enabled Kuvio to shift its focus from navigating technical challenges to embracing opportunities for growth and innovation. Freed from the complexities of infrastructure management, the team can now fully engage in what they excel at - driving their business forward.<br/>  
+<br/>  
+Henrik Segersven, CTO of Kuvio, remarks: "There are technical solutions, which are interesting, but they're not the most important thing for me. The most crucial aspect is that I don't even have to think about that stuff. I'm more interested in the results, not the steps along the way. I have the freedom to concentrate solely on my work without worrying about the underlying details."<br/>  
+<br/>  
+Today, Kuvio's achievements include great success in Sweden and recognition as a Finalist for Best Software Innovation in the 2022 European Search Awards.
+Henrik Segersven concludes, "Our product was somewhat unstable before we collaborated with FivexL. FivexL resolved these issues, providing a significant upgrade that has been beneficial for us. This improvement allowed us to sell more effectively, as we were previously limited by scalability issues. Clearly, this improvement is also reflected in our revenue growth."<br/>  
+<br/>  
+The collaboration between Kuvio and FivexL did not end there; it continued in a new format - a retainer agreement.
+
 {{</ case_study/benefits >}}
