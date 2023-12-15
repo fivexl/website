@@ -1,6 +1,6 @@
 ---
 title: 'What Is AWS CloudTrail, and Why Do You Need It'
-author_id: 'Andrey_Devyatkin'
+author_id: 'Andrey Devyatkin'
 summary: 'Find out how the CloudTrail-to-Slack Terraform module by FivexL solves problems for startups and small teams.'
 date: 2022-05-07
 author: Andrey Devyatkin

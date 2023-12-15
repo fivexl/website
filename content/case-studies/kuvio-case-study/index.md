@@ -1,6 +1,6 @@
 ---
 title: 'Kuvio Case Study'
-author_id: 'Andrey_Devyatkin'
+author_id: 'Andrey Devyatkin'
 summary: 'FivexL built a high-performing, production-ready, and secure infrastructure defined in code for a Swedish startup.'
 date: 2023-12-14
 author: Andrey Devyatkin
@@ -18,10 +18,12 @@ testimonial_cta_url: 'https://sales.fivexl.io/schedule-a-call'
 testimonial_long: |
   “With the new scalable infrastructure in place, we've been able to develop a range of new features for our product. It's not just about having a scalable system; it's about providing a reliable service that our clients can trust. Achieving 100% uptime reinforces that trust and enhances our ability to effectively sell our service.”
 about_company:
-  logo: 'Kuvio.png'
+  logo: 'kuvio_logo.png'
   heading: 'About Kuvio'
   text: |
-    Kuvio is a dynamic startup from Stockholm, Sweden, offering a SaaS platform for Marketing Data Activation tailored to the retail e-commerce industry. The platform provides actionable data insights, audience segmentation, and profit optimization services, enabling e-commerce businesses to make informed decisions and improve outcomes. Kuvio's platform is designed for easy deployment without the need for developer assistance from the client's side, ensuring it's accessible and efficient for all users.
+    Kuvio is a dynamic startup from Stockholm, Sweden, offering a SaaS platform for Marketing Data Activation tailored to the retail e-commerce industry.  
+    The platform provides actionable data insights, audience segmentation, and profit optimization services, enabling e-commerce businesses to make informed decisions and improve outcomes.  
+    Kuvio's platform is designed for easy deployment without the need for developer assistance from the client's side, ensuring it's accessible and efficient for all users.
 double_panel:
   layout: 'case-studies'
   heading: "CASE STUDIES"
@@ -32,7 +34,7 @@ double_panel:
   button_cta: { url: "https://sales.fivexl.io/schedule-a-call", text: "Book a consultation" }
   media_panel: { url: "https://youtu.be/uruLy1goNW0" }
 ---
-{{< case_study/challenge  image="challenge_o.png" >}}
+{{< case_study/challenge  image="challenge_kuvio.png" >}}
 {{< pink_heading text="Challenge"  sizes="bigger">}} 
 Kuvio built its MVP and successfully validated its market-product fit. They were looking for a partner who could take their MPV AWS infrastructure and take it to production-grade level, ensuring availability, high performance, elastic scaling, and self-healing.<br/>
 <br/>  
@@ -76,15 +78,13 @@ FivexL also educated Kuvio's developers about more cost-optimal solutions, equip
 {{< case_study/benefits
     cta_text="Start Your Success Story"
     cta_url="https://sales.fivexl.io/schedule-a-call"
-    image="benefits_ovrture.png"
+    image="kuvio_benefits.png"
     >}}
 {{< pink_heading text="Benefits" >}}
 With a high-performing, production-ready, and secure infrastructure built by FivexL, Kuvio has confidently expanded its operations.<br/>  
 <br/>  
 The concerns that once shadowed their growth potential—scalability, infrastructure stability, and the ability to handle increased workloads—have been effectively resolved by FivexL. Load tests have revealed that the system is capable of handling increased traffic, providing Kuvio with the assurance needed to support their continued growth and success. This transformation has enabled Kuvio to shift its focus from navigating technical challenges to embracing opportunities for growth and innovation. Freed from the complexities of infrastructure management, the team can now fully engage in what they excel at - driving their business forward.<br/>  
-<br/>  
-Henrik Segersven, CTO of Kuvio, remarks: "There are technical solutions, which are interesting, but they're not the most important thing for me. The most crucial aspect is that I don't even have to think about that stuff. I'm more interested in the results, not the steps along the way. I have the freedom to concentrate solely on my work without worrying about the underlying details."<br/>  
-<br/>  
+<br/>   
 Today, Kuvio's achievements include great success in Sweden and recognition as a Finalist for Best Software Innovation in the 2022 European Search Awards.
 Henrik Segersven concludes, "Our product was somewhat unstable before we collaborated with FivexL. FivexL resolved these issues, providing a significant upgrade that has been beneficial for us. This improvement allowed us to sell more effectively, as we were previously limited by scalability issues. Clearly, this improvement is also reflected in our revenue growth."<br/>  
 <br/>  
