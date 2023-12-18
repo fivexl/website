@@ -24,7 +24,7 @@ Amazon S3 server access logging now [supports](https://aws.amazon.com/about-aws/
 You can find more details here: [How do I enable log delivery?](https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerLogs.html#server-access-logging-overview)
 
 ### How to query partitioned s3 access logs using Athena?
-I've created terraform module that creates an AWS Glue table designed specifically to query Amazon S3 server access logs in the new [date-based partitioning](https://aws.amazon.com/about-aws/whats-new/2023/11/amazon-s3-server-access-logging-date-partitioning/) format.
+I've created terraform [module](https://github.com/fivexl/terraform-aws-s3-access-logs-athena-table) that creates an AWS Glue table designed specifically to query Amazon S3 server access logs in the new [date-based partitioning](https://aws.amazon.com/about-aws/whats-new/2023/11/amazon-s3-server-access-logging-date-partitioning/) format.
 Simply specify the bucket name and prefix where the logs are stored and the module will create a table:    
 ```hcl
 module "s3_access_logs_glue_table" {
@@ -53,7 +53,4 @@ This way Athena will only scan the logs for the specified date and will not incu
 If you have any questions or suggestions, feel free to contact me on [LinkedIn](https://www.linkedin.com/in/alexey-eremin/), or [Twitter](https://twitter.com/AA_Eremin)
 
 # TODO:
-- [ ] Add link to the terraform module
 - [ ] Update link to the terraform module in tf.hcl after module published to the registry
-- [ ] obfuscate some info in images
-- [ ] add selection / poiters to images
