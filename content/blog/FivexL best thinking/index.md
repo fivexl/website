@@ -1,7 +1,7 @@
 ---
 title: 'FivexL’s Current Best Thinking on Branching and CI/CD Pipelines'
 author_id: 'Andrey Devyatkin'
-summary: 'FivexL shares its outlook on AWS Security Guidelines for startups. Find out how to improve your AWS security efficiently.'
+summary: 'Discover FivexL expert advice on CI/CD pipelines and branching strategies, combining years of hands-on AWS infrastructure experience.'
 date: 2023-12-19
 author: Andrey Devyatkin
 panel_image: Reaction4.png
