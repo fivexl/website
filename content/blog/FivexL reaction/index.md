@@ -3,7 +3,7 @@ title: 'FivexL’s Reaction to the AWS Security Baseline for Startups'
 author_id: 'Andrey_Devyatkin'
 summary: 'FivexL shares its outlook on AWS Security Guidelines for startups. Find out how to improve your AWS security efficiently.'
 date: 2022-09-22
-author: Andrey_Devyatkin
+author: Andrey Devyatkin
 panel_image: Reaction4.png
 tags: ['AWS', 'security','CloudTrail']
 ---
