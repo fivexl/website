@@ -28,7 +28,7 @@ For **JavaScript**, use tools like [pkg](https://github.com/vercel/pkg) or [nexe
 For **Python**, tools like [PyInstaller](https://github.com/pyinstaller/pyinstaller) or [Nuitka](https://github.com/Nuitka/Nuitka) can compile scripts into binaries, removing the necessity for a Python interpreter in image.
 
 #### Use Minimal Base Images:
-Opt for 'scratch' images in your containers. This approach significantly reduces potential vulnerabilities by minimizing the number of components that could be exploited. Using 'scratch' images not only enhances security but also aligns with the principle of minimalism, ensuring your container has just what it needs and nothing more.
+Use 'scratch' images in your Docker containers to leverage executables that do not require dependencies or interpreters. This strategy significantly reduces the risk of vulnerabilities by minimizing the components susceptible to exploitation. By choosing 'scratch' images, you adhere to the minimalist principle, ensuring that your container includes only the necessary elements. 
 
 #### Benefits and Considerations:
 This method effectively reduces the attack surface and simplifies deployment processes. However, it may not always be feasible, and even when using scratch images, it's crucial to continue adhering to best practices for container security. 
