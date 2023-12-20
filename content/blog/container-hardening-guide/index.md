@@ -22,9 +22,10 @@ Please note that the code samples may be outdated. For the most recent examples,
 In containerized environments, enhancing security is crucial, particularly when dealing with interpreters for languages like JavaScript or Python. The presence of these interpreters can be a vulnerability, as attackers who manage to penetrate a container might use them to execute arbitrary code. This could lead to a broader compromise of the system. To mitigate these risks, we reccomend to use next strategies:
 
 #### Convert Scripts to Executables:
+This process not only reduces the attack surface by removing language interpreters but also often results in performance improvements due to the faster execution of binaries compared to interpreted scripts.
 
-For **JavaScript**, use tools like [pkg](https://github.com/vercel/pkg) or [nexe](https://github.com/nexe/nexe) to create standalone executables. This approach reduces the attack surface by eliminating the need for Node.js runtime in the container.
-For **Python**, tools like [PyInstaller](https://github.com/pyinstaller/pyinstaller) or [Nuitka](https://github.com/Nuitka/Nuitka) can compile scripts into binaries, removing the necessity for a Python interpreter.
+For **JavaScript**, use tools like [pkg](https://github.com/vercel/pkg) or [nexe](https://github.com/nexe/nexe) to create standalone executables.
+For **Python**, tools like [PyInstaller](https://github.com/pyinstaller/pyinstaller) or [Nuitka](https://github.com/Nuitka/Nuitka) can compile scripts into binaries, removing the necessity for a Python interpreter in image.
 
 #### Use Minimal Base Images:
 Opt for 'scratch' images in your containers. This approach significantly reduces potential vulnerabilities by minimizing the number of components that could be exploited. Using 'scratch' images not only enhances security but also aligns with the principle of minimalism, ensuring your container has just what it needs and nothing more.
