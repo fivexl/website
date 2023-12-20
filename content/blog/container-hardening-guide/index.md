@@ -14,13 +14,15 @@ Please, note that to outplay an intruder, you need to think like an intruder. In
 
 If, however, APTs (Advanced Persistent Threats) target you specifically and are willing to spend a lot of time and resources on this, you need to set up as many defense layers as possible to increase your chances of attack detection. 
 
-Please note that the code samples may be outdated. For the most recent examples, refer to the links at the end of this blog or directly to our [repository](https://github.com/fivexl/secure-container-image).
+Please note that the code samples may be outdated. For the most recent examples, refer to the links at the end of this blog, links at the top of code samples, or directly to our [repository](https://github.com/fivexl/secure-container-image).
 
 ### Stage 1. Pre-Build Level
 
 At this stage, you will discover potential vulnerabilities that can be tackled in further stages.
 
 1.  **Run Linter for a DockerFile**, for example, Hadolint, to ensure you create small, secure, efficient, and maintainable Docker images. If you fail to meet best practices, the tool will provide relevant alerts and recommendations.
+
+**Github CI example**
 ```yaml
 # https://github.com/fivexl/secure-container-image/blob/main/.github/workflows/hadolint.yml
 name: Hadolint
@@ -43,6 +45,8 @@ jobs:
 ```
 
 2. **Run a CVE Check to detect vulnerabilities**. Tools like Snyk, or Trivy can be used to scan your container images for known vulnerabilities. These tools cross-reference your image against various CVE databases and provide a report, helping you to remediate any potential security issues.
+
+**Github CI example**
 ```yaml
 # https://github.com/fivexl/secure-container-image/blob/main/.github/workflows/ci.yml#L114
 # Run Snyk to check Docker image for vulnerabilities
