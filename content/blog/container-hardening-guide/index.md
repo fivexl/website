@@ -16,6 +16,22 @@ If, however, APTs (Advanced Persistent Threats) target you specifically and are 
 
 Please note that the code samples may be outdated. For the most recent examples, refer to the links at the end of this blog, links at the top of code samples, or directly to our [repository](https://github.com/fivexl/secure-container-image).
 
+### Stage 0. App packaging Level
+
+### Thoughts on Interpreters
+In containerized environments, enhancing security is crucial, particularly when dealing with interpreters for languages like JavaScript or Python. The presence of these interpreters can be a vulnerability, as attackers who manage to penetrate a container might use them to execute arbitrary code. This could lead to a broader compromise of the system. To mitigate these risks, we reccomend to use next strategies:
+
+#### Convert Scripts to Executables:
+
+For **JavaScript**, use tools like [pkg](https://github.com/vercel/pkg) or [nexe](https://github.com/nexe/nexe) to create standalone executables. This approach reduces the attack surface by eliminating the need for Node.js runtime in the container.
+For **Python**, tools like [PyInstaller](https://github.com/pyinstaller/pyinstaller) or [Nuitka](https://github.com/Nuitka/Nuitka) can compile scripts into binaries, removing the necessity for a Python interpreter.
+
+#### Use Minimal Base Images:
+Opt for 'scratch' images in your containers. This approach significantly reduces potential vulnerabilities by minimizing the number of components that could be exploited. Using 'scratch' images not only enhances security but also aligns with the principle of minimalism, ensuring your container has just what it needs and nothing more.
+
+#### Benefits and Considerations:
+This method effectively reduces the attack surface and simplifies deployment processes. However, it may not always be feasible, and even when using scratch images, it's crucial to continue adhering to best practices for container security. 
+
 ### Stage 1. Pre-Build Level
 
 At this stage, you will discover potential vulnerabilities that can be tackled in further stages.
@@ -71,20 +87,6 @@ jobs:
           image: ghcr.io/fivexl/${{ matrix.config.image }}:${{ github.sha }}
           args: --severity-threshold=high --file=${{ matrix.config.dockerfile }}
 ```
-
-### Thoughts on Interpreters
-In containerized environments, enhancing security is crucial, particularly when dealing with interpreters for languages like JavaScript or Python. The presence of these interpreters can be a vulnerability, as attackers who manage to penetrate a container might use them to execute arbitrary code. This could lead to a broader compromise of the system. To mitigate these risks, we reccomend to use next strategies:
-
-#### Convert Scripts to Executables:
-
-For **JavaScript**, use tools like [pkg](https://github.com/vercel/pkg) or [nexe](https://github.com/nexe/nexe) to create standalone executables. This approach reduces the attack surface by eliminating the need for Node.js runtime in the container.
-For **Python**, tools like [PyInstaller](https://github.com/pyinstaller/pyinstaller) or [Nuitka](https://github.com/Nuitka/Nuitka) can compile scripts into binaries, removing the necessity for a Python interpreter.
-
-#### Use Minimal Base Images:
-Opt for 'scratch' images in your containers. These images contain only the essential binaries and libraries, significantly reducing potential vulnerabilities.
-
-#### Benefits and Considerations:
-This method effectively reduces the attack surface and simplifies deployment processes. However, it may not always be feasible, and even when using scratch images, it's crucial to continue adhering to best practices for container security. 
 
 ### Stage 2. Build Level
 
