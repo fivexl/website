@@ -7,21 +7,68 @@ author: Vladimir Samoylov
 panel_image: container.png
 tags: [ 'aws', 'open source', 'container', 'guide']
 ---
-In this guide, we will elaborate on some best practices to improve the depth of your security. This can become a basis for regular security audits of your compilable binary app. 
+In this guide, we will elaborate on some best practices to improve the depth of your security. This should serve as the foundation for regular security audits of your compiled binary application.
+
 
 Please, note that to outplay an intruder, you need to think like an intruder. In most cases, the attack viability is down to simple math: it takes place if the efforts and expenditures are lower than a potential profit. Here's why you need to become a complex and highly costly target for massive purposeless attackers in order to abandon your defense lawyers.
 
-If, however, APTs (Advanced Persistent Threats) target you specifically and are willing to spend a lot of time and resources on this; you need to set up as many defense lawyers as possible to increase your chances of attack detection. 
+If, however, APTs (Advanced Persistent Threats) target you specifically and are willing to spend a lot of time and resources on this, you need to set up as many defense layers as possible to increase your chances of attack detection. 
 
-### Stage 1#. Pre-Build Level
+Please note that the code samples may be outdated. For the most recent examples, refer to the links at the end of this blog or directly to our [repository](https://github.com/fivexl/secure-container-image).
+
+### Stage 1. Pre-Build Level
 
 At this stage, you will discover potential vulnerabilities that can be tackled in further stages.
 
-1.  **Run Linter for a DockerFile**, for example, Hadolint, to ensure you create small, secure, efficient, and maintainable Docker images. If you fail to meet best practices, the tool will provide relevant recommendations. 
+1.  **Run Linter for a DockerFile**, for example, Hadolint, to ensure you create small, secure, efficient, and maintainable Docker images. If you fail to meet best practices, the tool will provide relevant alerts and recommendations.
+```yaml
+# https://github.com/fivexl/secure-container-image/blob/main/.github/workflows/hadolint.yml
+name: Hadolint
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
-2. **Run a CVE Check to detect vulnerabilities**. Tools like Snyk, Trivy can be used to scan your container images for known vulnerabilities. These tools cross-reference your image against various CVE databases and provide a report, helping you to remediate any potential security issues.
+jobs:
+  lint_dockerfiles:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-### Stage 2#. Build Level
+      - uses: hadolint/hadolint-action@v3.1.0
+        with:
+          dockerfile: Dockerfile.base-python3-distroless-debian-11
+```
+
+2. **Run a CVE Check to detect vulnerabilities**. Tools like Snyk, or Trivy can be used to scan your container images for known vulnerabilities. These tools cross-reference your image against various CVE databases and provide a report, helping you to remediate any potential security issues.
+```yaml
+# https://github.com/fivexl/secure-container-image/blob/main/.github/workflows/ci.yml#L114
+# Run Snyk to check Docker image for vulnerabilities
+  snyk:
+    runs-on: ubuntu-latest
+    needs: build
+    strategy:
+      matrix:
+        config:
+          - {image: "secure-container-image-base", dockerfile: "Dockerfile.base"}
+          - {image: "secure-container-image-base-python3-distroless-debian-11", dockerfile: "Dockerfile.base-python3-distroless-debian-11"}
+          - {image: "secure-container-image-base-nodejs20-distroless-debian-11", dockerfile: "Dockerfile.base-nodejs20-distroless-debian-11"}
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Run Snyk to check Docker image for vulnerabilities
+        continue-on-error: true
+        uses: snyk/actions/docker@master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          image: ghcr.io/fivexl/${{ matrix.config.image }}:${{ github.sha }}
+          args: --severity-threshold=high --file=${{ matrix.config.dockerfile }}
+```
+
+### Stage 2. Build Level
 
 This set of recommendations is simple to complete and can be performed within a workday. It mostly focuses on adjusting the Docker Image. Here are some initiatives, categorized from simple to complex. 
 
@@ -29,6 +76,7 @@ This set of recommendations is simple to complete and can be performed within a 
 
 2.  **Use copy, instead of add a docker image**.
     ```dockerfile
+    # https://github.com/fivexl/secure-container-image/blob/main/Dockerfile.base#L43
     # Copy necessary files from loader image to runtime image
     COPY --from=loader /loader/group /etc/group 
     COPY --from=loader /loader/passwd /etc/passwd 
@@ -39,6 +87,7 @@ This set of recommendations is simple to complete and can be performed within a 
    
 3.  **Fix or pin all build dependencies** to avoid fetching the latest version by mistake. 
     ```dockerfile
+    # https://github.com/fivexl/secure-container-image/blob/main/examples/python_examples/Dockerfile.py-app-poetry#L7
     ARG POETRY_VERSION=1.6.1
     ARG LIBPYTHON3_VERSION=3.9.2-3
     ARG GCC_VERSION=4:10.2.1-1
@@ -59,7 +108,8 @@ This set of recommendations is simple to complete and can be performed within a 
     Additionally, it is advisable to use a specific version of the image instead of the 'latest' tag. By doing so, you can minimize the risk of inadvertently downloading a new version that may contain unacknowledged CVEs or bugs.
 
     ```dockerfile
-    ARG PYTHON_RUNTIME_IMAGE_TAG=b67186b00dc766a298ceb9dd981ef02ae0530c29
+    # https://github.com/fivexl/secure-container-image/blob/main/examples/python_examples/Dockerfile.py-app-poetry#L37
+    ARG PYTHON_RUNTIME_IMAGE_TAG=8de1677ee50c24eb7dfdbca400a4892cc9de4d75
     FROM ghcr.io/fivexl/secure-container-image-base-python3-distroless-debian-11:${PYTHON_RUNTIME_IMAGE_TAG} AS runtime
     ```
 
@@ -80,6 +130,7 @@ This set of recommendations is simple to complete and can be performed within a 
 
 5.  **Use [lprobe](https://fivexl.io/blog/lprobe/) instead of wget/curl for Health Checks**. wget and curl commands open a window of opportunity for an intruder to download and run some malicious software. [lprobe](https://fivexl.io/blog/lprobe/) is FivexL's alternative to securely run health checks without compromising your security by creating your own health check CMD. 
     ```dockerfile
+    # https://github.com/fivexl/secure-container-image/blob/main/Dockerfile.base-python3-distroless-debian-11#L39
     # Loader image:
     FROM debian:${DEBIAN_VERSION} as loader
     # Install lprobe
@@ -93,11 +144,11 @@ This set of recommendations is simple to complete and can be performed within a 
     # Set lprobe as health check
     HEALTHCHECK --interval=1m --timeout=3s \
     CMD ["lprobe", "-mode=http", "-endpoint=/", "-port=80"]
-
     ```
 
 6.  **Run containers as a non-root user**. Link Dockerfiles to look for the USER directive and fail the build if it's missing. Example of setting up a user, and copying it from the loader image:
     ```dockerfile
+    # https://github.com/fivexl/secure-container-image/blob/main/Dockerfile.base-python3-distroless-debian-11#L20
     # Set user information
     ENV APP_USER_NAME=app
     ENV APP_USER_ID=2323
@@ -130,7 +181,7 @@ This set of recommendations is simple to complete and can be performed within a 
 
 9. **Try using scratch images as much as possible**. Scratch images are essentially empty and contain no operating system or shell. This minimizes the avenues an attacker has to run commands, launch utilities like curl or wget, or use package managers. The lack of an operating system also leaves the attacker uncertain about the system's specifics, further enhancing your container's security.
 
-### Stage 3#. Run-Time Level
+### Stage 3. Run-Time Level
 
 1.  **Use read-only systems** where possible to reduce the attacker landscape. Provide access for editing to limit the intruder's chances of altering your files. 
 
@@ -142,7 +193,7 @@ This set of recommendations is simple to complete and can be performed within a 
 
 5.  **Set up a reliable process** for accessing your secrets from a container. If you hide credentials as environment variables, they could be read unless you run a root. Consider allowing an app to read them directly by letting it know where they are stored. However, it may complicate local testing. You could also make a fallback: if there are environment variables, read them; if not, source them from production. 
 
-### Stage 4#. Long-Term Security Defense Layering
+### Stage 4. Long-Term Security Defense Layering
 
 The following initiatives should be carried out regularly to ensure your container is secured in the long term.
 
@@ -157,8 +208,18 @@ The following initiatives should be carried out regularly to ensure your contain
 5.  **Drop canary tokens to containers** to spot intrusion early.
 
 
-## Base Image Creation Example:
+### FivexL's base images:
+We has developed a set of base images tailored for Go, Python, and Node 20, designed to enhance security and efficiency. These images have been meticulously crafted to meet high standards of security and performance. We invite you to take advantage of these resources for your projects. You can easily access and use these images by visiting our GitHub repository at https://github.com/fivexl/secure-container-image. We believe these images will provide a solid foundation for your applications and contribute significantly to your container security strategy.
 
+### Examples:
+Note: The code examples shown below might be outdated. For the latest version, please refer to the following files:
+
+- [Dockerfile.base-python3-distroless-debian-11](https://github.com/fivexl/secure-container-image/blob/main/Dockerfile.base-python3-distroless-debian-11)
+- [Dockerfile.py-app-poetry](https://github.com/fivexl/secure-container-image/blob/main/examples/python_examples/Dockerfile.py-app-poetry)
+
+Additionally, you can find more examples for Go and Node.js apps in the [examples](https://github.com/fivexl/secure-container-image/tree/main/examples) directory of our repository.
+
+#### Base Image Creation Example:
 ```dockerfile
 # Arguments
 ARG DEBIAN_VERSION=12
@@ -224,7 +285,7 @@ USER app
 WORKDIR /app
 ```
 
-## Python App Creation Example Using Base Image:
+#### Python App Creation Example Using Base Image:
 
 ```dockerfile
 ARG DEBIAN_VERSION=11
