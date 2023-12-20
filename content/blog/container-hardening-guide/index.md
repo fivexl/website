@@ -72,6 +72,20 @@ jobs:
           args: --severity-threshold=high --file=${{ matrix.config.dockerfile }}
 ```
 
+### Thoughts on Interpreters
+In containerized environments, enhancing security is crucial, particularly when dealing with interpreters for languages like JavaScript or Python. The presence of these interpreters can be a vulnerability, as attackers who manage to penetrate a container might use them to execute arbitrary code. This could lead to a broader compromise of the system. To mitigate these risks, we reccomend to use next strategies:
+
+#### Convert Scripts to Executables:
+
+For **JavaScript**, use tools like [pkg](https://github.com/vercel/pkg) or [nexe](https://github.com/nexe/nexe) to create standalone executables. This approach reduces the attack surface by eliminating the need for Node.js runtime in the container.
+For **Python**, tools like [PyInstaller](https://github.com/pyinstaller/pyinstaller) or [Nuitka](https://github.com/Nuitka/Nuitka) can compile scripts into binaries, removing the necessity for a Python interpreter.
+
+#### Use Minimal Base Images:
+Opt for 'scratch' images in your containers. These images contain only the essential binaries and libraries, significantly reducing potential vulnerabilities.
+
+#### Benefits and Considerations:
+This method effectively reduces the attack surface and simplifies deployment processes. However, it may not always be feasible, and even when using scratch images, it's crucial to continue adhering to best practices for container security. 
+
 ### Stage 2. Build Level
 
 This set of recommendations is simple to complete and can be performed within a workday. It mostly focuses on adjusting the Docker Image. Here are some initiatives, categorized from simple to complex. 
@@ -345,3 +359,18 @@ ENTRYPOINT ["/.venv/bin/uvicorn", "app.main:app", "--host", "0.0.0.0", "--port",
 ## Summing Up
 
 The provided set of instructions allows you to layer up your defense strategy for compilable binary apps. As a result, it will be much harder for an intruder to wander around your app, which often makes them abandon an attack. Besides, the provided measures facilitate attack detection, which helps you proactively address it.
+
+
+### Thoughts on Interpreters
+In containerized environments, enhancing security is crucial, particularly when dealing with interpreters for languages like JavaScript or Python. The presence of these interpreters can be a vulnerability, as attackers who manage to penetrate a container might use them to execute arbitrary code. This could lead to a broader compromise of the system. To mitigate these risks, we reccomend to use next strategies:
+
+#### Convert Scripts to Executables:
+
+For **JavaScript**, use tools like [pkg](https://github.com/vercel/pkg) or [nexe](https://github.com/nexe/nexe) to create standalone executables. This approach reduces the attack surface by eliminating the need for Node.js runtime in the container.
+For **Python**, tools like [PyInstaller](https://github.com/pyinstaller/pyinstaller) or [Nuitka](https://github.com/Nuitka/Nuitka) can compile scripts into binaries, removing the necessity for a Python interpreter.
+
+#### Use Minimal Base Images:
+Opt for 'scratch' or minimal base images in your containers. These images contain only the essential binaries and libraries, significantly reducing potential vulnerabilities.
+
+#### Benefits and Considerations:
+This method effectively reduces the attack surface and simplifies deployment processes. However, it may not always be feasible, and even when using scratch images, it's crucial to continue adhering to best practices for container security. 
