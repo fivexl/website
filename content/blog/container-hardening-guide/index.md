@@ -17,16 +17,18 @@ If, however, APTs (Advanced Persistent Threats) target you specifically and are 
 Please note that the code samples may be outdated. For the most recent examples, refer to the links at the end of this blog, links at the top of code samples, or directly to our [repository](https://github.com/fivexl/secure-container-image).
 
 ### Stage 0. App Packaging for Enhanced Security in Containerized Environments
-1.  **Rethinking the Role of Interpreters.**
-With compilable languages, the application is compressed into a single, statically linked binary. This can be placed into a scratch Docker image, which is an image devoid of shell, CLI tools, or libraries. When an intruder accesses such a container, they lack the tools to download additional hacking software, extract secrets from memory, or move laterally. It would require a sophisticated and determined attacker to breach such a container. Compare this to interpretable languages that necessitate a runtime. In these environments, an attacker can inject arbitrary code into the Node runtime to download files, exfiltrate data, and attack other services. Recently, some tools have emerged attempting to package Node apps into single binaries, suggesting that, theoretically, we could achieve a similar isolation level as with compilable apps. However, not all packages are compatible with these tools, and most of these tools are not yet mature. For more information about the challenges of packaging Node.js apps, refer to [this article](https://dev.to/midnqp/bundling-nodejs-into-single-executable-binary-l3g ).
 
-2. **Tools for transitioning from Scripts to Standalone Executables:**
+With compilable languages, the application is compressed into a single, statically linked binary. This can be placed into a scratch Docker image, which is an image devoid of shell, CLI tools, or libraries. When an intruder accesses such a container, they lack the tools to download additional hacking software, extract secrets from memory, or move laterally. It would require a sophisticated and determined attacker to breach such a container. Compare this to interpretable languages that necessitate a runtime. In these environments, an attacker can inject arbitrary code into the Node runtime to download files, exfiltrate data, and attack other services. Recently, some tools have emerged attempting to package Node apps into single binaries, suggesting that, theoretically, we could achieve a similar isolation level as with compilable apps. However, not all packages are compatible with these tools, and most of these tools are not yet mature. For more information about packaging Node.js apps, refer to [this article](https://dev.to/midnqp/bundling-nodejs-into-single-executable-binary-l3g ).
 
-    For JavaScript: Utilize tools such as [pkg](https://github.com/vercel/pkg) or [nexe](https://github.com/nexe/nexe) to create self-contained executables from your JavaScript code.
+**Tools for transitioning from Scripts to Standalone Executables:**
 
-    For Python: Employ tools like [PyInstaller](https://github.com/pyinstaller/pyinstaller) or [Nuitka](https://github.com/Nuitka/Nuitka). These tools can transform Python scripts into executable binaries, eliminating the requirement for a Python interpreter within your Docker image.
+- For JavaScript: Utilize tools such as [pkg](https://github.com/vercel/pkg) or [nexe](https://github.com/nexe/nexe) to create self-contained executables from your JavaScript code.
 
-3. Opting for Minimalist Base Images: The shift to standalone executables opens the door to utilizing 'scratch' Docker images more effectively. These minimal base images are essentially empty, lacking a shell, CLI tools, or libraries. This barebones environment is particularly suited for applications compiled into single binaries.
+- For Python: Employ tools like [PyInstaller](https://github.com/pyinstaller/pyinstaller) or [Nuitka](https://github.com/Nuitka/Nuitka). These tools can transform Python scripts into executable binaries, eliminating the requirement for a Python interpreter within your Docker image.
+
+**Opting for Minimalist Base Images:** 
+
+The shift to standalone executables opens the door to utilizing 'scratch' Docker images more effectively. These minimal base images are essentially empty, lacking a shell, CLI tools, or libraries. This barebones environment is particularly suited for applications compiled into single binaries. More info about creating images from 'scratch' can be found [here](https://docs.docker.com/build/building/base-images/#create-a-simple-parent-image-using-scratch).
 
 ### Stage 1. Pre-Build Level
 
