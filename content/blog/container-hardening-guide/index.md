@@ -23,9 +23,9 @@ In the realm of containerization, fortifying security is paramount, especially w
 2. **Transitioning from Scripts to Standalone Executables:**
 Transforming scripts into executable files serves a dual purpose. It diminishes the attack surface by obviating the need for language interpreters, and it typically enhances performance, as binaries generally execute more swiftly than interpreted scripts.
 
-For Python: Employ tools like [PyInstaller](https://github.com/pyinstaller/pyinstaller) or [Nuitka](https://github.com/Nuitka/Nuitka). These tools can transform Python scripts into executable binaries, eliminating the requirement for a Python interpreter within your Docker image.
+    For Python: Employ tools like [PyInstaller](https://github.com/pyinstaller/pyinstaller) or [Nuitka](https://github.com/Nuitka/Nuitka). These tools can transform Python scripts into executable binaries, eliminating the requirement for a Python interpreter within your Docker image.
 
-For JavaScript: Utilize tools such as [pkg](https://github.com/vercel/pkg) or [nexe](https://github.com/nexe/nexe) to create self-contained executables from your JavaScript code.
+    For JavaScript: Utilize tools such as [pkg](https://github.com/vercel/pkg) or [nexe](https://github.com/nexe/nexe) to create self-contained executables from your JavaScript code.
 
 3. Opting for Minimalist Base Images:
 In your Docker containers, consider using 'scratch' images. These images allow you to deploy executables that are independent of external dependencies or interpreters. This approach substantially lowers vulnerability risks by minimizing the elements that could be exploited. By selecting 'scratch' images, you adhere to a minimalist approach, ensuring your container contains only what is strictly necessary.
