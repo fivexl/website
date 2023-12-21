@@ -16,22 +16,19 @@ If, however, APTs (Advanced Persistent Threats) target you specifically and are 
 
 Please note that the code samples may be outdated. For the most recent examples, refer to the links at the end of this blog, links at the top of code samples, or directly to our [repository](https://github.com/fivexl/secure-container-image).
 
-### Stage 0. App packaging Level
+### Stage 0. App Packaging for Enhanced Security in Containerized Environments
+1.  **Rethinking the Role of Interpreters.**
+In the realm of containerization, fortifying security is paramount, especially when it involves interpreters for dynamic languages such as Python or JavaScript. These interpreters, if present within a container, pose a potential security threat. An intruder breaching a container could exploit them to execute unauthorised code, risking the integrity of the entire system. To counteract these threats, consider the following strategies:
 
-### Thoughts on Interpreters
-In containerized environments, enhancing security is crucial, particularly when dealing with interpreters for languages like JavaScript or Python. The presence of these interpreters can be a vulnerability, as attackers who manage to penetrate a container might use them to execute arbitrary code. This could lead to a broader compromise of the system. To mitigate these risks, we reccomend to use next strategies:
+2. **Transitioning from Scripts to Standalone Executables:**
+Transforming scripts into executable files serves a dual purpose. It diminishes the attack surface by obviating the need for language interpreters, and it typically enhances performance, as binaries generally execute more swiftly than interpreted scripts.
 
-#### Convert Scripts to Executables:
-This process not only reduces the attack surface by removing language interpreters but also often results in performance improvements due to the faster execution of binaries compared to interpreted scripts.
+For Python: Employ tools like [PyInstaller](https://github.com/pyinstaller/pyinstaller) or [Nuitka](https://github.com/Nuitka/Nuitka). These tools can transform Python scripts into executable binaries, eliminating the requirement for a Python interpreter within your Docker image.
 
-For **JavaScript**, use tools like [pkg](https://github.com/vercel/pkg) or [nexe](https://github.com/nexe/nexe) to create standalone executables.
-For **Python**, tools like [PyInstaller](https://github.com/pyinstaller/pyinstaller) or [Nuitka](https://github.com/Nuitka/Nuitka) can compile scripts into binaries, removing the necessity for a Python interpreter in image.
+For JavaScript: Utilize tools such as [pkg](https://github.com/vercel/pkg) or [nexe](https://github.com/nexe/nexe) to create self-contained executables from your JavaScript code.
 
-#### Use Minimal Base Images:
-Use 'scratch' images in your Docker containers to leverage executables that do not require dependencies or interpreters. This strategy significantly reduces the risk of vulnerabilities by minimizing the components susceptible to exploitation. By choosing 'scratch' images, you adhere to the minimalist principle, ensuring that your container includes only the necessary elements. 
-
-#### Benefits and Considerations:
-This method effectively reduces the attack surface and simplifies deployment processes. However, it may not always be feasible, and even when using scratch images, it's crucial to continue adhering to best practices for container security. 
+3. Opting for Minimalist Base Images:
+In your Docker containers, consider using 'scratch' images. These images allow you to deploy executables that are independent of external dependencies or interpreters. This approach substantially lowers vulnerability risks by minimizing the elements that could be exploited. By selecting 'scratch' images, you adhere to a minimalist approach, ensuring your container contains only what is strictly necessary.
 
 ### Stage 1. Pre-Build Level
 
@@ -58,7 +55,7 @@ jobs:
 
       - uses: hadolint/hadolint-action@v3.1.0
         with:
-          dockerfile: Dockerfile.base-python3-distroless-debian-11
+          dockerfile: ./examples/go_app_example/Dockerfile.goapp
 ```
 
 2. **Run a CVE Check to detect vulnerabilities**. Tools like Snyk, or Trivy can be used to scan your container images for known vulnerabilities. These tools cross-reference your image against various CVE databases and provide a report, helping you to remediate any potential security issues.
@@ -107,31 +104,13 @@ This set of recommendations is simple to complete and can be performed within a 
     ```
    
 3.  **Fix or pin all build dependencies** to avoid fetching the latest version by mistake. 
-    ```dockerfile
-    # https://github.com/fivexl/secure-container-image/blob/main/examples/python_examples/Dockerfile.py-app-poetry#L7
-    ARG POETRY_VERSION=1.6.1
-    ARG LIBPYTHON3_VERSION=3.9.2-3
-    ARG GCC_VERSION=4:10.2.1-1
-    ARG PYTHON3_VERSION=3.9.2-3
-    ARG PYTHON3_PIP_VERSION=20.3.4-4+deb11u1
-
-    RUN apt-get update && \
-      apt-get install --no-install-suggests --no-install-recommends --yes \
-      python3=${PYTHON3_VERSION} \
-      python3-pip=${PYTHON3_PIP_VERSION} \
-      gcc=${GCC_VERSION} \
-      libpython3-dev=${LIBPYTHON3_VERSION} && \
-      apt-get clean && \
-      rm -rf /var/lib/apt/lists/* && \
-      pip install --no-cache-dir "poetry==${POETRY_VERSION}"
-    ```
 
     Additionally, it is advisable to use a specific version of the image instead of the 'latest' tag. By doing so, you can minimize the risk of inadvertently downloading a new version that may contain unacknowledged CVEs or bugs.
 
     ```dockerfile
-    # https://github.com/fivexl/secure-container-image/blob/main/examples/python_examples/Dockerfile.py-app-poetry#L37
-    ARG PYTHON_RUNTIME_IMAGE_TAG=8de1677ee50c24eb7dfdbca400a4892cc9de4d75
-    FROM ghcr.io/fivexl/secure-container-image-base-python3-distroless-debian-11:${PYTHON_RUNTIME_IMAGE_TAG} AS runtime
+    # https://github.com/fivexl/secure-container-image/blob/main/examples/go_app_example/Dockerfile.goapp#L13
+    ARG BASE_IMAGE_TAG=46fd9edb1422ec7610e3ba3ac0b7d40d46e48f4e
+    FROM ghcr.io/fivexl/fivexl/secure-container-image-base:${BASE_IMAGE_TAG} AS runtime
     ```
 
 4.  **Get rid of any valuable files on disk inside the container** with .dockerignore. When building an app, you often store credentials and other important data necessary for a container build. You need to clean up .git and .n files, as well as credentials, to prevent an intruder from accessing valuable data easily. Run .dockerignore and skip the files.  Beware of recursive copy. Example of .dockerignore content:
@@ -151,17 +130,12 @@ This set of recommendations is simple to complete and can be performed within a 
 
 5.  **Use [lprobe](https://fivexl.io/blog/lprobe/) instead of wget/curl for Health Checks**. wget and curl commands open a window of opportunity for an intruder to download and run some malicious software. [lprobe](https://fivexl.io/blog/lprobe/) is FivexL's alternative to securely run health checks without compromising your security by creating your own health check CMD. 
     ```dockerfile
-    # https://github.com/fivexl/secure-container-image/blob/main/Dockerfile.base-python3-distroless-debian-11#L39
+    # https://github.com/fivexl/secure-container-image/blob/main/Dockerfile.base#L34
     # Loader image:
-    FROM debian:${DEBIAN_VERSION} as loader
-    # Install lprobe
-    COPY --from=ghcr.io/fivexl/lprobe:0.0.8 /lprobe lprobe
+    # lProbe check tool: https://github.com/fivexl/lprobe
+    COPY --from=ghcr.io/fivexl/lprobe:0.0.7 /lprobe lprobe
     
-    # Runtime image:
-    FROM ghcr.io/fivexl/secure-container-image-base-python3-distroless-debian-11:${PYTHON_RUNTIME_IMAGE_TAG} AS runtime
-
-    # Copy lprobe from loader image
-    COPY --from=loader /lprobe /usr/bin/lprobe
+    # Runtime image based "base" image:
     # Set lprobe as health check
     HEALTHCHECK --interval=1m --timeout=3s \
     CMD ["lprobe", "-mode=http", "-endpoint=/", "-port=80"]
@@ -169,30 +143,37 @@ This set of recommendations is simple to complete and can be performed within a 
 
 6.  **Run containers as a non-root user**. Link Dockerfiles to look for the USER directive and fail the build if it's missing. Example of setting up a user, and copying it from the loader image:
     ```dockerfile
-    # https://github.com/fivexl/secure-container-image/blob/main/Dockerfile.base-python3-distroless-debian-11#L20
-    # Set user information
+    # https://github.com/fivexl/secure-container-image/blob/main/Dockerfile.base
+    # add a user here because addgroup and adduser are not available in scratch
     ENV APP_USER_NAME=app
     ENV APP_USER_ID=2323
     ENV APP_USER_HOME=/app
 
-    # Create the user
-    RUN groupadd -g ${APP_USER_ID} ${APP_USER_NAME} \
-    && useradd -l -m -d ${APP_USER_HOME} -u ${APP_USER_ID} -g ${APP_USER_NAME} ${APP_USER_NAME} \
-    
-    # Prepare files for the runtime image
-    && cp /etc/group /loader/group && cp /etc/passwd /loader/passwd 
+    ## Create app user/group/home
+    RUN addgroup --gid ${APP_USER_ID} ${APP_USER_NAME} \
+        && adduser --home ${APP_USER_HOME} --disabled-password --uid ${APP_USER_ID} --ingroup ${APP_USER_NAME} ${APP_USER_NAME} \
+        && cp /etc/group /loader/group && cp /etc/passwd /loader/passwd 
+
+    ## Remove unnecessary accounts, excluding current app user and root
+    RUN sed -i -r "/^($APP_USER_NAME|root|nobody)/!d" /loader/group \
+    && sed -i -r "/^($APP_USER_NAME|root|nobody)/!d" /loader/passwd 
+
+    USER app
+    RUN mkdir -m 0700 /tmp/tmp
 
     # Copy the user from the loader image
-    FROM gcr.io/distroless/python3-debian11:${DISTROLESS_VERSION}
+    FROM scratch
+
+    # Copy files
     COPY --from=loader /loader/group /etc/group 
-    COPY --from=loader /loader/passwd /etc/passwd
+    COPY --from=loader /loader/passwd /etc/passwd 
     
     # Set the user
     USER app
     ```
     Additionally, some distributions, like Distroless, offer the option to run containers as a non-root user by default. You can achieve this by using the "nonroot" tag in the image.
     ```dockerfile
-    FROM gcr.io/distroless/python3-debian11:nonroot
+    FROM gcr.io/distroless/static:nonroot
     ```
 
 
@@ -234,64 +215,62 @@ We has developed a set of base images tailored for Go, Python, and Node 20, desi
 
 ### Examples:
 Note: The code examples shown below might be outdated. For the latest version, please refer to the following files:
+- [Dockerfile.base](https://github.com/fivexl/secure-container-image/blob/main/Dockerfile.base)
+- [Dockerfile.goapp](https://github.com/fivexl/secure-container-image/blob/main/examples/go_app_example/Dockerfile.goapp)
 
-- [Dockerfile.base-python3-distroless-debian-11](https://github.com/fivexl/secure-container-image/blob/main/Dockerfile.base-python3-distroless-debian-11)
-- [Dockerfile.py-app-poetry](https://github.com/fivexl/secure-container-image/blob/main/examples/python_examples/Dockerfile.py-app-poetry)
 
-Additionally, you can find more examples for Go and Node.js apps in the [examples](https://github.com/fivexl/secure-container-image/tree/main/examples) directory of our repository.
+Additionally, you can find more examples for Python and Node.js apps in the [examples](https://github.com/fivexl/secure-container-image/tree/main/examples) directory of our repository.
 
 #### Base Image Creation Example:
 ```dockerfile
-# Arguments
-ARG DEBIAN_VERSION=12
-ARG DISTROLESS_VERSION=nonroot
+# https://github.com/fivexl/secure-container-image/blob/main/Dockerfile.base
+ARG ALPINE_VERSION=3.18
 
 ### LOADER IMAGE ###
-FROM debian:${DEBIAN_VERSION} as loader
+FROM public.ecr.aws/docker/library/alpine:${ALPINE_VERSION} as loader
 WORKDIR /loader
 
-# Update and install required base software
-# hadolint ignore=DL3008
-RUN apt-get update && apt-get upgrade -y \
-    && apt-get install --no-install-recommends -y build-essential dumb-init wget tzdata ca-certificates \
-    && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-
-# Get the latest updates for pre-installed packages
+# Get lastest updates for pre-installed packages
 # to deal with potential CVEs
-# hadolint ignore=DL3009
-RUN apt-get update && apt-get upgrade -y && apt-get clean && rm -rf /var/lib/apt/lists/*
+# hadolint ignore=DL3017
+RUN apk upgrade --no-cache
 
-# User setup
+# Install required base software
+RUN apk --no-cache add build-base=~0.5 dumb-init=~1 git=~2 wget=~1 tzdata=~2023c ca-certificates=~20230506 && update-ca-certificates && rm -rf /var/cache/apk/* /tmp/*
+
+# add a user here because addgroup and adduser are not available in scratch
 ENV APP_USER_NAME=app
 ENV APP_USER_ID=2323
 ENV APP_USER_HOME=/app
 
-# Create app user/group/home
-RUN groupadd -g ${APP_USER_ID} ${APP_USER_NAME} \
-    && useradd -l -m -d ${APP_USER_HOME} -u ${APP_USER_ID} -g ${APP_USER_NAME} ${APP_USER_NAME} \
+## Create app user/group/home
+RUN addgroup --gid ${APP_USER_ID} ${APP_USER_NAME} \
+    && adduser --home ${APP_USER_HOME} --disabled-password --uid ${APP_USER_ID} --ingroup ${APP_USER_NAME} ${APP_USER_NAME} \
     && cp /etc/group /loader/group && cp /etc/passwd /loader/passwd 
 
-# Remove unnecessary accounts, excluding current app user and root
+## Remove unnecessary accounts, excluding current app user and root
 RUN sed -i -r "/^($APP_USER_NAME|root|nobody)/!d" /loader/group \
-    && sed -i -r "/^($APP_USER_NAME|root|nobody)/!d" /loader/passwd 
+  && sed -i -r "/^($APP_USER_NAME|root|nobody)/!d" /loader/passwd 
 
-# TLS/SSL for AWS RDS
+# TLS/SSL
+## https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html
 RUN wget --quiet https://truststore.pki.rds.amazonaws.com/global/global-bundle.pem -O /etc/ssl/certs/aws-rds.crt \
-    && cat /etc/ssl/certs/aws-rds.crt >> /etc/ssl/certs/ca-certificates.crt
+   && cat /etc/ssl/certs/aws-rds.crt >> /etc/ssl/certs/ca-certificates.crt
 
 # Health Check Tool
-COPY --from=ghcr.io/fivexl/lprobe:0.0.8 /lprobe lprobe
+## lProbe check tool: https://github.com/fivexl/lprobe
+COPY --from=ghcr.io/fivexl/lprobe:0.0.7 /lprobe lprobe
 
 USER app
 RUN mkdir -m 0700 /tmp/tmp
-
 ### RUN IMAGE ###
-FROM gcr.io/distroless/python3-debian11:${DISTROLESS_VERSION}
+FROM scratch
 
-# Copy necessary files from loader
+# Copy files
 COPY --from=loader /loader/group /etc/group 
 COPY --from=loader /loader/passwd /etc/passwd 
 COPY --from=loader /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
+COPY --from=loader /usr/share/zoneinfo /usr/share/zoneinfo
 COPY --from=loader /etc/os-release /etc/os-release
 COPY --from=loader /loader/lprobe /usr/bin/lprobe
 COPY --from=loader --chown=app:app --chmod=0700 /tmp/tmp /app/tmp
@@ -301,62 +280,33 @@ ENV PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 ENV TMPDIR="/app/tmp/"
 ENV SSL_CERT_FILE="/etc/ssl/certs/ca-certificates.crt"
 
-# Set user
 USER app
 WORKDIR /app
 ```
 
-#### Python App Creation Example Using Base Image:
+#### Go App Creation Example Using Base Image:
 
 ```dockerfile
-ARG DEBIAN_VERSION=11
+# https://github.com/fivexl/secure-container-image/blob/main/examples/go_app_example/Dockerfile.goapp
+ARG ALPINE_VERSION=3.18
+ARG BASE_IMAGE_VERSION=latest
 
-ARG PYTHON_RUNTIME_IMAGE_TAG=b67186b00dc766a298ceb9dd981ef02ae0530c29
-
-FROM debian:${DEBIAN_VERSION} AS build
-
-ARG POETRY_VERSION=1.6.1
-ARG LIBPYTHON3_VERSION=3.9.2-3
-ARG GCC_VERSION=4:10.2.1-1
-ARG PYTHON3_VERSION=3.9.2-3
-ARG PYTHON3_PIP_VERSION=20.3.4-4+deb11u1
-
-RUN apt-get update && \
-  apt-get install --no-install-suggests --no-install-recommends --yes \
-  python3=${PYTHON3_VERSION} \
-  python3-pip=${PYTHON3_PIP_VERSION} \
-  gcc=${GCC_VERSION} \
-  libpython3-dev=${LIBPYTHON3_VERSION} && \
-  apt-get clean && \
-  rm -rf /var/lib/apt/lists/* && \
-  pip install --no-cache-dir "poetry==${POETRY_VERSION}"
-
-# Copy just the pyproject.toml and poetry.lock files to install dependencies
-COPY ./py_src/pyproject.toml ./py_src/poetry.lock /
-
-# Set up the virtualenv and install dependencies
-RUN poetry config virtualenvs.create true && \
-  poetry config virtualenvs.in-project true && \
-  # Disable pip and setuptools installs in the virtualenv
-  poetry config virtualenvs.options.no-pip true && \
-  poetry config virtualenvs.options.no-setuptools true && \
-  # Install dependencies
-  poetry install
-
-
-# Copy the rest of the project over and build the app
-FROM ghcr.io/fivexl/secure-container-image-base-python3-distroless-debian-11:${PYTHON_RUNTIME_IMAGE_TAG} AS runtime
-
-
-COPY --from=build /.venv /.venv
+# build stage
+FROM golang:1.20.5-alpine${ALPINE_VERSION} AS builder
 WORKDIR /app
-COPY ./py_src ./app
-EXPOSE 80
+COPY ./gosrc/main.go /app
+RUN go mod init github.com/fivexl/secure-container-image/gosrc && go build -o app
 
+# Actual runtime image
+# For testing purposes we are using the 'latest' tag, but for production, we recommend using a specific version. For example:
+#    ARG BASE_IMAGE_TAG=46fd9edb1422ec7610e3ba3ac0b7d40d46e48f4e
+#    FROM ghcr.io/fivexl/fivexl/secure-container-image-base:${BASE_IMAGE_TAG} AS runtime
+FROM ghcr.io/fivexl/secure-container-image-base:${BASE_IMAGE_VERSION}
+COPY --from=builder /app/app /app/app
+EXPOSE 8080
+ENTRYPOINT ["/app/app"]
 HEALTHCHECK --interval=1m --timeout=3s \
-  CMD ["lprobe", "-mode=http", "-endpoint=/", "-port=80"]
-
-ENTRYPOINT ["/.venv/bin/uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "80"]
+  CMD ["lprobe", "-mode=http", "-endpoint=/", "-port=8080"]
 ```
 
 ## Summing Up
