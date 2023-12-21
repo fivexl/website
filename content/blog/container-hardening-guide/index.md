@@ -18,17 +18,17 @@ Please note that the code samples may be outdated. For the most recent examples,
 
 ### Stage 0. App Packaging for Enhanced Security in Containerized Environments
 1.  **Rethinking the Role of Interpreters.**
-In the realm of containerization, fortifying security is paramount, especially when it involves interpreters for dynamic languages such as Python or JavaScript. These interpreters, if present within a container, pose a potential security threat. An intruder breaching a container could exploit them to execute unauthorised code, risking the integrity of the entire system. To counteract these threats, consider the following strategies:
+With compilable languages, the application is compressed into a single, statically linked binary. This can be placed into a scratch Docker image, which is an image devoid of shell, CLI tools, or libraries. When an intruder accesses such a container, they lack the tools to download additional hacking software, extract secrets from memory, or move laterally. It would require a sophisticated and determined attacker to breach such a container. Compare this to interpretable languages that necessitate a runtime. In these environments, an attacker can inject arbitrary code into the Node runtime to download files, exfiltrate data, and attack other services. Recently, some tools have emerged attempting to package Node apps into single binaries, suggesting that, theoretically, we could achieve a similar isolation level as with compilable apps.
 
-2. **Transitioning from Scripts to Standalone Executables:**
-Transforming scripts into executable files serves a dual purpose. It diminishes the attack surface by obviating the need for language interpreters, and it typically enhances performance, as binaries generally execute more swiftly than interpreted scripts.
-
-    For Python: Employ tools like [PyInstaller](https://github.com/pyinstaller/pyinstaller) or [Nuitka](https://github.com/Nuitka/Nuitka). These tools can transform Python scripts into executable binaries, eliminating the requirement for a Python interpreter within your Docker image.
+2. **Tools for transitioning from Scripts to Standalone Executables:**
 
     For JavaScript: Utilize tools such as [pkg](https://github.com/vercel/pkg) or [nexe](https://github.com/nexe/nexe) to create self-contained executables from your JavaScript code.
 
-3. Opting for Minimalist Base Images:
-In your Docker containers, consider using 'scratch' images. These images allow you to deploy executables that are independent of external dependencies or interpreters. This approach substantially lowers vulnerability risks by minimizing the elements that could be exploited. By selecting 'scratch' images, you adhere to a minimalist approach, ensuring your container contains only what is strictly necessary.
+    For Python: Employ tools like [PyInstaller](https://github.com/pyinstaller/pyinstaller) or [Nuitka](https://github.com/Nuitka/Nuitka). These tools can transform Python scripts into executable binaries, eliminating the requirement for a Python interpreter within your Docker image.
+
+    However, not all packages are compatible with these tools, and most of these tools are not yet mature. For more information about the challenges of packaging Node.js apps, refer to [this article](https://dev.to/midnqp/bundling-nodejs-into-single-executable-binary-l3g ).
+
+3. Opting for Minimalist Base Images: The shift to standalone executables opens the door to utilizing 'scratch' Docker images more effectively. These minimal base images are essentially empty, lacking a shell, CLI tools, or libraries. This barebones environment is particularly suited for applications compiled into single binaries.
 
 ### Stage 1. Pre-Build Level
 
@@ -36,55 +36,55 @@ At this stage, you will discover potential vulnerabilities that can be tackled i
 
 1.  **Run Linter for a DockerFile**, for example, Hadolint, to ensure you create small, secure, efficient, and maintainable Docker images. If you fail to meet best practices, the tool will provide relevant alerts and recommendations.
 
-**Github CI example**
-```yaml
-# https://github.com/fivexl/secure-container-image/blob/main/.github/workflows/hadolint.yml
-name: Hadolint
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    **Github CI example**
+    ```yaml
+    # https://github.com/fivexl/secure-container-image/blob/main/.github/workflows/hadolint.yml
+    name: Hadolint
+    on:
+    push:
+        branches: [ "main" ]
+    pull_request:
+        branches: [ "main" ]
 
-jobs:
-  lint_dockerfiles:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+    jobs:
+    lint_dockerfiles:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Checkout code
+            uses: actions/checkout@v2
 
-      - uses: hadolint/hadolint-action@v3.1.0
-        with:
-          dockerfile: ./examples/go_app_example/Dockerfile.goapp
-```
+        - uses: hadolint/hadolint-action@v3.1.0
+            with:
+            dockerfile: ./examples/go_app_example/Dockerfile.goapp
+    ```
 
 2. **Run a CVE Check to detect vulnerabilities**. Tools like Snyk, or Trivy can be used to scan your container images for known vulnerabilities. These tools cross-reference your image against various CVE databases and provide a report, helping you to remediate any potential security issues.
 
-**Github CI example**
-```yaml
-# https://github.com/fivexl/secure-container-image/blob/main/.github/workflows/ci.yml#L114
-# Run Snyk to check Docker image for vulnerabilities
-  snyk:
-    runs-on: ubuntu-latest
-    needs: build
-    strategy:
-      matrix:
-        config:
-          - {image: "secure-container-image-base", dockerfile: "Dockerfile.base"}
-          - {image: "secure-container-image-base-python3-distroless-debian-11", dockerfile: "Dockerfile.base-python3-distroless-debian-11"}
-          - {image: "secure-container-image-base-nodejs20-distroless-debian-11", dockerfile: "Dockerfile.base-nodejs20-distroless-debian-11"}
-    steps:
-      - uses: actions/checkout@v2
+    **Github CI example**
+    ```yaml
+    # https://github.com/fivexl/secure-container-image/blob/main/.github/workflows/ci.yml#L114
+    # Run Snyk to check Docker image for vulnerabilities
+    snyk:
+        runs-on: ubuntu-latest
+        needs: build
+        strategy:
+        matrix:
+            config:
+            - {image: "secure-container-image-base", dockerfile: "Dockerfile.base"}
+            - {image: "secure-container-image-base-python3-distroless-debian-11", dockerfile: "Dockerfile.base-python3-distroless-debian-11"}
+            - {image: "secure-container-image-base-nodejs20-distroless-debian-11", dockerfile: "Dockerfile.base-nodejs20-distroless-debian-11"}
+        steps:
+        - uses: actions/checkout@v2
 
-      - name: Run Snyk to check Docker image for vulnerabilities
-        continue-on-error: true
-        uses: snyk/actions/docker@master
-        env:
-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-        with:
-          image: ghcr.io/fivexl/${{ matrix.config.image }}:${{ github.sha }}
-          args: --severity-threshold=high --file=${{ matrix.config.dockerfile }}
-```
+        - name: Run Snyk to check Docker image for vulnerabilities
+            continue-on-error: true
+            uses: snyk/actions/docker@master
+            env:
+            SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+            with:
+            image: ghcr.io/fivexl/${{ matrix.config.image }}:${{ github.sha }}
+            args: --severity-threshold=high --file=${{ matrix.config.dockerfile }}
+    ```
 
 ### Stage 2. Build Level
 
