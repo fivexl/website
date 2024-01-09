@@ -36,11 +36,14 @@ double_panel:
   button_cta: { url: "https://sales.fivexl.io/schedule-a-call", text: "Book a consultation" }
   media_panel: { url: "https://youtu.be/uruLy1goNW0" }
 ---
-{{< case_study/challenge  image="challenge_ns.png" image_css="object-position: center 10%">}}
+{{< case_study/challenge  image="andrey_challenge.png" image_css="object-position: center 10%">}}
 {{< pink_heading text="Challenge"  sizes="bigger">}}
-In the dynamic world of startups, the journey often begins with the hustle of building an MVP, discovering the right market fit, and preparing the system for scaling—a stage where the hands-on involvement of an infrastructure engineer is crucial.  
-However, their needs evolve as startups transition into a phase focused on boosting sales and securing investments. The necessity for a full-time infra engineer becomes a balancing act—vital for maintaining advanced tech and expertise, yet potentially excessive in cost. This is a common pivot point for many startups.
-Kuvio experienced these stages. After an intense period of collaboration in which FivexL developed a high-performance, secure, and production-ready infrastructure within six months, Kuvio reached a point where the same level of intensive engagement was no longer necessary.  
+In the dynamic world of startups, the journey often begins with the hustle of building an MVP, discovering the right market fit, and preparing the system for scaling—a stage where the hands-on involvement of an infrastructure engineer is crucial.<br/>  
+<br/>  
+However, their needs evolve as startups transition into a phase focused on boosting sales and securing investments. The necessity for a full-time infra engineer becomes a balancing act—vital for maintaining advanced tech and expertise, yet potentially excessive in cost. This is a common pivot point for many startups.<br/>  
+<br/>
+Kuvio experienced these stages. After an intense period of collaboration in which FivexL developed a high-performance, secure, and production-ready infrastructure within six months, Kuvio reached a point where the same level of intensive engagement was no longer necessary.<br/>
+<br/>  
 Opting to maintain its agility as a small, dynamic team, Kuvio steered away from hiring a full-time DevOps engineer—a decision driven by both cost efficiency and effective resource management. They needed a flexible solution that would meet their new requirements.
 {{</ case_study/challenge >}}
   
@@ -80,7 +83,7 @@ To strengthen security measures further, [Ivan Razzhivin](https://fivexl.io/auth
 {{< case_study/benefits
     cta_text="Start Your Success Story"
     cta_url="https://sales.fivexl.io/schedule-a-call"
-    image="benefits_ns.png"
+    image="kuvio_retainer_benefits.png"
     >}}
 {{< pink_heading text="Benefits" >}}
 Kuvio's collaboration with FivexL under the retainer agreement has brought about significant benefits, including increased flexibility, cost savings, and enhanced infrastructure capabilities. This cost-effective arrangement provides Kuvio with access to FivexL's expertise on an as-needed basis, aligning perfectly with their evolving needs.  
