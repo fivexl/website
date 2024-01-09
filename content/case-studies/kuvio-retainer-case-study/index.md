@@ -3,7 +3,7 @@ title: 'Case Study: Kuvio Retainer Agreement'
 author_id:
   - 'Andrey Devyatkin'
   - 'Alexey Eremin' 
-summary: 'Cost-efficient solution for Swedish startup: a retainer agreement with a consultant available part-time to cover base infrastructure support needs and provide ongoing technical guidance.'
+summary: 'Cost-efficient solution for Swedish startup'
 date: 2023-12-16
 author:  Andrey Devyatkin Alexey Eremin
 panel_image: Artem_gradient.png
