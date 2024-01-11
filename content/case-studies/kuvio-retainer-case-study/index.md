@@ -1,14 +1,14 @@
 ---
-title: 'Case Study: Kuvio Retainer Agreement'
+title: 'Kuvio Retainer Agreement Case Study'
 author_id:
   - 'Andrey Devyatkin'
   - 'Alexey Eremin' 
-summary: 'Cost-efficient solution for Swedish startup'
-date: 2023-12-16
+summary: 'Cost-efficient solution for Swedish startup.'
+date: 2024-01-10
 author:  Andrey Devyatkin Alexey Eremin
-panel_image: Artem_gradient.png
+panel_image: andrey_main.png
 authors_heading: 'Two lead consultants for the project'
-alt_image: artem_small.png
+alt_image: andrey_quad.png
 case_study: true
 layout: 'case_study'
 tags: ['case study', 'aws']
@@ -24,7 +24,7 @@ about_company:
   logo: 'kuvio_logo.png'
   heading: 'About Kuvio'
   text: |
-    Kuvio is a dynamic startup from Stockholm, Sweden, offering a SaaS platform for Marketing Data Activation tailored to the retail e-commerce industry.  
+    [Kuvio](https://kuvio.io/) is a dynamic startup from Stockholm, Sweden, offering a SaaS platform for Marketing Data Activation tailored to the retail e-commerce industry.  
     The platform provides actionable data insights, audience segmentation, and profit optimization services, enabling e-commerce businesses to make informed decisions and improve outcomes.  
     Kuvio's platform is designed for easy deployment without the need for developer assistance from the client's side, ensuring it's accessible and efficient for all users.
 double_panel:
@@ -45,7 +45,7 @@ However, their needs evolve as startups transition into a phase focused on boost
 <br/>
 Kuvio experienced these stages. After an intense period of collaboration in which FivexL developed a high-performance, secure, and production-ready infrastructure within six months, Kuvio reached a point where the same level of intensive engagement was no longer necessary.<br/>
 <br/>  
-Opting to maintain its agility as a small, dynamic team, Kuvio steered away from hiring a full-time DevOps engineer—a decision driven by both cost efficiency and effective resource management. They needed a flexible solution that would meet their new requirements.
+Opting to maintain its agility as a small, dynamic team, Kuvio steered away from hiring a full-time DevOps engineer — a decision driven by both cost efficiency and effective resource management. They needed a flexible solution that would meet their new requirements.
 {{</ case_study/challenge >}}
   
 {{< case_study/solution heading="Solution" >}}
@@ -89,7 +89,7 @@ To strengthen security measures further, [Ivan Razzhivin](https://fivexl.io/auth
 {{< pink_heading text="Benefits" >}}
 Kuvio's collaboration with FivexL under the retainer agreement has brought about significant benefits, including increased flexibility, cost savings, and enhanced infrastructure capabilities. This cost-effective arrangement provides Kuvio with access to FivexL's expertise on an as-needed basis, aligning perfectly with their evolving needs.  
 The technical solutions implemented by FivexL have addressed Kuvio's immediate challenges and set a foundation for sustainable growth. The shift to serverless solutions and the migration to AWS Batch has allowed Kuvio to scale their operations effortlessly. The innovative approaches to cost optimization in serverless environments reduced cloud costs and showed the potential for further slashes. The enhancements in Kuvio’s CI/CD pipeline and security have strengthened their overall infrastructure and allowed the Kuvio team to focus on their core business activities.  
-"It's great for us that FivexL can align with our working style without needing to be in the same location. Our team is spread across different locations, from Stockholm to Eastern Europe and Taipei. FivexL's team, based in Canarias islands and other locations, fits into our dispersed culture," remarks Henrik Segersven, emphasizing the value of FivexL's ability to adapt to Kuvio's remote team.  
+"It's great for us that FivexL can align with our working style without needing to be in the same location. Our team is spread across Europe. FivexL's team, based in Canarias islands and other locations, fits into our dispersed culture," remarks Henrik Segersven, emphasizing the value of FivexL's ability to adapt to Kuvio's remote team.  
 The ability to scale support resources on an as-needed basis aligns with the dynamic nature of startups, while the cost savings achieved through optimization efforts further enhance the overall value proposition.  
 The retainer agreement has enabled Kuvio to allocate resources more effectively, ensuring they have the expertise when needed without the burden of maintaining a full-time infrastructure engineer. This flexibility has empowered Kuvio to focus on their core business objectives and drive innovation while FivexL seamlessly handles infrastructure management.
 

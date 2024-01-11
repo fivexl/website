@@ -8,7 +8,7 @@ date: 2023-03-16
 author:  Artem Zhelezov Maria Zubchenko 
 panel_image: Artem_gradient.png
 authors_heading: 'Two lead consultants for the project'
-alt_image: artem_small.png
+alt_image: artem_quad.png
 case_study: true
 layout: 'case_study'
 tags: ['case study', 'aws']

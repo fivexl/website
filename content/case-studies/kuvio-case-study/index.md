@@ -1,10 +1,10 @@
 ---
-title: 'Case Study: AWS Foundation for Kuvio'
+title: 'Kuvio ECS migration Case Study'
 author_id: 'Andrey Devyatkin'
 summary: 'FivexL built a high-performing, production-ready, and secure infrastructure defined in code for a Swedish startup.'
-date: 2023-12-14
+date: 2024-01-11
 author: Andrey Devyatkin
-panel_image: ovrture1.png
+panel_image: Andrey_pink.png
 authors_heading: 'Principal consultant leading the project'
 alt_image: vova_sm_bnw.png
 case_study: true
@@ -21,7 +21,7 @@ about_company:
   logo: 'kuvio_logo.png'
   heading: 'About Kuvio'
   text: |
-    Kuvio is a dynamic startup from Stockholm, Sweden, offering a SaaS platform for Marketing Data Activation tailored to the retail e-commerce industry.  
+    [Kuvio](https://kuvio.io/) is a dynamic startup from Stockholm, Sweden, offering a SaaS platform for Marketing Data Activation tailored to the retail e-commerce industry.  
     The platform provides actionable data insights, audience segmentation, and profit optimization services, enabling e-commerce businesses to make informed decisions and improve outcomes.  
     Kuvio's platform is designed for easy deployment without the need for developer assistance from the client's side, ensuring it's accessible and efficient for all users.
 double_panel:
@@ -85,9 +85,9 @@ With a high-performing, production-ready, and secure infrastructure built by Fiv
 <br/>  
 The concerns that once shadowed their growth potential—scalability, infrastructure stability, and the ability to handle increased workloads—have been effectively resolved by FivexL. Load tests have revealed that the system is capable of handling increased traffic, providing Kuvio with the assurance needed to support their continued growth and success. This transformation has enabled Kuvio to shift its focus from navigating technical challenges to embracing opportunities for growth and innovation. Freed from the complexities of infrastructure management, the team can now fully engage in what they excel at - driving their business forward.<br/>  
 <br/>   
-Today, Kuvio's achievements include great success in Sweden and recognition as a Finalist for Best Software Innovation in the 2022 European Search Awards.
+Today, Kuvio's achievements include great success in the Nordics and recognition as a Finalist for Best Software Innovation in both 2022 and 2023 European Search Awards.
 Henrik Segersven concludes, "Our product was somewhat unstable before we collaborated with FivexL. FivexL resolved these issues, providing a significant upgrade that has been beneficial for us. This improvement allowed us to sell more effectively, as we were previously limited by scalability issues. Clearly, this improvement is also reflected in our revenue growth."<br/>  
 <br/>  
-The collaboration between Kuvio and FivexL did not end there; it continued in a new format - a retainer agreement.
+The collaboration between [Kuvio](https://kuvio.io/) and FivexL did not end there; it continued in a new format - a retainer agreement.
 
 {{</ case_study/benefits >}}
