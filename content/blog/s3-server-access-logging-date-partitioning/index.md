@@ -28,7 +28,7 @@ I've created terraform [module](https://github.com/fivexl/terraform-aws-s3-acces
 Simply specify the bucket name and prefix where the logs are stored and the module will create a table:    
 ```hcl
 module "s3_access_logs_glue_table" {
-  source = "./modules/s3-access-logs-glue-table"
+  source = "fivexl/s3-access-logs-athena-table/aws"
 
   name          = "s3_access_logs"
   database_name = aws_glue_catalog_database.s3_access_logs_db.name
@@ -51,6 +51,3 @@ WHERE
 This way Athena will only scan the logs for the specified date and will not incur any additional cost for scanning the entire log bucket (as it happens by default).
 
 If you have any questions or suggestions, feel free to contact me on [LinkedIn](https://www.linkedin.com/in/alexey-eremin/), or [Twitter](https://twitter.com/AA_Eremin)
-
-# TODO:
-- [ ] Update link to the terraform module in tf.hcl after module published to the registry
