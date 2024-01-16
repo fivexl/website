@@ -2,7 +2,7 @@
 title: 'Firi Case Study'
 author_id: 'Vladimir-Samoylov' 
 summary: 'FivexL rebuilt and migrated infrastructure to AWS Elastic Container Service for the Norwegian cryptocurrency exchange.'
-date: 2022-06-14 
+date: 2023-03-16 
 author: Vladimir Samoylov
 panel_image: firi1.png
 authors_heading: 'Senior consultant leading the project'
