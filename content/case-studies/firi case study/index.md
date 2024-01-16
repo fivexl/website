@@ -2,7 +2,7 @@
 title: 'Firi Case Study'
 author_id: 'Vladimir-Samoylov' 
 summary: 'FivexL rebuilt and migrated infrastructure to AWS Elastic Container Service for the Norwegian cryptocurrency exchange.'
-date: 2022-11-12
+date: 2022-06-14 
 author: Vladimir Samoylov
 panel_image: firi1.png
 authors_heading: 'Senior consultant leading the project'
@@ -10,7 +10,7 @@ alt_image: vova_small_bnw.png
 case_study: true
 layout: 'case_study'
 tags: ['case study', 'aws']
-testimonial: 'FivexL helped us migrate all our services to a new infrastructure; the change was seamless. They think outside the box and are always there when we need them.'
+testimonial: 'FivexL helped us migrate our services to a new infrastructure; the change was seamless. They think outside the box and are always there when we need.'
 testimonial_author: 'Thuc Tuan Hoang'
 testimonial_author_position: 'CEO at Firi'
 testimonial_author_portrait: Thuc.png
