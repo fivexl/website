@@ -1,5 +1,5 @@
 ---
-title: 'Kuvio ECS migration Case Study'
+title: 'Kuvio Case Study'
 author_id: 'Andrey Devyatkin'
 summary: 'FivexL built a high-performing, production-ready, and secure infrastructure defined in code for a Swedish startup.'
 date: 2024-01-11

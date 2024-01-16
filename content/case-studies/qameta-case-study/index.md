@@ -4,7 +4,7 @@ author_id:
   - 'Ivan Razzhivin'
   - 'Alexey Eremin'
 summary: 'FivexL designed and implemented a cost-efficient, scalable, and secure Cloud-based SaaS.'
-date: 2022-10-28
+date: 2023-03-16
 author:  Ivan Razzhivin Alexey Eremin 
 panel_image: Alex_Vanya.png
 authors_heading: 'Two lead consultants for the project'

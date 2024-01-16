@@ -4,7 +4,7 @@ author_id:
   - 'Andrey Devyatkin'
   - 'Alexey Eremin' 
 summary: 'Cost-efficient solution for Swedish startup.'
-date: 2024-01-10
+date: 2022-01-10
 author:  Andrey Devyatkin Alexey Eremin
 panel_image: andrey_main.png
 authors_heading: 'Two lead consultants for the project'
