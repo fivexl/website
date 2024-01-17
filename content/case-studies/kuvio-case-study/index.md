@@ -88,6 +88,6 @@ The concerns that once shadowed their growth potential—scalability, infrastruc
 Today, Kuvio's achievements include great success in the Nordics and recognition as a Finalist for Best Software Innovation in both 2022 and 2023 European Search Awards.
 Henrik Segersven concludes, "Our product was somewhat unstable before we collaborated with FivexL. FivexL resolved these issues, providing a significant upgrade that has been beneficial for us. This improvement allowed us to sell more effectively, as we were previously limited by scalability issues. Clearly, this improvement is also reflected in our revenue growth."<br/>  
 <br/>  
-The collaboration between [Kuvio](https://kuvio.io/) and FivexL did not end there; it continued in a new format - a retainer agreement.
+The collaboration between Kuvio and FivexL did not end there; it continued in a new format - a retainer agreement.
 
 {{</ case_study/benefits >}}
