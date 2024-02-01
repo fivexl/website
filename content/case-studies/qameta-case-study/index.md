@@ -4,7 +4,7 @@ author_id:
   - 'Ivan Razzhivin'
   - 'Alexey Eremin'
 summary: 'FivexL designed and implemented a cost-efficient, scalable, and secure Cloud-based SaaS.'
-date: 2023-02-28
+date: 2022-11-14 
 author:  Ivan Razzhivin Alexey Eremin 
 panel_image: Alex_Vanya.png
 authors_heading: 'Two lead consultants for the project'
@@ -59,6 +59,10 @@ FivexL transferred knowledge and best practices on the implemented AWS infrastru
 It was a major success! The number of clients grew rapidly.
  {{</ case_study/column >}}
 {{</ case_study/solution >}} 
+
+{{< case_study/section >}}
+{{< md >}}![diagram](Qameta_infra.png){{</ md >}}
+{{</ case_study/section >}}
 
 {{< case_study/benefits
     cta_text="Start Your Success Story"

@@ -18,7 +18,7 @@ panel_image: 'Masha_article.png'
 author_headshot: 'Masha_head.png'
 author_id: Maria Zubchenko
 ---
-AWS Solutions Engineer with the focus on  building secure, immutable, scale-ready, and cost-effective infrastructure for startups.
+Maria was a part of FivexL team from June 2020 until April 2023.
 ### Specialization
 Security · DevOps  · Terraform
 ### Recent success story

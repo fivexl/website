@@ -12,13 +12,37 @@
 
 [[redirects]]
   from = "/blog/overture-case-study/"
-  to = "/blog/ovrture-case-study/"
+  to = "/case-studies/ovrture-case-study/"
   status = 301
   force = false
 
 [[redirects]]
   from = "/blog/qameta-case-study-/"
-  to = "/blog/qameta-case-study/"
+  to = "/case-studies/qameta-case-study/"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/blog/qameta-case-study/"
+  to = "/case-studies/qameta-case-study/"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/blog/new-stream-case-study/"
+  to = "/case-studies/new-stream-case-study/"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/blog/firi-case-study/"
+  to = "/case-studies/firi-case-study/"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/blog/ovrture-case-study/"
+  to = "/case-studies/ovrture-case-study/"
   status = 301
   force = false
 

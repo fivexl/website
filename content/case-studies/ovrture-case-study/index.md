@@ -2,7 +2,7 @@
 title: 'Ovrture Case Study'
 author_id: 'Vladimir-Samoylov'
 summary: 'FivexL implemented infrastructure as code, reduced costs, and provided the ability to scale for a philanthropic communications platform.'
-date: 2022-06-14
+date: 2022-10-12
 author: Vladimir Samoylov
 panel_image: ovrture1.png
 authors_heading: 'Senior consultant leading the project'
@@ -53,6 +53,10 @@ Ovrture is enterprise class and partnered with FivexL to speed up its transforma
 A key issue they solved for us was building a complex elastic load balancer set up so we could achieve a flexible configuration capable of supporting multiple certificates.” The resulting automation of the application build process now guarantees efficiency with repeatable results freeing up dev time and reducing costs. Packaging applications into containers reduces maintenance, migration and security risks with independence from the host system.
 {{</ case_study/column >}}
 {{</ case_study/solution >}}
+
+{{< case_study/section >}}
+{{< md >}}![diagram](infra-diagram.png){{</ md >}}
+{{</ case_study/section >}}
 
 {{< case_study/benefits
     cta_text="Start Your Success Story"

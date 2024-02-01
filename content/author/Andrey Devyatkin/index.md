@@ -22,7 +22,7 @@ certifications:
   - 'fivexl.png'
 panel_image: 'Andrey_author_page.png'
 author_headshot: 'image-33.png'
-author_id: Andrey_Devyatkin
+author_id: Andrey Devyatkin
 ---
 Principal AWS Solutions Engineer with a focus on building secure, scale-ready, and cost-effective infrastructure for startups.
 
