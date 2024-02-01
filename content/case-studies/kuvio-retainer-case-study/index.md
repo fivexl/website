@@ -94,6 +94,6 @@ The technical solutions implemented by FivexL have addressed Kuvio's immediate c
 "It's great for us that FivexL can align with our working style without needing to be in the same location. Our team is spread across Europe. FivexL's team, based in Canarias islands and other locations, fits into our dispersed culture," remarks Henrik Segersven, emphasizing the value of FivexL's ability to adapt to Kuvio's remote team.<br/> 
 <br/>   
 The ability to scale support resources on an as-needed basis aligns with the dynamic nature of startups, while the cost savings achieved through optimization efforts further enhance the overall value proposition.  
-The retainer agreement has enabled [Kuvio](https://kuvio.io/) to allocate resources more effectively, ensuring they have the expertise when needed without the burden of maintaining a full-time infrastructure engineer. This flexibility has empowered Kuvio to focus on their core business objectives and drive innovation while FivexL seamlessly handles infrastructure management.
+The retainer agreement has enabled Kuvio to allocate resources more effectively, ensuring they have the expertise when needed without the burden of maintaining a full-time infrastructure engineer. This flexibility has empowered Kuvio to focus on their core business objectives and drive innovation while FivexL seamlessly handles infrastructure management.
 
 {{</ case_study/benefits >}}
