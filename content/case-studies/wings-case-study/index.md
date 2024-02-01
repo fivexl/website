@@ -4,7 +4,7 @@ author_id:
   - 'Ivan Razzhivin'
   - 'Vladimir-Samoylov'
 summary: 'FivexL built a scalable and secure infrastructure in AWS from the ground up in just 3 months for a smart expense management service.'
-date: 2023-08-17 
+date: 2021-08-17 
 author:  Ivan Razzhivin Vladimir-Samoylov 
 panel_image: Artboard.png
 authors_heading: 'Project Success: Managed by Vladimir Samoylov, Architected by Ivan Razzhivin'
@@ -12,12 +12,10 @@ alt_image: wings_bnw.png
 case_study: true
 layout: 'case_study'
 tags: ['case study', 'aws']
-testimonial: "By developing infrastructure FivexL allows us to focus on our core business: Product development hypothesis testing and roadmap generation."  
-testimonial_author: "Steve"
-testimonial_author_position: "Founder at Wings"
+
 testimonial_author_portrait: steve1.png
 testimonial_long: |
-  "I'm genuinely amazed by the transformative impact FivexL has had on our team's workflow. In three months, with expertly configured AWS Organization, access control, and streamlined launches of multiple applications via AWS ECS, we've established a solid foundation for our future growth. This implementation has empowered our development team to focus on innovation and rapid iteration."
+  FivexL had a transformative impact on the Wings team workflow. Within three months, FivexL experts configured AWS Organization, access control, and streamlined launches of multiple applications via AWS ECS. This established a solid foundation for the startup's future growth and enabled the development team to concentrate on innovation and rapid iteration.
 about_company:
   logo: 'startup.png'
   heading: 'About Wings'
@@ -40,8 +38,7 @@ Wings embarked on a journey to launch their MVP (Minimum Viable Product) to vali
 The first iteration of the application was built by the Wings team using a monolithic approach using AWS Elastic Beanstalk as a computing platform. While this allowed the team to launch the MVP quickly, it posed product modifications and scalability challenges. Economically, this approach was not sustainable because every new client got a separate instance, causing resource usage overhead and higher-than-optimal infrastructure costs.<br/> 
 <br/>  
 Recognizing the limitations of the monolithic architecture, Wings decided to engage experts to transition towards a microservice multi-tenant architecture. This architecture allows companies to save money on infrastructure costs by using the same computing resources for several clients residing within the same multi-tenant application deployment.<br/>
-<br/>  
- The founder of Wings recalls, "We were impressed by how quickly and freely the FivexL specialist assisted us. It became clear that they were experts in their field and could be trusted to build a scalable and secure infrastructure to meet our current needs and future challenges."  
+
 {{</ case_study/challenge >}}
  
 {{< case_study/solution heading="Solution" >}}
@@ -84,7 +81,7 @@ To protect the system from the most frequent types of cyberattacks, FivexL confi
 {{< case_study/benefits
     cta_text="Start Your Success Story"
     cta_url="https://sales.fivexl.io/schedule-a-call"
-    image="quote_wings.png"
+    image="text_wings.png"
     >}}
 {{< pink_heading text="Benefits" >}}
 The FivexL collective experience enabled setting up of a solid infrastructure foundation from scratch in just 2-3 months, compared to the typical year required by a single in-house specialist. Assuming that the specialist has a deep understanding of AWS and has experience building AWS Organisations that would scale over time. Otherwise, such setup might take even longer.<br/>  
@@ -93,8 +90,7 @@ Through collaboration with FivexL, Wings benefited from a novel approach to infr
 <br/>
 FivexL adheres to advanced industry standards and provides recorded demos explaining decision-making logic and system operation principles. This ensures a seamless transition when another professional joins the Wings team for continued system development.<br/>
 <br/>
-Steve, from Wings, reflected on the experience: "With FivexL, we saw predictable results and finished the project earlier than expected."<br/> 
-<br/>
+
 
 
 
