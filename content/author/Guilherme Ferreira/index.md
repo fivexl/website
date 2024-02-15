@@ -6,8 +6,7 @@ roles:
 information:
   - Cloud Computing Instructor
   - Solutions Architect
-  - Software and Platform Engineer
-  - Ex-AWS (Amazon Web Services)
+  - Ex-AWS 
 links:
   
   - { icon: linkedin, url: 'https://www.linkedin.com/in/guilherme-ferreira-372a1028/' }
@@ -30,4 +29,4 @@ AWS · DevOps · Terraform · Vault · Consul · Ansible
 This seasoned IT professional boasts over 18 years of experience across software development, project management, and team leadership. Possessing strong communication and people skills, he bridges the gap between business and IT to deliver effective solutions. 
 He has successfully guided clients in diverse industries like Fintech, Web3, and Healthcare within the AWS Startup Solutions Architect role.
 ### Personality
-Guilherme runs a YouTube channel in Portuguese, sharing free lessons on cloud computing. 
+Guilherme runs a [YouTube channel](https://www.youtube.com/@_guilhermeferreira/videos) in Portuguese, sharing free lessons on cloud computing. 
