@@ -1,7 +1,7 @@
 ---
 name: Olga Devyatkina
 roles:
-  - Financial and administrative manager 
+  - Financial and Administrative Manager 
 information:
   - A multifunctional professional with more than 30 years of experience in the digital world.
   
