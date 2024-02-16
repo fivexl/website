@@ -1,11 +1,14 @@
 ---
 title: 'FivexL Container Hardening Guide'
-author_id: 'Vladimir-Samoylov'
-summary: 'Do you want the security of your binary app to excel by adding a couple of defense layers? Read our guide on container hardening for binary compilable apps.'
-date: 2023-03-30
-author: Vladimir Samoylov
+author_id: 
+  - 'Andrey Devyatkin'
+  - 'Vladimir-Samoylov'
+  - 'Anton Eremin'
+summary: 'Comprehensive and continuously updated list of best practices for securing containerized workloads. From build to execution.'
+date: 2024-02-15
+author: Andrey Devyatkin Vladimir Samoylov Anton Eremin
 panel_image: container.png
-tags: [ 'aws', 'open source', 'container', 'guide', 'security', 'docker']
+tags: [ 'aws', 'container', 'guide', 'security', 'docker', 'golang']
 ---
 Nowadays, containers are everywhere, and we at FivexL work with containers with almost all of our customers. Thus, this guide is an attempt to capture the best practices to re-use them between the projects and make them available to the broader public. If you use this guide to become more secure - we all win. The safer the internet, the better it is for all of us using it. 
 
@@ -17,27 +20,33 @@ Please note that the code samples may be outdated. For the most recent examples,
 
 ### Stage 0. App Packaging for Enhanced Security in Containerized Environments
 
-With compilable languages, the application is compressed into a single, statically linked binary. This can be placed into a scratch container image, which is an image devoid of shell, CLI tools, or libraries. When an intruder accesses such a container, the only thing that is present is an application binary. An attacker would lack the tools to download additional hacking software, extract secrets from memory, or move laterally. There will be no tools to hide their activity and [live off the land](https://www.crowdstrike.com/cybersecurity-101/living-off-the-land-attacks-lotl/). It would require a sophisticated and determined attacker to break out of such a container.
+With compilable languages (such as Golang, Rust, C++, etc), the application is compressed into a single, statically linked binary. This can be placed into a scratch container image, which is an image without a shell, CLI tools, or libraries. When an intruder accesses such a container, the only thing that is present is an application binary. An attacker would lack the tools to download additional hacking software, extract secrets from memory, or move laterally. There will be no tools to hide their activity and [live off the land](https://www.crowdstrike.com/cybersecurity-101/living-off-the-land-attacks-lotl/). It would require a sophisticated and determined attacker to break out of such a container.
 
-Well, there are also interpretable languages that necessitate a runtime, such as Python and JavaScript. In these environments, an attacker could run arbitrary code using an interpreter available in the container to download files, exfiltrate data, and attack other services.
-
-Recently, some tools have emerged attempting to package JavaScript apps into single binaries, suggesting that, theoretically, we could achieve a similar isolation level as with compilable apps. However, not all packages are compatible with these tools, and most of these tools are not yet mature. For more information about packaging Node.js apps, refer to [this article](https://dev.to/midnqp/bundling-nodejs-into-single-executable-binary-l3g ).
+Well, there are also interpretable languages that necessitate a runtime, such as Python and JavaScript. In these environments, an attacker could run arbitrary code using an interpreter available in the container to download files, exfiltrate data, and attack other services. There are ways you can avoid it.
 
 **Tools for transitioning from Scripts to Standalone Executables:**
 
-- For JavaScript: Utilize tools such as [pkg](https://github.com/vercel/pkg) or [nexe](https://github.com/nexe/nexe) to create self-contained executables from your JavaScript code.
+- For JavaScript: Recently, some tools have emerged attempting to package JavaScript apps into single binaries, suggesting that, theoretically, we could achieve a similar isolation level as with compilable languages. However, not all packages are compatible with these tools, and most of these tools are not yet mature. For more information about packaging Node.js apps, refer to [this article](https://dev.to/midnqp/bundling-nodejs-into-single-executable-binary-l3g ). Tools to check are [pkg](https://github.com/vercel/pkg) or [nexe](https://github.com/nexe/nexe).
 
 - For Python: Employ tools like [PyInstaller](https://github.com/pyinstaller/pyinstaller) or [Nuitka](https://github.com/Nuitka/Nuitka), [py2exe](https://pypi.org/project/py2exe/). These tools can transform Python scripts into executable binaries, eliminating the requirement for a Python interpreter within your Docker image. Another approach is to use CPython to compile the code into a static executable binary.
 
-**Opting for Minimalist Base Images:** 
+- For Java: Use [GraalVM](https://www.graalvm.org/latest/reference-manual/native-image/guides/build-static-executables/).
 
-The shift to standalone executables opens the door to utilizing 'scratch' container images. These minimal base images are essentially empty, lacking a shell, CLI tools, or libraries. More info about creating images from 'scratch' can be found [here](https://docs.docker.com/build/building/base-images/#create-a-simple-parent-image-using-scratch).
+**Choose Minimal Base Images:** 
+
+The shift to standalone executables opens the door to utilizing 'scratch' container images. These minimal base images are essentially empty, lacking a shell, CLI tools, or libraries. More info about creating images from 'scratch' can be found [here](https://docs.docker.com/build/building/base-images/#create-a-simple-parent-image-using-scratch). It's important to note that running containers with minimalistic images can lead to some drawbacks. While attackers won't have tools to explore the container, developers may lack debugging tools as well. This can become problematic if developers need to debug the production system. To get around this, you can create a debug version of the same container using a minimalistic base image like Alpine, Busybox, or Disroless. By temporarily deploying the debug image, developers can debug the system and then go back to the hardened version when they're done. However, it's generally more beneficial to invest in better logging and telemetry collection, so developers have all the information they need without having to exec into the running container.
 
 ### Stage 1. Pre-Build Level
 
-At this stage, you will discover potential vulnerabilities that can be tackled in further stages.
+During this stage, you will identify potential vulnerabilities that can be addressed in subsequent stages. There are several areas to examine, such as the source code itself, its dependencies (such as libraries), and the operating system packages. All of these components may contain vulnerabilities that need to be assessed.
 
-1.  **Run Linter for a DockerFile**, for example, Hadolint, to ensure you create small, secure, efficient, and maintainable Docker images. If you fail to meet best practices, the tool will provide relevant alerts and recommendations.
+1. **Vulnerabilities in the source code.** This guide does not cover AppSec, but a high-level recommendation is to use a language-specific static analysis tool and run it on every push to your version control system. For instance, GoSec can be used for Golang. If you are already on GitHub, we highly recommend using their Advanced Security package, which provides access to their CodeQL static code analysis tools. You may also combine multiple tools, such as GoSec and CodeQL, to complement each other. Although there is overlap between the two, they work together nicely.
+
+2. **Vulnerabilities in the source code dependencies.** Make sure to configure tools like Renovate or Dependabot to keep your source code dependencies up-to-date and free of known vulnerabilities. Another tool that is being mentioned often is Snyk.
+
+3. **Vulnerabilities in the operating system packages.** If you are using a scratch-based image, you don't have to worry about anything because there is no package manager available. However, if you are using any other image, there are scanners available. These scanners typically work on already built container images, so we will address them later in the article.
+ 
+4.  **Run Linter for a DockerFile**, for example, Hadolint, to ensure you create small, secure, efficient, and maintainable Docker images. If you fail to meet best practices, the tool will provide relevant alerts and recommendations.
 
     **Github CI example**
     ```yaml
@@ -61,7 +70,11 @@ At this stage, you will discover potential vulnerabilities that can be tackled i
             dockerfile: ./examples/go_app_example/Dockerfile.goapp
     ```
 
-2. **Run a CVE Check to detect vulnerabilities in packages**. Tools like Snyk, AWS ECR, or Trivy can be used to scan your container images for known vulnerabilities in installed packages if you have to install some. These tools cross-reference your image against various CVE databases and provide a report, helping you to remediate any potential security issues.
+### Stage 2. Build Level
+
+This set of recommendations is simple to complete and can be performed within a workday. It mostly focuses on adjusting the Docker Image. Here are some initiatives, categorized from simple to complex. 
+
+1. **Run a CVE Check to detect vulnerabilities in packages**. It is possible to scan your container images for known vulnerabilities in installed packages using tools such as AWS ECR, Snyk, or Trivy. These tools cross-check your image against various CVE databases and provide a report, which can help you identify and fix any potential security issues. However, it's important to note that these tools only look into package manager information. If you download a tool like jq via curl directly from Github, the scanners will not detect it. Therefore, if you need to add tools, it is advisable to do so via the package manager.
 
     **Github CI example**
     ```yaml
@@ -88,14 +101,12 @@ At this stage, you will discover potential vulnerabilities that can be tackled i
             image: ghcr.io/fivexl/${{ matrix.config.image }}:${{ github.sha }}
             args: --severity-threshold=high --file=${{ matrix.config.dockerfile }}
     ```
+    
+2.  **Use verified images**. Before downloading some random docker image, ensure its creator is real and reliable: check the official site, etc. This way, you can eliminate the risk of downloading an image with malicious code. Additionally, some image distributors, like Distroless, offer the opportunity to verify the image's integrity using tools such as cosign. If there is a link to GitHub that contains sources of the image then inspect the source. Another possible precaution might be to fork/copy the source repo and build the image yourself. This way, you make sure that you get what you see and nothing else is injected along the way. However, in this case, you would need to have automation to pull the latest source code changes to your copy/fork.
 
-### Stage 2. Build Level
+3. **Use Multi-Stage Builds**: [Multi-stage builds](https://docs.docker.com/build/building/multi-stage/) are an effective way to enhance container security by discarding build history. In the first stage, you can use any verified image with specific dependencies to build your binary application. For the second stage, opt for a base image that is either a scratch image or a minimal distroless image. This strategy ensures that your final Docker image is free of unnecessary data and potential secrets. To execute this, copy only the compiled application and essential runtime files from the first stage into the second stage, effectively leaving out any sensitive information, such as temporary credentials, used in the first stage. At the end of the blog post, you can find an example of a multi-stage build for a Python application.
 
-This set of recommendations is simple to complete and can be performed within a workday. It mostly focuses on adjusting the Docker Image. Here are some initiatives, categorized from simple to complex. 
-
-1.  **Use verified images**. Before downloading some random docker image, ensure its creator is real and reliable: check the official site, etc. This way, you can eliminate the risk of downloading an image with malicious code. Additionally, some image distributors, like Distroless, offer the opportunity to verify the image's integrity using tools such as cosign. If there is a link to GitHub that contains sources of the image then inspect the source. Another possible precaution might be to fork/copy the source repo and build the image yourself. This way you make sure that you get what you see and nother else is injected along the way. However, in this case, you would need to have automation to pull the latest source code changes to your copy/fork. 
-
-2.  **Use copy, instead of add a docker image**.
+4.  **Use copy, instead of add a docker image**. ADD command is much more capable compared to COPY and you unintentionally could compromise your image. With great power comes great responsibility. Read more details [here](https://www.redswitches.com/blog/docker-add-vs-copy/).
     ```dockerfile
     # https://github.com/fivexl/secure-container-image/blob/main/Dockerfile.base#L43
     # Copy necessary files from loader image to runtime image
@@ -106,9 +117,9 @@ This set of recommendations is simple to complete and can be performed within a 
     COPY --from=loader /loader/lprobe /usr/bin/lprobe
     ```
    
-3.  **Fix or pin all build dependencies** to avoid fetching the latest version by mistake. 
+4.  **Fix or pin all build dependencies** to avoid fetching the latest version by mistake. 
 
-    Additionally, it is advisable to use a specific version of the image instead of the 'latest' tag. By doing so, you can minimize the risk of inadvertently downloading a new version that may contain unacknowledged CVEs or bugs.
+    Additionally, it is advisable to use a specific version of the image instead of the 'latest' tag. By doing so, you can minimize the risk of inadvertently downloading a new version that may contain unacknowledged CVEs, bugs, or breaking changes. 
 
     ```dockerfile
     # https://github.com/fivexl/secure-container-image/blob/main/examples/go_app_example/Dockerfile.goapp#L13
@@ -116,7 +127,7 @@ This set of recommendations is simple to complete and can be performed within a 
     FROM ghcr.io/fivexl/fivexl/secure-container-image-base:${BASE_IMAGE_TAG} AS runtime
     ```
 
-4.  **Get rid of any valuable files on disk inside the container** with .dockerignore. When building an app, you often store credentials and other important data necessary for a container build. You need to clean up .git and .n files, as well as credentials, to prevent an intruder from accessing valuable data easily. Run .dockerignore and skip the files.  Beware of recursive copy. Example of .dockerignore content:
+5.  **Get rid of any valuable files on disk inside the container** with .dockerignore. When building an app, you often store credentials and other important data necessary for a container build. You need to clean up .git and .n files, as well as credentials, to prevent an intruder from accessing valuable data easily. Run .dockerignore and skip the files.  Beware of recursive copy. Example of .dockerignore content:
     ```dockerfile
     # Ignore Git directory
     .git/
@@ -129,9 +140,9 @@ This set of recommendations is simple to complete and can be performed within a 
     # Ignore temporary files
     *.tmp
     ```
+Also, if you have to pass any kind of secrets to the build process. Like tokens to access private libraries or repositories, cloud access keys then use [secret mount option for docker build](https://docs.docker.com/build/building/secrets/), there is also a possibility [to pass SSH agent](https://docs.docker.com/build/building/secrets/#ssh-mounts)
 
-
-5.  **Use [lprobe](https://fivexl.io/blog/lprobe/) instead of wget/curl for Health Checks**. wget and curl commands open a window of opportunity for an intruder to download and run some malicious software. [lprobe](https://fivexl.io/blog/lprobe/) is FivexL's alternative to securely run health checks without compromising your security by creating your own health check CMD. 
+6.  **Use [lprobe](https://fivexl.io/blog/lprobe/) instead of wget/curl for Health Checks**. It's important to note that using the wget and curl commands can create an opportunity for intruders to download and execute additional hacking tools on your system. To avoid compromising your security, FivexL has developed an alternative called lprobe, which allows you to securely run health checks. This tool is limited to calling only localhost, making it a safer option for your system's security.
     ```dockerfile
     # https://github.com/fivexl/secure-container-image/blob/main/Dockerfile.base#L34
     # Loader image:
@@ -144,7 +155,7 @@ This set of recommendations is simple to complete and can be performed within a 
     CMD ["lprobe", "-mode=http", "-endpoint=/", "-port=80"]
     ```
 
-6.  **Run containers as a non-root user**. Example of setting up a user, and copying it from the loader image:
+7.  **Run containers as a non-root user**. Running Docker containers as a non-root user is crucial for enhancing security. Containers executed with root privileges can provide attackers with access to the host system if they manage to exploit vulnerabilities within the container. This could lead to unauthorized access, data breaches, or even full control over the host system. By running containers with non-root users, you limit the permissions of processes within the container, thereby reducing the risk of host system compromise in case of an attack. This practice is part of the principle of least privilege, ensuring that processes operate with only the permissions they absolutely need, minimizing potential damage from breaches. Example of setting up a user, and copying it from the loader image:
     ```dockerfile
     # https://github.com/fivexl/secure-container-image/blob/main/Dockerfile.base
     # add a user here because addgroup and adduser are not available in scratch
@@ -179,42 +190,39 @@ This set of recommendations is simple to complete and can be performed within a 
     FROM gcr.io/distroless/static:nonroot
     ```
 
-
-7.  **Add fake files to trick an intruder and get an alert**. When building, add an ls or wget utility that will run differently from the expected command, for example, exit 1, which means the container falls once the utility is run. Besides, add canary.tools or other honeypot tools that create tokens. When they are used, you will receive a notification, which is useful for spotting an attack without an intrusion detection system.  
-
-8. **Consider Using Multi-Stage Builds**: Multi-stage builds are an effective way to enhance container security by discarding build history. In the first stage, you can use any verified image with specific dependencies to build your binary application. For the second stage, opt for a base image that is either a scratch image devoid of additional files or a minimal distroless image. This strategy ensures that your final Docker image is free of unnecessary data and potential secrets. To execute this, copy only the compiled application and essential runtime files from the first stage into the second stage, effectively leaving out any sensitive information, such as temporary credentials, used in the first stage. At the end of the blog post, you can find an example of a multi-stage build for a Python application.
-
-9. **Try using scratch images as much as possible**. Scratch images are essentially empty and contain no operating system or shell. This minimizes the avenues an attacker has to run commands, launch utilities like curl or wget, or use package managers. The lack of an operating system also leaves the attacker uncertain about the system's specifics, further enhancing your container's security.
+8.  **Add fake files to trick an intruder and get an alert**. When building, add an ls or wget utility that will run differently from the expected command, for example, exit 1, which means the container falls once the utility is run. Besides, add canary.tools or other honeypot tools that create tokens. When they are used, you will receive a notification, which is useful for spotting an attack without an intrusion detection system.  
 
 ### Stage 3. Run-Time Level
 
-1.  **Use read-only systems** where possible to reduce the attacker landscape. Provide access for editing to limit the intruder's chances of altering your files or downloading additional tools. 
+At runtime, you can configure container orchestrators like AWS ECS or K8S to implement security measures to further harden your container setup.
 
-2.  **Use a run-time scanner and intrusion detection system** like AWS GuardDuty to monitor system calls and network traffic so you could be alerted about suspicious activity sooner.
+1.  **Use read-only systems** where possible to limit the intruder's chances of altering your files or downloading additional tools. 
 
-3.  **Drop all Linux capabilities** at the orchestration level.
+2.  **Use a run-time scanner and/or intrusion detection system** like AWS GuardDuty for AWS ECS or Falco to monitor system calls and network traffic so you can be alerted about suspicious activity sooner.
 
-4.  **Set up CPU / Memory limits** to discover when the workload suddenly increases and prevent DOS/OOM on Node/Java. This also saves your budget.
+3.  **Drop all Linux capabilities** at the orchestration level if you do not need them.
 
-5.  **Set up a reliable process** for accessing your secrets from a container. If you deliver credentials as environment variables, they could be read unless you run a root. Consider allowing an app to read them directly by letting it know where they are stored. However, it may complicate local testing. You could also make a fallback: if there are environment variables, read them; if not, source them from a secrets management system like AWS Secrets Manager or HashiCorp Vault. 
+4. **Set up CPU / Memory limits** to discover when resource consumption suddenly increases and prevent Denial of Service(DoS) or Out-of-memory (OOM) on memory-hungry languages such as Java. This also saves your budget.
+
+5.  **Set up a reliable process for accessing your secrets from a container.** If you're deploying an application and you deliver your credentials as environment variables, it's important to know that if your container contains a shell, anyone could potentially run the `env` command and access all your environment variables, including your credentials. However, if you're using a scratch container, there is no shell, and reading environment variables becomes increasingly difficult if not impossible. Therefore, passing secrets to a scratch container might be a good enough level of security. 
+
+If you're using an alpine or distroless image, you might want to consider instrumenting your application to read secrets directly from a secrets management system like AWS Secrets Manager or HashiCorp Vault. However, this approach may complicate local testing. You could also make a fallback plan: if there are environment variables available, use them; if not, source the secrets from a secrets management system. 
 
 ### Stage 4. Long-Term Security Defense Layering
 
 The following initiatives should be carried out regularly to ensure your container is secured in the long term.
 
-1.  **Rebuild images regularly**, even if there are no changes to the app, to ensure the latest updates and CVE fixes for tools and app libraries.
+1.  **Rebuild images regularly.** It is advisable to rebuild and redeploy apps regularly, even if there are no changes to the source code, to ensure you have the latest security updates for system packages and app dependencies/libraries.
 
-2.  **Sign images and do not allow unsigned ones**. It complicates downloading some extras from the Docker hub and running them. Ensure you are enforcing verified images.
+2.  **Sign images in CI and do not allow running unsigned ones**. Enforce the use of verified images to prevent attackers from running arbitrary images on your system.
 
 3.  **Replicate images to another region** so you have a backup in case of an outage. Instead of quickly building an app in another region, it's best to reuse the existing one with different flags.
 
-4.  **Container registry immutable tags**.
-
-5.  **Drop canary tokens to containers** to spot intrusion early.
+4.  **Container registry immutable tags**. To prevent sneaky changes to already verified images. 
 
 
 ### FivexL's base images:
-We have developed a set of base images tailored for Go, Python, and Node 20, designed to enhance security and efficiency. These images have been meticulously crafted to meet high standards of security and performance. We invite you to take advantage of these resources for your projects. You can easily access and use these images by visiting our GitHub repository at https://github.com/fivexl/secure-container-image. We believe these images will provide a solid foundation for your applications and contribute significantly to your container security strategy.
+We have created some base images specifically optimized for Go, Python, and JavaScript/Node, which are aimed at improving both security and efficiency. These images have been designed with great care and attention to detail in order to meet high standards of security and performance. We would like to invite you to take advantage of these resources for your projects. You can easily access and use these images by visiting our GitHub repository at https://github.com/fivexl/secure-container-image. We believe that these images will give your applications a stable foundation and make a significant contribution to your container security strategy. Please note that the Python and JS images do not currently support static compilation, but we are considering adding them in the future. If you encounter any issues or have any suggestions for additional examples, please create an issue on the GitHub repository.
 
 ### Examples:
 Note: The code examples shown below might be outdated. For the latest version, please refer to the following files:
@@ -314,4 +322,4 @@ HEALTHCHECK --interval=1m --timeout=3s \
 
 ## Summing Up
 
-The provided set of instructions allows you to layer up your defense strategy for compilable binary apps. As a result, it will be much harder for an intruder to wander around your app, which often makes them abandon an attack. Besides, the provided measures facilitate attack detection, which helps you proactively address it.
+The set of instructions provided will help you add layers to your defense strategy for container images. This will make it much more difficult for intruders to navigate your systems, often causing them to give up on an attack. Additionally, these measures will aid in detecting attacks, allowing you to address them proactively.
