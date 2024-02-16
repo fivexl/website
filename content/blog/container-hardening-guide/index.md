@@ -214,7 +214,7 @@ The following initiatives should be carried out regularly to ensure your contain
 
 1.  **Rebuild images regularly.** It is advisable to rebuild and redeploy apps regularly, even if there are no changes to the source code, to ensure you have the latest security updates for system packages and app dependencies/libraries.
 
-2.  **Sign images in CI and do not allow running unsigned ones**. Enforce the use of verified images to prevent attackers from running arbitrary images on your system.
+2.  **Sign images in CI and do not allow running unsigned ones**. Enforce the use of verified images to prevent attackers from running arbitrary images on your system. Read how to use AWS Signer [here](https://aws.amazon.com/blogs/security/best-practices-to-help-secure-your-container-image-build-pipeline-by-using-aws-signer/).
 
 3.  **Replicate images to another region** so you have a backup in case of an outage. Instead of quickly building an app in another region, it's best to reuse the existing one with different flags.
 
@@ -323,3 +323,6 @@ HEALTHCHECK --interval=1m --timeout=3s \
 ## Summing Up
 
 The set of instructions provided will help you add layers to your defense strategy for container images. This will make it much more difficult for intruders to navigate your systems, often causing them to give up on an attack. Additionally, these measures will aid in detecting attacks, allowing you to address them proactively.
+
+## Other reading materials and considerations
+- [Beware of npm/python credential-stealers post-install scripts](https://dev.to/qpwo/npm-install-actual-malware-1pmo)
