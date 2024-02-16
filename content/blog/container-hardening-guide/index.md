@@ -44,7 +44,7 @@ During this stage, you will identify potential vulnerabilities that can be addre
 
 2. **Vulnerabilities in the source code dependencies.** Make sure to configure tools like Renovate or Dependabot to keep your source code dependencies up-to-date and free of known vulnerabilities. Another tool that is being mentioned often is Snyk.
 
-3. **Vulnerabilities in the operating system packages.** If you are using a scratch-based image, you don't have to worry about anything because there is no package manager available. However, if you are using any other image, there are scanners available. These scanners typically work on already built container images, so we will address them later in the article.
+3. **Vulnerabilities in the operating system packages.** If you are using a scratch-based image, you don't have to worry about anything because there is no package manager available. However, if you are using any other image, there are scanners available. These scanners typically work on already-built container images, so we will address them later in the article.
  
 4.  **Run Linter for a DockerFile**, for example, Hadolint, to ensure you create small, secure, efficient, and maintainable Docker images. If you fail to meet best practices, the tool will provide relevant alerts and recommendations.
 
@@ -127,20 +127,20 @@ This set of recommendations is simple to complete and can be performed within a 
     FROM ghcr.io/fivexl/fivexl/secure-container-image-base:${BASE_IMAGE_TAG} AS runtime
     ```
 
-5.  **Get rid of any valuable files on disk inside the container** with .dockerignore. When building an app, you often store credentials and other important data necessary for a container build. You need to clean up .git and .n files, as well as credentials, to prevent an intruder from accessing valuable data easily. Run .dockerignore and skip the files.  Beware of recursive copy. Example of .dockerignore content:
+5.  **Get rid of any valuable files on disk inside the container with .dockerignore and use secrets mount**. When you're creating an app, it's common to store important data like credentials that are necessary for testing or building the application. However, it's crucial to make sure that sensitive information like credentials, .env and .git files are cleaned up to prevent unauthorized access. It's recommended to use the .dockerignore file to skip these files. Be careful not to use the recursive copy option, as this can lead to unintended consequences. Additionally, if you need to pass secrets like access tokens or cloud keys to the build process, you can use the secret mount option for the docker build. Another option is to pass SSH agent mounts. Check out these links for more information: [secret mount option for docker build](https://docs.docker.com/build/building/secrets/) and [SSH agent mounts](https://docs.docker.com/build/building/secrets/#ssh-mounts). Example of .dockerignore content:
     ```dockerfile
     # Ignore Git directory
     .git/
     # Ignore all markdown files
     *.md
-    # Ignore all .n files
-    *.n
+    # Ignore all .env files
+    *.env
+    *.env.*
     # Ignore credentials
     credentials.json
     # Ignore temporary files
     *.tmp
     ```
-Also, if you have to pass any kind of secrets to the build process. Like tokens to access private libraries or repositories, cloud access keys then use [secret mount option for docker build](https://docs.docker.com/build/building/secrets/), there is also a possibility [to pass SSH agent](https://docs.docker.com/build/building/secrets/#ssh-mounts)
 
 6.  **Use [lprobe](https://fivexl.io/blog/lprobe/) instead of wget/curl for Health Checks**. It's important to note that using the wget and curl commands can create an opportunity for intruders to download and execute additional hacking tools on your system. To avoid compromising your security, FivexL has developed an alternative called lprobe, which allows you to securely run health checks. This tool is limited to calling only localhost, making it a safer option for your system's security.
     ```dockerfile
