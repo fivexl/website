@@ -5,7 +5,7 @@ summary: 'Discover FivexL expert advice on CI/CD pipelines and branching strateg
 date: 2023-12-19
 author: Andrey Devyatkin
 panel_image: best thinking.png
-tags: ['AWS', 'CI/CD']
+tags: ['AWS', 'CI/CD', 'fivexl-way']
 ---
 While FivexL’s specialization is building AWS infrastructure as code for startups, we are frequently asked about best practices for CI/CD, branching strategies, and development workflow organization. This document aims to gather collective experience and answer the most commonly asked questions we get from the customers. So our consultants can share this document and then have a conversation based on it instead of explaining all the ideas all over again. Also, it is easy to forget to mention something; thus, through this document, we attempt to maintain a consistent baseline of ideas.  
 ## Strong Opinions, Weakly Held  

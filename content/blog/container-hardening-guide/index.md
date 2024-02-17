@@ -8,7 +8,7 @@ summary: 'Comprehensive and continuously updated list of best practices for secu
 date: 2024-02-15
 author: Andrey Devyatkin Vladimir Samoylov Anton Eremin
 panel_image: container.png
-tags: [ 'aws', 'container', 'guide', 'security', 'docker', 'golang']
+tags: [ 'aws', 'container', 'guide', 'security', 'docker', 'fivexl-way']
 ---
 Nowadays, containers are everywhere, and we at FivexL work with containers with almost all of our customers. Thus, this guide is an attempt to capture the best practices to re-use them between the projects and make them available to the broader public. If you use this guide to become more secure - we all win. The safer the internet, the better it is for all of us using it. 
 
