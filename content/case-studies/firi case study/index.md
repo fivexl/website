@@ -4,7 +4,7 @@ author_id: 'Vladimir-Samoylov'
 summary: 'FivexL rebuilt and migrated infrastructure to AWS Elastic Container Service for the Norwegian cryptocurrency exchange.'
 date: 2023-03-16 
 author: Vladimir Samoylov
-panel_image: firi1.png
+panel_image: Vova_2.png
 authors_heading: 'Senior consultant leading the project'
 alt_image: vova_small_bnw.png
 case_study: true
