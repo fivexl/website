@@ -8,6 +8,7 @@ information:
 links:
   - { icon: linkedin, url: 'https://www.linkedin.com/in/alexey-eremin/' }
   - { icon: telegram, url: 'https://t.me/haru_eaa/' }
+  - { icon: github, url: 'https://github.com/haru-mamburu' } 
 certifications:
   - 'Economics.png'
   - 'architect.png'
