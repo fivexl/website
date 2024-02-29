@@ -35,7 +35,7 @@ Taking proactive steps beyond the initial scope of support, he created an approa
  - [Terraform AWS S3 Access Logs Athena Table](https://github.com/fivexl/terraform-aws-s3-access-logs-athena-table) Terraform module creates an AWS Glue table designed specifically to query Amazon S3 server access logs in the new date-based partitioning format.
  - [Terraform AWS SSO Elevator](https://github.com/fivexl/terraform-aws-sso-elevator) Slack bot to temporary assign AWS SSO Permission set to a user.
  - [AWS ENI Tagger](https://github.com/fivexl/aws-eni-tagger) Tool adds meaningful tags to your AWS Elastic Network Interfaces (ENIs).
- - [Terraform AWS ECS Events-to-Slack](https://github.com/fivexl/terraform-aws-ecs-events-to-slack) Rules for Amazon EventBridge that fetch ECS events and send that events to Slack.  
+ - [Terraform AWS ECS Events-to-Slack](https://github.com/fivexl/terraform-aws-ecs-events-to-slack) Rules for Amazon EventBridge that fetch ECS events and send that events to Slack.
 
 ### Public activity
 Dedicated to continuous learning, Alexey frequently engages in AWS community events to stay at the forefront of cloud technology.  
