@@ -27,9 +27,9 @@ Alexey provides ongoing technical guidance and infrastructure support for [Kuvio
 Taking proactive steps beyond the initial scope of support, he created an approach to optimize cloud storage. Through a series of experiments involving file merging and partitioning, Alexey engineered a solution that cut S3 bucket costs by 96%. 
 
 ### Certifications
-- AWS Certified Solutions Architect
-- AWS Partner: Accreditation (Technical)
-- AWS Partner: Cloud Economics Accreditation
+- AWS Certified Solutions Architect.
+- AWS Partner: Accreditation (Technical).
+- AWS Partner: Cloud Economics Accreditation.
 
 ### Open-Source Contributions
  - [Terraform AWS S3 Access Logs Athena Table](https://github.com/fivexl/terraform-aws-s3-access-logs-athena-table) Terraform module creates an AWS Glue table designed specifically to query Amazon S3 server access logs in the new date-based partitioning format.
