@@ -10,10 +10,11 @@ links:
   - { icon: telegram, url: 'https://t.me/haru_eaa/' }
   - { icon: github, url: 'https://github.com/haru-mamburu' } 
 certifications:
-  - 'Economics.png'
-  - 'architect.png'
+  - 'cert-data-analytics-specialty.png'
+  - 'cert-solutions-architect-associate.png'
   - 'fivexl.png'
-  - 'Technical.png'
+  - 'cert-cloud-economics-accredited.png'
+  - 'cert-technical-accredited.png'
 
 panel_image: 'Aleksey_author_page.png'
 author_headshot: 'Lesha_head.png'
@@ -21,12 +22,13 @@ author_id: Alexey Eremin
 ---
 Alexey is an AWS Solutions Architect with the focus on building secure, immutable, scale-ready, and cost-effective infrastructure for startups. He has been working with AWS for 3 years and has a strong background in software development.
 ### Specialization
-AWS · DevOps · Terraform
+AWS · DevOps · Data Analytics · Terraform
 ### Recent success story
 Alexey provides ongoing technical guidance and infrastructure support for [Kuvio](https://fivexl.io/case-studies/kuvio-retainer-case-study/), a Swedish SaaS startup, offering a Marketing Data Activation platform designed for the retail e-commerce industry.
 Taking proactive steps beyond the initial scope of support, he created an approach to optimize cloud storage. Through a series of experiments involving file merging and partitioning, Alexey engineered a solution that cut S3 bucket costs by 96%. 
 
 ### Certifications
+- AWS Certified Data Analytics - Specialty.
 - AWS Certified Solutions Architect;
 - AWS Partner: Accreditation (Technical);
 - AWS Partner: Cloud Economics Accreditation.
