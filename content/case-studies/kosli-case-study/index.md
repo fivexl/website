@@ -7,7 +7,7 @@ summary: 'FivexL built a scalable and secure infrastructure in AWS from the grou
 date: 2024-05-21 
 author:  Artem Zhelezov
 panel_image: Artboard.png
-authors_heading: 'Project Success: Managed by Vladimir Samoylov, Architected by Ivan Razzhivin'
+authors_heading: 'Principal consultant leading the project'
 alt_image: wings_bnw.png
 case_study: true
 layout: 'case_study'
