@@ -2,16 +2,16 @@
 title: 'Kosli Case Study'
 author_id: 'Artem Zhelezov'
  
-summary: 'FivexL built a scalable and secure infrastructure in AWS from the ground up in just 3 months for a smart expense management service.'
+summary: 'FivexL helped a Norwegian startup migrate from Google Cloud to AWS ECS, enabling them to scale their business and pass audits.'
 date: 2024-05-21 
 author:  Artem Zhelezov
-panel_image: Artboard.png
+panel_image: artem_gradient.png
 authors_heading: 'Senior consultant leading the project'
 alt_image: artem_quad.png
 case_study: true
 layout: 'case_study'
 tags: ['case study', 'aws']
-testimonial: 'With the new scalable infrastructure in place, we have been able to develop a range of new features for our product.'
+testimonial: 'The FivexL team is very responsive and extremely competent, demonstrating a deep understanding and expertise in AWS.'
 testimonial_author: 'Mike Long'
 testimonial_author_position: 'CEO at Kosli'
 testimonial_cta_url: 'https://sales.fivexl.io/schedule-a-call'
@@ -22,7 +22,7 @@ about_company:
   logo: 'kosli_logo.png'
   heading: 'About Kosli'
   text: |
-   Kosli, a startup from Oslo, is a DevOps change management platform for regulated industries like banking, insurance, healthcare, and medical device manufacturing. It automates change approvals, audits, and compliance, making it easier for teams to meet industry regulations and standards like SOC2 and ISO. By recording every step of the software development process and tracking what’s running in environments, Kosli helps organizations to maintain security and compliance in their software delivery processes.
+   [Kosli](https://www.kosli.com/), a startup from Oslo, is a DevOps change management platform for regulated industries like banking, insurance, healthcare, and medical device manufacturing. It automates change approvals, audits, and compliance, making it easier for teams to meet industry regulations and standards like SOC2 and ISO. By recording every step of the software development process and tracking what’s running in environments, Kosli helps organizations to maintain security and compliance in their software delivery processes.
 double_panel:
   layout: 'case-studies'
   heading: "CASE STUDIES"
