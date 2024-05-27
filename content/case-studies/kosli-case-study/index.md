@@ -3,7 +3,7 @@ title: 'Kosli Case Study'
 author_id: 'Artem Zhelezov'
  
 summary: 'FivexL helped a Norwegian startup migrate from Google Cloud to AWS ECS, enabling them to scale their business and pass audits.'
-date: 2024-05-21 
+date: 2024-05-27 
 author:  Artem Zhelezov
 panel_image: artem_gradient.png
 authors_heading: 'Senior consultant leading the project'
@@ -99,7 +99,7 @@ To bolster security, minimize human error in credential management, and ensure s
 {{< case_study/benefits
     cta_text="Start Your Success Story"
     cta_url="https://sales.fivexl.io/schedule-a-call"
-    image="kosli_benefits.png"
+    image="kosli_benefits_small.png"
     >}}
 {{< pink_heading text="Benefits" >}}
 The new high-performing and secure infrastructure, defined as code, enabled Kosli to scale its business effectively. FivexL built an infrastructure that met their audience's needs and ensured compliance, enhancing security. FivexL developed a disaster recovery plan and helped Kosli pass audits.<br/>  

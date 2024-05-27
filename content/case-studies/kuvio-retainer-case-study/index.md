@@ -8,7 +8,7 @@ date: 2022-01-10
 author:  Andrey Devyatkin Alexey Eremin
 panel_image: andrey_main.png
 authors_heading: 'Two lead consultants for the project'
-alt_image: andrey_quad.png
+alt_image: andrey_quad_bnw.png
 case_study: true
 layout: 'case_study'
 tags: ['case study', 'aws']
