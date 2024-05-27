@@ -93,7 +93,7 @@ To bolster security, minimize human error in credential management, and ensure s
 {{</ case_study/solution >}} 
 
 {{< case_study/section >}}
-{{< md >}}![diagram](infra_wings.png){{</ md >}}
+{{< md >}}![diagram](kosli_diagram.png){{</ md >}}
 {{</ case_study/section >}}
 
 {{< case_study/benefits
