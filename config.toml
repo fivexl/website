@@ -54,3 +54,9 @@ disableKinds = ['category'] # Categories disabled initially
 
 [outputs]
   section = ['HTML', 'JSON']
+
+[markup]
+  defaultMarkdownHandler = "goldmark"
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
