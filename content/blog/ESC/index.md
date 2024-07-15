@@ -1,7 +1,7 @@
 ---
 title: 'Keeping your data secure in transit with ECS Service Connect'
 author_id: 'Andrey Devyatkin'
-summary: 'Discover FivexL expert advice on CI/CD pipelines and branching strategies, combining years of hands-on AWS infrastructure experience.'
+summary: 'Deep-dive into AWS ECS Service Connect. How startup can enable encryption in transit with ECS Service Connect and ECS Fargate deployment'
 date: 2024-07-15
 author: Andrey Devyatkin
 panel_image: best thinking.png
