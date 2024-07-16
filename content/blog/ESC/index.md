@@ -23,7 +23,7 @@ FivexL works with startups for whom time to market (how quickly a feature can be
 Amazon ECS Service Connect provides management of service-to-service communication as part of Amazon ECS configuration. It builds both service discovery and a service mesh in Amazon ECS. This provides the complete configuration inside each service, a unified way to refer to other services within namespaces that don't depend on the VPC DNS configuration, and standardized metrics and logs to monitor all of ECS applications. Service Connect only interconnects ECS services.  
 ## Deployment scenarios  
 Let’s imagine we have a typical deployment, illustrated below.  
-{{< image src="ECS3.png" alt="Deplyment Scenario" width="100%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}}  
+{{< image src="ECS1.png" alt="Deplyment Scenario" width="100%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}}  
 Communication from outside the VPC to the Application Load Balancer is encrypted. However, traffic from the load balancer to the target service and communication between services and the database are not encrypted. This is a common scenario that we often observe when conducting AWS infrastructure assessments for startups.  
 ## Service-to-service communication  
 {{< image src="ecs2.png" alt="Deplyment Scenario" width="100%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}}  
