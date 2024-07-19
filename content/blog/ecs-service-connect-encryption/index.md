@@ -5,7 +5,7 @@ summary: 'Deep-dive into AWS ECS Service Connect. How startup can enable encrypt
 date: 2024-07-15
 author: Andrey Devyatkin
 panel_image: ECS.png
-tags: ['AWS', 'ECS', 'ECS Service Conncet']
+tags: ['AWS', 'ECS', 'ECS Service Conncet', 'Encryption']
 ---
 
 <iframe width="840" height="472" src="https://www.youtube.com/embed/z1WQ-YSAsVY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -210,25 +210,3 @@ The final step is to update your service definition to enable encryption in tran
     }
 ```
 That is it! Not very complicated, isn’t it? Well, if it is then there is a perfect open source [ECS service Terraform module](https://github.com/terraform-aws-modules/terraform-aws-ecs) that can handle it for you.
-## Testing  
-Let’s verify that encryption actually works. For that, we would need to capture traffic between ECS services. It could be as easy as running Wireshark on an EC2 instance hosting ECS tasks. But in the case of ECS tasks running on Fargate, things are more complicated.
-To overcome this challenge, let’s use VPC traffic mirroring. With VPC traffic mirroring, a copy of all the packets destined for ENI can be sent to another target, like EC2. On that EC2, we can run Wireshark or tcpdump and capture packets for analysis as usual.
-To set it up, you must find your task's ENI ID, create an EC2 instance, and get its ENI.
-```hcl
-export TESTER_ENI=eni-0c643292ce0c2cd45
-export CONTAINER_ENI=eni-0262dc2b95b2d2398
-export VNI=1026414
-export VPC_ID=$(aws ec2 describe-network-interfaces --network-interface-ids $CONTAINER_ENI --query "NetworkInterfaces[0].VpcId" --output text)
-export CONTAINER_IP=$(aws ec2 describe-network-interfaces --network-interface-ids $CONTAINER_ENI --query "NetworkInterfaces[0].PrivateIpAddress" --output text)
-export SG_ID=$(aws ec2 create-security-group --group-name encryption-tester --description "SG to test ECS Connect Encryption" --vpc-id ${VPC_ID} --query GroupId --output text)
-aws ec2 authorize-security-group-ingress --cidr "${CONTAINER_IP}/32" --group-id $SG_ID --protocol udp --port 4789
-export FILTER_ID=$(aws ec2 create-traffic-mirror-filter --query TrafficMirrorFilter.TrafficMirrorFilterId --output text)
-aws ec2 create-traffic-mirror-filter-rule --destination-cidr-block "0.0.0.0/0" --source-cidr-block "0.0.0.0/0" --traffic-direction ingress --traffic-mirror-filter-id ${FILTER_ID} --rule-action accept --rule-number 100
-aws ec2 create-traffic-mirror-filter-rule --destination-cidr-block "0.0.0.0/0" --source-cidr-block "0.0.0.0/0" --traffic-direction egress --traffic-mirror-filter-id ${FILTER_ID} --rule-action accept --rule-number 100
-export TARGET_ID=$(aws ec2 create-traffic-mirror-target --network-interface-id ${TESTER_ENI} --query TrafficMirrorTarget.TrafficMirrorTargetId --output text)
-aws ec2 create-traffic-mirror-session --network-interface-id ${CONTAINER_ENI} --traffic-mirror-target-id ${TARGET_ID} --session-number 1 --traffic-mirror-filter-id ${FILTER_ID}  --virtual-network-id ${VNI}
-# Clean up
-aws ec2 delete-traffic-mirror-session --traffic-mirror-session-id ${SESSION_ID}
-aws ec2 delete-traffic-mirror-target --traffic-mirror-target-id ${TARGET_ID}
-aws ec2 delete-traffic-mirror-filter --traffic-mirror-filter-i
-```
