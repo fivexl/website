@@ -4,7 +4,7 @@ author_id: 'Andrey Devyatkin'
 summary: 'Deep-dive into AWS ECS Service Connect. How startup can enable encryption in transit with ECS Service Connect and ECS Fargate deployment'
 date: 2024-07-15
 author: Andrey Devyatkin
-panel_image: ECS.png
+panel_image: ECS_article.png
 tags: ['AWS', 'ECS', 'ECS Service Conncet', 'Encryption']
 ---
 
