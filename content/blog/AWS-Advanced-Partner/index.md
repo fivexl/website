@@ -17,4 +17,4 @@ Getting this status means we've met AWS strict criteria for deep experience in i
 ### Real-World Experience and Continuous Learning  
 Almost for five years, we've helped startups in Scandinavia and the US build infrastructure on AWS. We love assisting innovative services to meet their customers - check out [our case studies](https://fivexl.io/case-studies/). During this time, we are continuously learning to stay on the cutting edge of fast-evolving cloud technologies, passing exams, and getting certified.  
 
-{{< image src="Bages.png" alt="AWS Certificates" width="70%" align="left" style="border-radius: 5px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}}
+{{< image src="Bages3.png" alt="AWS Certificates" width="70%" align="left" style="border-radius: 5px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}}
