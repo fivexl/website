@@ -6,19 +6,20 @@
     display: flex;
     max-width: clamp(280px, calc(50vw - 5rem), 640px);
     margin-bottom: clamp(1rem, 4vw, 5.5rem);
+    align-items: center;
     @media (max-width:1280px) {
      max-width: none;
     }
     @media (max-width: 768px) {
       flex-direction: column;
       gap: 20px;
-      align-items: center;
     }
   }
 
   &-AwardImg {
     width: 200px;
     height: auto;
+    align-self: center;
   }
 
   &-Wrapper {
