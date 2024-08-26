@@ -12,13 +12,13 @@
     @media (max-width: 768px) {
       flex-direction: column;
       gap: 20px;
+      align-items: center;
     }
   }
 
   &-AwardImg {
     width: 200px;
-    height: fit-content;
-    align-self: center;
+    height: auto;
   }
 
   &-Wrapper {
