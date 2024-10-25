@@ -5,6 +5,7 @@ roles:
   - Co-Founder of FivexL
 information:
   - Certified AWS Architect
+  - Over 6 years of experience building infrastructure on AWS
 links:
   - { icon: linkedin, url: 'https://www.linkedin.com/in/artem-zhelezov-70228093/' }
 certifications:
@@ -19,7 +20,15 @@ author_id: Artem Zhelezov
 Result-oriented AWS Solutions Architect with the focus on building scale-ready, secure, and cost-efficient infrastructure for startups. 
 
 ### Specialization
-AWS · Infrastructure as code · CI/CD
+AWS · ECS · Infrastructure as code · CI/CD
+
+### Expertise
+* Migration to AWS
+* Multi-Regional Setup
+* Cost Optimization
+* SOC 2 Compliance Assistance
+* Disaster Recovery Planning
+
 
 ### Certifications
 * AWS Certified Solutions Architect Associate
@@ -34,6 +43,11 @@ Before founding FivexL, Artem spent 13 years at Rosatom, working in engineering 
 His experience in engineering nuclear power plants, where security is the top priority, gives Artem a unique perspective on the architecture and security of cloud-based environments.
 
 ### Personality
-
+Artem loves music - he plays guitar, drums, and accordion. He’s performed in rock bands and has written drum parts for electronic music as a composer.
 
 ### Recommendations
+"Artem and the team have been great at supporting our needs. They are very responsive and extremely competent, demonstrating a deep understanding and expertise in AWS."  
+*[Mike Long CEO at Kosli](https://fivexl.io/case-studies/kosli-case-study/)*  
+  
+"It's important to note not only the technical skills of cloud engineering consultant Artem but also his soft skills. It was a pleasure to work with him. He proved to be a responsible professional who could explain or describe anything, as well as document anything that needed more information. This is a big advantage of working with FivexL!"  
+*[Andrey Kolpakov CTO at New Stream](https://fivexl.io/case-studies/new-stream-case-study/)
