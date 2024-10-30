@@ -18,7 +18,7 @@ certifications:
   
 panel_image: 'Gui_main.png'
 author_headshot: 'Gui.png'
-author_id: Guilherme-Ferreira
+author_id: Guilherme Ferreira
 ---
 AWS Solutions Architect focusing on building high-performing, production-ready, scalable, and secure infrastructure defined in code. 
 ### Specialization
