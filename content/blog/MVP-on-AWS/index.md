@@ -7,6 +7,11 @@ author: Guilherme Ferreira
 panel_image: MVP_article.png
 tags: [ 'MVP', 'startup', 'AWS']
 ---
+<iframe width="560" height="315" src="https://www.youtube.com/embed/wxrH1MicgRA?si=qXr9CvVBXLlF8nXL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<br>
+</br> 
+
 When you're in the early stages of building a startup, there's one thing you know for sure: time and resources are limited. Choosing the right technology can help you move quickly and efficiently. In this article, we'll explore what an MVP really is and how AWS can help you move from idea to deployment with minimal fuss.
 
 ## What is an MVP?
