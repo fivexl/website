@@ -5,7 +5,7 @@ roles:
   - Co-Founder of FivexL
 information:
   - Accomplished AWS Architect
-  - Designed and built a several AWS organizations from ground up
+  - Designed and built several AWS organizations from the ground up
 links:
   - { icon: linkedin, url: 'https://www.linkedin.com/in/artem-zhelezov-70228093/' }
 certifications:
@@ -17,7 +17,7 @@ panel_image: 'Artem_author_page.png'
 author_headshot: 'Artem_head.png'
 author_id: Artem Zhelezov
 ---
-Result-oriented AWS Solutions Architect with the focus on building scale-ready, secure, and cost-efficient infrastructure for startups. 
+Result-oriented AWS Solutions Architect with a focus on building scale-ready, secure, and cost-efficient infrastructure for startups. 
 
 ### Specialization
 AWS · ECS · Infrastructure as code · CI/CD
@@ -25,8 +25,8 @@ AWS · ECS · Infrastructure as code · CI/CD
 ### Expertise
 * Applicaiton and data migrations to AWS
 * Networking and AWS organizations design
-* Constainer orchestraion using ECS
-* Multi-Regional setup and architecting for Disaster Recovery
+* Container orchestration using ECS
+* Multi-regional setup and architecting for Disaster Recovery
 * SOC 2 Compliance Assistance
 * Cost Optimization
 * CI/CD using GitHub Actions
