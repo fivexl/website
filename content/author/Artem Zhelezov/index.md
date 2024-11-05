@@ -4,8 +4,8 @@ roles:
   - Senior Cloud Engineering Consultant 
   - Co-Founder of FivexL
 information:
-  - Certified AWS Architect
-  - Over 6 years of experience building infrastructure on AWS
+  - Accomplished AWS Architect
+  - Designed and built several AWS organizations from the ground up
 links:
   - { icon: linkedin, url: 'https://www.linkedin.com/in/artem-zhelezov-70228093/' }
 certifications:
@@ -17,22 +17,25 @@ panel_image: 'Artem_author_page.png'
 author_headshot: 'Artem_head.png'
 author_id: Artem Zhelezov
 ---
-Result-oriented AWS Solutions Architect with the focus on building scale-ready, secure, and cost-efficient infrastructure for startups. 
+Result-oriented AWS Solutions Architect with a focus on building scale-ready, secure, and cost-efficient infrastructure for startups. 
 
 ### Specialization
 AWS · ECS · Infrastructure as code · CI/CD
 
 ### Expertise
-* Migration to AWS
-* Multi-Regional Setup
-* Cost Optimization
+* Applicaiton and data migrations to AWS
+* Networking and AWS organizations design
+* Container orchestration using ECS
+* Multi-regional setup and architecting for Disaster Recovery
 * SOC 2 Compliance Assistance
-* Disaster Recovery Planning
-
+* Cost Optimization
+* CI/CD using GitHub Actions
+* Infrastructure as code using Terraform
 
 ### Certifications
 * AWS Certified Solutions Architect Associate
-* Certified ScrumMaster
+* HashiCorp Certified: Terraform Associate
+* Certified Scrum Master
 
 ### Education
 Master's Degree in Engineering  
