@@ -98,12 +98,13 @@ These accounts are ready to accept workloads with ECS clusters and supporting re
 By implementing these components, FivexL’s RightStart for AWS provides a comprehensive AWS Landing Zone that is secure, scalable, and compliant. It might sound like a lot of work, but not getting it right from the beginning will cause even more work down the line and hinder or completely stop the product's scalability. Redoing it later can become very complicated and costly.<br/>  
 <br/>  
 
-### Key Benefits of AWS RightStart by FivexL 
-- Rapid Deployment: Infrastructure set up in just a few weeks, saving months of effort.  
-- Scalability: Supports thousands of users, ensuring smooth company growth.  
-- Data Protection: Security from day one, protecting sensitive data.  
-- Cost Efficiency: Effective management to avoid unexpected expenses.  
-- Compliance: Meets regulatory requirements, ensuring clients' trust and reliability.<br/> 
+<h3> Key Benefits of AWS RightStart by FivexL </h3> 
+
+- Rapid Deployment: Infrastructure set up in just a few weeks, saving months of effort.  <br/> 
+- Scalability: Supports thousands of users, ensuring smooth company growth.  <br/> 
+- Data Protection: Security from day one, protecting sensitive data.  <br/> 
+- Cost Efficiency: Effective management to avoid unexpected expenses.  <br/> 
+- Compliance: Meets regulatory requirements, ensuring clients' trust and reliability. <br/> 
 <br/>  
 This setup typically takes a solo in-house specialist over a year to complete, but with FivexL expertise and automation, it was delivered to Clearway Health in just a couple of weeks. The startup saves time, avoids mistakes, reduces costs, and ensures no costly rework later in the process.<br/> 
 <br/>   
