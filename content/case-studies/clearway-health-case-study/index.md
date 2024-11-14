@@ -59,7 +59,7 @@ This baseline setup is a key part of AWS RightStart, which allows the startup to
 FivexL implements Organizational Units (OUs) to group accounts with similar or related functions to apply common policies, share common resources, or provision and manage common resources.  
 
 **Logs Archive Account**
-All logs are replicated and stored in an immutable log storage setup, ensuring they cannot be altered or deleted, and no one has access by default.This is important for startups to ensure compliance and maintain a reliable audit trail.
+All access and security logs are replicated and stored in an immutable log storage setup, ensuring they cannot be altered or deleted, and no one has access to this account by default.This is important for startups to ensure compliance and maintain a reliable audit trail.
 {{</ case_study/column >}}
 {{< case_study/column >}}
 **Security Tooling Account**  
@@ -76,7 +76,6 @@ Multi-regional AWS KMS keys are created and set up in this dedicated account for
 
 **Backup Account**  
 Clearway Health received pre-created backup accounts in production, development, and staging environments. This setup will help protect the startup's data against loss and ensure business continuity when it becomes necessary.
-
 
 **Workload Accounts**  
 These accounts are ready to accept workloads with ECS clusters and supporting resources pre-configured for different components (e.g., frontend, backend) based on the software architecture. It allows the startup to deploy their applications quickly and efficiently, focusing on growth and innovation.  
