@@ -21,12 +21,17 @@ AWS Solutions Architect with the focus on building secure, immutable, scale-read
 ### Specialization
 AWS · DevOps · Terraform · Python
 
-### Recent success story
+### Recent Success Story
 Anton played a significant role in the FivexL development team on the Terraform AWS SSO Elevator project, making a notable contribution.
 [The Terraform AWS SSO Elevator](https://github.com/fivexl/terraform-aws-sso-elevator) is an open-source module designed for implementing temporary elevated access via the AWS IAM Identity Center (the successor to AWS Single Sign-On) and Slack.
 
 ### Certifications
 - AWS Certified Solutions Architect
+
+### Public Speaking and Volunteering
+- Speaker at [AWS Community Day Mongolia 2024](https://awsmongolia.com/aws-community-day-2024-a-gathering-of-it-professionals-and-cloud-technology-enthusiasts/): "Just-in-Time Access for AWS IAM Identity Center."
+- Speaker at [AWS Community Day Armenia 2024](https://aws-community-day.am/): "From Complexity to Clarity: The Tale of AWS Access Evolution."
+- Volunteer at [AWS Community Day Central Asia 2024](https://www.awsug.uz/), supporting organizers and contributing to event coordination. 
 
 ### Education
 Anton is currently pursuing his Bachelor of Information Technology at North-Caucasus Federal University.
