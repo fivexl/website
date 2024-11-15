@@ -2,7 +2,7 @@
 title: 'Clearway Health Case Study'
 author_id: 'Guilherme Ferreira'
  
-summary: 'FivexL helped a Norwegian startup migrate from Google Cloud to AWS ECS, enabling them to scale their business and pass audits.'
+summary: 'FivexL helped an American startup, Clearway Health, build a strong, scalable, and secure foundation with AWS RightStart for future development and rapid scaling.'
 date: 2024-11-11 
 author:  Guilherme Ferreira
 panel_image: artem_gradient.png
