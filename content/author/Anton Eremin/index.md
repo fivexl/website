@@ -21,8 +21,17 @@ AWS Solutions Architect with the focus on building secure, immutable, scale-read
 ### Specialization
 AWS · DevOps · Terraform · Python
 
-### Recent Success Story
-Anton played a significant role in the FivexL development team on the Terraform AWS SSO Elevator project, making a notable contribution.
+### Recent Success Story  
+Anton worked on internal FivexL projects that were later successfully implemented for several FivexL clients.  
+He developed **FivexL's productized service: AWS RightStart**.  
+[AWS RightStart by FivexL](https://aws.amazon.com/marketplace/pp/prodview-d4lown4cemykw) is a Control Tower-based Landing Zone, implemented as infrastructure as code using Terraform/OpenTofu, with advanced features for access management and governance at scale. This solution enables startups to set up a secure, scalable AWS foundation with:
+* Dedicated accounts using a multi-account strategy
+* Centralized organization management with Control Tower
+* Enhanced security through Centralized Security Tools
+* Effective cost management
+* Self-service account provisioning using GitOps and AWS Account Factory for Terraform (AFT)  
+  
+Anton played a significant role in the FivexL development team on **the Terraform AWS SSO Elevator project**, making a notable contribution.  
 [The Terraform AWS SSO Elevator](https://github.com/fivexl/terraform-aws-sso-elevator) is an open-source module designed for implementing temporary elevated access via the AWS IAM Identity Center (the successor to AWS Single Sign-On) and Slack.
 
 ### Certifications
