@@ -42,6 +42,8 @@ Anton played a significant role in the FivexL development team on **the Terrafor
 - Speaker at [AWS Community Day Armenia 2024](https://aws-community-day.am/): "From Complexity to Clarity: The Tale of AWS Access Evolution."
 - Volunteer at [AWS Community Day Central Asia 2024](https://www.awsug.uz/), supporting organizers and contributing to event coordination. 
 
+{{< image src="Anton_speak.jpg" alt="Anton at AWS Community day" width="19%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}} {{< image src="AntonAWS.jpeg" alt="Anton at AWS Community day Central Asia" width="45%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}}  
+{{< image src="AntonAWS2.jpg" alt="Anton at AWS Community day" width="33.8%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}} {{< image src="AntonAWS1.jpeg" alt="Anton at AWS Community day" width="30.1%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}}
 ### Education
 Anton is currently pursuing his Bachelor of Information Technology at North-Caucasus Federal University.
 
