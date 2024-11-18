@@ -28,7 +28,7 @@ Alexey provides ongoing technical guidance and infrastructure support for [Kuvio
 Taking proactive steps beyond the initial scope of support, he created an approach to optimize cloud storage. Through a series of experiments involving file merging and partitioning, Alexey engineered a solution that cut S3 bucket costs by 96%. 
 
 ### Certifications
-- AWS Certified Data Analytics - Specialty.
+- AWS Certified Data Analytics - Specialty;
 - AWS Certified Solutions Architect;
 - AWS Partner: Accreditation (Technical);
 - AWS Partner: Cloud Economics Accreditation.
@@ -39,11 +39,15 @@ Taking proactive steps beyond the initial scope of support, he created an approa
  - [AWS ENI Tagger](https://github.com/fivexl/aws-eni-tagger) Tool adds meaningful tags to your AWS Elastic Network Interfaces (ENIs).
  - [Terraform AWS ECS Events-to-Slack](https://github.com/fivexl/terraform-aws-ecs-events-to-slack) Rules for Amazon EventBridge that fetch ECS events and send that events to Slack.
 
-### Public activity
-Dedicated to continuous learning, Alexey frequently engages in AWS community events to stay at the forefront of cloud technology.  
+### Public Speaking and Volunteering
+Dedicated to continuous learning, Alexey frequently engages in AWS community events to share knowledge and stay at the forefront of cloud technology: 
+- Speaker at [AWS Community Day Mongolia 2024](https://awsmongolia.com/aws-community-day-2024-a-gathering-of-it-professionals-and-cloud-technology-enthusiasts/): "Athena Best Practices and Beyond: The story of S3 bucket cost."
+- Speaker at [AWS Community Day Armenia 2024](https://aws-community-day.am/): "Athena Best Practices and Beyond: The story of S3 bucket cost."
+- Volunteer at [AWS Community Day Central Asia 2024](https://www.awsug.uz/), supporting organizers and contributing to event coordination. 
 
-{{< image src="Alex1.png" alt="Alexey at AWS Community day" width="20%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}} {{< image src="AA.png" alt="Alexey at AWS Community day Central Asia" width="45%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}}
 
+{{< image src="Alex1.png" alt="Alexey at AWS Community day" width="20%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}} {{< image src="AA.png" alt="Alexey at AWS Community day Central Asia" width="45%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}}  
+{{< image src="alexAWS.jpg" alt="Alexey at AWS Community day" width="31.6%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}} {{< image src="AlexAWS.jpeg" alt="Alexey at AWS Community day Central Asia" width="33.2%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}}
 ### Team view on Alexey
 *“Alexey's superpowers are attention to detail and thoughtfulness. You can trust Alexey with the most complex projects - he will methodically and thoughtfully look into the problem and collect all the data necessary to solve it once and for all. You should also add to this excellent communication with the customer, which is necessary for any successful consultant.”*  
 Principal Consultant, Co-Founder [@Andrey Devyatkin](https://www.linkedin.com/in/andreydevyatkin/)
