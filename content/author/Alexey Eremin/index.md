@@ -20,7 +20,7 @@ panel_image: 'Aleksey_author_page.png'
 author_headshot: 'Lesha_head.png'
 author_id: Alexey Eremin
 ---
-Alexey is an AWS Solutions Architect with the focus on building secure, immutable, scale-ready, and cost-effective infrastructure for startups. He has been working with AWS for 3 years and has a strong background in software development.
+Alexey is an AWS Solutions Architect with the focus on building secure, immutable, scale-ready, and cost-effective infrastructure for startups. He has been working for FivexL for 3 years, leading 2 major projects for clients and assisting with several others.
 ### Specialization
 AWS · DevOps · Data Analytics · Terraform
 ### Recent success story

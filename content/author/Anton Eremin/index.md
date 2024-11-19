@@ -3,9 +3,9 @@ name: Anton Eremin
 roles:
   - AWS Cloud Engineer 
 information:
-  - Public speaker
   - Accomplished AWS Solutions Architect
   - AWS Open-Source Maintainer & Contributor
+  - Public speaker
 
 links:
   - { icon: linkedin, url: 'https://www.linkedin.com/in/anton-eremin-75aab725a/' }
@@ -49,8 +49,6 @@ Anton played a significant role in the FivexL development team on **the Terrafor
 
 {{< image src="Anton_speak.jpg" alt="Anton at AWS Community day" width="19%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}} {{< image src="AntonAWS.jpeg" alt="Anton at AWS Community day Central Asia" width="45%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}}  
 {{< image src="AntonAWS2.jpg" alt="Anton at AWS Community day" width="33.8%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}} {{< image src="AntonAWS1.jpeg" alt="Anton at AWS Community day" width="30.1%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}}
-### Education
-Anton is currently pursuing his Bachelor of Information Technology at North-Caucasus Federal University.
 
 ### Personality
 Anton is a 3D artist engaged in both personal projects and small-scale collaborative efforts. His primary focus is on character creation, where he has developed a keen understanding of anatomy to produce lifelike figures. He also specializes in texturing, ensuring surfaces have the right look and feel, and in prop design, creating detailed items that add depth to scenes. Visit his portfolio at [ArtStation](https://www.artstation.com/antoneremin).
