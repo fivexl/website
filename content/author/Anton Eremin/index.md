@@ -3,8 +3,8 @@ name: Anton Eremin
 roles:
   - AWS Cloud Engineer 
 information:
-  - Accomplished AWS Solutions Architect
   - Public speaker
+  - Accomplished AWS Solutions Architect
   - AWS Open-Source Maintainer & Contributor
 
 links:
@@ -25,8 +25,8 @@ AWS Solutions Architect with the focus on building secure, immutable, scale-read
 AWS · DevOps · Terraform · Python
 
 ### Recent Success Story  
-Anton worked on internal FivexL projects that were later successfully implemented for several FivexL clients.  
-He developed **FivexL's productized service: AWS RightStart**.  
+Anton played a pivotal role in developing internal FivexL projects, which have since been successfully deployed across multiple client environments.
+As the lead developer of **FivexL's productized service: AWS RightStart**, Anton has contributed to creating a robust, scalable solution to establish secure and efficient AWS infrastructures for FivexL clients.
 [AWS RightStart by FivexL](https://aws.amazon.com/marketplace/pp/prodview-d4lown4cemykw) is a Control Tower-based Landing Zone, implemented as infrastructure as code using Terraform/OpenTofu, with advanced features for access management and governance at scale. This solution enables startups to set up a secure, scalable AWS foundation with:
 * Dedicated accounts using a multi-account strategy
 * Centralized organization management with Control Tower
