@@ -3,15 +3,18 @@ name: Anton Eremin
 roles:
   - AWS Cloud Engineer 
 information:
-  - Certified AWS Architect
+  - Accomplished AWS Solutions Architect
+  - Public speaker
+  - AWS Open-Source Maintainer & Contributor
 
 links:
   - { icon: linkedin, url: 'https://www.linkedin.com/in/anton-eremin-75aab725a/' }
  
 certifications:
-  - 'architect.png'
+  - 'cert-solutions-architect-associate.png'
   - 'fivexl.png'
- 
+  - 'cert-cloud-economics-accredited.png'
+  - 'cert-technical-accredited.png'
 
 panel_image: 'Anton_author_page.png'
 author_headshot: 'Anton_head.png'
@@ -35,7 +38,9 @@ Anton played a significant role in the FivexL development team on **the Terrafor
 [The Terraform AWS SSO Elevator](https://github.com/fivexl/terraform-aws-sso-elevator) is an open-source module designed for implementing temporary elevated access via the AWS IAM Identity Center (the successor to AWS Single Sign-On) and Slack.
 
 ### Certifications
-- AWS Certified Solutions Architect
+- AWS Certified Solutions Architect;
+- AWS Partner: Accreditation (Technical);
+- AWS Partner: Cloud Economics Accreditation.
 
 ### Public Speaking and Volunteering
 - Speaker at [AWS Community Day Mongolia 2024](https://awsmongolia.com/aws-community-day-2024-a-gathering-of-it-professionals-and-cloud-technology-enthusiasts/): "Just-in-Time Access for AWS IAM Identity Center."
