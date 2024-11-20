@@ -38,20 +38,15 @@ As the lead developer of **FivexL's productized service, AWS RightStart**, Anton
 
 ### Open Source Contributions
 
-Anton is the maintainer of most FivexL open-source projects and has made significant contributions to their development. 
+Anton is the maintainer of most FivexL open-source projects and has made significant contributions to their development:
 
-#### Terraform AWS SSO Elevator  
 Anton played a key role in the development of the **Terraform AWS SSO Elevator** project.  
 [The Terraform AWS SSO Elevator](https://github.com/fivexl/terraform-aws-sso-elevator) is an open-source module designed to implement temporary elevated access via the AWS IAM Identity Center (the successor to AWS Single Sign-On) and Slack.  
-
-#### Terraform AWS CloudTrail to Slack  
+  
 [Terraform-AWS-Cloudtrail-To-Slack](https://github.com/fivexl/terraform-aws-cloudtrail-to-slack): A module that parses AWS CloudTrail events and sends alerts to Slack for events matching pre-configured rules.  
 
-#### Terraform AWS Account Baseline  
 [Terraform-AWS-Account-Baseline](https://github.com/fivexl/terraform-aws-account-baseline): An open-source Terraform module designed to provide a standardized foundational setup for AWS accounts.  
 
-
-#### Terraform AWS Slack Alerts  
 [Terraform-AWS-Slack-Alerts](https://github.com/fivexl/terraform-aws-slack-alerts): A module that configures AWS ChatBot workspaces and creates alerts for budgets, cost anomalies, GuardDuty findings, health events, and reservation/savings plan utilization. These alerts are sent to Slack for efficient monitoring.
 
 
