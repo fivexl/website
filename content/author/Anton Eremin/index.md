@@ -9,6 +9,7 @@ information:
 
 links:
   - { icon: linkedin, url: 'https://www.linkedin.com/in/anton-eremin-75aab725a/' }
+  - { icon: telegram, url: 'https://t.me/mobessona/' }
  
 certifications:
   - 'cert-solutions-architect-associate.png'
