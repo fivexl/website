@@ -66,8 +66,6 @@ Anton played a key role in the development of the **Terraform AWS SSO Elevator**
 {{< image src="AntonAWS2.jpg" alt="Anton at AWS Community day" width="33.8%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}} {{< image src="AntonAWS1.jpeg" alt="Anton at AWS Community day" width="30.1%" align="left" style="border-radius: 10px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}}
 
 ### Personality
-Anton is a 3D artist engaged in both personal projects and small-scale collaborative efforts. His primary focus is on character creation, where he has developed a keen understanding of anatomy to produce lifelike figures. He also specializes in texturing, ensuring surfaces have the right look and feel, and in prop design, creating detailed items that add depth to scenes. Visit his portfolio at [ArtStation](https://www.artstation.com/antoneremin).
 
- 
-
-
+Anton has a variety of hobbies and interests that keep him engaged and creative. He enjoys photography, traveling, playing ping-pong, poker, and the guitar, as well as a wide range of video games—from Civilization and StarCraft 2 to The Last of Us and World of Warcraft.
+Before joining FivexL, Anton dabbled in 3D art as a hobby, focusing on character modeling, as well as clothing and hair simulation. While it never became a career, you can still check out his portfolio on [ArtStation](https://www.artstation.com/antoneremin).
