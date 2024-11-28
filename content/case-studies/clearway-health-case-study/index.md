@@ -22,7 +22,7 @@ about_company:
   logo: 'Clearway.jpg'
   heading: 'About Clearway Health'
   text: |
-   [Clearway Health](https://www.clearwayhealth.com/) is an American startup from the healthcare sector, originating from Boston Medical Center. Clearway Health develops SaaS to address the complex medication needs of various patient populations. It ensures patients receive their medications on time and provides personalized support to patients, families, providers, and care managers. They collaborate with hospitals and health systems to create and manage specialty pharmacy programs.
+   Clearway Health’s specialty pharmacy services create sustainable assets and build lasting legacies for hospitals and health systems, providing a service that every patient deserves. Our team began at Boston Medical Center Health System, improving access to care and managing the complex medication needs of vulnerable patient populations. Equipped with this unique experience to solve challenges, Clearway Health partners with other hospitals and health systems to provide transformative specialty pharmacy services that put patients first. Our strategic partnerships build and strengthen the infrastructure for specialty pharmacy programs through improving operational workflows, implementing clinical programs, hiring and embedding skilled pharmacists and patient liaisons into the clinical team, providing proprietary software technology, unlocking drug access and leading accreditation processes. Clearway Health delivers a clinically driven service that eliminates barriers to medication access, improves the health of patients and communities, grows revenue at healthy margins for health systems and reduces costs for patients. To learn more, visit www.clearwayhealth.com.
 double_panel:
   layout: 'case-studies'
   heading: "CASE STUDIES"
@@ -35,11 +35,12 @@ double_panel:
 ---
 {{< case_study/challenge  image="gui_challenge.png" image_css="object-position: 18%" >}}
 {{< pink_heading text="Challenge"  sizes="bigger">}}
-Clearway Health aimed to leverage the full power of AWS from the very beginning to ensure their SaaS was built on a robust, scalable, and secure infrastructure. Recognizing the importance of a solid foundation, they opted to use AWS RightStart by FivexL to build their infrastructure from scratch the right way.<br/> 
+Clearway Health aimed to leverage the full power of AWS to ensure their SaaS solution was built on a robust, scalable and secure infrastructure. They opted to partner with an expert in the space to accelerate their success and chose to use AWS RightStart by FivexL to build their infrastructure.<br/>  
 <br/>    
-While creating the first AWS accounts and deploying the first application is relatively straightforward, scaling AWS infrastructure to handle more customer traffic, adapt to market changes, and meet compliance requirements is much more challenging. The complexity multiplies when the infrastructure lacks a solid, well-planned foundation.<br/> 
-<br/>     
-Clearway Health understood that to support their growth ambitions and ensure the success of their SaaS offerings, they needed an expertly crafted AWS environment that could seamlessly scale, adapt to their evolving needs, meet compliance requirements, and provide robust security for their data from day zero. They turned to FivexL, known for helping startups build infrastructure on AWS.
+While creating the first AWS accounts and deploying the first application is relatively straightforward, scaling AWS infrastructure to handle increased traffic, adapt to rapidly evolving market changes, and meet highly complex compliance requirements in the healthcare and specialty pharmacy setting is much more challenging.<br/>  
+<br/>    
+Clearway Health understood that in order to deliver the results they promise to their clients and to transform specialty pharmacy through their SaaS solution, they needed an expertly crafted AWS environment that could seamlessly scale, adapt to their evolving needs, meet compliance requirements and provide robust security for their data from day zero. They turned to FivexL, known for helping their clients build infrastructure on AWS.
+
 
 
 {{</ case_study/challenge >}}
