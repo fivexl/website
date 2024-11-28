@@ -22,7 +22,7 @@ about_company:
   logo: 'Clearway.jpg'
   heading: 'About Clearway Health'
   text: |
-   Clearway Health’s specialty pharmacy services create sustainable assets and build lasting legacies for hospitals and health systems, providing a service that every patient deserves. Our team began at Boston Medical Center Health System, improving access to care and managing the complex medication needs of vulnerable patient populations. Equipped with this unique experience to solve challenges, Clearway Health partners with other hospitals and health systems to provide transformative specialty pharmacy services that put patients first. Our strategic partnerships build and strengthen the infrastructure for specialty pharmacy programs through improving operational workflows, implementing clinical programs, hiring and embedding skilled pharmacists and patient liaisons into the clinical team, providing proprietary software technology, unlocking drug access and leading accreditation processes. Clearway Health delivers a clinically driven service that eliminates barriers to medication access, improves the health of patients and communities, grows revenue at healthy margins for health systems and reduces costs for patients. To learn more, visit www.clearwayhealth.com.
+   Clearway Health’s specialty pharmacy services create sustainable assets and build lasting legacies for hospitals and health systems, providing a service that every patient deserves. Their team began at Boston Medical Center Health System, improving access to care and managing the complex medication needs of vulnerable patient populations. Equipped with this unique experience to solve challenges, Clearway Health partners with other hospitals and health systems to provide transformative specialty pharmacy services that put patients first. Their strategic partnerships build and strengthen the infrastructure for specialty pharmacy programs through improving operational workflows, implementing clinical programs, hiring and embedding skilled pharmacists and patient liaisons into the clinical team, providing proprietary software technology, unlocking drug access and leading accreditation processes. Clearway Health delivers a clinically driven service that eliminates barriers to medication access, improves the health of patients and communities, grows revenue at healthy margins for health systems and reduces costs for patients. To learn more, visit www.clearwayhealth.com.
 double_panel:
   layout: 'case-studies'
   heading: "CASE STUDIES"
@@ -47,39 +47,39 @@ Clearway Health understood that in order to deliver the results they promise to 
  
 {{< case_study/solution heading="Solution" >}}
 {{< case_study/column >}}
-FivexL created a dedicated service called AWS RightStart for requests like these. The team has packed years of experience working with startups into this service, anticipating and addressing the challenges they face at the growth stage to set them up for success.  
+FivexL created a dedicated service called AWS RightStart for requests like these. The team has packed years of experience into this service, anticipating and addressing the challenges they face at each stage of growth to set them up for success.
   
-AWS RightStart leverages the concept of an AWS Landing Zone, which includes a set of best practices and configurations to provide a robust, scalable, and secure multi-account AWS environment.  
+AWS RightStart leverages the concept of an AWS Landing Zone, which includes a set of best practices and configurations to provide a robust, scalable and secure multi-account AWS environment.  
   
 Clearway Health received an infrastructure capable of supporting thousands of future users. Each foundational element is methodically constructed to ensure security and elasticity, providing a solid base that will be sufficient for years to come.
 ### Key Components Clearway Health received 
 **Account Baseline Factory**  
-This baseline setup is a key part of AWS RightStart, which allows the startup to maintain a secure and compliant environment without the overhead of configuring each account individually. All accounts come pre-configured with essential contacts (billing, security, operations) and have unused regions disabled for added protection. Additionally, other preconfigured features simplify the usage of accounts, such as OIDC for CI access, Terraform state management, and more. Security tooling is configured organization-wide, including AWS Config, Security Hub, CloudTrail, and GuardDuty, to ensure comprehensive auditing, security posture management, API call logging, and intrusion detection.<br/>   
+This baseline setup is a key part of AWS RightStart, which allows Clearway Health to maintain a secure and compliant environment without the overhead of configuring each account individually. All accounts come pre-configured with essential contacts (billing, security, operations) and have unused regions disabled for added protection. Additionally, other preconfigured features simplify the usage of accounts, such as OIDC for CI access, Terraform state management and more. Security tooling is configured organization-wide, including AWS Config, Security Hub, CloudTrail and GuardDuty to ensure comprehensive auditing, security posture management, API call logging and intrusion detection.<br/>   
 
 **AWS Organization Management Account**  
-FivexL implements Organizational Units (OUs) to group accounts with similar or related functions to apply common policies, share common resources, or provision and manage common resources.  
+FivexL implements Organizational Units (OUs) so Clearway Health can group accounts with similar or related functions to apply common policies, share common resources or provision and manage common resources.  
 
 **Logs Archive Account**
-All access and security logs are replicated and stored in an immutable log storage setup, ensuring they cannot be altered or deleted, and no one has access to this account by default.This is important for startups to ensure compliance and maintain a reliable audit trail.
+All access and security logs are replicated and stored in an immutable log storage setup, ensuring they cannot be altered or deleted, and no one has access to this account by default. This is important for companies like Clearway Health to ensure compliance and maintain a reliable audit trail.
 {{</ case_study/column >}}
 {{< case_study/column >}}
 **Security Tooling Account**  
-This account features a centralized setup for CloudTrail, Security Hub, Config, and GuardDuty, ensuring organization-wide security monitoring and alerting. This centralized security management helps Clearway Health quickly detect and respond to potential threats across their entire AWS environment.    
+This account features a centralized setup for CloudTrail, Security Hub, Config and GuardDuty, ensuring organization-wide security monitoring and alerting. This centralized security management helps Clearway Health quickly detect and respond to potential threats across their entire AWS environment.    
 
 **SSO Account**  
-AWS IAM Identity Center (SSO) is configured with an IDP provider, predefined permission sets, and Slack integration for temporary access, ensuring secure and efficient identity management. This setup simplifies access management ensuring that developers of the startup have the right level of access.
+AWS IAM Identity Center (SSO) is configured with an IDP provider, predefined permission sets and Slack integration for temporary access, ensuring secure and efficient identity management. This setup simplifies access management ensuring that developers of the startup have the right level of access.
 
 **Network Management Account**  
-Shared VPC configurations are managed with public, private, and database subnets, enhancing security and segregation of workloads. 
+Shared VPC configurations are managed with public, private and database subnets, enhancing security and segregation of workloads. 
 
 **Encryption  Account**  
 Multi-regional AWS KMS keys are created and set up in this dedicated account for centralized management. This ensures that the keys are managed by a dedicated team and are not accidentally deleted or modified. Restrictive key policies are implemented to prevent unauthorized modifications. 
 
 **Backup Account**  
-Clearway Health received pre-created backup accounts in production, development, and staging environments. This setup will help protect the startup's data against loss and ensure business continuity when it becomes necessary.
+Clearway Health received pre-created backup accounts in production, development and staging environments. This setup will help protect their data against loss and ensure business continuity when it becomes necessary.
 
 **Workload Accounts**  
-These accounts are ready to accept workloads with ECS clusters and supporting resources pre-configured for different components (e.g., frontend, backend) based on the software architecture. It allows the startup to deploy their applications quickly and efficiently, focusing on growth and innovation.  
+These accounts are ready to accept workloads with ECS clusters and supporting resources pre-configured for different components (e.g., frontend, backend) based on the software architecture. It allows Clearway Health to deploy their applications quickly and efficiently, focusing on growth and innovation.  
   
 **Explore AWS RightStart by FivexL on [AWS Marketplace](https://aws.amazon.com/marketplace/pp/prodview-d4lown4cemykw)**
 {{</ case_study/column >}}
@@ -95,7 +95,7 @@ These accounts are ready to accept workloads with ECS clusters and supporting re
     image="cristal_benefits.png"
     >}}
 {{< pink_heading text="Benefits" >}}
-By implementing these components, FivexL’s RightStart for AWS provides a comprehensive AWS Landing Zone that is secure, scalable, and compliant. It might sound like a lot of work, but not getting it right from the beginning will cause even more work down the line and hinder or completely stop the product's scalability. Redoing it later can become very complicated and costly.<br/>  
+By implementing these components, FivexL’s RightStart for AWS provides a comprehensive AWS Landing Zone that is secure, scalable and compliant. It might sound like a lot of work, but not getting it right from the beginning will cause even more work down the line and hinder or completely stop the product's scalability. Redoing it later can become very complicated and costly.<br/>  
 <br/>  
 
 <h3> Key Benefits of AWS RightStart by FivexL </h3> 
@@ -106,8 +106,9 @@ By implementing these components, FivexL’s RightStart for AWS provides a compr
 - Cost Efficiency: Effective management to avoid unexpected expenses.  <br/> 
 - Compliance: Meets regulatory requirements, ensuring clients' trust and reliability. <br/> 
 <br/>  
-This setup typically takes a solo in-house specialist over a year to complete, but with FivexL expertise and automation, it was delivered to Clearway Health in just a couple of weeks. The startup saves time, avoids mistakes, reduces costs, and ensures no costly rework later in the process.<br/> 
-<br/>   
-Clearway Health benefits from a robust, scalable, and secure foundation designed for future development and rapid scaling. This strong AWS base ensures security from day one and is built to support their needs for several years, all within a matter of weeks.
+This setup typically takes a solo in-house specialist over a year to complete, but with FivexL expertise and automation, it was delivered to Clearway Health in just a couple of weeks. The partnership with FivexL equipped Clearway Health tosave time, avoid mistakes, reduce costs and ensure no costly rework later in the process.<br/>
+<br/> 
+Clearway Health delivers specialty pharmacy services that are powered by technology. Their SaaS solution is  proprietary, robust, scalable and secure, - ensuring their ability to deliver ongoing development and rapid scalability in a secure way for their hospital and health system clients and the patients they serve. 
+
 
 {{</ case_study/benefits >}}
