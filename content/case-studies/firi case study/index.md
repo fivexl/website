@@ -11,7 +11,7 @@ case_study: true
 layout: 'case_study'
 tags: ['case study', 'aws']
 testimonial: 'FivexL migrated our services to a new infrastructure; the change was seamless. They think outside the box and are always there when we need.'
-testimonial_author: 'Thuc Tuan Hoang'
+testimonial_author: 'Thuc Tuan Hoang,'
 testimonial_author_position: 'CEO at Firi'
 testimonial_author_portrait: Thuc.png
 testimonial_cta_url: 'https://sales.fivexl.io/schedule-a-call'

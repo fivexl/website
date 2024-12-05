@@ -13,7 +13,7 @@ case_study: true
 layout: 'case_study'
 tags: ['case study', 'aws']
 testimonial: 'As our needs and product changed FivexL remained flexible and fully involved in the project'  
-testimonial_author: 'Andrey Kolpakov'
+testimonial_author: 'Andrey Kolpakov,'
 testimonial_author_position: 'CTO at New Stream'
 testimonial_author_portrait: kolp.png
 testimonial_cta_url: 'https://sales.fivexl.io/schedule-a-call'
