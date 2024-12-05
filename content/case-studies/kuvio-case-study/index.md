@@ -11,7 +11,7 @@ case_study: true
 layout: 'case_study'
 tags: ['case study', 'AWS']
 testimonial: 'With the new scalable infrastructure in place, we have been able to develop a range of new features for our product.'
-testimonial_author: 'Henrik Segersven'
+testimonial_author: 'Henrik Segersven,'
 testimonial_author_position: 'CTO at Kuvio'
 testimonial_author_portrait: Henrik.png
 testimonial_cta_url: 'https://sales.fivexl.io/schedule-a-call'

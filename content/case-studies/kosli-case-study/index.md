@@ -12,7 +12,7 @@ case_study: true
 layout: 'case_study'
 tags: ['case study', 'aws']
 testimonial: 'The FivexL team is very responsive and extremely competent, demonstrating a deep understanding and expertise in AWS.'
-testimonial_author: 'Mike Long'
+testimonial_author: 'Mike Long,'
 testimonial_author_position: 'CEO at Kosli'
 testimonial_cta_url: 'https://sales.fivexl.io/schedule-a-call'
 testimonial_author_portrait: MikeL.png

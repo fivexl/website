@@ -12,7 +12,7 @@ case_study: true
 layout: 'case_study'
 tags: ['case study', 'aws']
 testimonial: 'Fivexl has been a great partner. They demonstrate unrivaled expertise in the AWS ecosystem and deliver results quickly.'
-testimonial_author: 'Rusty Atkinson'
+testimonial_author: 'Rusty Atkinson,'
 testimonial_author_position: 'VP, Technology at Clearway Health'
 testimonial_cta_url: 'https://sales.fivexl.io/schedule-a-call'
 testimonial_author_portrait: Rusty.jpg
