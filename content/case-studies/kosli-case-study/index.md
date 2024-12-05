@@ -17,7 +17,7 @@ testimonial_author_position: 'CEO at Kosli'
 testimonial_cta_url: 'https://sales.fivexl.io/schedule-a-call'
 testimonial_author_portrait: MikeL.png
 testimonial_long: |
-  FivexL's communication is excellent, consistently sharing new ideas with us. We trust the team to implement solutions safely and without any issues, we've never experienced downtime with our infrastructure. FivexL has been a reliable partner throughout this entire period.
+  "FivexL's communication is excellent, consistently sharing new ideas with us. We trust the team to implement solutions safely and without any issues, we've never experienced downtime with our infrastructure. FivexL has been a reliable partner throughout this entire period."
 about_company:
   logo: 'kosli_logo.png'
   heading: 'About Kosli'

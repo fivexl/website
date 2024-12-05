@@ -12,12 +12,12 @@ case_study: true
 layout: 'case_study'
 tags: ['case study', 'aws']
 testimonial: ' short testimonial testimonial testimonial'
-testimonial_author: 'Rusty Atkinson'
-testimonial_author_position: 'Vice President, Head of Technology at Clearway Health'
+testimonial_author: 'Rusty Atkinson,'
+testimonial_author_position: 'VP, Technology at Clearway Health'
 testimonial_cta_url: 'https://sales.fivexl.io/schedule-a-call'
 testimonial_author_portrait: Rusty.jpg
 testimonial_long: |
-  Testimonial testimonial testimonial testimonial testimonial testimonial testimonial testimonial testimonial testimonial testimonial testimonial testimonial testimonial testimonial testimonial testimonial testimonial testimonial testimonial testimonial testimonial testimonial testimonial testimonial testimonial testimonial testimonial testimonial testimonial testimonial testimonial testimonial testimonial testimonial testimonial
+  "Fivexl's domain expertise as Cloud Engineering Specialists has helped Clearway Health deliver on our aggressive SaaS vision with confidence that the decisions we are making today will serve us well for years to come. AWS RightStart by FivexL allowed us to get many important, foundational elements decided and solved in record time, which has allowed the Clearway Health Technology Team to spend more time and attention on specialty pharmacy-specific decisions".
 about_company:
   logo: 'Clearway.jpg'
   heading: 'About Clearway Health'
@@ -39,7 +39,8 @@ Clearway Health aimed to leverage the full power of AWS to ensure their SaaS sol
 <br/>    
 While creating the first AWS accounts and deploying the first application is relatively straightforward, scaling AWS infrastructure to handle increased traffic, adapt to rapidly evolving market changes, and meet highly complex compliance requirements in the healthcare and specialty pharmacy setting is much more challenging.<br/>  
 <br/>    
-Clearway Health understood that in order to deliver the results they promise to their clients and to transform specialty pharmacy through their SaaS solution, they needed an expertly crafted AWS environment that could seamlessly scale, adapt to their evolving needs, meet compliance requirements and provide robust security for their data from day zero. They turned to FivexL, known for helping their clients build infrastructure on AWS.
+"We understood that in order to deliver the results we promise to our clients and to transform specialty pharmacy through our SaaS solution, we needed an expertly crafted AWS environment. It had to seamlessly scale, adapt to our evolving needs, meet compliance requirements, and provide robust security for our data from day zero", said Rusty Atkinson, VP, Technology at Clearway Health.
+Recognizing this need, they turned to FivexL, known for helping their clients build infrastructure on AWS.
 
 
 
