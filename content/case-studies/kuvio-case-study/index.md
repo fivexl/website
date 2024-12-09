@@ -6,7 +6,7 @@ date: 2024-01-11
 author: Andrey Devyatkin
 panel_image: Andrey_pink.png
 authors_heading: 'Principal consultant leading the project'
-alt_image: andrey_quad.png
+alt_image: kuvio_quad.png
 case_study: true
 layout: 'case_study'
 tags: ['case study', 'AWS']
