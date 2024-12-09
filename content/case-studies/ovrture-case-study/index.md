@@ -11,7 +11,7 @@ case_study: true
 layout: 'case_study'
 tags: ['case study', 'AWS']
 testimonial: 'The transition was seamless. Our infrastructure is light years ahead of where most small businesses would expect to be.'
-testimonial_author: 'Chris Picht'
+testimonial_author: 'Chris Picht,'
 testimonial_author_position: 'IT Operations Manager & Senior Information Security Officer'
 testimonial_author_portrait: chris.png
 testimonial_cta_url: 'https://sales.fivexl.io/schedule-a-call'
