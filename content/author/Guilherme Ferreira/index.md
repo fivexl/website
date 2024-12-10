@@ -16,7 +16,7 @@ certifications:
   - 'Scrum.png'
   - 'fivexl.png'
   
-panel_image: 'Gui_main.png'
+panel_image: 'Gui_author_page.png'
 author_headshot: 'Gui.png'
 author_id: Guilherme Ferreira
 ---
