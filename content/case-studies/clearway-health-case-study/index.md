@@ -17,7 +17,7 @@ testimonial_author_position: 'VP, Technology at Clearway Health'
 testimonial_cta_url: 'https://sales.fivexl.io/schedule-a-call'
 testimonial_author_portrait: Rusty.jpg
 testimonial_long: |
-  "Fivexl's domain expertise as Cloud Engineering Specialists has helped Clearway Health deliver on our aggressive SaaS vision with confidence that the decisions we are making today will serve us well for years to come. AWS RightStart by FivexL allowed us to get many important, foundational elements decided and solved in record time, which has allowed the Clearway Health Technology Team to spend more time and attention on specialty pharmacy-specific decisions".
+  "Fivexl's domain expertise as Cloud Engineering Specialists has helped Clearway Health deliver on our aggressive SaaS vision with confidence that the decisions we are making today will serve us well for years to come. FivexL's RightStart for AWS allowed us to get many important, foundational elements decided and solved in record time, which has allowed the Clearway Health Technology Team to spend more time and attention on specialty pharmacy-specific decisions".
 about_company:
   logo: 'Clearway.jpg'
   heading: 'About Clearway Health'
@@ -48,14 +48,14 @@ Recognizing this need, they turned to FivexL, known for helping their clients bu
  
 {{< case_study/solution heading="Solution" >}}
 {{< case_study/column >}}
-FivexL created a dedicated service called AWS RightStart for requests like these. The team has packed years of experience into this service, anticipating and addressing the challenges they face at each stage of growth to set them up for success.
+FivexL created a dedicated service called RightStart for AWS for requests like these. The team has packed years of experience into this service, anticipating and addressing the challenges they face at each stage of growth to set them up for success.
   
-AWS RightStart leverages the concept of an AWS Landing Zone, which includes a set of best practices and configurations to provide a robust, scalable and secure multi-account AWS environment.  
+FivexL's RightStart for AWS leverages the concept of an AWS Landing Zone, which includes a set of best practices and configurations to provide a robust, scalable and secure multi-account AWS environment.  
   
 Clearway Health received an infrastructure capable of supporting thousands of future users. Each foundational element is methodically constructed to ensure security and elasticity, providing a solid base that will be sufficient for years to come.
 ### Key Components Clearway Health received 
 **Account Baseline Factory**  
-This baseline setup is a key part of AWS RightStart, which allows Clearway Health to maintain a secure and compliant environment without the overhead of configuring each account individually. All accounts come pre-configured with essential contacts (billing, security, operations) and have unused regions disabled for added protection. Additionally, other preconfigured features simplify the usage of accounts, such as OIDC for CI access, Terraform state management and more. Security tooling is configured organization-wide, including AWS Config, Security Hub, CloudTrail and GuardDuty to ensure comprehensive auditing, security posture management, API call logging and intrusion detection.<br/>   
+This baseline setup is a key part of FivexL's RightStart for AWS, which allows Clearway Health to maintain a secure and compliant environment without the overhead of configuring each account individually. All accounts come pre-configured with essential contacts (billing, security, operations) and have unused regions disabled for added protection. Additionally, other preconfigured features simplify the usage of accounts, such as OIDC for CI access, Terraform state management and more. Security tooling is configured organization-wide, including AWS Config, Security Hub, CloudTrail and GuardDuty to ensure comprehensive auditing, security posture management, API call logging and intrusion detection.<br/>   
 
 **AWS Organization Management Account**  
 FivexL implements Organizational Units (OUs) so Clearway Health can group accounts with similar or related functions to apply common policies, share common resources or provision and manage common resources.  
@@ -82,7 +82,7 @@ Clearway Health received pre-created backup accounts in production, development 
 **Workload Accounts**  
 These accounts are ready to accept workloads with ECS clusters and supporting resources pre-configured for different components (e.g., frontend, backend) based on the software architecture. It allows Clearway Health to deploy their applications quickly and efficiently, focusing on growth and innovation.  
   
-**Explore AWS RightStart by FivexL on [AWS Marketplace](https://aws.amazon.com/marketplace/pp/prodview-d4lown4cemykw)**
+**Explore FivexL's RightStart for AWS on [AWS Marketplace](https://aws.amazon.com/marketplace/pp/prodview-d4lown4cemykw)**
 {{</ case_study/column >}}
 {{</ case_study/solution >}} 
 
@@ -99,7 +99,7 @@ These accounts are ready to accept workloads with ECS clusters and supporting re
 By implementing these components, FivexL’s RightStart for AWS provides a comprehensive AWS Landing Zone that is secure, scalable and compliant. It might sound like a lot of work, but not getting it right from the beginning will cause even more work down the line and hinder or completely stop the product's scalability. Redoing it later can become very complicated and costly.<br/>  
 <br/>  
 
-<h3> Key Benefits of AWS RightStart by FivexL </h3> 
+<h3> Key Benefits of FivexL's RightStart for AWS </h3> 
 
 - Rapid Deployment: Infrastructure set up in just a few weeks, saving months of effort.  <br/> 
 - Scalability: Supports thousands of users, ensuring smooth company growth.  <br/> 
