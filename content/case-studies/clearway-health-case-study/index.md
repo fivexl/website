@@ -1,12 +1,14 @@
 ---
 title: 'Clearway Health Case Study'
-author_id: 'Guilherme Ferreira'
+author_id:
+- 'Guilherme Ferreira'
+- 'Anton Eremin'
  
 summary: 'FivexL helped an American specialty pharmacy services company, Clearway Health, build a strong, scalable, and secure foundation with AWS RightStart for future development and rapid scaling.'
 date: 2024-12-09 
-author:  Guilherme Ferreira
+author:  Guilherme Ferreira Anton Eremin
 panel_image: cristal4.png
-authors_heading: 'Senior consultant leading the project'
+authors_heading: 'Consultant Team Leading the Project'
 alt_image: artem_quad.png
 case_study: true
 layout: 'case_study'
