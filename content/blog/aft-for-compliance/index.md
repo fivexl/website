@@ -39,9 +39,7 @@ So, **AWS Control Tower** is a great starting point: it automates new environmen
 
 **AWS Account Factory for Terraform (AFT)** is essentially a CI/CD pipeline focused on **creating and managing AWS accounts**, rather than deploying applications. It allows you to create new AWS accounts and apply **any** Terraform or Python customizations you need. AFT was developed by the AWS Control Tower team in collaboration with HashiCorp. It’s designed to work on top of AWS Control Tower, automating the provisioning and customization of new accounts.
 
-Here’s how the AFT pipeline works:
-
-## How the AFT Pipeline Works
+### How the AFT Pipeline Works
 
 - **Define Your Account Configuration**  
   You create a Terraform configuration (called an `account_request`) describing the new account’s details—such as its name, email, organizational unit, tags, and any additional settings or custom parameters.
@@ -91,7 +89,7 @@ Here’s how the AFT pipeline works:
 
 From the moment you commit your Terraform file to the final, fully customized account, everything is orchestrated automatically.
 
-## How You Can Customize Accounts with AFT
+### How You Can Customize Accounts with AFT
 
 AFT supports multiple customization layers:
 
@@ -122,17 +120,10 @@ At FivexL, we use AFT together with our **open-source [Terraform Account Baselin
 - **EBS Encryption by Default**: Ensures data at rest is always encrypted.
 - **Block Public EBS Snapshot Sharing**: Prevents data leaks by publicly shared EBS snapshots.
 - **Terraform State Resources**:
-  - **Terraform State Bucket**: Secure location for storing Terraform state files.
+  - **Terraform State Bucket**: Place to store Terraform state files.
   - **Terraform DynamoDB State Lock Table**: Manages state file locking to avoid conflicts.
 - **Access Logs Bucket**: Stores access logs for auditing and security.
 - **cmk_access_logs_bucket**: Some logs, such as NLB access logs, cannot be encrypted using the default AWS-managed KMS key. Since we enforce encryption by default, we need an alternative location for these logs. This bucket serves as a dedicated repository for such access logs, ensuring they are stored securely.
-
-### **Athena Account Baseline**
-- **Athena Query Results Bucket**: A dedicated S3 bucket for storing Athena query results.
-- **Athena Workgroup**: Sets up an AWS Athena workgroup for secure, efficient query execution.
-- **Glue Catalog Database**: Stores metadata, enabling efficient data querying and analysis.
-- **S3 Access Logs Glue Table**: Creates a Glue table for S3 access logs, facilitating data analysis.
-- **Query Results Bucket Lifecycle Rule**: Manages query results lifecycle to optimize storage.
 
 Not a part of the Terraform Account Baseline, but other useful resources that we deploy in every account are:
 - **Access Logs Replication** replication configuration to replicate all access logs to the logs archive account
@@ -155,7 +146,7 @@ I hope this article has helped you understand how AFT can assist with compliance
 
 ### About FivexL
 * [Schedule a call with FivexL](https://sales.fivexl.io/schedule-a-call)  
-* [AWS RightStart by FivexL](https://sales.fivexl.io/aws_right_start)  
+* [Right Start for AWS by FivexL](https://sales.fivexl.io/aws_right_start)
 * **FivexL Open Source Projects:**
   * [Terraform AWS SSO Elevator](https://github.com/fivexl/terraform-aws-sso-elevator)  
   * [Terraform-AWS-Cloudtrail-To-Slack](https://github.com/fivexl/terraform-aws-cloudtrail-to-slack)  
