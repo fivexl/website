@@ -2,7 +2,7 @@
 title: 'How AFT Can Help You Achieve Compliance'
 author_id: 'Anton Eremin'
 summary: 'Introduction to AWS Control Tower and AWS Account Factory for Terraform (AFT) and how it can help you achieve compliance'
-date: 2024-12-27
+date: 2024-06-23
 author: 'Anton Eremin'
 panel_image: AWS partner.png
 tags: [ 'team', 'AWS']
