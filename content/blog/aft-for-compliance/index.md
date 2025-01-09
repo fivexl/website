@@ -4,11 +4,11 @@ author_id: 'Anton Eremin'
 summary: 'Introduction to AWS Control Tower and AWS Account Factory for Terraform (AFT) and how it can help you achieve compliance'
 date: 2024-11-07
 author: 'Anton Eremin'
-panel_image: AWS partner.png
+panel_image: AFT.png
 tags: [ 'team', 'AWS']
 ---
 
-# Introduction 
+## Introduction 
 When you have 10+ AWS accounts, it becomes a problem. You must ensure all are compliant, follow best practices, and have no security gaps. Often, as an organization, you must comply with security standards like SOC 2, PCI DSS, HIPAA, and others. This is not easy, especially at the scale of a large organization. At the same time, it’s a best practice—and AWS recommends using a multi-account strategy—to address issues such as:
 
 - Grouping workloads based on business purpose and ownership
