@@ -8,6 +8,7 @@
         {{- partial "DoublePanel.html" . -}}
         <article class="bls">
             <section class="bls-Content">
+                <h8>Date: {{ time.Format "January 2, 2006" .Params.date }}<br><br></h8>
                 {{- .Content -}}
             </section>
 
