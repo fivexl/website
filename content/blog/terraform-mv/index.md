@@ -1,13 +1,11 @@
 ---
 title: 'Moving Terraform Managed Resources Between States for Scaling AWS Infrastructure in Startups'
 author_id: 
-  - 'Andrey Devyatkin'
   - 'Ivan Razzhivin'
-  - 'ChatGPT'
 summary: 'Comprehensive comparison and a step-by-step guide for implementing two methods for moving Terraform managed resources between states in AWS infrastructure in terms of speed, reliability and scalability.'
-date: 2023-05-05
-author: Andrey Devyatkin ChatGPT
-panel_image: Andrew_Terraform.png
+date: 2024-05-05
+author: Ivan Razzhivin
+panel_image: Ivan_Terraform.png
 tags: ['AWS','Terraform']
 ---
 ### Introduction
