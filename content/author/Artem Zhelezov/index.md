@@ -10,6 +10,7 @@ links:
   - { icon: linkedin, url: 'https://www.linkedin.com/in/artem-zhelezov-70228093/' }
 certifications:
   - 'SolArchitect.png'
+  - 'terraform.png'
   - 'seal-csm.png'
   - 'practitioner.png'
   - 'fivexl.png'  
