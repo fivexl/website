@@ -2,7 +2,7 @@
 title: 'How GitOps Helped a Startup Scale an On-Premise Solution to SaaS'
 author_id: 'Ivan Razzhivin'
 summary: 'look at Spot Instance allocation strategies and see how you can use the Terraform module with no issues and save money at the same time.'
-date: 2022-10-31
+date: 2024-10-31
 author: Ivan Razzhivin
 panel_image: new_image.png
 tags: ['AWS', 'GitOps','Kubernetes']

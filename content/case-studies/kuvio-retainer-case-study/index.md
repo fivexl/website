@@ -8,13 +8,13 @@ date: 2022-01-10
 author:  Andrey Devyatkin Alexey Eremin
 panel_image: andrey_main.png
 authors_heading: 'Two lead consultants for the project'
-alt_image: andrey_quad.png
+alt_image: andrey_quad_bnw.png
 case_study: true
 layout: 'case_study'
 tags: ['case study', 'aws']
 testimonial: 'It is great for us that FivexL can align with our working style without needing to be in the same location'  
 tags: ['case study', 'aws']  
-testimonial_author: 'Henrik Segersven'
+testimonial_author: 'Henrik Segersven,'
 testimonial_author_position: 'CTO at Kuvio'
 testimonial_author_portrait: Henrik.png
 testimonial_cta_url: 'https://sales.fivexl.io/schedule-a-call'
