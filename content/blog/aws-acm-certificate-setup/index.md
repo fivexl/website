@@ -2,7 +2,7 @@
 title:  'Unexpectedly Hard: Overcoming Pitfalls in aws_acm_certificate setup'
 author_id: 'Alexey Eremin'
 summary: 'Encountering the “Invalid for_each argument” and “UnsupportedCertificate” errors when configuring AWS ACM certificates via Terraform is surprisingly common. By removing dynamic for_each logic based on unknown attributes and using the aws_acm_certificate_validation resource to wait for certificate issuance, you can sidestep these pitfalls and ensure successful integration with resources like ELB listeners.'
-date: 2023-12-14
+date: 2025-02-17
 author: Alexey Eremin
 panel_image: lesha_s3c.png
 tags: [ 'ACM', 'Route53', 'AWS']
