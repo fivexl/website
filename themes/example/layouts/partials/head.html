@@ -5,8 +5,8 @@
 <meta name="description" content="{{ default "FiveXL Blog" (default .Site.Params.description (default .Summary .Params.description)) }}">
 <link rel="canonical" href="{{ .Permalink }}">
 
-{{ $styles := resources.Get "sass/main.scss" | resources.ToCSS }}
-{{- if site.IsServer -}}
+{{ $styles := resources.Get "sass/main.scss" | css.Sass }}
+{{- if hugo.IsServer -}}
 <link rel="stylesheet" href="{{ (fingerprint $styles).RelPermalink }}">
 {{- else -}}
 <link rel="stylesheet" href="{{ $styles.RelPermalink }}">

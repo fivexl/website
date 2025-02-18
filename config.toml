@@ -3,8 +3,6 @@ baseURL = '/'
 languageCode = 'en-us'
 title = 'FivexL. Cloud Engineering Specialists'
 
-paginate = 6
-
 # this is just a place holder theme. please remove it later
 theme = "example"
 
@@ -60,3 +58,6 @@ disableKinds = ['category'] # Categories disabled initially
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+
+[pagination]
+pagerSize = 6
