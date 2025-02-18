@@ -1,0 +1,14 @@
+{
+    "title": "{{ .Title }}",
+    "permalink": "{{ .Permalink }}",
+    "pages": [
+        {{- range $index, $page := .Pages -}}
+            {{- if $index -}},{{- end -}}
+            {
+                "title": "{{ $page.Title }}",
+                "permalink": "{{ $page.Permalink }}",
+                "summary": "{{ $page.Summary }}"
+            }
+        {{- end -}}
+    ]
+} 
