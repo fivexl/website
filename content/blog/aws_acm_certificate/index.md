@@ -138,7 +138,6 @@ locals {
 }
 
 resource "aws_route53_record" "certificate_validation" {
-  provider        = aws.dns
   allow_overwrite = true
 
   ttl     = 60
