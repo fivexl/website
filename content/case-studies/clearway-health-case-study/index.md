@@ -9,7 +9,7 @@ date: 2024-12-09
 author:  Guilherme Ferreira Anton Eremin
 panel_image: cristal4.png
 authors_heading: 'Consultant Team Leading the Project'
-alt_image: artem_quad.png
+alt_image: gui_quad.png
 case_study: true
 layout: 'case_study'
 tags: ['case study', 'aws']

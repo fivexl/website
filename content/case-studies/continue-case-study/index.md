@@ -6,7 +6,7 @@ author_id:
 summary: 'FivexL helped a U.S. AI startup prepare AWS infrastructure for a commercial launch. By combining FivexL’s RightStart for AWS with a production-ready ECS setup, the startup gained a strong foundation for global scaling.'
 date: 2025-04-02 
 author: Alexey Eremin Anton Eremin
-panel_image: Vova_2.png
+panel_image: goto.png
 authors_heading: 'Consultant Team Leading the Project'
 alt_image: vova_small_bnw.png
 case_study: true
@@ -15,15 +15,15 @@ tags: ['case study', 'aws', 'ECS']
 testimonial: 'I think FivexL did a really good job of being deliberate, explicit, and highly consistent about the work.'
 testimonial_author: 'Nate Sesti,'
 testimonial_author_position: 'CTO at Continue'
-testimonial_author_portrait: Thuc.png
+testimonial_author_portrait: nate.png
 testimonial_cta_url: 'https://sales.fivexl.io/schedule-a-call'
 testimonial_long: |
   “I think the biggest key benefit we’ve gotten is the deployment setup we have. It’s easy — any time we push to GitHub and merge a new PR, it’s automatically going to the development branch. We have full control over whether we want to move to staging or not. That’s helped us group and test changes more effectively. And having that magic button to confirm promotion to prod — we’ve had no major outages, no serious bugs, and I think that’s because this pipeline lets us be as deliberate as we want.”
 about_company:
-  logo: 'firi.png'
+  logo: 'contlogo.png'
   heading: 'About Continue'
   text: |
-    Firi takes its name from the Norse word for lighthouse. In less than two years it has become the leading light cryptocurrency exchange and custodial solution in Norway with over 185,000 customers enjoying the peace of mind provided by a fully insured platform. Registered with Finanstilsynet (the Financial Supervisory Authority of Norway), and focused on building trust into the complex world of crypto, Firi aims to build safe products with a localised infrastructure delivering the same assurances as a traditional bank.
+    Continue is AI-startup founded in 2023 in San Francisco. Continue enables developers to create, share, and use custom AI code assistants. The product is designed to integrate directly into developers' existing environments, making AI-enhanced development more accessible and flexible. Continue has gained over 26,000 GitHub stars and built an active community of more than 12,000 developers on Discord. Backed by Y Combinator and Heavybit, the startup recently launched version 1.0 of its product and raised $5 million to accelerate its growth.
 double_panel:
   layout: 'case-studies'
   heading: "CASE STUDIES"
