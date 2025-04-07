@@ -34,7 +34,7 @@ double_panel:
   button_cta: { url: "https://sales.fivexl.io/schedule-a-call", text: "Book a consultation" }
   media_panel: { url: "https://youtu.be/uruLy1goNW0" }
 ---
-{{< case_study/challenge  image="challenge.png" image_css="object-position: center 10%">}}
+{{< case_study/challenge  image="goto_challenge1.png" image_css="object-position: center 10%">}}
 {{< pink_heading text="Challenge"  sizes="bigger">}}
 Continue is a fast-moving AI startup behind a popular open-source AI coding assistant. With a growing community and plans to scale globally, the team was preparing to launch a paid version of their tool — and that meant building a solid infrastructure foundation.<br/>
 <br/>  
@@ -44,7 +44,7 @@ After briefly experimenting with Google Cloud, Continue team decided to migrate 
 <br/>   
 Continue turned to FivexL on the recommendation of Mike Long, CEO at Kosli, a long-time FivexL client, to help them set up the infrastructure needed to support this next stage of the company’s evolution.<br/>
 <br/>    
-“We needed to move fast. There was no time to just test things out slowly — we needed it to work on day one. So it was about setting up the web app and backend, making sure our team could securely access AWS. One important part was being able to test quality before pushing to production. So it was key to have dev, staging, and prod environments that were ideally replicas of each other.” — Nate Sesti at Continue.<br/>
+Speed was critical — the team needed a setup that would work from day one. FivexL helped build a secure environment with separate dev, staging, and production setups to support fast development and reliable releases.<br/>
 <br/>   
 Another key requirement was building a centralized and secure way to manage and distribute configuration files for teams using the SaaS product. The startup needed a system that would prevent sensitive data like access keys from leaking.<br/>
 <br/>   
@@ -98,13 +98,11 @@ With the application running smoothly on ECS and smart integrations like Slack-b
 {{< case_study/benefits
     cta_text="Start Your Success Story"
     cta_url="https://sales.fivexl.io/schedule-a-call"
-    image="benefits_firi.png"
-    blockquote=`FivexL have given us the peace of mind to plan for the future as we aim to expand outside Norway across the Nordics
-
-Firi's platform will be focused on building more around payments so security will play a much larger role as we make upgrades on the database to improve our ability to handle trades in miliseconds.
-
-It's been such an impressive feat to get where we are, with FivexL's involvement it has opened up a whole new world for the business.`
-    blockquote_author="Tuan Hoang CEO at Firi"
+    image="goto_benefits.png"
+    blockquote=`I think FivexL did a really good job of being deliberate, explicit, and highly consistent about the work. From day one, I knew exactly what the goals were, what the scope was, and what to expect — everything was clearly listed and communicated multiple times. And all of it was delivered.<br/> 
+<br/>   
+    Every morning I’d check our Slack channel and see what was done, what’s next, and what I needed to do. It couldn’t have been easier to interact with FivexL. They were extremely responsive, especially during the critical period leading up to launch. That support made a real difference for us`
+    blockquote_author="Nate Sesti, CTO at Continue"
     >}}
 {{< pink_heading text="Benefits" >}}
 By combining FivexL’s RightStart for AWS with a production-ready ECS setup, Continue team was able to launch their paid product confidently — without slowing down development or compromising security.<br/>  
@@ -127,7 +125,7 @@ Continue team now has a clear, modular setup they can manage and extend independ
 <br/>
 <b>Transparent delivery process</b><br/> 
 FivexL delivered the full RightStart for AWS setup in about three weeks. ECS configuration and workload integration followed, with daily Slack updates and regular demos keeping the team in sync throughout the project.<br/> 
-"I think FivexL did a really good job of being deliberate, explicit, and highly consistent about the work. From day one, I knew exactly what the goals were, what the scope was, and what to expect — everything was clearly listed and communicated multiple times. And all of it was delivered. Every morning I’d check our Slack channel and see what was done, what’s next, and what I needed to do. It couldn’t have been easier to interact with FivexL. They were extremely responsive, especially during the critical period leading up to launch. That support made a real difference for us." — Nate Sesti, CTO at Continue.<br/> 
+<br/> 
 {{</ case_study/benefits >}}  
 
 
