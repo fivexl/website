@@ -23,7 +23,7 @@ about_company:
   logo: 'contlogo.png'
   heading: 'About Continue'
   text: |
-    Continue is AI-startup founded in 2023 in San Francisco. Continue enables developers to create, share, and use custom AI code assistants. The product is designed to integrate directly into developers' existing environments, making AI-enhanced development more accessible and flexible. Continue has gained over 26,000 GitHub stars and built an active community of more than 12,000 developers on Discord. Backed by Y Combinator and Heavybit, the startup recently launched version 1.0 of its product and raised $5 million to accelerate its growth.
+    [Continue](https://www.continue.dev/) is AI-startup founded in 2023 in San Francisco. Continue enables developers to create, share, and use custom AI code assistants. The product is designed to integrate directly into developers' existing environments, making AI-enhanced development more accessible and flexible. Continue has gained over 26,000 [GitHub stars](https://github.com/continuedev/continue) and built an active community of more than 12,000 developers on Discord. Backed by Y Combinator and Heavybit, the startup recently launched version 1.0 of its product and raised $5 million to accelerate its growth.
 double_panel:
   layout: 'case-studies'
   heading: "CASE STUDIES"
@@ -58,8 +58,8 @@ To support Continue´s transition to a scalable SaaS product, FivexL proposed a 
 ### FivexL´s RightStart for AWS 
 It gave the team a secure, structured foundation to build on — aligned with AWS best practices and designed to support global growth. It also laid the groundwork for SOC 2 compliance.  
 
-Key elements implemented as part of FivexL´s RightStart included:  
-**Pre-configured AWS infrastructure with growth in mind**
+FivexL’s RightStart delivered the following key elements.  
+**Pre-configured AWS infrastructure with growth in mind**  
 A key part of this setup is FivexL’s Account Factory for Terraform, which automates the creation and configuration of new AWS accounts. It allows startups to scale easily — spinning up new environments or isolated setups for specific products without manual work. Each account is fully prepared with required contacts, region restrictions, OIDC integration for CI access, and built-in security tooling like AWS Config, Security Hub, CloudTrail, and GuardDuty.  
 
 **Security from day one**  
@@ -79,7 +79,8 @@ To support the company’s SOC 2 Type II compliance goals, FivexL´s RightStart 
 **Access management built for teams**  
 To simplify secure access, FivexL configured AWS IAM Identity Center (formerly AWS SSO), with everything managed through Terraform code. This approach provides a consistent, version-controlled way to onboard new team members.  
   
-FivexL built its open-source tool, FivexL’s Terraform AWS SSO Elevator (link to video), directly into the RightStart setup. The tool enables team members to temporarily elevate permissions using AWS IAM Identity Center and Slack, with fine-grained control and no need to modify long-term roles.  
+FivexL built its open-source tool, FivexL’s Terraform AWS SSO Elevator ([watch the video](https://youtu.be/CrIfaNpuCeY?feature=shared)
+), directly into the RightStart setup. The tool enables team members to temporarily elevate permissions using AWS IAM Identity Center and Slack, with fine-grained control and no need to modify long-term roles.  
 “It's been really easy to handle permissions. We're not logging in with the root user every time — we just log in with SSO. I probably do that once or twice a day, and it saves me incredible amount of time. That FivexL´s AWS SSO Elevator where we can be very granular about permissions is also a big deal, especially with compliance in mind.” — Nate Sesti, CTO at Continue.  
 ### Configuring Elastic Container Service (ECS) for application workloads
 To support the launch of Continue’s paid product, FivexL set up Elastic Container Service (ECS) as the foundation for running and scaling application workloads. The goal was to ensure the new SaaS offering would run reliably from day one.
@@ -109,7 +110,7 @@ By combining FivexL’s RightStart for AWS with a production-ready ECS setup, Co
 Anton, FivexL’s consultant on the project, said:
 “The best moment for me was getting a message from the client — during the product launch, everything infrastructure-related went smoothly and perfectly.¨<br/> 
 <br/> 
-That smooth launch was just the start, the infrastructure built through this collaboration continues to deliver long-term value across several key areas:
+That smooth launch was just the start, the infrastructure built through this collaboration continues to deliver long-term value across several areas.
 <br/>
 <b>Built for global growth</b><br/> 
 The infrastructure was designed to scale across regions, with AWS Global Accelerator ensuring fast, reliable performance worldwide — a strong foundation for global scaling.<br/> 
