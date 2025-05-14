@@ -36,11 +36,11 @@ double_panel:
 ---
 {{< case_study/challenge  image="goto_challenge1.png" image_css="object-position: center 10%">}}
 {{< pink_heading text="Challenge"  sizes="bigger">}}
-Continue is a fast-moving AI startup behind a popular open-source AI coding assistant. With a growing community and plans to scale globally, the team was preparing to launch a paid version of their tool — and that meant building a solid infrastructure foundation.<br/>
+Continue is a fast-moving AI startup behind a popular open-source AI coding assistant. With a growing community and plans to scale globally, the team was preparing to launch a commercial offering alongside their tool — and that meant building a solid infrastructure foundation.<br/>
 <br/>  
 Their open-source extensions ran fully on users’ local machines, with no backend, no billing, and no authentication. That setup was enough for the open-source version, but not for a scalable SaaS product. To support the next phase, Continue needed to move to a production-ready cloud environment.<br/>
 <br/>  
-After briefly experimenting with Google Cloud, Continue team decided to migrate to AWS: “We had a very minimal server setup in Google Cloud — something I’d set up manually to support the open source project. I used some Terraform there because that’s what I was most familiar with. But from the point of view of security, trust, reliability, and cost — especially for the enterprises we wanted to work with — AWS was clearly the standard.” said Nate Sesti, CTO at Continue.<br/>
+After briefly experimenting with Google Cloud, the Continue team decided to migrate to AWS: “We had a very minimal server setup in Google Cloud — something I’d set up manually to support the open source project. I used some Terraform and chose GCP because that’s what I was most familiar with. But from the point of view of security, trust, reliability, and cost — especially for the enterprises we wanted to work with — AWS was clearly the standard.” said Nate Sesti, CTO at Continue.<br/>
 <br/>   
 Continue turned to FivexL on the recommendation of Mike Long, CEO at Kosli, a long-time FivexL client, to help them set up the infrastructure needed to support this next stage of the company’s evolution.<br/>
 <br/>    
@@ -69,19 +69,19 @@ FivexL configured centralized logging and threat detection across accounts using
 FivexL set up dedicated backup and encryption accounts to safeguard sensitive data and ensure recoverability. Encryption across environments is managed using centralized AWS KMS keys, following AWS security best practices for sensitive data protection. Automated backups are configured for all environments, with cross-region recovery support where needed — providing a secure and resilient data protection layer.  
   
 **Networking built for performance and isolation**  
-Continue’s network setup includes shared VPCs with public, private, and database subnets.. This structure supports secure communication between services while keeping network management simple.  
+Continue’s network setup includes shared VPCs with public, private, and database subnets. This structure supports secure communication between services while keeping network management simple.  
   
 {{</ case_study/column >}}
 {{< case_study/column >}}  
 **Compliance made easy**  
-To support the company’s SOC 2 Type II compliance goals, FivexL´s RightStart implemented audit-friendly defaults from day one. Logging, monitoring, encryption, and access controls were built in, with Terraform-based configuration that can be reviewed and verified during audits.  
+To support the company’s SOC 2 Type II compliance goals, FivexL's RightStart implemented audit-friendly defaults from day one. Logging, monitoring, encryption, and access controls were built in, with Terraform-based configuration that can be reviewed and verified during audits.  
 
 **Access management built for teams**  
 To simplify secure access, FivexL configured AWS IAM Identity Center (formerly AWS SSO), with everything managed through Terraform code. This approach provides a consistent, version-controlled way to onboard new team members.  
   
 FivexL built its open-source tool, FivexL’s Terraform AWS SSO Elevator ([watch the video](https://youtu.be/CrIfaNpuCeY?feature=shared)
 ), directly into the RightStart setup. The tool enables team members to temporarily elevate permissions using AWS IAM Identity Center and Slack, with fine-grained control and no need to modify long-term roles.  
-“It's been really easy to handle permissions. We're not logging in with the root user every time — we just log in with SSO. I probably do that once or twice a day, and it saves me incredible amount of time. That FivexL´s AWS SSO Elevator where we can be very granular about permissions is also a big deal, especially with compliance in mind.” — Nate Sesti, CTO at Continue.  
+“It's been really easy to handle permissions. We're not logging in with the root user every time — we just log in with SSO. I probably do that once or twice a day, and it saves me an incredible amount of time. That FivexL's AWS SSO Elevator allows us to be very granular about permissions is also a big deal, especially with compliance in mind.” — Nate Sesti, CTO at Continue.  
 ### Configuring Elastic Container Service (ECS) for application workloads
 To support the launch of Continue’s paid product, FivexL set up Elastic Container Service (ECS) as the foundation for running and scaling application workloads. The goal was to ensure the new SaaS offering would run reliably from day one.
 The setup included dedicated networking and workload accounts, with separate environments for development, staging, and production — all defined and managed through Terraform.  
@@ -106,7 +106,7 @@ With the application running smoothly on ECS and smart integrations like Slack-b
     blockquote_author="Nate Sesti, CTO at Continue"
     >}}
 {{< pink_heading text="Benefits" >}}
-By combining FivexL’s RightStart for AWS with a production-ready ECS setup, Continue team was able to launch their paid product confidently — without slowing down development or compromising security.<br/>  
+By combining FivexL’s RightStart for AWS with a production-ready ECS setup, the Continue team was able to launch their paid product confidently — without slowing down development or compromising security.<br/>  
 Anton, FivexL’s consultant on the project, said:
 “The best moment for me was getting a message from the client — during the product launch, everything infrastructure-related went smoothly and perfectly.¨<br/> 
 <br/> 
@@ -122,7 +122,7 @@ FivexL’s RightStart includes an account factory for Terraform, making it easy 
 FivexL’s RightStart for AWS comes with encryption, access controls, centralized logging, and alerting built in. It reduces risk from the start and supports audit readiness for SOC 2 and other compliances.<br/> 
 <br/>
 <b>Infrastructure they can own</b><br/> 
-Continue team now has a clear, modular setup they can manage and extend independently — using the same Terraform modules FivexL provided. They also received full documentation covering how everything works, making it easier to onboard new team members and evolve the system over time.<br/> 
+The Continue team now has a clear, modular setup they can manage and extend independently — using the same Terraform modules FivexL provided. They also received full documentation covering how everything works, making it easier to onboard new team members and evolve the system over time.<br/> 
 <br/>
 <b>Transparent delivery process</b><br/> 
 FivexL delivered the full RightStart for AWS setup in about three weeks. ECS configuration and workload integration followed, with daily Slack updates and regular demos keeping the team in sync throughout the project.<br/> 
