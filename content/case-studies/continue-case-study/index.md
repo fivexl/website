@@ -4,11 +4,11 @@ author_id:
 - 'Anton Eremin'
 - 'Alexey Eremin' 
 summary: 'FivexL helped a U.S. AI startup prepare AWS infrastructure for a commercial launch. By combining FivexL’s RightStart for AWS with a production-ready ECS setup, the startup gained a strong foundation for global scaling.'
-date: 2025-04-02 
+date: 2025-05-14 
 author: Alexey Eremin Anton Eremin
 panel_image: goto.png
 authors_heading: 'Consultant Team Leading the Project'
-alt_image: vova_small_bnw.png
+alt_image: bro_quad.png
 case_study: true
 layout: 'case_study'
 tags: ['case study', 'aws', 'ECS']
@@ -93,7 +93,7 @@ With the application running smoothly on ECS and smart integrations like Slack-b
 {{</ case_study/solution >}}
 
 {{< case_study/section >}}
-{{< md >}}![diagram](diagram_firi.png){{</ md >}}
+{{< md >}}![diagram](diagram_continue.png){{</ md >}}
 {{</ case_study/section >}}
 
 {{< case_study/benefits
