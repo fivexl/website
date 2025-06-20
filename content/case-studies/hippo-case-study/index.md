@@ -15,7 +15,7 @@ tags: ['case study', 'aws', 'SOC2', 'RightStart']
 testimonial: 'I think FivexL did a really good job of being deliberate, explicit, and highly consistent about the work.'
 testimonial_author: 'Mattias Hemmingsson,'
 testimonial_author_position: 'Head of Secuurity at Hippo'
-testimonial_author_portrait: nate.png
+testimonial_author_portrait: mattias.png
 testimonial_cta_url: 'https://sales.fivexl.io/schedule-a-call'
 testimonial_long: |
   “I think the biggest key benefit we’ve gotten is the deployment setup we have. It’s easy — any time we push to GitHub and merge a new PR, it’s automatically going to the development branch. We have full control over whether we want to move to staging or not. That’s helped us group and test changes more effectively. And having that magic button to confirm promotion to prod — we’ve had no major outages, no serious bugs, and I think that’s because this pipeline lets us be as deliberate as we want.”
