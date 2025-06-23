@@ -34,7 +34,7 @@ double_panel:
   button_cta: { url: "https://sales.fivexl.io/schedule-a-call", text: "Book a consultation" }
   media_panel: { url: "https://youtu.be/uruLy1goNW0" }
 ---
-{{< case_study/challenge  image="goto_challenge1.png" image_css="object-position: center 10%">}}
+{{< case_study/challenge  image="hippo_challenge.png" image_css="object-position: center 10%">}}
 {{< pink_heading text="Challenge"  sizes="bigger">}}
 In the early stages of company development, Hippo began collaborating with FivexL to establish HIPAA-compliant AWS infrastructure to support the development of a minimum viable product (MVP). The company operates in a highly regulated space, handling sensitive health data that must comply with strict US legal and technical requirements.<br/>
 <br/>  
