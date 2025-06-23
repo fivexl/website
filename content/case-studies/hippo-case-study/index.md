@@ -36,20 +36,13 @@ double_panel:
 ---
 {{< case_study/challenge  image="goto_challenge1.png" image_css="object-position: center 10%">}}
 {{< pink_heading text="Challenge"  sizes="bigger">}}
-Continue is a fast-moving AI startup behind a popular open-source AI coding assistant. With a growing community and plans to scale globally, the team was preparing to launch a commercial offering alongside their tool — and that meant building a solid infrastructure foundation.<br/>
+In the early stages of company development, Hippo began collaborating with FivexL to establish HIPAA-compliant AWS infrastructure to support the development of a minimum viable product (MVP). The company operates in a highly regulated space, handling sensitive health data that must comply with strict US legal and technical requirements.<br/>
 <br/>  
-Their open-source extensions ran fully on users’ local machines, with no backend, no billing, and no authentication. That setup was enough for the open-source version, but not for a scalable SaaS product. To support the next phase, Continue needed to move to a production-ready cloud environment.<br/>
+As Mattias Hemmingsson, Head of Security at Hippo, explained:  
+ “We’re handling ePHI, which is medical personal information—like what drugs a person is taking, their name, and that kind of thing. So that’s very restricted in terms of how it can be handled. The US has a law called HIPAA, which defines those restrictions—what you can and can’t do. You have to follow these restrictions before you can transfer any PHI data. These rules apply not just internally, but also when working with customers and external partners.”<br/>
 <br/>  
-After briefly experimenting with Google Cloud, the Continue team decided to migrate to AWS: “We had a very minimal server setup in Google Cloud — something I’d set up manually to support the open source project. I used some Terraform and chose GCP because that’s what I was most familiar with. But from the point of view of security, trust, reliability, and cost — especially for the enterprises we wanted to work with — AWS was clearly the standard.” said Nate Sesti, CTO at Continue.<br/>
-<br/>   
-Continue turned to FivexL on the recommendation of Mike Long, CEO at Kosli, a long-time FivexL client, to help them set up the infrastructure needed to support this next stage of the company’s evolution.<br/>
-<br/>    
-Speed was critical — the team needed a setup that would work from day one. FivexL helped build a secure environment with separate dev, staging, and production setups to support fast development and reliable releases.<br/>
-<br/>   
-Another key requirement was building a centralized and secure way to manage and distribute configuration files for teams using the SaaS product. The startup needed a system that would prevent sensitive data like access keys from leaking.<br/>
-<br/>   
-Continue also has a longer-term goal: achieving SOC 2 Type II compliance. For that, they needed a strong infrastructure foundation that would support a future audit.<br/>
-<br/>   
+As the company pivoted and eventually gained traction, it began onboarding integration partnersand each of those partners required passing a security audit. The logical next step was to initiate SOC2 certification to streamline future audits, attract more partners and support business growth. While the infrastructure had evolved well, preparing for SOC2 revealed several compliance gaps. Addressing them required significant effort under a tight deadline.<br/>
+
 {{</ case_study/challenge >}}  
 
 {{< case_study/solution heading="Solution" >}}
