@@ -47,41 +47,35 @@ As the company pivoted and eventually gained traction, it began onboarding integ
 
 {{< case_study/solution heading="Solution" >}}
 {{< case_study/column >}}
-To support Continue´s transition to a scalable SaaS product, FivexL proposed a two-part project: implementing its productized service FivexL´s RightStart for AWS setup and configuring Elastic Container Service (ECS) for application workloads.
 ### FivexL´s RightStart for AWS 
-It gave the team a secure, structured foundation to build on — aligned with AWS best practices and designed to support global growth. It also laid the groundwork for SOC 2 compliance.  
+FivexL provided its productized service, RightStart for AWS—a Control Tower-based Landing Zone—to address these evolving compliance and scaling needs. FivexL’s RightStart is a compilation of best practices and accumulated experience from numerous projects implemented as Terraform templates. It could be deployed to new or existing AWS Organizations in a matter of weeks, allowing for quickly improved infrastructure alignment with regulatory requirements and getting it ready for compliance certification as SOC2 or a security audit.  
 
-FivexL’s RightStart delivered the following key elements.  
-**Pre-configured AWS infrastructure with growth in mind**  
-A key part of this setup is FivexL’s Account Factory for Terraform, which automates the creation and configuration of new AWS accounts. It allows startups to scale easily — spinning up new environments or isolated setups for specific products without manual work. Each account is fully prepared with required contacts, region restrictions, OIDC integration for CI access, and built-in security tooling like AWS Config, Security Hub, CloudTrail, and GuardDuty.  
+RightStart for AWS equips clients with a compliance-ready infrastructure that, while secure, still facilitates rapid development and iteration. This setup includes AFT-based account vending automation, simplifying the provisioning of new accounts with a safe and compliant baseline while enabling the reuse of shared services, such as networking and log aggregation, thus reducing costs and offering granular control.  
+This service was designed to streamline the infrastructure upgrade process, ensuring Hippo’s platform was well-prepared for regulatory compliance and production-level demands.  
 
-**Security from day one**  
-FivexL configured centralized logging and threat detection across accounts using AWS CloudTrail, AWS Config, Security Hub, and GuardDuty. Logs are stored in an immutable archive, making it possible to trace and review all activity across environments. AWS Config continuously monitors resource states and helps the team catch misconfigurations early.  
+With FivexL’s RightStart for AWS, Hippo gained several core benefits.  
+ 
+**Dedicated Accounts with Multi-Account Strategy**  
+Thanks to the collaboration with FivexL from the start, Hippo had already adopted a Multi-Account AWS Strategy (watch the video "Why Use Multiple AWS Accounts?"). This approach allowed them to separate different environments and workloads for better management and security. 
+As a result, the startup received a well-organized structure with accounts arranged by organizational units,  including accounts for workloads, tools, shared networking, observability, and encryption services.  
+Mattias Hemmingsson, Head of Security at Hippo, noted:
+“This setup makes life really simple from a compliance perspective—because I can clearly show: ‘This is the account where we have the sensitive data, and you can see it’s really locked down.’ That’s a key factor. The segmentation of the network, how accounts are set up, and the structure—it’s super helpful for compliance.”
   
-**Data protection and backup strategy**  
-FivexL set up dedicated backup and encryption accounts to safeguard sensitive data and ensure recoverability. Encryption across environments is managed using centralized AWS KMS keys, following AWS security best practices for sensitive data protection. Automated backups are configured for all environments, with cross-region recovery support where needed — providing a secure and resilient data protection layer.  
-  
-**Networking built for performance and isolation**  
-Continue’s network setup includes shared VPCs with public, private, and database subnets. This structure supports secure communication between services while keeping network management simple.  
+**Centralized Organization Management with Control Tower**  
+AWS RightStart by FivexL enabled Hippo to go further by providing centralized control over all accounts within the organization. With Control Tower, changes are not deployed individually to each account. Any modifications are automatically delivered across all accounts, ensuring consistency and saving time. It also included automating security tooling and configurations provided by AWS, enhancing Hippo's infrastructure's overall security and compliance.   
   
 {{</ case_study/column >}}
 {{< case_study/column >}}  
-**Compliance made easy**  
-To support the company’s SOC 2 Type II compliance goals, FivexL's RightStart implemented audit-friendly defaults from day one. Logging, monitoring, encryption, and access controls were built in, with Terraform-based configuration that can be reviewed and verified during audits.  
+**Enhanced Security with Centralized Security Toolsy**  
+With FivexL’s RightStart for AWS, Hippo received a dedicated Security Tooling Account to manage essential tools like CloudTrail, Security Hub, Config, and GuardDuty across the organization. This centralized setup facilitated monitoring and rapid response to potential threats, providing the startup with strong protection for its AWS environment.  
+FivexL included its open-source tool, SSO Elevator for AWS ([watch the video](https://youtu.be/CrIfaNpuCeY?feature=shared)), in the RightStart package. This tool offers temporary elevated access through the AWS IAM Identity Center (the successor to AWS Single Sign-On) and Slack. This arrangement simplified IAM access planning and management while ensuring smooth audits.  
+“SSO Elevator is another really valuable part—access is granted only for a limited time and combined with account segmentation. So the access is specific, not broad. That’s been really helpful for our compliance work,” said Mattias Hemmingsson, Head of Security at Hippo. 
 
-**Access management built for teams**  
-To simplify secure access, FivexL configured AWS IAM Identity Center (formerly AWS SSO), with everything managed through Terraform code. This approach provides a consistent, version-controlled way to onboard new team members.  
-  
-FivexL built its open-source tool, FivexL’s Terraform AWS SSO Elevator ([watch the video](https://youtu.be/CrIfaNpuCeY?feature=shared)
-), directly into the RightStart setup. The tool enables team members to temporarily elevate permissions using AWS IAM Identity Center and Slack, with fine-grained control and no need to modify long-term roles.  
-“It's been really easy to handle permissions. We're not logging in with the root user every time — we just log in with SSO. I probably do that once or twice a day, and it saves me an incredible amount of time. That FivexL's AWS SSO Elevator allows us to be very granular about permissions is also a big deal, especially with compliance in mind.” — Nate Sesti, CTO at Continue.  
-### Configuring Elastic Container Service (ECS) for application workloads
-To support the launch of Continue’s paid product, FivexL set up Elastic Container Service (ECS) as the foundation for running and scaling application workloads. The goal was to ensure the new SaaS offering would run reliably from day one.
-The setup included dedicated networking and workload accounts, with separate environments for development, staging, and production — all defined and managed through Terraform.  
-  
-FivexL set up CI/CD pipelines to automate infrastructure changes across environments, with Slack used for approvals and alerts. This ensures consistency and gives the startup team clear visibility and control.  
-  
-With the application running smoothly on ECS and smart integrations like Slack-based approvals and alerts, Continue now has a deployment setup that just works — and is ready to scale without extra effort. 
+**Effective Cost Management**  
+RightStart for AWS, developed by FivexL, includes features like cost anomaly detection, which alerts the team if spending trends exceed predefined thresholds via email and AWS Chatbot. Using shared configurations, such as network and encryption, reduces the overall resources, leading to significant cost savings.  
+
+**Implementation Process**
+While building infrastructure from scratch with FivexL’s RightStart for AWS is the fastest process, migrating existing infrastructure to RightStart requires some extra preparation. Hippo's existing infrastructure was already defined as code using Terraform, which made the transition to the new configuration simpler. The previous state was exported and compared with the setup used in FivexL's test organization. The FivexL team prepared code to migrate to the new resources while retaining critical resources, such as S3 buckets, which are better transferred rather than recreated. As a result, FivexL helped Hippo seamlessly migrate the existing organization to the new configuration. 
 {{</ case_study/column >}}
 {{</ case_study/solution >}}
 
