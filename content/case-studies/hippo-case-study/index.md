@@ -14,13 +14,13 @@ layout: 'case_study'
 tags: ['case study', 'aws', 'SOC2', 'RightStart']
 testimonial: 'I think FivexL did a really good job of being deliberate, explicit, and highly consistent about the work.'
 testimonial_author: 'Mattias Hemmingsson,'
-testimonial_author_position: 'Head of Secuurity at Hippo'
+testimonial_author_position: 'Head of Security at Hippo'
 testimonial_author_portrait: mattias.png
 testimonial_cta_url: 'https://sales.fivexl.io/schedule-a-call'
 testimonial_long: |
   “I think the biggest key benefit we’ve gotten is the deployment setup we have. It’s easy — any time we push to GitHub and merge a new PR, it’s automatically going to the development branch. We have full control over whether we want to move to staging or not. That’s helped us group and test changes more effectively. And having that magic button to confirm promotion to prod — we’ve had no major outages, no serious bugs, and I think that’s because this pipeline lets us be as deliberate as we want.”
 about_company:
-  logo: 'contlogo.png'
+  logo: 'hippologo.png'
   heading: 'About Hippo'
   text: |
     [Hippo](https://hellohippo.com/) is a U.S. technology company operating in the healthcare sector, an industry known for its strict regulatory requirements. Hippo developed a free, smart platform that helps users navigate the complex world of prescription pricing, identifying the lowest available price. It saves up to 97% on prescriptions. Hippo is accepted at over 70,000 pharmacies nationwide, including CVS, Walgreens, Rite Aid, Walmart, Target, Kroger, Publix, Costco, and more. By empowering users to make smarter choices, Hippo takes the pain out of the healthcare system, proving that while health is priceless, medication should be affordable.
@@ -62,20 +62,24 @@ Mattias Hemmingsson, Head of Security at Hippo, noted:
 “This setup makes life really simple from a compliance perspective—because I can clearly show: ‘This is the account where we have the sensitive data, and you can see it’s really locked down.’ That’s a key factor. The segmentation of the network, how accounts are set up, and the structure—it’s super helpful for compliance.”
   
 **Centralized Organization Management with Control Tower**  
-AWS RightStart by FivexL enabled Hippo to go further by providing centralized control over all accounts within the organization. With Control Tower, changes are not deployed individually to each account. Any modifications are automatically delivered across all accounts, ensuring consistency and saving time. It also included automating security tooling and configurations provided by AWS, enhancing Hippo's infrastructure's overall security and compliance.   
+AWS RightStart by FivexL enabled Hippo to go further by providing centralized control over all accounts within the organization. With Control Tower, changes are not deployed individually to each account.    
   
 {{</ case_study/column >}}
 {{< case_study/column >}}  
-**Enhanced Security with Centralized Security Toolsy**  
+Any modifications are automatically delivered across all accounts, ensuring consistency and saving time. It also included automating security tooling and configurations provided by AWS, enhancing Hippo's infrastructure's overall security and compliance.  
+  
+**Enhanced Security with Centralized Security Tools**  
 With FivexL’s RightStart for AWS, Hippo received a dedicated Security Tooling Account to manage essential tools like CloudTrail, Security Hub, Config, and GuardDuty across the organization. This centralized setup facilitated monitoring and rapid response to potential threats, providing the startup with strong protection for its AWS environment.  
+  
 FivexL included its open-source tool, SSO Elevator for AWS ([watch the video](https://youtu.be/CrIfaNpuCeY?feature=shared)), in the RightStart package. This tool offers temporary elevated access through the AWS IAM Identity Center (the successor to AWS Single Sign-On) and Slack. This arrangement simplified IAM access planning and management while ensuring smooth audits.  
 “SSO Elevator is another really valuable part—access is granted only for a limited time and combined with account segmentation. So the access is specific, not broad. That’s been really helpful for our compliance work,” said Mattias Hemmingsson, Head of Security at Hippo. 
 
 **Effective Cost Management**  
 RightStart for AWS, developed by FivexL, includes features like cost anomaly detection, which alerts the team if spending trends exceed predefined thresholds via email and AWS Chatbot. Using shared configurations, such as network and encryption, reduces the overall resources, leading to significant cost savings.  
 
-**Implementation Process**
-While building infrastructure from scratch with FivexL’s RightStart for AWS is the fastest process, migrating existing infrastructure to RightStart requires some extra preparation. Hippo's existing infrastructure was already defined as code using Terraform, which made the transition to the new configuration simpler. The previous state was exported and compared with the setup used in FivexL's test organization. The FivexL team prepared code to migrate to the new resources while retaining critical resources, such as S3 buckets, which are better transferred rather than recreated. As a result, FivexL helped Hippo seamlessly migrate the existing organization to the new configuration. 
+**Implementation Process**  
+While building infrastructure from scratch with FivexL’s RightStart for AWS is the fastest process, migrating existing infrastructure to RightStart requires some extra preparation. Hippo's existing infrastructure was already defined as code using Terraform, which made the transition to the new configuration simpler. The previous state was exported and compared with the setup used in FivexL's test organization. The FivexL team prepared code to migrate to the new resources while retaining critical resources, such as S3 buckets, which are better transferred rather than recreated.  
+As a result, FivexL helped Hippo seamlessly migrate the existing organization to the new configuration. 
 {{</ case_study/column >}}
 {{</ case_study/solution >}}
 
@@ -87,33 +91,29 @@ While building infrastructure from scratch with FivexL’s RightStart for AWS is
     cta_text="Start Your Success Story"
     cta_url="https://sales.fivexl.io/schedule-a-call"
     image="goto_benefits.png"
-    blockquote=`I think FivexL did a really good job of being deliberate, explicit, and highly consistent about the work. From day one, I knew exactly what the goals were, what the scope was, and what to expect — everything was clearly listed and communicated multiple times. And all of it was delivered.<br/> 
+    blockquote=`When it came time to prove what we'd done during scanning and audits, a lot of the best practice setup was already there. We didn't expect everything to be perfect from the start. We focused on changing things quickly as needed. That makes it easier to go into the SOC 2 process with confidence.<br/> 
 <br/>   
-    Every morning I’d check our Slack channel and see what was done, what’s next, and what I needed to do. It couldn’t have been easier to interact with FivexL. They were extremely responsive, especially during the critical period leading up to launch. That support made a real difference for us`
-    blockquote_author="Nate Sesti, CTO at Continue"
+    I had regular meetings with FivexL during that time, twice a week—like Tuesday and Thursday. If something was found on Tuesday, we could fix it by Thursday. That's a good time frame to work with for compliance.`
+    blockquote_author="Mattias Hemmingsson, Head of Security at Hippo"
     >}}
 {{< pink_heading text="Benefits" >}}
-By combining FivexL’s RightStart for AWS with a production-ready ECS setup, the Continue team was able to launch their paid product confidently — without slowing down development or compromising security.<br/>  
-Anton, FivexL’s consultant on the project, said:
-“The best moment for me was getting a message from the client — during the product launch, everything infrastructure-related went smoothly and perfectly.¨<br/> 
+By teaming up with FivexL and using their RightStart solution, Hippo rapidly transformed its infrastructure to meet compliance demands. The transition, which could have taken a standalone cloud engineer up to a year, was completed in just a few weeks, giving Hippo a solid foundation to build on and focus on product development and scaling.<br/>  
+One of the key benefits of the setup was its flexibility. As the team prepared for SOC2, FivexL remained involved and helped make quick, well-targeted adjustments based on feedback from the auditor.<br/> 
 <br/> 
-That smooth launch was just the start, the infrastructure built through this collaboration continues to deliver long-term value across several areas.
+Mattias Hemmingsson, Head of Security at Hippo, explained:
+“When it came time to prove what we'd done during scanning and audits, a lot of the best practice setup was already there. We didn't expect everything to be perfect from the start. We focused on changing things quickly as needed. That makes it easier to go into the SOC 2 process with confidence. I had regular meetings with FivexL during that time, twice a week—like Tuesday and Thursday. If something was found on Tuesday, we could fix it by Thursday. That's a good time frame to work with for compliance.”
 <br/>
-<b>Built for global growth</b><br/> 
-The infrastructure was designed to scale across regions, with AWS Global Accelerator ensuring fast, reliable performance worldwide — a strong foundation for global scaling.<br/> 
+Meeting strict compliance requirements was essential for both the startup and its clients. By complying with industry standards, Hippo can better serve their clients and more easily attract new ones.<br/> 
 <br/>
-<b>Ready to scale, fast</b> <br/> 
-FivexL’s RightStart includes an account factory for Terraform, making it easy to launch new environments or isolated setups for enterprise clients — all fully automated.<br/>
+The RightStart organizational structure for AWS, developed by FivexL, enables startups to add new accounts and workloads quickly. It is flexible and scalable, allowing it to grow alongside the company.<br/>
 <br/>
-<b>Secure by design</b> <br/> 
-FivexL’s RightStart for AWS comes with encryption, access controls, centralized logging, and alerting built in. It reduces risk from the start and supports audit readiness for SOC 2 and other compliances.<br/> 
-<br/>
-<b>Infrastructure they can own</b><br/> 
-The Continue team now has a clear, modular setup they can manage and extend independently — using the same Terraform modules FivexL provided. They also received full documentation covering how everything works, making it easier to onboard new team members and evolve the system over time.<br/> 
-<br/>
-<b>Transparent delivery process</b><br/> 
-FivexL delivered the full RightStart for AWS setup in about three weeks. ECS configuration and workload integration followed, with daily Slack updates and regular demos keeping the team in sync throughout the project.<br/> 
+The organized multi-account strategy and centralized management made it easier to handle multiple environments, while enhanced security tools and effective cost management ensured strong protection and financial efficiency.<br/> 
 <br/> 
+FivexL built Hippo’s infrastructure using Infrastructure as Code (IaC), following best practices that ensure everything is consistent, easy to manage, and scalable as the company grows. This method also simplifies updates and maintenance, reducing potential errors.<br/> 
+<br/>
+And to make sure the whole team is on the same page, FivexL provided clear, detailed documentation, keeping everything transparent. This is especially helpful as the team expands so new team members can quickly get up to speed and understand how the system works.<br/> 
+<br/>
+Investing in a well-organized infrastructure designed with growth potential ensures seamless scalability and avoids the complexities and high costs of future rework. This approach saved time and money and enabled Hippo to set the stage for continued growth and success.<br/>  
 {{</ case_study/benefits >}}  
 
 
