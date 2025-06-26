@@ -83,9 +83,6 @@ As a result, FivexL helped Hippo seamlessly migrate the existing organization to
 {{</ case_study/column >}}
 {{</ case_study/solution >}}
 
-{{< case_study/section >}}
-{{< md >}}![diagram](diagram_continue.png){{</ md >}}
-{{</ case_study/section >}}
 
 {{< case_study/benefits
     cta_text=`Start Your Success Story`
