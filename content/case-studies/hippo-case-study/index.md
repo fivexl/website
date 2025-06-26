@@ -6,9 +6,9 @@ author_id:
 summary: 'FivexL helped a U.S. AI startup prepare AWS infrastructure for a commercial launch. By combining FivexL’s RightStart for AWS with a production-ready ECS setup, the startup gained a strong foundation for global scaling.'
 date: 2025-06-19 
 author: AAndrey Devyatkin Ivan Razzhivin
-panel_image: goto.png
+panel_image: hippo1.png
 authors_heading: 'Consultant Team Leading the Project'
-alt_image: bro_quad.png
+alt_image: hippobnw.png
 case_study: true
 layout: 'case_study'
 tags: ['case study', 'aws', 'SOC2', 'RightStart']
