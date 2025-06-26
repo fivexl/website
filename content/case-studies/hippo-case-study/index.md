@@ -12,13 +12,13 @@ alt_image: hippobnw.png
 case_study: true
 layout: 'case_study'
 tags: ['case study', 'aws', 'SOC2', 'RightStart']
-testimonial: 'I think FivexL did a really good job of being deliberate, explicit, and highly consistent about the work.'
+testimonial: 'The FivexL team had laid the foundation for SOC2, and we didn’t need to make major changes to get certified.'
 testimonial_author: 'Mattias Hemmingsson,'
 testimonial_author_position: 'Head of Security at Hippo'
 testimonial_author_portrait: mattias.png
 testimonial_cta_url: 'https://sales.fivexl.io/schedule-a-call'
 testimonial_long: |
-  “I think the biggest key benefit we’ve gotten is the deployment setup we have. It’s easy — any time we push to GitHub and merge a new PR, it’s automatically going to the development branch. We have full control over whether we want to move to staging or not. That’s helped us group and test changes more effectively. And having that magic button to confirm promotion to prod — we’ve had no major outages, no serious bugs, and I think that’s because this pipeline lets us be as deliberate as we want.”
+  “For me, there are two most valuable parts of FivexL’s work. One is the multi-account AWS setup. This setup makes life from a compliance perspective really simple—because I can clearly show, ‘This is the account where we have the sensitive data,’ and you can see it’s really locked down.  The second is the SSO Elevator tool — it grants access only for a limited time and works together with account segmentation. So the access is specific and time-bound, not broad or permanent. That’s been really helpful for our compliance work.”
 about_company:
   logo: 'hippologo.png'
   heading: 'About Hippo'
