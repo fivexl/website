@@ -56,7 +56,7 @@ This service was designed to streamline the infrastructure upgrade process, ensu
 With FivexL’s RightStart for AWS, Hippo gained several core benefits.  
  
 **Dedicated Accounts with Multi-Account Strategy**  
-Thanks to the collaboration with FivexL from the start, Hippo had already adopted a Multi-Account AWS Strategy (watch the video "Why Use Multiple AWS Accounts?"). This approach allowed them to separate different environments and workloads for better management and security. 
+Thanks to the collaboration with FivexL from the start, Hippo had already adopted a Multi-Account AWS Strategy ([watch the video "Why Use Multiple AWS Accounts?"](https://youtube.com/live/JBcwjP6HIZc)). This approach allowed them to separate different environments and workloads for better management and security. 
 As a result, the startup received a well-organized structure with accounts arranged by organizational units,  including accounts for workloads, tools, shared networking, observability, and encryption services.  
 Mattias Hemmingsson, Head of Security at Hippo, noted:
 “This setup makes life really simple from a compliance perspective—because I can clearly show: ‘This is the account where we have the sensitive data, and you can see it’s really locked down.’ That’s a key factor. The segmentation of the network, how accounts are set up, and the structure—it’s super helpful for compliance.”
