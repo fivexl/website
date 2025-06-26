@@ -18,7 +18,7 @@ testimonial_author_position: 'Head of Security at Hippo'
 testimonial_author_portrait: mattias.png
 testimonial_cta_url: 'https://sales.fivexl.io/schedule-a-call'
 testimonial_long: |
-  “For me, there are two most valuable parts of FivexL’s work. One is the multi-account AWS setup. This setup makes life from a compliance perspective really simple—because I can clearly show, ‘This is the account where we have the sensitive data,’ and you can see it’s really locked down.  The second is the SSO Elevator tool — it grants access only for a limited time and works together with account segmentation. So the access is specific and time-bound, not broad or permanent. That’s been really helpful for our compliance work.”
+  “For me, there are two most valuable parts of FivexL’s work. One is the multi-account AWS setup. This setup makes life from a compliance perspective really simple, because I can clearly show, ‘This is the account where we have the sensitive data,’ and you can see it’s really locked down.  The second is the SSO Elevator tool — it grants access only for a limited time and works together with account segmentation. So the access is specific and time-bound, not broad or permanent. That’s been really helpful for our compliance work.”
 about_company:
   logo: 'hippologo.png'
   heading: 'About Hippo'
@@ -71,7 +71,7 @@ Any modifications are automatically delivered across all accounts, ensuring cons
 **Enhanced Security with Centralized Security Tools**  
 With FivexL’s RightStart for AWS, Hippo received a dedicated Security Tooling Account to manage essential tools like CloudTrail, Security Hub, Config, and GuardDuty across the organization. This centralized setup facilitated monitoring and rapid response to potential threats, providing the startup with strong protection for its AWS environment.  
   
-FivexL included its open-source tool, SSO Elevator for AWS ([watch the video](https://youtu.be/CrIfaNpuCeY?feature=shared)), in the RightStart package. This tool offers temporary elevated access through the AWS IAM Identity Center (the successor to AWS Single Sign-On) and Slack. This arrangement simplified IAM access planning and management while ensuring smooth audits.  
+FivexL included its open-source tool SSO Elevator for AWS ([watch the video](https://youtu.be/CrIfaNpuCeY?feature=shared)), in the RightStart package. This tool offers temporary elevated access through the AWS IAM Identity Center (the successor to AWS Single Sign-On) and Slack. This arrangement simplified IAM access planning and management while ensuring smooth audits.  
 “SSO Elevator is another really valuable part—access is granted only for a limited time and combined with account segmentation. So the access is specific, not broad. That’s been really helpful for our compliance work,” said Mattias Hemmingsson, Head of Security at Hippo. 
 
 **Effective Cost Management**  
