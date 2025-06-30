@@ -15,7 +15,7 @@ tags: ['case study', 'aws', 'SOC2', 'RightStart']
 testimonial: 'The FivexL team had laid the foundation for SOC2, and we didn’t need to make major changes to get certified.'
 testimonial_author: 'Mattias Hemmingsson,'
 testimonial_author_position: 'Head of Security at Hippo'
-testimonial_author_portrait: mattias.png
+testimonial_author_portrait: matte.png
 testimonial_cta_url: 'https://sales.fivexl.io/schedule-a-call'
 testimonial_long: |
   “For me, there are two most valuable parts of FivexL’s work. One is the multi-account AWS setup. This setup makes life from a compliance perspective really simple, because I can clearly show, ‘This is the account where we have the sensitive data,’ and you can see it’s really locked down.  The second is the SSO Elevator tool — it grants access only for a limited time and works together with account segmentation. So the access is specific and time-bound, not broad or permanent. That’s been really helpful for our compliance work.”
