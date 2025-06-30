@@ -100,11 +100,9 @@ Mattias Hemmingsson, Head of Security at Hippo, explained:<br/>
 “When it came time to prove what we'd done during scanning and audits, a lot of the best practice setup was already there. We didn't expect everything to be perfect from the start. We focused on changing things quickly as needed. That makes it easier to go into the SOC 2 process with confidence. I had regular meetings with FivexL during that time, twice a week—like Tuesday and Thursday. If something was found on Tuesday, we could fix it by Thursday. That's a good time frame to work with for compliance.”<br/>
 <br/>
 He added:<br/>
-“When you’re doing your first audit, you don’t always know how many changes will come up. With FivexL, even big adjustments—like changing the network flow—could be done quickly, often within days. That meant I could start the 4-week audit feeling confident: if we needed to fix something major, we could handle it during the audit itself.”<br/>
+“When you’re doing your first audit, you don’t always know how many changes will come up. With FivexL, even big adjustments—like changing the network flow—could be done quickly, often within days. That meant I could start the 4-week audit feeling confident: if we needed to fix something major, we could handle it during the audit itself.”<br/> 
 <br/>
-Meeting strict compliance requirements was essential for both the startup and its clients. By complying with industry standards, Hippo can better serve their clients and more easily attract new ones.<br/> 
-<br/>
-And to make sure the whole team is on the same page, FivexL provided clear, detailed documentation, keeping everything transparent. This is especially helpful as the team expands, so new team members can quickly get up to speed and understand how the system works.<br/>
+To make sure the whole team is on the same page, FivexL provided clear, detailed documentation, keeping everything transparent. This is especially helpful as the team expands, so new team members can quickly get up to speed and understand how the system works.<br/>
 <br/> 
 Investing in a well-organized infrastructure designed with growth potential ensures seamless scalability and avoids the complexities and high costs of future rework. This approach saved time and money and enabled Hippo to set the stage for continued growth and success.<br/>  
 {{</ case_study/benefits >}}  
