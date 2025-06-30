@@ -92,12 +92,15 @@ As a result, FivexL helped Hippo seamlessly migrate the existing organization to
     blockquote_author=`Mattias Hemmingsson, Head of Security at Hippo`
 >}}
 {{< pink_heading text="Benefits" >}}
-By teaming up with FivexL and using their RightStart solution, Hippo rapidly transformed its infrastructure to meet compliance demands. The transition, which could have taken a standalone cloud engineer up to a year, was completed in just a few weeks, giving Hippo a solid foundation to build on and focus on product development and scaling.<br/>
+Using FivexL’s RightStart solution, Hippo rapidly transformed its infrastructure to meet compliance demands. The transition, which could have taken a standalone cloud engineer up to a year, was completed in just a few weeks, giving Hippo a solid foundation to build on.<br/>
 <br/>  
-One of the key benefits of the setup was its flexibility. As the team prepared for SOC 2, FivexL remained involved and helped make quick, well-targeted adjustments based on feedback from the auditor.<br/> 
+One of the key benefits of the setup was its flexibility. As the team prepared for SOC 2, FivexL stayed involved and helped make quick, well-targeted adjustments based on auditor feedback.<br/> 
 <br/> 
-Mattias Hemmingsson, Head of Security at Hippo, explained:
-“When it came time to prove what we'd done during scanning and audits, a lot of the best practice setup was already there. We didn't expect everything to be perfect from the start. We focused on changing things quickly as needed. That makes it easier to go into the SOC 2 process with confidence. I had regular meetings with FivexL during that time, twice a week—like Tuesday and Thursday. If something was found on Tuesday, we could fix it by Thursday. That's a good time frame to work with for compliance.”
+Mattias Hemmingsson, Head of Security at Hippo, explained:<br/>
+“When it came time to prove what we'd done during scanning and audits, a lot of the best practice setup was already there. We didn't expect everything to be perfect from the start. We focused on changing things quickly as needed. That makes it easier to go into the SOC 2 process with confidence. I had regular meetings with FivexL during that time, twice a week—like Tuesday and Thursday. If something was found on Tuesday, we could fix it by Thursday. That's a good time frame to work with for compliance.”<br/>
+<br/>
+He added:<br/>
+“When you’re doing your first audit, you don’t always know how many changes will come up. With FivexL, even big adjustments—like changing the network flow—could be done quickly, often within days. That meant I could start the 4-week audit feeling confident: if we needed to fix something major, we could handle it during the audit itself.”<br/>
 <br/>
 Meeting strict compliance requirements was essential for both the startup and its clients. By complying with industry standards, Hippo can better serve their clients and more easily attract new ones.<br/> 
 <br/>
