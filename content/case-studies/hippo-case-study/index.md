@@ -4,7 +4,7 @@ author_id:
 - 'Andrey Devyatkin'
 - 'Ivan Razzhivin' 
 summary: 'FivexL helped U.S. healthcare startup Hippo prepare AWS infrastructure for SOC 2 certification. By using FivexL’s RightStart for AWS, Hippo gained a compliance-ready foundation with a well-structured multi-account setup that simplified audits and supported rapid growth.'
-date: 2025-06-30 
+date: 2025-07-30 
 author: AAndrey Devyatkin Ivan Razzhivin
 panel_image: hippo1.png
 authors_heading: 'Consultant Team Leading the Project'
