@@ -13,7 +13,11 @@ enableRobotsTXT = true
 [[menu.main]]
   url = 'https://rightstart.fivexl.io/'
   name = 'RightStart'
-  weight = 5
+  weight = 3
+[[menu.main]]
+  url = 'https://ecs.fivexl.io/'
+  name = 'ECS Blueprint'
+  weight = 4
 [[menu.main]]
   url = 'https://sales.fivexl.io/schedule-a-call'
   name = 'Contact'
@@ -28,7 +32,11 @@ enableRobotsTXT = true
 [[menu.footer_nav]]
   url = 'https://rightstart.fivexl.io/'
   name = 'RightStart'
-  weight = 5  
+  weight = 3
+[[menu.footer_nav]]
+  url = 'https://ecs.fivexl.io/'
+  name = 'ECS Blueprint'
+  weight = 4
 [[menu.footer_nav]]
   url = '/about'
   name = 'About'
