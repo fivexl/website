@@ -4,7 +4,7 @@ author_id:
 - 'Andrey Devyatkin'
 - 'Ivan Razzhivin' 
 summary: 'RightStart for AWS by FivexL gave a U.S. healthcare startup a compliance-ready foundation and multi-account setup, helping them achieve SOC2 certification.'
-date: 2025-07-30 
+date: 2025-08-30 
 author: AAndrey Devyatkin Ivan Razzhivin
 panel_image: hippo1.png
 authors_heading: 'Consultant Team Leading the Project'
