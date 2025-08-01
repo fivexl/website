@@ -3,7 +3,7 @@ title: 'Continue Case Study'
 author_id:
 - 'Anton Eremin'
 - 'Alexey Eremin' 
-summary: 'FivexL helped a U.S. AI startup prepare AWS infrastructure for a commercial launch. By combining FivexL’s RightStart for AWS with a production-ready ECS setup, the startup gained a strong foundation for global scaling.'
+summary: 'FivexL’s RightStart for AWS and production-ready ECS setup gave a U.S. AI startup the infrastructure needed for commercial launch and global scaling.'
 date: 2025-05-14 
 author: Alexey Eremin Anton Eremin
 panel_image: goto.png
