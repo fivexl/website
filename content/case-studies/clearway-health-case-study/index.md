@@ -4,7 +4,7 @@ author_id:
 - 'Guilherme Ferreira'
 - 'Anton Eremin'
  
-summary: 'FivexL helped an American specialty pharmacy services company, Clearway Health, build a strong, scalable, and secure foundation with AWS RightStart for future development and rapid scaling.'
+summary: 'FivexL helped an American specialty pharmacy services company build a strong and secure foundation with AWS RightStart for future development and rapid scaling.'
 date: 2024-12-09 
 author:  Guilherme Ferreira Anton Eremin
 panel_image: cristal4.png
