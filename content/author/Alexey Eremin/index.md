@@ -68,4 +68,3 @@ Consultant [@Maria Zubchenko](https://www.linkedin.com/in/mariazubchenko/)
 *A kind and honest colleague with great potential, and a bright mind. Alexey is able to understand complicated things in detail. He loves rock climbing and is always ready for adventure.”*  
 Consultant [@Ivan Razzhivin](https://www.linkedin.com/in/ivan-razzhivin-97ab61240/)  
 
-
