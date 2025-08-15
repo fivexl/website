@@ -104,7 +104,7 @@ AFT supports multiple customization layers:
 
 Additionally, you can run `pre-api-helpers.sh` and `post-api-helpers.sh` scripts before and after your Terraform customizations, letting you insert any custom logic such as dynamic Terraform configuration generation, Python scripts to remove default VPCs, or other automated tasks.
 
-### High-Level AFT Pipeline Diagram
+### High-Level AFT Pipeline Diagram from AWS documentation
 {{< image src="high-level-aft-diagram.png" alt="High-level AFT pipeline diagram" width="100%" align="left" style="border-radius: 5px; box-shadow: 2px 1px 3px 0 rgba(0,0,0, 0.3)" >}}
 
 ## How AFT Simplifies Achieving Compliance
