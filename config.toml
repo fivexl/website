@@ -11,13 +11,22 @@ enableRobotsTXT = true
 # Main navigation
 [menu]
 [[menu.main]]
-  url = 'https://rightstart.fivexl.io/'
-  name = 'RightStart'
+  identifier = 'products'
+  name = 'Products'
+  url = '#'
   weight = 3
 [[menu.main]]
+  identifier = 'rightstart'
+  url = 'https://rightstart.fivexl.io/'
+  name = 'RightStart'
+  parent = 'products'
+  weight = 1
+[[menu.main]]
+  identifier = 'ecs-blueprint'
   url = 'https://ecs.fivexl.io/'
   name = 'ECS Blueprint'
-  weight = 4
+  parent = 'products'
+  weight = 2
 [[menu.main]]
   url = 'https://sales.fivexl.io/schedule-a-call'
   name = 'Contact'
