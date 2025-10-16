@@ -9,7 +9,9 @@
                 <span class="cst-TestimonialPosition">
                     <span>{{ .Params.testimonial_author }}</span>&nbsp;<span>{{ .Params.testimonial_author_position }}</span>
                 </span>
+                {{ if .Params.testimonial_cta_url }}
                 {{- partial "button_cta" (dict "text" "Book a consultation" "classes" "cst-CTA" "url" .Params.testimonial_cta_url) -}}
+                {{ end }}
             </div>
         </div>
     </div>

@@ -5,6 +5,10 @@
     color: $textSecondary;
     font-size: clamp(2.125rem,4vw, 3.4rem);
     margin-top: 0;
+    
+    &_Centered {
+      text-align: center;
+    }
   }
 
   &-Container {
@@ -32,6 +36,16 @@
       @media (min-width:1024px) {
         font-weight: 500;
         line-height: 1.5;
+      }
+    }
+    
+    &_Centered {
+      text-align: center;
+      
+      p {
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
       }
     }
   }

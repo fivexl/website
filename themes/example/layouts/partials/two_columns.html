@@ -1,7 +1,7 @@
 <section class="twc">
     <div class="twc-Container">
-        <h2 class="twc-Heading">{{ .heading }}</h2>
-        <div class="twc-ColumnsWrapper">
+        <h2 class="twc-Heading{{ if .center }} twc-Heading_Centered{{ end }}">{{ .heading }}</h2>
+        <div class="twc-ColumnsWrapper{{ if .centerContent }} twc-ColumnsWrapper_Centered{{ end }}">
             {{ .Inner }}
         </div>
     </div>
