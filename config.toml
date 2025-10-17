@@ -23,7 +23,7 @@ enableRobotsTXT = true
   weight = 1
 [[menu.main]]
   identifier = 'ecs-blueprint'
-  url = 'https://ecs.fivexl.io/'
+  url = '/ecs-blueprint'
   name = 'ECS Blueprint'
   parent = 'products'
   weight = 2

@@ -1,0 +1,23 @@
+{{ define "main" }}
+    {{ with .Params.double_panel }}{{ partial "double_panel" . }}{{ end }}
+    {{- .Content -}}
+    {{- partial "case_study_testimonial" . -}}
+    {{- partial "CaseStudiesCards" (dict "heading" "Our happy customers") }}
+    {{ if .Params.callout_cta_heading }}
+    <section class="ccta">
+        <h2 class="ccta-Heading">{{ .Params.callout_cta_heading | markdownify }}</h2>
+        {{ partial "button_cta" (dict "url" .Params.callout_cta_url "text" .Params.callout_cta_text) }}
+    </section>
+    {{ end }}
+    <script type="text/javascript" src="/js/carousel.js"></script>
+    <link rel="stylesheet" href="/css/carousel.css">
+{{ end }}
+
+{{ define "bodyScripts" }}
+    {{- if .HasShortcode "case_studies_cards" -}}
+        <script type="text/javascript" src="/js/carousel.js"></script>
+        <link rel="stylesheet" href="/css/carousel.css">
+    {{- end -}}
+{{ end }}
+
+
