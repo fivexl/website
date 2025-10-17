@@ -1,5 +1,5 @@
 ---
-title: 'RightStart for Startups on AWS'
+title: 'FivexL RightStart for Startups on AWS'
 summary: 'Launch your AWS infrastructure the right way from day one. FivexL RightStart provides battle-tested best practices for secure, scalable, and audit-ready AWS environments.'
 date: 2025-10-16
 transparent_nav: true
@@ -13,7 +13,7 @@ callout_cta_url: "https://sales.fivexl.io/schedule-a-call"
 callout_cta_text: "Book a consultation"
 double_panel:
   layout: 'services'
-  heading: "RightStart Foundation for Startups on AWS"
+  heading: "FivexL RightStart Foundation for Startups on AWS"
   subheading: "Build Your AWS Foundation Right From The Start"
   icon_links:
     - { url: "https://github.com/fivexl", icon: "github" }
@@ -22,9 +22,9 @@ double_panel:
   media_panel: { url: "https://youtu.be/uruLy1goNW0" }
 ---
 
-{{< our_team heading="What is RightStart for Startups?" cta_url="https://sales.fivexl.io/schedule-a-call" cta_text="Book a consultation" >}}
+{{< our_team heading="What is FivexL RightStart?" cta_url="https://sales.fivexl.io/schedule-a-call" cta_text="Book a consultation" >}}
 {{< md >}}
-RightStart is FivexL's foundation for startups on AWS—a battle-tested way to launch with secure, scalable, and audit-ready infrastructure from day one. Instead of growing out of a single ad-hoc account into security gaps, compliance headaches (SOC 2, ISO 27001, HIPAA), surprise costs, and brittle manual processes that create technical debt, you start with the right building blocks: multi-account boundaries, least-privilege access, centralized logging, and cost controls—all as code. 
+FivexL RightStart is a foundation for startups on AWS — a battle-tested way to launch with secure, scalable, and audit-ready infrastructure from day one. Instead of growing out of a single ad-hoc account into security gaps, compliance headaches (SOC 2, ISO 27001, HIPAA), surprise costs, and brittle manual processes that create technical debt, you start with the right building blocks: multi-account boundaries, least-privilege access, centralized logging, and cost controls—all as code. 
 
 Built from years of work with successful teams in healthcare and fintech, RightStart applies AWS best practices so you can ship faster, pass audits sooner, and keep spend predictable as you scale.
 {{< /md >}}
