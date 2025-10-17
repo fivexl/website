@@ -80,10 +80,29 @@
         dropdownToggles.forEach(function(toggle) {
             toggle.addEventListener('click', function(e) {
                 e.preventDefault();
+                e.stopPropagation();
                 const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                
+                // Close all other dropdowns first
+                dropdownToggles.forEach(function(otherToggle) {
+                    if (otherToggle !== toggle) {
+                        otherToggle.setAttribute('aria-expanded', 'false');
+                    }
+                });
+                
+                // Toggle this dropdown
                 this.setAttribute('aria-expanded', isExpanded ? 'false' : 'true');
                 console.log('Dropdown toggled:', isExpanded ? 'false' : 'true');
             });
+        });
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.hdr-NavigationItem_Dropdown')) {
+                dropdownToggles.forEach(function(toggle) {
+                    toggle.setAttribute('aria-expanded', 'false');
+                });
+            }
         });
     });
     </script>

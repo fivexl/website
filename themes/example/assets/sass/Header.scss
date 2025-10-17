@@ -154,6 +154,7 @@
     transform: initial;
     top: unset;
     right: unset;
+    overflow: visible;
   }
 }
 
@@ -164,6 +165,7 @@
   width: 100%;
   @media (min-width: 768px) { 
     display: flex;
+    overflow: visible;
   }
 }
 
@@ -200,6 +202,10 @@
 // Dropdown styles
 .hdr-NavigationItem_Dropdown {
   position: relative;
+  
+  @media (min-width: 768px) {
+    overflow: visible;
+  }
 }
 
 .hdr-NavigationDropdownToggle {
@@ -246,13 +252,19 @@
   margin: 0;
   overflow: hidden;
   max-height: 0;
-  transition: max-height 0.3s ease-out;
+  transition: max-height 0.3s ease-out, opacity 0.3s ease, visibility 0.3s ease;
+  position: static;
+  
+  // Mobile: accordion style within the flow
+  background: rgba(0, 0, 0, 0.02);
+  border-radius: 8px;
+  margin: 0.5rem 0;
   
   @media (min-width: 768px) {
+    // Desktop: absolute positioning overlay
     position: absolute;
     top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
     background: white;
     box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.15);
     border-radius: 8px;
@@ -260,51 +272,19 @@
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
     max-height: none;
     padding: 0.5rem 0;
     margin-top: 0.5rem;
-    
-    .hdr-NavigationItem_Dropdown:hover & {
-      opacity: 1;
-      visibility: visible;
-      pointer-events: auto;
-    }
+    z-index: 100;
   }
 }
 
 // Show dropdown when toggle is expanded
-.hdr-NavigationDropdownToggle[aria-expanded="true"] + .hdr-NavigationDropdown {
+.hdr-NavigationItem_Dropdown .hdr-NavigationDropdownToggle[aria-expanded="true"] + .hdr-NavigationDropdown {
   max-height: 500px !important;
-  display: block !important;
-  visibility: visible !important;
   opacity: 1 !important;
-  overflow: visible !important;
+  visibility: visible !important;
   pointer-events: auto !important;
-  
-  // Force simple positioning - show below the button
-  position: static !important;
-  transform: none !important;
-  left: auto !important;
-  top: auto !important;
-  right: auto !important;
-  margin-top: 0 !important;
-  
-  @media (max-width: 767px) {
-    // Mobile: accordion style
-    background: transparent;
-    box-shadow: none;
-    padding: 0;
-  }
-}
-
-// Desktop: also show on hover
-@media (min-width: 768px) {
-  .hdr-NavigationItem_Dropdown:hover .hdr-NavigationDropdown {
-    opacity: 1 !important;
-    visibility: visible !important;
-    pointer-events: auto !important;
-  }
 }
 
 .hdr-NavigationDropdownItem {
