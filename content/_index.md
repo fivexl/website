@@ -60,5 +60,5 @@ There’s no problem that we can’t solve together!
 
 {{< /steps_section >}}
 
-{{< callout_cta heading="This way, you can focus on what you do best <br> without worrying about the underlying infrastructure." cta_url="https://sales.fivexl.io/schedule-a-call" cta_text="Book a consultation" >}}
+{{< callout_cta heading="This way, you can focus on what you do best without worrying about the underlying infrastructure." cta_url="https://sales.fivexl.io/schedule-a-call" cta_text="Book a consultation" >}}
 
