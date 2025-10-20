@@ -1,5 +1,5 @@
 [build]
-  command = "hugo"
+  command = "hugo && echo '=== Generated Pages ===' && find public -name 'index.html' -type f | sort"
   publish = "public"
 
 [build.environment]
