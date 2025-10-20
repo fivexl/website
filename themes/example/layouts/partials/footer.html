@@ -2,22 +2,13 @@
 
     <div class="ftr-ContentWrapper">
 
-        {{ $logo := resources.Get "/img/full-logo_white_transparent.png" }}
-        <a href="{{ .Site.BaseURL }}" alt="Link to homepage">
-            <img width="500" height="500" src="{{ $logo.Permalink }}" class="ftr-Logo" alt="FivexL logo" loading="lazy">
-        </a>
-
-        <nav class="ftr-NavMenu">
-            <ul class="ftr-NavMenu_List">
-                {{ range $i, $v := .Site.Menus.footer_nav }}
-                    <li>
-                        <a
-                            {{ if eq $i 0}}class='ftr-NavMenu_ListHeading'{{ end }}
-                            href="{{ .ConfiguredURL }}">{{ .Name }}</a>
-                    </li>
-                {{ end }}
-            </ul>
-        </nav>
+        <div class="ftr-LogoSection">
+            {{ $logo := resources.Get "/img/full-logo_white_transparent.png" }}
+            <a href="{{ .Site.BaseURL }}" alt="Link to homepage">
+                <img width="500" height="500" src="{{ $logo.Permalink }}" class="ftr-Logo" alt="FivexL logo" loading="lazy">
+            </a>
+            <span class="ftr-Copyright ftr-Copyright_Desktop" role="contentinfo">Copyright &copy;{{ now.Format "2006" }} FivexL</span>
+        </div>
 
         <nav class="ftr-ExternalLinks">
             <h2 class="ftr-ExternalLinks_Heading"><a href="/about">Follow Us</a></h2>
@@ -34,10 +25,9 @@
                     </li>
                 {{ end }}
             </ul>
+            <span class="ftr-Copyright ftr-Copyright_Mobile" role="contentinfo">Copyright &copy;{{ now.Format "2006" }} FivexL</span>
         </nav>
     </div>
-
-<span class="ftr-Copyright" role="contentinfo">Copyright &copy;{{ now.Format "2006" }} FivexL</span>
 
 </footer>
 

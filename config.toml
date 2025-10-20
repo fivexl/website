@@ -66,6 +66,12 @@ enableRobotsTXT = true
   weight = 20
   [menu.footer_external.params]
     icon = 'github'
+[[menu.footer_external]]
+  url = 'https://www.youtube.com/@fivexl'
+  name = 'YouTube'
+  weight = 30
+  [menu.footer_external.params]
+    icon = 'youtube'
 
 disableKinds = ['category'] # Categories disabled initially
 

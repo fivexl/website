@@ -3,6 +3,12 @@
   padding: 3rem 4rem;
   position: relative;
   
+  &-LogoSection {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
   &-Logo {
     // grid-area: Logo;
     width: 100%;
@@ -11,13 +17,13 @@
     object-fit: contain;
     object-position: left top;
     display: block;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
   @media (min-width: 768px) {
     padding: 3rem 2rem 0.75rem;
     &-ContentWrapper {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       margin-inline: auto;
       max-width: 1000px;
     }
@@ -85,14 +91,21 @@
 
 .ftr-Copyright { 
   color: white;
-  position: absolute;
-  left: 1rem;
-  bottom: 1rem;
   font-size: 13px;
-  @media (min-width: 768px) {
-    position: relative;
+  display: block;
+  margin-top: 0.5rem;
+  
+  &_Desktop {
+    display: none;
+    @media (min-width: 768px) {
+      display: block;
+    }
+  }
+  
+  &_Mobile {
     display: block;
-    max-width: 1030px;
-    margin-inline: auto;
+    @media (min-width: 768px) {
+      display: none;
+    }
   }
 }
