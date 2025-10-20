@@ -2,6 +2,7 @@
 title: 'FivexL RightStart for Startups on AWS'
 summary: 'Launch your AWS infrastructure the right way from day one. FivexL RightStart provides battle-tested best practices for secure, scalable, and audit-ready AWS environments.'
 date: 2025-10-16
+layout: "single"
 transparent_nav: true
 testimonial_long: |
   "Fivexl's domain expertise as Cloud Engineering Specialists has helped Clearway Health deliver on our aggressive SaaS vision with confidence that the decisions we are making today will serve us well for years to come. FivexL's RightStart for AWS allowed us to get many important, foundational elements decided and solved in record time, which has allowed the Clearway Health Technology Team to spend more time and attention on specialty pharmacy-specific decisions".
