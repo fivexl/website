@@ -39,11 +39,11 @@ enableRobotsTXT = true
   name = 'FivexL'
   weight = 1
 [[menu.footer_nav]]
-  url = 'https://rightstart.fivexl.io/'
+  url = '/rightstart'
   name = 'RightStart'
   weight = 3
 [[menu.footer_nav]]
-  url = 'https://ecs.fivexl.io/'
+  url = '/ecs-blueprint'
   name = 'ECS Blueprint'
   weight = 4
 [[menu.footer_nav]]
