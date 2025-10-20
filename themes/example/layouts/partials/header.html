@@ -59,7 +59,7 @@
                 <ul class="hdr-NavigationDropdown">
                     {{ range .Children }}
                     <li class="hdr-NavigationDropdownItem">
-                        <a href="{{ relURL .URL }}">{{ .Name }}</a>
+                        <a href="{{ absURL .URL }}">{{ .Name }}</a>
                     </li>
                     {{ end }}
                 </ul>
