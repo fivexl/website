@@ -2,6 +2,13 @@
 title: 'FivexL Blueprint for AWS ECS'
 summary: 'Scale Your Applications with Confidence'
 date: 2025-10-16
+url: "/ecs-blueprint/"
+type: "ecs-blueprint"
+layout: "single"
+_build:
+  render: always
+  list: always
+  publishResources: true
 transparent_nav: true
 testimonial_long: |
   FivexL set up CI/CD pipelines to automate infrastructure changes across environments, with Slack used for approvals and alerts. This ensures consistency and gives the startup team clear visibility and control.
