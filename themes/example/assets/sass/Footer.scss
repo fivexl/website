@@ -92,20 +92,19 @@
 .ftr-Copyright { 
   color: white;
   font-size: 13px;
-  display: block;
   margin-top: 0.5rem;
   
   &_Desktop {
-    display: none;
+    display: none !important;
     @media (min-width: 768px) {
-      display: block;
+      display: block !important;
     }
   }
   
   &_Mobile {
-    display: block;
+    display: block !important;
     @media (min-width: 768px) {
-      display: none;
+      display: none !important;
     }
   }
 }
