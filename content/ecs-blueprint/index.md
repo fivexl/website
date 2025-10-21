@@ -26,7 +26,7 @@ double_panel:
     - { url: "https://github.com/fivexl", icon: "github" }
     - { url: "https://www.linkedin.com/company/5xl", icon: "linkedin" }
   button_cta: { url: "https://sales.fivexl.io/schedule-a-call", text: "Book a consultation" }
-  media_panel: { url: "https://youtu.be/uruLy1goNW0" }
+  media_panel: { url: "https://www.youtube.com/watch?v=z1WQ-YSAsVY" }
 ---
 
 {{< our_team heading="What is FivexL Blueprint for AWS ECS?" cta_url="https://sales.fivexl.io/schedule-a-call" cta_text="Book a consultation" >}}
