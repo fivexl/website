@@ -28,6 +28,18 @@ enableRobotsTXT = true
   parent = 'products'
   weight = 2
 [[menu.main]]
+  identifier = 'infra-clinic'
+  url = 'https://clinic.fivexl.io/'
+  name = 'Infra Clinic for Startups'
+  parent = 'products'
+  weight = 3
+[[menu.main]]
+  identifier = 'boris'
+  url = 'https://fivexl.ai/'
+  name = 'B.O.R.I.S'
+  parent = 'products'
+  weight = 4
+[[menu.main]]
   url = 'https://sales.fivexl.io/schedule-a-call'
   name = 'Contact'
   weight = 40
