@@ -10,8 +10,9 @@
         <img class="dp-MediaPanel_Image" src="{{ .image }}" alt="{{ default .image .alt }}">
     {{ end }}
 {{- else if (strings.Contains $input.Host "youtube.com") -}}
+    {{- $videoID := strings.TrimPrefix "v=" $input.RawQuery -}}
     <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
-        <iframe class="dp-MediaPanel_Embed" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/{{ after 2 $input.RawQuery }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe class="dp-MediaPanel_Embed" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/{{ $videoID }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
 {{- else if (strings.Contains $input.Host `youtu.be`) -}}
     <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
