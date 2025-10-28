@@ -85,6 +85,65 @@ This document captures Andrey Devyatkin's writing style for maintaining consiste
 - **Explain before showing**: Describe what the diagram shows
 - **Progressive complexity**: Show simple version first, then detailed
 - **Call out key insights**: "Here's the problem:", "This was our hidden single point of failure"
+- **ASCII diagrams**: Consider using ASCII/text diagrams in code blocks for version control friendliness
+
+## Technical Accuracy and Precision
+
+### Avoiding Absolutes
+- ❌ **Don't use absolutes** without SLA/data backing: "always", "never", "all", "every", "no", "none"
+- ✅ **Use qualified language**: "typically", "commonly", "in most cases", "often", "rarely"
+- ❌ Bad: "This always works" / "Never fails" / "All services"
+- ✅ Good: "This operates during common degradation scenarios" / "Rarely fails" / "Most services"
+
+### Making Claims
+- **Modest claims**: Keep performance and reliability claims specific and defensible
+  - ❌ "No performance impact" → ✅ "No added latency on the common path"
+  - ❌ "Always works" → ✅ "Continues to operate during common degradation scenarios"
+  - ❌ "Perfect reliability" → ✅ "Improved resilience with defined assumptions"
+- **State assumptions**: When making claims, note the conditions required
+  - Example: "(assumes valid cache exists from prior successful call)"
+- **Acknowledge trade-offs**: Nothing is free - mention what you're trading for the benefit
+
+### Sourcing Strong Claims
+- **Technical specifications**: Link to official documentation for all specific claims
+  - Durability percentages → Link to AWS docs
+  - Availability SLAs → Link to AWS SLA pages
+  - Service endpoints → Link to API reference
+  - Architecture details → Link to service documentation
+- **Incident reports**: Link to official AWS service health dashboard or status messages
+- **News sources**: For incidents, cite reputable sources (AWS official, Reuters, etc.)
+- **When in doubt**: Add a link or soften the claim
+
+### AWS Service Naming Conventions
+1. **First mention**: Use full official name with former name in parentheses if applicable
+   - ✅ "AWS IAM Identity Center (formerly AWS SSO)"
+   - ✅ "Amazon Elastic Container Service (Amazon ECS)"
+   - ✅ "US East (N. Virginia) Region (us-east-1)"
+2. **Subsequent mentions**: Use shortened form consistently
+   - ✅ "Identity Center" (not "IAM Identity Center" or "AWS SSO")
+   - ✅ "ECS" (not "Amazon ECS")
+   - ✅ "us-east-1" or "the US East Region"
+3. **Capitalize AWS terms**: Region, Availability Zone, Local Zone (when referring to AWS concepts)
+4. **Use precise terminology**:
+   - ✅ "global endpoint in us-east-1" (not "hosted in")
+   - ✅ "degradation" (not "disturbances" or "issues")
+   - ✅ "service disruption" (not "outage" unless it was a complete outage)
+
+### Technical Accuracy Checks
+Before publishing, verify:
+1. **Service limitations**: Check AWS documentation for actual service capabilities
+   - Example: Can Identity Center have multiple org instances? (No - [check docs](https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-identity-source-considerations.html))
+2. **Regional vs global**: Confirm which services have regional vs global endpoints
+3. **Performance claims**: Test or cite data for latency/throughput claims
+4. **Architecture validity**: Ensure proposed architectures are actually supported by AWS
+5. **Timeline accuracy**: For incidents, cite official timelines, don't exaggerate duration
+
+### Framing Incidents and Problems
+- **Be precise about scope**: "widespread disruption in US East Region" not "all AWS services down"
+- **Cite official sources**: Link to AWS Service Health Dashboard messages
+- **Acknowledge mitigation timeline**: "AWS mitigated core issue within X hours, full restoration Y"
+- **Avoid sensationalism**: Factual description > dramatic language
+- **Show understanding**: Explain the technical cause when known (DynamoDB endpoints, DNS issues, etc.)
 
 ## Language Patterns
 
@@ -208,16 +267,26 @@ This document captures Andrey Devyatkin's writing style for maintaining consiste
 - ❌ Criticizing competitors or other solutions harshly
 - ❌ Promising perfection or silver bullets
 - ❌ Writing about things not tested in production
+- ❌ Absolute language without backing: "always", "never", "all", "every", "zero"
+- ❌ Unsourced technical claims: Durability, availability, or performance claims without links
+- ❌ Overstated incident descriptions: Exaggerating outage scope or duration
+- ❌ Architecturally impossible solutions: Suggesting configurations AWS doesn't support
+- ❌ Inconsistent service names: Mixing full names, abbreviations, and old names
 
 ### Instead Do
 - ✅ Clear, direct language
 - ✅ Honest assessment of trade-offs
-- ✅ Define terms when first used
+- ✅ Define terms when first used (use official AWS names)
 - ✅ Real-world examples and scenarios
 - ✅ Clear calls to action and next steps
 - ✅ Objective comparison with acknowledgment of use cases
 - ✅ Acknowledge limitations and complexity
 - ✅ Share real production experience and lessons
+- ✅ Qualified language: "typically", "in most cases", "commonly", "often"
+- ✅ Source all strong claims: Link to AWS docs, SLAs, official incident reports
+- ✅ Precise incident framing: Cite official timelines and scope from AWS
+- ✅ Verify architecture validity: Check AWS docs before proposing solutions
+- ✅ Consistent naming: Full name first, then shorthand throughout
 
 ## Example Transformations
 
@@ -247,24 +316,75 @@ This document captures Andrey Devyatkin's writing style for maintaining consiste
 
 > SSO Elevator 3.1.0 represents our commitment to building tools that remain operational when you need them most..."
 
+---
+
+### Weak Claim (Absolute)
+> "This solution always works and never fails, even during AWS outages."
+
+### Andrey's Style (Qualified)
+> "This solution continues to operate during common us-east-1 degradation scenarios (assumes valid cache exists from prior successful call). The cached account list might be slightly stale, but the system remains operational."
+
+---
+
+### Weak Technical Detail (Unsourced)
+> "S3 has 11 nines of durability and is extremely reliable."
+
+### Andrey's Style (Sourced)
+> "S3 is one of AWS's most durable and available services, with [99.999999999% (11 nines) durability](https://docs.aws.amazon.com/AmazonS3/latest/userguide/DataDurability.html), [99.99% availability](https://aws.amazon.com/s3/sla/), and [strong read-after-write consistency](https://aws.amazon.com/s3/consistency/)."
+
+---
+
+### Weak Performance Claim
+> "No performance impact whatsoever."
+
+### Andrey's Style (Precise)
+> "No added latency on the common path. Because we execute the API call and cache retrieval in parallel, there's no additional latency when the Organizations API succeeds."
+
+---
+
+### Weak Incident Description
+> "On Tuesday, AWS went completely down for hours, affecting everything worldwide."
+
+### Andrey's Style (Precise, Sourced)
+> "On [December 15, 2021](https://aws.amazon.com/message/101925/), AWS experienced a widespread disruption in the US East (N. Virginia) Region (us-east-1). The incident was [tied to issues with internal DNS and DynamoDB endpoints](https://www.reuters.com/technology/amazons-aws-suffers-outage-affecting-thousands-us-users-downdetectorcom-2021-12-15/). While AWS mitigated the core issue within a few hours, degradation persisted throughout the day..."
+
 ## Checklist for Review
 
 Use this checklist before publishing:
 
+### Content and Structure
 - [ ] Opens with real-world context or problem
 - [ ] Uses "we" voice (FivexL team perspective)
 - [ ] Includes specific technical details and examples
 - [ ] Shows the journey (not just final solution)
 - [ ] Acknowledges trade-offs and limitations
-- [ ] Links to relevant documentation and resources
 - [ ] Provides actionable takeaways
 - [ ] Invites community engagement
 - [ ] Matches conversational yet professional tone
-- [ ] All code examples are tested and correct
-- [ ] All links work and are relevant
-- [ ] Images/diagrams referenced appropriately
-- [ ] Proper AWS service names used
 - [ ] Startup-specific context included where relevant
+
+### Technical Accuracy
+- [ ] No absolutes ("always", "never", "all") unless backed by SLA/data
+- [ ] All performance claims are qualified and specific (e.g., "on the common path")
+- [ ] All technical specifications linked to official AWS documentation
+- [ ] AWS service names use official naming convention (full name first, shorthand after)
+- [ ] "Region", "Availability Zone" capitalized when referring to AWS concepts
+- [ ] Precise terminology ("global endpoint in", not "hosted in"; "degradation", not "disturbances")
+- [ ] Architecture proposals verified as actually supported by AWS
+- [ ] Service limitations checked against AWS documentation
+- [ ] Incident descriptions cite official timelines and sources
+
+### Links and Sources
+- [ ] All links work and are relevant
+- [ ] Technical claims sourced with AWS docs/SLAs
+- [ ] Incident reports link to official AWS messages
+- [ ] Performance/durability percentages link to official specs
+- [ ] Service endpoints link to API reference documentation
+
+### Code and Visuals
+- [ ] All code examples are tested and correct
+- [ ] Images/diagrams referenced appropriately (or ASCII diagrams in code blocks)
+- [ ] Diagrams don't over-promise ("continues to operate" vs "always works")
 
 ---
 
