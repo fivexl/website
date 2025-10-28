@@ -4,10 +4,9 @@ author_id: 'Andrey Devyatkin'
 summary: 'How a real AWS outage revealed hidden dependencies in SSO Elevator and led to version 3.1.0 with improved resilience through intelligent S3 caching. A practical guide to engineering for failure.'
 date: 2025-10-28
 author: Andrey Devyatkin
-panel_image: sso-elevator-resilience-hero.png
+panel_image: AWS-outage.png
 tags: ['AWS', 'SSO Elevator', 'Resilience', 'Incident Response', 'Architecture', 'open source']
 ---
-<!-- TODO: Add hero image: sso-elevator-resilience-hero.png -->
 
 ### When Everything Goes Down
 
