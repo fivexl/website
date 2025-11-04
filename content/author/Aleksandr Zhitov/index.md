@@ -3,7 +3,7 @@ name: Aleksandr Zhitov
 roles:
   - Cloud Engineering Consultant
 information:
-  - Cloud Engineering specialist
+  - AWS and Terraform Specialist
 
 links:
   - { icon: linkedin, url: 'https://www.linkedin.com/in/aleksandr-zhitov-90003914a/' }
