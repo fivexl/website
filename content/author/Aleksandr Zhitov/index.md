@@ -8,7 +8,10 @@ information:
 links:
   - { icon: linkedin, url: 'https://www.linkedin.com/in/aleksandr-zhitov/' }
 
-panel_image: 'Aleksandr-Zhitov_author_page.png'
+certifications:
+  - 'fivexl.png'
+
+panel_image: 'Aleksandr_Zhitov_author_page.png'
 author_headshot: 'Aleksandr-Zhitov_head.png'
 author_id: Aleksandr Zhitov
 ---
