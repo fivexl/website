@@ -1,0 +1,43 @@
+{{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>{{ .Site.Title }}</title>
+    <link>{{ .Permalink }}</link>
+    <description>{{ .Site.Params.description | default "Recent content from FivexL - Blog posts and case studies" }}</description>
+    <generator>Hugo -- gohugo.io</generator>{{ with .Site.LanguageCode }}
+    <language>{{.}}</language>{{end}}{{ with .Site.Params.Author.email }}
+    <managingEditor>{{.}}{{ with $.Site.Params.Author.name }} ({{.}}){{end}}</managingEditor>{{end}}{{ with .Site.Params.Author.email }}
+    <webMaster>{{.}}{{ with $.Site.Params.Author.name }} ({{.}}){{end}}</webMaster>{{end}}{{ with .Site.Copyright }}
+    <copyright>{{.}}</copyright>{{end}}
+    {{- with .OutputFormats.Get "RSS" -}}
+    {{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML }}
+    {{- end -}}
+    {{- /* Get blog posts */ -}}
+    {{- $blogPages := where site.RegularPages "Section" "blog" -}}
+    {{- /* Get case studies */ -}}
+    {{- $caseStudyPages := where site.RegularPages "Section" "case-studies" -}}
+    {{- /* Combine and sort by date */ -}}
+    {{- $allPages := union $blogPages $caseStudyPages -}}
+    {{- $allPages = $allPages.ByDate.Reverse -}}
+    {{- /* Limit to most recent 20 items */ -}}
+    {{- $allPages = first 20 $allPages -}}
+    {{- /* Get latest date for lastBuildDate */ -}}
+    {{- $latestDate := (index $allPages 0).Date -}}
+    {{- if not $latestDate.IsZero }}
+    <lastBuildDate>{{ $latestDate.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>{{ end }}
+    {{- range $allPages }}
+    <item>
+      <title>{{ .Title }}</title>
+      <link>{{ .Permalink }}</link>
+      <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
+      <author>{{ with .Params.author_id }}{{ . }}{{ else }}{{ $.Site.Params.Author.email }} ({{ $.Site.Params.Author.name }}){{ end }}</author>
+      <guid>{{ .Permalink }}</guid>
+      <description>{{ .Summary | plainify | htmlEscape }}</description>
+      {{- with .Params.panel_image }}
+      <enclosure url="{{ $.Site.BaseURL }}{{ $.RelPermalink }}{{ . }}" type="image/jpeg" />
+      {{- end }}
+    </item>
+    {{- end }}
+  </channel>
+</rss>
+

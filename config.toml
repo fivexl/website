@@ -89,12 +89,17 @@ disableKinds = ['category'] # Categories disabled initially
 
 [params]
   relatedBlogsLength = 3
+  description = "FivexL blog and case studies - Expert AWS insights, DevOps best practices, cloud engineering guidance, and real-world success stories"
+  [params.author]
+    name = "FivexL"
+    email = "info@fivexl.io"
 
 [imaging]
   quality = 80
 
 [outputs]
-  section = ['HTML', 'JSON']
+  home = ['HTML', 'RSS']
+  section = ['HTML', 'JSON', 'RSS']
 
 [markup]
   defaultMarkdownHandler = "goldmark"
