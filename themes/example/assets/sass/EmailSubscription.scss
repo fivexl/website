@@ -86,18 +86,19 @@
   }
   
   &-Privacy {
-    color: rgba(0, 0, 0, 0.7);
-    font-size: 14px;
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 12px;
     line-height: 1.6;
     margin: 0;
+    margin-top: 1rem;
     text-align: left;
     
     a {
-      color: $accentColor;
-      text-decoration: none;
+      color: rgba(0, 0, 0, 0.5);
+      text-decoration: underline;
       
       &:hover {
-        text-decoration: underline;
+        color: rgba(0, 0, 0, 0.7);
       }
     }
   }

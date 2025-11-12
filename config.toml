@@ -89,7 +89,7 @@ disableKinds = ['category'] # Categories disabled initially
 
 [params]
   relatedBlogsLength = 3
-  description = "FivexL blog - Expert AWS insights, DevOps best practices, and cloud engineering guidance"
+  description = "FivexL blog and case studies - Expert AWS insights, DevOps best practices, cloud engineering guidance, and real-world success stories"
   [params.author]
     name = "FivexL"
     email = "info@fivexl.io"
