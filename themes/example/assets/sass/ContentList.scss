@@ -98,8 +98,10 @@
 
     &_Date, &_Heading, &_Summary, &_ReadMore {
       display: block;
-      @include textPaddings;
+      padding-left: 0;
+      padding-right: 0;
       margin-top: 0;
+      text-align: left;
     }
   }
 }
