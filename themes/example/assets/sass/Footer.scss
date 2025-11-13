@@ -1,6 +1,6 @@
 .ftr {
   background: $bgSecondary;
-  padding: 3rem 4rem;
+  padding: 3rem 2rem;
   position: relative;
   
   &-LogoSection {
@@ -18,14 +18,20 @@
     object-position: left top;
     display: block;
     margin-bottom: 1rem;
+    
+    @media (min-width: 768px) {
+      width: auto;
+      max-width: 200px;
+    }
   }
   @media (min-width: 768px) {
-    padding: 3rem 2rem 0.75rem;
+    padding: 3rem 2rem;
     &-ContentWrapper {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
       margin-inline: auto;
-      max-width: 1000px;
+      max-width: 1200px;
     }
   }
 }
@@ -51,6 +57,12 @@
 }
 
 .ftr-ExternalLinks {
+  @media (min-width: 768px) {
+    display: flex;
+    align-items: center;
+    margin-top: 0.5rem;
+  }
+  
   &_Heading { 
     // margin-bottom: 0; 
     font-size: 20px;
@@ -62,15 +74,34 @@
     }
   }
 
-  ul { padding-left: 0; margin-top: 0.25rem; }
+  ul { 
+    padding-left: 0; 
+    margin-top: 0;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+    
+    @media (min-width: 768px) {
+      flex-direction: row;
+      gap: 2rem;
+      align-items: center;
+    }
+  }
   li { list-style: none; padding-left: 0;}
 
   &_Link {
     display: flex;
     text-decoration: none;
     font-weight: 400;
-    line-height: 1.75;
-    font-size: 20px;
+    line-height: 1.5;
+    font-size: 16px;
+    align-items: center;
+    
+    @media (min-width: 768px) {
+      font-size: 18px;
+    }
   }
   &_Link, &_Link:visited, &_Link:active {
     color: white;
@@ -82,9 +113,14 @@
     align-items: center;
 
     svg {
-      height: 24px;
-      width: 24px;
+      height: 32px;
+      width: 32px;
       fill: white;
+      
+      @media (min-width: 768px) {
+        height: 40px;
+        width: 40px;
+      }
     }
   }
 }
