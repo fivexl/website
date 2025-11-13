@@ -1,12 +1,12 @@
 ---
 title: 'How to Build an MVP on AWS (Part 1): Account Setup, Security & Cost Control'
 author_id: 
-date: 2025-11-14
+date: 2025-11-13
 description: 'A 10-minute AWS foundation guide for founders and small teams. Set up root security, budgets, CloudTrail, GuardDuty, and Slack alerts to avoid surprise bills and security disasters.'
 author: FivexL
 author_link: https://fivexl.io/
 category: AWS, DevOps, Security
-panel_image: AWS Partner.png
+panel_image: AWS-Partner.png
 tags: ['AWS', 'MVP', 'Security', 'Cost Control', 'CloudTrail', 'GuardDuty', 'Budgets']
 ---
 
