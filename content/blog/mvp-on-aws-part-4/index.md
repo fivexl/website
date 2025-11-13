@@ -2,7 +2,7 @@
 title:  'Building MVP on AWS: Key Services and Benefits for Startups'
 author_id: 'Guilherme Ferreira'
 summary: 'What an MVP really is and how AWS can help your startup moves from idea to deployment with minimal fuss'
-date: 2025-11-12
+date: 2025-11-13
 author: Guilherme Ferreira
 panel_image: MVP_article.png
 tags: [ 'MVP', 'startup', 'AWS']
