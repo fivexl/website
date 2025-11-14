@@ -89,4 +89,33 @@
       height: 36px;
     }
   }
+  
+  &-SubscribeButton {
+    display: inline-block;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-left: 1rem;
+    font-weight: 700;
+    font-size: 1.125rem;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    line-height: 1.15;
+    color: white;
+    background: $accentColor;
+    width: auto;
+    
+    @media (min-width: 768px) {
+      padding: 0.4rem 1rem;
+      margin-bottom: 3rem;
+    }
+    
+    &:visited,
+    &:active,
+    &:hover,
+    &:focus {
+      color: white;
+    }
+  }
 }
