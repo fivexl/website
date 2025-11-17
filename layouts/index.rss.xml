@@ -32,7 +32,7 @@
       <pubDate>{{ .Date.Format "Mon, 02 Jan 2006" | safeHTML }}</pubDate>
       <author>{{ with .Params.author_id }}{{ . }}{{ else }}{{ $.Site.Params.Author.email }} ({{ $.Site.Params.Author.name }}){{ end }}</author>
       <guid>{{ .Permalink }}</guid>
-      <description>{{ .Summary | plainify | htmlEscape }}</description>
+      <description><![CDATA[{{ .Content }}]]></description>
       {{- with .Params.panel_image }}
       <enclosure url="{{ $.Site.BaseURL }}{{ $.RelPermalink }}{{ . }}" type="image/jpeg" />
       {{- end }}
