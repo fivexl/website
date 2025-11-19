@@ -1,17 +1,14 @@
 {{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>{{ .Site.Title }}</title>
+    <title>{{ .Site.Title | plainify | htmlEscape }}</title>
     <link>{{ .Permalink }}</link>
-    <description>{{ .Site.Params.description | default "Recent content from FivexL - Blog posts and case studies" }}</description>
+    <description>{{ .Site.Params.description | default "Recent content from FivexL - Blog posts and case studies" | plainify | htmlEscape }}</description>
     <generator>Hugo -- gohugo.io</generator>{{ with .Site.LanguageCode }}
     <language>{{.}}</language>{{end}}{{ with .Site.Params.Author.email }}
-    <managingEditor>{{.}}{{ with $.Site.Params.Author.name }} ({{.}}){{end}}</managingEditor>{{end}}{{ with .Site.Params.Author.email }}
-    <webMaster>{{.}}{{ with $.Site.Params.Author.name }} ({{.}}){{end}}</webMaster>{{end}}{{ with .Site.Copyright }}
-    <copyright>{{.}}</copyright>{{end}}
-    {{- with .OutputFormats.Get "RSS" -}}
-    {{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML }}
-    {{- end -}}
+    <managingEditor>{{.}}{{ with $.Site.Params.Author.name }} ({{ . | plainify }}){{end}}</managingEditor>{{end}}{{ with .Site.Params.Author.email }}
+    <webMaster>{{.}}{{ with $.Site.Params.Author.name }} ({{ . | plainify }}){{end}}</webMaster>{{end}}{{ with .Site.Copyright }}
+    <copyright>{{ . | plainify }}</copyright>{{end}}
     {{- /* Get blog posts */ -}}
     {{- $blogPages := where site.RegularPages "Section" "blog" -}}
     {{- /* Get case studies */ -}}
@@ -27,14 +24,14 @@
     <lastBuildDate>{{ $latestDate.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>{{ end }}
     {{- range $allPages }}
     <item>
-      <title>{{ .Title }}</title>
+      <title>{{ .Title | plainify | htmlEscape }}</title>
       <link>{{ .Permalink }}</link>
       <pubDate>{{ .Date.Format "Mon, 02 Jan 2006" | safeHTML }}</pubDate>
-      <author>{{ with .Params.author_id }}{{ . }}{{ else }}{{ $.Site.Params.Author.email }} ({{ $.Site.Params.Author.name }}){{ end }}</author>
+      <author>{{ with .Params.author_id }}{{ if reflect.IsSlice . }}{{ delimit . ", " | plainify }}{{ else }}{{ . | plainify }}{{ end }}{{ else }}{{ $.Site.Params.Author.email }} ({{ $.Site.Params.Author.name }}){{ end }}</author>
       <guid>{{ .Permalink }}</guid>
-      <description><![CDATA[{{ .Content }}]]></description>
+      <description>{{ .Summary | plainify | truncate 300 | htmlEscape }}</description>
       {{- with .Params.panel_image }}
-      <enclosure url="{{ $.Site.BaseURL }}{{ $.RelPermalink }}{{ . }}" type="image/jpeg" />
+      <enclosure url="{{ $.Site.BaseURL }}{{ . }}" type="image/jpeg" />
       {{- end }}
     </item>
     {{- end }}
