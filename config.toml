@@ -40,8 +40,8 @@ enableRobotsTXT = true
   parent = 'products'
   weight = 4
 [[menu.main]]
-  url = 'https://sales.fivexl.io/schedule-a-call'
-  name = 'Contact'
+  url = '/#email-subscription'
+  name = 'Subscribe'
   weight = 40
   [menu.main.params]
     class = "hdr-NavigationItem_Contact"
