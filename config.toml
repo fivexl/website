@@ -2,18 +2,17 @@ timeout = 60000
 baseURL = '/'
 languageCode = 'en-us'
 title = 'FivexL. Cloud Engineering Specialists'
-
-paginate = 6
-
-# this is just a place holder theme. please remove it later
 theme = "example"
 
 enableRobotsTXT = true
 
+[pagination]
+pagerSize = 6
+
 # Main navigation
 [menu]
 [[menu.main]]
-  url = 'https://sales.fivexl.io/schedule-a-call'
+  url = '/contact'
   name = 'Contact'
   weight = 40
   [menu.main.params]
