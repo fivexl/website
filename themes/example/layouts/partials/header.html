@@ -47,11 +47,64 @@
     <nav class="hdr-Navigation">
         <ul class="hdr-NavigationList">
             {{ range .Site.Menus.main }}
+            {{ if not .Parent }}
+            {{ if .HasChildren }}
+            <li class="hdr-NavigationItem hdr-NavigationItem_Dropdown">
+                <button class="hdr-NavigationDropdownToggle" aria-expanded="false">
+                    {{ .Name }}
+                    <svg class="hdr-NavigationDropdownIcon" width="12" height="8" viewBox="0 0 12 8" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <ul class="hdr-NavigationDropdown">
+                    {{ range .Children }}
+                    <li class="hdr-NavigationDropdownItem">
+                        <a href="{{ absURL .URL }}">{{ .Name }}</a>
+                    </li>
+                    {{ end }}
+                </ul>
+            </li>
+            {{ else }}
             <li class="hdr-NavigationItem">
                 <a href="{{ absURL .URL }}" class="{{ with .Params.class }}{{ . }}{{ end }} {{- if or ($.IsMenuCurrent .Menu .) ($.HasMenuCurrent .Menu .) }} hdr-NavigationItem_Active{{ end -}}">{{ .Name }}</a>
             </li>
             {{ end }}
+            {{ end }}
+            {{ end }}
         </ul>
     </nav>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const dropdownToggles = document.querySelectorAll('.hdr-NavigationDropdownToggle');
+        
+        dropdownToggles.forEach(function(toggle) {
+            toggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                
+                // Close all other dropdowns first
+                dropdownToggles.forEach(function(otherToggle) {
+                    if (otherToggle !== toggle) {
+                        otherToggle.setAttribute('aria-expanded', 'false');
+                    }
+                });
+                
+                // Toggle this dropdown
+                this.setAttribute('aria-expanded', isExpanded ? 'false' : 'true');
+                console.log('Dropdown toggled:', isExpanded ? 'false' : 'true');
+            });
+        });
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.hdr-NavigationItem_Dropdown')) {
+                dropdownToggles.forEach(function(toggle) {
+                    toggle.setAttribute('aria-expanded', 'false');
+                });
+            }
+        });
+    });
+    </script>
 </header>
 

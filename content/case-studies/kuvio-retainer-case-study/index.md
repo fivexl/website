@@ -8,13 +8,13 @@ date: 2022-01-10
 author:  Andrey Devyatkin Alexey Eremin
 panel_image: andrey_main.png
 authors_heading: 'Two lead consultants for the project'
-alt_image: andrey_quad.png
+alt_image: andrey_quad_bnw.png
 case_study: true
 layout: 'case_study'
 tags: ['case study', 'aws']
 testimonial: 'It is great for us that FivexL can align with our working style without needing to be in the same location'  
 tags: ['case study', 'aws']  
-testimonial_author: 'Henrik Segersven'
+testimonial_author: 'Henrik Segersven,'
 testimonial_author_position: 'CTO at Kuvio'
 testimonial_author_portrait: Henrik.png
 testimonial_cta_url: 'https://sales.fivexl.io/schedule-a-call'
@@ -64,7 +64,7 @@ Despite the benefits of serverless computing, a common challenge is that costs o
   
 {{</ case_study/column >}}
 {{< case_study/column >}}
-Kuvio experienced a remarkable breakthrough in cost optimization: a 96% reduction in S3 API request costs, leading to a significant decrease in overall cloud expenses. With Kuvio handling substantial volumes of data, Alexey delved into the company's specific business requirements. He conducted experiments with diverse partitioning techniques to identify the most cost-effective model.  
+With Kuvio handling substantial volumes of data, Alexey delved into the company's specific business requirements. He conducted experiments with diverse partitioning techniques to identify the most cost-effective model.  
   
 Alexey explored the capabilities of Apache Iceberg, a tool that enables Athena to utilize SQL to gather data from S3. He leveraged Iceberg's functionality to merge files and conducted experiments to determine the optimal file merging level. One particularly effective experiment led to the remarkable 96% cost reduction in the S3 bucket, significantly impacting Kuvio's overall cloud expenses. Alexey Eremin detailed [his approach in the article](https://fivexl.io/blog/s3-server-access-logging-date-partitioning/).  
   

@@ -6,12 +6,12 @@ date: 2024-01-11
 author: Andrey Devyatkin
 panel_image: Andrey_pink.png
 authors_heading: 'Principal consultant leading the project'
-alt_image: vova_sm_bnw.png
+alt_image: kuvio_quad.png
 case_study: true
 layout: 'case_study'
 tags: ['case study', 'AWS']
 testimonial: 'With the new scalable infrastructure in place, we have been able to develop a range of new features for our product.'
-testimonial_author: 'Henrik Segersven'
+testimonial_author: 'Henrik Segersven,'
 testimonial_author_position: 'CTO at Kuvio'
 testimonial_author_portrait: Henrik.png
 testimonial_cta_url: 'https://sales.fivexl.io/schedule-a-call'

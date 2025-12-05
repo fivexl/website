@@ -2,6 +2,8 @@ timeout = 60000
 baseURL = '/'
 languageCode = 'en-us'
 title = 'FivexL. Cloud Engineering Specialists'
+
+# this is just a place holder theme. please remove it later
 theme = "example"
 
 enableRobotsTXT = true
@@ -12,6 +14,35 @@ pagerSize = 6
 # Main navigation
 [menu]
 [[menu.main]]
+  identifier = 'products'
+  name = 'Products'
+  url = '#'
+  weight = 3
+[[menu.main]]
+  identifier = 'rightstart'
+  url = '/rightstart'
+  name = 'RightStart'
+  parent = 'products'
+  weight = 1
+[[menu.main]]
+  identifier = 'ecs-blueprint'
+  url = '/ecs-blueprint'
+  name = 'ECS Blueprint'
+  parent = 'products'
+  weight = 2
+[[menu.main]]
+  identifier = 'infra-clinic'
+  url = 'https://clinic.fivexl.io/'
+  name = 'Infra Clinic for Startups'
+  parent = 'products'
+  weight = 3
+[[menu.main]]
+  identifier = 'boris'
+  url = 'https://fivexl.ai/'
+  name = 'B.O.R.I.S'
+  parent = 'products'
+  weight = 4
+[[menu.main]]
   url = '/contact'
   name = 'Contact'
   weight = 40
@@ -21,7 +52,15 @@ pagerSize = 6
 [[menu.footer_nav]]
   url = '/about'
   name = 'FivexL'
-  weight = 10
+  weight = 1
+[[menu.footer_nav]]
+  url = '/rightstart'
+  name = 'RightStart'
+  weight = 3
+[[menu.footer_nav]]
+  url = '/ecs-blueprint'
+  name = 'ECS Blueprint'
+  weight = 4
 [[menu.footer_nav]]
   url = '/about'
   name = 'About'
@@ -42,14 +81,31 @@ pagerSize = 6
   weight = 20
   [menu.footer_external.params]
     icon = 'github'
+[[menu.footer_external]]
+  url = 'https://www.youtube.com/@fivexl'
+  name = 'YouTube'
+  weight = 30
+  [menu.footer_external.params]
+    icon = 'youtube'
 
 disableKinds = ['category'] # Categories disabled initially
 
 [params]
   relatedBlogsLength = 3
+  description = "FivexL blog and case studies - Expert AWS insights, DevOps best practices, cloud engineering guidance, and real-world success stories"
+  [params.author]
+    name = "FivexL"
+    email = "info@fivexl.io"
 
 [imaging]
   quality = 80
 
 [outputs]
-  section = ['HTML', 'JSON']
+  home = ['HTML', 'RSS']
+  section = ['HTML', 'JSON', 'RSS']
+
+[markup]
+  defaultMarkdownHandler = "goldmark"
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

@@ -6,14 +6,14 @@ author_id:
 summary: 'FivexL built a scalable and secure infrastructure defined in code for a Mobile Computer Vision & AI solutions software company.'
 date: 2022-08-28 
 author:  Artem Zhelezov Maria Zubchenko 
-panel_image: Artem_gradient.png
+panel_image: Artem_pink.png
 authors_heading: 'Two lead consultants for the project'
 alt_image: artem_quad.png
 case_study: true
 layout: 'case_study'
 tags: ['case study', 'aws']
 testimonial: 'As our needs and product changed FivexL remained flexible and fully involved in the project'  
-testimonial_author: 'Andrey Kolpakov'
+testimonial_author: 'Andrey Kolpakov,'
 testimonial_author_position: 'CTO at New Stream'
 testimonial_author_portrait: kolp.png
 testimonial_cta_url: 'https://sales.fivexl.io/schedule-a-call'

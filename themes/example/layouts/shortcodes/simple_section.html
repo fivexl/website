@@ -1,0 +1,9 @@
+<section class="ot">
+    <div class="ot-Wrapper">
+        {{ if .Params.heading }}
+        <h2 class="ot-Heading">{{ .Params.heading }}</h2>
+        {{ end }}
+        {{ .Inner | markdownify }}
+    </div>
+</section>
+

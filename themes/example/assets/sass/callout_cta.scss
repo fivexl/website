@@ -4,6 +4,7 @@
   padding: 3rem;
   max-width: 1920px;
   margin-inline: auto;
+  background: white;
   @media (min-width: 540px) {
     padding: 6.5rem clamp(3rem, 15vw, 17rem) clamp(3rem, 4vw, 6rem);
   }

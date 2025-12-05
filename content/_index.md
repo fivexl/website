@@ -35,6 +35,9 @@ Agile, transparency, and comprehensive documentation for effective knowledge tra
 {{< /column >}}
 {{< /two_columns >}}
 
+<!-- {{< section heading="AWS Advanced Partner" >}}
+As an AWS Advanced Partner, FivexL combines real-world experience with deep knowledge in building scalable, secure, and cost-effective AWS environments for fast-growing startups. 
+{{< /section >}} -->
 
 {{< our_team heading="Our Team" cta_url="https://sales.fivexl.io/schedule-a-call" cta_text="Book a consultation" >}}
 {{< md >}}
@@ -57,5 +60,5 @@ There’s no problem that we can’t solve together!
 
 {{< /steps_section >}}
 
-{{< callout_cta heading="This way, you can focus on what you do best <br> without worrying about the underlying infrastructure." cta_url="https://sales.fivexl.io/schedule-a-call" cta_text="Book a consultation" >}}
+{{< callout_cta heading="This way, you can focus on what you do best without worrying about the underlying infrastructure." cta_url="https://sales.fivexl.io/schedule-a-call" cta_text="Book a consultation" >}}
 
