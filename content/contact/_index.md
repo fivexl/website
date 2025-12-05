@@ -8,6 +8,7 @@ double_panel:
   icon_links:
     - { url: "https://github.com/fivexl", icon: "github" }
     - { url: "https://www.linkedin.com/company/5xl", icon: "linkedin" }
+  media_panel: { image: "/contact/featured.png" }
 transparent_nav: true
 images: [ 'featured.png' ]
 ---
@@ -31,44 +32,22 @@ Get insights from certified AWS architects with real-world experience helping st
 {{< /two_columns >}}
 
 {{< unsafe >}}
-<div style="max-width: 900px; margin: 60px auto; padding: 0 40px;">
-<style>
-.hs-form input[type="text"],
-.hs-form input[type="email"],
-.hs-form textarea {
-  width: 100% !important;
-  padding: 12px 16px !important;
-  font-size: 16px !important;
-  border: 1px solid #ddd !important;
-  border-radius: 4px !important;
-}
-.hs-form textarea {
-  min-height: 150px !important;
-}
-.hs-form .hs-button {
-  background-color: #13b5b1 !important;
-  color: #fff !important;
-  border: none !important;
-  padding: 16px 32px !important;
-  font-family: Montserrat, sans-serif !important;
-  font-size: 16px !important;
-  font-weight: 600 !important;
-  border-radius: 30px !important;
-  cursor: pointer !important;
-  text-transform: none !important;
-  letter-spacing: 0 !important;
-  transition: background-color 0.2s ease !important;
-}
-.hs-form .hs-button:hover {
-  background-color: #0f9a97 !important;
-}
-</style>
+<div style="max-width: 800px; margin: 60px auto; padding: 0 40px;">
 <script charset="utf-8" type="text/javascript" src="//js-eu1.hsforms.net/forms/embed/v2.js"></script>
+<div id="hubspot-form-container"></div>
 <script>
   hbspt.forms.create({
     portalId: "27182258",
     formId: "8f7dd096-a9c9-4f6d-8d17-cc579f33a1da",
-    region: "eu1"
+    region: "eu1",
+    target: "#hubspot-form-container",
+    onFormReady: function($form) {
+      var style = document.createElement('style');
+      style.innerHTML = '.hs-form-field { margin-bottom: 20px !important; } .hs-form input[type="text"], .hs-form input[type="email"], .hs-input { width: 100% !important; max-width: 100% !important; padding: 12px 16px !important; font-size: 16px !important; border: 1px solid #ddd !important; border-radius: 4px !important; box-sizing: border-box !important; } .hs-form textarea, textarea.hs-input { width: 100% !important; max-width: 100% !important; min-height: 120px !important; padding: 12px 16px !important; font-size: 16px !important; border: 1px solid #ddd !important; border-radius: 4px !important; box-sizing: border-box !important; } .hs-form .hs-button, .hs-button.primary { background-color: #18AEF0 !important; color: #fff !important; border: none !important; padding: 1rem 2rem !important; font-family: Montserrat, sans-serif !important; font-size: 16px !important; font-weight: 700 !important; border-radius: 8px !important; cursor: pointer !important; }';
+      if ($form && $form.length) {
+        $form[0].appendChild(style);
+      }
+    }
   });
 </script>
 <p style="text-align: center; font-size: 14px; color: #666; margin-top: 30px; font-family: Montserrat, sans-serif;">
