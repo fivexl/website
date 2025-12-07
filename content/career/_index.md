@@ -18,15 +18,18 @@ double_panel:
 transparent_nav: true
 images: [ 'featured.png' ]
 ---
-{{< our_team heading="About FivexL" cta_url="https://sales.fivexl.io/join_fivexl" cta_text="Join us!" >}}
-{{< md >}}
-We understand the solitude of being the only specialist in your field within a company. It often feels like no one comprehends what you do, and there's no one to share your thoughts with or discuss issues.  
-We know what it's like to work tirelessly in outsourcing without the freedom to choose your projects or technology.  
-We also know what it's like to provide support for legacy infrastructure while witnessing new technologies evolve around you.  
-**This is exactly why we founded FivexL, to create a company where we ourselves would want to work.**  
-Let's be clear: FivexL isn't a fit for everyone. It takes a unique blend of ambition, skill, and dedication. But, for the right person, it could be the ideal environment to truly unleash your potential.    
+{{< our_team heading="About FivexL" cta_url="#application-form" cta_text="Join us!" >}}
+{{< md >}}Being the only specialist in the room can feel lonely.
+You’re the one people call when “something with the cloud broke,” but almost no one really understands what you do or how hard it is to do it well.<br />
 
-Could that person be you?
+We've been there: working in outsourcing, grinding through projects you didn't choose, with tech stacks you'd never pick for yourself. Babysitting fragile, legacy infrastructure while the rest of the world plays with shiny new tools.
+
+That’s why we created FivexL — a place we ourselves would want to work.
+**A company built for people who care about doing infrastructure properly, learning constantly, and having a real say in how things are done.**
+
+FivexL isn’t for everyone. It’s for people who combine ambition, skill, and ownership — the ones who want impact, not just tickets.
+
+If that sounds like you, there’s a good chance you’ll feel at home here.
 {{< /md >}}
 {{< /our_team >}}
 
@@ -78,5 +81,35 @@ Understand concepts such as: Infrastructure as Code, Immutable infrastructure, C
 {{< steps_section_item number=4 text="Meet the team and share your experience." >}}
 
 {{< /steps_section >}}
-{{< callout_cta heading="Let's talk about how FivexL can be your next step forward." cta_url="https://sales.fivexl.io/join_fivexl" cta_text="Meet the team!" >}}
+{{< callout_cta heading="Let's talk about how FivexL can be your next step forward." cta_url="#application-form" cta_text="Meet the team!" >}}
+
+{{< unsafe >}}
+<div id="application-form" style="display: none; margin: 0 auto 60px; padding: 40px 0;">
+  <div style="display: flex; justify-content: center;">
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc_6yxXmibuI8UWmLppl_XpgQm8T9GW0Syl6hCFK785IfeIeQ/viewform?embedded=true" width="100%" style="max-width: 800px;" height="2381" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var formLinks = document.querySelectorAll('a[href="#application-form"]');
+  var meetTeamBtn = document.querySelector('.ccta a[href="#application-form"]');
+  
+  formLinks.forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      var form = document.getElementById('application-form');
+      if (form.style.display === 'none' || form.style.display === '') {
+        form.style.display = 'block';
+        if (meetTeamBtn) meetTeamBtn.textContent = 'Hide form';
+        form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else {
+        form.style.display = 'none';
+        if (meetTeamBtn) meetTeamBtn.textContent = 'Meet the team!';
+      }
+    });
+  });
+});
+</script>
+{{< /unsafe >}}
 
