@@ -16,7 +16,7 @@ testimonial: 'The FivexL team had laid the foundation for SOC2, and we didn’t 
 testimonial_author: 'Mattias Hemmingsson,'
 testimonial_author_position: 'Head of Security at Hippo'
 testimonial_author_portrait: matte_back.png
-testimonial_cta_url: 'https://sales.fivexl.io/schedule-a-call'
+testimonial_cta_url: '/contact'
 testimonial_long: |
   “For me, there are two most valuable parts of FivexL’s work. One is the multi-account AWS setup. This setup makes life from a compliance perspective really simple, because I can clearly show, ‘This is the account where we have the sensitive data,’ and you can see it’s really locked down.  The second is the SSO Elevator tool — it grants access only for a limited time and works together with account segmentation. So the access is specific and time-bound, not broad or permanent. That’s been really helpful for our compliance work.”
 about_company:
@@ -31,7 +31,7 @@ double_panel:
   icon_links:
     - { url: "https://github.com/fivexl", icon: "github" }
     - { url: "https://www.linkedin.com/company/5xl", icon: "linkedin" }
-  button_cta: { url: "https://sales.fivexl.io/schedule-a-call", text: "Book a consultation" }
+  button_cta: { url: "/contact", text: "Book a consultation" }
   media_panel: { url: "https://youtu.be/uruLy1goNW0" }
 ---
 {{< case_study/challenge  image="hippo_challenge.png" image_css="object-position: center 10%">}}
@@ -86,7 +86,7 @@ As a result, FivexL helped Hippo seamlessly migrate the existing organization to
 
 {{< case_study/benefits
     cta_text=`Start Your Success Story`
-    cta_url=`https://sales.fivexl.io/schedule-a-call`
+    cta_url=`/contact`
     image=`goto_benefits.png`
     blockquote=`The FivexL team had laid the foundation for SOC 2, and we didn’t need to make major changes to get certified. It was mostly about showing what was already in place and making sure auditors and clients could easily access the information.`
     blockquote_author=`Mattias Hemmingsson, Head of Security at Hippo`

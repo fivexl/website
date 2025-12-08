@@ -8,6 +8,9 @@ theme = "example"
 
 enableRobotsTXT = true
 
+[pagination]
+pagerSize = 6
+
 # Main navigation
 [menu]
 [[menu.main]]
@@ -40,32 +43,12 @@ enableRobotsTXT = true
   parent = 'products'
   weight = 4
 [[menu.main]]
-  url = 'https://sales.fivexl.io/schedule-a-call'
+  url = '/contact'
   name = 'Contact'
   weight = 40
   [menu.main.params]
     class = "hdr-NavigationItem_Contact"
-# Footer nav menu
-[[menu.footer_nav]]
-  url = '/about'
-  name = 'FivexL'
-  weight = 1
-[[menu.footer_nav]]
-  url = '/rightstart'
-  name = 'RightStart'
-  weight = 3
-[[menu.footer_nav]]
-  url = '/ecs-blueprint'
-  name = 'ECS Blueprint'
-  weight = 4
-[[menu.footer_nav]]
-  url = '/about'
-  name = 'About'
-  weight = 20
-[[menu.footer_nav]]
-  url = 'https://sales.fivexl.io/schedule-a-call'
-  name = 'Contact'
-  weight = 30
+# Footer social links
 [[menu.footer_external]]
   url = 'https://www.linkedin.com/company/5xl/'
   name = 'Linkedin'
@@ -106,6 +89,3 @@ disableKinds = ['category'] # Categories disabled initially
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
-
-[pagination]
-pagerSize = 6

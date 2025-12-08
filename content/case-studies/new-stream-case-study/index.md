@@ -16,7 +16,7 @@ testimonial: 'As our needs and product changed FivexL remained flexible and full
 testimonial_author: 'Andrey Kolpakov,'
 testimonial_author_position: 'CTO at New Stream'
 testimonial_author_portrait: kolp.png
-testimonial_cta_url: 'https://sales.fivexl.io/schedule-a-call'
+testimonial_cta_url: '/contact'
 testimonial_long: |
   “As our needs and product changed and as we moved from golf to basketball and then to workouts, FivexL remained flexible and fully involved in the project. Now the entire infrastructure for the project is set up, we have migrated to the cloud, implemented autoscaling, and distributed everything that was needed among services. As a result, the system is operating stable.”
 about_company:
@@ -31,7 +31,7 @@ double_panel:
   icon_links:
     - { url: "https://github.com/fivexl", icon: "github" }
     - { url: "https://www.linkedin.com/company/5xl", icon: "linkedin" }
-  button_cta: { url: "https://sales.fivexl.io/schedule-a-call", text: "Book a consultation" }
+  button_cta: { url: "/contact", text: "Book a consultation" }
   media_panel: { url: "https://youtu.be/uruLy1goNW0" }
 ---
 {{< case_study/challenge  image="challenge_ns.png" image_css="object-position: center 10%">}}
@@ -66,7 +66,7 @@ The team also improved overall infrastructure security by separating AWS account
 
 {{< case_study/benefits
     cta_text="Start Your Success Story"
-    cta_url="https://sales.fivexl.io/schedule-a-call"
+    cta_url="/contact"
     image="benefits_ns.png"
     >}}
 {{< pink_heading text="Benefits" >}}

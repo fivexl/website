@@ -14,7 +14,7 @@ testimonial: 'FivexL migrated our services to a new infrastructure; the change w
 testimonial_author: 'Thuc Tuan Hoang,'
 testimonial_author_position: 'CEO at Firi'
 testimonial_author_portrait: Thuc.png
-testimonial_cta_url: 'https://sales.fivexl.io/schedule-a-call'
+testimonial_cta_url: '/contact'
 testimonial_long: |
   “It was really hard to find a partner with expertise in both cloud and security, combined with the agility to meet our infrastructure needs.  
   FivexL helped us migrate all our services to a new infrastructure; the change was seamless. They think outside the box and are always there when we need them.”
@@ -30,7 +30,7 @@ double_panel:
   icon_links:
     - { url: "https://github.com/fivexl", icon: "github" }
     - { url: "https://www.linkedin.com/company/5xl", icon: "linkedin" }
-  button_cta: { url: "https://sales.fivexl.io/schedule-a-call", text: "Book a consultation" }
+  button_cta: { url: "/contact", text: "Book a consultation" }
   media_panel: { url: "https://youtu.be/uruLy1goNW0" }
 ---
 {{< case_study/challenge  image="challenge.png" image_css="object-position: center 10%">}}
@@ -56,7 +56,7 @@ Following two weeks of planning, FivexL was able to hot swap Firi’s infrastruc
 
 {{< case_study/benefits
     cta_text="Start Your Success Story"
-    cta_url="https://sales.fivexl.io/schedule-a-call"
+    cta_url="/contact"
     image="benefits_firi.png"
     blockquote=`FivexL have given us the peace of mind to plan for the future as we aim to expand outside Norway across the Nordics
 

@@ -14,7 +14,7 @@ tags: ['case study', 'aws']
 testimonial: 'The FivexL team is very responsive and extremely competent, demonstrating a deep understanding and expertise in AWS.'
 testimonial_author: 'Mike Long,'
 testimonial_author_position: 'CEO at Kosli'
-testimonial_cta_url: 'https://sales.fivexl.io/schedule-a-call'
+testimonial_cta_url: '/contact'
 testimonial_author_portrait: MikeL.png
 testimonial_long: |
   "FivexL's communication is excellent, consistently sharing new ideas with us. We trust the team to implement solutions safely and without any issues, we've never experienced downtime with our infrastructure. FivexL has been a reliable partner throughout this entire period."
@@ -30,7 +30,7 @@ double_panel:
   icon_links:
     - { url: "https://github.com/fivexl", icon: "github" }
     - { url: "https://www.linkedin.com/company/5xl", icon: "linkedin" }
-  button_cta: { url: "https://sales.fivexl.io/schedule-a-call", text: "Book a consultation" }
+  button_cta: { url: "/contact", text: "Book a consultation" }
   media_panel: { url: "https://youtu.be/uruLy1goNW0" }
 ---
 {{< case_study/challenge  image="challenge_ns.png" image_css="object-position: 18%" >}}
@@ -98,7 +98,7 @@ To bolster security, minimize human error in credential management, and ensure s
 
 {{< case_study/benefits
     cta_text="Start Your Success Story"
-    cta_url="https://sales.fivexl.io/schedule-a-call"
+    cta_url="/contact"
     image="kosli_benefits_small.png"
     >}}
 {{< pink_heading text="Benefits" >}}

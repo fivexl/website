@@ -16,7 +16,7 @@ testimonial_author: 'Nate Sesti, '
 testimonial_author_position: 'CTO at Continue'
 testimonial_author_portrait: Continue-logo.jpg
 callout_cta_heading: "Ready to Scale with Confidence?"
-callout_cta_url: "https://sales.fivexl.io/schedule-a-call"
+callout_cta_url: "/contact"
 callout_cta_text: "Book a consultation"
 double_panel:
   layout: 'services'
@@ -25,11 +25,11 @@ double_panel:
   icon_links:
     - { url: "https://github.com/fivexl", icon: "github" }
     - { url: "https://www.linkedin.com/company/5xl", icon: "linkedin" }
-  button_cta: { url: "https://sales.fivexl.io/schedule-a-call", text: "Book a consultation" }
+  button_cta: { url: "/contact", text: "Book a consultation" }
   media_panel: { url: "https://www.youtube.com/watch?v=z1WQ-YSAsVY" }
 ---
 
-{{< our_team heading="What is FivexL Blueprint for AWS ECS?" cta_url="https://sales.fivexl.io/schedule-a-call" cta_text="Book a consultation" >}}
+{{< our_team heading="What is FivexL Blueprint for AWS ECS?" cta_url="/contact" cta_text="Book a consultation" >}}
 {{< md >}}
 FivexL’s Blueprint for AWS ECS is a production-ready application platform that lets teams run containers reliably (ECS/Fargate), deploy fast, scale automatically, and meet compliance needs—without rebuilding infrastructure from scratch. 
 

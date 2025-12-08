@@ -17,7 +17,7 @@ tags: ['case study', 'aws']
 testimonial_author: 'Henrik Segersven,'
 testimonial_author_position: 'CTO at Kuvio'
 testimonial_author_portrait: Henrik.png
-testimonial_cta_url: 'https://sales.fivexl.io/schedule-a-call'
+testimonial_cta_url: '/contact'
 testimonial_long: |
   “The predictability is key for us. Knowing the costs for the upcoming month simplifies our budgeting process significantly. The retainer setup just works well for us. It aligns with our workflow, and we actually find that we work more effectively under this model. It's straightforward and efficient.”
 about_company:
@@ -34,7 +34,7 @@ double_panel:
   icon_links:
     - { url: "https://github.com/fivexl", icon: "github" }
     - { url: "https://www.linkedin.com/company/5xl", icon: "linkedin" }
-  button_cta: { url: "https://sales.fivexl.io/schedule-a-call", text: "Book a consultation" }
+  button_cta: { url: "/contact", text: "Book a consultation" }
   media_panel: { url: "https://youtu.be/uruLy1goNW0" }
 ---
 {{< case_study/challenge  image="andrey_challenge.png" image_css="object-position: center 10%">}}
@@ -83,7 +83,7 @@ To strengthen security measures further, [Ivan Razzhivin](https://fivexl.io/auth
 
 {{< case_study/benefits
     cta_text="Start Your Success Story"
-    cta_url="https://sales.fivexl.io/schedule-a-call"
+    cta_url="/contact"
     image="kuvio_retainer_benefits.png"
     >}}
 {{< pink_heading text="Benefits" >}}

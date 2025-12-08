@@ -16,7 +16,7 @@ testimonial: 'I think FivexL did a really good job of being deliberate, explicit
 testimonial_author: 'Nate Sesti,'
 testimonial_author_position: 'CTO at Continue'
 testimonial_author_portrait: nate.png
-testimonial_cta_url: 'https://sales.fivexl.io/schedule-a-call'
+testimonial_cta_url: '/contact'
 testimonial_long: |
   “I think the biggest key benefit we’ve gotten is the deployment setup we have. It’s easy — any time we push to GitHub and merge a new PR, it’s automatically going to the development branch. We have full control over whether we want to move to staging or not. That’s helped us group and test changes more effectively. And having that magic button to confirm promotion to prod — we’ve had no major outages, no serious bugs, and I think that’s because this pipeline lets us be as deliberate as we want.”
 about_company:
@@ -31,7 +31,7 @@ double_panel:
   icon_links:
     - { url: "https://github.com/fivexl", icon: "github" }
     - { url: "https://www.linkedin.com/company/5xl", icon: "linkedin" }
-  button_cta: { url: "https://sales.fivexl.io/schedule-a-call", text: "Book a consultation" }
+  button_cta: { url: "/contact", text: "Book a consultation" }
   media_panel: { url: "https://youtu.be/uruLy1goNW0" }
 ---
 {{< case_study/challenge  image="goto_challenge1.png" image_css="object-position: center 10%">}}
@@ -98,7 +98,7 @@ With the application running smoothly on ECS and smart integrations like Slack-b
 
 {{< case_study/benefits
     cta_text="Start Your Success Story"
-    cta_url="https://sales.fivexl.io/schedule-a-call"
+    cta_url="/contact"
     image="goto_benefits.png"
     blockquote=`I think FivexL did a really good job of being deliberate, explicit, and highly consistent about the work. From day one, I knew exactly what the goals were, what the scope was, and what to expect — everything was clearly listed and communicated multiple times. And all of it was delivered.<br/> 
 <br/>   
