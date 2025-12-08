@@ -14,8 +14,6 @@ transparent_nav: true
 images: [ 'featured.png' ]
 ---
 
-{{< case_studies_cards heading="Our happy customers" mb="3">}}
-
 {{< two_columns heading="FivexL - Cloud Engineering Specialists" >}}
 {{< column >}}
 ### What Can We Do For Your Startup?  
@@ -59,6 +57,8 @@ There’s no problem that we can’t solve together!
 {{< steps_section_item number=7 text="Providing cloud engineering training for your team or assisting with hiring." >}}
 
 {{< /steps_section >}}
+
+{{< case_studies_cards heading="Our happy customers" mb="3">}}
 
 {{< callout_cta heading="This way, you can focus on what you do best without worrying about the underlying infrastructure." cta_url="/contact" cta_text="Book a consultation" >}}
 

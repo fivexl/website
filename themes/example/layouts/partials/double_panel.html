@@ -18,6 +18,7 @@
         </div>
         {{ partial "media_panel" .media_panel }}
         {{ with .button_cta }}{{ partial "button_cta" . }}{{ end }}
+        {{ with .button_subtext }}<p class="dp-ButtonSubtext">{{ . }}</p>{{ end }}
     </div>
 </section>
 {{ else }}
