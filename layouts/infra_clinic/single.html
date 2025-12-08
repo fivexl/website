@@ -1,7 +1,6 @@
 {{ define "main" }}
     {{ with .Params.double_panel }}{{ partial "double_panel" . }}{{ end }}
     {{- .Content -}}
-    {{- partial "case_study_testimonial" . -}}
     {{- partial "CaseStudiesCards" (dict "heading" "Our happy customers") }}
     {{ if .Params.callout_cta_heading }}
     <section class="ccta">

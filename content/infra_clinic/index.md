@@ -25,7 +25,7 @@ double_panel:
   media_panel: { url: "https://www.youtube.com/watch?v=wxrH1MicgRA" }
 ---
 
-{{< our_team heading="What is FivexL Infra Clinic?" cta_url="/contact" cta_text="Apply Now" >}}
+{{< our_team heading="What is FivexL Infra Clinic?" cta_url="https://docs.google.com/forms/d/e/1FAIpQLSeNjypPVQkMbmgLN_VgCHae5-aoA7WVWbr2GiYPlzF33h_E9A/viewform?usp=header" cta_text="Apply Now" >}}
 {{< md >}}
 **Infra Clinic** is a monthly program for startups building on AWS.
 Each month, we choose one startup and spend four weeks inside their real AWS environment – reviewing architecture, security, costs, and delivery, and helping implement the most important fixes.
@@ -106,7 +106,7 @@ Every startup that applies – **whether selected or not** – gets a **free AWS
   <div class="ic-container">
     <div class="ic-fit-grid">
       <div class="ic-fit-column">
-        <h2 class="twc-Heading ic-heading">Ideal for you if:</h2>
+        <h2 class="twc-Heading ic-heading">Ideal for you if</h2>
         <ul class="ic-fit-list">
           <li>You're building a SaaS / fintech / healthtech product on AWS</li>
           <li>You're preparing for or just raised a round</li>
@@ -115,7 +115,7 @@ Every startup that applies – **whether selected or not** – gets a **free AWS
         </ul>
       </div>
       <div class="ic-fit-column">
-        <h2 class="twc-Heading ic-heading">Not a fit if…</h2>
+        <h2 class="twc-Heading ic-heading">Not a fit if</h2>
         <ul class="ic-fit-list ic-fit-list--not">
           <li>You're on Azure/GCP</li>
           <li>You're running tiny side-projects without production users</li>
