@@ -11,9 +11,20 @@ _build:
   publishResources: true
 transparent_nav: true
 callout_cta_heading: "Join FivexL Infra Clinic"
-callout_cta_url: "/contact"
+callout_cta_url: "https://docs.google.com/forms/d/e/1FAIpQLSeNjypPVQkMbmgLN_VgCHae5-aoA7WVWbr2GiYPlzF33h_E9A/viewform?usp=header"
 callout_cta_text: "Book a Free Discovery Call"
 callout_cta_subtext: "Apply by the 20th of each month to be considered for the next Infra Clinic."
+faq:
+  - question: "Why only one startup per month?"
+    answer: "We dedicate a full month of hands-on support to each selected startup. This ensures deep engagement, meaningful results, and the kind of attention that wouldn't be possible if we split our focus across multiple companies."
+  - question: "What happens on the discovery call?"
+    answer: "We'll review your current AWS setup, discuss your biggest infrastructure challenges, and share tailored recommendations — whether or not you're selected for the full clinic. Every applicant walks away with actionable advice."
+  - question: "What if my startup isn't selected?"
+    answer: "You still get a free discovery call with our team. We'll give you honest feedback on your infrastructure and point you toward resources that can help. You're also welcome to reapply in future months."
+  - question: "Why is there a donation required?"
+    answer: "The donation goes directly to Lastefond, a foundation supporting seriously ill children in Estonia. It's a symbolic contribution that lets startups give back while receiving expert help — and 100% of it goes to the cause."
+  - question: "Who should apply?"
+    answer: "Early-stage startups building on AWS who want to improve their infrastructure, reduce costs, prepare for compliance, or just get a second opinion from experienced engineers. If you're unsure, apply anyway — the discovery call is free."
 double_panel:
   layout: 'services'
   heading: "Infra Clinic for Startups on AWS"

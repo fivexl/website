@@ -2,6 +2,21 @@
     {{ with .Params.double_panel }}{{ partial "double_panel" . }}{{ end }}
     {{- .Content -}}
     {{- partial "CaseStudiesCards" (dict "heading" "Our happy customers") }}
+    {{ if .Params.faq }}
+    <section class="ic-faq">
+        <div class="ic-container">
+            <h2 class="twc-Heading ic-heading">FAQ — FivexL Infra Clinic</h2>
+            <div class="ic-faq-list">
+                {{ range .Params.faq }}
+                <details class="ic-faq-item">
+                    <summary class="ic-faq-question">{{ .question }}</summary>
+                    <div class="ic-faq-answer">{{ .answer | markdownify }}</div>
+                </details>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+    {{ end }}
     {{ if .Params.callout_cta_heading }}
     <section class="ccta">
         <h2 class="ccta-Heading">{{ .Params.callout_cta_heading | markdownify }}</h2>
