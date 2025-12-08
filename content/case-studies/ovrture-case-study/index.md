@@ -14,7 +14,7 @@ testimonial: 'The transition was seamless. Our infrastructure is light years ahe
 testimonial_author: 'Chris Picht,'
 testimonial_author_position: 'IT Operations Manager & Senior Information Security Officer'
 testimonial_author_portrait: chris.png
-testimonial_cta_url: 'https://sales.fivexl.io/schedule-a-call'
+testimonial_cta_url: '/contact'
 testimonial_long: |
   “The collaboration was highly professional and our transition was seamless. Our infrastructure is light years ahead of where most small businesses would expect to be. Ovrture is now faster, more flexible, and more secure than ever.”
 about_company:
@@ -29,7 +29,7 @@ double_panel:
   icon_links:
     - { url: "https://github.com/fivexl", icon: "github" }
     - { url: "https://www.linkedin.com/company/5xl", icon: "linkedin" }
-  button_cta: { url: "https://sales.fivexl.io/schedule-a-call", text: "Book a consultation" }
+  button_cta: { url: "/contact", text: "Book a consultation" }
   media_panel: { url: "https://youtu.be/uruLy1goNW0" }
 ---
 {{< case_study/challenge  image="challenge_o.png" >}}
@@ -60,7 +60,7 @@ A key issue they solved for us was building a complex elastic load balancer set 
 
 {{< case_study/benefits
     cta_text="Start Your Success Story"
-    cta_url="https://sales.fivexl.io/schedule-a-call"
+    cta_url="/contact"
     image="benefits_ovrture.png"
     >}}
 {{< pink_heading text="Benefits" >}}

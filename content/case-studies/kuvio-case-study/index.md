@@ -14,7 +14,7 @@ testimonial: 'With the new scalable infrastructure in place, we have been able t
 testimonial_author: 'Henrik Segersven,'
 testimonial_author_position: 'CTO at Kuvio'
 testimonial_author_portrait: Henrik.png
-testimonial_cta_url: 'https://sales.fivexl.io/schedule-a-call'
+testimonial_cta_url: '/contact'
 testimonial_long: |
   “With the new scalable infrastructure in place, we've been able to develop a range of new features for our product. It's not just about having a scalable system; it's about providing a reliable service that our clients can trust. Achieving 100% uptime reinforces that trust and enhances our ability to effectively sell our service.”
 about_company:
@@ -31,7 +31,7 @@ double_panel:
   icon_links:
     - { url: "https://github.com/fivexl", icon: "github" }
     - { url: "https://www.linkedin.com/company/5xl", icon: "linkedin" }
-  button_cta: { url: "https://sales.fivexl.io/schedule-a-call", text: "Book a consultation" }
+  button_cta: { url: "/contact", text: "Book a consultation" }
   media_panel: { url: "https://youtu.be/uruLy1goNW0" }
 ---
 {{< case_study/challenge  image="challenge_kuvio.png" >}}
@@ -77,7 +77,7 @@ FivexL also educated Kuvio's developers about more cost-optimal solutions, equip
 
 {{< case_study/benefits
     cta_text="Start Your Success Story"
-    cta_url="https://sales.fivexl.io/schedule-a-call"
+    cta_url="/contact"
     image="kuvio_benefits.png"
     >}}
 {{< pink_heading text="Benefits" >}}

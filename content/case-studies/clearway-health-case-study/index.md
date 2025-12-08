@@ -16,7 +16,7 @@ tags: ['case study', 'aws']
 testimonial: 'Fivexl has been a great partner. They demonstrate unrivaled expertise in the AWS ecosystem and deliver results quickly.'
 testimonial_author: 'Rusty Atkinson,'
 testimonial_author_position: 'VP, Technology at Clearway Health'
-testimonial_cta_url: 'https://sales.fivexl.io/schedule-a-call'
+testimonial_cta_url: '/contact'
 testimonial_author_portrait: Rusty.jpg
 testimonial_long: |
   "Fivexl's domain expertise as Cloud Engineering Specialists has helped Clearway Health deliver on our aggressive SaaS vision with confidence that the decisions we are making today will serve us well for years to come. FivexL's RightStart for AWS allowed us to get many important, foundational elements decided and solved in record time, which has allowed the Clearway Health Technology Team to spend more time and attention on specialty pharmacy-specific decisions".
@@ -32,7 +32,7 @@ double_panel:
   icon_links:
     - { url: "https://github.com/fivexl", icon: "github" }
     - { url: "https://www.linkedin.com/company/5xl", icon: "linkedin" }
-  button_cta: { url: "https://sales.fivexl.io/schedule-a-call", text: "Book a consultation" }
+  button_cta: { url: "/contact", text: "Book a consultation" }
   media_panel: { url: "https://youtu.be/uruLy1goNW0" }
 ---
 {{< case_study/challenge  image="gui_challenge.png" image_css="object-position: 18%" >}}
@@ -94,7 +94,7 @@ These accounts are ready to accept workloads with ECS clusters and supporting re
 
 {{< case_study/benefits
     cta_text="Start Your Success Story"
-    cta_url="https://sales.fivexl.io/schedule-a-call"
+    cta_url="/contact"
     image="cristal_benefits.png"
     >}}
 {{< pink_heading text="Benefits" >}}

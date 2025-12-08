@@ -16,7 +16,7 @@ testimonial_author: 'Rusty Atkinson,'
 testimonial_author_position: 'VP, Technology at Clearway Health'
 testimonial_author_portrait: Clearway.jpg
 callout_cta_heading: "Ready to start your AWS journey the right way?"
-callout_cta_url: "https://sales.fivexl.io/schedule-a-call"
+callout_cta_url: "/contact"
 callout_cta_text: "Book a consultation"
 double_panel:
   layout: 'services'
@@ -25,11 +25,11 @@ double_panel:
   icon_links:
     - { url: "https://github.com/fivexl", icon: "github" }
     - { url: "https://www.linkedin.com/company/5xl", icon: "linkedin" }
-  button_cta: { url: "https://sales.fivexl.io/schedule-a-call", text: "Book a consultation" }
+  button_cta: { url: "/contact", text: "Book a consultation" }
   media_panel: { url: "https://www.youtube.com/watch?v=JBcwjP6HIZc" }
 ---
 
-{{< our_team heading="What is FivexL RightStart?" cta_url="https://sales.fivexl.io/schedule-a-call" cta_text="Book a consultation" >}}
+{{< our_team heading="What is FivexL RightStart?" cta_url="/contact" cta_text="Book a consultation" >}}
 {{< md >}}
 FivexL RightStart is a foundation for startups on AWS — a battle-tested way to launch with secure, scalable, and audit-ready infrastructure from day one. Instead of growing out of a single ad-hoc account into security gaps, compliance headaches (SOC 2, ISO 27001, HIPAA), surprise costs, and brittle manual processes that create technical debt, you start with the right building blocks: multi-account boundaries, least-privilege access, centralized logging, and cost controls—all as code. 
 
