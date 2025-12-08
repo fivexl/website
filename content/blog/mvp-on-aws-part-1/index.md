@@ -215,7 +215,7 @@ FivexL's AWS ECS Blueprint is a ready-to-run container platform on ECS/Fargate w
 
 If you'd like a quick, expert sanity check before you scale, apply for the **Infra Clinic for Startups**. One startup each month receives a full 1-month Infra Clinic advisory, hands-on DevOps, and AI-powered support — for a symbolic donation to children's health. Every applicant gets a free discovery call.
 
-[Apply and get your free consultation:](https://clinic.fivexl.io/)
+[Apply and get your free consultation:](/infra_clinic/)
 
 ---
 
