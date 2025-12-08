@@ -145,7 +145,7 @@ If your organization wants to embrace a multi-account strategy but struggles wit
 I hope this article has helped you understand how AFT can assist with compliance in your AWS environment. If you have any questions or need help, feel free to reach out. We’re always happy to help design, build, and manage a secure multi-account AWS setup.
 
 ### About FivexL
-* [Schedule a call with FivexL](https://sales.fivexl.io/schedule-a-call)  
+* [Schedule a call with FivexL](/contact)  
 * [Right Start for AWS by FivexL](https://sales.fivexl.io/aws_right_start)
 * **FivexL Open Source Projects:**
   * [Terraform AWS SSO Elevator](https://github.com/fivexl/terraform-aws-sso-elevator)  
