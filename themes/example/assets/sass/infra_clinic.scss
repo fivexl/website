@@ -1,0 +1,85 @@
+// Infra Clinic page styles
+
+.ic-section {
+  padding: 80px 40px;
+  background: #f5f5f7;
+}
+
+.ic-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.ic-heading {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+// Why Join section
+.ic-benefits {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.ic-benefit {
+  font-family: Montserrat, sans-serif;
+  margin-bottom: 24px;
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.ic-benefit-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.ic-benefit-text {
+  color: #282625;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+// How it works section
+.ic-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.ic-card {
+  background: white;
+  padding: 50px 40px;
+  border-radius: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  text-align: center;
+}
+
+.ic-card-number {
+  color: #1D96F1;
+  font-weight: 700;
+  font-size: 72px;
+  font-family: Montserrat, sans-serif;
+  margin-bottom: 24px;
+  line-height: 1;
+}
+
+.ic-card-title {
+  font-family: Montserrat, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 16px;
+}
+
+.ic-card-text {
+  font-family: Montserrat, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #282625;
+  margin: 0;
+}
+

@@ -32,7 +32,7 @@ pagerSize = 6
   weight = 2
 [[menu.main]]
   identifier = 'infra-clinic'
-  url = 'https://clinic.fivexl.io/'
+  url = '/infra_clinic'
   name = 'Infra Clinic for Startups'
   parent = 'products'
   weight = 3
