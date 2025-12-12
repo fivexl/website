@@ -32,7 +32,6 @@ FivexL isn’t for everyone. It’s for people who combine ambition, skill, and 
 If that sounds like you, there’s a good chance you’ll feel at home here.
 {{< /md >}}
 {{< /our_team >}}
-
 {{< two_columns heading="Exploring a future with FivexL? Let's talk it over!" >}}
 {{< column >}}
 ### Ready to Share Your Expertise?  
@@ -76,13 +75,12 @@ Understand concepts such as: Infrastructure as Code, Immutable infrastructure, C
 {{< steps_section heading="What need to do?" >}}
 
 {{< steps_section_item number=1 text="Fill the form, tell us about your motivation." >}}
-{{< steps_section_item number=2 text="Take the English Test." >}}
+{{< steps_section_item number=2 text="Submit a task assignment. All applicants who submit a task assignment will receive feedback from us." >}}
 {{< steps_section_item number=3 text="Take the Personality Test." >}}
 {{< steps_section_item number=4 text="Meet the team and share your experience." >}}
 
 {{< /steps_section >}}
 {{< callout_cta heading="Let's talk about how FivexL can be your next step forward." cta_url="#application-form" cta_text="Meet the team!" >}}
-
 {{< unsafe >}}
 <div id="application-form" style="display: none; margin: 0 auto 60px; padding: 40px 0;">
   <div style="display: flex; justify-content: center;">
@@ -112,4 +110,3 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 {{< /unsafe >}}
-
