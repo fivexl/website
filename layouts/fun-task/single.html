@@ -1,0 +1,6 @@
+{{ define "main" }}
+    {{ with .Params.double_panel }}{{ partial "double_panel" . }}{{ end }}
+    {{- .Content -}}
+{{ end }}
+
+
