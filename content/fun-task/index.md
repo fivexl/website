@@ -20,7 +20,7 @@ double_panel:
   media_panel: { image: "/contact/featured.png" }
 ---
 
-{{< two_columns heading="The Challenge" >}}
+{{< two_columns heading="The Challenge" center="true" >}}
 {{< column >}}
 ### Website Hosting on AWS
 
