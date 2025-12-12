@@ -4,11 +4,11 @@
   background: #f4f4f4;
 
   &-Wrapper {
-    padding: 6.5rem 2rem 4rem;
+    padding: 4rem 2rem 4rem;
     max-width: 1920px;
     margin-inline: auto;
     @media (min-width: 540px) {
-      padding: clamp(6.5rem, 10vw, 11rem) clamp(3rem, 15vw, 17rem) ;
+      padding: clamp(4rem, 6vw, 6rem) clamp(3rem, 15vw, 17rem) ;
     }
   }
 
@@ -54,5 +54,21 @@
     font-weight: 600;
     letter-spacing: -0.01em;
     line-height: 1.5;
+  }
+}
+
+// Reduce gap when steps section follows two_columns
+.twc + .ste .ste-Wrapper {
+  padding-top: 2rem;
+  @media (min-width: 540px) {
+    padding-top: clamp(2rem, 4vw, 4rem);
+  }
+}
+
+// Reduce bottom padding of two_columns when followed by steps section
+.twc:has(+ .ste) .twc-Container {
+  padding-bottom: 2rem;
+  @media (min-width: 540px) {
+    padding-bottom: clamp(2rem, 4vw, 4rem);
   }
 }
