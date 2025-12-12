@@ -35,7 +35,7 @@ This challenge is designed to demonstrate your understanding of AWS infrastructu
 {{< /two_columns >}}
 
 {{< unsafe >}}
-<section class="ic-section">
+<section class="ic-section" style="padding-top: 20px;">
   <div class="ic-container">
     <h2 class="twc-Heading ic-heading">Requirements</h2>
     <div class="ic-benefits">
