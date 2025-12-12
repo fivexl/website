@@ -138,7 +138,7 @@ At the same time, we should not forget that AFT Automatically enrolls the accoun
 ## Conclusion
 AWS Control Tower provides a solid multi-account foundation, and AFT extends it by letting you **treat account creation as code**. With consistency, repeatability, and enforceable compliance across all AWS accounts, it’s particularly helpful if you operate in a regulated industry or need strict security controls.
 
-At FivexL, we believe that a code-driven approach to account provisioning is the best way to scale and secure your AWS environment. Through our productized service [RightStart for AWS](https://sales.fivexl.io/aws_right_start), we use AFT to automate account creation and apply the necessary security and compliance settings. Combining AFT with our open-source modules has simplified environment management for our customers, helping them comply with SOC 2, PCI DSS, HIPAA, and other standards.
+At FivexL, we believe that a code-driven approach to account provisioning is the best way to scale and secure your AWS environment. Through our productized service [RightStart for AWS](/rightstart/), we use AFT to automate account creation and apply the necessary security and compliance settings. Combining AFT with our open-source modules has simplified environment management for our customers, helping them comply with SOC 2, PCI DSS, HIPAA, and other standards.
 
 If your organization wants to embrace a multi-account strategy but struggles with standardizing and securing everything at scale, AFT is definitely worth exploring.
 
@@ -146,7 +146,7 @@ I hope this article has helped you understand how AFT can assist with compliance
 
 ### About FivexL
 * [Schedule a call with FivexL](/contact)  
-* [Right Start for AWS by FivexL](https://sales.fivexl.io/aws_right_start)
+* [Right Start for AWS by FivexL](/rightstart/)
 * **FivexL Open Source Projects:**
   * [Terraform AWS SSO Elevator](https://github.com/fivexl/terraform-aws-sso-elevator)  
   * [Terraform-AWS-Cloudtrail-To-Slack](https://github.com/fivexl/terraform-aws-cloudtrail-to-slack)  
