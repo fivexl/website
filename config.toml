@@ -31,17 +31,23 @@ pagerSize = 6
   parent = 'products'
   weight = 2
 [[menu.main]]
+  identifier = 'retainer'
+  url = '/retainer'
+  name = 'Retainer Plans'
+  parent = 'products'
+  weight = 3
+[[menu.main]]
   identifier = 'infra-clinic'
   url = '/infra_clinic'
   name = 'Infra Clinic for Startups'
   parent = 'products'
-  weight = 3
+  weight = 4
 [[menu.main]]
   identifier = 'boris'
   url = 'https://fivexl.ai/'
   name = 'B.O.R.I.S'
   parent = 'products'
-  weight = 4
+  weight = 5
 [[menu.main]]
   url = '/contact'
   name = 'Contact'
