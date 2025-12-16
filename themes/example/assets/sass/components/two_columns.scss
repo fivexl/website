@@ -5,10 +5,18 @@
     color: $textSecondary;
     font-size: clamp(2.125rem,4vw, 3.4rem);
     margin-top: 0;
+    margin-bottom: 0.5rem;
     
     &_Centered {
       text-align: center;
     }
+  }
+  
+  &-Subheading {
+    color: $textSecondary;
+    font-size: clamp(1.25rem, 1.5vw, 1.5rem);
+    margin-top: 0;
+    margin-bottom: 1.5rem;
   }
 
   &-Container {
@@ -21,6 +29,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 2.5rem;
+    align-items: start;
 
     h2, h3, h4, h5 {
       margin-top: 0;
@@ -37,6 +46,25 @@
         font-weight: 500;
         line-height: 1.5;
       }
+    }
+    
+    ul, ol {
+      padding-left: 1.25rem;
+      margin: 0;
+    }
+    
+    // When a list is the first element in a column (no heading), add top spacing
+    // to align with text in adjacent column that has a heading
+    > *:nth-child(2) > ul:first-child,
+    > *:nth-child(2) > ol:first-child {
+      margin-top: clamp(5rem, 5.5vw, 6rem);
+    }
+    
+    li {
+      font-size: clamp(0.875rem, 1vw, 1.25rem);
+      font-weight: 500;
+      line-height: 1.6;
+      margin-bottom: 1rem;
     }
     
     &_Centered {
