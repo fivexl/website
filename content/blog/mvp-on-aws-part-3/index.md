@@ -1,5 +1,5 @@
 ---
-title: 'MVP: PostgreSQL on AWS in 10 Minutes — The Setup That Still Works in 6 Months'
+title: 'MVP: PostgreSQL on AWS in 10 Minutes'
 author_id: 
 date: 2025-12-16
 description: 'A practical guide to setting up Aurora PostgreSQL for MVPs. Learn day-zero choices for SSL, logging, encryption, and parameter groups that save future weekends and prepare you for SOC 2 / HIPAA.'
@@ -43,7 +43,7 @@ Aurora PostgreSQL has parameters that apply at cluster level and others per inst
 ```bash
 aws rds create-db-parameter-group \
     --db-parameter-group-name mydbparametergroup \
-    --db-parameter-group-family aurora-postgresql16 \
+    --db-parameter-group-family aurora-postgresql17 \
     --description "My new parameter group"
 ```
 
@@ -52,20 +52,13 @@ aws rds create-db-parameter-group \
 ```bash
 aws rds create-db-parameter-group ^
     --db-parameter-group-name mydbparametergroup ^
-    --db-parameter-group-family aurora-postgresql16 ^
+    --db-parameter-group-family aurora-postgresql17 ^
     --description "My new parameter group"
 ```
 
 ### 2) Require SSL/TLS from day one
 
 On PostgreSQL in RDS/Aurora, you should enforce encrypted connections by setting `rds.force_ssl=1`. AWS documents the setting and also notes that defaults differ by major version (for example, PostgreSQL 15+ commonly defaults to forcing SSL). [AWS Documentation](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/PostgreSQL.Concepts.General.SSL.html)
-
-This is one of those "fail fast now" settings: your application should learn immediately if it's connecting insecurely.
-
-```bash
-$ psql -h db-name.555555555555.ap-southeast-1.rds.amazonaws.com port=5432 dbname=testDB user=testuser
-psql: error: FATAL: no pg_hba.conf entry for host "w.x.y.z", user "testuser", database "testDB", SSL off
-```
 
 ### 3) Turn on slow query logging early
 
