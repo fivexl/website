@@ -95,9 +95,14 @@ Aurora Serverless v2 is also an option when usage is spiky. As of late 2024, AWS
 
 **Trade-off:** your "cheap when idle" plan can break if something holds connections open (tools, health checks, proxies). Treat it like a real system, not magic.
 
+<img src="Aurora_cluster_storage_config.png" alt="Aurora Serverless v2 configuration showing capacity range and pause after inactivity settings" style="width: 100%; max-width: 900px; display: block; margin: 2rem 0;">
+
+<img src="Aurora_cluster_storage_config_2.png" alt="RDS Events showing Aurora Serverless v2 pause events" style="width: 100%; max-width: 900px; display: block; margin: 2rem 0;">
+
 ---
 
-## Under the hood: A Terraform baseline for Aurora PostgreSQL
+## Under the hood: A Terraform baseline for Aurora PostgreSQL ([code source 🙏](https://cageyv.dev/posts/aws-mvp-postgresql/))
+
 
 Below is a compact example showing the main ideas: custom KMS key, parameter groups, Secrets Manager managed master password, IAM DB auth, private subnets, and locked-down security group.
 
@@ -183,18 +188,6 @@ resource "aws_rds_cluster_instance" "writer" {
 ---
 
 ## What we learned (and what we keep repeating)
-
-**PostgreSQL is not the risky part. Defaults are.**
-
-You can absolutely ship an MVP quickly on AWS — we do it all the time — but speed gets expensive when you build on accidental choices.
-
-We've been through SOC 2 work (last year), and it rewires your brain: you start seeing "default VPC" and "default KMS key" the way you see an unplugged fridge door. Not a disaster today. A problem tomorrow.
-
-If you're building an MVP and want a quick sanity check of your database setup (security, cost, operability), we're happy to compare notes — and we also love hearing what patterns you're using that worked in production.
-
----
-
-## Key takeaways
 
 PostgreSQL itself is rarely the problem. Default choices are. In MVPs, we've seen the same movie too many times: the database ships fast, works fine for a few months, and then becomes the place where security, operability, and "who changed this?" questions go to breed.
 
