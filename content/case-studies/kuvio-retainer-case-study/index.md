@@ -53,13 +53,13 @@ Opting to maintain its agility as a small, dynamic team, Kuvio steered away from
 FivexL, with its deep insights into the startup needs, offers a cost-efficient solution for Kuvio: a retainer agreement with a consultant available part-time to cover base infrastructure support needs and provide ongoing technical guidance.  
 This model is especially beneficial for startups during their scaling phase. As they encounter rapid 'Hockey stick' growth and venture into new markets, they can effortlessly transition from retainer to full-time engagement to address scaling needs. This ensures problem-free growth and a deep and consistent understanding of the infrastructure's design and the strategic reasoning behind it.  
   
-Under the guidance of [Andrey Devyatkin](https://fivexl.io/author/andrey-devyatkin/), co-founder and principal consultant at FivexL, with the expertise of certified AWS architects [Ivan Razzhivin](https://fivexl.io/author/ivan-razzhivin/) and [Alexey Eremin](https://fivexl.io/author/alexey-eremin/) FivexL actively extended its support to Kuvio under the retainer agreement, taking proactive steps beyond the initial scope of support. This time was used to implement critical updates and innovations to the infrastructure, ensuring Kuvio remained technologically advanced and well-equipped to achieve its business objectives.  
+Under the guidance of [Andrey Devyatkin](https://fivexl.io/specialist/andrey-devyatkin/), co-founder and principal consultant at FivexL, with the expertise of certified AWS architects [Ivan Razzhivin](https://fivexl.io/specialist/ivan-razzhivin/) and [Alexey Eremin](https://fivexl.io/specialist/alexey-eremin/) FivexL actively extended its support to Kuvio under the retainer agreement, taking proactive steps beyond the initial scope of support. This time was used to implement critical updates and innovations to the infrastructure, ensuring Kuvio remained technologically advanced and well-equipped to achieve its business objectives.  
   
 **Serverless Solutions and ETL Processes**
 Kuvio encountered limits with their existing relational database setup. To resolve this, they shifted to using S3 object storage as a database, with Athena implemented on top for SQL querying capabilities. This change effectively allowed the system to function like a traditional database while offering enhanced scalability and cost efficiency of the data storage layer. FivexL assisted Kuvio’s developers in making these infrastructure changes.  
   
 **Cost optimization in a serverless environment**
-Through the initiative and expertise of [Alexey Eremin](https://fivexl.io/author/alexey-eremin/), a certified AWS architect from FivexL, Kuvio experienced a remarkable breakthrough in cost optimization: a 96% reduction in S3 bucket costs, leading to a significant decrease in overall cloud expenses.  
+Through the initiative and expertise of [Alexey Eremin](https://fivexl.io/specialist/alexey-eremin/), a certified AWS architect from FivexL, Kuvio experienced a remarkable breakthrough in cost optimization: a 96% reduction in S3 bucket costs, leading to a significant decrease in overall cloud expenses.  
 Despite the benefits of serverless computing, a common challenge is that costs often exceed expectations. Recognizing this issue, Alexey Eremin devised a unique approach to analyze and optimize Athena's queries, allowing developers to identify and optimize queries that would generate excessive S3 API calls and thus drive costs.  
   
 {{</ case_study/column >}}
@@ -69,14 +69,14 @@ With Kuvio handling substantial volumes of data, Alexey delved into the company'
 Alexey explored the capabilities of Apache Iceberg, a tool that enables Athena to utilize SQL to gather data from S3. He leveraged Iceberg's functionality to merge files and conducted experiments to determine the optimal file merging level. One particularly effective experiment led to the remarkable 96% cost reduction in the S3 bucket, significantly impacting Kuvio's overall cloud expenses. Alexey Eremin detailed [his approach in the article](https://fivexl.io/blog/s3-server-access-logging-date-partitioning/).  
   
 **Enhancing Scalability with Migration to AWS Batch**  
-[Ivan Razzhivin](https://fivexl.io/author/ivan-razzhivin/), a certified AWS architect from FivexL, aided Kuvio in migrating to AWS Batch. This move allowed for greater scalability and the ability to implement solutions beyond Lambda's capabilities due to its service limits. AWS Batch offered the necessary flexibility for more complex processing needs.  
+[Ivan Razzhivin](https://fivexl.io/specialist/ivan-razzhivin/), a certified AWS architect from FivexL, aided Kuvio in migrating to AWS Batch. This move allowed for greater scalability and the ability to implement solutions beyond Lambda's capabilities due to its service limits. AWS Batch offered the necessary flexibility for more complex processing needs.  
   
 **Continuous Integration and Delivery (CI/CD) improvement**
 To streamline application development and deployment, Ivan Razzhivin optimized Kuvio's CI/CD pipeline, focusing on its reusability. 
 He created reusable templates for application building and deployment, reducing the need for continuous maintenance. This redesign allowed for centralized updates that could be rolled out across all pipelines, simplifying the process for Kuvio's developers, who could then use these templates as an easily adaptable internal tool. This streamlined process reduced development time and improved overall productivity.  
   
 **Security Enhancements**
-To strengthen security measures further, [Ivan Razzhivin](https://fivexl.io/author/ivan-razzhivin/) implemented code and image scanning automation to detect and remediate vulnerabilities in Kuvio's applications and systems. This proactive approach ensured that Kuvio's infrastructure remained protected from potential security breaches.
+To strengthen security measures further, [Ivan Razzhivin](https://fivexl.io/specialist/ivan-razzhivin/) implemented code and image scanning automation to detect and remediate vulnerabilities in Kuvio's applications and systems. This proactive approach ensured that Kuvio's infrastructure remained protected from potential security breaches.
   
 {{</ case_study/column >}}
 {{</ case_study/solution >}}

@@ -1,6 +1,5 @@
 ---
 title:  'How to build a positive remote working culture: Insights from FivexL'
-author_id: 'Vera Zhukova'
 summary: 'FivexL shares insights on cultivating a positive remote work environment, discussing effective task management, work-life balance, workspace organization, tackling procrastination, and building cohesive teams'
 date: 2023-05-22
 author: Vera Zhukova

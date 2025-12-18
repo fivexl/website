@@ -4,7 +4,7 @@
         <div class="cst-AuthorsWrapper" {{ if not (reflect.IsSlice .Params.author_id) }}style="grid-template-columns: minmax(1fr, 380px); justify-content: center"{{end }}>
             {{- if reflect.IsSlice .Params.author_id -}}
             {{ range .Params.author_id }}
-            {{ $page := $.GetPage (printf `/author/%s` .) }}
+            {{ $page := $.GetPage (printf `/specialist/%s` .) }}
             <div class="asb" style="background: white; width: auto;">
                 <a href="{{ $page.Permalink }}" alt="{{ $page.Params.name }}'s author page">
                     {{ partial "img" (dict "class" "asb-Author_Portrait" "src" $page.Params.author_headshot "alt" "Author portrait" "Page" $page "sizes" "145px" "lazy" true) }}
@@ -19,7 +19,7 @@
             </div>
             {{ end }}
             {{ else }}
-            {{ $page := $.GetPage (printf `/author/%s` .Params.author_id) }}
+            {{ $page := $.GetPage (printf `/specialist/%s` .Params.author_id) }}
             <div class="asb" style="background: white; width: auto;">
                 <a href="{{ $page.Permalink }}" alt="{{ $page.Params.name }}'s author page">
                     {{ partial "img" (dict "class" "asb-Author_Portrait" "src" $page.Params.author_headshot "alt" "Author portrait" "Page" $page "sizes" "145px" "lazy" true) }}

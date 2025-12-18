@@ -1,7 +1,9 @@
 {{ with .Params.certifications }}
+    {{ $page := $ }}
+    {{ $pageUrl := $page.RelPermalink }}
     {{ $images := slice }}
     {{- range . -}}
-        {{ $images = $images | append (dict "image" .) }}
+        {{ $images = $images | append (dict "image" (printf "%s%s" $pageUrl .)) }}
     {{- end -}}
     <section class="auc">
         {{ partial "carousel" (dict "context" (dict "images" $images) "items" "5" "height" "128" "unit" "px" "duration" "4000") }}
