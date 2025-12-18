@@ -2,10 +2,9 @@
 title: 'New Stream Case Study'
 author_id:
   - 'Artem Zhelezov'
-  - 'Maria Zubchenko'
 summary: 'FivexL built a scalable and secure infrastructure defined in code for a Mobile Computer Vision & AI solutions software company.'
 date: 2022-08-28 
-author:  Artem Zhelezov Maria Zubchenko 
+author: Artem Zhelezov Maria Zubchenko
 panel_image: Artem_pink.png
 authors_heading: 'Two lead consultants for the project'
 alt_image: artem_quad.png

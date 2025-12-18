@@ -1,6 +1,5 @@
 ---
 title:  'FivexL is AWS Advanced Partner'
-author_id: 'Vera Zhukova'
 summary: 'FivexL has reached a new milestone: we have become an AWS Andvanced Partner'
 date: 2024-08-07
 author: Vera Zhukova
