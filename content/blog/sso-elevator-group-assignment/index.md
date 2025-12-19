@@ -4,7 +4,7 @@ author_id: 'Andrey Devyatkin'
 summary: 'Google Workspace SCIM provisioning to AWS IAM Identity Center does not sync groups - a frustrating limitation. SSO Elevator now offers a Terraform-native solution that automatically assigns users to groups based on their attributes, eliminating the need for external tools like ssosync.'
 date: 2025-12-18
 author: Andrey Devyatkin
-panel_image: sso-elevator-groups.png
+panel_image: Andrey.png
 tags: ['AWS', 'SSO Elevator', 'Google Workspace', 'Terraform', 'Identity Center', 'open source']
 ---
 
@@ -183,5 +183,5 @@ For SSO Elevator users, the new attribute-based group assignment feature offers 
 
 We believe this is a practical solution to a common problem. As with all our open-source work, we welcome feedback, bug reports, and contributions on our [GitHub repository](https://github.com/fivexl/terraform-aws-sso-elevator).
 
-Want to know when new releases drop? Subscribe to our mailing list.
+Want to know when new releases drop? Subscribe to our [mailing list](/#email-subscription).
 
