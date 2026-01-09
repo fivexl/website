@@ -46,5 +46,11 @@
   status = 301
   force = false
 
+[[redirects]]
+  from = "/author/*"
+  to = "/specialist/:splat"
+  status = 301
+  force = false
+
 [context.deploy-preview.environment]
   HUGO_BASEURL = "/"
