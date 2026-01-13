@@ -44,11 +44,20 @@ Here, the team looks at how these rules overlap, which few basics raise your com
 
 [Listen the full episode](https://devsecops.fm/episodes/088-eu-compliance-101-dsa-mica-explained/)
 
-### AWS re:Invent Recap
+### Top 3 articles from the team
 
-AWS re:Invent is always a bit of a whirlwind — a lot of announcements, a lot of shiny things. The vibe this year felt very “make the cloud easier to run day-to-day”: more automation, more security baked in, and AI showing up everywhere. Here’s our take on what actually mattered at the re:Invent.
+From what our team shared internally last December 2025, these are top 3 links we believe are most likely to change how you build, secure, and spend on AWS.
 
-<!-- Your thoughts here -->
+1. [AWS Interconnect - multicloud (preview) – quickly create private, secure, high-speed, resilient connections between Amazon VPCs and other clouds](https://aws.amazon.com/about-aws/whats-new/2025/11/preview-aws-interconnect-multicloud/)
+
+2. [AWS Transform custom – automate large-scale app and code modernization across your organization using AI](https://aws.amazon.com/about-aws/whats-new/2025/12/transform-custom-organization-wide-modernization/)
+
+3. [EC2 AZ ID support – place instances, subnets, and volumes in the same physical Availability Zone across accounts by using stable AZ IDs in EC2 APIs](https://aws.amazon.com/about-aws/whats-new/2025/12/amazon-ec2-az-id-api-support/)
+
+### Upcoming Events
+We’re hosting a LinkedIn Live soon to unpack AWS re:Invent — not as a news dump, but as a practical filter you can actually use.
+
+FivexL’s Principal AWS Consultants will skim the flood of announcements and bring you the few that actually matter: what’s genuinely new, what changes in real workloads, and what you can safely ignore. We’ll keep you posted on LinkedIn — watch for the event invite.
 
 Liked this newsletter? Forward it to a teammate or friend who lives in AWS as much as you do.
 
