@@ -52,5 +52,18 @@
   status = 301
   force = false
 
+# Removed team members - 410 Gone
+[[redirects]]
+  from = "/specialist/maria-zubchenko/"
+  to = "/__gone__"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/specialist/vera-zhukova/"
+  to = "/__gone__"
+  status = 410
+  force = true
+
 [context.deploy-preview.environment]
   HUGO_BASEURL = "/"
