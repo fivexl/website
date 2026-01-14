@@ -1,7 +1,7 @@
 ---
 title: 'FivexL Newsletter, December 2025'
 author_id: FivexL
-date: 2026-01-01
+date: 2026-01-14
 description: 'FivexL Newsletter for December 2025 - Latest updates, blog posts, and insights from our cloud engineering team.'
 author: FivexL
 author_link: https://fivexl.io/
@@ -10,14 +10,18 @@ panel_image: fivexl_newsletter-black-logo.png
 tags: ['Newsletter', 'AWS', 'Cloud Engineering']
 ---
 
-December 2025 was intense for us: closing projects, wrapping up the year, and taking a short break to reset. Now we’re entering 2026 and getting back to work with a clearer head and a better sense of what we want to focus on. In this newsletter, we’re sharing our latest blog posts and our thoughts on AWS re:Invent — the biggest AWS event of last year and an important signal for what’s coming next. 
+## Intro
 
-From the whole FivexL team, Happy New Year 2026, and thank you for staying with us.
+December is always an intense month in the AWS consulting land. On one hand, you have re:Invent with its barrage of announcements, presentations, and a lot of action to stay up-to-date with. On the other hand, it is the end of the year — which often means project deadlines. And on top of that, you have the upcoming holiday season with its preparations, buying presents, concerts at school, and so on. A very, very busy month. This is why you are reading this newsletter only now. On the bright side, we got an opportunity to disconnect and recharge, and now we are ready to jump into 2026. From all of us at FivexL — Happy New Year 2026, and thank you for staying with us!
+
+## Upcoming Events
+
+Speaking of re:Invent — we will be hosting a re:Invent recap next month! [Andrey Devyatkin](https://fivexl.io/specialist/andrey-devyatkin/), [Guilherme Ferreira](https://fivexl.io/specialist/guilherme-ferreira/), and [Vladimir Samoylov](https://fivexl.io/specialist/vladimir-samoylov/) will be going through the re:Invent announcements. There were more than 500 announcements this year, so if they were to cover all of them in one hour, that would be about 8 announcements per minute! No, no, just joking. They will pick the announcements they think are the most useful — the ones you can put to work straight away and that will actually make a difference — and break them down in detail. Stay tuned for more details!
 
 ## FivexL Updates
 
 ### Open-source project updates
-We had a new release of terraform-aws-sso-elevator in December. It’s about bridging the gap between Google Workspace SCIM (attributes sync) and AWS IAM Identity Center (group assignments) — so SSO Elevator can turn synced user attributes into automatic, Terraform-managed group membership in Identity Center.
+We had a new release of terraform-aws-sso-elevator in December. It’s about bridging the gap between Google Workspace SCIM (Google Workspace users -> AWS IAM Identity Center sync) and AWS IAM Identity Center group assignments — so SSO Elevator can automatically assign synced users to groups based on their attributes so you do not need to maintain user to group mapping in Terraform. Handy!
 
 - **[terraform-aws-sso-elevator 4.1.0](https://github.com/fivexl/terraform-aws-sso-elevator/releases/tag/4.1.0)**  
   New feature automatically assigns users to groups in Identity Center based on their attributes synced from Google Workspace. Google Workspace doesn’t sync Google Groups via SCIM, but it does sync user attributes—so this release uses those attributes to derive and apply group membership automatically. The result: fewer manual group updates, less drift, and a cleaner Terraform-native access workflow.
@@ -30,7 +34,7 @@ Google Workspace SCIM provisioning doesn’t sync groups into AWS IAM Identity C
 A practical guide for MVP teams who picked PostgreSQL on AWS and don’t want to rebuild it six months later. The article compares Aurora vs “plain” RDS Postgres, then walks through the day-zero choices that save time later: SSL enforcement, slow query logging, idle transaction timeouts, KMS keys, parameter groups, and a minimal Terraform baseline you can reuse.
 
 ### Podcast: DevSecOps Talks
-Our co-founder Andrey Devyatkin hosts the DevSecOps Talks podcast together with Paulina Dubas and Mattias Hemmingsson. Paulina is an independent Lead DevOps Engineer/Architect who spent the last decade building and shaping cloud platforms. Mattias is a former CISO at a car rental company, a certified pentester, and a cloud engineering enthusiast. Together they use the show to sanity-check new trends, share what actually works in the field, and translate "DevSecOps" from buzzword back into day-to-day practice.
+Our co-founder [Andrey Devyatkin](https://fivexl.io/specialist/andrey-devyatkin/) hosts the DevSecOps Talks podcast together with Paulina Dubas and Mattias Hemmingsson. Paulina is an independent Lead DevOps Engineer/Architect who spent the last decade building and shaping cloud platforms. Mattias is a former CISO at a car rental company, a certified pentester, and a cloud engineering enthusiast. Together they use the show to sanity-check new trends, share what actually works in the field, and translate "DevSecOps" from buzzword back into day-to-day practice.
 
 In December, they released a two-part “EU Compliance 101” mini-series focused on what engineers and platform teams actually need to know about the upcoming regulations.
 
@@ -46,18 +50,13 @@ Here, the team looks at how these rules overlap, which few basics raise your com
 
 ### Top 3 articles from the team
 
-From what our team shared internally last December 2025, these are top 3 links we believe are most likely to change how you build, secure, and spend on AWS.
+In 2025 there was no escape from AI, so it's no surprise it made its way into this section as well.
 
-1. [AWS Interconnect - multicloud (preview) – quickly create private, secure, high-speed, resilient connections between Amazon VPCs and other clouds](https://aws.amazon.com/about-aws/whats-new/2025/11/preview-aws-interconnect-multicloud/)
+1. [2025 LLM Year in Review by Andrej Karpathy](https://karpathy.bearblog.dev/year-in-review-2025/)
 
-2. [AWS Transform custom – automate large-scale app and code modernization across your organization using AI](https://aws.amazon.com/about-aws/whats-new/2025/12/transform-custom-organization-wide-modernization/)
+2. [Stanford AI Club: Jeff Dean on Important AI Trends](https://www.youtube.com/watch?v=AnTw_t21ayE)
 
-3. [EC2 AZ ID support – place instances, subnets, and volumes in the same physical Availability Zone across accounts by using stable AZ IDs in EC2 APIs](https://aws.amazon.com/about-aws/whats-new/2025/12/amazon-ec2-az-id-api-support/)
+3. [Termboard – Knowledge Graphs Without Complexity](https://termboard.com/start/)
 
-### Upcoming Events
-We’re hosting a LinkedIn Live soon to unpack AWS re:Invent — not as a news dump, but as a practical filter you can actually use.
 
-FivexL’s Principal AWS Consultants will skim the flood of announcements and bring you the few that actually matter: what’s genuinely new, what changes in real workloads, and what you can safely ignore. We’ll keep you posted on LinkedIn — watch for the event invite.
-
-Liked this newsletter? Forward it to a teammate or friend who lives in AWS as much as you do.
-
+Made it till the end? Liked this newsletter? Forward it to a teammate or friend who lives in AWS as much as you do! Sharing is caring!
