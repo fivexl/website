@@ -1,5 +1,5 @@
 ---
-title: 'How to Get AWS Credits: A Practical Guide for Startups'
+title: 'How to Get AWS Credits: Practical Guide for Startups 2026'
 author_id: FivexL
 date: 2026-01-15
 description: 'A comprehensive guide on how to get AWS credits for your startup. Learn about AWS Activate Founders and Portfolio programs, eligibility requirements, and step-by-step application process.'
@@ -10,7 +10,7 @@ panel_image: best-thinking.png
 tags: ['AWS', 'Startup', 'Credits', 'Cloud', 'AWS Activate']
 ---
 
-## What AWS credits are
+## What are AWS credits?
 
 AWS credits are promotional funds AWS applies directly to your bill. They're not cash you can withdraw — they simply reduce what you owe for eligible AWS services until the credit balance runs out or the credits expire. In most cases, they cover core building blocks like compute (EC2, Lambda), storage (S3), databases (RDS, DynamoDB), analytics, and AI/ML usage. Some categories may be excluded (often AWS Marketplace purchases or certain support charges), so always check the terms for your specific credit type.
 
