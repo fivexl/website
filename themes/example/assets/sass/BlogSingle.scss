@@ -104,6 +104,72 @@
   .image-right { margin-left: auto; margin-right: 1rem; }
   .image-center { margin-inline: auto; }
 
+  // Table styles for blog posts
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-size: 0.9rem;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+
+  thead {
+    background-color: #18AEF0;
+    color: white;
+    
+    th {
+      padding: 14px 12px;
+      text-align: left;
+      font-weight: 600;
+      border-bottom: 2px solid #1590c8;
+    }
+  }
+
+  tbody {
+    tr {
+      border-bottom: 1px solid #e5e5e5;
+      
+      &:nth-child(odd) {
+        background-color: #f9f9f9;
+      }
+      
+      &:nth-child(even) {
+        background-color: #ffffff;
+      }
+      
+      &:hover {
+        background-color: #f0f9ff;
+      }
+      
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+    
+    td {
+      padding: 12px;
+      vertical-align: top;
+      border-right: 1px solid #e5e5e5;
+      
+      &:last-child {
+        border-right: none;
+      }
+      
+      &:first-child {
+        font-weight: 600;
+      }
+    }
+  }
+
+  // Responsive table wrapper
+  .table-wrapper {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+
   @media (min-width: 768px) {
     h1, h2, h3, h4, h5, h6, p, ol, ol li, ul, ul li {
       margin-inline: initial;
