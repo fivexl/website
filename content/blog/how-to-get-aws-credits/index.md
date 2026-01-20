@@ -1,7 +1,7 @@
 ---
 title: 'How to Get AWS Credits: Practical Guide for Startups 2026'
 author_id: FivexL
-date: 2026-01-15
+date: 2026-01-20
 description: 'A comprehensive guide on how to get AWS credits for your startup. Learn about AWS Activate Founders and Portfolio programs, eligibility requirements, and step-by-step application process.'
 author: FivexL
 author_link: https://fivexl.io/
