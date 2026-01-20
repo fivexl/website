@@ -10,6 +10,22 @@ panel_image: best-thinking.png
 tags: ['AWS', 'Startup', 'Credits', 'Cloud', 'AWS Activate']
 ---
 
+There's a lot of information about AWS credits and the different programs behind them. It's easy to get stuck — unsure which credits apply to your stage, what you actually qualify for, and where to start.
+
+This guide summarizes the main credit paths for startups: AWS Activate (Founders vs Portfolio), plus PoC and MAP credits — what they are, who they're for, and how to apply.
+
+### Table of Contents
+
+- [What are AWS credits?](#what-are-aws-credits)
+- [AWS Activate Program](#aws-activate-program)
+- [AWS Activate credit tracks overview](#aws-activate-credit-tracks-overview)
+- [How to apply for AWS Activate credits](#how-to-apply-for-aws-activation-credits-step-by-step)
+- [PoC credits program](#poc-credits-program-proof-of-concept)
+- [How to apply for PoC credits](#how-to-apply-for-poc-credits-step-by-step)
+- [MAP credits program](#map-credits-migration-acceleration-program)
+- [How to apply for MAP credits](#how-to-apply-for-map-credits-step-by-step)
+- [How FivexL can help](#how-fivexl-can-help)
+
 ## What are AWS credits?
 
 AWS credits are promotional funds AWS applies directly to your bill. They're not cash you can withdraw — they simply reduce what you owe for eligible AWS services until the credit balance runs out or the credits expire. In most cases, they cover core building blocks like compute (EC2, Lambda), storage (S3), databases (RDS, DynamoDB), analytics, and AI/ML usage. Some categories may be excluded (often AWS Marketplace purchases or certain support charges), so always check the terms for your specific credit type.
