@@ -43,12 +43,6 @@ pagerSize = 6
   parent = 'products'
   weight = 4
 [[menu.main]]
-  identifier = 'boris'
-  url = 'https://fivexl.ai/'
-  name = 'B.O.R.I.S'
-  parent = 'products'
-  weight = 5
-[[menu.main]]
   url = '/contact'
   name = 'Contact'
   weight = 40
