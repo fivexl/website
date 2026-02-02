@@ -10,8 +10,6 @@ panel_image: fivexl-newsletter-black-logo.png
 tags: ['Newsletter', 'AWS', 'Cloud Engineering']
 ---
 
-## Intro
-
 January at FivexL usually means less writing and more time deep in customer systems, and this year is no exception. Our consultants are busy helping teams turn last year’s plans into concrete AWS changes: tightening security, cleaning up foundations, and making room for the next round of features.
 
 ## Upcoming Events
