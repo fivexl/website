@@ -20,7 +20,7 @@ This month we will be hosting a AWSre:Invent 2025 Recap (Wednesday, 11th of Febr
 
 ### Open-source project updates
 
-We keep a lot of the tooling we build for client work open source so you can plug it into your own environments. In january we shipped a few small but useful updates to our CloudTrail-to-Slack Terraform module and to LProbe, our local health check tool.
+We keep a lot of the tooling we build for client work open source so you can plug it into your own environments. In January we shipped a few small but useful updates to our CloudTrail-to-Slack Terraform module and to lprobe, our secure local-only health check tool.
 
 - **[terraform-aws-cloudtrail-to-slack 4.4.1](https://github.com/fivexl/terraform-aws-cloudtrail-to-slack/releases/tag/4.4.1)**  
   Terraform module that parses AWS CloudTrail events and sends selected ones to Slack, so you can see sensitive activity without building your own pipeline. This release adds an `enable_eventbridge_notifications` flag, making it easier to use EventBridge for routing notifications (or combine it with other delivery options) instead of relying only on S3 bucket notifications.
@@ -72,11 +72,11 @@ The Terraform module for AWS Transfer Family can now create browser-based web ap
 
 Use case: When non-technical users or partners need a simple web portal to upload/download files to S3, and you want everything managed via Terraform and your existing SSO.
 
-3. Third article – to be added
+3. [AWS IAM Identity Center enables account access and application use in multiple AWS Regions](https://aws.amazon.com/about-aws/whats-new/2026/02/aws-iam-identity-center-multi-region-aws-account-access-and-application-deployment/)
 
-Short description of what changed and why it matters.
+IAM Identity Center can now replicate from its primary Region to additional Regions of your choice. If the primary Region is disrupted, users continue to have access to their AWS accounts using entitlements provisioned in the additional Regions. If you've been following our work on [SSO Elevator resilience](https://fivexl.io/blog/sso-elevator-3-1-0-resilience/) after the October 2025 us-east-1 incident, this is AWS addressing the same pain point and allows for deployment of a standby SSO Elevator.
 
-Use case: One line on when you’d actually use this in a real workload.
+Use case: When you need uninterrupted SSO access to AWS accounts even during regional outages, or when you want to deploy AWS applications closer to your users while keeping IAM Identity Center administration centralized.
 
 
 Made it till the end? Liked this newsletter? Forward it to a teammate or friend who lives in AWS as much as you do! Sharing is caring!
