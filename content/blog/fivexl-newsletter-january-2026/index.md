@@ -1,7 +1,7 @@
 ---
 title: 'FivexL Newsletter, January 2026'
 author_id: FivexL
-date: 2026-02-02
+date: 2026-02-06
 description: 'FivexL Newsletter for January 2026 - Latest updates, blog posts, and insights from our cloud engineering team.'
 author: FivexL
 author_link: https://fivexl.io/
