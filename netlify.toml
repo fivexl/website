@@ -14,43 +14,73 @@
   from = "/blog/overture-case-study/"
   to = "/case-studies/ovrture-case-study/"
   status = 301
-  force = false
+  force = true
 
 [[redirects]]
   from = "/blog/qameta-case-study-/"
   to = "/case-studies/qameta-case-study/"
   status = 301
-  force = false
+  force = true
 
 [[redirects]]
   from = "/blog/qameta-case-study/"
   to = "/case-studies/qameta-case-study/"
   status = 301
-  force = false
+  force = true
 
 [[redirects]]
   from = "/blog/new-stream-case-study/"
   to = "/case-studies/new-stream-case-study/"
   status = 301
-  force = false
+  force = true
 
 [[redirects]]
   from = "/blog/firi-case-study/"
   to = "/case-studies/firi-case-study/"
   status = 301
-  force = false
+  force = true
 
 [[redirects]]
   from = "/blog/ovrture-case-study/"
   to = "/case-studies/ovrture-case-study/"
   status = 301
-  force = false
+  force = true
 
 [[redirects]]
   from = "/author/*"
   to = "/specialist/:splat"
   status = 301
-  force = false
+  force = true
+
+[[redirects]]
+  from = "/tags/ecs-service-conncet/"
+  to = "/tags/ecs-service-connect/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/tags/"
+  to = "/blog/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/mvp-on-aws-part-1-duplicate/"
+  to = "/404.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/blog/mvp-on-aws-part-1-duplicate-2/"
+  to = "/404.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/hello-world/"
+  to = "/404.html"
+  status = 410
+  force = true
 
 [context.deploy-preview.environment]
   HUGO_BASEURL = "/"

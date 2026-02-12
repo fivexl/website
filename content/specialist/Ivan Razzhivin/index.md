@@ -23,7 +23,7 @@ AWS · Terraform · Containers (AWS ECS) · CI/CD (GitHub Actions)
 ### Recent success story
 - Supported AWS and CI/CD infrastructure for Swedish enterprise e-commerce profit data platform (AWS ECS / AWS Lambda / AWS Batch / AWS Kinesis and Firehose / GitHub Actions). The customer case study is pending.
 - Supported AWS and CI/CD infrastructure for Swedish computer vision platform (AWS ECS Anywhere / AWS Lambda / AWS Batch / AWS EC2 / GitLab CI ).
-- Built and managed all infrastructure from the ground up for SaaS product [Allure TestOps](https://qameta.io) (AWS EKS / AWS Lambda / GitHub Actions / Crossplane / ArgoCD). [Customer case study](https://fivexl.io/blog/qameta-case-study/).
+- Built and managed all infrastructure from the ground up for SaaS product [Allure TestOps](https://qameta.io) (AWS EKS / AWS Lambda / GitHub Actions / Crossplane / ArgoCD). [Customer case study](/case-studies/qameta-case-study/).
 ### Certifications
 * AWS Solutions Architect - Associate
 * HashiCorp Cloud Engineer Certification - Terraform Associate
