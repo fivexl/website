@@ -5,7 +5,7 @@ summary: 'Deep-dive into AWS ECS Service Connect. How startup can enable encrypt
 date: 2024-07-15
 author: Andrey Devyatkin
 panel_image: ECS_article.png
-tags: ['AWS', 'ECS', 'ECS Service Conncet', 'Encryption']
+tags: ['AWS', 'ECS', 'ECS Service Connect', 'Encryption']
 ---
 
 <iframe width="840" height="472" src="https://www.youtube.com/embed/z1WQ-YSAsVY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
