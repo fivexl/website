@@ -131,6 +131,20 @@ a:has(.cst-CaseHeading) { text-decoration: none; }
       width: max-content; 
     }
   }
+
+  &-ColumnsWrapper--centered {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+
+  &-TestimonialContent--centered {
+    align-items: center;
+    .cst-TestimonialText,
+    .cst-TestimonialPosition {
+      text-align: center;
+    }
+  }
 }
 
 .cst-Authors {
