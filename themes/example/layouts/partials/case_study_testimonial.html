@@ -1,8 +1,10 @@
 <section>
     <div class="cst-Container">
-        <div class="cst-ColumnsWrapper">
+        <div class="cst-ColumnsWrapper{{ if not .Params.testimonial_author_portrait }} cst-ColumnsWrapper--centered{{ end }}">
+            {{ if .Params.testimonial_author_portrait }}
             {{- partial "img" (dict "IsContentImage" true "src" .Params.testimonial_author_portrait "class" "cst-TestimonialPortrait" "Page" .) -}}
-            <div class="cst-TestimonialContent">
+            {{ end }}
+            <div class="cst-TestimonialContent{{ if not .Params.testimonial_author_portrait }} cst-TestimonialContent--centered{{ end }}">
                 <div class="cst-TestimonialText">
                     {{ markdownify .Params.testimonial_long }}
                 </div>
