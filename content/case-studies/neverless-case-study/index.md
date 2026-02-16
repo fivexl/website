@@ -21,7 +21,7 @@ about_company:
   logo: 'neverless_logo.png'
   heading: 'About Neverless'
   text: |
-    Neverless is a London-based fintech company building the world's first fee-free cryptocurrency trading platform — so everyday people can buy and sell crypto (and even gold) without the usual trading costs cutting into returns. Beyond simple trading, Neverless offers automated, hedge-fund-style Strategies™: a "set-and-run" option designed to grow your holdings using techniques typically reserved for professional trading firms. Founded in 2022 by former Revolut executives, it operates under EU regulation and is backed by investors including Lakestar, Connect Ventures, and Nordstar.
+    <a href="https://neverless.com/" target="_blank">Neverless</a> is a London-based fintech company building the world's first fee-free cryptocurrency trading platform — so everyday people can buy and sell crypto (and even gold) without the usual trading costs cutting into returns. Beyond simple trading, Neverless offers automated, hedge-fund-style Strategies™: a "set-and-run" option designed to grow your holdings using techniques typically reserved for professional trading firms. Founded in 2022 by former Revolut executives, it operates under EU regulation and is backed by investors including Lakestar, Connect Ventures, and Nordstar.
 double_panel:
   layout: 'case-studies'
   heading: "CASE STUDIES"
