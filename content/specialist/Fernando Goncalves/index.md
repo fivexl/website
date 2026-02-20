@@ -28,8 +28,8 @@ Serverless · Cloud Security · Multi-Account Management & AWS Organizations · 
 * AWS Certified Solutions Architect – Associate
 
 ### Public Speaking
-- **AWS Innovate Data & AI/ML Edition** (2023) – Selected speaker during tenure as AWS Solutions Architect
-- **D-Quarters Industry Event Series, Dubai** (2025) – Keynote: "From Zero to AI Hero – Practical Tools for Your Business" + Panel: "How AI Will Shape Dubai's SME Growth"
+- AWS Innovate Data & AI/ML Edition (2023) – Selected speaker during tenure as AWS Solutions Architect
+- D-Quarters Industry Event Series, Dubai (2025) – Keynote: "From Zero to AI Hero – Practical Tools for Your Business" + Panel: "How AI Will Shape Dubai's SME Growth"
 
 ### Community
 Co-runs [The Cloud Club](https://skool.com/cloud) – a multi-cloud community helping aspiring engineers break into cloud through hands-on troubleshooting challenges on AWS and Azure. Regularly shares insights on AWS, cloud engineering, and AI on LinkedIn.
