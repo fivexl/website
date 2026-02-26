@@ -14,7 +14,7 @@ certifications:
   - 'SolArchitect.png'
   - 'SolArchitectPro.png'
   - 'fivexl.png'
-panel_image: 'Fernando_author_page.png'
+panel_image: 'Fernando_specialist.png'
 author_headshot: 'Fernando.png'
 author_id: Fernando Goncalves
 ---
