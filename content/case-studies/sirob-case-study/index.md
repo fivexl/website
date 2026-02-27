@@ -1,12 +1,14 @@
 ---
 title: 'Sirob Technologies Case Study'
-author_id: 'Fernando Goncalves'
+author_id:
+  - 'Alexey Eremin'
+  - 'Anton Eremin'
 summary: 'FivexL built a secure, multi-tenant AWS platform for an Estonian AI startup, taking their agentic DevOps product from early MVP to production-ready infrastructure in under two months.'
 date: 2026-02-19
-author: Fernando Goncalves
-panel_image: Fernando-sirob-tech.png
-authors_heading: 'Lead consultant for the project'
-alt_image: Fernando-sirob-tech.png
+author: Alexey Eremin Anton Eremin
+panel_image: consultants-sirob-technologies.png
+authors_heading: 'Two lead consultants for the project'
+alt_image: consultants-sirob-technologies.png
 case_study: true
 layout: 'case_study'
 tags: ['case study', 'aws', 'ai', 'ecs']
