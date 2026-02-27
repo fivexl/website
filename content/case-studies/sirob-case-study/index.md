@@ -15,7 +15,7 @@ tags: ['case study', 'aws', 'ai', 'ecs']
 testimonial: "FivexL didn't just set up infrastructure - they gave us a production platform we could trust from day one. We went from a manual MVP to onboarding real customers in weeks."
 testimonial_author: "Daniil Goloviznin,"
 testimonial_author_position: "Head of Infrastructure at Sirob Technologies"
-testimonial_author_portrait: Daniil.png
+testimonial_author_portrait: Daniil_sirob.png
 testimonial_cta_url: '/contact'
 testimonial_long: |
   "What impressed us most was the speed and the depth of expertise. FivexL understood exactly what an AI-native product needs on AWS - multi-tenancy, data isolation, Bedrock integration - and delivered it all with security baked in from the start. The SSO Elevator setup means nobody has standing access to production, which is exactly the posture we need when handling customer data. We expected a solid foundation; what we got was a competitive advantage."
