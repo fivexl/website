@@ -10,17 +10,19 @@ panel_image: fivexl-newsletter-white-logo.png
 tags: ['Newsletter', 'AWS', 'Cloud Engineering']
 ---
 
-February was a busy month at FivexL. We published two new case studies, ran our AWS re:Invent 2025 recap webinar, shipped open-source updates, and our podcast crew kept the conversation going on AI agents and infrastructure security. Here's what happened.
+## Intro
 
-## Upcoming Events
+Greetings!
 
-Next month we will host a webinar that will focus on healthcare startups and AWS. This time we will have a special guest who will be joining us for a conversation. Join live to ask your own questions and get answers directly from the team - that's the part you can't get from a recording. Stay tuned for the full announcement on our [LinkedIn](https://www.linkedin.com/company/5xl).
+FivexL kept its usual pace in February: two new case studies for our happy customers, AWS re:Invent 2025 recap webinar, a round of open-source releases, and two podcast episodes covering security patches and agent-native infrastructure. Here's the rundown.
 
-## FivexL Updates
+## Events
 
-### Past webinar: AWS re:Invent 2025 Recap
+Save the date — March 18th! We're hosting a webinar on healthcare startups and AWS, and this time we'll have a special guest joining the conversation. Join live to ask your own questions and get answers directly from the team - that's the part you can't get from a recording. Stay tuned for the full announcement on our [LinkedIn](https://www.linkedin.com/company/5xl).
 
-[Andrey Devyatkin](https://fivexl.io/specialist/andrey-devyatkin/), [Guilherme Ferreira](https://fivexl.io/specialist/guilherme-ferreira/), and [Vladimir Samoylov](https://fivexl.io/specialist/vladimir-samoylov/) went through the 500+ announcements from AWS re:Invent 2025 and picked the ones that actually matter for day-to-day work. The conversation covered what's worth adopting now, what to keep an eye on, and what's safe to ignore. If you missed the live session, the [recording is on YouTube](https://www.youtube.com/watch?v=-POnrk4phR0).
+Want to get a feeling of our webinars? Last month [Andrey Devyatkin](https://fivexl.io/specialist/andrey-devyatkin/), [Guilherme Ferreira](https://fivexl.io/specialist/guilherme-ferreira/), and [Vladimir Samoylov](https://fivexl.io/specialist/vladimir-samoylov/) went through the 500+ announcements from AWS re:Invent 2025 and picked the ones that actually matter for day-to-day work. The conversation covered what's worth adopting now, what to keep an eye on, and what's safe to ignore. If you missed the live session, the [recording is on YouTube](https://www.youtube.com/watch?v=-POnrk4phR0).
+
+## Updates
 
 ### Open-source project updates
 
@@ -32,17 +34,13 @@ We keep a lot of the tooling we build for client work open source so you can plu
 - **[lprobe v0.1.8](https://github.com/fivexl/lprobe/releases/tag/v0.1.8)**  
   LProbe is a small CLI for running HTTP/TCP health checks against localhost inside container images (ECS, Docker) - a safer alternative to shipping curl or wget in every image. This release bumps CI tooling and Go to 1.26, keeping the tool aligned with current runtimes.
 
-### Case studies updates
-
-Two new case studies this month - one for an AI startup going from prototype to production on AWS, and one for a fintech expanding into AWS alongside Google Cloud.
+### Blog post and case study updates
 
 - **[Sirob Technologies Case Study](https://fivexl.io/case-studies/sirob-case-study/)**  
   Sirob Technologies had a working AI product powered by Amazon Bedrock but no production infrastructure to run it on for real customers. FivexL built a secure, multi-tenant AWS platform - Landing Zone, zero-standing-access, security monitoring, and a productized Bedrock deployment on ECS - in under two months. If you're building an AI-native product and wondering how to get from prototype to production without a year-long infrastructure project, this one's for you.
 
 - **[Neverless Case Study](https://fivexl.io/case-studies/neverless-case-study/)**  
   Neverless, a London fintech, needed to expand into AWS while keeping their existing Google Cloud environment running. FivexL delivered a secure, audit-ready AWS foundation via RightStart so the team could start building on AWS immediately without rethinking the basics. Worth reading if you're running multi-cloud or planning a migration and want to see how to set up the AWS side without slowing down your product work.
-
-### Blog post updates
 
 - **[AWS News You Can Actually Use In 2026](https://fivexl.io/blog/aws-news-you-can-use-2026/)**  
   AWS made 500+ announcements at re:Invent 2025. We went through all of them and pulled out the features that are actually worth adopting this year - things like ECS tmpfs support, Transfer Family web apps, and multi-region IAM Identity Center. If you don't have time to read every changelog but want to know what's changed, start here.
