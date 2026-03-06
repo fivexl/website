@@ -10,11 +10,11 @@ panel_image: fivexl-newsletter-white-logo.png
 tags: ['Newsletter', 'AWS', 'Cloud Engineering']
 ---
 
-## Intro
-
 Greetings!
 
 FivexL kept its usual pace in February: two new case studies for our happy customers, AWS re:Invent 2025 recap webinar, a round of open-source releases, and two podcast episodes covering security patches and agent-native infrastructure. Here's the rundown.
+
+<!--more-->
 
 ## Events
 
