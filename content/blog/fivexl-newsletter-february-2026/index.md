@@ -1,7 +1,7 @@
 ---
 title: 'FivexL Newsletter, February 2026'
 author_id: FivexL
-date: 2026-02-27
+date: 2026-03-06
 description: 'FivexL Newsletter for February 2026 - Latest updates, blog posts, and insights from our cloud engineering team.'
 author: FivexL
 author_link: https://fivexl.io/
@@ -14,7 +14,18 @@ February was a busy month at FivexL. We published two new case studies, ran our 
 
 ## Upcoming Events
 
-Next month we will host a webinar that will focus on healthcare startups and AWS. This time we will have a special guest who will be joining us for a conversation. Join live to ask your own questions and get answers directly from the team - that's the part you can't get from a recording. Stay tuned for the full announcement on our [LinkedIn](https://www.linkedin.com/company/5xl).
+If you care about building an organisation where security is a habit, not a hero moment, this webinar is for you.
+
+We're hosting a webinar with Rusty Atkinson, Senior Vice President, Technology at Clearway Health and author of "The Integrity Edge: Unlocking the Hidden Power of Ethical Leadership", on how to translate leadership values into real security decisions and build audit-ready architecture.
+
+Webinar topic: From Leadership Values to Security: How to Build Audit-Ready Architecture <br />
+Date: Wednesday, 18 March 2026 <br />
+Time: 10:00 AM EDT / 3 PM CET <br />
+Duration: 1 hour <br />
+
+Join live and stay for the Q&A, where you can ask Rusty and our FivexL principal consultants questions directly.
+
+[Sign up for the webinar](https://lnkd.in/eT7k9pPh)
 
 ## FivexL Updates
 
