@@ -19,8 +19,8 @@ images: [ 'featured.png' ]
 ### What Can We Do For Your Startup?  
 - We build <strong style="color:#F13687">HIPAA and SOC 2-ready AWS foundations</strong> for healthcare, fintech, and other highly regulated startups - secure from day one with [RightStart](/rightstart/).
 - We take your infrastructure to the next level so it grows with you - from first prototype to production scale with [ECS Blueprint](/ecs-blueprint/).
-- We take your <strong style="color:#F13687">AI to production on AWS</strong> - from working prototype to secure, multi-tenant platform ready for real customers.
-- We handle <strong style="color:#F13687">cloud migrations to AWS</strong> so you can focus on your product, not the move.
+- We deploy <strong style="color:#F13687">Amazon Bedrock securely in production</strong> for startups and regulated companies alike. [Learn more](/ai-to-production/).
+- We handle <strong style="color:#F13687">cloud migrations to AWS</strong> so you can focus on your product, not the move with [Cloud Migration](/aws-migration/).
 - We bring <strong style="color:#F13687">cost predictability to your AWS spend</strong> - no nasty surprises.  
 {{< /column >}}
 
