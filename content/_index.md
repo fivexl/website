@@ -4,7 +4,7 @@ description: "We architect and build scalable cloud-based production-ready appli
 double_panel:
   layout: 'services'
   heading: "Great Product Needs Great Infrastructure"
-  subheading: "We Build Best In Class AWS Infrastructure To Empower Your Ideas"
+  subheading: "HIPAA & SOC 2-Ready AWS Infrastructure for Startups"
   icon_links:
     - { url: "https://github.com/fivexl", icon: "github" }
     - { url: "https://www.linkedin.com/company/5xl", icon: "linkedin" }
@@ -17,19 +17,19 @@ images: [ 'featured.png' ]
 {{< two_columns heading="FivexL - Cloud Engineering Specialists" >}}
 {{< column >}}
 ### What Can We Do For Your Startup?  
-You did the first prototype and ready to scale but your infra is a mess - We will take it to the next level.  
-Your cloud cost is out of control - We bring predictability and make sure there are no nasty surprises.  
-You have a lot of legacy and no one knows how it works - We rebuild your infra as code and deal with all your skeletons in the closet.  
-Security auditors are calling - We build the infra which will pass any audit while still keeping developers productive.  
+- We build <strong style="color:#F13687">HIPAA and SOC 2-ready AWS foundations</strong> for healthcare, fintech, and other highly regulated startups - secure from day one with [RightStart](/rightstart/).
+- We take your infrastructure to the next level so it grows with you - from first prototype to production scale with [ECS Blueprint](/ecs-blueprint/).
+- We handle cloud migrations to AWS so you can focus on your product, not the move.
+- We bring cost predictability to your AWS spend - no nasty surprises.  
 {{< /column >}}
 
 {{< column >}}
-### Add Fivexl Magic To Your Cloud Infrastructure  
-Strong security base for your future scale and growth.   
-Infrastructure as code which prevents human mistakes.   
-Costs optimization on AWS.  
-Identification of potential system bottlenecks and proactively prevent issues from arising.  
-Agile, transparency, and comprehensive documentation for effective knowledge transfer.
+### Why Startups Choose FivexL  
+- We are an AWS Advanced Tier Partner with 50+ years of combined cloud engineering experience.
+- We build everything as infrastructure as code - no manual changes, no human mistakes.
+- We specialize in security - HIPAA, SOC 2, and audit readiness are built in from day one, not bolted on later.
+- We keep your AWS bill predictable as you scale.
+- We take full responsibility for your infrastructure and deliver it fully transparent, fully yours.
 {{< /column >}}
 {{< /two_columns >}}
 

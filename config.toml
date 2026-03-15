@@ -15,19 +15,19 @@ pagerSize = 6
 [menu]
 [[menu.main]]
   identifier = 'products'
-  name = 'Products'
+  name = 'Services'
   url = '#'
   weight = 3
 [[menu.main]]
   identifier = 'rightstart'
   url = '/rightstart'
-  name = 'RightStart'
+  name = 'Compliant AWS Foundation - RightStart'
   parent = 'products'
   weight = 1
 [[menu.main]]
   identifier = 'ecs-blueprint'
   url = '/ecs-blueprint'
-  name = 'ECS Blueprint'
+  name = 'Production-Ready AWS App Platform - ECS Blueprint'
   parent = 'products'
   weight = 2
 [[menu.main]]
