@@ -8,12 +8,12 @@ information:
 links:
   - { icon: linkedin, url: 'https://www.linkedin.com/in/yousef-de-baz-4795b1191/' }
 certifications:
-  - 'AIPractitioner.png'
   - 'SolArchitectPro.png'
   - 'DevOpsEngineerPro.png'
   - 'SysOpAdmin.png'
   - 'Developer.png'
   - 'cloud-practitioner.png'
+  - 'AIPractitioner.png'
   - 'fivexl.png'
 panel_image: 'Yousef_specialist_page.png'
 author_headshot: 'Yousef.png'
