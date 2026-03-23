@@ -15,7 +15,7 @@ certifications:
   - 'cloud-practitioner.png'
   - 'AIPractitioner.png'
   - 'fivexl.png'
-panel_image: 'Yousef_specialist_page.png'
+panel_image: 'Yousef_specialist.jpg'
 author_headshot: 'Yousef.png'
 author_id: Yousef De Baz
 ---
