@@ -1,5 +1,6 @@
 ---
 title: 'SaveHealth Case Study'
+noindex: true
 _build:
   list: never
 author_id: 'Ivan Razzhivin'
