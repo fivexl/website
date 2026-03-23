@@ -1,6 +1,7 @@
 ---
 title: 'SaveHealth Case Study'
-draft: true
+_build:
+  list: never
 author_id: 'Ivan Razzhivin'
 summary: 'FivexL built a production-grade AI platform on AWS for a U.S. healthcare startup, enabling secure MCP-based integration of proprietary data with external LLM ecosystems like OpenAI and Anthropic.'
 date: 2026-03-20
