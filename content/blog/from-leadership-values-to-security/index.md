@@ -10,7 +10,7 @@ panel_image: AWS-Partner.png
 tags: ['AWS', 'Security', 'Compliance', 'HIPAA', 'Leadership', 'Webinar']
 ---
 
-In a recent webinar, [Rusty Atkinson](https://www.linkedin.com/in/rustyatkinson/), SVP, Technology at Clearway Health and author of *[The Integrity Edge: Unlocking the Hidden Power of Ethical Leadership](https://www.amazon.com/Integrity-Edge-Unlocking-Ethical-Leadership/dp/B0FRBJ99FF/ref=sr_1_1?dib=eyJ2IjoiMSJ9.tfDl0b0jJpSktasWaw42jFE4esSjLxTKP0og26m8Ol7GjHj071QN20LucGBJIEps.6uBQ45RkiKN5L9Ryqb6ByObYRd2VNTXF_CpejVTMtC8&dib_tag=se&keywords=Integrity-Edge-Unlocking-Hidden-Ethical&qid=1774356602&sr=8-1)*, joined FivexL's [Andrey Devyatkin](https://fivexl.io/specialist/andrey-devyatkin/), Co-Founder and Principal Cloud Engineering Consultant, and [Guilherme Ferreira](https://fivexl.io/specialist/guilherme-ferreira/), Senior Cloud Engineering Consultant, to discuss a question that matters to every company operating under regulatory pressure: how do leadership values actually turn into secure, audit-ready architecture when deadlines hit?
+In a recent webinar, [Rusty Atkinson](https://www.linkedin.com/in/rustyatkinson/), SVP, Technology at Clearway Health, joined FivexL's [Andrey Devyatkin](https://fivexl.io/specialist/andrey-devyatkin/), Co-Founder and Principal Cloud Engineering Consultant, and [Guilherme Ferreira](https://fivexl.io/specialist/guilherme-ferreira/), Senior Cloud Engineering Consultant, to discuss a question that matters to every company operating under regulatory pressure: how do leadership values actually turn into secure, audit-ready architecture when deadlines hit?
 
 FivexL has worked closely with Clearway Health on building their HIPAA-compliant AWS infrastructure - so this was not a theoretical discussion. Rusty brought the leadership and culture perspective; Andrey and Guilherme brought the architecture and engineering depth. The session connected principles like integrity, clarity, and courage to the operational choices that make security real: least-privilege access, clear tenant boundaries, traceable change management, and HIPAA-aligned evidence practices.
 
@@ -134,15 +134,9 @@ An incident happens. Service needs to be restored quickly. Someone introduces a 
 
 **The engineer who left**
 
-Rusty shared a story of an engineer who made shortcuts, did not document them, did not tell anyone, and then left:
+Imagine an engineer who takes shortcuts to get things working, does not document them, does not tell anyone, and then leaves the company. Nobody can replicate what he built. The system works, but no one understands how or why. When something breaks, there is no path back.
 
-<div style="background: linear-gradient(135deg, #f8f8f8 0%, #f0f0f0 100%); border-left: 4px solid #c0c0c0; border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0;">
-
-*"He did something in a manner that he knew was temporary and shoddy. And then he went away and his success couldn't be duplicated."*
-
-</div>
-
-This creates serious problems when your startup faces its first SOC 2 audit or customer security review. Reviewers do not just look at whether service came back. They look at whether the company can show repeatable, controlled, supportable behaviour.
+This creates serious problems when your startup faces its first audit or customer security review. Reviewers do not just look at whether service came back. They look at whether the company can show repeatable, controlled, supportable behaviour.
 
 **The non-negotiable principle**
 
@@ -253,7 +247,5 @@ If you are building in healthcare, fintech, or another regulated industry and wa
 You can also explore how we helped [Clearway Health](https://fivexl.io/case-studies/clearway-health-case-study/) and [Hippo](https://fivexl.io/case-studies/hippo-case-study/) build HIPAA-compliant, audit-ready AWS infrastructure with [RightStart](https://fivexl.io/rightstart/).
 
 **Replay:** [Watch on YouTube](https://www.youtube.com/live/CfVhr8j5yIA?si=tEdXGBBd9OWciifW)
-
-**Book:** [The Integrity Edge: Unlocking the Hidden Power of Ethical Leadership](https://www.amazon.com/Integrity-Edge-Unlocking-Ethical-Leadership/dp/B0FRBJ99FF/ref=sr_1_1?dib=eyJ2IjoiMSJ9.tfDl0b0jJpSktasWaw42jFE4esSjLxTKP0og26m8Ol7GjHj071QN20LucGBJIEps.6uBQ45RkiKN5L9Ryqb6ByObYRd2VNTXF_CpejVTMtC8&dib_tag=se&keywords=Integrity-Edge-Unlocking-Hidden-Ethical&qid=1774356602&sr=8-1)
 
 **Newsletter:** [Subscribe](#email-subscription) to our monthly newsletter where we share AWS infrastructure insights, security best practices, and lessons from working with startups in regulated industries.
