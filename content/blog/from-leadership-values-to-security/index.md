@@ -256,4 +256,4 @@ You can also explore how we helped [Clearway Health](https://fivexl.io/case-stud
 
 **Book:** [The Integrity Edge: Unlocking the Hidden Power of Ethical Leadership](https://www.amazon.com/Integrity-Edge-Unlocking-Ethical-Leadership/dp/B0FRBJ99FF/ref=sr_1_1?dib=eyJ2IjoiMSJ9.tfDl0b0jJpSktasWaw42jFE4esSjLxTKP0og26m8Ol7GjHj071QN20LucGBJIEps.6uBQ45RkiKN5L9Ryqb6ByObYRd2VNTXF_CpejVTMtC8&dib_tag=se&keywords=Integrity-Edge-Unlocking-Hidden-Ethical&qid=1774356602&sr=8-1)
 
-**Newsletter:** [Subscribe](https://fivexl.io/#email-subscription/) to our monthly newsletter where we share AWS infrastructure insights, security best practices, and lessons from working with startups in regulated industries.
+**Newsletter:** [Subscribe](#email-subscription) to our monthly newsletter where we share AWS infrastructure insights, security best practices, and lessons from working with startups in regulated industries.
