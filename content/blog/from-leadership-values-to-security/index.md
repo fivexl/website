@@ -10,7 +10,7 @@ panel_image: AWS-Partner.png
 tags: ['AWS', 'Security', 'Compliance', 'HIPAA', 'Leadership', 'Webinar']
 ---
 
-In a recent webinar, [Rusty Atkinson](https://www.linkedin.com/in/rustyatkinson/), SVP, Technology at Clearway Health and author of *[The Integrity Edge: Unlocking the Hidden Power of Ethical Leadership](https://www.amazon.com/Integrity-Edge-Unlocking-Hidden-Ethical/dp/1637558X)*, joined FivexL's [Andrey Devyatkin](https://fivexl.io/author/andrey-devyatkin/), Co-Founder and Principal Cloud Engineering Consultant, and [Guilherme Ferreira](https://fivexl.io/author/guilherme-ferreira/), Senior Cloud Engineering Consultant, to discuss a question that matters to every company operating under regulatory pressure: how do leadership values actually turn into secure, audit-ready architecture when deadlines hit?
+In a recent webinar, [Rusty Atkinson](https://www.linkedin.com/in/rustyatkinson/), SVP, Technology at Clearway Health and author of *[The Integrity Edge: Unlocking the Hidden Power of Ethical Leadership](https://www.amazon.com/Integrity-Edge-Unlocking-Ethical-Leadership/dp/B0FRBJ99FF/ref=sr_1_1?dib=eyJ2IjoiMSJ9.tfDl0b0jJpSktasWaw42jFE4esSjLxTKP0og26m8Ol7GjHj071QN20LucGBJIEps.6uBQ45RkiKN5L9Ryqb6ByObYRd2VNTXF_CpejVTMtC8&dib_tag=se&keywords=Integrity-Edge-Unlocking-Hidden-Ethical&qid=1774356602&sr=8-1)*, joined FivexL's [Andrey Devyatkin](https://fivexl.io/specialist/andrey-devyatkin/), Co-Founder and Principal Cloud Engineering Consultant, and [Guilherme Ferreira](https://fivexl.io/specialist/guilherme-ferreira/), Senior Cloud Engineering Consultant, to discuss a question that matters to every company operating under regulatory pressure: how do leadership values actually turn into secure, audit-ready architecture when deadlines hit?
 
 FivexL has worked closely with Clearway Health on building their HIPAA-compliant AWS infrastructure - so this was not a theoretical discussion. Rusty brought the leadership and culture perspective; Andrey and Guilherme brought the architecture and engineering depth. The session connected principles like integrity, clarity, and courage to the operational choices that make security real: least-privilege access, clear tenant boundaries, traceable change management, and HIPAA-aligned evidence practices.
 
@@ -40,7 +40,7 @@ This is one of the most dangerous assumptions in a fast-moving startup.
 
 <div style="background: linear-gradient(135deg, #f8f8f8 0%, #f0f0f0 100%); border-left: 4px solid #c0c0c0; border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0;">
 
-*"When everything's going fine, when the sea is calm, so to speak, it's working, everything's fine. But let one thing go sideways, and then suddenly, 'it's always like this.' That's what you hear."* - **Rusty Atkinson**
+*"When everything's going fine, when the sea is calm, so to speak, it's working, everything's fine. But let one thing go sideways, and then suddenly, 'it's always like this.' That's what you hear."* - Rusty Atkinson
 
 </div>
 
@@ -78,7 +78,7 @@ Most startups say security matters. The real question is whether people inside t
 
 <div style="background: linear-gradient(135deg, #f8f8f8 0%, #f0f0f0 100%); border-left: 4px solid #c0c0c0; border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0;">
 
-*"The culture of the team is gonna be determined by the actions its leaders take and tolerate. Show me a leader who is dishonest and I'll show you a culture that doesn't value honesty. And without honesty, there's no trust. Show me a leader who always has to be right, and I'll show you a team that will never give their point of view."* - **Rusty Atkinson**
+*"The culture of the team is gonna be determined by the actions its leaders take and tolerate. Show me a leader who is dishonest and I'll show you a culture that doesn't value honesty. And without honesty, there's no trust. Show me a leader who always has to be right, and I'll show you a team that will never give their point of view."* - Rusty Atkinson
 
 </div>
 
@@ -126,7 +126,7 @@ This is how many startups accumulate silent operational debt.
 
 <div style="background: linear-gradient(135deg, #f8f8f8 0%, #f0f0f0 100%); border-left: 4px solid #c0c0c0; border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0;">
 
-*"The 'that's good enough for now, we'll get to it later' or 'yeah, I know we're not supposed to do it that way but we'll just do it that way and we'll fix it later.' Those are not neutral decisions. Those are the decisions that become permanent risk and permanent pain."* - **Rusty Atkinson**
+*"The 'that's good enough for now, we'll get to it later' or 'yeah, I know we're not supposed to do it that way but we'll just do it that way and we'll fix it later.' Those are not neutral decisions. Those are the decisions that become permanent risk and permanent pain."* - Rusty Atkinson
 
 </div>
 
@@ -158,7 +158,7 @@ Guidelines are helpful. Guardrails are what make secure behaviour real.
 
 <div style="background: linear-gradient(135deg, #f8f8f8 0%, #f0f0f0 100%); border-left: 4px solid #c0c0c0; border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0;">
 
-*"If the guardrail is avoidable, it's not a guardrail, it's a guideline. And you can't build trust with guidelines."* - **Rusty Atkinson**
+*"If the guardrail is avoidable, it's not a guardrail, it's a guideline. And you can't build trust with guidelines."* - Rusty Atkinson
 
 </div>
 
@@ -178,7 +178,7 @@ Andrey gave a practical AWS example: instead of continuously modifying the same 
 
 Andrey used a house analogy: if you build your house without a plan, you end up with a Frankenstein - or a bathroom in the living room. The same applies to AWS. If you don't have a clear strategy for where workloads go, people will take the path of least resistance and drop them wherever they feel like it. Separating workloads from day one matters because it takes enormous effort to separate them later.
 
-This is exactly what FivexL's [RightStart](https://fivexl.io/right-start/) delivers - a governed multi-account foundation with guardrails built in from the start.
+This is exactly what FivexL's [RightStart](https://fivexl.io/rightstart/) delivers - a governed multi-account foundation with guardrails built in from the start.
 
 **Trust must move from people to systems**
 
@@ -194,7 +194,7 @@ Infrastructure as Code is one of the clearest signals that a startup is serious 
 
 <div style="background: linear-gradient(135deg, #f8f8f8 0%, #f0f0f0 100%); border-left: 4px solid #c0c0c0; border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0;">
 
-*"Without infrastructure as code, infrastructure folks cannot deliver on a schedule that the developers follow. They can't, they just can't do it. Anytime you get a place where you're making manual changes and expecting to have a trusted system, it's a pipe dream."* - **Rusty Atkinson**
+*"Without infrastructure as code, infrastructure folks cannot deliver on a schedule that the developers follow. They can't, they just can't do it. Anytime you get a place where you're making manual changes and expecting to have a trusted system, it's a pipe dream."* - Rusty Atkinson
 
 </div>
 
@@ -242,7 +242,7 @@ A secure organisation is not created by policy language alone. It is created by 
 
 <div style="background: linear-gradient(135deg, #f8f8f8 0%, #f0f0f0 100%); border-left: 4px solid #c0c0c0; border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0;">
 
-*"Security emerges from culture, discipline, and design. Culture defines behaviour, guardrails enforce it, and architecture proves it. It's all about moving from intentions to trust."* - **Guilherme Ferreira**
+*"Security emerges from culture, discipline, and design. Culture defines behaviour, guardrails enforce it, and architecture proves it. It's all about moving from intentions to trust."* - Guilherme Ferreira
 
 </div>
 
@@ -250,10 +250,10 @@ A secure organisation is not created by policy language alone. It is created by 
 
 If you are building in healthcare, fintech, or another regulated industry and want to start with the right foundation, [book a consultation with our team](https://fivexl.io/contact/).
 
-You can also explore how we helped [Clearway Health](https://fivexl.io/case-studies/clearway-health-case-study/) and [Hippo](https://fivexl.io/case-studies/hippo-case-study/) build HIPAA-compliant, audit-ready AWS infrastructure with [RightStart](https://fivexl.io/right-start/).
+You can also explore how we helped [Clearway Health](https://fivexl.io/case-studies/clearway-health-case-study/) and [Hippo](https://fivexl.io/case-studies/hippo-case-study/) build HIPAA-compliant, audit-ready AWS infrastructure with [RightStart](https://fivexl.io/rightstart/).
 
 **Replay:** [Watch on YouTube](https://www.youtube.com/live/CfVhr8j5yIA?si=tEdXGBBd9OWciifW)
 
 **Book:** [The Integrity Edge: Unlocking the Hidden Power of Ethical Leadership](https://www.amazon.com/Integrity-Edge-Unlocking-Ethical-Leadership/dp/B0FRBJ99FF/ref=sr_1_1?dib=eyJ2IjoiMSJ9.tfDl0b0jJpSktasWaw42jFE4esSjLxTKP0og26m8Ol7GjHj071QN20LucGBJIEps.6uBQ45RkiKN5L9Ryqb6ByObYRd2VNTXF_CpejVTMtC8&dib_tag=se&keywords=Integrity-Edge-Unlocking-Hidden-Ethical&qid=1774356602&sr=8-1)
 
-**Newsletter:** [Subscribe](https://fivexl.io/newsletter/) to our monthly newsletter where we share AWS infrastructure insights, security best practices, and lessons from working with startups in regulated industries.
+**Newsletter:** [Subscribe](https://fivexl.io/#email-subscription/) to our monthly newsletter where we share AWS infrastructure insights, security best practices, and lessons from working with startups in regulated industries.
