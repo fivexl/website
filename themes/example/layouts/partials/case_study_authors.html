@@ -1,7 +1,7 @@
 <section class="cst-Authors">
     <div class="cst-AuthorsContainer">
         <h2 class="cst-AuthorsHeading" {{ if not (reflect.IsSlice .Params.author_id) }}style="text-align: center;"{{ end }}>{{ .Params.authors_heading }}</h2>
-        <div class="cst-AuthorsWrapper" {{ if not (reflect.IsSlice .Params.author_id) }}style="grid-template-columns: minmax(1fr, 380px); justify-content: center"{{end }}>
+        <div class="cst-AuthorsWrapper" {{ if not (reflect.IsSlice .Params.author_id) }}style="grid-template-columns: minmax(auto, 380px); justify-content: center"{{end }}>
             {{- if reflect.IsSlice .Params.author_id -}}
             {{ range .Params.author_id }}
             {{ $page := $.GetPage (printf `/specialist/%s` .) }}

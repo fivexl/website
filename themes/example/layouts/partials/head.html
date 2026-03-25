@@ -3,6 +3,7 @@
 <title>{{ default .Site.Title .Params.title }}</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="{{ default "FiveXL Blog" (default .Site.Params.description (default .Summary .Params.description)) }}">
+{{ if .Params.noindex }}<meta name="robots" content="noindex, nofollow">{{ end }}
 <link rel="canonical" href="{{ .Permalink }}">
 
 {{ with .OutputFormats.Get "rss" -}}

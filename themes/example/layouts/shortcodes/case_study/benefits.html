@@ -15,6 +15,7 @@
                 </blockquote>
             </div>
         {{ else }}
+            {{- if or (.Get "image") (.Get "square_text") -}}
             <div class="{{ if (.Get "image") }}cst-PinkSquare_Image{{else }}cst-PinkSquare{{ end }}">
                 {{- with .Get "image" -}}
                     {{- partial "img" (dict 
@@ -28,6 +29,7 @@
                 <span class="cst-PinkSquare_Text">{{ . }}</span>
                 {{ end }}
             </div>
+            {{- end -}}
         {{ end }}
         </div>
         {{- if .Get "cta_text" -}}
