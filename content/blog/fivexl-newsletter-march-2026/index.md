@@ -1,7 +1,7 @@
 ---
 title: 'FivexL Newsletter, March 2026'
 author_id: FivexL
-date: 2026-03-25
+date: 2026-03-31
 description: 'FivexL Newsletter for March 2026 - Latest updates, blog posts, and insights from our cloud engineering team.'
 author: FivexL
 author_link: https://fivexl.io/
@@ -12,7 +12,7 @@ tags: ['Newsletter', 'AWS', 'Cloud Engineering']
 
 Greetings!
 
-Here's what March looked like at FivexL: a webinar with Clearway Health's SVP of Technology on building audit-ready architecture, a major overhaul of our ECS alerting module, three new DevSecOps Talks episodes, and the launch of Humans in the Loop - a video series on agentic AI in DevOps born out of our work building [B.O.R.I.S.](https://getboris.ai/), an AI DevOps teammate at Sirob Technologies.
+Here's what March looked like at FivexL: a webinar with Clearway Health's SVP of Technology on building audit-ready architecture, a major overhaul of our ECS alerting module, three new DevSecOps Talks episodes, and the launch of Humans in the Loop - a video series on agentic AI in DevOps born out of our work building [B.O.R.I.S](https://getboris.ai/), an AI DevOps teammate at Sirob Technologies.
 
 Beyond shipping, we're actively integrating AI into how we work - from delivery processes to internal tooling - and the team has been sharing and testing new tools along the way. Some of the best finds from our internal Slack made it into this edition's top articles below.
 
@@ -37,7 +37,7 @@ We keep a lot of the tooling we build for client work open source so you can plu
 
 Terraform module that captures ECS events via EventBridge and sends them to Slack - useful if you want real-time visibility into deployments, task failures, and cluster activity without building your own notification pipeline.
 
-Major modernisation of the module. Lambda is now image-based (ECR) instead of ZIP, with Python 3.14 and two deployment modes (pre-built image or build from source). Skip `1.0.0`–`1.0.2` - they had a broken ECR replication path. Go straight to `1.0.3`.
+Major modernisation of the module. Lambda is now image-based (ECR) instead of ZIP, with Python 3.14 and two deployment modes (pre-built image or build from source).
 
 If you're upgrading from `0.3.4`, the ZIP-to-image switch forces a Lambda recreation - use `terraform destroy -target` on the old function if the apply fails.
 
@@ -87,7 +87,7 @@ Steve Wade joins to talk about "platform theater" - bloated Kubernetes setups th
 
 ## Humans in the Loop
 
-Some of you know that FivexL is part of [Sirob Technologies](https://getboris.ai/) - an AI company building [B.O.R.I.S.](https://getboris.ai/), an AI DevOps teammate. BORIS plugs into your existing tools - AWS, GitHub, monitoring, logs - and helps with incident response, troubleshooting, infrastructure queries, and daily ops tasks. We invite you now to try it in a Slack playground.
+Some of FivexL members are part of [Sirob Technologies](https://getboris.ai/) - an AI company building [B.O.R.I.S](https://getboris.ai/), an AI DevOps teammate. B.O.R.I.S plugs into your existing tools - AWS, GitHub, monitoring, logs - and helps with incident response, troubleshooting, infrastructure queries, and daily ops tasks. We invite you now to try it in a Slack playground.
 
 Building an AI agent in production teaches you things that reading about AI agents doesn't. That hands-on experience is why [Fernando Goncalves](https://fivexl.io/specialist/fernando-goncalves/) and [Andrey Devyatkin](https://fivexl.io/specialist/andrey-devyatkin/) started **Humans in the Loop** - a video series where they talk honestly about agentic AI in DevOps: what works today, where it falls short, and how to work with it without losing control of your systems.
 
@@ -101,9 +101,9 @@ Two episodes are out:
 - **[More Tools, Worse Results: Why Giving AI Agents More Tools Often Backfires](https://www.youtube.com/watch?v=USNEYoqew-U)**
   Giving an AI agent more tools sounds like an upgrade. In practice, it often does the opposite. This episode explores why more tools can mean more noise, more token waste, worse reasoning, and less reliable output - across Claude Code, Cursor, MCP setups, and agent workflows.
 
-Want to see what BORIS can do? [Join the Slack playground](https://getboris.ai) and give it a spin - we'd love your feedback.
+Want to see what B.O.R.I.S can do? [Join the Slack playground](https://getboris.ai) and give it a spin - we'd love your feedback.
 
-<a href="https://getboris.ai/"><img src="boris-ai-devops-teammate.png" alt="B.O.R.I.S. - AI DevOps Teammate" style="max-width: 300px;" /></a>
+<a href="https://getboris.ai/"><img src="boris-ai-devops-teammate.png" alt="B.O.R.I.S - AI DevOps Teammate" style="max-width: 300px;" /></a>
 
 ### Top 5 articles from the team
 
