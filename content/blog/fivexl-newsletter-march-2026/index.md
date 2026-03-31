@@ -87,7 +87,7 @@ Steve Wade joins to talk about "platform theater" - bloated Kubernetes setups th
 
 ## Humans in the Loop
 
-Some of FivexL members are part of [Sirob Technologies](https://getboris.ai/) - an AI company building [B.O.R.I.S](https://getboris.ai/), an AI DevOps teammate. B.O.R.I.S plugs into your existing tools - AWS, GitHub, monitoring, logs - and helps with incident response, troubleshooting, infrastructure queries, and daily ops tasks. We invite you now to try it in a Slack playground.
+Some of FivexL members are part of [Sirob Technologies](https://www.linkedin.com/company/sirob-technologies/) - an AI company building [B.O.R.I.S](https://getboris.ai/), an AI DevOps teammate. B.O.R.I.S plugs into your existing tools - AWS, GitHub, monitoring, logs - and helps with incident response, troubleshooting, infrastructure queries, and daily ops tasks. We invite you now to try it in a Slack playground.
 
 Building an AI agent in production teaches you things that reading about AI agents doesn't. That hands-on experience is why [Fernando Goncalves](https://fivexl.io/specialist/fernando-goncalves/) and [Andrey Devyatkin](https://fivexl.io/specialist/andrey-devyatkin/) started **Humans in the Loop** - a video series where they talk honestly about agentic AI in DevOps: what works today, where it falls short, and how to work with it without losing control of your systems.
 
