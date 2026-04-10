@@ -1,5 +1,5 @@
 ---
-title: 'FivexL Retainer Plans'
+title: 'FivexL Managed AWS Support'
 summary: 'Tailored support plans for existing FivexL customers. Choose between Keep the Lights On for infrastructure maintenance or Trusted Advisor for team empowerment and guidance.'
 date: 2025-12-12
 url: "/retainer/"
@@ -12,23 +12,23 @@ _build:
 transparent_nav: true
 callout_cta_heading: "Ready to secure ongoing support for your infrastructure?"
 callout_cta_url: "#retainer-popup"
-callout_cta_text: "Get a Retainer Quote"
+callout_cta_text: "Get a Quote"
 double_panel:
   layout: 'services'
-  heading: "FivexL Retainer Plans"
+  heading: "FivexL Managed AWS Support"
   subheading: "Continued Success for Our Valued Customers"
   icon_links:
     - { url: "https://github.com/fivexl", icon: "github" }
     - { url: "https://www.linkedin.com/company/5xl", icon: "linkedin" }
-  button_cta: { url: "#retainer-popup", text: "Get a Retainer Quote" }
+  button_cta: { url: "#retainer-popup", text: "Get a Quote" }
   media_panel: { image: "/contact/featured.png" }
 ---
 
-{{< our_team heading="Retainer Plans for Existing Customers" cta_url="#retainer-popup" cta_text="Get a Retainer Quote" >}}
+{{< our_team heading="Managed AWS Support for Existing Customers" cta_url="#retainer-popup" cta_text="Get a Quote" >}}
 {{< md >}}
 After successfully completing a fixed-price project or a full-time consulting engagement with FivexL, we're committed to ensuring your continued success.
 
-Our Retainer Plans are specially designed for our existing customers, offering tailored support that ranges depending on your needs. Explore our comparison below to identify the plan that aligns seamlessly with your ongoing needs.
+Our Managed AWS Support plans are specially designed for our existing customers, offering tailored support that ranges depending on your needs. Explore our comparison below to identify the plan that aligns seamlessly with your ongoing needs.
 {{< /md >}}
 {{< /our_team >}}
 
@@ -125,7 +125,7 @@ As a business owner with a team of mid-level DevOps specialists, you need someon
   <div class="retainer-popup-content">
     <button id="retainer-popup-close" class="retainer-popup-close">&times;</button>
     <div class="retainer-popup-body">
-      <h2 class="retainer-popup-title">Get a Retainer Quote</h2>
+      <h2 class="retainer-popup-title">Get a Quote</h2>
       <p class="retainer-popup-subtitle">Tell us about your infrastructure needs and we'll get back to you shortly.</p>
       <div id="retainer-hubspot-form"></div>
     </div>

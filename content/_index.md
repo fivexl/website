@@ -20,7 +20,7 @@ images: [ 'featured.png' ]
 {{< service_item title="Amazon Bedrock in Production" description="Deploy AI securely in production for startups and regulated companies alike." url="/ai-to-production/" >}}
 {{< service_item title="Cloud Migration to AWS" description="Seamlessly move your infrastructure to AWS so you can focus on your product, not the move." url="/aws-migration/" >}}
 {{< service_item title="AWS Security Review" description="Audit your existing AWS setup and get a clear picture of your security posture and what to fix." url="/contact/" >}}
-{{< service_item title="Ongoing Retainer" description="Continuous cloud engineering support after the initial build - we stay on as your dedicated AWS team." url="/retainer/" >}}
+{{< service_item title="Managed AWS Support" description="Continuous cloud engineering support after the initial build - we stay on as your dedicated AWS team." url="/retainer/" >}}
 {{< /services_grid >}}
 
 {{< two_columns heading="Why Startups Choose FivexL" >}}

@@ -45,7 +45,7 @@ pagerSize = 6
 [[menu.main]]
   identifier = 'retainer'
   url = '/retainer'
-  name = 'Retainer Plans'
+  name = 'Managed AWS Support'
   parent = 'products'
   weight = 5
 [[menu.main]]
