@@ -12,7 +12,7 @@ authors_heading: 'Consultant Team Leading the Project'
 alt_image: gui_quad.png
 case_study: true
 layout: 'case_study'
-tags: ['case study', 'aws']
+tags: ['case study', 'aws', 'HIPAA', 'SOC2', 'RightStart', 'Compliance']
 testimonial: 'Fivexl has been a great partner. They demonstrate unrivaled expertise in the AWS ecosystem and deliver results quickly.'
 testimonial_author: 'Rusty Atkinson,'
 testimonial_author_position: 'VP, Technology at Clearway Health'

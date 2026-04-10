@@ -11,7 +11,7 @@ authors_heading: 'Consultant Team Leading the Project'
 alt_image: bro_quad.png
 case_study: true
 layout: 'case_study'
-tags: ['case study', 'aws', 'ECS']
+tags: ['case study', 'aws', 'ECS', 'RightStart', 'AI']
 testimonial: 'I think FivexL did a really good job of being deliberate, explicit, and highly consistent about the work.'
 testimonial_author: 'Nate Sesti,'
 testimonial_author_position: 'CTO at Continue'

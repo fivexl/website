@@ -5,7 +5,7 @@ summary: 'Introduction to AWS Control Tower and AWS Account Factory for Terrafor
 date: 2024-11-07
 author: 'Anton Eremin'
 panel_image: AFT.png
-tags: [ 'team', 'AWS']
+tags: ['team', 'AWS', 'Compliance']
 ---
 
 ## Introduction 

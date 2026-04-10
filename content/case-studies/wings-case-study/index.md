@@ -11,7 +11,7 @@ authors_heading: 'Project Success: Managed by Vladimir Samoylov, Architected by 
 alt_image: wings_bnw.png
 case_study: true
 layout: 'case_study'
-tags: ['case study', 'aws']
+tags: ['case study', 'aws', 'ECS']
 
 testimonial_author_portrait: steve1.png
 testimonial_long: |

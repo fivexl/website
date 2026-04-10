@@ -7,7 +7,7 @@ author: FivexL
 author_link: https://fivexl.io/
 category: AWS
 panel_image: best-thinking.png
-tags: ['AWS', 'Startup', 'Credits', 'Cloud', 'AWS Activate']
+tags: ['AWS', 'Startup', 'AWS Credits', 'Cloud']
 ---
 
 There's a lot of information about AWS credits and the different programs behind them. It's easy to get stuck — unsure which credits apply to your stage, what you actually qualify for, and where to start.

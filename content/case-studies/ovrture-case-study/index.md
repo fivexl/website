@@ -9,7 +9,7 @@ authors_heading: 'Senior consultant leading the project'
 alt_image: vova_sm_bnw.png
 case_study: true
 layout: 'case_study'
-tags: ['case study', 'AWS']
+tags: ['case study', 'AWS', 'Security']
 testimonial: 'The transition was seamless. Our infrastructure is light years ahead of where most small businesses would expect to be.'
 testimonial_author: 'Chris Picht,'
 testimonial_author_position: 'IT Operations Manager & Senior Information Security Officer'

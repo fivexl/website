@@ -5,7 +5,7 @@ summary: 'Find out how to securely conduct a local health check without wget, cu
 date: 2023-01-16
 author: Vladimir Samoylov
 panel_image: Vova_article.png
-tags: [ 'aws', 'open source']
+tags: ['aws', 'open source', 'Security']
 ---
 ## LProbe: A One-Stop-Shop Tool for Secure, Local Health Checks  
 Even if your app is functioning, that doesn’t always mean it’s working correctly. For you to securely and easily ensure your local container is healthy before the system fails, FivexL developed an open-source automated local health check solution - [LProbe](https://github.com/fivexl/lprobe).  
