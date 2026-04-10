@@ -2,14 +2,21 @@
     <h2 class="cl-Heading">{{ default "BLOGS" .heading }}</h2>
     {{ if .show_tags }}
     <div class="cl-TagsList">
-        {{ range site.Taxonomies.tags.ByCount }}
-            <a class="cl-Tag" href="{{ .Page.Permalink }}">{{ .Page.Name }}</a>
+        {{ range site.Data.tag_categories }}
+        <div class="cl-TagsGroup">
+            <button class="cl-TagsGroup_Label" data-category-tags="{{ delimit .tags "|" | lower }}">{{ .name }}</button>
+            <div class="cl-TagsGroup_Tags">
+                {{ range .tags }}
+                <a class="cl-Tag" href="{{ "/tags/" | absURL }}{{ . | urlize }}/">{{ . }}</a>
+                {{ end }}
+            </div>
+        </div>
         {{ end }}
     </div>
     {{ end }}
     <div class="cl-ContentWrapper">
         {{ range .pages }}
-        <div class="cl-ContentItem">
+        <div class="cl-ContentItem" data-tags="{{ if .Params.tags }}{{ delimit .Params.tags "|" | lower }}{{ end }}">
             {{ $permalink := .Permalink }}
             {{ with .Resources.GetMatch .Params.panel_image }}
             <a href="{{ $permalink }}">
@@ -58,3 +65,28 @@
     </div>
     {{ end }}
 </section>
+<script>
+(function () {
+  var labels = document.querySelectorAll('.cl-TagsGroup_Label[data-category-tags]');
+  var items = document.querySelectorAll('.cl-ContentItem[data-tags]');
+
+  labels.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var isActive = btn.classList.contains('is-active');
+
+      labels.forEach(function (b) { b.classList.remove('is-active'); });
+      items.forEach(function (item) { item.style.display = ''; });
+
+      if (!isActive) {
+        btn.classList.add('is-active');
+        var categoryTags = btn.dataset.categoryTags.split('|');
+        items.forEach(function (item) {
+          var itemTags = item.dataset.tags ? item.dataset.tags.split('|') : [];
+          var matches = categoryTags.some(function (tag) { return itemTags.includes(tag); });
+          if (!matches) item.style.display = 'none';
+        });
+      }
+    });
+  });
+}());
+</script>

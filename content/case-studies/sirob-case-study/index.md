@@ -11,7 +11,7 @@ authors_heading: 'Two lead consultants for the project'
 alt_image: consultants-sirob-technologies.png
 case_study: true
 layout: 'case_study'
-tags: ['case study', 'aws', 'ai', 'ecs']
+tags: ['case study', 'aws', 'AI', 'AWS Bedrock', 'ecs']
 testimonial: "FivexL didn't just set up infrastructure - they gave us a production platform we could trust from day one. We went from a manual MVP to onboarding real customers in weeks."
 testimonial_author: "Daniil Goloviznin,"
 testimonial_author_position: "Head of Infrastructure at Sirob Technologies"

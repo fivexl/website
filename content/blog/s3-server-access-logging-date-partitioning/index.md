@@ -5,7 +5,7 @@ summary: 'Amazon S3 server access logging now supports automatic date-based part
 date: 2023-12-14
 author: Alexey Eremin
 panel_image: lesha_s3c.png
-tags: [ 'S3', 'Athena', 'logs', 'partitioning', 'AWS']
+tags: ['S3', 'Athena', 'logs', 'partitioning', 'AWS', 'CloudTrail']
 ---
 In a recent project for a Swedish startup, we've taken a leap forward in optimizing cloud storage solutions largely due to the utilization of Athena partitioning. In this article, I will describe how to use the same idea in the context of S3 access logs.
 Amazon S3 server access logging now [supports](https://aws.amazon.com/about-aws/whats-new/2023/11/amazon-s3-server-access-logging-date-partitioning/) automatic date-based partitioning for log delivery. This allows services like Amazon Athena to improve performance and reduce cost when querying logs.  

@@ -9,7 +9,7 @@ authors_heading: 'Senior consultant leading the project'
 alt_image: artem_quad.png
 case_study: true
 layout: 'case_study'
-tags: ['case study', 'aws']
+tags: ['case study', 'aws', 'AI']
 testimonial: 'As our needs and product changed FivexL remained flexible and fully involved in the project'  
 testimonial_author: 'Andrey Kolpakov,'
 testimonial_author_position: 'CTO at New Stream'

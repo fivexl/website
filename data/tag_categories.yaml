@@ -1,0 +1,37 @@
+- name: Compliance & Security
+  tags:
+    - Compliance
+    - SOC2
+    - HIPAA
+    - PCI DSS
+    - Security
+    - Encryption
+    - GuardDuty
+    - Incident Response
+
+- name: AWS Infrastructure
+  tags:
+    - Landing Zone
+    - RightStart
+    - SSO Elevator
+    - CloudTrail
+    - ECS
+    - Terraform
+    - Kubernetes
+    - Identity Center
+
+- name: AI
+  tags:
+    - AI
+    - AWS Bedrock
+
+- name: Startups
+  tags:
+    - MVP
+    - AWS Credits
+
+- name: Updates
+  tags:
+    - Newsletter
+    - reInvent
+    - team

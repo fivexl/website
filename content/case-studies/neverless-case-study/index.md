@@ -11,7 +11,7 @@ authors_heading: 'Two lead consultants for the project'
 alt_image: neverless_consultants.png
 case_study: true
 layout: 'case_study'
-tags: ['case study', 'aws', 'fintech', 'RightStart']
+tags: ['case study', 'aws', 'fintech', 'RightStart', 'Compliance', 'Security']
 testimonial: "FivexL were very clear on scope and delivered exactly what we needed: an AWS foundation we could build on with confidence while keeping our Google Cloud environment running."
 testimonial_author: "Neverless Team"
 testimonial_author_position: ""

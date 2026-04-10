@@ -11,9 +11,8 @@ authors_heading: 'Two lead consultants for the project'
 alt_image: andrey_quad_bnw.png
 case_study: true
 layout: 'case_study'
-tags: ['case study', 'aws']
-testimonial: 'It is great for us that FivexL can align with our working style without needing to be in the same location'  
-tags: ['case study', 'aws']  
+tags: ['case study', 'aws', 'Terraform']
+testimonial: 'It is great for us that FivexL can align with our working style without needing to be in the same location'
 testimonial_author: 'Henrik Segersven,'
 testimonial_author_position: 'CTO at Kuvio'
 testimonial_author_portrait: Henrik.png

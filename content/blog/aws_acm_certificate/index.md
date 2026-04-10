@@ -5,7 +5,7 @@ summary: 'Encountering the “Invalid for_each argument” and “UnsupportedCer
 date: 2025-02-19
 author: Alexey Eremin
 panel_image: Lesha.png
-tags: [ 'ACM','Route53', 'AWS']
+tags: ['ACM', 'Route53', 'AWS', 'Security', 'Terraform']
 ---
 
 If you’ve ever validated an ACM certificate with Terraform, you’ve likely used a snippet like this:

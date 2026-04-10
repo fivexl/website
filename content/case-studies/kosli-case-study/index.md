@@ -10,7 +10,7 @@ authors_heading: 'Senior consultant leading the project'
 alt_image: artem_quad.png
 case_study: true
 layout: 'case_study'
-tags: ['case study', 'aws']
+tags: ['case study', 'aws', 'ECS']
 testimonial: 'The FivexL team is very responsive and extremely competent, demonstrating a deep understanding and expertise in AWS.'
 testimonial_author: 'Mike Long,'
 testimonial_author_position: 'CEO at Kosli'

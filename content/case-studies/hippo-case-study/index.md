@@ -11,7 +11,7 @@ authors_heading: 'Consultant Team Leading the Project'
 alt_image: hippobnw.png
 case_study: true
 layout: 'case_study'
-tags: ['case study', 'aws', 'SOC2', 'RightStart']
+tags: ['case study', 'aws', 'SOC2', 'RightStart', 'Compliance', 'HIPAA']
 testimonial: 'The FivexL team had laid the foundation for SOC2, and we didn’t need to make major changes to get certified.'
 testimonial_author: 'Mattias Hemmingsson,'
 testimonial_author_position: 'Head of Security at Hippo'

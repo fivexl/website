@@ -11,7 +11,7 @@ authors_heading: 'Two lead consultants for the project'
 alt_image: alex_ivan_bnw.png
 case_study: true
 layout: 'case_study'
-tags: ['case study', 'aws']
+tags: ['case study', 'aws', 'Security']
 testimonial: "By developing infrastructure FivexL allows us to focus on our core business: Product development hypothesis testing and roadmap generation."  
 testimonial_author: "Artem Eroshenko,"
 testimonial_author_position: "Co-founder and CPO at Qameta Software"

@@ -9,7 +9,7 @@ authors_heading: 'Principal consultant leading the project'
 alt_image: kuvio_quad.png
 case_study: true
 layout: 'case_study'
-tags: ['case study', 'AWS']
+tags: ['case study', 'AWS', 'Terraform']
 testimonial: 'With the new scalable infrastructure in place, we have been able to develop a range of new features for our product.'
 testimonial_author: 'Henrik Segersven,'
 testimonial_author_position: 'CTO at Kuvio'

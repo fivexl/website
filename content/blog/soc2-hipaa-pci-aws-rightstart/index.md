@@ -7,7 +7,7 @@ author: Yousef De Baz
 author_link: https://fivexl.io/specialist/yousef-de-baz/
 panel_image: AWS-compliance-Yousef.png
 category: Compliance
-tags: ['AWS', 'Compliance', 'SOC2', 'HIPAA', 'PCI DSS', 'RightStart', 'Landing Zone']
+tags: ['SOC2', 'HIPAA', 'PCI DSS', 'Compliance', 'Landing Zone']
 ---
 
 Startups don't fail audits because they lack controls. They fail because they try to implement three frameworks manually in the middle of the night.
