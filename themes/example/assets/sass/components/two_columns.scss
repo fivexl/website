@@ -2,16 +2,19 @@
   background: #DDDDDD53;
   box-sizing: border-box;
   &-Heading {
+    @include base-text;
+    font-size: clamp(2.125rem, 4vw, 3.4rem);
     color: $textSecondary;
-    font-size: clamp(2.125rem,4vw, 3.4rem);
-    margin-top: 0;
-    margin-bottom: 0.5rem;
-    
+    margin-bottom: 2rem;
+    margin-inline: auto;
+    text-align: center;
+    line-height: 1.15;
+
     &_Centered {
       text-align: center;
     }
   }
-  
+
   &-Subheading {
     color: $textSecondary;
     font-size: clamp(1.25rem, 1.5vw, 1.5rem);
@@ -47,29 +50,32 @@
         line-height: 1.5;
       }
     }
-    
+
     ul, ol {
-      padding-left: 1.25rem;
+      padding-left: 0;
       margin: 0;
+      list-style: none;
     }
-    
-    // When a list is the first element in a column (no heading), add top spacing
-    // to align with text in adjacent column that has a heading
-    > *:nth-child(2) > ul:first-child,
-    > *:nth-child(2) > ol:first-child {
-      margin-top: clamp(5rem, 5.5vw, 6rem);
-    }
-    
+
     li {
-      font-size: clamp(0.875rem, 1vw, 1.25rem);
-      font-weight: 500;
-      line-height: 1.6;
-      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: clamp(0.5rem, 2vw, 2rem);
+      background: white;
+      border-radius: 15rem;
+      padding: clamp(1rem, 2vw, 1.5rem) clamp(1rem, 2vw, 2rem) clamp(1rem, 2vw, 1.5rem) clamp(1.5rem, 3vw, 4rem);
+      margin-bottom: clamp(1rem, 2vw, 2.5rem);
+      font-size: clamp(0.875rem, 2vw, 1.25rem);
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      line-height: 1.5;
+      color: $textPrimary;
+      strong { color: inherit; }
     }
-    
+
     &_Centered {
       text-align: center;
-      
+
       p {
         max-width: 900px;
         margin-left: auto;

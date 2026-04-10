@@ -14,29 +14,31 @@ transparent_nav: true
 images: [ 'featured.png' ]
 ---
 
-{{< two_columns heading="FivexL - Cloud Engineering Specialists" >}}
-{{< column >}}
-### What Can We Do For Your Startup?  
-- We build <strong style="color:#F13687">HIPAA and SOC 2-ready AWS foundations</strong> for healthcare, fintech, and other highly regulated startups - secure from day one with [RightStart](/rightstart/).
-- We take your infrastructure to the next level so it grows with you - from first prototype to production scale with [ECS Blueprint](/ecs-blueprint/).
-- We deploy <strong style="color:#F13687">Amazon Bedrock securely in production</strong> for startups and regulated companies alike. [Learn more](/ai-to-production/).
-- We handle <strong style="color:#F13687">cloud migrations to AWS</strong> so you can focus on your product, not the move with [Cloud Migration](/aws-migration/).
-- We bring <strong style="color:#F13687">cost predictability to your AWS spend</strong> - no nasty surprises.  
-{{< /column >}}
+{{< services_grid heading="What Can We Do For Your Startup?" >}}
+{{< service_item title="HIPAA & SOC 2-Ready AWS Foundations" description="Secure infrastructure for healthcare, fintech, and other regulated startups - built right from day one." url="/rightstart/" >}}
+{{< service_item title="Production-Ready ECS Infrastructure" description="Take your infrastructure to the next level so it grows with you - from first prototype to production scale." url="/ecs-blueprint/" >}}
+{{< service_item title="Amazon Bedrock in Production" description="Deploy AI securely in production for startups and regulated companies alike." url="/ai-to-production/" >}}
+{{< service_item title="Cloud Migration to AWS" description="Seamlessly move your infrastructure to AWS so you can focus on your product, not the move." url="/aws-migration/" >}}
+{{< service_item title="AWS Security Review" description="Audit your existing AWS setup and get a clear picture of your security posture and what to fix." url="/contact/" >}}
+{{< service_item title="Ongoing Retainer" description="Continuous cloud engineering support after the initial build - we stay on as your dedicated AWS team." url="/retainer/" >}}
+{{< /services_grid >}}
 
+{{< two_columns heading="Why Startups Choose FivexL" >}}
 {{< column >}}
-### Why Startups Choose FivexL  
 - We are an AWS Advanced Tier Partner with 50+ years of combined cloud engineering experience.
 - We build everything as infrastructure as code - no manual changes, no human mistakes.
 - We specialize in security - HIPAA, SOC 2, and audit readiness are built in from day one, not bolted on later.
 - We keep your AWS bill predictable as you scale.
 - We take full responsibility for your infrastructure and deliver it fully transparent, fully yours.
+- Deep experience with healthcare and startups in highly regulated environments.
 {{< /column >}}
 {{< /two_columns >}}
 
 <!-- {{< section heading="AWS Advanced Partner" >}}
 As an AWS Advanced Partner, FivexL combines real-world experience with deep knowledge in building scalable, secure, and cost-effective AWS environments for fast-growing startups. 
 {{< /section >}} -->
+
+{{< customer_logos heading="Trusted by startups worldwide" >}}
 
 {{< our_team heading="Our Team" cta_url="/contact" cta_text="Book a consultation" >}}
 {{< md >}}
@@ -61,5 +63,7 @@ There’s no problem that we can’t solve together!
 
 {{< case_studies_cards heading="Our happy customers" mb="3">}}
 
-{{< callout_cta heading="This way, you can focus on what you do best without worrying about the underlying infrastructure." cta_url="/contact" cta_text="Book a consultation" >}}
+{{< latest_posts heading="Latest from FivexL" >}}
+
+{{< callout_cta heading="Focus on what you do best without worrying about the underlying infrastructure" cta_url="/contact" cta_text="Book a consultation" >}}
 

@@ -1,0 +1,8 @@
+<section class="svc">
+    <div class="svc-Container">
+        {{ with .Params.heading }}<h2 class="svc-Heading">{{ . }}</h2>{{ end }}
+        <div class="svc-Grid">
+            {{ .Inner }}
+        </div>
+    </div>
+</section>

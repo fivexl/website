@@ -1,0 +1,81 @@
+.svc {
+  box-sizing: border-box;
+
+  &-Container {
+    padding: clamp(3.25rem, 6vw, 6rem) clamp(1rem, 5vw, 6rem);
+    max-width: 1600px;
+    margin-inline: auto;
+  }
+
+  &-Heading {
+    @include base-text;
+    font-size: clamp(2.125rem, 4vw, 3.4rem);
+    color: $textSecondary;
+    margin-bottom: 2rem;
+    margin-inline: auto;
+    text-align: center;
+    line-height: 1.15;
+    @media (min-width: 768px) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &-Grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    @media (min-width: 640px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &-Card {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    border: 1.5px solid rgba(0, 0, 0, 0.1);
+    background: #fff;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.2s, box-shadow 0.2s;
+
+    &:hover {
+      border-color: $accentColor;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    &_Title {
+      font-size: clamp(1rem, 1.25vw, 1.25rem);
+      font-weight: 700;
+      margin-top: 0;
+      margin-bottom: 0.75rem;
+      color: $textPrimary;
+    }
+
+    &_Description {
+      font-size: clamp(0.875rem, 1vw, 1rem);
+      font-weight: 400;
+      line-height: 1.6;
+      color: #444;
+      margin: 0;
+      flex-grow: 1;
+    }
+
+    &_Link {
+      display: inline-block;
+      margin-top: 1.25rem;
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: $accentColor;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

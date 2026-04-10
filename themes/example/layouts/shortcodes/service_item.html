@@ -1,0 +1,12 @@
+{{ if .Params.url }}
+<a class="svc-Card" href="{{ .Params.url }}">
+    <h3 class="svc-Card_Title">{{ .Params.title }}</h3>
+    <p class="svc-Card_Description">{{ .Params.description }}</p>
+    <span class="svc-Card_Link">Learn more →</span>
+</a>
+{{ else }}
+<div class="svc-Card">
+    <h3 class="svc-Card_Title">{{ .Params.title }}</h3>
+    <p class="svc-Card_Description">{{ .Params.description }}</p>
+</div>
+{{ end }}

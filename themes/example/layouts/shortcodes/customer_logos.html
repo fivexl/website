@@ -1,0 +1,25 @@
+{{ $cases := where site.RegularPages "Params.case_study" true }}
+{{ $seen := slice }}
+
+<section class="clogo">
+    <div class="clogo-Container">
+        {{ with .Params.heading }}<h2 class="clogo-Heading">{{ . }}</h2>{{ end }}
+        <div class="clogo-Grid">
+            {{ range $cases }}
+                {{ $page := . }}
+                {{ with .Params.about_company.logo }}
+                    {{ if and (ne . "startup.png") (not (in $seen .)) }}
+                        {{ $seen = $seen | append . }}
+                        {{ with $page.Resources.GetMatch . }}
+                        <div class="clogo-Item">
+                            <a href="{{ $page.Permalink }}">
+                                <img class="clogo-Logo" src="{{ .Permalink }}" alt="{{ $page.Title }}">
+                            </a>
+                        </div>
+                        {{ end }}
+                    {{ end }}
+                {{ end }}
+            {{ end }}
+        </div>
+    </div>
+</section>
