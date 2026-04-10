@@ -1,0 +1,29 @@
+{{ $blogs := where site.RegularPages "Section" "blog" }}
+{{ $cases := where site.RegularPages "Params.case_study" true }}
+{{ $all := union $blogs $cases }}
+{{ $sorted := sort $all "Date" "desc" }}
+{{ $latest := first 3 $sorted }}
+
+<section class="lp">
+    <div class="lp-Container">
+        {{ with .Params.heading }}<h2 class="lp-Heading">{{ . }}</h2>{{ end }}
+        <div class="lp-Grid">
+            {{ range $latest }}
+            {{ $permalink := .Permalink }}
+            <div class="lp-Card">
+                {{ with .Resources.GetMatch .Params.panel_image }}
+                <a href="{{ $permalink }}">
+                    {{ partial "img" (dict "class" "lp-Card_Image" "src" .Permalink "image" . "alt" .Name "sizes" "(max-width: 767px) 100vw, 500px" "lazy" true) }}
+                </a>
+                {{ end }}
+                <div class="lp-Card_Body">
+                    <span class="lp-Card_Date">{{ time.Format "January 2, 2006" .Params.date }}</span>
+                    <h3 class="lp-Card_Title"><a href="{{ $permalink }}">{{ .Title }}</a></h3>
+                    <p class="lp-Card_Summary">{{ .Summary | plainify | truncate 160 }}</p>
+                    <a class="lp-Card_Link" href="{{ $permalink }}">Read more →</a>
+                </div>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</section>

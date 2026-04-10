@@ -17,6 +17,9 @@
     margin-top: 0;
     margin-bottom: 3rem;
     font-size: clamp(2.125rem,4vw, 3.4rem);
+    text-align: center;
+    width: 100%;
+    display: block;
   }
 
   &-StepsWrapper {
