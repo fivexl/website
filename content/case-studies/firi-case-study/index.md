@@ -1,5 +1,5 @@
 ---
-title: 'Firi Case Study'
+title: 'AWS ECS Migration for Norwegian Crypto Exchange, Firi'
 author_id: 'Vladimir-Samoylov' 
 summary: 'FivexL rebuilt and migrated infrastructure to AWS Elastic Container Service for the Norwegian cryptocurrency exchange.'
 date: 2023-03-16 

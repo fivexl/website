@@ -1,5 +1,5 @@
 ---
-title: 'Continue Case Study'
+title: 'Production-Ready AWS Infrastructure for Continue, AI Startup'
 author_id:
 - 'Anton Eremin'
 - 'Alexey Eremin' 

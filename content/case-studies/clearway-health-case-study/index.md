@@ -1,5 +1,5 @@
 ---
-title: 'Clearway Health Case Study'
+title: 'HIPAA-Ready AWS Infrastructure from Day Zero: Clearway Health Case Study'
 author_id:
 - 'Guilherme Ferreira'
 - 'Anton Eremin'
@@ -37,6 +37,8 @@ double_panel:
 ---
 {{< case_study/challenge  image="gui_challenge.png" image_css="object-position: 18%" >}}
 {{< pink_heading text="Challenge"  sizes="bigger">}}
+For a specialty pharmacy SaaS company handling sensitive patient data, HIPAA-compliant AWS infrastructure isn't optional - it's the foundation everything else is built on. This case study covers how Clearway Health got that foundation right from day zero, and what it meant for their ability to scale and meet compliance requirements.
+
 Clearway Health aimed to leverage the full power of AWS to ensure their SaaS solution was built on a robust, scalable and secure infrastructure. They opted to partner with an expert in the space to accelerate their success and chose to use AWS RightStart by FivexL to build their infrastructure.<br/>  
 <br/>    
 While creating the first AWS accounts and deploying the first application is relatively straightforward, scaling AWS infrastructure to handle increased traffic, adapt to rapidly evolving market changes, and meet highly complex compliance requirements in the healthcare and specialty pharmacy setting is much more challenging.<br/>  

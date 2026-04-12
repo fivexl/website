@@ -1,5 +1,5 @@
 ---
-title: 'Cloud Migration to AWS'
+title: 'Cloud Migration to AWS for Startups'
 summary: 'Move your workloads to AWS with zero surprises. FivexL handles assessment, planning, execution, and handoff - so you stay focused on your product.'
 date: 2026-03-15
 url: "/aws-migration/"

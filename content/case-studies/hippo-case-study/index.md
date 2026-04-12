@@ -1,9 +1,9 @@
 ---
-title: 'Hippo Case Study'
+title: 'How Hippo Achieved SOC 2 on AWS in About a Month'
 author_id:
 - 'Andrey Devyatkin'
 - 'Ivan Razzhivin' 
-summary: 'RightStart for AWS by FivexL gave a U.S. healthcare startup a compliance-ready foundation and multi-account setup, helping them achieve SOC2 certification.'
+summary: "A real-world case study: how Hippo built HIPAA-compliant AWS infrastructure and passed SOC 2 certification in about a month using FivexL's RightStart multi-account setup and SSO Elevator for just-in-time access."
 date: 2025-08-30 
 author: AAndrey Devyatkin Ivan Razzhivin
 panel_image: hippo1.png
@@ -12,7 +12,7 @@ alt_image: hippobnw.png
 case_study: true
 layout: 'case_study'
 tags: ['case study', 'aws', 'SOC2', 'RightStart', 'Compliance', 'HIPAA']
-testimonial: 'The FivexL team had laid the foundation for SOC2, and we didn’t need to make major changes to get certified.'
+testimonial: "The FivexL team had laid the foundation for SOC2, and we didn’t need to make major changes to get certified."
 testimonial_author: 'Mattias Hemmingsson,'
 testimonial_author_position: 'Head of Security at Hippo'
 testimonial_author_portrait: matte_back.png

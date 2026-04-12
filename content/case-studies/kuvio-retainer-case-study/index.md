@@ -1,5 +1,5 @@
 ---
-title: 'Kuvio Retainer Agreement Case Study'
+title: 'Managed AWS Support for Swedish Startup, Kuvio'
 author_id:
   - 'Andrey Devyatkin'
   - 'Alexey Eremin' 

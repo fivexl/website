@@ -1,5 +1,5 @@
 ---
-title: 'Secure AI with Amazon Bedrock'
+title: 'Amazon Bedrock in Production: Secure AI for Startups'
 summary: 'Deploy Amazon Bedrock securely in production - with multi-tenancy, guardrails, cost controls, and full observability built in.'
 date: 2026-03-15
 url: "/ai-to-production/"

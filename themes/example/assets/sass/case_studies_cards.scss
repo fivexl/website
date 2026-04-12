@@ -103,14 +103,10 @@
     color: #555;
     text-align: center;
     font-size: 1.125rem;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
     color: #707070;
     @media (min-width: 1440px) {
       font-size: 19px;
-    }
-    &:after {
-      content: "”";
-      margin-left: 0.125rem;
     }
   }
 
@@ -129,14 +125,13 @@
   &-ArticleInfo {
     position: relative;
     z-index: 0;
-    overflow: hidden;
-    padding: 3.875rem 2rem 3rem;
+    padding: 4.5rem 2rem 3rem;
     height: 19rem;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     @media (min-width: 1440px) {
-      padding-top: 4.25rem;
+      padding-top: 5rem;
       height: 22rem;
     }
     img {
@@ -166,7 +161,10 @@
     text-align: center;
     margin-inline: auto;
     color: $textPrimary;
-    margin-top: auto;
+    position: absolute;
+    bottom: 3.5rem;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 
