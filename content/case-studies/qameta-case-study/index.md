@@ -1,5 +1,5 @@
 ---
-title: 'Qameta Case Study'
+title: 'Scalable and Secure AWS SaaS Infrastructure for Allure TestOps'
 author_id:
   - 'Ivan Razzhivin'
   - 'Alexey Eremin'

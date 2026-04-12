@@ -1,14 +1,16 @@
 ---
-title: 'How to Build an MVP on AWS (Part 1): Account Setup, Security & Cost Control'
+title: 'AWS Account Setup for Startups: Security and Cost Control Step by Step'
 author_id: 
 date: 2025-11-13
-description: 'A 10-minute AWS foundation guide for founders and small teams. Set up root security, budgets, CloudTrail, GuardDuty, and Slack alerts to avoid surprise bills and security disasters.'
+description: 'A step-by-step AWS account setup guide for founders and small engineering teams - covering root hardening, MFA, budgets, CloudTrail, GuardDuty, and Slack alerts to avoid surprise bills and security disasters.'
 author: FivexL
 author_link: https://fivexl.io/
 category: AWS, DevOps, Security
 panel_image: AWS-Partner.png
 tags: ['AWS', 'MVP', 'Security', 'Cost Control', 'CloudTrail', 'GuardDuty', 'Budgets']
 ---
+
+If you're building an MVP on AWS - especially in healthcare or fintech - the account setup decisions you make in week one will determine how easy or hard your first audit is. This guide covers the minimum viable AWS foundation: the security, cost, and compliance controls that every startup needs before deploying anything. If you're in a regulated industry, there's a specific section at the end on what HIPAA readiness adds to this baseline.
 
 This Part-1 guide is for founders and small product teams shipping their first release on AWS without a full-time DevOps crew. In ~10 minutes you'll set a rock-solid foundation that stops the classic MVP disasters—surprise bills, insecure accounts, and zero audit trail. We walk you through:
 
@@ -170,6 +172,20 @@ AWS Organizations → Create organization
 **Pitfalls:** Spinning accounts too early without naming/guardrail plans.
 
 <img src="AWS-organisation.png" alt="AWS Organizations" style="width: 50%; display: block;">
+
+<div style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border-left: 4px solid #18AEF0; border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0;">
+
+### Building a healthcare or fintech MVP?
+
+If your product will handle PHI (patient data, prescription records, health information) or financial data under PCI DSS, three things change from this baseline:
+
+- **Multi-account structure is not optional.** A single AWS account is not an acceptable HIPAA environment. You need at minimum separate accounts for production, development, and log archiving - with PHI isolated in its own account.
+- **Logging must be immutable.** CloudTrail logs need to be stored with S3 Object Lock so they cannot be altered or deleted. Standard S3 lifecycle rules are not sufficient for a HIPAA audit trail.
+- **Standing admin access is a finding.** Permanent IAM admin access to production accounts is the most common issue auditors flag. Implement just-in-time access through IAM Identity Center before you have real users, not after.
+
+See [How to Achieve SOC 2, HIPAA, and PCI DSS with RightStart](/blog/soc2-hipaa-pci-aws-rightstart/) for the full technical setup.
+
+</div>
 
 ---
 

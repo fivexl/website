@@ -1,14 +1,16 @@
 ---
-title: 'How to Achieve SOC 2, HIPAA, and PCI DSS with RightStart'
+title: 'AWS Compliance for Startups: SOC 2, HIPAA, and PCI DSS with RightStart'
 author_id: 'Yousef De Baz'
 date: 2026-04-10
-description: 'How FivexL RightStart helps startups in healthcare and fintech implement SOC 2, HIPAA, and PCI DSS compliance on AWS in about a month.'
+description: 'What HIPAA, SOC 2, and PCI DSS actually require from your AWS environment - and how to implement all three without building from scratch. Covers multi-account structure, just-in-time access, immutable logging, and real outcomes from Hippo and Clearway Health.'
 author: Yousef De Baz
 author_link: https://fivexl.io/specialist/yousef-de-baz/
 panel_image: AWS-compliance-Yousef.png
 category: Compliance
 tags: ['SOC2', 'HIPAA', 'PCI DSS', 'Compliance', 'Landing Zone']
 ---
+
+Setting up compliance-ready AWS infrastructure is one of the first real infrastructure challenges a healthcare or fintech startup faces. This post covers what HIPAA, SOC 2, and PCI DSS actually require from your AWS environment - and how to implement those controls without building everything from scratch.
 
 Startups don't fail audits because they lack controls. They fail because they try to implement three frameworks manually in the middle of the night.
 

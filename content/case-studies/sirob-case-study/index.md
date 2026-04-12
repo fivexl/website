@@ -1,5 +1,5 @@
 ---
-title: 'Sirob Technologies Case Study'
+title: 'Multi-Tenant AWS Platform for AI Startup, Sirob Technologies'
 author_id:
   - 'Alexey Eremin'
   - 'Anton Eremin'
