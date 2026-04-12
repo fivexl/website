@@ -1,6 +1,6 @@
 ---
-title: 'FivexL Blueprint for AWS ECS'
-summary: 'Scale Your Applications with Confidence'
+title: 'Production-Ready AWS ECS Infrastructure for Startups'
+summary: 'A battle-tested ECS blueprint for startups that need to scale fast - with CI/CD, autoscaling, private networking, and audit-friendly defaults built in.'
 date: 2025-10-16
 url: "/ecs-blueprint/"
 type: "ecs-blueprint"

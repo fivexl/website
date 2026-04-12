@@ -1,5 +1,5 @@
 ---
-title: 'Neverless Case Study'
+title: 'Secure AWS Foundation for Fintech Startup, Neverless'
 author_id:
   - 'Anton Eremin'
   - 'Vladimir Samoylov'

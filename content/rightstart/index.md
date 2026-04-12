@@ -1,5 +1,5 @@
 ---
-title: 'FivexL RightStart for Startups on AWS'
+title: 'HIPAA and SOC 2-Ready AWS Landing Zone for Startups'
 summary: 'Launch your AWS infrastructure the right way from day one. FivexL RightStart provides battle-tested best practices for secure, scalable, and audit-ready AWS environments.'
 date: 2025-10-16
 url: "/rightstart/"

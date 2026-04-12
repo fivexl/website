@@ -1,6 +1,6 @@
 ---
-title: 'FivexL Managed AWS Support'
-summary: 'Tailored support plans for existing FivexL customers. Choose between Keep the Lights On for infrastructure maintenance or Trusted Advisor for team empowerment and guidance.'
+title: 'Managed AWS Support for Startups'
+summary: 'Ongoing cloud engineering support after the initial build - infrastructure maintenance, security updates, and expert guidance as your dedicated AWS team.'
 date: 2025-12-12
 url: "/retainer/"
 type: "retainer"

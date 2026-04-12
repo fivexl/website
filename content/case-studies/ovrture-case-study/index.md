@@ -1,5 +1,5 @@
 ---
-title: 'Ovrture Case Study'
+title: 'Infrastructure as Code and AWS Cost Optimization for Ovrture'
 author_id: 'Vladimir-Samoylov'
 summary: 'FivexL implemented infrastructure as code, reduced costs, and provided the ability to scale for a philanthropic communications platform.'
 date: 2022-10-12

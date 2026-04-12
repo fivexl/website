@@ -1,5 +1,5 @@
 ---
-title: 'Kuvio Case Study'
+title: 'Production-Ready AWS Infrastructure for Swedish Startup, Kuvio'
 author_id: 'Andrey Devyatkin'
 summary: 'FivexL built a high-performing, production-ready, and secure infrastructure defined in code for a Swedish startup.'
 date: 2024-01-11

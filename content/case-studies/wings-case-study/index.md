@@ -1,5 +1,5 @@
 ---
-title: 'Wings Case Study'
+title: 'Scalable AWS Infrastructure from Scratch for Expense Management Startup, Wings'
 author_id:
   - 'Ivan Razzhivin'
   - 'Vladimir-Samoylov'

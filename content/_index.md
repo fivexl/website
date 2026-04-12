@@ -1,6 +1,6 @@
 ---
 title: "FivexL: Cloud Engineering Specialists"
-description: "We architect and build scalable cloud-based production-ready application delivery platforms for startups so they can launch fast."
+description: "FivexL helps healthcare and fintech startups build HIPAA and SOC 2-ready AWS infrastructure. AWS Advanced Partner with 50+ years of combined cloud engineering experience."
 double_panel:
   layout: 'services'
   heading: "Great Product Needs Great Infrastructure"

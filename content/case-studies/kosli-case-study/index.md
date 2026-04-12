@@ -1,5 +1,5 @@
 ---
-title: 'Kosli Case Study'
+title: 'GCP to AWS Migration for Audit-Ready SaaS, Kosli'
 author_id: 'Artem Zhelezov'
  
 summary: 'FivexL helped a Norwegian startup migrate from Google Cloud to AWS ECS, enabling them to scale their business and pass audits.'
