@@ -65,45 +65,36 @@ Our co-founder [Andrey Devyatkin](https://fivexl.io/specialist/andrey-devyatkin/
 
 In March, they released three new episodes: a DevSecOps take on the key re:Invent 2025 announcements, a deep dive into AI dev loops with Paul Stack, and a conversation about platform engineering guardrails with Steve Wade.
 
-<a href="https://devsecops.fm/"><img src="pod_cover.png" alt="DevSecOps Talks Podcast" style="max-width: 300px;" /></a>
+<a href="https://devsecops.fm/"><img src="/images/pod_cover.png" alt="DevSecOps Talks Podcast" style="max-width: 300px;" /></a>
 
-#### Episode #93 – The DevSecOps Perspective: Key Takeaways From Re:Invent 2025
+- **[Episode #93 - The DevSecOps Perspective: Key Takeaways From Re:Invent 2025](https://devsecops.fm/episodes/093-the-devsecops-perspective-key-takeaways-from-re-invent-2025/)**
+  Andrey and Mattias go through the security announcements from re:Invent 2025 that actually matter for day-to-day work - VPC Encryption Controls, post-quantum TLS, organization-level S3 public access blocking, ECR image signing, JWT validation at ALB, and air-gapped AWS Backup. Worth a listen if you want the security angle on what AWS shipped at re:Invent.
 
-Andrey and Mattias go through the security announcements from re:Invent 2025 that actually matter for day-to-day work - VPC Encryption Controls, post-quantum TLS, organization-level S3 public access blocking, ECR image signing, JWT validation at ALB, and air-gapped AWS Backup. Worth a listen if you want the security angle on what AWS shipped at re:Invent.
+- **[Episode #94 - Small Tasks, Big Wins: The AI Dev Loop at System Initiative](https://podcasts.apple.com/es/podcast/94-small-tasks-big-wins-the-ai-dev-loop-at-system-initiative/id1503645730?i=1000754749681)**
+  Paul Stack joins to talk about how AI-assisted development has evolved - from one-shot generation to agentic, human-in-the-loop workflows. The conversation covers plan mode, tight prompting, and how git branches and worktrees fit into the loop to keep things recoverable.
 
-[Listen the full episode](https://devsecops.fm/episodes/093-the-devsecops-perspective-key-takeaways-from-re-invent-2025/)
+- **[Episode #95 - From Platform Theater to Golden Guardrails with Steve Wade](https://podcasts.apple.com/es/podcast/95-from-platform-theater-to-golden-guardrails-with/id1503645730?i=1000756878712)**
+  Steve Wade joins to talk about "platform theater" - bloated Kubernetes setups that are hard to justify. He shares practical ways to spot it (hiring demands, onboarding time, the "acronym test") and what teams can cut or simplify in a 30-day deletion sprint.
 
-#### Episode #94 – Small Tasks, Big Wins: The AI Dev Loop at System Initiative
-
-Paul Stack joins to talk about how AI-assisted development has evolved - from one-shot generation to agentic, human-in-the-loop workflows. The conversation covers plan mode, tight prompting, and how git branches and worktrees fit into the loop to keep things recoverable.
-
-[Listen the full episode](https://podcasts.apple.com/es/podcast/94-small-tasks-big-wins-the-ai-dev-loop-at-system-initiative/id1503645730?i=1000754749681)
-
-#### Episode #95 – From Platform Theater to Golden Guardrails with Steve Wade
-
-Steve Wade joins to talk about "platform theater" - bloated Kubernetes setups that are hard to justify. He shares practical ways to spot it (hiring demands, onboarding time, the "acronym test") and what teams can cut or simplify in a 30-day deletion sprint.
-
-[Listen the full episode](https://podcasts.apple.com/es/podcast/95-from-platform-theater-to-golden-guardrails-with/id1503645730?i=1000756878712)
-
-## Humans in the Loop
+## Agentic AI in DevOps
 
 Some of FivexL members are part of [Sirob Technologies](https://www.linkedin.com/company/sirob-technologies/) - an AI company building [B.O.R.I.S](https://getboris.ai/), an AI DevOps teammate. B.O.R.I.S plugs into your existing tools - AWS, GitHub, monitoring, logs - and helps with incident response, troubleshooting, infrastructure queries, and daily ops tasks. We invite you now to try it in a Slack playground.
 
-Building an AI agent in production teaches you things that reading about AI agents doesn't. That hands-on experience is why [Fernando Goncalves](https://fivexl.io/specialist/fernando-goncalves/) and [Andrey Devyatkin](https://fivexl.io/specialist/andrey-devyatkin/) started **Humans in the Loop** - a video series where they talk honestly about agentic AI in DevOps: what works today, where it falls short, and how to work with it without losing control of your systems.
+Building an AI agent in production teaches you things that reading about AI agents doesn't. That hands-on experience is why [Fernando Goncalves](https://fivexl.io/specialist/fernando-goncalves/), [Andrey Devyatkin](https://fivexl.io/specialist/andrey-devyatkin/), and [Vladimir Samoylov](https://fivexl.io/specialist/vladimir-samoylov/) started **Agentic AI in DevOps** - a podcast where they talk honestly about agentic AI in DevOps: what works today, where it falls short, and how to work with it without losing control of your systems.
 
-[![Agentic AI in DevOps - Humans in the Loop](agentic-ai-in-devops.png)](https://www.youtube.com/@SiRobTechnologies)
+<a href="https://podcasts.apple.com/us/podcast/agentic-ai-in-devops/id1890702822"><img src="/images/Agentic-ai-in-devops-podcast-square.png" alt="Agentic AI in DevOps" style="max-width: 300px;" /></a>
 
 Two episodes are out:
 
-- **[Agentic AI in DevOps Explained: Tools, Context, and What Changes Next](https://www.youtube.com/watch?v=ox1PmThs5II)**
+- **[Episode #1 - Agentic AI in DevOps Explained: Tools, Context, and What Changes Next](https://www.youtube.com/watch?v=ox1PmThs5II)**
   Fernando and Andrey set the foundation for the series. They cover what agentic AI actually means, why the ability to take action changes everything compared to a chatbot, why context is critical for infrastructure troubleshooting, and what tools like Cursor, MCP, Claude Code, Amazon Q CLI, and Kiro mean for DevOps engineers today. A good starting point if you're trying to understand where AI fits into DevOps beyond the hype.
 
-- **[More Tools, Worse Results: Why Giving AI Agents More Tools Often Backfires](https://www.youtube.com/watch?v=USNEYoqew-U)**
+- **[Episode #2 - More Tools, Worse Results: Why Giving AI Agents More Tools Often Backfires](https://www.youtube.com/watch?v=USNEYoqew-U)**
   Giving an AI agent more tools sounds like an upgrade. In practice, it often does the opposite. This episode explores why more tools can mean more noise, more token waste, worse reasoning, and less reliable output - across Claude Code, Cursor, MCP setups, and agent workflows.
 
 Want to see what B.O.R.I.S can do? [Join the Slack playground](https://getboris.ai) and give it a spin - we'd love your feedback.
 
-<a href="https://getboris.ai/"><img src="boris-ai-devops-teammate.png" alt="B.O.R.I.S - AI DevOps Teammate" style="max-width: 300px;" /></a>
+<a href="https://getboris.ai/"><img src="/images/boris-ai-devops-teammate.png" alt="B.O.R.I.S - AI DevOps Teammate" style="max-width: 300px;" /></a>
 
 ### Top 5 articles from the team
 
