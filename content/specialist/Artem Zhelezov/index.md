@@ -10,6 +10,7 @@ links:
   - { icon: linkedin, url: 'https://www.linkedin.com/in/artem-zhelezov-70228093/' }
 certifications:
   - 'SolArchitect.png'
+  - 'cert-advanced-networking-specialty.png'
   - 'terraform.png'
   - 'seal-csm.png'
   - 'practitioner.png'
@@ -21,7 +22,7 @@ author_id: Artem Zhelezov
 Result-oriented AWS Solutions Architect with a focus on building scale-ready, secure, and cost-efficient infrastructure for startups. 
 
 ### Specialization
-AWS · ECS · Infrastructure as code · CI/CD
+AWS · Networking · ECS · Infrastructure as code · CI/CD
 
 ### Expertise
 * Applicaiton and data migrations to AWS
@@ -35,6 +36,7 @@ AWS · ECS · Infrastructure as code · CI/CD
 
 ### Certifications
 * AWS Certified Solutions Architect Associate
+* AWS Certified Advanced Networking – Specialty
 * HashiCorp Certified: Terraform Associate
 * Certified Scrum Master
 
