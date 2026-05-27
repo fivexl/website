@@ -22,6 +22,7 @@ p:empty {
   display: none;
 }
 
+@import 'banner.scss';
 @import 'normalize.scss';
 @import 'Header.scss';
 @import 'EmailSubscription.scss';
