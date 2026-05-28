@@ -5,6 +5,7 @@
     {{- block "headScripts" . -}}{{- end -}}
     {{ hugo.Generator }}
     <body>
+        {{- partial "banner.html" . -}}
         {{- partial "header.html" . -}}
         <div id="content">
         {{- block "main" . }}{{- end }}

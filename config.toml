@@ -88,6 +88,13 @@ disableKinds = ['category'] # Categories disabled initially
   [params.author]
     name = "FivexL"
     email = "info@fivexl.io"
+  [params.banner]
+    enabled = true
+    label = "Upcoming live session"
+    date = "June 17"
+    name = "Starting on AWS, the right way"
+    cta = "Register"
+    url = "https://aws-foundation.scoreapp.com/"
 
 [imaging]
   quality = 80

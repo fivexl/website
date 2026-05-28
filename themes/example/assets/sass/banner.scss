@@ -1,0 +1,88 @@
+.bnr {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $accentColor;
+  padding: 0.75rem 3.5rem;
+  position: relative;
+  width: 100%;
+
+  &-Text {
+    font-size: 0.925rem;
+    font-weight: 500;
+    color: white;
+    text-align: center;
+    margin: 0;
+    line-height: 1.4;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  &-Label {
+    font-weight: 700;
+  }
+
+  &-Sep {
+    opacity: 0.5;
+  }
+
+  &-Date, &-Name {
+    font-weight: 500;
+  }
+
+  &-CTA {
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    white-space: nowrap;
+    margin-left: 0.5rem;
+    &:hover { text-decoration: underline; }
+  }
+
+  &-Close {
+    position: absolute;
+    right: 1.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.25rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    opacity: 0.8;
+    &:hover { opacity: 1; }
+  }
+
+  @media (max-width: 640px) {
+    padding: 0.75rem 2.5rem 0.75rem 1rem;
+    align-items: flex-start;
+    justify-content: center;
+
+    &-Text {
+      font-size: 0.925rem;
+      display: block;
+      text-align: center;
+    }
+
+    &-Name {
+      display: block;
+      margin-top: 0.2rem;
+    }
+
+    &-CTA {
+      display: block;
+      margin: 0.35rem 0 0;
+    }
+
+    &-Close {
+      right: 0.5rem;
+      top: 0.75rem;
+      transform: none;
+    }
+  }
+}
