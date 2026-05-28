@@ -18,7 +18,10 @@
 
     function offsetHeader() {
       var hdr = document.querySelector('.hdr');
-      if (hdr) hdr.style.top = el.offsetHeight + 'px';
+      if (!hdr) return;
+      // Mobile: header is position:absolute, needs top offset to clear the banner.
+      // Desktop (768px+): header is position:relative and already flows after the banner.
+      hdr.style.top = window.innerWidth < 768 ? el.offsetHeight + 'px' : '';
     }
 
     if (until && Date.now() < parseInt(until)) {
@@ -28,7 +31,7 @@
       window.addEventListener('resize', offsetHeader);
       document.getElementById('site-banner-close').addEventListener('click', function () {
         el.style.display = 'none';
-        if (document.querySelector('.hdr')) document.querySelector('.hdr').style.top = '0';
+        if (document.querySelector('.hdr')) document.querySelector('.hdr').style.top = '';
         localStorage.setItem(KEY, Date.now() + 3600000);
       });
     }
