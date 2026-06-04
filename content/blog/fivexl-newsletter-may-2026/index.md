@@ -16,7 +16,7 @@ Lots happening in May. The team was out at conferences, presenting and sharing k
 
 Vladimir Samoylov was at AWS Summit Bangkok, where he spoke about building multi-agent systems on AWS: Strands Agents, Amazon Bedrock, Kiro, and why tools and context matter more than prompt policing.
 
-[Andrey Devyatkin and Berit Janson were at Latitude59 in Tallinn - a startup and tech conference bringing together founders, investors, and builders from across the world. They met with potential clients and partners and are already planning to be back next year. Those conversations reminded us how many teams are navigating the same AWS setup questions - so we decided to address them directly.
+Andrey Devyatkin and Berit Janson were at Latitude59 in Tallinn - a startup and tech conference bringing together founders, investors, and builders from across the world. They met with potential clients and partners and are already planning to be back next year. Those conversations reminded us how many teams are navigating the same AWS setup questions - so we decided to address them directly.
 
 FivexL team is growing - this month we welcomed [Gilbert Young Jr.](https://fivexl.io/specialist/gilbert-young-jr/), an AWS and AI/ML engineer specialising in large language models, event-driven architecture, and serverless systems. Welcome, Gilbert!
 
