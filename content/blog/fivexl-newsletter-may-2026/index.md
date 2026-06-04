@@ -79,7 +79,9 @@ Two episodes in May - one milestone, one deep dive on a topic that started the s
 
 ## Agentic AI in DevOps Podcast
 
-Some of FivexL members are part of [Sirob Technologies](https://www.linkedin.com/company/sirob-technologies/), building [B.O.R.I.S](https://getboris.ai/) - an AI DevOps teammate that plugs into your existing tools (AWS, GitHub, monitoring, logs) and helps with incident response, troubleshooting, and daily ops. Building an agent in production teaches you things you can't learn from reading about agents. That's why Fernando Goncalves, Andrey Devyatkin, and Vladimir Samoylov started the podcast - to share what's actually happening when you run AI agents against real systems, not just talk about the theory.
+Some of FivexL members are part of [Sirob Technologies](https://www.linkedin.com/company/sirob-technologies/), building [B.O.R.I.S](https://getboris.ai), an infrastructure context layer. B.O.R.I.S connects to your AWS organisation, GitHub repositories, and Slack workspace, and knows the systems, the people behind them, and the changes over time. Read it through Slack, MCP or the API. Your data stays yours.
+
+Building an agent in production teaches you things you can't learn from reading about agents. That's why Fernando Goncalves, Andrey Devyatkin, and Vladimir Samoylov started the podcast - to share what's actually happening when you run AI agents against real systems, not just talk about the theory.
 
 <a href="https://podcasts.apple.com/us/podcast/agentic-ai-in-devops/id1890702822"><img src="/images/Agentic-ai-in-devops-podcast-square.png" alt="Agentic AI in DevOps" style="max-width: 300px;" /></a>
 
