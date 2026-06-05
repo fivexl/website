@@ -5,7 +5,7 @@ date: 2026-03-15
 url: "/ai-to-production/"
 type: "ai-to-production"
 layout: "single"
-_build:
+build:
   render: always
   list: always
   publishResources: true

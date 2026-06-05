@@ -5,7 +5,7 @@ date: 2025-12-08
 url: "/infra_clinic/"
 type: "infra_clinic"
 layout: "single"
-_build:
+build:
   render: always
   list: always
   publishResources: true
@@ -136,4 +136,3 @@ Every startup that applies – **whether selected or not** – gets a **free AWS
   </div>
 </section>
 {{< /unsafe >}}
-

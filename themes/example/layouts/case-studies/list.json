@@ -1,17 +1,20 @@
 {{- $pages := after 1 .Pages -}}
 {{- $paginator := .Paginate $pages 12 -}}
-
-{
-  "page": "{{ $paginator.PageNumber }}",
-  "items": [
-    {{ range $i, $v := $paginator.Pages }}
-    {{- if gt $i 0 -}},{{- end -}}
-    {
-      "url": "{{ .Permalink }}",
-      "image": "{{ (.Resources.GetMatch .Params.alt_image).Permalink }}",
-      "title": "{{ .Title }}",
-      "summary": "{{ default .Summary .Params.description }}"
-    }
-    {{ end }}
-  ]
-}
+{{- $items := slice -}}
+{{- range $paginator.Pages -}}
+  {{- $image := "" -}}
+  {{- with .Resources.GetMatch .Params.alt_image -}}
+    {{- $image = .Permalink -}}
+  {{- end -}}
+  {{- $items = $items | append (dict
+    "url" .Permalink
+    "image" $image
+    "title" .Title
+    "summary" (default .Summary .Params.description | plainify)
+  ) -}}
+{{- end -}}
+{{- dict
+  "page" $paginator.PageNumber
+  "items" $items
+  | jsonify
+-}}

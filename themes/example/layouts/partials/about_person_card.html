@@ -1,0 +1,23 @@
+<article class="abt-Person">
+  {{ $content := printf `<img src="%s" alt="%s" loading="lazy">` .image .name | safeHTML }}
+  {{ if .href }}
+    <a class="abt-PersonImage" href="{{ .href }}">{{ $content }}</a>
+  {{ else }}
+    <div class="abt-PersonImage">{{ $content }}</div>
+  {{ end }}
+  <div class="abt-PersonBody">
+    {{ if .href }}
+      <a class="abt-PersonName" href="{{ .href }}">{{ .name }}</a>
+    {{ else }}
+      <h3 class="abt-PersonName">{{ .name }}</h3>
+    {{ end }}
+    <p class="abt-PersonRole">{{ .role | safeHTML }}</p>
+    {{ with .skills }}
+      <ul class="abt-PersonSkills">
+        {{ range . }}
+          <li>{{ . }}</li>
+        {{ end }}
+      </ul>
+    {{ end }}
+  </div>
+</article>

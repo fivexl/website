@@ -1,4 +1,5 @@
 @import 'variables.scss';
+@import 'fonts.scss';
 
 :root {
   --doublePanelMobileOverlap: 3.5rem;
@@ -44,6 +45,7 @@ p:empty {
 @import 'services_grid';
 @import 'latest_posts';
 @import 'customer_logos';
+@import 'about';
 
 * {
   box-sizing: border-box;

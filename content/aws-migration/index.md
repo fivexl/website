@@ -5,7 +5,7 @@ date: 2026-03-15
 url: "/aws-migration/"
 type: "aws-migration"
 layout: "single"
-_build:
+build:
   render: always
   list: always
   publishResources: true

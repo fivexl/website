@@ -1,0 +1,162 @@
+.abt {
+  color: $textPrimary;
+
+  &-Hero {
+    background: #282524;
+    color: #fff;
+    padding: clamp(4rem, 9vw, 8rem) 1rem clamp(3rem, 7vw, 6rem);
+  }
+
+  &-HeroInner,
+  &-SectionInner {
+    max-width: $maxContentWidth;
+    margin-inline: auto;
+  }
+
+  &-Hero h1,
+  &-Section h2 {
+    margin: 0 0 1.5rem;
+    font-size: clamp(2.25rem, 5vw, 4.25rem);
+    line-height: 1;
+    color: inherit;
+  }
+
+  &-Hero p {
+    max-width: 980px;
+    margin: 0;
+    font-size: clamp(1.25rem, 2.5vw, 2rem);
+    line-height: 1.3;
+    font-weight: 500;
+  }
+
+  &-Hero strong {
+    color: $textAccent;
+  }
+
+  &-Section {
+    padding: clamp(3rem, 7vw, 6rem) 1rem;
+  }
+
+  &-Section:nth-of-type(even) {
+    background: #f7f7f7;
+  }
+
+  &-Eyebrow {
+    margin: 0 0 0.75rem;
+    color: $textAccent;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &-Values h2,
+  &-Team h2 {
+    color: $textSecondary;
+  }
+
+  &-ValuesGrid {
+    display: grid;
+    gap: 1.25rem;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  &-Values article,
+  &-Person {
+    background: #fff;
+    border: 1px solid #ececec;
+    border-radius: 8px;
+  }
+
+  &-Values article {
+    padding: clamp(1.25rem, 3vw, 2rem);
+  }
+
+  &-Values h3 {
+    margin: 0 0 0.75rem;
+    color: $textAccent;
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+  }
+
+  &-Values p {
+    margin: 0;
+    line-height: 1.55;
+  }
+
+  &-TeamGrid {
+    display: grid;
+    gap: 1.5rem;
+
+    @media (min-width: 640px) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  &-Person {
+    overflow: hidden;
+  }
+
+  &-PersonImage {
+    display: block;
+    background: #f1f1f1;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+  }
+
+  &-PersonImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  &-PersonBody {
+    padding: 1.25rem;
+  }
+
+  &-PersonName {
+    display: block;
+    margin: 0 0 0.5rem;
+    color: $textSecondary;
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  &-PersonRole {
+    margin: 0 0 1rem;
+    font-weight: 600;
+    line-height: 1.35;
+  }
+
+  &-PersonSkills {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: #555;
+    line-height: 1.45;
+  }
+}
+
+.thanks {
+  min-height: 45vh;
+  display: grid;
+  place-items: center;
+  padding: clamp(4rem, 10vw, 8rem) 1rem;
+
+  &-Panel {
+    text-align: center;
+  }
+
+  h1 {
+    margin: 0 0 2rem;
+    color: $textSecondary;
+    font-size: clamp(2.25rem, 5vw, 4rem);
+    line-height: 1;
+  }
+}

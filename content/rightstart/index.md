@@ -5,7 +5,7 @@ date: 2025-10-16
 url: "/rightstart/"
 type: "rightstart"
 layout: "single"
-_build:
+build:
   render: always
   list: always
   publishResources: true

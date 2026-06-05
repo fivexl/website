@@ -5,7 +5,7 @@ date: 2025-12-09
 url: "/fun-task/"
 type: "fun-task"
 layout: "single"
-_build:
+build:
   render: always
   list: always
   publishResources: true

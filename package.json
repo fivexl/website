@@ -1,0 +1,10 @@
+{
+  "name": "fivexl-website",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "hugo server --buildDrafts",
+    "build": "hugo --minify",
+    "deploy": "wrangler deploy"
+  }
+}

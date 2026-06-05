@@ -1,14 +1,14 @@
-{
-    "title": "{{ .Title }}",
-    "permalink": "{{ .Permalink }}",
-    "pages": [
-        {{- range $index, $page := .Pages -}}
-            {{- if $index -}},{{- end -}}
-            {
-                "title": "{{ $page.Title }}",
-                "permalink": "{{ $page.Permalink }}",
-                "summary": "{{ $page.Summary }}"
-            }
-        {{- end -}}
-    ]
-} 
+{{- $pages := slice -}}
+{{- range .Pages -}}
+  {{- $pages = $pages | append (dict
+    "title" .Title
+    "permalink" .Permalink
+    "summary" (.Summary | plainify)
+  ) -}}
+{{- end -}}
+{{- dict
+  "title" .Title
+  "permalink" .Permalink
+  "pages" $pages
+  | jsonify
+-}}

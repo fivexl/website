@@ -5,7 +5,7 @@ date: 2025-12-12
 url: "/retainer/"
 type: "retainer"
 layout: "single"
-_build:
+build:
   render: always
   list: always
   publishResources: true
@@ -183,4 +183,3 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 {{< /unsafe >}}
-

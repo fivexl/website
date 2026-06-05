@@ -4,7 +4,7 @@ author_id: 'Vladimir-Samoylov'
 summary: 'FivexL rebuilt and migrated infrastructure to AWS Elastic Container Service for the Norwegian cryptocurrency exchange.'
 date: 2023-03-16 
 author: Vladimir Samoylov
-panel_image: Vova_2.png
+panel_image: Vova_2.webp
 authors_heading: 'Senior consultant leading the project'
 alt_image: vova_small_bnw.png
 case_study: true
@@ -70,5 +70,4 @@ It's been such an impressive feat to get where we are, with FivexL's involvement
 The speed with which FivexL was able to update the infrastructure allowed Firi to deliver its latest changes as quickly as possible without the risk of application downtime; this gave its team the flexibility to scale in line with the increasing volume of traffic during a year that saw the startup grow to employ 50 full time staff. “We needed a partner who could go on that journey with us, find the weak spots of our software management and help us improve,” says Tuan Hoang.<br/> 
 “They give us the same level of support we offer to our own customers and have allowed us to maximise the efficiency of our approach to Amazon’s services instead of just throwing money at the issue.”  
 {{</ case_study/benefits >}}  
-
 

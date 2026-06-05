@@ -1,6 +1,6 @@
 timeout = 60000
 baseURL = '/'
-languageCode = 'en-us'
+locale = 'en-US'
 title = 'FivexL. Cloud Engineering Specialists'
 
 # this is just a place holder theme. please remove it later

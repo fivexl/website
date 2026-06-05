@@ -5,7 +5,7 @@ date: 2025-10-16
 url: "/ecs-blueprint/"
 type: "ecs-blueprint"
 layout: "single"
-_build:
+build:
   render: always
   list: always
   publishResources: true
@@ -82,4 +82,3 @@ Uptime checks and service health monitoring for core infrastructure components.
 <br/> 
 {{</ case_study/column >}}
 {{</ case_study/solution >}}
-
