@@ -53,15 +53,18 @@
 {{- end -}}
 
 {{ define "partials/CaseStudiesImage.html" }}
+{{ $src := .RelPermalink }}
 <picture>
+    {{ if not hugo.IsServer }}
     <source type="image/webp"
-        srcset="{{ (.Resize `500x q80 webp`).Permalink }} 500w, 
-                {{ (.Resize `750x q80 webp`).Permalink }} 750w,
-                {{- if ge .Width 1000 -}}{{ (.Resize `1000x q80 webp`).Permalink }} 1000w, {{- end -}}
-                {{- if ge .Width 1500 -}}{{ (.Resize `1500x q80 webp`).Permalink }} 1500w, {{- end -}}
-                {{- if ge .Width 2000 -}}{{ (.Resize `2000x q80 webp`).Permalink }} 2000w, {{- end -}}
-                {{ (.Resize (printf `%dx%d q80 webp` .Width .Height)).Permalink }} {{ .Width }}w"
+        srcset="/cdn-cgi/image/width=500,format=webp,quality=80{{ $src }} 500w,
+                /cdn-cgi/image/width=750,format=webp,quality=80{{ $src }} 750w,
+                {{- if ge .Width 1000 -}}/cdn-cgi/image/width=1000,format=webp,quality=80{{ $src }} 1000w, {{- end -}}
+                {{- if ge .Width 1500 -}}/cdn-cgi/image/width=1500,format=webp,quality=80{{ $src }} 1500w, {{- end -}}
+                {{- if ge .Width 2000 -}}/cdn-cgi/image/width=2000,format=webp,quality=80{{ $src }} 2000w, {{- end -}}
+                /cdn-cgi/image/width={{ .Width }},format=webp,quality=80{{ $src }} {{ .Width }}w"
                  >
+    {{ end }}
     <img
         src="{{- .Permalink -}}"
         class="cst-Image"

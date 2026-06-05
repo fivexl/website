@@ -12,25 +12,19 @@
 
 {{ if $image }}
 
+    {{ $src := $image.RelPermalink }}
     {{ $sizes := slice 350 700 1000 1300 1600 2000 3000 }}
     {{ $images := slice }}
 
-    <!--   Optimized versions generation -->
     {{ range $sizes }}
         {{ if gt $image.Width . }}
-
-            {{ $images = $images | append 
-                ( printf "%s %dw" 
-                    ($image.Resize ( printf "%dx webp" . )).Permalink .) }}
-
+            {{ $images = $images | append
+                ( printf "/cdn-cgi/image/width=%d,format=webp,quality=80%s %dw" . $src .) }}
         {{ end }}
     {{ end }}
 
-    {{ $images = $images | append 
-        ( printf "%s %dw" 
-            ($image.Resize ( printf "%dx webp" $image.Width )).Permalink
-            $image.Width
-        ) }}
+    {{ $images = $images | append
+        ( printf "/cdn-cgi/image/width=%d,format=webp,quality=80%s %dw" $image.Width $src $image.Width) }}
 
     {{ $srcset := delimit $images ", " }}
     {{ $sizesAttribute := "" }}
@@ -40,10 +34,12 @@
     {{ end }}
 
     <picture>
-        <source type="image/webp" 
+        {{ if not hugo.IsServer }}
+        <source type="image/webp"
             {{- with $srcset }} srcset="{{ . }}"{{ end -}}
             {{- if isset . "IsContentImage" -}}sizes="(max-width: 768px) 100vw, 1184px"{{- end -}}
             >
+        {{ end }}
         <img
             src="{{ $image.Permalink }}"
             class="{{ .class }} {{ $align }}"
