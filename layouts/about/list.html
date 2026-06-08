@@ -1,10 +1,19 @@
 {{ define "main" }}
-{{ with .Params.double_panel }}<div class="abt-HeroPanel">{{ partial "double_panel" . }}</div>{{ end }}
+{{ with .Params.double_panel }}
+<section class="abt-Hero">
+  <div class="abt-HeroInner">
+    <div class="abt-HeroText">
+      {{ with .heading }}<h1 class="abt-HeroHeading">{{ . }}</h1>{{ end }}
+      {{ with .subheading }}<p class="abt-HeroSubheading">{{ . }}</p>{{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
 <main class="abt">
 
   <section class="twc">
     <div class="twc-Container">
-      <h2 class="twc-Heading">FivexL, sure sounds cool but what does it stand for?</h2>
+      <h2 class="twc-Heading">FivexL, sure sounds cool<br> but what does it stand for?</h2>
       <div class="twc-ColumnsWrapper abt-ValuesGrid">
         <div>
           <h3>League</h3>
@@ -26,19 +35,8 @@
     </div>
   </section>
 
-  {{ $team := slice
-    (dict "name" "Andrey Devyatkin" "role" "Principal Consultant<br>Partner" "href" "/specialist/andrey-devyatkin/" "image" "/wp-content/uploads/2022/10/andrey.png" "skills" (slice "Certified AWS Architect" "Continuous Integration and Delivery specialist" "Public speaker" "Podcaster"))
-    (dict "name" "Artem Zhelezov" "role" "Senior Consultant<br>Partner" "href" "/specialist/artem-zhelezov/" "image" "/wp-content/uploads/2022/10/artem.png" "skills" (slice "Certified AWS Architect" "Continuous Integration and Delivery specialist" "HashiCorp tools specialist"))
-    (dict "name" "Vladimir Samoylov" "role" "Principal Consultant<br>Partner" "href" "/specialist/vladimir-samoylov/" "image" "/wp-content/uploads/2022/10/Vladimir.png" "skills" (slice "Certified AWS Architect" "Containerization Specialist focused on AWS ECS" "Continuous Integration and Delivery Specialist"))
-    (dict "name" "Guilherme Ferreira" "role" "Principal Consultant" "href" "/specialist/guilherme-ferreira/" "image" "/wp-content/uploads/2022/10/Guilherme.png" "skills" (slice "Cloud Computing Instructor" "Solutions Architect" "Software and Platform Engineer" "Ex-AWS (Amazon Web Services)"))
-    (dict "name" "Ivan Razzhivin" "role" "Consultant" "href" "/specialist/ivan-razzhivin/" "image" "/wp-content/uploads/2022/10/ivan.png" "skills" (slice "Certified AWS" "Architect" "Kubernetes Expert" "GitOps Specialist"))
-    (dict "name" "Fernando Goncalves" "role" "Senior Consultant" "href" "/specialist/fernando-goncalves/" "image" "/wp-content/uploads/2022/10/Fernando.png" "skills" (slice "Certified AWS Architect" "Serverless & Cloud Security Specialist" "Ex-AWS (Amazon Web Services)"))
-    (dict "name" "Alexey Eremin" "role" "Consultant" "href" "/specialist/alexey-eremin/" "image" "/wp-content/uploads/2022/10/aleksey.png" "skills" (slice "Certified AWS Architect" "Cloud Engineering specialist" "Python Developer"))
-    (dict "name" "Anton Eremin" "role" "Consultant" "href" "/specialist/anton-eremin/" "image" "/wp-content/uploads/2022/10/Anton.png" "skills" (slice "Certified AWS Architect" "Public Speaker"))
-    (dict "name" "Yousef De Baz" "role" "Consultant" "href" "/specialist/yousef-de-baz/" "image" "/wp-content/uploads/2022/10/Yousef.png" "skills" (slice "Certified AWS Architect" "Kubernetes (EKS) Expert" "Cloud Security Specialist"))
-    (dict "name" "Aleksandr Zhitov" "role" "Consultant" "href" "/specialist/aleksandr-zhitov/" "image" "/wp-content/uploads/2022/10/Aleksandr-Zhitov.png" "skills" (slice "Certified AWS Architect" "AWS and Terraform Specialist"))
-    (dict "name" "Gilbert Young Jr." "role" "Consultant" "href" "/specialist/gilbert-young-jr/" "image" "/wp-content/uploads/2022/10/Gilbert.png" "skills" (slice "AWS & LLM Specialist" "Public Speaker"))
-  }}
+  {{/* prettier-ignore */}}
+  {{ $team := slice (dict "name" "Andrey Devyatkin" "role" "Principal Consultant<br>Partner" "href" "/specialist/andrey-devyatkin/" "image" "/wp-content/uploads/2022/10/andrey.png" "skills" (slice "Certified AWS Architect" "Continuous Integration and Delivery specialist" "Public speaker" "Podcaster")) (dict "name" "Artem Zhelezov" "role" "Senior Consultant<br>Partner" "href" "/specialist/artem-zhelezov/" "image" "/wp-content/uploads/2022/10/artem.png" "skills" (slice "Certified AWS Architect" "Continuous Integration and Delivery specialist" "HashiCorp tools specialist")) (dict "name" "Vladimir Samoylov" "role" "Principal Consultant<br>Partner" "href" "/specialist/vladimir-samoylov/" "image" "/wp-content/uploads/2022/10/Vladimir.png" "skills" (slice "Certified AWS Architect" "Containerization Specialist focused on AWS ECS" "Continuous Integration and Delivery Specialist")) (dict "name" "Guilherme Ferreira" "role" "Principal Consultant" "href" "/specialist/guilherme-ferreira/" "image" "/wp-content/uploads/2022/10/Guilherme.png" "skills" (slice "Cloud Computing Instructor" "Solutions Architect" "Software and Platform Engineer" "Ex-AWS (Amazon Web Services)")) (dict "name" "Ivan Razzhivin" "role" "Consultant" "href" "/specialist/ivan-razzhivin/" "image" "/wp-content/uploads/2022/10/ivan.png" "skills" (slice "Certified AWS Architect" "Kubernetes Expert" "GitOps Specialist")) (dict "name" "Fernando Goncalves" "role" "Senior Consultant" "href" "/specialist/fernando-goncalves/" "image" "/wp-content/uploads/2022/10/Fernando.png" "skills" (slice "Certified AWS Architect" "Serverless & Cloud Security Specialist" "Ex-AWS (Amazon Web Services)")) (dict "name" "Alexey Eremin" "role" "Consultant" "href" "/specialist/alexey-eremin/" "image" "/wp-content/uploads/2022/10/aleksey.png" "skills" (slice "Certified AWS Architect" "Cloud Engineering specialist" "Python Developer")) (dict "name" "Anton Eremin" "role" "Consultant" "href" "/specialist/anton-eremin/" "image" "/wp-content/uploads/2022/10/Anton.png" "skills" (slice "Certified AWS Architect" "Public Speaker")) (dict "name" "Yousef De Baz" "role" "Consultant" "href" "/specialist/yousef-de-baz/" "image" "/wp-content/uploads/2022/10/Yousef.png" "skills" (slice "Certified AWS Architect" "Kubernetes (EKS) Expert" "Cloud Security Specialist")) (dict "name" "Aleksandr Zhitov" "role" "Consultant" "href" "/specialist/aleksandr-zhitov/" "image" "/wp-content/uploads/2022/10/Aleksandr-Zhitov.png" "skills" (slice "Certified AWS Architect" "AWS and Terraform Specialist")) (dict "name" "Gilbert Young Jr." "role" "Consultant" "href" "/specialist/gilbert-young-jr/" "image" "/wp-content/uploads/2022/10/Gilbert.png" "skills" (slice "AWS & LLM Specialist" "Public Speaker")) }}
 
   <section class="abt-Section abt-Team">
     <div class="abt-SectionInner">
@@ -68,11 +66,8 @@
     </div>
   </section>
 
-  {{ $engine := slice
-    (dict "name" "Olga Devyatkina" "role" "Financial and administrative manager" "href" "/specialist/olga-devyatkina/" "image" "/wp-content/uploads/2022/10/Olga.png")
-    (dict "name" "Anastasia Filatova" "role" "Marketing Director" "image" "/wp-content/uploads/2022/10/Anastasia.png")
-    (dict "name" "Berit Janson" "role" "Executive Assistant" "image" "/wp-content/uploads/2022/10/Berit.png")
-  }}
+  {{/* prettier-ignore */}}
+  {{ $engine := slice (dict "name" "Olga Devyatkina" "role" "Financial and administrative manager" "href" "/specialist/olga-devyatkina/" "image" "/wp-content/uploads/2022/10/Olga.png") (dict "name" "Anastasia Filatova" "role" "Marketing Director" "image" "/wp-content/uploads/2022/10/Anastasia.png") (dict "name" "Berit Janson" "role" "Executive Assistant" "image" "/wp-content/uploads/2022/10/Berit.png") }}
 
   <section class="abt-Section abt-Team abt-Team_Engine">
     <div class="abt-SectionInner">

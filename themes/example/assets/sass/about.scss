@@ -1,11 +1,38 @@
 .abt {
   color: $textPrimary;
 
-  &-HeroPanel {
-    .dp-MediaPanel_Image {
-      object-fit: contain;
-      object-position: right bottom;
+  &-Hero {
+    background: linear-gradient(160deg, #f13687, #1d96f1);
+    color: white;
+    padding: 7.75rem 1.5rem 3rem;
+    @media (min-width: 1024px) {
+      background: url('/about/featured.png') center / cover no-repeat;
+      padding: 5.75rem clamp(1.5rem, 2vw, 2rem) clamp(3rem, 6vw, 7rem);
     }
+  }
+
+  &-HeroInner {
+    max-width: 1600px;
+    margin-inline: auto;
+  }
+
+  &-HeroText {
+    @media (min-width: 1024px) {
+      max-width: 42%;
+    }
+  }
+
+  &-HeroHeading {
+    font-size: clamp(2.75rem, 4.5vw, 4.5rem);
+    line-height: 1.15;
+    margin: 0 0 2rem;
+  }
+
+  &-HeroSubheading {
+    font-weight: 600;
+    line-height: 1.25;
+    font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+    margin: 0;
   }
 
   &-SectionInner {
@@ -14,7 +41,15 @@
   }
 
   &-ValuesGrid {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-template-columns: 1fr !important;
+
+    @media (min-width: 640px) {
+      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+
+    p {
+      font-size: 1.1rem !important;
+    }
   }
 
   &-Section h2 {
@@ -93,11 +128,16 @@
   }
 
   &-TeamCircleGrid {
+    margin-top: clamp(3rem, 7vw, 6rem);
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr;
     gap: 2rem 1rem;
 
     @media (min-width: 480px) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    @media (min-width: 768px) {
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
   }
@@ -146,8 +186,8 @@
     list-style: none;
     padding: 0;
     margin: 0.25rem 0 0;
-    font-size: 0.9rem;
-    font-weight: 700;
+    font-size: 1.1rem;
+    font-weight: 400;
     color: $textPrimary;
     line-height: 1.5;
   }
