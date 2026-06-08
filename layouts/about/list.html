@@ -1,11 +1,6 @@
 {{ define "main" }}
+{{ with .Params.double_panel }}{{ partial "double_panel" . }}{{ end }}
 <main class="abt">
-  <section class="abt-Hero">
-    <div class="abt-HeroInner">
-      <h1>Who is FivexL?</h1>
-      <p><strong>FivexL</strong> is a group of independent <strong>Cloud Engineering Specialists.</strong> We help startups launch their products super fast by building scalable, <strong>cloud-based</strong>, production-ready platforms. Wherever you are in your DevSecOps journey, we have <strong>experts</strong> who can help.</p>
-    </div>
-  </section>
 
   <section class="abt-Section abt-Values">
     <div class="abt-SectionInner">
