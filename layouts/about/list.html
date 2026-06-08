@@ -1,74 +1,92 @@
 {{ define "main" }}
-<main class="abt">
-  <section class="abt-Hero">
-    <div class="abt-HeroInner">
-      <h1>Who is FivexL?</h1>
-      <p><strong>FivexL</strong> is a group of independent <strong>Cloud Engineering Specialists.</strong> We help startups launch their products super fast by building scalable, <strong>cloud-based</strong>, production-ready platforms. Wherever you are in your DevSecOps journey, we have <strong>experts</strong> who can help.</p>
+{{ with .Params.double_panel }}
+<section class="abt-Hero">
+  <div class="abt-HeroInner">
+    <div class="abt-HeroText">
+      {{ with .heading }}<h1 class="abt-HeroHeading">{{ . }}</h1>{{ end }}
+      {{ with .subheading }}<p class="abt-HeroSubheading">{{ . }}</p>{{ end }}
     </div>
-  </section>
+  </div>
+</section>
+{{ end }}
+<main class="abt">
 
-  <section class="abt-Section abt-Values">
-    <div class="abt-SectionInner">
-      <p class="abt-Eyebrow">Whats in a name</p>
-      <h2>FivexL, sure sounds cool but what does it stand for?</h2>
-      <div class="abt-ValuesGrid">
-        <article>
+  <section class="twc">
+    <div class="twc-Container">
+      <h2 class="twc-Heading">FivexL, sure sounds cool<br> but what does it stand for?</h2>
+      <div class="twc-ColumnsWrapper abt-ValuesGrid">
+        <div>
           <h3>League</h3>
           <p>We are a multi-talented DevSecOps team that combines our knowledge and expertise to help each other in our professional working lives. Within the field of DevSecOps, there are many tools and processes and our team members combine specialist knowledge in every area. We believe that working together makes us all stronger than any of us could ever be if we were working alone.</p>
-        </article>
-        <article>
-          <h3>Lovely</h3>
-          <p>We believe great DevSecOps capability can only be built on a foundation of trust and respect. That's why we place so much emphasis on having a loving culture of open communication, honesty, and horizontal organization. Our members commit to helping each other and that commitment extends to our customers. We want to create a single, lovely culture around everything we do.</p>
-        </article>
-        <article>
+        </div>
+        <div>
           <h3>Location Independent</h3>
           <p>We have no central office, no place where people need to physically be at 9 am every day. That's because we are a distributed team that believes in the power of a laptop and an internet connection. We don't limit our approach to recruitment by requiring everyone to live within commuting distance. Our members enjoy the freedom to strike their own work/life balance in the locations of their choice.</p>
-        </article>
-        <article>
+        </div>
+        <div>
+          <h3>Lovely</h3>
+          <p>We believe great DevSecOps capability can only be built on a foundation of trust and respect. That's why we place so much emphasis on having a loving culture of open communication, honesty, and horizontal organization. Our members commit to helping each other and that commitment extends to our customers. We want to create a single, lovely culture around everything we do.</p>
+        </div>
+        <div>
           <h3>Lifetime Learners</h3>
           <p>We believe that education should never stop. This is especially true in DevSecOps where there are always new tools and processes emerging that have to be investigated and mastered. To always be at the cutting edge of new technologies requires a lifelong commitment to continuous training and improvement. We make that investment in ourselves every day to stay ahead of the curve.</p>
-        </article>
+        </div>
       </div>
     </div>
   </section>
 
-  {{ $team := slice
-    (dict "name" "Andrey Devyatkin" "role" "Principal Consultant<br>Partner" "href" "/specialist/andrey-devyatkin/" "image" "/wp-content/uploads/2022/10/andrey.png" "skills" (slice "Certified AWS Architect" "Continuous Integration and Delivery specialist" "Public speaker" "Podcaster"))
-    (dict "name" "Artem Zhelezov" "role" "Senior Consultant<br>Partner" "href" "/specialist/artem-zhelezov/" "image" "/wp-content/uploads/2022/10/artem.png" "skills" (slice "Certified AWS Architect" "Continuous Integration and Delivery specialist" "HashiCorp tools specialist"))
-    (dict "name" "Vladimir Samoylov" "role" "Principal Consultant<br>Partner" "href" "/specialist/vladimir-samoylov/" "image" "/wp-content/uploads/2022/10/Vladimir.png" "skills" (slice "Certified AWS Architect" "Containerization Specialist focused on AWS ECS" "Continuous Integration and Delivery Specialist"))
-    (dict "name" "Guilherme Ferreira" "role" "Principal Consultant" "href" "/specialist/guilherme-ferreira/" "image" "/wp-content/uploads/2022/10/Guilherme.png" "skills" (slice "Cloud Computing Instructor" "Solutions Architect" "Software and Platform Engineer" "Ex-AWS (Amazon Web Services)"))
-    (dict "name" "Ivan Razzhivin" "role" "Consultant" "href" "/specialist/ivan-razzhivin/" "image" "/wp-content/uploads/2022/10/ivan.png" "skills" (slice "Certified AWS" "Architect" "Kubernetes Expert" "GitOps Specialist"))
-    (dict "name" "Fernando Goncalves" "role" "Senior Consultant" "href" "/specialist/fernando-goncalves/" "image" "/wp-content/uploads/2022/10/Fernando.png" "skills" (slice "Certified AWS Architect" "Serverless & Cloud Security Specialist" "Ex-AWS (Amazon Web Services)"))
-    (dict "name" "Alexey Eremin" "role" "Consultant" "href" "/specialist/alexey-eremin/" "image" "/wp-content/uploads/2022/10/aleksey.png" "skills" (slice "Certified AWS Architect" "Cloud Engineering specialist" "Python Developer"))
-    (dict "name" "Anton Eremin" "role" "Consultant" "href" "/specialist/anton-eremin/" "image" "/wp-content/uploads/2022/10/Anton.png" "skills" (slice "Certified AWS Architect" "Public Speaker"))
-    (dict "name" "Yousef De Baz" "role" "Consultant" "href" "/specialist/yousef-de-baz/" "image" "/wp-content/uploads/2022/10/Yousef.png" "skills" (slice "Certified AWS Architect" "Kubernetes (EKS) Expert" "Cloud Security Specialist"))
-    (dict "name" "Aleksandr Zhitov" "role" "Consultant" "href" "/specialist/aleksandr-zhitov/" "image" "/wp-content/uploads/2022/10/Aleksandr-Zhitov.png" "skills" (slice "Certified AWS Architect" "AWS and Terraform Specialist"))
-    (dict "name" "Gilbert Young Jr." "role" "Consultant" "href" "/specialist/gilbert-young-jr/" "image" "/wp-content/uploads/2022/10/Gilbert.png" "skills" (slice "AWS & LLM Specialist" "Public Speaker"))
-  }}
+  {{/* prettier-ignore */}}
+  {{ $team := slice (dict "name" "Andrey Devyatkin" "role" "Principal Consultant<br>Partner" "href" "/specialist/andrey-devyatkin/" "image" "/wp-content/uploads/2022/10/andrey.png" "skills" (slice "Certified AWS Architect" "Continuous Integration and Delivery specialist" "Public speaker" "Podcaster")) (dict "name" "Artem Zhelezov" "role" "Senior Consultant<br>Partner" "href" "/specialist/artem-zhelezov/" "image" "/wp-content/uploads/2022/10/artem.png" "skills" (slice "Certified AWS Architect" "Continuous Integration and Delivery specialist" "HashiCorp tools specialist")) (dict "name" "Vladimir Samoylov" "role" "Principal Consultant<br>Partner" "href" "/specialist/vladimir-samoylov/" "image" "/wp-content/uploads/2022/10/Vladimir.png" "skills" (slice "Certified AWS Architect" "Containerization Specialist focused on AWS ECS" "Continuous Integration and Delivery Specialist")) (dict "name" "Guilherme Ferreira" "role" "Principal Consultant" "href" "/specialist/guilherme-ferreira/" "image" "/wp-content/uploads/2022/10/Guilherme.png" "skills" (slice "Cloud Computing Instructor" "Solutions Architect" "Software and Platform Engineer" "Ex-AWS (Amazon Web Services)")) (dict "name" "Ivan Razzhivin" "role" "Consultant" "href" "/specialist/ivan-razzhivin/" "image" "/wp-content/uploads/2022/10/ivan.png" "skills" (slice "Certified AWS Architect" "Kubernetes Expert" "GitOps Specialist")) (dict "name" "Fernando Goncalves" "role" "Senior Consultant" "href" "/specialist/fernando-goncalves/" "image" "/wp-content/uploads/2022/10/Fernando.png" "skills" (slice "Certified AWS Architect" "Serverless & Cloud Security Specialist" "Ex-AWS (Amazon Web Services)")) (dict "name" "Alexey Eremin" "role" "Consultant" "href" "/specialist/alexey-eremin/" "image" "/wp-content/uploads/2022/10/aleksey.png" "skills" (slice "Certified AWS Architect" "Cloud Engineering specialist" "Python Developer")) (dict "name" "Anton Eremin" "role" "Consultant" "href" "/specialist/anton-eremin/" "image" "/wp-content/uploads/2022/10/Anton.png" "skills" (slice "Certified AWS Architect" "Public Speaker")) (dict "name" "Yousef De Baz" "role" "Consultant" "href" "/specialist/yousef-de-baz/" "image" "/wp-content/uploads/2022/10/Yousef.png" "skills" (slice "Certified AWS Architect" "Kubernetes (EKS) Expert" "Cloud Security Specialist")) (dict "name" "Aleksandr Zhitov" "role" "Consultant" "href" "/specialist/aleksandr-zhitov/" "image" "/wp-content/uploads/2022/10/Aleksandr-Zhitov.png" "skills" (slice "Certified AWS Architect" "AWS and Terraform Specialist")) (dict "name" "Gilbert Young Jr." "role" "Consultant" "href" "/specialist/gilbert-young-jr/" "image" "/wp-content/uploads/2022/10/Gilbert.png" "skills" (slice "AWS & LLM Specialist" "Public Speaker")) }}
 
   <section class="abt-Section abt-Team">
     <div class="abt-SectionInner">
-      <h2>The Team That Ships</h2>
-      <div class="abt-TeamGrid">
+      <h2 class="twc-Heading">The Team That Ships</h2>
+      <div class="abt-TeamCircleGrid">
         {{ range $team }}
-          {{ partial "about_person_card" . }}
+        <div class="abt-PersonCircle">
+          {{ if .href }}
+          <a href="{{ .href }}" class="abt-PersonCircleImage">
+            <img src="{{ .image }}" alt="{{ .name }}" loading="lazy">
+          </a>
+          {{ else }}
+          <div class="abt-PersonCircleImage">
+            <img src="{{ .image }}" alt="{{ .name }}" loading="lazy">
+          </div>
+          {{ end }}
+          <p class="abt-PersonCircleName">{{ .name }}</p>
+          <p class="abt-PersonCircleRole">{{ .role | safeHTML }}</p>
+          {{ with .skills }}
+          <ul class="abt-PersonCircleSkills">
+            {{ range . }}<li>{{ . }}</li>{{ end }}
+          </ul>
+          {{ end }}
+        </div>
         {{ end }}
       </div>
     </div>
   </section>
 
-  {{ $engine := slice
-    (dict "name" "Olga Devyatkina" "role" "Financial and administrative manager" "href" "/specialist/olga-devyatkina/" "image" "/wp-content/uploads/2022/10/Olga.png")
-    (dict "name" "Anastasia Filatova" "role" "Marketing Director" "image" "/wp-content/uploads/2022/10/Anastasia.png")
-    (dict "name" "Berit Janson" "role" "Executive Assistant" "image" "/wp-content/uploads/2022/10/Berit.png")
-  }}
+  {{/* prettier-ignore */}}
+  {{ $engine := slice (dict "name" "Olga Devyatkina" "role" "Financial and administrative manager" "href" "/specialist/olga-devyatkina/" "image" "/wp-content/uploads/2022/10/Olga.png") (dict "name" "Anastasia Filatova" "role" "Marketing Director" "image" "/wp-content/uploads/2022/10/Anastasia.png") (dict "name" "Berit Janson" "role" "Executive Assistant" "image" "/wp-content/uploads/2022/10/Berit.png") }}
 
   <section class="abt-Section abt-Team abt-Team_Engine">
     <div class="abt-SectionInner">
-      <h2>The Engine Behind Delivery</h2>
-      <div class="abt-TeamGrid">
+      <h2 class="twc-Heading">The Engine Behind Delivery</h2>
+      <div class="abt-TeamCircleGrid">
         {{ range $engine }}
-          {{ partial "about_person_card" . }}
+        <div class="abt-PersonCircle">
+          {{ if .href }}
+          <a href="{{ .href }}" class="abt-PersonCircleImage">
+            <img src="{{ .image }}" alt="{{ .name }}" loading="lazy">
+          </a>
+          {{ else }}
+          <div class="abt-PersonCircleImage">
+            <img src="{{ .image }}" alt="{{ .name }}" loading="lazy">
+          </div>
+          {{ end }}
+          <p class="abt-PersonCircleName">{{ .name }}</p>
+          <p class="abt-PersonCircleRole">{{ .role | safeHTML }}</p>
+        </div>
         {{ end }}
       </div>
     </div>
