@@ -2,7 +2,7 @@
     <h2 class="cl-Heading">{{ default "BLOGS" .heading }}</h2>
     {{ if .show_tags }}
     <div class="cl-TagsList">
-        {{ range hugo.Data.tag_categories }}
+        {{ range site.Data.tag_categories }}
         <div class="cl-TagsGroup">
             <button class="cl-TagsGroup_Label" data-category-tags="{{ delimit .tags "|" | lower }}">{{ .name }}</button>
             <div class="cl-TagsGroup_Tags">
