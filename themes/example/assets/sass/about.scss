@@ -1,6 +1,13 @@
 .abt {
   color: $textPrimary;
 
+  &-HeroPanel {
+    .dp-MediaPanel_Image {
+      object-fit: contain;
+      object-position: right bottom;
+    }
+  }
+
   &-SectionInner {
     max-width: $maxContentWidth;
     margin-inline: auto;
