@@ -57,6 +57,11 @@
           {{ end }}
           <p class="abt-PersonCircleName">{{ .name }}</p>
           <p class="abt-PersonCircleRole">{{ .role | safeHTML }}</p>
+          {{ with .skills }}
+          <ul class="abt-PersonCircleSkills">
+            {{ range . }}<li>{{ . }}</li>{{ end }}
+          </ul>
+          {{ end }}
         </div>
         {{ end }}
       </div>
