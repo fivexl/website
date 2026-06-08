@@ -87,7 +87,7 @@
     gap: 2rem 1rem;
 
     @media (min-width: 480px) {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
   }
 
@@ -100,8 +100,8 @@
   }
 
   &-PersonCircleImage {
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
     border-radius: 50%;
     overflow: hidden;
     flex-shrink: 0;
