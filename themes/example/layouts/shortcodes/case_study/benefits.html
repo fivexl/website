@@ -1,11 +1,9 @@
 {{- $page := .Page -}}
 <section class="cst-Benefits">
     <div class="cst-Container">
-        <div class="cst-ColumnsWrapper">
-            <div>
-                {{ .Inner }}
-            </div>
-        {{ if .Get "blockquote" }}
+        <h3 class="pink_heading"><span>{{ default "Benefits" (.Get "label") }}</span></h3>
+        <div class="cst-BenefitsLayout{{ if .Get "blockquote" }} cst-BenefitsLayout--quote{{ end }}">
+            {{- if .Get "blockquote" -}}
             <div class="cst-BlockquoteWrapper">
                 <blockquote>
                     <div class="cst-Blockquote">
@@ -14,31 +12,20 @@
                     {{ with .Get "blockquote_author" }}<footer class="cst-BlockquoteAuthor">{{ . }}</footer>{{ end }}
                 </blockquote>
             </div>
-        {{ else }}
-            {{- if or (.Get "image") (.Get "square_text") -}}
-            <div class="{{ if (.Get "image") }}cst-PinkSquare_Image{{else }}cst-PinkSquare{{ end }}">
+            {{- else if or (.Get "image") (.Get "square_text") -}}
+            <div class="{{ if (.Get "image") }}cst-PinkSquare_Image{{ else }}cst-PinkSquare{{ end }}">
                 {{- with .Get "image" -}}
-                    {{- partial "img" (dict 
-                        "src" .
-                        "IsContentImage" true
-                        "Page" $page
-                        "class" "cst-BenefitsImage"
-                        ) -}} 
+                    {{- partial "img" (dict "src" . "IsContentImage" true "Page" $page "class" "cst-BenefitsImage") -}}
                 {{- end -}}
-                {{ with .Get "square_text" }}
-                <span class="cst-PinkSquare_Text">{{ . }}</span>
-                {{ end }}
+                {{ with .Get "square_text" }}<span class="cst-PinkSquare_Text">{{ . }}</span>{{ end }}
             </div>
             {{- end -}}
-        {{ end }}
+            <div class="cst-BenefitsItems">
+                {{ .Inner }}
+            </div>
         </div>
         {{- if .Get "cta_text" -}}
-            {{- partial "button_cta"
-                (dict 
-                    "text" (.Get "cta_text")
-                    "url" (.Get "cta_url")
-                )
-            -}}
+            {{- partial "button_cta" (dict "text" (.Get "cta_text") "url" (.Get "cta_url")) -}}
         {{- end -}}
     </div>
 </section>
