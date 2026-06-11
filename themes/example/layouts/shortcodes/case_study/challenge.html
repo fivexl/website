@@ -1,10 +1,8 @@
 {{- $page := .Page -}}
 <section class="cst-Challenge">
     <div class="cst-Container">
-        <div class="cst-ColumnsWrapper">
-        <div>
-            {{ .Inner }}
-        </div>
+        {{ with .Get "heading" }}<h3 class="pink_heading"><span>{{ . }}</span></h3>{{ end }}
+        <div class="cst-ColumnsWrapper{{ if .Get "blockquote" }} cst-ColumnsWrapper--quote{{ else if .Get "image" }} cst-ColumnsWrapper--image{{ end }}">
         {{- if .Get "blockquote" -}}
             <div class="cst-BlockquoteWrapper">
                 <blockquote>
@@ -14,19 +12,20 @@
                     {{ with .Get "blockquote_author" }}<footer class="cst-BlockquoteAuthor">{{ . }}</footer>{{ end }}
                 </blockquote>
             </div>
-        {{- else -}}
-            {{- if .Get "image" -}}
-                <div class="cst-PinkSquare_Image">
-                    {{- partial "img" (dict 
-                        "src" (.Get "image")
-                        "IsContentImage" true
-                        "Page" $page
-                        "class" "cst-ChallengeImage"
-                        "style" (.Get "image_css")
-                        ) -}} 
-                </div>
-            {{- end -}}
+        {{- else if .Get "image" -}}
+            <div class="cst-PinkSquare_Image">
+                {{- partial "img" (dict
+                    "src" (.Get "image")
+                    "IsContentImage" true
+                    "Page" $page
+                    "class" "cst-ChallengeImage"
+                    "style" (.Get "image_css")
+                    ) -}}
+            </div>
         {{- end -}}
+        <div>
+            {{ .Inner }}
+        </div>
         </div>
     </div>
 </section>

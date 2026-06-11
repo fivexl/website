@@ -1,5 +1,5 @@
 ---
-title: "From Monolith to Multi-Account ECS: How FivexL Migrated Industrial Matrix's Predictive Maintenance Platform"
+title: "Industrial Matrix: From Monolith to Multi-Account ECS on AWS"
 author_id: 'Fernando Goncalves'
 summary: 'FivexL migrated a Canadian predictive maintenance platform from a single-account monolith to a containerized, multi-account ECS architecture - replacing manual SSH deployments with an automated pipeline and delivering three isolated environments in three months.'
 date: 2026-06-08
@@ -10,13 +10,13 @@ alt_image: Fernando-industrial-matrix.png
 case_study: true
 layout: 'case_study'
 tags: ['case study', 'aws', 'ECS', 'migration', 'RightStart', 'multi-account', 'IoT']
-testimonial: 'FivexL laid the foundation of our structure. Now we can play with it as with the Lego blocks and decide what to do... Now we have the capabilities of completing the services in a better way... we can scale what is in demand at the time.'
+testimonial: 'FivexL laid the foundation of our structure. Now we can play with it as with the Lego blocks and decide what to do. The accounts with different purpose — development, staging, and production — also creates the idea that you could have more environments if you want.'
 testimonial_author: 'Ariel Ferreira,'
 testimonial_author_position: 'Technical Director at Industrial Matrix'
 testimonial_author_portrait: Ariel.png
 testimonial_cta_url: '/contact'
 testimonial_long: |
-  "FivexL laid the foundation of our structure. Now we can play with it as with the Lego blocks and decide what to do... Now we have the capabilities of completing the services in a better way... we can scale what is in demand at the time."
+  "FivexL laid the foundation of our structure. Now we can play with it as with the Lego blocks and decide what to do. The accounts with different purpose — development, staging, and production — also creates the idea that you could have more environments if you want. I’d definitely recommend FivexL because they are trustworthy and very helpful, and they’re very knowledgeable as well."
 about_company:
   logo: 'industrial-matrix-logo.png'
   heading: 'About Industrial Matrix'
@@ -32,32 +32,27 @@ double_panel:
   button_cta: { url: "/contact", text: "Book a consultation" }
   media_panel: { url: "https://youtu.be/uruLy1goNW0" }
 ---
-{{< case_study/challenge image="Fernando-industrial-matrix.png" image_css="object-position: center 20%" >}}
-{{< pink_heading text="Challenge" sizes="bigger">}}
-As Industrial Matrix grew toward its goal of tripling revenue, the platform running hundreds of IoT devices in production couldn't scale with the business.
+{{< case_study/challenge heading="Challenge" blockquote="We have demands for ingress data, for retrieval of data, for processing - there's a lot of different services that before were running together. It was more expensive to scale. Every time I had to scale, I had to scale everything. So if I have more sensors sending data, or more users, or less users - it doesn't matter, because I had to scale everything together to fit the bill." blockquote_author="Ariel Ferreira, Technical Director at Industrial Matrix" >}}
+Industrial Matrix built a great product - a predictive maintenance platform running hundreds of IoT devices in production. Infrastructure decisions were made early to move fast, which made sense. But as the business evolved, they had outgrown the infrastructure underneath it.
 
-The predictive maintenance platform ran as a monolith on roughly three EC2 instances in a single AWS account. Ariel Ferreira, Technical Director at Industrial Matrix, described the problem:<br/>
-<br/>
-"We have demands for ingress data, for retrieval of data, for processing - there's a lot of different services that before were running together. It was more expensive to scale. Every time I had to scale, I had to scale everything. So if I have more sensors sending data, or more users, or less users - it doesn't matter, because I had to scale everything together to fit the bill."<br/>
-<br/>
+The platform ran as a monolith on roughly three EC2 instances in a single AWS account - and it couldn't scale with the ambition.<br />
+<br />
 Underneath the scaling problem sat three structural risks the team carried every day:
 
-<strong>A single point of failure.</strong> The entire platform - every service, every customer, every sensor stream - lived on roughly three EC2 instances in one AWS account. Any failure meant a total outage.<br/>
-<br/>
-<strong>Manual SSH deployments.</strong> No infrastructure as code, no CI/CD. Every deployment was a manual, error-prone process where reproducibility depended on whoever was at the keyboard.<br/>
-<br/>
-<strong>No environment separation.</strong> Production was the only environment. Development and testing happened in the same AWS account that served customers.<br/>
-<br/>
-FivexL had already delivered the multi-account AWS foundation in an earlier engagement, but the migration onto it hadn't been completed: "Everything was done, but it was just done and forgotten. All the accounts were created, but they didn't actually move to the new infrastructure. They just put it there like a test, but they didn't actually move the flows. So we ended up not even being able to try to migrate ourselves, because we didn't have the knowledge and the expertise."<br/>
-<br/>
-With the business preparing to scale, leadership committed to completing the work in three months - and brought FivexL back in to lead it end-to-end.
+<ul>
+<li><strong>A single point of failure.</strong> The entire platform - every service, every customer, every sensor stream - lived on roughly three EC2 instances in one AWS account. Any failure meant a total outage.</li>
+<li><strong>Manual SSH deployments.</strong> No infrastructure as code, no CI/CD. Every deployment was a manual, error-prone process where reproducibility depended on whoever was at the keyboard.</li>
+<li><strong>No environment separation.</strong> Production was the only environment. Development and testing happened in the same AWS account that served customers.</li>
+</ul>
 {{</ case_study/challenge >}}
 
 {{< case_study/solution heading="Solution" >}}
 {{< case_study/column >}}
-The foundation was already in place from an earlier engagement: FivexL had built Industrial Matrix's multi-account AWS environment using RightStart for AWS - its productised landing zone, built with infrastructure as code, that gives a startup identity, networking, encryption, centralised logging, and security tooling in weeks rather than the months an in-house team would need to assemble it.
+In a first engagement, FivexL laid the foundation. Using [RightStart for AWS](/rightstart) - FivexL's productised landing zone - Industrial Matrix received a secure, multi-account AWS environment built with infrastructure as code. RightStart delivers what typically takes an in-house team over a year to assemble: a full AWS organisation structure with separate accounts for workloads, security, logs, and networking; centralised identity and SSO; encrypted secrets management; automated security tooling including GuardDuty, Security Hub, and CloudTrail; and CI/CD-ready OIDC access - all configured and ready in a month.
 
-The three-month engagement focused on putting that foundation to work: moving the production platform onto it, building the development workflow that would replace SSH, and giving the team the skills to deploy and operate the new architecture.
+The accounts were created. The foundation was solid. But the application itself had never been moved onto it.
+
+The second engagement focused on completing that work: migrating the production platform onto the foundation, replacing manual deployments with an automated pipeline, and giving the team the skills to own and operate the new architecture.
 
 One sequencing decision shaped everything else: build a local development environment that mirrored the new architecture before the production cutover, so the team could learn the new platform in safety before depending on it.
 
@@ -67,7 +62,7 @@ Before touching production, FivexL built a local development environment that mi
 Ariel saw the difference immediately: "One of the things we've done as well is the local development. So now it's faster for developers to test and try things than before."
 
 ### Containerise the Application As-Is
-The application was containerised without a framework upgrade. Combining a runtime upgrade with the infrastructure migration under a three-month deadline was too risky. The framework upgrade becomes a clean, separate project on a foundation that can support it.
+The application was containerised without a framework upgrade. Combining a runtime upgrade with the infrastructure migration was too risky. The framework upgrade becomes a clean, separate project on a foundation that can support it.
 {{</ case_study/column >}}
 {{< case_study/column >}}
 ### Production Cutover
@@ -87,7 +82,7 @@ The engagement ran on daily standups, pair programming, and async coordination.
 {{< case_study/benefits
     cta_text="Start Your Success Story"
     cta_url="/contact"
-    blockquote="I'd definitely recommend FivexL because they are trustworthy and very helpful, and they're very knowledgeable as well. I am considering using FivexL in the future."
+    blockquote="One of the things we've done as well is the local development. So now it's faster for the team to test and try things than before."
     blockquote_author="Ariel Ferreira, Technical Director at Industrial Matrix"
     >}}
 <h3>Scale only what needs scaling</h3>

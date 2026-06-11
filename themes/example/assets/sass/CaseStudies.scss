@@ -287,8 +287,108 @@ a:has(.cst-CaseHeading) { text-decoration: none; }
     height: 100%;
     object-fit: cover;
   }
+  .cst-ColumnsWrapper--quote {
+    @media (min-width: 1024px) {
+      display: flow-root;
+      .cst-BlockquoteWrapper {
+        float: right;
+        width: 560px;
+        aspect-ratio: 1 / 1;
+        margin-left: 2.5rem;
+        margin-bottom: 2rem;
+        margin-top: 0;
+        background: linear-gradient(135deg, #f13786, #2c8fea);
+        border-radius: 16px;
+        padding: clamp(1.5rem, 2.5vw, 2rem);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        &::before {
+          content: '\201C\201C';
+          display: block;
+          font-size: 5rem;
+          line-height: 1;
+          color: rgba(255,255,255,0.5);
+          margin-bottom: 1rem;
+          font-family: Georgia, serif;
+        }
+      }
+      .cst-Blockquote {
+        font-weight: 600;
+        font-size: clamp(1rem, 2vw, 1.25rem);
+        color: white;
+        line-height: 1.5;
+        margin-top: 0;
+      }
+      .cst-BlockquoteAuthor {
+        font-weight: 700;
+        font-size: clamp(0.85rem, 1vw, 0.95rem);
+        color: white;
+        margin-top: 1.5rem;
+        text-align: left;
+      }
+    }
+  }
+  .cst-ColumnsWrapper--image {
+    @media (min-width: 1024px) {
+      display: flow-root;
+      .cst-ChallengeMedia {
+        float: right;
+        width: 560px;
+        margin-left: 2.5rem;
+        margin-bottom: 2rem;
+        margin-top: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+      .cst-PinkSquare_Image {
+        aspect-ratio: 3 / 2;
+        height: auto;
+        margin: 0;
+        width: 100%;
+        border-radius: 16px;
+        overflow: hidden;
+        position: relative;
+        .cst-ChallengeImage {
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .cst-ChallengeQuoteCard {
+        background: linear-gradient(135deg, #f13786, #2c8fea);
+        border-radius: 16px;
+        padding: clamp(1.5rem, 2.5vw, 2rem);
+        display: flex;
+        flex-direction: column;
+        &::before {
+          content: '\201C\201C';
+          display: block;
+          font-size: 5rem;
+          line-height: 1;
+          color: rgba(255,255,255,0.5);
+          margin-bottom: 1rem;
+          font-family: Georgia, serif;
+        }
+      }
+      .cst-ChallengeQuote_Text {
+        font-size: clamp(1rem, 2vw, 1.25rem);
+        font-weight: 600;
+        line-height: 1.5;
+        color: white;
+      }
+      .cst-ChallengeQuote_Author {
+        font-size: clamp(0.85rem, 1vw, 0.95rem);
+        font-weight: 700;
+        color: white;
+        margin-top: 1.5rem;
+        display: block;
+      }
+    }
+  }
   @media (min-width: 1024px) {
-    margin-bottom: calc(clamp(2.25rem, 9vw, 8.5rem) * 1.5);
     .cst-PinkSquare, .cst-PinkSquare_Image {
       display: block;
       margin-top: clamp(6rem, 6.75vw, 6.875rem);
