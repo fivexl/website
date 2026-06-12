@@ -33,8 +33,7 @@ double_panel:
   button_cta: { url: "/contact", text: "Book a consultation" }
   media_panel: { url: "https://youtu.be/uruLy1goNW0" }
 ---
-{{< case_study/challenge  image="challenge_ns.png" image_css="object-position: 18%" >}}
-{{< pink_heading text="Challenge"  sizes="bigger">}}
+{{< case_study/challenge heading="Challenge" blockquote="Our customers are extremely sensitive to security and data privacy. They have standards and expectations, and we knew that those expectations would grow over time. So, we wanted to ensure that we built everything with security as the basis." blockquote_author="Mike Long, CEO at Kosli" >}}
 Kosli began their journey by building infrastructure using Google Cloud and Kubernetes. At the outset, Google Cloud was a practical platform for launching their Minimum Viable Product (MVP) into the market. Mike Long, CEO of Kosli, says, “It was fine to begin with using Google to get our MVP out there.” As the company expanded its client base, however, their needs evolved.<br/>
 <br/>
 
@@ -99,9 +98,9 @@ To bolster security, minimize human error in credential management, and ensure s
 {{< case_study/benefits
     cta_text="Start Your Success Story"
     cta_url="/contact"
-    image="kosli_benefits_small.png"
+    blockquote="Artem and the team have been great at supporting our needs. They are very responsive and extremely competent, demonstrating a deep understanding and expertise in AWS. Their knowledge is highly appreciated. FivexL is always thinking of new ways to integrate our product into our operations."
+    blockquote_author="Mike Long, CEO at Kosli"
     >}}
-{{< pink_heading text="Benefits" >}}
 The new high-performing and secure infrastructure, defined as code, enabled Kosli to scale its business effectively. FivexL built an infrastructure that met their audience's needs and ensured compliance, enhancing security. FivexL developed a disaster recovery plan and helped Kosli pass audits.<br/>  
 <br/>
 Performance issues were resolved, significantly speeding up the application. By migrating to AWS and utilizing DocumentDB, Kosli saw improved application performance and availability. As Mike Long, CEO of Kosli, highlights, "FivexL has been a partner in our journey. So it was helping us transition to AWS and also helping us maintain, evolve, grow, and improve our systems over time."<br/>  

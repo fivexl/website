@@ -2,7 +2,7 @@
 <section class="cst-Challenge">
     <div class="cst-Container">
         {{ with .Get "heading" }}<h3 class="pink_heading"><span>{{ . }}</span></h3>{{ end }}
-        <div class="cst-ColumnsWrapper{{ if .Get "blockquote" }} cst-ColumnsWrapper--quote{{ else if .Get "image" }} cst-ColumnsWrapper--image{{ end }}">
+        <div class="cst-ColumnsWrapper{{ if .Get "blockquote" }} cst-ColumnsWrapper--quote{{ end }}">
         {{- if .Get "blockquote" -}}
             <div class="cst-BlockquoteWrapper">
                 <blockquote>
@@ -12,7 +12,11 @@
                     {{ with .Get "blockquote_author" }}<footer class="cst-BlockquoteAuthor">{{ . }}</footer>{{ end }}
                 </blockquote>
             </div>
-        {{- else if .Get "image" -}}
+        {{- end -}}
+        <div>
+            {{ .Inner }}
+        </div>
+        {{- if .Get "image" -}}
             <div class="cst-PinkSquare_Image">
                 {{- partial "img" (dict
                     "src" (.Get "image")
@@ -23,9 +27,6 @@
                     ) -}}
             </div>
         {{- end -}}
-        <div>
-            {{ .Inner }}
-        </div>
         </div>
     </div>
 </section>

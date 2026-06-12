@@ -32,8 +32,7 @@ double_panel:
   button_cta: { url: "/contact", text: "Book a consultation" }
   media_panel: { url: "https://youtu.be/uruLy1goNW0" }
 ---
-{{< case_study/challenge  image="challenge_o.png" >}}
-{{< pink_heading text="Challenge"  sizes="bigger">}} 
+{{< case_study/challenge heading="Challenge" blockquote="Without functional infrastructure as code, we couldn't easily duplicate our infrastructure to serve clients in different regions. Our clients require their data to be stored and served from their own countries so it's really helpful to have FivexL onboard helping us push forward plans for expansion by making it easy to deploy in new markets." blockquote_author="Chris Picht, IT Operations Manager & Senior Information Security Officer at Ovrture" >}}
 Ovrture is a Major Donor Communications Software. Company needed to safely migrate its platform to a modernised digital infrastructure on the AWS cloud and be able to continuously deploy and evolve.<br/>
 <br/>
 “FivexL were able to help us implement our infrastructure as code using HashiCorp Packer and HashiCorp Terraform,” reveals Chris Picht, IT Operations Manager & Senior Information Security Officer at Ovrture. “We needed to achieve this level of flexibility while simultaneously maintaining our security profile to service our clients.”<br/>
@@ -61,9 +60,9 @@ A key issue they solved for us was building a complex elastic load balancer set 
 {{< case_study/benefits
     cta_text="Start Your Success Story"
     cta_url="/contact"
-    image="benefits_ovrture.png"
+    blockquote="FivexL deployed a completely immutable infrastructure thus reducing operating costs, enhancing resilience and providing the ability to scale. Ultimately, we achieved our most important goal: delivering the latest changes as quickly as possible without the risk of application downtime."
+    blockquote_author="Chris Picht, Senior Information Security Officer at Ovrture"
     >}}
-{{< pink_heading text="Benefits" >}}
 Infrastructure defined in code now makes it easier for Ovrture to work with clients and their security consultants who can see the wise choices they’re making to manage data. Picht remembers that prior to the successful collaboration with FivexL, outsourcing was a miserable box-ticking exercise with little impact and no thought to how the platform would actually work.<br/>
 <br/>  
 “Gaps in our knowledge weren’t a problem for FivexL,” he reflects. “They were engaged in the process and took pride in the outcome; we’re interested in each other’s success. We see them as a partner on our continuous improvement journey already underway with the launch of new Java applications.”<br/>

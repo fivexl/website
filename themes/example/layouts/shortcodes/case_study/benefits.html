@@ -1,7 +1,7 @@
 {{- $page := .Page -}}
 <section class="cst-Benefits">
     <div class="cst-Container">
-        <h3 class="pink_heading"><span>{{ default "Benefits" (.Get "label") }}</span></h3>
+        {{- if or (.Get "blockquote") (.Get "label") -}}<h3 class="pink_heading"><span>{{ default "Benefits" (.Get "label") }}</span></h3>{{- end -}}
         <div class="cst-BenefitsLayout{{ if .Get "blockquote" }} cst-BenefitsLayout--quote{{ end }}">
             {{- if .Get "blockquote" -}}
             <div class="cst-BlockquoteWrapper">
