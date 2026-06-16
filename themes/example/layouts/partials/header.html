@@ -3,41 +3,17 @@
         {{- if .Params.transparent_nav  }}
         <picture>
             {{ $logo := resources.Get "img/full-logo_white_transparent.png" }}
-            {{ $logoSrc := $logo.RelPermalink }}
-            {{ if not hugo.IsServer }}
-            <source
-                type="image/webp"
-                srcset="/cdn-cgi/image/width=200,format=webp,quality=75{{ $logoSrc }} 200w,
-                /cdn-cgi/image/width=400,format=webp,quality=75{{ $logoSrc }} 400w,
-                /cdn-cgi/image/width=600,format=webp,quality=75{{ $logoSrc }} 600w">
-            {{ end }}
             <img class="hdr-Logo_Transparent" src="{{ $logo.Permalink }}"
                 sizes="155px" width="155" height="48" alt="FivexL logo">
         </picture>
         <picture>
             {{ $logo := resources.Get "logo_medium.png" }}
-            {{ $logoSrc := $logo.RelPermalink }}
-            {{ if not hugo.IsServer }}
-            <source
-                type="image/webp"
-                srcset="/cdn-cgi/image/width=200,format=webp,quality=75{{ $logoSrc }} 200w,
-                /cdn-cgi/image/width=400,format=webp,quality=75{{ $logoSrc }} 400w,
-                /cdn-cgi/image/width=600,format=webp,quality=75{{ $logoSrc }} 600w">
-            {{ end }}
             <img class="hdr-Logo" src="{{ $logo.Permalink }}"
                 sizes="155px" width="155" height="48" alt="FivexL logo">
         </picture>
         {{- else -}}
         <picture>
             {{ $logo := resources.Get "logo_medium.png" }}
-            {{ $logoSrc := $logo.RelPermalink }}
-            {{ if not hugo.IsServer }}
-            <source
-                type="image/webp"
-                srcset="/cdn-cgi/image/width=200,format=webp,quality=75{{ $logoSrc }} 200w,
-                /cdn-cgi/image/width=400,format=webp,quality=75{{ $logoSrc }} 400w,
-                /cdn-cgi/image/width=600,format=webp,quality=75{{ $logoSrc }} 600w">
-            {{ end }}
             <img class="hdr-Logo" src="{{ $logo.Permalink }}"
                 sizes="155px" width="155" height="48" alt="FivexL logo">
         </picture>

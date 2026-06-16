@@ -34,12 +34,6 @@
     {{ end }}
 
     <picture>
-        {{ if not hugo.IsServer }}
-        <source type="image/webp"
-            {{- with $srcset }} srcset="{{ . }}"{{ end -}}
-            {{- if isset . "IsContentImage" -}}sizes="(max-width: 768px) 100vw, 1184px"{{- end -}}
-            >
-        {{ end }}
         <img
             src="{{ $image.Permalink }}"
             class="{{ .class }} {{ $align }}"
