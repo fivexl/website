@@ -60,6 +60,19 @@ export default {
       return gone(env, request);
     }
 
+    // On workers.dev preview domains, Cloudflare Image Resizing is unavailable,
+    // so /cdn-cgi/image/ requests hit the worker and 404, breaking all <picture> elements.
+    // Fall back to serving the original image directly.
+    if (url.pathname.startsWith("/cdn-cgi/image/")) {
+      const withoutPrefix = url.pathname.slice("/cdn-cgi/image/".length);
+      const slashIndex = withoutPrefix.indexOf("/");
+      if (slashIndex !== -1) {
+        const originalPath = withoutPrefix.slice(slashIndex);
+        const originalUrl = new URL(originalPath, url.origin);
+        return env.ASSETS.fetch(new Request(originalUrl.toString(), { headers: request.headers, method: "GET" }));
+      }
+    }
+
     return env.ASSETS.fetch(request);
   },
 };
