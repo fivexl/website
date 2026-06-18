@@ -33,16 +33,14 @@ double_panel:
   media_panel: { url: "https://youtu.be/uruLy1goNW0" }
 ---
 {{< case_study/challenge heading="Challenge" blockquote="We have demands for ingress data, for retrieval of data, for processing - there's a lot of different services that before were running together. It was more expensive to scale. Every time I had to scale, I had to scale everything. So if I have more sensors sending data, or more users, or less users - it doesn't matter, because I had to scale everything together to fit the bill." blockquote_author="Ariel Ferreira, Technical Director at Industrial Matrix" >}}
-Industrial Matrix built a great product - a predictive maintenance platform running hundreds of IoT devices in production. Infrastructure decisions were made early to move fast, which made sense. But as the business evolved, they had outgrown the infrastructure underneath it.
+Industrial Matrix built a great product — a predictive maintenance platform running hundreds of IoT devices in production. The early infrastructure choices were the right call at the time: lean, fast, enough to prove the model. But success moved the goalposts. More customers, more devices, and bigger commitments raised the bar on what the platform underneath had to do — and the foundation that got them this far wasn't built for where they were going. It capped how far they could scale and slowed the team down in daily development.
 
-The platform ran as a monolith on roughly three EC2 instances in a single AWS account - and it couldn't scale with the ambition.<br />
-<br />
-Underneath the scaling problem sat three structural risks the team carried every day:
+The next stage set three new requirements:
 
 <ul>
-<li><strong>A single point of failure.</strong> The entire platform - every service, every customer, every sensor stream - lived on roughly three EC2 instances in one AWS account. Any failure meant a total outage.</li>
-<li><strong>Manual SSH deployments.</strong> No infrastructure as code, no CI/CD. Every deployment was a manual, error-prone process where reproducibility depended on whoever was at the keyboard.</li>
-<li><strong>No environment separation.</strong> Production was the only environment. Development and testing happened in the same AWS account that served customers.</li>
+<li><strong>Resilience that matched the stakes.</strong> With hundreds of devices and a growing customer base now depending on the platform, concentration risk that was acceptable early on no longer was. The architecture needed to spread that risk, not pool it.</li>
+<li><strong>Delivery that could keep pace.</strong> A hands-on deployment process works for a small team shipping occasionally. At their new velocity, they needed infrastructure as code and CI/CD so releases were fast, repeatable, and independent of who ran them.</li>
+<li><strong>Room to build without risk to customers.</strong> As the team and roadmap grew, they needed space to develop and test separately from the environment serving live customers.</li>
 </ul>
 {{</ case_study/challenge >}}
 
