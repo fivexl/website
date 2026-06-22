@@ -1,6 +1,6 @@
 ---
-title: "FivexL Notes — AWS from the Field"
-description: "What the FivexL team reads, ships, and argues about on AWS — once a month."
+title: "FivexL Newsletter — AWS Insights for Cloud Engineers"
+description: "Monthly AWS insights from the FivexL engineering team — what we read, ship, and learn in the field."
 url: "/newsletter/"
 type: "newsletter"
 layout: "single"
