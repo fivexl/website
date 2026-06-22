@@ -1,0 +1,35 @@
+<footer class="ftr" itemscope="itemscope" itemtype="https://schema.org/WPFooter" role="contentinfo">
+
+    <div class="ftr-ContentWrapper">
+
+        <div class="ftr-LogoSection">
+            {{ $logo := resources.Get "/img/full-logo_white_transparent.png" }}
+            <a href="{{ .Site.BaseURL }}" alt="Link to homepage">
+                <img width="500" height="500" src="{{ $logo.Permalink }}" class="ftr-Logo" alt="FivexL logo" loading="lazy">
+            </a>
+            <span class="ftr-Copyright ftr-Copyright_Desktop" role="contentinfo">Copyright &copy;{{ now.Format "2006" }} FivexL</span>
+        </div>
+
+        <nav class="ftr-ExternalLinks">
+            <ul>
+                {{ range .Site.Menus.footer_external }}
+                    {{ $icon := resources.Get (printf "/icons/%s.svg" .Params.icon) }}
+                    <li>
+                        <a href="{{ .ConfiguredURL }}" class="ftr-ExternalLinks_Link"{{ if hasPrefix .ConfiguredURL "http" }} target="_blank"{{ end }}>
+                            <span class="ftr-ExternalLinks_Icon">
+                                {{ $icon.Content | safeHTML }}
+                            </span>
+                            {{ .Name }}
+                        </a>
+                    </li>
+                {{ end }}
+            </ul>
+            <span class="ftr-Copyright ftr-Copyright_Mobile" role="contentinfo">Copyright &copy;{{ now.Format "2006" }} FivexL</span>
+        </nav>
+    </div>
+
+</footer>
+
+{{ if hugo.IsProduction }}
+{{ partial "cloudflareinsights.html" . }}
+{{ end }}
