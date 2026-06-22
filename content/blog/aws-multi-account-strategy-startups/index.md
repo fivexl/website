@@ -10,11 +10,13 @@ panel_image: AWS-Partner.png
 tags: ['AWS', 'AWS Organizations', 'Landing Zone', 'Multi-Account', 'Startups', 'Security', 'HIPAA']
 ---
 
-The AWS account structure that gets a startup to product-market fit usually has to be rebuilt the day after.
+What does your AWS setup need to look like at seed stage? At Series A? When your first healthcare customer asks for a HIPAA BAA? The answer changes at every stage — and the decisions you make early are the hardest ones to undo.
 
-Founders pick a setup early. Then two years pass, and something breaks the assumption it was built on — a compliance review, a new product line, an enterprise customer with security requirements your setup can't meet. The rebuild always lands at the worst time — and it always takes longer than expected.
+<div style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border-left: 4px solid #18AEF0; border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0;">
 
 Below: four company growth stages — starting up, growing, scaling up, and established — and the AWS setup that fits each one. The framework applies to any startup on AWS. If you're in healthcare or another regulated industry, there's a dedicated section at the end with what changes for you.
+
+</div>
 
 <!--more-->
 
