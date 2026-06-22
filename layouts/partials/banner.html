@@ -1,0 +1,36 @@
+{{ with site.Params.banner }}{{ if .enabled }}
+<div class="bnr" id="site-banner" role="banner">
+  <p class="bnr-Text">
+    {{ with .label }}<span class="bnr-Label">{{ . }}</span><span class="bnr-Sep">·</span>{{ end }}
+    {{ with .date }}<span class="bnr-Date">{{ . }}</span><span class="bnr-Sep">·</span>{{ end }}
+    <span class="bnr-Name">{{ .name }}</span>
+    <a class="bnr-CTA" href="{{ .url }}"{{ if hasPrefix .url "http" }} target="_blank" rel="noopener"{{ end }}>{{ .cta }} ›</a>
+  </p>
+  <button class="bnr-Close" id="site-banner-close" aria-label="Dismiss banner">&times;</button>
+</div>
+<script>
+  (function () {
+    var KEY = 'banner-dismissed-until';
+    var el = document.getElementById('site-banner');
+    var until = localStorage.getItem(KEY);
+
+    function offsetHeader() {
+      var hdr = document.querySelector('.hdr');
+      if (!hdr) return;
+      hdr.style.top = window.innerWidth < 768 ? el.offsetHeight + 'px' : '';
+    }
+
+    if (until && Date.now() < parseInt(until)) {
+      el.style.display = 'none';
+    } else {
+      document.addEventListener('DOMContentLoaded', offsetHeader);
+      window.addEventListener('resize', offsetHeader);
+      document.getElementById('site-banner-close').addEventListener('click', function () {
+        el.style.display = 'none';
+        if (document.querySelector('.hdr')) document.querySelector('.hdr').style.top = '';
+        localStorage.setItem(KEY, Date.now() + 3600000);
+      });
+    }
+  }());
+</script>
+{{ end }}{{ end }}
