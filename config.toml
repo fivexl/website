@@ -62,6 +62,12 @@ pagerSize = 6
     class = "hdr-NavigationItem_Contact"
 # Footer social links
 [[menu.footer_external]]
+  url = '/newsletter/'
+  name = 'Newsletter'
+  weight = 5
+  [menu.footer_external.params]
+    icon = 'email'
+[[menu.footer_external]]
   url = 'https://www.linkedin.com/company/5xl/'
   name = 'Linkedin'
   weight = 10
@@ -89,7 +95,7 @@ disableKinds = ['category'] # Categories disabled initially
     name = "FivexL"
     email = "info@fivexl.io"
   [params.banner]
-    enabled = true
+    enabled = false
     label = "Upcoming live session"
     date = "June 17"
     name = "Starting on AWS, the right way"
