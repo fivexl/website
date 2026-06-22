@@ -5,5 +5,5 @@ url: "/newsletter/"
 type: "newsletter"
 layout: "single"
 transparent_nav: true
-images: [ 'featured.png' ]
+images: [ '/newsletter/featured.png' ]
 ---
