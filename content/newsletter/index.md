@@ -1,5 +1,5 @@
 ---
-title: "FivexL Notes — AWS from the Field"
+title: "FivexL Newsletter"
 description: "What the FivexL team reads, ships, and argues about on AWS — once a month."
 url: "/newsletter/"
 type: "newsletter"
