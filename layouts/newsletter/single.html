@@ -1,0 +1,40 @@
+{{ define "headStyles" }}
+<style>
+  @media (max-width: 767px) {
+    .hdr_Transparent {
+      background: #282524;
+    }
+    .hdr_Transparent .hdr-NavigationTrigger {
+      background: #282524 !important;
+      box-shadow: none !important;
+    }
+  }
+</style>
+{{ end }}
+
+{{ define "main" }}
+<section class="nl-Hero">
+  <div class="nl-Hero-Wrapper">
+    <div class="nl-Hero-Left">
+      <h1 class="nl-Hero-Heading">Subscribe for<span>Practical AWS&nbsp;Insights</span></h1>
+      <p class="nl-Hero-Sub">Infrastructure as code patterns, real AWS stories, and no-nonsense DevOps tactics —
+        straight to your inbox.</p>
+      <ul class="nl-Hero-Bullets">
+        <li>Open-source module releases</li>
+        <li>Handpicked reads from the FivexL team</li>
+        <li>Deep dives into AWS architecture decisions</li>
+        <li>Upcoming workshops &amp; live sessions</li>
+      </ul>
+    </div>
+    <div class="nl-Hero-Right">
+<div class="nl-Hero-Form">
+        <iframe width="540" height="340"
+          src="https://1b3fd6c9.sibforms.com/serve/MUIFADiSlfx5OZCZBobc6gH6d0gUd0LbtzBDpaA2viCr1AsERAMW03FfdYANfMdXH_KUXrZ_eyYtWz2gE_5C0vAkGG3yfzij8pXcNwpY2C1LALCJ3x56JSMFE6cnPhXlnny-_C-OCJHcxefaNS3ObBqjhRfSxNnca5OiFrNfD5pc-SGRcXVWk9HEb4C5ErRZu2YYhEzap29TjaeltA=="
+          frameborder="0" scrolling="no" allowfullscreen></iframe>
+        <p class="nl-Hero-Privacy">By submitting this form, you acknowledge and agree that FivexL will process your
+          personal information in accordance with the <a href="/privacy-policy/">Privacy Policy</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
