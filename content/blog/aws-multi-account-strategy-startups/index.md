@@ -14,7 +14,7 @@ What does your AWS setup need to look like at seed stage? At Series A? When your
 
 <div style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border-left: 4px solid #18AEF0; border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0;">
 
-Below: four company growth stages — starting up, growing, scaling up, and established — and the AWS setup that fits each one. The framework applies to any startup on AWS. If you're in healthcare or another regulated industry, there's a dedicated section at the end with what changes for you.
+Below: four company growth stages — pre-product-market fit, early-stage, scale-up, and established — and the AWS setup that fits each one. The framework applies to any startup on AWS. If you're in healthcare or another regulated industry, there's a dedicated section at the end with what changes for you.
 
 </div>
 
@@ -23,11 +23,11 @@ Below: four company growth stages — starting up, growing, scaling up, and esta
 ## What's in this guide
 
 1. [Why a multi-account strategy matters for startups](#why-a-multi-account-strategy-matters-for-startups)
-2. [Stage 1 — AWS setup for pre-PMF startups](#stage-1--aws-setup-for-pre-pmf-startups)
-3. [Stage 2 — AWS setup for growing startups](#stage-2--aws-setup-for-growing-startups)
-4. [Stage 3 — AWS setup for scaling startups](#stage-3--aws-setup-for-scaling-startups)
+2. [Stage 1 — AWS setup for pre-product-market fit startups](#stage-1--aws-setup-for-pre-product-market-fit-startups-pre-pmf)
+3. [Stage 2 — AWS setup for early-stage startups](#stage-2--aws-setup-for-early-stage-startups)
+4. [Stage 3 — AWS setup for scale-up companies](#stage-3--aws-setup-for-scale-up-companies)
 5. [Stage 4 — AWS setup for established companies](#stage-4--aws-setup-for-established-companies)
-6. [The throughline](#the-throughline)
+6. [One rule for every stage](#one-rule-for-every-stage)
 7. [What's different for regulated startups](#whats-different-for-regulated-startups)
 
 ---
@@ -36,7 +36,7 @@ Below: four company growth stages — starting up, growing, scaling up, and esta
 
 In AWS, accounts are the strongest isolation boundary you get. Think of them as separate boxes — putting everything into one box is rarely a good idea, but the right number of boxes depends on where the company is.
 
-AWS published a [whitepaper](https://docs.aws.amazon.com/whitepapers/latest/organizing-your-aws-environment/organizing-your-aws-environment.html) on organizing your AWS environment using multiple accounts, which is a good starting point if you want to read more on the conceptual model. But the whitepaper doesn't tell you what to do at each stage of your company's life. That's what this post is for.
+If you want to go deeper on the conceptual model, AWS has a [whitepaper](https://docs.aws.amazon.com/whitepapers/latest/organizing-your-aws-environment/organizing-your-aws-environment.html) on organizing your AWS environment using multiple accounts. This post focuses on the practical decisions at each startup growth stage and what to prioritize when you're moving fast.
 
 Multi-account strategies come with real trade-offs. More accounts mean more setup cost, more baseline to maintain, more time spent hunting for things, and a level of expertise required to operate at scale. Think of it this way: if you live in a one-room apartment, everything is in that one room. If you have five rooms, you run around looking for your keys.
 
@@ -44,7 +44,7 @@ So the right strategy is the one that matches where you are now and lasts until 
 
 ---
 
-## Stage 1 — AWS setup for pre-PMF startups
+## Stage 1 — AWS setup for pre-product-market fit startups
 
 At the earliest stage, the optimization is for survival. You have a co-founder, maybe one or two other engineers, very limited money, and a runway that is running away from you with the money you spend every month. Trust within the team is total. Focus is on finding product-market fit.
 
@@ -64,20 +64,22 @@ But there are a few small decisions that pay for themselves later. These three a
 
 </div>
 
-So even at the single-account stage, your starting structure can look like:
+Even at this early stage, the minimum structure worth setting up is two accounts:
 
 - **Management account** (AWS Organizations only)
 - **Production account** (your MVP lives here)
 
-Two accounts, twenty minutes of setup, and a foundation that won't need to be ripped out at stage 2.
+Twenty minutes of setup, and a foundation that won't need to be ripped out at stage 2.
 
-<div style="background: #f4f4f4; border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0; text-align: center;">
-<img src="aws-setup-early-stage-startups.png" alt="AWS setup for early stage startups" style="width: 70%;" />
+<div style="text-align: center; margin: 1.5rem 0;">
+<div style="display: inline-block; background: #f4f4f4; border-radius: 8px; padding: 1rem;">
+<img src="aws-setup-early-stage-startups.png" alt="AWS setup for early stage startups" style="height: 460px !important; width: auto !important;" />
+</div>
 </div>
 
 ---
 
-## Stage 2 — AWS setup for growing startups
+## Stage 2 — AWS setup for early-stage startups
 
 At this stage, the startup has some funding. There is something resembling a product. The team is bigger, but trust is still high and decisions are still fast. Time is limited because there is no money to spare.
 
@@ -90,6 +92,8 @@ A reasonable shape at this stage:
 - Staging account
 - Production account
 - Tooling account (for VPN, internal services, monitoring)
+
+For SaaS companies serving multiple customers, it's also worth considering whether each customer tier — or even each enterprise customer — should have its own isolated production account. This is more work upfront, but it simplifies compliance, reduces blast radius, and makes it easier to give customers the isolation guarantees they'll eventually ask for.
 
 <div style="background: #f4f4f4; border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0; text-align: center;">
 <img src="aws-setup-growing-startups.png" alt="AWS setup for growing startups" style="width: 70%;" />
@@ -125,7 +129,7 @@ The patterns we see consistently at this stage:
 
 ---
 
-## Stage 3 — AWS setup for scaling startups
+## Stage 3 — AWS setup for scale-up companies
 
 The company has paying customers, stable revenue, and more than one product line. The team is large enough that not everyone knows each other. Trust is no longer the implicit baseline it used to be.
 
@@ -160,7 +164,7 @@ Data perimeter and threat modeling at this stage are deep topics in their own ri
 
 ---
 
-## The throughline
+## One rule for every stage
 
 The same principle holds across all four stages: always ask what the problem is. Consider where you are in your journey. Use that as the guiding principle for every structural decision.
 
