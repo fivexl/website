@@ -21,7 +21,7 @@ about_company:
   logo: 'industrial-matrix-logo.png'
   heading: 'About Industrial Matrix'
   text: |
-    Industrial Matrix is a Canadian company in predictive maintenance and condition monitoring. Founded in 2016 with Motor Search - a motor cross-reference tool still used across the industry - it has grown into a full reliability platform for asset-intensive industries. Its closed-loop ecosystem combines UltraVibe™ sensors (4-in-1 condition monitoring across vibration, ultrasound, temperature, and lubrication), AI LubeMatrix™ for condition-based autonomous lubrication, and the MatrixHub™ software platform for diagnostics and reliability intelligence. Hardware, software, and human expertise in one platform.
+    Industrial Matrix is a Canadian company in predictive maintenance and condition monitoring. Founded in 2016 with Motor Search - a motor cross-reference tool still used across the industry - it has grown into a full reliability platform for asset-intensive industries. Its closed-loop ecosystem combines UltraVibe™ sensors, AI LubeMatrix™ for condition-based autonomous lubrication, and the MatrixHub™ software platform for diagnostics and reliability intelligence. Hardware, software, and human expertise in one platform.
 double_panel:
   layout: 'case-studies'
   heading: "CASE STUDIES"
@@ -39,7 +39,7 @@ The next stage set three new requirements:
 
 <ul>
 <li><strong>Resilience that matched the stakes.</strong> With hundreds of devices and a growing customer base now depending on the platform, concentration risk that was acceptable early on no longer was. The architecture needed to spread that risk, not pool it.</li>
-<li><strong>Delivery that could keep pace.</strong> A hands-on deployment process works for a small team shipping occasionally. At their new velocity, they needed infrastructure as code and CI/CD so releases were fast, repeatable, and independent of who ran them.</li>
+<li><strong>Delivery that could keep pace.</strong> A manual deployment process works for a small team shipping occasionally. At their new velocity, they needed infrastructure as code and CI/CD so releases were fast, repeatable, and independent of who ran them.</li>
 <li><strong>Room to build without risk to customers.</strong> As the team and roadmap grew, they needed space to develop and test separately from the environment serving live customers.</li>
 </ul>
 {{</ case_study/challenge >}}
@@ -66,12 +66,12 @@ The application was containerised without a framework upgrade. Combining a runti
 ### Production Cutover
 The migration to production happened over a single nine-hour window. FivexL prepared a detailed runbook with a rollback procedure for every step, tested the cutover in development and staging first, and resolved code conflicts before going live.
 
-The largest dataset - too big to move within the downtime window - stayed in place and was made accessible to the new platform without being copied. The hundreds of IoT devices in the field kept sending their data without interruption, routed through a temporary bridge so customers never had to touch their hardware.
+The hundreds of IoT devices in the field kept sending their data without interruption, routed through a temporary bridge so customers never had to touch their hardware.
 
 ### Automated Deployments and Cost Optimisation
 FivexL replaced manual SSH deployments with an automated four-stage pipeline that promotes code from development to staging to production. No long-lived credentials anywhere in the system.
 
-The team also right-sized the platform's compute and database resources, set up reserved capacity for predictable workloads, and stood up ongoing cost reporting so the business has visibility into what each environment costs to run. The engagement closed with full platform documentation covering the new infrastructure.
+The team also right-sized the platform's compute and database resources and stood up ongoing cost reporting so the business has visibility into what each environment costs to run. The engagement closed with full platform documentation covering the new infrastructure.
 
 The engagement ran on daily standups, pair programming, and async coordination.
 {{</ case_study/column >}}
@@ -83,8 +83,8 @@ The engagement ran on daily standups, pair programming, and async coordination.
     blockquote="One of the things we've done as well is the local development. So now it's faster for the team to test and try things than before."
     blockquote_author="Ariel Ferreira, Technical Director at Industrial Matrix"
     >}}
-<h3>Scale only what needs scaling</h3>
-<p>With the platform split across separate services, the parts that handle ingestion, retrieval, and processing can now scale independently. Adding sensors in the field or onboarding new customers no longer means scaling everything together.</p>
+<h3>Scale with confidence</h3>
+<p>The infrastructure now scales automatically based on load. Industrial Matrix can onboard new customers knowing the platform will handle the increase without manual intervention — no longer constrained by a setup that required scaling everything at once.</p>
 
 <h3>Ship faster</h3>
 <p>The team went from manual deployments to an automated promotion pipeline. Shipping new versions of the software became routine rather than a bespoke operation - a capability the platform didn't have before.</p>
