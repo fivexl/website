@@ -1,4 +1,4 @@
-<header class="hdr {{- if .Params.transparent_nav }} hdr_Transparent{{ end -}}">
+<header class="hdr {{- if .Params.transparent_nav }} hdr_Transparent{{- else if eq .Type "blog" }} hdr_White{{ end -}}">
     <a href="/">
         {{- if .Params.transparent_nav  }}
         <picture>

@@ -73,7 +73,7 @@ Twenty minutes of setup, and a foundation that won't need to be ripped out at st
 
 <div style="text-align: center; margin: 1.5rem 0;">
 <div style="display: inline-block; background: #f4f4f4; border-radius: 8px; padding: 1rem;">
-<img src="aws-setup-early-stage-startups.png" alt="AWS setup for early stage startups" style="height: 460px !important; width: auto !important;" />
+<img src="aws-setup-early-stage-startups.png" alt="AWS setup for early stage startups" style="max-height: 460px !important; width: auto !important; max-width: 100% !important; height: auto !important;" />
 </div>
 </div>
 
@@ -95,8 +95,10 @@ A reasonable shape at this stage:
 
 For SaaS companies serving multiple customers, it's also worth considering whether each customer tier — or even each enterprise customer — should have its own isolated production account. This is more work upfront, but it simplifies compliance, reduces blast radius, and makes it easier to give customers the isolation guarantees they'll eventually ask for.
 
-<div style="background: #f4f4f4; border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0; text-align: center;">
-<img src="aws-setup-growing-startups.png" alt="AWS setup for growing startups" style="width: 70%;" />
+<div style="text-align: center; margin: 1.5rem 0;">
+<div style="display: inline-block; background: #f4f4f4; border-radius: 8px; padding: 1rem;">
+<img src="aws-setup-growing-startups.png" alt="AWS setup for growing startups" style="max-height: 460px !important; width: auto !important; max-width: 100% !important; height: auto !important;" />
+</div>
 </div>
 
 <div style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border-left: 4px solid #18AEF0; border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0;">
