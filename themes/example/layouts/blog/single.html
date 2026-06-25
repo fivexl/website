@@ -5,7 +5,8 @@
     {{- partial "case_study_layout" . -}}
 
     {{ else }}
-        {{- partial "DoublePanel.html" . -}}
+        <div class="bls-PanelWrapper">{{- partial "DoublePanel.html" . -}}
+        </div>
         <article class="bls">
             <section class="bls-Content">
                 <h8>Date: {{ time.Format "January 2, 2006" .Params.date }}<br><br></h8>

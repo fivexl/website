@@ -125,9 +125,12 @@
 
     &_Heading {
       font-weight: 700;
-      font-size: 3rem;
+      font-size: 1.75rem;
       margin-bottom: 0.5rem;
       @include panelMargins;
+      @media (min-width: 768px) {
+        font-size: 3rem;
+      }
     }
 
     &_SubHeading {

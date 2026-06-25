@@ -1,5 +1,13 @@
 // Single Blog Template
 
+.bls-PanelWrapper {
+  @media (max-width: 767px) {
+    .dp-PanelContent_Left {
+      padding-top: 6rem;
+    }
+  }
+}
+
 .bls {
   max-width: $maxContentWidth;
   padding-bottom: 6rem;
