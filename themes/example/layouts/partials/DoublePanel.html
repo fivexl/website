@@ -10,15 +10,21 @@
             {{ end }}
             <h1 class="dp-PanelContent_Heading">{{ default "BLOG POST ONE TITLE" .Params.title }}</h1>
             {{ if or .IsSection .IsHome }}
-            <a class="dp-PanelContent_CTA" href="{{ default "#" .Permalink }}">READ BLOG POST</a>
+            <a class="dp-PanelContent_CTA" href="{{ default "#" .Permalink }}">{{ default "READ BLOG POST" .Params.cta_text }}</a>
             {{ end }}
         </div>
     </section>
     <section class="dp-PanelImage_Right">
+        {{ if .Params.featured_page }}
+        {{ partial "img" (dict "src" .Params.panel_image "Page" .Params.featured_page "alt" "panel image" "sizes" "(max-width: 767px) 100vw, 50vw") }}
+        {{ else if .Resources }}
         {{ with .Resources.GetMatch .Params.panel_image }}
         {{ partial "img" (dict "src" .Permalink "alt" .Name "image" .) }}
         {{ else }}
-        {{ partial "img" (dict "src" "blue-circle-man-with-laptops.png" "alt" "default image" "sizes" "(max-width: 767px) 100vw, 50vw")}}
+        {{ partial "img" (dict "src" "blue-circle-man-with-laptops.png" "alt" "default image" "sizes" "(max-width: 767px) 100vw, 50vw") }}
+        {{ end }}
+        {{ else }}
+        {{ partial "img" (dict "src" "blue-circle-man-with-laptops.png" "alt" "default image" "sizes" "(max-width: 767px) 100vw, 50vw") }}
         {{ end }}
     </section>
 </div>

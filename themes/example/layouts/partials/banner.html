@@ -19,9 +19,10 @@
     function offsetHeader() {
       var hdr = document.querySelector('.hdr');
       if (!hdr) return;
-      // Mobile: header is position:absolute, needs top offset to clear the banner.
-      // Desktop (768px+): header is position:relative and already flows after the banner.
-      hdr.style.top = window.innerWidth < 768 ? el.offsetHeight + 'px' : '';
+      // Only offset when header is transparent (position:absolute on mobile).
+      // Regular header (position:relative) already flows below the banner naturally.
+      var isTransparent = hdr.classList.contains('hdr_Transparent');
+      hdr.style.top = (window.innerWidth < 768 && isTransparent) ? el.offsetHeight + 'px' : '';
     }
 
     if (until && Date.now() < parseInt(until)) {

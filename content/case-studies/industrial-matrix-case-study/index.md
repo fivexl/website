@@ -1,0 +1,106 @@
+---
+title: "Industrial Matrix: From Monolith to Multi-Account ECS on AWS"
+author_id: 'Fernando Goncalves'
+summary: 'FivexL migrated a Canadian predictive maintenance platform from a single-account monolith to a containerized, multi-account ECS architecture - replacing manual SSH deployments with an automated pipeline and delivering three isolated environments in three months.'
+date: 2026-06-08
+author: Fernando Goncalves
+panel_image: Fernando-industrial-matrix.png
+authors_heading: 'Consultant Leading the Project'
+alt_image: Fernando-industrial-matrix.png
+case_study: true
+layout: 'case_study'
+tags: ['case study', 'aws', 'ECS', 'migration', 'RightStart', 'multi-account', 'IoT']
+testimonial: 'FivexL laid the foundation of our structure. Now we can play with it as with the Lego blocks and decide what to do. The accounts with different purpose — development, staging, and production — also creates the idea that you could have more environments if you want.'
+testimonial_author: 'Ariel Ferreira,'
+testimonial_author_position: 'Technical Director at Industrial Matrix'
+testimonial_author_portrait: Ariel.png
+testimonial_cta_url: '/contact'
+testimonial_long: |
+  "FivexL laid the foundation of our structure. Now we can play with it as with the Lego blocks and decide what to do. The accounts with different purpose — development, staging, and production — also creates the idea that you could have more environments if you want. I’d definitely recommend FivexL because they are trustworthy and very helpful, and they’re very knowledgeable as well."
+about_company:
+  logo: 'industrial-matrix-logo.png'
+  heading: 'About Industrial Matrix'
+  text: |
+    Industrial Matrix is a Canadian company in predictive maintenance and condition monitoring. Founded in 2016 with Motor Search - a motor cross-reference tool still used across the industry - it has grown into a full reliability platform for asset-intensive industries. Its closed-loop ecosystem combines UltraVibe™ sensors, AI LubeMatrix™ for condition-based autonomous lubrication, and the MatrixHub™ software platform for diagnostics and reliability intelligence. Hardware, software, and human expertise in one platform.
+double_panel:
+  layout: 'case-studies'
+  heading: "CASE STUDIES"
+  subheading: "SaaS, AI, health care, and financial startups trust FivexL to build their infrastructure in AWS, empowering their businesses to grow faster. Learn how."
+  icon_links:
+    - { url: "https://github.com/fivexl", icon: "github" }
+    - { url: "https://www.linkedin.com/company/5xl", icon: "linkedin" }
+  button_cta: { url: "/contact", text: "Book a consultation" }
+  media_panel: { url: "https://youtu.be/uruLy1goNW0" }
+---
+{{< case_study/challenge heading="Challenge" blockquote="We have demands for ingress data, for retrieval of data, for processing - there's a lot of different services that before were running together. It was more expensive to scale. Every time I had to scale, I had to scale everything. So if I have more sensors sending data, or more users, or less users - it doesn't matter, because I had to scale everything together to fit the bill." blockquote_author="Ariel Ferreira, Technical Director at Industrial Matrix" >}}
+Industrial Matrix built a great product — a predictive maintenance platform running hundreds of IoT devices in production. The early infrastructure choices were the right call at the time: lean, fast, enough to prove the model. But success moved the goalposts. More customers, more devices, and bigger commitments raised the bar on what the platform underneath had to do — and the foundation that got them this far wasn't built for where they were going. It capped how far they could scale and slowed the team down in daily development.
+
+The next stage set three new requirements:
+
+<ul>
+<li><strong>Resilience that matched the stakes.</strong> With hundreds of devices and a growing customer base now depending on the platform, concentration risk that was acceptable early on no longer was. The architecture needed to spread that risk, not pool it.</li>
+<li><strong>Delivery that could keep pace.</strong> A manual deployment process works for a small team shipping occasionally. At their new velocity, they needed infrastructure as code and CI/CD so releases were fast, repeatable, and independent of who ran them.</li>
+<li><strong>Room to build without risk to customers.</strong> As the team and roadmap grew, they needed space to develop and test separately from the environment serving live customers.</li>
+</ul>
+{{</ case_study/challenge >}}
+
+{{< case_study/solution heading="Solution" >}}
+{{< case_study/column >}}
+In a first engagement, FivexL laid the foundation. Using [RightStart for AWS](/rightstart) - FivexL's productised landing zone - Industrial Matrix received a secure, multi-account AWS environment built with infrastructure as code. RightStart delivers what typically takes an in-house team over a year to assemble: a full AWS organisation structure with separate accounts for workloads, security, logs, and networking; centralised identity and SSO; encrypted secrets management; automated security tooling including GuardDuty, Security Hub, and CloudTrail; and CI/CD-ready OIDC access - all configured and ready in a month.
+
+The accounts were created. The foundation was solid. But the application itself had never been moved onto it.
+
+The second engagement focused on completing that work: migrating the production platform onto the foundation, replacing manual deployments with an automated pipeline, and giving the team the skills to own and operate the new architecture.
+
+One sequencing decision shaped everything else: build a local development environment that mirrored the new architecture before the production cutover, so the team could learn the new platform in safety before depending on it.
+
+### Local Development Environment, Built First
+Before touching production, FivexL built a local development environment that mirrored the new architecture, so the team could run and test their code on their own machines. When access to the old setup eventually disappeared, the developers already had a tested replacement they'd been using for weeks - and were running it with their own data seeders they'd built themselves.
+
+Ariel saw the difference immediately: "One of the things we've done as well is the local development. So now it's faster for developers to test and try things than before."
+
+### Containerise the Application As-Is
+The application was containerised without a framework upgrade. Combining a runtime upgrade with the infrastructure migration was too risky. The framework upgrade becomes a clean, separate project on a foundation that can support it.
+{{</ case_study/column >}}
+{{< case_study/column >}}
+### Production Cutover
+The migration to production happened over a single nine-hour window. FivexL prepared a detailed runbook with a rollback procedure for every step, tested the cutover in development and staging first, and resolved code conflicts before going live.
+
+The hundreds of IoT devices in the field kept sending their data without interruption, routed through a temporary bridge so customers never had to touch their hardware.
+
+### Automated Deployments and Cost Optimisation
+FivexL replaced manual SSH deployments with an automated four-stage pipeline that promotes code from development to staging to production. No long-lived credentials anywhere in the system.
+
+The team also right-sized the platform's compute and database resources and stood up ongoing cost reporting so the business has visibility into what each environment costs to run. The engagement closed with full platform documentation covering the new infrastructure.
+
+The engagement ran on daily standups, pair programming, and async coordination.
+{{</ case_study/column >}}
+{{</ case_study/solution >}}
+
+{{< case_study/benefits
+    cta_text="Start Your Success Story"
+    cta_url="/contact"
+    blockquote="One of the things we've done as well is the local development. So now it's faster for the team to test and try things than before."
+    blockquote_author="Ariel Ferreira, Technical Director at Industrial Matrix"
+    >}}
+<h3>Scale with confidence</h3>
+<p>The infrastructure now scales automatically based on load. Industrial Matrix can onboard new customers knowing the platform will handle the increase without manual intervention — no longer constrained by a setup that required scaling everything at once.</p>
+
+<h3>Ship faster</h3>
+<p>The team went from manual deployments to an automated promotion pipeline. Shipping new versions of the software became routine rather than a bespoke operation - a capability the platform didn't have before.</p>
+
+<h3>Room to add environments without re-architecting</h3>
+<p>The accounts are structured by purpose - development, staging, production - with room for more. Including the option of standing up isolated environments for specific clients without touching the rest of the platform.</p>
+
+<h3>A platform the development team owns</h3>
+<p>The team now deploys to all environments through the automated pipeline without infrastructure support. They've built their own data seeders for the local environment and started shipping features on the new architecture.</p>
+
+<h3>Three environments where there was one</h3>
+<p>Dev, staging, and production now live in separate AWS accounts. The team can test changes without touching production.</p>
+
+<h3>Security posture transformed</h3>
+<p>The platform moved from a single AWS account with manual access to a multi-account environment with centralised security controls, encrypted service-to-service communication, and continuous threat monitoring.</p>
+
+<p>Planning an AWS migration? See how <a href="/rightstart">RightStart for AWS</a> gives you the foundation Industrial Matrix built on - and how <a href="/ecs-blueprint">ECS Blueprint</a> gives you the container platform they migrated to.</p>
+
+{{</ case_study/benefits >}}

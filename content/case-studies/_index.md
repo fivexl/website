@@ -10,7 +10,6 @@ double_panel:
     - { url: "https://www.linkedin.com/company/5xl", icon: "linkedin" }
   button_cta: { url: "/contact", text: "Book a consultation" }
   media_panel: { url: "https://youtu.be/uruLy1goNW0" }
-transparent_nav: true
 images: [ 'featured.png' ]
 menu:
   main:

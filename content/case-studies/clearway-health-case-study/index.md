@@ -35,8 +35,7 @@ double_panel:
   button_cta: { url: "/contact", text: "Book a consultation" }
   media_panel: { url: "https://youtu.be/uruLy1goNW0" }
 ---
-{{< case_study/challenge  image="gui_challenge.png" image_css="object-position: 18%" >}}
-{{< pink_heading text="Challenge"  sizes="bigger">}}
+{{< case_study/challenge heading="Challenge" blockquote="We understood that in order to deliver the results we promise to our clients and to transform specialty pharmacy through our SaaS solution, we needed an expertly crafted AWS environment. It had to seamlessly scale, adapt to our evolving needs, meet compliance requirements, and provide robust security for our data from day zero." blockquote_author="Rusty Atkinson, VP, Technology at Clearway Health" >}}
 For a specialty pharmacy SaaS company handling sensitive patient data, HIPAA-compliant AWS infrastructure isn't optional - it's the foundation everything else is built on. This case study covers how Clearway Health got that foundation right from day zero, and what it meant for their ability to scale and meet compliance requirements.
 
 Clearway Health aimed to leverage the full power of AWS to ensure their SaaS solution was built on a robust, scalable and secure infrastructure. They opted to partner with an expert in the space to accelerate their success and chose to use AWS RightStart by FivexL to build their infrastructure.<br/>  
@@ -97,9 +96,9 @@ These accounts are ready to accept workloads with ECS clusters and supporting re
 {{< case_study/benefits
     cta_text="Start Your Success Story"
     cta_url="/contact"
-    image="cristal_benefits.png"
+    blockquote="FivexL has been a great partner. They demonstrate unrivaled expertise in the AWS ecosystem and deliver results quickly. They delivered the results they promised in the timeframe they promised. They are a breeze to work with - present, engaging, and flexible."
+    blockquote_author="Rusty Atkinson, VP, Technology at Clearway Health"
     >}}
-{{< pink_heading text="Benefits" >}}
 By implementing these components, FivexL’s RightStart for AWS provides a comprehensive AWS Landing Zone that is secure, scalable and compliant. It might sound like a lot of work, but not getting it right from the beginning will cause even more work down the line and hinder or completely stop the product's scalability. Redoing it later can become very complicated and costly.<br/>  
 <br/>  
 

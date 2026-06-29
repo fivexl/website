@@ -287,8 +287,108 @@ a:has(.cst-CaseHeading) { text-decoration: none; }
     height: 100%;
     object-fit: cover;
   }
+  .cst-ColumnsWrapper--quote {
+    @media (min-width: 1024px) {
+      display: flow-root;
+      .cst-BlockquoteWrapper {
+        float: right;
+        width: 560px;
+        aspect-ratio: 1 / 1;
+        margin-left: 2.5rem;
+        margin-bottom: 2rem;
+        margin-top: 0;
+        background: linear-gradient(135deg, #f13786, #2c8fea);
+        border-radius: 16px;
+        padding: clamp(1.5rem, 2.5vw, 2rem);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        &::before {
+          content: '\201C\201C';
+          display: block;
+          font-size: 5rem;
+          line-height: 1;
+          color: rgba(255,255,255,0.5);
+          margin-bottom: 1rem;
+          font-family: Georgia, serif;
+        }
+      }
+      .cst-Blockquote {
+        font-weight: 600;
+        font-size: clamp(1rem, 2vw, 1.25rem);
+        color: white;
+        line-height: 1.5;
+        margin-top: 0;
+      }
+      .cst-BlockquoteAuthor {
+        font-weight: 700;
+        font-size: clamp(0.85rem, 1vw, 0.95rem);
+        color: white;
+        margin-top: 1.5rem;
+        text-align: left;
+      }
+    }
+  }
+  .cst-ColumnsWrapper--image {
+    @media (min-width: 1024px) {
+      display: flow-root;
+      .cst-ChallengeMedia {
+        float: right;
+        width: 560px;
+        margin-left: 2.5rem;
+        margin-bottom: 2rem;
+        margin-top: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+      .cst-PinkSquare_Image {
+        aspect-ratio: 3 / 2;
+        height: auto;
+        margin: 0;
+        width: 100%;
+        border-radius: 16px;
+        overflow: hidden;
+        position: relative;
+        .cst-ChallengeImage {
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .cst-ChallengeQuoteCard {
+        background: linear-gradient(135deg, #f13786, #2c8fea);
+        border-radius: 16px;
+        padding: clamp(1.5rem, 2.5vw, 2rem);
+        display: flex;
+        flex-direction: column;
+        &::before {
+          content: '\201C\201C';
+          display: block;
+          font-size: 5rem;
+          line-height: 1;
+          color: rgba(255,255,255,0.5);
+          margin-bottom: 1rem;
+          font-family: Georgia, serif;
+        }
+      }
+      .cst-ChallengeQuote_Text {
+        font-size: clamp(1rem, 2vw, 1.25rem);
+        font-weight: 600;
+        line-height: 1.5;
+        color: white;
+      }
+      .cst-ChallengeQuote_Author {
+        font-size: clamp(0.85rem, 1vw, 0.95rem);
+        font-weight: 700;
+        color: white;
+        margin-top: 1.5rem;
+        display: block;
+      }
+    }
+  }
   @media (min-width: 1024px) {
-    margin-bottom: calc(clamp(2.25rem, 9vw, 8.5rem) * 1.5);
     .cst-PinkSquare, .cst-PinkSquare_Image {
       display: block;
       margin-top: clamp(6rem, 6.75vw, 6.875rem);
@@ -327,6 +427,38 @@ a:has(.cst-CaseHeading) { text-decoration: none; }
   }
 }
 
+.cst-BenefitsTopRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+  .pink_heading {
+    margin: 0;
+  }
+}
+
+.cst-BenefitsItems {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  h3 {
+    font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+    font-weight: 700;
+    margin: 0 0 1.25rem;
+  }
+  p {
+    margin: 0 0 1.5rem;
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    line-height: 1.5;
+  }
+}
+
 .cst-Benefits {
   justify-content: start;
   background: #f4f4f4;
@@ -336,7 +468,7 @@ a:has(.cst-CaseHeading) { text-decoration: none; }
     line-height: 1.5;
   }
   .cst-ColumnsWrapper {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     div, p {
       font-size: clamp(1rem, 2vw, 1.25rem);
     }
@@ -350,23 +482,69 @@ a:has(.cst-CaseHeading) { text-decoration: none; }
     display: none;
     position: relative;
   }
+  .cst-BenefitsLayout {
+    margin-top: 2rem;
+    @media (min-width: 1024px) {
+      display: grid;
+      grid-template-columns: 1fr 560px;
+      gap: 3rem;
+      align-items: start;
+    }
+  }
+  .cst-BenefitsLayout--quote {
+    display: flow-root;
+    @media (min-width: 1024px) {
+      display: flow-root;
+      .cst-BlockquoteWrapper {
+        float: right;
+        width: 560px;
+        margin-left: 2.5rem;
+        margin-top: 0;
+      }
+      .cst-BenefitsItems {
+        display: block;
+      }
+    }
+  }
   .cst-BlockquoteWrapper {
-    background: linear-gradient(150deg, #f13786,  #f180b0a1 50%, transparent), #2c8fea;
-    padding: clamp(1rem, 1vw, 1.5rem);
-    line-height: 1.25;
+    background: linear-gradient(135deg, #9b8fe0, #4b8fe8);
+    padding: clamp(1.5rem, 2.5vw, 2.5rem);
+    line-height: 1.4;
+    display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    align-self: start;
+    width: 100%;
+    border-radius: 16px;
+    margin-top: 1.5rem;
+    @media (min-width: 1024px) {
+      margin-top: 0;
+    }
+    &::before {
+      content: '\201C\201C';
+      display: block;
+      font-size: 5rem;
+      line-height: 1;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 1rem;
+      font-family: Georgia, serif;
+    }
   }
   .cst-Blockquote {
-    font-weight: 700;
+    font-weight: 600;
+    font-size: clamp(1rem, 2vw, 1.25rem);
     color: white;
-    margin-top: -2rem;
+    margin-top: 0;
+    line-height: 1.5;
   }
   .cst-BlockquoteAuthor {
     font-weight: 700;
-    text-align: right;
-    color: #222;
-    margin-top: 5rem;
+    font-size: clamp(0.85rem, 1vw, 0.95rem);
+    color: white;
+    margin-top: 1.5rem;
+    text-align: left;
   }
   .pink_heading {
     span {
@@ -405,9 +583,11 @@ a:has(.cst-CaseHeading) { text-decoration: none; }
     .cst-BlockquoteWrapper {
       display: flex;
     }
-    .cst-PinkSquare_Image,
-    .cst-BlockquoteWrapper {
+    .cst-PinkSquare_Image {
       margin-top: clamp(6rem, 6.75vw, 6.875rem);
+    }
+    .cst-BlockquoteWrapper {
+      margin-top: 0;
     }
     & + .csc_Cards {
       padding-bottom: 8.5rem;

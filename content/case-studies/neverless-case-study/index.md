@@ -32,8 +32,7 @@ double_panel:
   button_cta: { url: "/contact", text: "Book a consultation" }
   media_panel: { url: "https://youtu.be/uruLy1goNW0" }
 ---
-{{< case_study/challenge image="neverless_challenge.png" image_css="object-position: center" >}}
-{{< pink_heading text="Challenge" sizes="bigger">}}
+{{< case_study/challenge heading="Challenge" blockquote="Task was clear, setup the AWS foundation quickly and safely, so the team could extend the AWS side immediately - while keeping Google Cloud running and leaving room for a future shift of ~70% of the platform to AWS." >}}
 When Neverless decided to expand beyond Google Cloud, this wasn't an experiment. The goal was to run AWS in production and steadily move a major part of the platform there — without slowing releases or opening security gaps.<br/>
 <br/>
 They needed an AWS footprint to get closer to the ecosystem they depend on. In crypto, many exchanges and core industry services have historically lived in AWS, and that gravity field matters: latency, connectivity patterns, and even day-to-day operational expectations shift when most counterparties are "AWS-first."<br/>
@@ -104,9 +103,8 @@ Prepared core environments (dev, staging, production) and connected operational 
 {{< case_study/benefits
     cta_text="Start Your Success Story"
     cta_url="/contact"
-    image="neverless_benefits.png"
+    blockquote="Neverless got a secure, audit-ready AWS foundation in about a month, something that often takes teams close to a year when built ad-hoc."
     >}}
-{{< pink_heading text="Benefits" >}}
 <strong>Enabled AWS production use while keeping Google Cloud running</strong> — reducing migration risk and avoiding downtime during expansion.<br/>
 <br/>
 <strong>Immediate outcomes (first month)</strong><br/>
