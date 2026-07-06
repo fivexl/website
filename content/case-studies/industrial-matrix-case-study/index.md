@@ -38,9 +38,8 @@ Industrial Matrix built a great product — a predictive maintenance platform ru
 The next stage set three new requirements:
 
 <ul>
-<li><strong>Resilience that matched the stakes.</strong> With hundreds of devices and a growing customer base now depending on the platform, concentration risk that was acceptable early on no longer was. The architecture needed to spread that risk, not pool it.</li>
+<li><strong>Resilience that matched the stakes.</strong> With thousands of devices and a growing customer base now depending on the platform, concentration risk that was acceptable early on no longer was. The architecture needed to spread that risk, not pool it.</li>
 <li><strong>Delivery that could keep pace.</strong> A manual deployment process works for a small team shipping occasionally. At their new velocity, they needed infrastructure as code and CI/CD so releases were fast, repeatable, and independent of who ran them.</li>
-<li><strong>Room to build without risk to customers.</strong> As the team and roadmap grew, they needed space to develop and test separately from the environment serving live customers.</li>
 </ul>
 {{</ case_study/challenge >}}
 
