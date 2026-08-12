@@ -2,8 +2,11 @@
 
 .bls-PanelWrapper {
   @media (max-width: 767px) {
+    // Blog pages overlay a fixed-height white nav (hdr_White: 1rem + 3rem logo + 1rem = 5rem),
+    // so the title has to clear it and then match the 5rem breathing room that case-study
+    // pages get for free from their in-flow header (2rem padding-bottom + 3rem panel padding).
     .dp-PanelContent_Left {
-      padding-top: 6rem;
+      padding-top: 10rem;
     }
   }
 }

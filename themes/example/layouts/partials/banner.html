@@ -16,23 +16,14 @@
     var el = document.getElementById('site-banner');
     var until = localStorage.getItem(KEY);
 
-    function offsetHeader() {
-      var hdr = document.querySelector('.hdr');
-      if (!hdr) return;
-      // Only offset when header is transparent (position:absolute on mobile).
-      // Regular header (position:relative) already flows below the banner naturally.
-      var isTransparent = hdr.classList.contains('hdr_Transparent');
-      hdr.style.top = (window.innerWidth < 768 && isTransparent) ? el.offsetHeight + 'px' : '';
-    }
+    // No header offsetting here: the .shl wrapper in baseof.html is the header's
+    // containing block, so out-of-flow mobile headers sit below the banner via CSS.
 
     if (until && Date.now() < parseInt(until)) {
       el.style.display = 'none';
     } else {
-      document.addEventListener('DOMContentLoaded', offsetHeader);
-      window.addEventListener('resize', offsetHeader);
       document.getElementById('site-banner-close').addEventListener('click', function () {
         el.style.display = 'none';
-        if (document.querySelector('.hdr')) document.querySelector('.hdr').style.top = '';
         localStorage.setItem(KEY, Date.now() + 3600000);
       });
     }
