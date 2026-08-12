@@ -31,8 +31,7 @@ double_panel:
   button_cta: { url: "/contact", text: "Book a consultation" }
   media_panel: { url: "https://youtu.be/uruLy1goNW0" }
 ---
-{{< case_study/challenge  image="challenge_q.png" image_css="object-position: 18%" >}}
-{{< pink_heading text="Challenge"  sizes="bigger">}}
+{{< case_study/challenge heading="Challenge" blockquote="FivexL had a transformative impact on the Wings team workflow. Within three months, FivexL experts configured AWS Organization, access control, and streamlined launches of multiple applications via AWS ECS. This established a solid foundation for the startup's future growth and enabled the development team to concentrate on innovation and rapid iteration." >}}
 Wings embarked on a journey to launch their MVP (Minimum Viable Product) to validate their unique business proposition. The initial infrastructure in AWS was clicked manually in AWS web UI by the Wings team. However, as the idea proved its viability, the need for a more robust, repeatable, and scalable infrastructure became evident.<br/>  
 <br/> 
 The first iteration of the application was built by the Wings team using a monolithic approach using AWS Elastic Beanstalk as a computing platform. While this allowed the team to launch the MVP quickly, it posed product modifications and scalability challenges. Economically, this approach was not sustainable because every new client got a separate instance, causing resource usage overhead and higher-than-optimal infrastructure costs.<br/> 
@@ -81,9 +80,8 @@ To protect the system from the most frequent types of cyberattacks, FivexL confi
 {{< case_study/benefits
     cta_text="Start Your Success Story"
     cta_url="/contact"
-    image="text_wings.png"
+    blockquote="It might sound like a lot of work, but not getting it right or not doing it all from the beginning will cause even more work since redoing it, later on, can get very complicated and costly. This is exactly where startups have an advantage over larger companies. They have the opportunity to make the AWS right start from the outset."
     >}}
-{{< pink_heading text="Benefits" >}}
 The FivexL collective experience enabled setting up of a solid infrastructure foundation from scratch in just 2-3 months, compared to the typical year required by a single in-house specialist. Assuming that the specialist has a deep understanding of AWS and has experience building AWS Organisations that would scale over time. Otherwise, such setup might take even longer.<br/>  
 <br/>  
 Through collaboration with FivexL, Wings benefited from a novel approach to infrastructure. This granted Wings the flexibility to manage all resources via code, enhancing the system's security, predictability, and rapid scalability. The team can now easily gather metrics, view statistics, and make updates or changes with greater convenience.<br/>

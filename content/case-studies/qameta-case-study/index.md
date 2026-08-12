@@ -33,8 +33,7 @@ double_panel:
   button_cta: { url: "/contact", text: "Book a consultation" }
   media_panel: { url: "https://youtu.be/uruLy1goNW0" }
 ---
-{{< case_study/challenge  image="challenge_q.png" image_css="object-position: 18%" >}}
-{{< pink_heading text="Challenge"  sizes="bigger">}}
+{{< case_study/challenge heading="Challenge" blockquote="We focused on three key criteria when choosing FivexL: team availability and readiness for rapid delivery, flexible and transparent workflows, and adherence to our budget." blockquote_author="Artem Eroshenko, co-founder and CPO at Qameta Software" >}}
 The ultimate challenge was to promptly launch a Cloud version of Qameta’s on-prem solution – Qameta Software – with scalability and security requirements in mind. It all started with an MVP and then transformed into a fully-fledged product.<br/> 
 <br/> 
 This project was prompted by Qameta user's requests for a cloud version of the successful on-prem Qameta Software software. Thus Qameta team started to investigate a possibility to launch a SaaS MVP based on the existing software and test economic models of the possible offering. Artem Eroshenko, co-founder and CPO at Qameta Software, recalls: “Launching a cloud solution required expertise our startup lacked at that time.” This was when Qameta partnered with FivexL. “We focused on three key criteria when choosing FivexL: team availability and readiness for rapid delivery, flexible and transparent workflows, and adherence to our budget,” noted Artem Eroshenko.<br/>   
@@ -67,9 +66,9 @@ It was a major success! The number of clients grew rapidly.
 {{< case_study/benefits
     cta_text="Start Your Success Story"
     cta_url="/contact"
-    image="qameta_benefits.png"
+    blockquote="Launching a cloud solution required expertise our startup lacked at that time. This was when Qameta partnered with FivexL. We focused on three key criteria when choosing FivexL: team availability and readiness for rapid delivery, flexible and transparent workflows, and adherence to our budget."
+    blockquote_author="Artem Eroshenko, CPO at Qameta Software"
     >}}
-{{< pink_heading text="Benefits" >}}
 “FivexL heavily supported us in launching a Cloud Qameta Software version. Self-sufficiency, a deep understanding of our needs, a result-oriented approach, and the delivery of a working solution within a short timeframe – all these factors make FivexL a team of professionals”, says Artem Eroshenko, co-founder and CPO at Qameta Software.<br/>
 <br/>    
 The product is easy to maintain, scale, and develop thanks to the infrastructure implemented as a code. This also allows Terraform specifications to be used as documentation and facilitates knowledge transfer across the team. Aligned teamwork allowed Qameta to launch a performant MVP that delivers on time.<br/>

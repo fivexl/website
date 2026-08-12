@@ -34,8 +34,7 @@ double_panel:
   button_cta: { url: "/contact", text: "Book a consultation" }
   media_panel: { url: "https://youtu.be/uruLy1goNW0" }
 ---
-{{< case_study/challenge  image="goto_challenge1.png" image_css="object-position: center 10%">}}
-{{< pink_heading text="Challenge"  sizes="bigger">}}
+{{< case_study/challenge heading="Challenge" blockquote="We needed to move fast. There was no time to just test things out slowly — we needed it to work on day one. So it was about setting up the web app and backend and making sure our team could securely access AWS. One important part was being able to test our application before pushing to production. So it was key to have dev, staging, and prod environments that were ideally replicas of each other." blockquote_author="Nate Sesti, CTO at Continue" >}}
 Continue is a fast-moving AI startup behind a popular open-source AI coding assistant. With a growing community and plans to scale globally, the team was preparing to launch a commercial offering alongside their tool — and that meant building a solid infrastructure foundation.<br/>
 <br/>  
 Their open-source extensions ran fully on users’ local machines, with no backend, no billing, and no authentication. That setup was enough for the open-source version, but not for a scalable SaaS product. To support the next phase, Continue needed to move to a production-ready cloud environment.<br/>
@@ -99,13 +98,11 @@ With the application running smoothly on ECS and smart integrations like Slack-b
 {{< case_study/benefits
     cta_text="Start Your Success Story"
     cta_url="/contact"
-    image="goto_benefits.png"
     blockquote=`I think FivexL did a really good job of being deliberate, explicit, and highly consistent about the work. From day one, I knew exactly what the goals were, what the scope was, and what to expect — everything was clearly listed and communicated multiple times. And all of it was delivered.<br/> 
 <br/>   
     Every morning I’d check our Slack channel and see what was done, what’s next, and what I needed to do. It couldn’t have been easier to interact with FivexL. They were extremely responsive, especially during the critical period leading up to launch. That support made a real difference for us`
     blockquote_author="Nate Sesti, CTO at Continue"
     >}}
-{{< pink_heading text="Benefits" >}}
 By combining FivexL’s RightStart for AWS with a production-ready ECS setup, the Continue team was able to launch their paid product confidently — without slowing down development or compromising security.<br/>  
 Anton, FivexL’s consultant on the project, said:
 “The best moment for me was getting a message from the client — during the product launch, everything infrastructure-related went smoothly and perfectly.¨<br/> 

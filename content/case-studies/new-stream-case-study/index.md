@@ -32,8 +32,7 @@ double_panel:
   button_cta: { url: "/contact", text: "Book a consultation" }
   media_panel: { url: "https://youtu.be/uruLy1goNW0" }
 ---
-{{< case_study/challenge  image="challenge_ns.png" image_css="object-position: center 10%">}}
-{{< pink_heading text="Challenge"  sizes="bigger">}}
+{{< case_study/challenge heading="Challenge" blockquote="The endpoint at that time was unknown, but we wanted to set up the infrastructure so that it could be quickly deployed, supported, monitored, and scaled up." blockquote_author="Andrey Kolpakov, CTO at New Stream" >}}
 The startup started development with a focus on golf. "There were 18 cameras on the golf course, which were connected to the server, where everything was processed via fiber optics," recalls the CTO of New Stream, Andrey Kolpakov. New Stream built a hybrid infrastructure, meaning it was partially built on the hardware-based servers in the fields, and the other part was on virtual servers at Digital Ocean.<br/>
 <br/>
 "The endpoint at that time was unknown, but we wanted to set up the infrastructure so that it could be quickly deployed, supported, monitored, and scaled up," says Andrey Kolpakov. While FivexL was working on the project, the startup pivoted in several ways: remote personal training replaced golf during the pandemic, and the team added a new sport a year later - basketball with match analytics. New products and their changing needs required a dynamic approach to infrastructure.
@@ -65,9 +64,9 @@ The team also improved overall infrastructure security by separating AWS account
 {{< case_study/benefits
     cta_text="Start Your Success Story"
     cta_url="/contact"
-    image="benefits_ns.png"
+    blockquote="It's important to note not only the technical skills of cloud engineering consultants Maria and Artem but also their soft skills. It was a pleasure to work with them."
+    blockquote_author="Andrey Kolpakov, CTO at New Stream"
     >}}
-{{< pink_heading text="Benefits" >}}
 FivexL's flexibility and ability to come up with unique solutions and build scalable infrastructure help businesses make pivots in search of their niche.<br/>
 The CTO of New Stream says, "As our needs and product changed and as we moved from golf to basketball and then to workouts, FivexL remained flexible and fully involved in the project, practically becoming the member of our own team. Now the entire infrastructure for the project is set up, we have migrated to the cloud, implemented autoscaling, and distributed everything that was needed among services. As a result, the system is operating stable."  <br/>
 New Stream gained a secure, scalable infrastructure defined in code, and it's ready for further product development.<br/> 

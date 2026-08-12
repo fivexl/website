@@ -34,8 +34,7 @@ double_panel:
   button_cta: { url: "/contact", text: "Book a consultation" }
   media_panel: { url: "https://youtu.be/uruLy1goNW0" }
 ---
-{{< case_study/challenge image="sirob-challenge.png" image_css="object-position: center" >}}
-{{< pink_heading text="Challenge" sizes="bigger">}}
+{{< case_study/challenge heading="Challenge" blockquote="FivexL didn't just set up infrastructure - they gave us a production platform we could trust from day one. We went from a manual MVP to onboarding real customers in weeks." blockquote_author="Daniil Goloviznin, Head of Infrastructure at Sirob Technologies" >}}
 Building an AI product is one thing. Running it in production for real customers is a different problem entirely.<br/>
 <br/>
 Sirob Technologies had a working prototype of BORIS - an agentic AI DevOps teammate powered by Amazon Bedrock. The AI worked. But the infrastructure underneath was manually configured, single-tenant, and nowhere near ready for paying customers. A familiar situation for any AI startup: the model is promising, but the platform around it isn't there yet.<br/>
@@ -77,9 +76,9 @@ This was the core platform build. FivexL migrated BORIS from the manual MVP setu
 {{< case_study/benefits
     cta_text="Start Your Success Story"
     cta_url="/contact"
-    image="sirob-benefits.png"
+    blockquote="What impressed us most was the speed and the depth of expertise. FivexL understood exactly what an AI-native product needs on AWS - multi-tenancy, data isolation, Bedrock integration - and delivered it all with security baked in from the start. The SSO Elevator setup means nobody has standing access to production, which is exactly the posture we need when handling customer data."
+    blockquote_author="Daniil Goloviznin, Head of Infrastructure at Sirob Technologies"
     >}}
-{{< pink_heading text="Benefits" >}}
 <strong>From MVP to customer-ready platform in under two months</strong> - Sirob Technologies went from a manually configured prototype to onboarding paying customers on a secure, production-grade AWS platform.<br/>
 <br/>
 <strong>Immediate outcomes</strong><br/>

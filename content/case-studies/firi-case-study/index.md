@@ -33,8 +33,7 @@ double_panel:
   button_cta: { url: "/contact", text: "Book a consultation" }
   media_panel: { url: "https://youtu.be/uruLy1goNW0" }
 ---
-{{< case_study/challenge  image="challenge.png" image_css="object-position: center 10%">}}
-{{< pink_heading text="Challenge"  sizes="bigger">}}
+{{< case_study/challenge heading="Challenge" blockquote="It was really hard to find a partner with expertise in both cloud and security, combined with the agility to meet our infrastructure needs." blockquote_author="Thuc Tuan Hoang, CEO at Firi" >}}
 “It was really hard to find a partner with expertise in both cloud and security, combined with the agility to meet our infrastructure needs,”recalls Firi’s CEO Thuc Tuan Hoang. Scaling that infrastructure proved difficult when traffic began to increase exponentially as the business grew with 48,000 customers onboarded in March 2021. “It takes time to rebuild infrastructure and migrate it,” notes Tuan Hoang. “I knew the approach we needed to take but we didn’t have that time or the in-house skills to deliver that change.”<br/>
 <br/>  
 As a rapidly growing startup, Firi faced three key challenges. The business needed to break free from its single point of error, a manual approach where everything had to go through Tuan Hong – bill pipelines, deployment, infrastructure set up... Meanwhile, time was of the essence – Firi needed dedicated support from a proven source. Thirdly, being able to trust a partner to deliver that support, without fail, was vital.  
@@ -57,7 +56,6 @@ Following two weeks of planning, FivexL was able to hot swap Firi’s infrastruc
 {{< case_study/benefits
     cta_text="Start Your Success Story"
     cta_url="/contact"
-    image="benefits_firi.png"
     blockquote=`FivexL have given us the peace of mind to plan for the future as we aim to expand outside Norway across the Nordics
 
 Firi's platform will be focused on building more around payments so security will play a much larger role as we make upgrades on the database to improve our ability to handle trades in miliseconds.
@@ -65,7 +63,6 @@ Firi's platform will be focused on building more around payments so security wil
 It's been such an impressive feat to get where we are, with FivexL's involvement it has opened up a whole new world for the business.`
     blockquote_author="Tuan Hoang CEO at Firi"
     >}}
-{{< pink_heading text="Benefits" >}}
 “The change was seamless,” recalls Tuan Hoang of a process carried out with pain-free predictability. “Everything just worked... There were no hidden surprises and it was reassuring to know we had support whenever we needed it. FivexL helped us develop better credential management, tune our security groups and IAM policies, improving the security of the whole system. It wasn’t just a single job but a holistic approach to infrastructure that will deliver lasting benefits. Our new CTO was really impressed with the solutions FivexL implemented. We got way more than we asked for.”<br/>   
 The speed with which FivexL was able to update the infrastructure allowed Firi to deliver its latest changes as quickly as possible without the risk of application downtime; this gave its team the flexibility to scale in line with the increasing volume of traffic during a year that saw the startup grow to employ 50 full time staff. “We needed a partner who could go on that journey with us, find the weak spots of our software management and help us improve,” says Tuan Hoang.<br/> 
 “They give us the same level of support we offer to our own customers and have allowed us to maximise the efficiency of our approach to Amazon’s services instead of just throwing money at the issue.”  

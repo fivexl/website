@@ -6,9 +6,11 @@
     {{ hugo.Generator }}
     <body>
         {{- partial "banner.html" . -}}
+        <div class="shl">
         {{- partial "header.html" . -}}
         <div id="content">
         {{- block "main" . }}{{- end }}
+        </div>
         </div>
         {{- partial "email_subscription.html" . -}}
         {{- partial "footer.html" . -}}

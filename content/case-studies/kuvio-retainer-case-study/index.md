@@ -36,8 +36,7 @@ double_panel:
   button_cta: { url: "/contact", text: "Book a consultation" }
   media_panel: { url: "https://youtu.be/uruLy1goNW0" }
 ---
-{{< case_study/challenge  image="andrey_challenge.png" image_css="object-position: center 10%">}}
-{{< pink_heading text="Challenge"  sizes="bigger">}}
+{{< case_study/challenge heading="Challenge" blockquote="The predictability is key for us. Knowing the costs for the upcoming month simplifies our budgeting process significantly. The retainer setup just works well for us. It aligns with our workflow, and we actually find that we work more effectively under this model." blockquote_author="Henrik Segersven, CTO at Kuvio" >}}
 In the dynamic world of startups, the journey often begins with the hustle of building an MVP, discovering the right market fit, and preparing the system for scaling—a stage where the hands-on involvement of an infrastructure engineer is crucial.<br/>  
 <br/>  
 However, their needs evolve as startups transition into a phase focused on boosting sales and securing investments. The necessity for a full-time infra engineer becomes a balancing act—vital for maintaining advanced tech and expertise, yet potentially excessive in cost. This is a common pivot point for many startups.<br/>  
@@ -83,9 +82,9 @@ To strengthen security measures further, [Ivan Razzhivin](https://fivexl.io/spec
 {{< case_study/benefits
     cta_text="Start Your Success Story"
     cta_url="/contact"
-    image="kuvio_retainer_benefits.png"
+    blockquote="I want to especially mention Andrey Devyatkin, his proactive approach and willingness to provide advice. He's also been great at explaining things in simple terms, making it easy for us to understand his suggestions. This has been invaluable to us."
+    blockquote_author="Henrik Segersven, CTO at Kuvio"
     >}}
-{{< pink_heading text="Benefits" >}}
 Kuvio's collaboration with FivexL under the retainer agreement has brought about significant benefits, including increased flexibility, cost savings, and enhanced infrastructure capabilities. This cost-effective arrangement provides Kuvio with access to FivexL's expertise on an as-needed basis, aligning perfectly with their evolving needs.<br/>   
 <br/>   
 The technical solutions implemented by FivexL have addressed Kuvio's immediate challenges and set a foundation for sustainable growth. The shift to serverless solutions and the migration to AWS Batch has allowed Kuvio to scale their operations effortlessly. The innovative approaches to cost optimization in serverless environments reduced cloud costs and showed the potential for further slashes. The enhancements in Kuvio’s CI/CD pipeline and security have strengthened their overall infrastructure and allowed the Kuvio team to focus on their core business activities.<br/> 

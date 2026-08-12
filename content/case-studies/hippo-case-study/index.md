@@ -34,8 +34,7 @@ double_panel:
   button_cta: { url: "/contact", text: "Book a consultation" }
   media_panel: { url: "https://youtu.be/uruLy1goNW0" }
 ---
-{{< case_study/challenge  image="hippo_challenge.png" image_css="object-position: center 10%">}}
-{{< pink_heading text="Challenge"  sizes="bigger">}}
+{{< case_study/challenge heading="Challenge" blockquote="When I joined Hippo, a big part of the infrastructure had already been set up by FivexL using best practices. We didn't need to run around fixing setups or rebuilding pipelines — those were already in place. When it came time for scanning and audit processes, most of the work was already done." blockquote_author="Mattias Hemmingsson, Head of Security at Hippo" >}}
 In the early stages of company development, Hippo began collaborating with FivexL to establish HIPAA-compliant AWS infrastructure to support the development of a minimum viable product (MVP). The company operates in a highly regulated space, handling sensitive health data that must comply with strict US legal and technical requirements.<br/>
 <br/>  
 As Mattias Hemmingsson, Head of Security at Hippo, explained:  
@@ -87,11 +86,9 @@ As a result, FivexL helped Hippo seamlessly migrate the existing organization to
 {{< case_study/benefits
     cta_text=`Start Your Success Story`
     cta_url=`/contact`
-    image=`goto_benefits.png`
     blockquote=`The FivexL team had laid the foundation for SOC 2, and we didn’t need to make major changes to get certified. It was mostly about showing what was already in place and making sure auditors and clients could easily access the information.`
     blockquote_author=`Mattias Hemmingsson, Head of Security at Hippo`
 >}}
-{{< pink_heading text="Benefits" >}}
 Using FivexL’s RightStart solution, Hippo rapidly transformed its infrastructure to meet compliance demands. The transition, which could have taken a standalone cloud engineer up to a year, was completed in just a few weeks, giving Hippo a solid foundation to build on.<br/>
 <br/>  
 One of the key benefits of the setup was its flexibility. As the team prepared for SOC 2, FivexL stayed involved and helped make quick, well-targeted adjustments based on auditor feedback.<br/> 

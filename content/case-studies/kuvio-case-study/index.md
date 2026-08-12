@@ -34,8 +34,7 @@ double_panel:
   button_cta: { url: "/contact", text: "Book a consultation" }
   media_panel: { url: "https://youtu.be/uruLy1goNW0" }
 ---
-{{< case_study/challenge  image="challenge_kuvio.png" >}}
-{{< pink_heading text="Challenge"  sizes="bigger">}} 
+{{< case_study/challenge heading="Challenge" blockquote="Our commitment to ensuring 100% availability is non-negotiable, especially given the critical role our service plays in large corporations' marketing campaigns. Any downtime leads to irreplaceable data loss, which is simply unacceptable in our field." blockquote_author="Henrik Segersven, CTO at Kuvio" >}}
 Kuvio built its MVP and successfully validated its market-product fit. They were looking for a partner who could take their MPV AWS infrastructure and take it to production-grade level, ensuring availability, high performance, elastic scaling, and self-healing.<br/>
 <br/>  
 Henrik Segersven, the CTO of Kuvio, reflects on the outset of our partnership: "Our partner Dev Stark, with whom we still work, recommended FivexL to us; it was a perfect recommendation. Prior experiences taught us the importance of working with trustworthy and competent partners."<br/>
@@ -78,9 +77,9 @@ FivexL also educated Kuvio's developers about more cost-optimal solutions, equip
 {{< case_study/benefits
     cta_text="Start Your Success Story"
     cta_url="/contact"
-    image="kuvio_benefits.png"
+    blockquote="There are technical solutions, which are interesting, but they're not the most important thing for me. The most crucial aspect is that I don't even have to think about that stuff. I'm more interested in the results, not the steps along the way. I have the freedom to concentrate solely on my work without worrying about the underlying details."
+    blockquote_author="Henrik Segersven, CTO at Kuvio"
     >}}
-{{< pink_heading text="Benefits" >}}
 With a high-performing, production-ready, and secure infrastructure built by FivexL, Kuvio has confidently expanded its operations.<br/>  
 <br/>  
 The concerns that once shadowed their growth potential—scalability, infrastructure stability, and the ability to handle increased workloads—have been effectively resolved by FivexL. Load tests have revealed that the system is capable of handling increased traffic, providing Kuvio with the assurance needed to support their continued growth and success. This transformation has enabled Kuvio to shift its focus from navigating technical challenges to embracing opportunities for growth and innovation. Freed from the complexities of infrastructure management, the team can now fully engage in what they excel at - driving their business forward.<br/>  
