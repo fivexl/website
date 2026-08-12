@@ -76,6 +76,45 @@
 
 }
 
+.hdr_White {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 1rem 1rem;
+  background: white;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  z-index: 10;
+  @media (min-width: 768px) {
+    position: relative;
+    margin-inline: auto;
+    left: initial;
+    right: initial;
+    padding: 4rem 1rem;
+    box-shadow: none;
+    background: transparent;
+    max-width: $maxContentWidth;
+  }
+
+  .hdr-Logo {
+    max-height: 3rem;
+    object-fit: cover;
+    background: #fff;
+  }
+
+  .hdr-NavigationTrigger {
+    background: transparent;
+    box-shadow: none;
+
+    .hdr-NavigationTrigger_Menu {
+      stroke: #1a1a1a;
+    }
+  }
+}
+
 .hdr-NavigationTrigger {
   display: block;
   position: relative;
