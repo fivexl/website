@@ -18,10 +18,10 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
-// Everything below the announcement banner. Gives the mobile headers that are taken
-// out of flow (hdr_Transparent, hdr_White) a containing block that starts under the
-// banner, so `top: 0` lands below it whatever height the banner wraps to — and when
-// the banner is dismissed, it collapses to the top of the page on its own.
+// Everything below the announcement banner. Gives the mobile header that is taken
+// out of flow (hdr_Transparent) a containing block that starts under the banner, so
+// `top: 0` lands below it whatever height the banner wraps to — and when the banner
+// is dismissed, it collapses to the top of the page on its own.
 .shl {
   position: relative;
 }
