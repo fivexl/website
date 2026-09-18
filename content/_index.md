@@ -14,6 +14,8 @@ transparent_nav: true
 images: [ 'featured.png' ]
 ---
 
+{{< partners >}}
+
 {{< services_grid heading="What Can We Do For Your Startup?" >}}
 {{< service_item title="HIPAA & SOC 2-Ready AWS Foundations" description="Secure infrastructure for healthcare, fintech, and other regulated startups - built right from day one." url="/rightstart/" >}}
 {{< service_item title="Production-Ready ECS Infrastructure" description="Take your infrastructure to the next level so it grows with you - from first prototype to production scale." url="/ecs-blueprint/" >}}
