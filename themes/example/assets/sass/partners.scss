@@ -1,0 +1,82 @@
+.prt {
+  box-sizing: border-box;
+  background: #fff;
+  padding: clamp(2.5rem, 5vw, 4rem) clamp(1rem, 5vw, 3.75rem);
+
+  &-Card {
+    max-width: 1100px;
+    margin-inline: auto;
+    background: #fff;
+    border: 1px solid #edf1f5;
+    border-radius: 0.75rem;
+    box-shadow: 0 14px 40px rgba(17, 26, 34, 0.08);
+    padding: clamp(1.25rem, 3vw, 1.875rem) clamp(1.25rem, 4vw, 2.5rem);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.625rem 2.25rem;
+    align-items: flex-start;
+  }
+
+  &-Group {
+    flex: 1 1 280px;
+    min-width: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.25rem;
+    align-items: center;
+
+    // Vertical rule between Partners and Competencies, but only once the two
+    // groups sit side by side — when they stack it would read as a stray line.
+    &__divided {
+      @media (min-width: 768px) {
+        border-left: 1px solid #edf1f5;
+        padding-left: 2rem;
+      }
+    }
+  }
+
+  &-Label {
+    flex: 0 0 100%;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #8a97a3;
+  }
+
+  &-Logos {
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem clamp(0.75rem, 3vw, 1.375rem);
+    align-items: center;
+  }
+
+  // Logos and badges scale with the viewport so the strip keeps its proportions
+  // on phones instead of a 128px-tall Ingram crowding a 390px screen. The vw term
+  // is tuned per logo to preserve the relative sizing set at desktop width.
+  &-Logo {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: clamp(2.25rem, 11vw, 4.125rem);
+
+    &__orca {
+      max-height: clamp(2.375rem, 11.5vw, 4.25rem);
+    }
+
+    &__ingram {
+      max-height: clamp(3.5rem, 19vw, 8rem);
+    }
+  }
+
+  &-Badge {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: clamp(3.5rem, 19vw, 7.5rem);
+  }
+}
