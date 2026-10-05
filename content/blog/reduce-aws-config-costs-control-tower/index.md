@@ -1,7 +1,7 @@
 ---
 title: 'How to Reduce AWS Config Costs in AWS Control Tower'
 author_id: 'Yousef De Baz'
-date: 2026-10-05
+date: 2026-09-01
 description: 'Control Tower records AWS Config continuously, so ephemeral resources inflate your bill. Cut Config costs with daily recording using our open-source Terraform module.'
 author: Yousef De Baz
 author_link: https://fivexl.io/specialist/yousef-de-baz/
