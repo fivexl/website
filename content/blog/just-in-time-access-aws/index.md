@@ -7,7 +7,7 @@ author: Vladimir Samoylov
 author_link: https://fivexl.io/specialist/vladimir-samoylov/
 panel_image: Vova_page.png
 category: Security
-tags: ['AWS', 'Security', 'Compliance', 'HIPAA', 'SOC2', 'SSO Elevator']
+tags: ['AWS', 'Security', 'Compliance', 'HIPAA', 'SOC2', 'Just-in-Time Access']
 ---
 
 You have logs. You do not have proof.

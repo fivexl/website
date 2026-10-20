@@ -18,6 +18,11 @@
                 {{ if .Params.tags }}
 
                     {{ $pages := slice }}
+                    {{ range .Params.related }}
+                        {{ with site.GetPage . }}
+                            {{ $pages = union $pages (slice .) }}
+                        {{ end }}
+                    {{ end }}
                     {{ range $tag := .Params.tags }}
                         {{ range site.Taxonomies.tags }}
                             {{ range .Pages }}

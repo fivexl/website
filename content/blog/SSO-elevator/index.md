@@ -11,7 +11,7 @@ author:
  - 'Alexey Eremin'
  - 'Anton Eremin' 
 panel_image: Alexey.png
-tags: [ 'AWS', 'SSO Elevator', 'open sourse','Slack']
+tags: [ 'AWS', 'Just-in-Time Access', 'open sourse','Slack']
 ---
 In our work with startups, we have noticed a common challenge that many teams face when managing AWS IAM Identity Center - the inability to temporarily assign permission sets to users. Startups want to move fast but at the same time it is hard to strike a balance between the speed and security. To address this problem, we have created the open-source [Terraform AWS SSO Elevator module](https://github.com/fivexl/terraform-aws-sso-elevator). This tool ensures a more efficient and secure approach to access management by providing a way of temporary elevating users access while avoiding permanent too-permisive access. We are excited to share this module with the broader AWS community, especially after seeing its successful implementation with our startup customers.
 
