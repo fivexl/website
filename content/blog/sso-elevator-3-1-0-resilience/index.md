@@ -5,7 +5,7 @@ summary: 'How a real AWS outage revealed hidden dependencies in SSO Elevator and
 date: 2025-10-28
 author: Andrey Devyatkin
 panel_image: AWS-outage.png
-tags: ['AWS', 'SSO Elevator', 'Resilience', 'Incident Response', 'Architecture', 'open source']
+tags: ['AWS', 'Just-in-Time Access', 'Resilience', 'Incident Response', 'Architecture', 'open source']
 ---
 
 ### When Everything Goes Down

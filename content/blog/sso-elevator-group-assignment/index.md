@@ -5,7 +5,7 @@ summary: 'Google Workspace SCIM provisioning to AWS IAM Identity Center does not
 date: 2025-12-18
 author: Andrey Devyatkin
 panel_image: Andrey.png
-tags: ['AWS', 'SSO Elevator', 'Google Workspace', 'Terraform', 'Identity Center', 'open source']
+tags: ['AWS', 'Just-in-Time Access', 'Google Workspace', 'Terraform', 'Identity Center', 'open source']
 ---
 
 In our work with startups, we frequently see teams go through a familiar journey when setting up AWS IAM Identity Center (formerly AWS SSO) with Google Workspace.
