@@ -14,20 +14,18 @@ badges: ['FivexL', 'AWS']
 event_date: 2026-11-11
 event_start_utc: 2026-11-11T07:00:00Z
 event_end_utc: 2026-11-11T08:00:00Z
-time_primary: '9am EET'
-time_secondary: '8am CET · 1am CT'
+time_primary: ['8am CET', '1am CT']
 duration: '30–45 min'
 duration_note: '+ live Q&A'
 
 form_subtext: 'Free. The recording goes to everyone who registers.'
-show_question: true
 
 # Brevo form submit URL: the `action` of the <form> in Brevo's HTML embed code
 # (https://<id>.sibforms.com/serve/...). Field names default to FIRSTNAME, LASTNAME,
-# EMAIL, QUESTION and OPT_IN; override any of them with brevo_fields.
-brevo_form_action: ''
+# EMAIL and OPT_IN; override any of them with brevo_fields.
+brevo_form_action: 'https://1b3fd6c9.sibforms.com/serve/MUIFAJXeitYlzfqr8iXmjkRlB6mgstmrnUjELzsxe9mp9sWM8cxvfIink3FQqkLBnFeITPUdrffhZE8flyayIOpdqTJFSYDrbf6yU51zl7HSr5Y14RxrktTot_IuaVMQW70ozKV47O4rqivaNlMK4TvMdOenRVWMPca0VwiKB4mFjeNwHKDx1sdROolA6SSE2w60goMDI9zukdBrZA=='
 # brevo_fields:
-#   question: 'WEBINAR_QUESTION'
+#   email: 'EMAIL'
 
 audience:
   - 'CTOs and Heads of Engineering'

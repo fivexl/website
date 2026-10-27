@@ -6,7 +6,7 @@
 {{ end }}
 
 {{ define "main" }}
-{{ $f := merge (dict "first_name" "FIRSTNAME" "last_name" "LASTNAME" "email" "EMAIL" "question" "QUESTION" "consent" "OPT_IN") (.Params.brevo_fields | default dict) }}
+{{ $f := merge (dict "first_name" "FIRSTNAME" "last_name" "LASTNAME" "email" "EMAIL" "consent" "OPT_IN") (.Params.brevo_fields | default dict) }}
 
 <div class="wr-Page">
 <section class="wr-Hero">
@@ -31,17 +31,18 @@
           </dd>
         </div>
         <div class="wr-Meta_Cell">
-          <dt class="wr-Meta_Label">Time</dt>
-          <dd class="wr-Meta_Value">
-            <span class="wr-Meta_Primary">{{ .Params.time_primary }}</span>
-            {{ with .Params.time_secondary }}<span class="wr-Meta_Secondary">{{ . }}</span>{{ end }}
-          </dd>
-        </div>
-        <div class="wr-Meta_Cell">
           <dt class="wr-Meta_Label">Duration</dt>
           <dd class="wr-Meta_Value">
             <span class="wr-Meta_Primary">{{ .Params.duration }}</span>
             {{ with .Params.duration_note }}<span class="wr-Meta_Secondary">{{ . }}</span>{{ end }}
+          </dd>
+        </div>
+        <div class="wr-Meta_Cell">
+          <dt class="wr-Meta_Label">Time</dt>
+          <dd class="wr-Meta_Value wr-Meta_Times">
+            {{/* time_primary can be a list of time zones, each shown at the same size */}}
+            {{ range (slice | append .Params.time_primary) }}<span class="wr-Meta_Primary">{{ . }}</span>{{ end }}
+            {{ with .Params.time_secondary }}<span class="wr-Meta_Secondary">{{ . }}</span>{{ end }}
           </dd>
         </div>
       </dl>
@@ -66,11 +67,6 @@
 
         <label class="wr-VisuallyHidden" for="wr-email">Work email</label>
         <input class="wr-Form_Input" id="wr-email" name="{{ $f.email }}" type="email" placeholder="Work email*" autocomplete="email" required>
-
-        {{ if .Params.show_question }}
-        <label class="wr-VisuallyHidden" for="wr-question">What would you like us to cover in the Q&amp;A?</label>
-        <textarea class="wr-Form_Input wr-Form_Textarea" id="wr-question" name="{{ $f.question }}" rows="3" placeholder="What would you like us to cover in the Q&amp;A? (optional)"></textarea>
-        {{ end }}
 
         <label class="wr-Form_Consent">
           <input class="wr-Form_Checkbox" type="checkbox" name="{{ $f.consent }}" value="1" required>
@@ -151,6 +147,11 @@
 </section>
 </div>
 
+{{/* Mobile only: keeps the form one tap away until it is on screen */}}
+<div class="wr-StickyCta" data-wr-sticky>
+  <a class="wr-StickyCta_Button" href="#register">Save my seat</a>
+</div>
+
 {{ end }}
 
 {{ define "bodyScripts" }}
@@ -166,6 +167,29 @@
     function showSuccess() {
       form.hidden = true;
       success.hidden = false;
+      registered = true;
+      updateSticky();
+    }
+
+    // Sticky mobile CTA: hidden while the form, the bottom CTA band or the footer is on screen, and after registering.
+    var sticky = document.querySelector('[data-wr-sticky]');
+    var registered = false;
+    var onScreen = new Set();
+    function updateSticky() {
+      if (sticky) sticky.classList.toggle('wr-StickyCta_Visible', !registered && onScreen.size === 0);
+    }
+    if (sticky && 'IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) onScreen.add(entry.target); else onScreen.delete(entry.target);
+        });
+        updateSticky();
+      });
+      observer.observe(card);
+      ['.wr-Band_Cta', 'footer'].forEach(function (selector) {
+        var el = document.querySelector(selector);
+        if (el) observer.observe(el);
+      });
     }
 
     form.addEventListener('submit', function (e) {
@@ -177,7 +201,8 @@
       if (!form.action || form.getAttribute('action') === null) { showSuccess(); return; }
 
       submit.disabled = true;
-      fetch(form.action, { method: 'POST', body: new FormData(form) })
+      // Same request Brevo's own embed script sends: the form action with ?isAjax=1, answered with JSON.
+      fetch(form.action + '?isAjax=1', { method: 'POST', body: new FormData(form) })
         .then(function (res) { return res.json(); })
         .then(function (data) {
           if (data && data.success === false) throw new Error('Brevo rejected the submission');

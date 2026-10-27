@@ -9,7 +9,7 @@
     {{ with $event }}
     <p class="wr-When">
       {{ time.Format "Monday 2 January 2006" .Params.event_date }}<br>
-      {{ .Params.time_primary }}{{ with .Params.time_secondary }} · {{ . }}{{ end }}
+      {{ delimit (slice | append .Params.time_primary) " · " }}{{ with .Params.time_secondary }} · {{ . }}{{ end }}
     </p>
 
     {{ $start := time.AsTime .Params.event_start_utc }}

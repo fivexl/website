@@ -110,6 +110,12 @@
     }
   }
 
+  // On one-column layouts, show the date card right after the title (before the description)
+  @media (max-width: 949px) {
+    &-Meta { order: 1; }
+    &-Intro > * { order: 2; }
+  }
+
   // Date / Time / Duration card
   &-Meta {
     display: grid;
@@ -120,6 +126,35 @@
     border-radius: 12px;
     overflow: hidden;
     margin: 0;
+
+    // Phones: Date and Time side by side, Duration full width below,
+    // so no empty grey cell is left next to Duration.
+    @media (max-width: 599px) {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+      .wr-Meta_Cell { padding: 16px 18px; }
+      .wr-Meta_Cell:last-child { grid-column: 1 / -1; }
+      .wr-Meta_Primary { font-size: 19px; }
+
+      @media (max-width: 359px) {
+        .wr-Meta_Cell { padding: 14px; }
+        .wr-Meta_Primary { font-size: 16px; }
+      }
+
+      // Time zones on one line: "8am CET / 1am CT"
+      .wr-Meta_Times {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: baseline;
+
+        .wr-Meta_Primary + .wr-Meta_Primary::before {
+          content: '/';
+          margin: 0 10px;
+          font-weight: 400;
+          color: #B5B5B5;
+        }
+      }
+    }
   }
 
   &-Meta_Cell {
@@ -246,11 +281,6 @@
       border-color: #18ADF0;
       box-shadow: 0 0 0 3px rgba(24, 173, 240, 0.18);
     }
-  }
-
-  &-Form_Textarea {
-    font-size: 15px;
-    resize: vertical;
   }
 
   &-Form_Consent {
@@ -502,6 +532,8 @@
 
   &-Reserve {
     margin: 3rem auto 0;
+    max-width: 100%; // .ButtonCTA is width: max-content and overflows 320px screens
+    text-align: center;
     text-transform: uppercase;
   }
 
@@ -642,5 +674,45 @@
   &-ThankYou_More {
     color: #444;
     line-height: 1.5;
+  }
+
+  // Sticky "Save my seat" bar, mobile only
+  &-StickyCta {
+    display: none;
+
+    @media (max-width: 949px) {
+      display: block;
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 50;
+      padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+      background: rgba(255, 255, 255, 0.96);
+      box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+      transform: translateY(110%);
+      transition: transform 0.25s ease;
+    }
+  }
+
+  &-StickyCta_Visible {
+    transform: translateY(0);
+  }
+
+  &-StickyCta_Button {
+    display: block;
+    text-align: center;
+    background: #18ADF0;
+    color: #fff;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 8px;
+    padding: 15px;
+
+    &:hover, &:focus, &:visited { color: #fff; }
+    &:hover { background: #0F96D4; }
   }
 }
