@@ -1,0 +1,30 @@
+{{ define "main" }}
+{{ $event := .Parent }}
+
+<div class="wr-Page">
+<section class="wr-Hero wr-Hero_ThankYou">
+  <div class="wr-Hero_Header">
+    <h1 class="wr-Title">{{ .Title }}{{ with $event }}<span class="wr-Title_Sub wr-Title_Event">{{ .Title }}</span>{{ end }}</h1>
+    <div class="wr-Intro">{{ .Content }}</div>
+    {{ with $event }}
+    <p class="wr-When">
+      {{ time.Format "Monday 2 January 2006" .Params.event_date }}<br>
+      {{ .Params.time_primary }}{{ with .Params.time_secondary }} · {{ . }}{{ end }}
+    </p>
+
+    {{ $start := time.AsTime .Params.event_start_utc }}
+    {{ $end := time.AsTime .Params.event_end_utc }}
+    {{ $calendar := printf "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%s&dates=%s/%s&details=%s"
+        (urlquery .Title)
+        ($start.UTC.Format "20060102T150405Z")
+        ($end.UTC.Format "20060102T150405Z")
+        (urlquery (printf "FivexL webinar. Details: https://fivexl.io%s" .RelPermalink)) }}
+    <a class="ButtonCTA wr-ThankYou_Button" href="{{ $calendar }}" target="_blank" rel="noopener">Add to Google Calendar</a>
+    {{ end }}
+
+    <p class="wr-ThankYou_More">While you wait, read our latest posts on the <a href="/blog/">FivexL blog</a> or follow us on <a href="https://www.linkedin.com/company/5xl" target="_blank" rel="noopener">LinkedIn</a>.</p>
+  </div>
+</section>
+</div>
+
+{{ end }}
