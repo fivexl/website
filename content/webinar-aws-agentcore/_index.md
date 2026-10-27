@@ -8,13 +8,15 @@ type: 'webinar-registration'
 layout: 'registration'
 outputs: ['html']
 hide_email_subscription: true
+# Preview image for links shared on LinkedIn, Slack, X etc. (1200×628)
+share_image: 'share-image.jpg'
 
 badges: ['FivexL', 'AWS']
 
 event_date: 2026-11-11
 event_start_utc: 2026-11-11T07:00:00Z
 event_end_utc: 2026-11-11T08:00:00Z
-time_primary: ['8am CET', '1am CT']
+time_primary: ['8am CET']
 duration: '30–45 min'
 duration_note: '+ live Q&A'
 
