@@ -1,7 +1,7 @@
 ---
 title: 'AWS Agent Core: run an AI agent proof-of-concept without touching your product'
 description: 'Free live webinar with FivexL and AWS on using AWS Agent Core to run a fast, secure AI agent proof-of-concept without touching your product codebase. November 11, 2026.'
-url: '/webinars/aws-agentcore/register/'
+url: '/webinars/aws-agentcore/'
 # Temporary: /webinars/ redirects here until the webinars list page exists. Remove this alias when adding it.
 aliases: ['/webinars/']
 type: 'webinar-registration'
