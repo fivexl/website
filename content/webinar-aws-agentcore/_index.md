@@ -31,28 +31,30 @@ brevo_form_action: 'https://1b3fd6c9.sibforms.com/serve/MUIFAJXeitYlzfqr8iXmjkRl
 
 audience:
   - 'CTOs and Heads of Engineering'
-  - 'Principal engineers and DevOps leads'
+  - 'Team leads choosing how to build AI agents'
   - 'AWS-native teams testing AI agents'
   - 'Teams in regulated industries'
 
 learn:
   - heading: 'What AWS Agent Core actually gives you'
-    text: 'Runtime, memory, identity, guardrails, built-in evaluations — what’s in the box and what you’d still have to build yourself.'
-  - heading: 'How to run a secure PoC without touching your product code'
-    text: 'Click a working agent together inside your existing AWS account, with the security posture you already have.'
-  - heading: 'Do you actually need an agent, or will rules do the job?'
-    text: 'A framework for deciding before you spend a sprint on it. Walked through with a real example from the industry.'
-  - heading: 'When Agent Core is the wrong answer'
-    text: 'Where it’s overkill, when plain Lambda still wins, and the questions worth asking before a PoC earns a place on the roadmap.'
+    text: 'The main building blocks (runtime, gateway, memory and identity), what each one is for, and how they fit together.'
+  - heading: 'How to run a PoC without touching your product'
+    text: 'A real customer story: an agent kept separate from production, with its own cost tracking and monitoring, so the team could decide whether it belonged in the product.'
+  - heading: 'Security, data residency and connecting to your stack'
+    text: 'Choosing the region your agent runs in, calling it from Lambda with IAM, and what gets harder when agents from outside AWS, like Cursor or OpenAI, need access.'
+  - heading: 'Built-in features most teams rebuild themselves'
+    text: 'Browser, code interpreter, web search, and Bedrock Guardrails, which protect a public chatbot with one click.'
 
 speakers:
   - name: 'Jyri Seiger'
     company: 'AWS'
+    title: 'Senior Solutions Architect for Startups, AWS'
     photo: 'jyri-seiger.jpg'
     linkedin: 'https://www.linkedin.com/in/jyriseiger/'
     bio: '**Jyri Seiger** is a Senior Solutions Architect for Startups in Europe North at AWS, with 20+ years of building and scaling data-intensive platforms across startups, telco, finance and energy. He helps fast-growing startups design resilient, analytics-driven workloads on AWS and turn complex requirements into production-grade cloud solutions.'
   - specialist: 'Vladimir-Samoylov'
     company: 'FivexL'
+    title: 'Partner and Principal Consultant, FivexL'
     photo: 'vladimir-samoylov.jpg'
     bio: '**Vladimir Samoylov** is a Partner and Principal Consultant and certified AWS Solutions Architect at FivexL with 15+ years across operations, infrastructure automation, and development. His focus is fast, secure delivery, with a strong "immutable infrastructure" mindset.'
 
@@ -62,6 +64,6 @@ Every product team now has “add an AI agent” somewhere on the roadmap. The h
 
 In 45 minutes, Jyri Seiger (Senior Solutions Architect for Startups, AWS) and Vladimir Samoylov (Senior Cloud Engineer, FivexL) show you how to run an AI agent proof-of-concept on AWS Agent Core, fast enough to get a real answer before you commit engineering time.
 
-Hosted by Jyri Seiger (Senior Solutions Architect for Startups, AWS) and Vladimir Samoylov (Partner and Principal Consultant, FivexL). Full bios below.
+Hosted by Jyri Seiger (Senior Solutions Architect for Startups, AWS) and Vladimir Samoylov (Partner and Principal Consultant, FivexL).
 
 Live Q&A at the end. Can’t make it live? Register anyway — the recording goes to everyone who signs up.

@@ -204,6 +204,49 @@
     color: #666666;
   }
 
+  // Right hero column: form card with speaker photos below
+  &-Hero_Side {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  &-HeroSpeakers {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 24px;
+    text-align: center;
+
+    @media (max-width: 480px) { gap: 12px; }
+  }
+
+  &-HeroSpeaker_Photo {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 16px;
+    margin-bottom: 16px;
+  }
+
+  &-HeroSpeaker_Name {
+    font-size: clamp(15px, 4vw, 20px);
+    font-weight: 700;
+    color: #1A1A1A;
+    margin: 0 0 6px;
+  }
+
+  &-HeroSpeaker_Title {
+    font-size: clamp(13px, 3.6vw, 15px);
+    line-height: 1.5;
+    color: #555555;
+    margin: 0;
+  }
+
   // Form card
   &-Form {
     background: #fff;
@@ -212,10 +255,6 @@
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 12px 32px rgba(0, 0, 0, 0.06);
     scroll-margin-top: 96px;
 
-    @media (min-width: 950px) {
-      position: sticky;
-      top: 96px;
-    }
 
     @media (max-width: 480px) {
       padding: 24px;
