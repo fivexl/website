@@ -773,13 +773,45 @@
     padding: 20px;
   }
 
+  &-ThankYou_ActionsLabel {
+    margin: 0 0 12px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #666666;
+  }
+
+  // Google, Apple, Outlook side by side; stacked on narrow phones
+  &-ThankYou_Buttons {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+
+    @media (max-width: 479px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &-ThankYou_Join {
+    margin: 14px 0 0;
+    font-size: 15px;
+    color: #555555;
+    text-align: center;
+
+    a {
+      color: #13A3E6;
+      font-weight: 600;
+    }
+  }
+
   &-ThankYou_Button {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 12px;
+    gap: 10px;
     width: 100%;
-    padding: 14px 20px;
+    padding: 14px 16px;
     border-radius: 8px;
     background: #18ADF0;
     color: #fff;

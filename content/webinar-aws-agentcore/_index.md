@@ -19,6 +19,8 @@ event_end_utc: 2026-11-11T08:00:00Z
 time_primary: ['8am CET']
 duration: '30–45 min'
 duration_note: '+ live Q&A'
+# Live stream. Used in the calendar events and on the thank-you page.
+join_url: 'https://www.youtube.com/watch?v=APpN-wAf1_0'
 
 form_subtext: 'Free. The recording goes to everyone who registers.'
 
@@ -63,7 +65,5 @@ cta_text: 'Register below. If you join live, you can bring your own setup to the
 Every product team now has “add an AI agent” somewhere on the roadmap. The hard part is trying it without pulling engineers off the product.
 
 In 45 minutes, Jyri Seiger (Senior Solutions Architect for Startups, AWS) and Vladimir Samoylov (Partner and Principal Consultant, FivexL) show you how to run an AI agent proof-of-concept on AWS Agent Core, fast enough to get a real answer before you commit engineering time.
-
-Hosted by Jyri Seiger (Senior Solutions Architect for Startups, AWS) and Vladimir Samoylov (Partner and Principal Consultant, FivexL).
 
 Live Q&A at the end. Can’t make it live? Register anyway — the recording goes to everyone who signs up.

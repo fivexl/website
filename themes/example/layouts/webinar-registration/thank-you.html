@@ -39,18 +39,53 @@
       </div>
     </dl>
 
-    {{ $start := time.AsTime .Params.event_start_utc }}
-    {{ $end := time.AsTime .Params.event_end_utc }}
-    {{ $calendar := printf "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%s&dates=%s/%s&details=%s"
-        (urlquery .Title)
-        ($start.UTC.Format "20060102T150405Z")
-        ($end.UTC.Format "20060102T150405Z")
-        (urlquery (printf "FivexL webinar. Details: https://fivexl.io%s" .RelPermalink)) }}
+    {{ $start := (time.AsTime .Params.event_start_utc).UTC }}
+    {{ $end := (time.AsTime .Params.event_end_utc).UTC }}
+    {{ $pageURL := printf "https://fivexl.io%s" .RelPermalink }}
+    {{/* join_url: the live stream link, once it exists. Until then the event links to the registration page. */}}
+    {{ $location := .Params.join_url | default $pageURL }}
+    {{ $details := printf "FivexL webinar. Details: %s" $pageURL }}
+    {{ with .Params.join_url }}{{ $details = printf "FivexL webinar. Join the live stream: %s" . }}{{ end }}
+
+    {{ $google := printf "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%s&dates=%s/%s&details=%s&location=%s"
+        (urlquery .Title) ($start.Format "20060102T150405Z") ($end.Format "20060102T150405Z") (urlquery $details) (urlquery $location) }}
+
+    {{/* Outlook shows "+" literally, so spaces are encoded as %20 */}}
+    {{ $outlook := printf "https://outlook.office.com/calendar/0/deeplink/compose?path=%%2Fcalendar%%2Faction%%2Fcompose&rru=addevent&subject=%s&startdt=%s&enddt=%s&body=%s&location=%s"
+        (replace (urlquery .Title) "+" "%20") (urlquery ($start.Format "2006-01-02T15:04:05Z")) (urlquery ($end.Format "2006-01-02T15:04:05Z")) (replace (urlquery $details) "+" "%20") (urlquery $location) }}
+
+    {{/* .ics file for Apple Calendar (also opens in Outlook desktop and most other apps). Lines must end in CRLF. */}}
+    {{ $icsText := slice
+        "BEGIN:VCALENDAR" "VERSION:2.0" "PRODID:-//FivexL//Webinar//EN" "CALSCALE:GREGORIAN" "METHOD:PUBLISH"
+        "BEGIN:VEVENT"
+        (printf "UID:%s@fivexl.io" (replace (strings.Trim .RelPermalink "/") "/" "-"))
+        (printf "DTSTAMP:%s" ($start.Format "20060102T150405Z"))
+        (printf "DTSTART:%s" ($start.Format "20060102T150405Z"))
+        (printf "DTEND:%s" ($end.Format "20060102T150405Z"))
+        (printf "SUMMARY:%s" (replace (replace .Title ";" "\\;") "," "\\,"))
+        (printf "DESCRIPTION:%s" (replace (replace $details ";" "\\;") "," "\\,"))
+        (printf "LOCATION:%s" $location)
+        (printf "URL:%s" $location)
+        "END:VEVENT" "END:VCALENDAR" }}
+    {{ $ics := resources.FromString (printf "%sevent.ics" (strings.TrimPrefix "/" .RelPermalink)) (printf "%s\r\n" (delimit $icsText "\r\n")) }}
+
     <div class="wr-ThankYou_Actions">
-      <a class="wr-ThankYou_Button" href="{{ $calendar }}" target="_blank" rel="noopener">
-        <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 10h17M8 3v4M16 3v4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M7.5 13.5h2M11 13.5h2M14.5 13.5h2M7.5 16.5h2M11 16.5h2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-        Add to Google Calendar
-      </a>
+      <p class="wr-ThankYou_ActionsLabel">Add to your calendar</p>
+      <div class="wr-ThankYou_Buttons">
+        <a class="wr-ThankYou_Button" href="{{ $google }}" target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 10h17M8 3v4M16 3v4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          Google
+        </a>
+        <a class="wr-ThankYou_Button" href="{{ $ics.RelPermalink }}" download="fivexl-webinar.ics">
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 10h17M8 3v4M16 3v4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          Apple
+        </a>
+        <a class="wr-ThankYou_Button" href="{{ $outlook }}" target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 10h17M8 3v4M16 3v4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          Outlook
+        </a>
+      </div>
+      {{ with .Params.join_url }}<p class="wr-ThankYou_Join">Live stream: <a href="{{ . }}" target="_blank" rel="noopener">watch on YouTube</a></p>{{ end }}
     </div>
   </div>
   {{ end }}
