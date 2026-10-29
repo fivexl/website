@@ -1,16 +1,43 @@
+{{ define "headStyles" }}
+{{/* Self-hosted Montserrat stops at 700; the title needs 800. */}}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap">
+{{ end }}
+
 {{ define "main" }}
 {{ $event := .Parent }}
 
 <div class="wr-Page">
-<section class="wr-Hero wr-Hero_ThankYou">
-  <div class="wr-Hero_Header">
-    <h1 class="wr-Title">{{ .Title }}{{ with $event }}<span class="wr-Title_Sub wr-Title_Event">{{ .Title }}</span>{{ end }}</h1>
-    <div class="wr-Intro">{{ .Content }}</div>
-    {{ with $event }}
-    <p class="wr-When">
-      {{ time.Format "Monday 2 January 2006" .Params.event_date }}<br>
-      {{ delimit (slice | append .Params.time_primary) " · " }}{{ with .Params.time_secondary }} · {{ . }}{{ end }}
-    </p>
+<section class="wr-ThankYou">
+  <div class="wr-ThankYou_Icon" aria-hidden="true">
+    <svg width="30" height="30" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </div>
+  <p class="wr-ThankYou_Pill">You’re on the list</p>
+
+  <h1 class="wr-ThankYou_Title">{{ .Title }}</h1>
+  {{ with $event }}<p class="wr-ThankYou_Event">{{ .Title }}</p>{{ end }}
+
+  <div class="wr-ThankYou_Text">{{ .Content }}</div>
+
+  {{ with $event }}
+  <div class="wr-ThankYou_Card">
+    <dl class="wr-ThankYou_Meta">
+      <div class="wr-Meta_Cell">
+        <dt class="wr-Meta_Label">Date</dt>
+        <dd class="wr-Meta_Value">
+          <span class="wr-Meta_Primary">{{ time.Format "2 January" .Params.event_date }}</span>
+          <span class="wr-Meta_Secondary">{{ time.Format "Monday, 2006" .Params.event_date }}</span>
+        </dd>
+      </div>
+      <div class="wr-Meta_Cell">
+        <dt class="wr-Meta_Label">Time</dt>
+        <dd class="wr-Meta_Value">
+          <span class="wr-Meta_Primary">{{ delimit (slice | append .Params.time_primary) " / " }}</span>
+          {{ with .Params.time_secondary }}<span class="wr-Meta_Secondary">{{ . }}</span>{{ end }}
+        </dd>
+      </div>
+    </dl>
 
     {{ $start := time.AsTime .Params.event_start_utc }}
     {{ $end := time.AsTime .Params.event_end_utc }}
@@ -19,11 +46,16 @@
         ($start.UTC.Format "20060102T150405Z")
         ($end.UTC.Format "20060102T150405Z")
         (urlquery (printf "FivexL webinar. Details: https://fivexl.io%s" .RelPermalink)) }}
-    <a class="ButtonCTA wr-ThankYou_Button" href="{{ $calendar }}" target="_blank" rel="noopener">Add to Google Calendar</a>
-    {{ end }}
-
-    <p class="wr-ThankYou_More">While you wait, read our latest posts on the <a href="/blog/">FivexL blog</a> or follow us on <a href="https://www.linkedin.com/company/5xl" target="_blank" rel="noopener">LinkedIn</a>.</p>
+    <div class="wr-ThankYou_Actions">
+      <a class="wr-ThankYou_Button" href="{{ $calendar }}" target="_blank" rel="noopener">
+        <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 10h17M8 3v4M16 3v4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M7.5 13.5h2M11 13.5h2M14.5 13.5h2M7.5 16.5h2M11 16.5h2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        Add to Google Calendar
+      </a>
+    </div>
   </div>
+  {{ end }}
+
+  <p class="wr-ThankYou_More">While you wait, read our latest posts on the <a href="/blog/">FivexL blog</a> or follow us on <a href="https://www.linkedin.com/company/5xl" target="_blank" rel="noopener">LinkedIn</a>.</p>
 </section>
 </div>
 

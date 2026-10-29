@@ -416,28 +416,6 @@
     cursor: pointer;
   }
 
-  // Thank-you page header
-  &-Hero_Header {
-    max-width: 1000px;
-    margin: 0 auto;
-    text-align: center;
-
-    .wr-Title { margin-bottom: 1.5rem; }
-    .wr-Intro { display: block; }
-  }
-
-  &-Title_Sub {
-    display: block;
-    margin-top: 0.5rem;
-  }
-
-  &-When {
-    font-size: clamp(1rem, 1.6vw, 1.25rem);
-    font-weight: 500;
-    line-height: 1.6;
-    margin: 2.5rem 0 0;
-  }
-
   // Content sections
   &-Section {
     max-width: calc(1200px + 4rem); // matches the hero's content width plus padding
@@ -697,22 +675,137 @@
   }
 
   // Thank-you page
-  &-Hero_ThankYou {
-    padding-block: 5rem;
+  // Thank-you page
+  &-ThankYou {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 24px 72px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
-  &-Title_Event {
-    font-size: 0.6em;
+  &-ThankYou_Icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: #18ADF0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-ThankYou_Pill {
+    margin: 20px 0 0;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: #fff;
+    border: 1px solid #DDDDDD;
+    font-size: 13px;
+    font-weight: 600;
+    color: #333333;
+  }
+
+  &-ThankYou_Title {
+    max-width: 11em; // breaks after "Thank you"
+    margin: 40px 0 0;
+    font-size: clamp(40px, 7vw, 64px);
+    line-height: 1.05;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  &-ThankYou_Event {
+    max-width: 680px;
+    margin: 20px 0 0;
+    font-size: clamp(20px, 2.6vw, 28px);
     font-weight: 500;
+    line-height: 1.3;
+    color: #333333;
+  }
+
+  &-ThankYou_Text {
+    max-width: 560px;
+    margin-top: 36px;
+
+    p {
+      font-size: 17px;
+      line-height: 1.7;
+      color: #555555;
+      text-wrap: pretty;
+      margin: 0;
+    }
+  }
+
+  &-ThankYou_Card {
+    width: 100%;
+    max-width: 580px;
+    margin-top: 40px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    text-align: left;
+  }
+
+  &-ThankYou_Meta {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 1px;
+    background: #E4E4E4;
+    border-bottom: 1px solid #E4E4E4;
+    margin: 0;
+
+    @media (max-width: 599px) {
+      .wr-Meta_Cell { padding: 16px 18px; }
+      .wr-Meta_Primary { font-size: 19px; white-space: nowrap; }
+    }
+
+    @media (max-width: 359px) {
+      .wr-Meta_Cell { padding: 14px; }
+      .wr-Meta_Primary { font-size: 16px; }
+    }
+  }
+
+  &-ThankYou_Actions {
+    padding: 20px;
   }
 
   &-ThankYou_Button {
-    margin: 2rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    padding: 14px 20px;
+    border-radius: 8px;
+    background: #18ADF0;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color 0.15s;
+
+    &:hover,
+    &:focus-visible {
+      background: #0F96D4;
+      color: #fff;
+    }
   }
 
   &-ThankYou_More {
-    color: #444;
-    line-height: 1.5;
+    max-width: 640px;
+    margin: 36px 0 0;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555555;
+
+    a {
+      color: #13A3E6;
+      font-weight: 600;
+    }
   }
 
   // Sticky "Save my seat" bar, mobile only
