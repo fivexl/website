@@ -62,7 +62,7 @@ cta_text: 'Register below. If you join live, you can bring your own setup to the
 ---
 Every product team now has “add an AI agent” somewhere on the roadmap. The hard part is trying it without pulling engineers off the product.
 
-In 45 minutes, Jyri Seiger (Senior Solutions Architect for Startups, AWS) and Vladimir Samoylov (Senior Cloud Engineer, FivexL) show you how to run an AI agent proof-of-concept on AWS Agent Core, fast enough to get a real answer before you commit engineering time.
+In 45 minutes, Jyri Seiger (Senior Solutions Architect for Startups, AWS) and Vladimir Samoylov (Partner and Principal Consultant, FivexL) show you how to run an AI agent proof-of-concept on AWS Agent Core, fast enough to get a real answer before you commit engineering time.
 
 Hosted by Jyri Seiger (Senior Solutions Architect for Startups, AWS) and Vladimir Samoylov (Partner and Principal Consultant, FivexL).
 
