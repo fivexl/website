@@ -763,9 +763,28 @@
       .wr-Meta_Primary { font-size: 19px; white-space: nowrap; }
     }
 
+    // Narrow phones: Date above Time, so both time zones fit on one line
+    @media (max-width: 559px) {
+      grid-template-columns: 1fr;
+    }
+
     @media (max-width: 359px) {
       .wr-Meta_Cell { padding: 14px; }
       .wr-Meta_Primary { font-size: 16px; }
+    }
+  }
+
+  // Time zones on one line: "8am CET / 9am EET"
+  &-ThankYou_Times {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: baseline;
+
+    .wr-Meta_Primary:not(:last-of-type)::after {
+      content: '/';
+      margin: 0 10px;
+      font-weight: 400;
+      color: #B5B5B5;
     }
   }
 

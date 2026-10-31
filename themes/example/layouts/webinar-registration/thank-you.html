@@ -32,8 +32,8 @@
       </div>
       <div class="wr-Meta_Cell">
         <dt class="wr-Meta_Label">Time</dt>
-        <dd class="wr-Meta_Value">
-          <span class="wr-Meta_Primary">{{ delimit (slice | append .Params.time_primary) " / " }}</span>
+        <dd class="wr-Meta_Value wr-ThankYou_Times">
+          {{ range (slice | append .Params.time_primary) }}<span class="wr-Meta_Primary">{{ . }}</span>{{ end }}
           {{ with .Params.time_secondary }}<span class="wr-Meta_Secondary">{{ . }}</span>{{ end }}
         </dd>
       </div>

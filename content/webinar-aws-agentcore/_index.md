@@ -1,6 +1,6 @@
 ---
-title: 'AWS Agent Core: run an AI agent proof-of-concept without touching your product'
-description: 'Free live webinar with FivexL and AWS on using AWS Agent Core to run a fast, secure AI agent proof-of-concept without touching your product codebase. November 11, 2026.'
+title: 'Amazon Bedrock AgentCore: run an AI agent proof-of-concept without touching your product'
+description: 'Free live webinar with FivexL and AWS on using Amazon Bedrock AgentCore to run a fast, secure AI agent proof-of-concept without touching your product codebase. November 11, 2026.'
 url: '/webinars/aws-agentcore/'
 # Temporary: /webinars/ redirects here until the webinars list page exists. Remove this alias when adding it.
 aliases: ['/webinars/']
@@ -16,7 +16,7 @@ badges: ['FivexL', 'AWS']
 event_date: 2026-11-11
 event_start_utc: 2026-11-11T07:00:00Z
 event_end_utc: 2026-11-11T08:00:00Z
-time_primary: ['8am CET']
+time_primary: ['8am CET', '9am EET']
 duration: '30–45 min'
 duration_note: '+ live Q&A'
 # Live stream. Used in the calendar events and on the thank-you page.
@@ -38,7 +38,7 @@ audience:
   - 'Teams in regulated industries'
 
 learn:
-  - heading: 'What AWS Agent Core actually gives you'
+  - heading: 'What AgentCore actually gives you'
     text: 'The main building blocks (runtime, gateway, memory and identity), what each one is for, and how they fit together.'
   - heading: 'How to run a PoC without touching your product'
     text: 'A real customer story: an agent kept separate from production, with its own cost tracking and monitoring, so the team could decide whether it belonged in the product.'
@@ -64,6 +64,6 @@ cta_text: 'Register below. If you join live, you can bring your own setup to the
 ---
 Every product team now has “add an AI agent” somewhere on the roadmap. The hard part is trying it without pulling engineers off the product.
 
-In 45 minutes, Jyri Seiger (Senior Solutions Architect for Startups, AWS) and Vladimir Samoylov (Partner and Principal Consultant, FivexL) show you how to run an AI agent proof-of-concept on AWS Agent Core, fast enough to get a real answer before you commit engineering time.
+In 45 minutes, Jyri Seiger (Senior Solutions Architect for Startups, AWS) and Vladimir Samoylov (Partner and Principal Consultant, FivexL) show you how to run an AI agent proof-of-concept on AgentCore, fast enough to get a real answer before you commit engineering time.
 
 Live Q&A at the end. Can’t make it live? Register anyway — the recording goes to everyone who signs up.
