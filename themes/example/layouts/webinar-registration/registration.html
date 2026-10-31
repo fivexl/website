@@ -1,0 +1,245 @@
+{{ define "headStyles" }}
+{{/* Self-hosted Montserrat stops at 700; the hero title needs 800. */}}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap">
+{{ end }}
+
+{{ define "main" }}
+{{ $f := merge (dict "first_name" "FIRSTNAME" "last_name" "LASTNAME" "email" "EMAIL" "consent" "OPT_IN") (.Params.brevo_fields | default dict) }}
+
+<div class="wr-Page">
+<section class="wr-Hero">
+  <div class="wr-Hero_Inner">
+
+    <div class="wr-Hero_Content">
+      <ul class="wr-Badges">
+        <li class="wr-Badge wr-Badge_Accent">{{ .Params.badge_primary | default "Free live webinar" }}</li>
+        {{ range .Params.badges }}<li class="wr-Badge">{{ . }}</li>{{ end }}
+      </ul>
+
+      <h1 class="wr-Title">{{ .Title }}</h1>
+
+      <div class="wr-Intro">{{ .Content }}</div>
+
+      <dl class="wr-Meta">
+        <div class="wr-Meta_Cell">
+          <dt class="wr-Meta_Label">Date</dt>
+          <dd class="wr-Meta_Value">
+            <span class="wr-Meta_Primary">{{ time.Format "2 January" .Params.event_date }}</span>
+            <span class="wr-Meta_Secondary">{{ time.Format "Monday, 2006" .Params.event_date }}</span>
+          </dd>
+        </div>
+        <div class="wr-Meta_Cell">
+          <dt class="wr-Meta_Label">Duration</dt>
+          <dd class="wr-Meta_Value">
+            <span class="wr-Meta_Primary">{{ .Params.duration }}</span>
+            {{ with .Params.duration_note }}<span class="wr-Meta_Secondary">{{ . }}</span>{{ end }}
+          </dd>
+        </div>
+        <div class="wr-Meta_Cell">
+          <dt class="wr-Meta_Label">Time</dt>
+          <dd class="wr-Meta_Value wr-Meta_Times">
+            {{/* time_primary can be a list of time zones, each shown at the same size */}}
+            {{ range (slice | append .Params.time_primary) }}<span class="wr-Meta_Primary">{{ . }}</span>{{ end }}
+            {{ with .Params.time_secondary }}<span class="wr-Meta_Secondary">{{ . }}</span>{{ end }}
+          </dd>
+        </div>
+      </dl>
+    </div>
+
+    <div class="wr-Hero_Side">
+    <div class="wr-Form" id="register">
+      <form class="wr-Form_Form" data-wr-form
+        {{ with .Params.brevo_form_action }}action="{{ . }}"{{ end }} method="post" novalidate>
+        <div class="wr-Form_Head">
+          <h2 class="wr-Form_Heading">Register now</h2>
+          {{ with .Params.form_subtext }}<p class="wr-Form_Sub">{{ . }}</p>{{ end }}
+        </div>
+
+        {{ if and hugo.IsServer (not .Params.brevo_form_action) }}<p class="wr-Form_Dev">Preview only: set <code>brevo_form_action</code> to submit to Brevo.</p>{{ end }}
+
+        <div class="wr-Form_Row">
+          <label class="wr-VisuallyHidden" for="wr-first">First name</label>
+          <input class="wr-Form_Input" id="wr-first" name="{{ $f.first_name }}" type="text" placeholder="First name*" autocomplete="given-name" required>
+          <label class="wr-VisuallyHidden" for="wr-last">Last name</label>
+          <input class="wr-Form_Input" id="wr-last" name="{{ $f.last_name }}" type="text" placeholder="Last name*" autocomplete="family-name" required>
+        </div>
+
+        <label class="wr-VisuallyHidden" for="wr-email">Work email</label>
+        <input class="wr-Form_Input" id="wr-email" name="{{ $f.email }}" type="email" placeholder="Work email*" autocomplete="email" required>
+
+        <label class="wr-Form_Consent">
+          <input class="wr-Form_Checkbox" type="checkbox" name="{{ $f.consent }}" value="1" required>
+          <span>By submitting this form, you acknowledge and agree that FivexL will process your personal information in accordance with the <a href="/privacy-policy/">Privacy Policy</a>.</span>
+        </label>
+
+        {{/* Fields Brevo's own embed sends with every submission */}}
+        <input type="hidden" name="email_address_check" value="">
+        <input type="hidden" name="locale" value="en">
+
+        <p class="wr-Form_Error" role="alert" hidden>Something went wrong. Please try again.</p>
+        <button class="wr-Form_Submit" type="submit">Save my seat</button>
+      </form>
+
+      <div class="wr-Success" hidden>
+        <div class="wr-Success_Icon" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h2 class="wr-Success_Heading">You’re registered</h2>
+        <p class="wr-Success_Text">A calendar invite and joining link are on their way to your inbox.</p>
+        <button class="wr-Success_Reset" type="button">Register someone else</button>
+      </div>
+    </div>
+
+    {{ with .Params.speakers }}
+    <ul class="wr-HeroSpeakers">
+      {{ range . }}
+      {{ $name := .name }}
+      {{ $photo := "" }}
+      {{ with .specialist }}{{ with site.GetPage (printf "/specialist/%s" .) }}
+        {{ $name = $name | default .Params.name }}
+        {{ with .Resources.GetMatch .Params.author_headshot }}{{ $photo = . }}{{ end }}
+      {{ end }}{{ end }}
+      {{ with .photo }}{{ with $.Resources.GetMatch . }}{{ $photo = . }}{{ end }}{{ end }}
+      <li class="wr-HeroSpeaker">
+        {{ with $photo }}{{ $img := .Fill "640x640 Center webp" }}
+        <img class="wr-HeroSpeaker_Photo" src="{{ $img.RelPermalink }}" width="320" height="320" alt="{{ $name }}">
+        {{ end }}
+        <p class="wr-HeroSpeaker_Name">{{ $name }}</p>
+        {{ with .title }}<p class="wr-HeroSpeaker_Title">{{ . }}</p>{{ end }}
+      </li>
+      {{ end }}
+    </ul>
+    {{ end }}
+    </div>
+
+  </div>
+</section>
+
+{{ with .Params.audience }}
+<div class="wr-AudienceBand">
+<section class="wr-Section wr-Section_Centered">
+  <p class="wr-Pill">Audience</p>
+  <h2 class="wr-Section_Heading">Who Should Attend</h2>
+  {{ if reflect.IsSlice . }}
+  <ul class="wr-Audience">
+    {{ range . }}
+    <li class="wr-Audience_Item"><span class="wr-Audience_Text">{{ . }}</span></li>
+    {{ end }}
+  </ul>
+  {{ else }}
+  <p class="wr-Section_Text">{{ . }}</p>
+  {{ end }}
+</section>
+</div>
+{{ end }}
+
+{{ with .Params.learn }}
+<section class="wr-Section wr-Section_Centered">
+  <p class="wr-Pill">What you'll learn</p>
+  <h2 class="wr-Section_Heading">In This Session We'll Cover</h2>
+  <ul class="wr-Learn">
+    {{ range . }}
+    <li class="wr-Learn_Item">
+      <svg class="wr-Learn_Icon" width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="20" fill="currentColor"/><path d="M11 20h17M22 14l6 6-6 6" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div>
+        <h3 class="wr-Learn_Heading">{{ .heading }}</h3>
+        <p class="wr-Learn_Text">{{ .text }}</p>
+      </div>
+    </li>
+    {{ end }}
+  </ul>
+  <a class="ButtonCTA wr-Reserve" href="#register">Hurry – reserve your spot!</a>
+</section>
+{{ end }}
+
+{{ with .Params.speakers }}
+<section class="wr-Band">
+  <h2 class="wr-Band_Heading">Meet Your Hosts</h2>
+</section>
+<section class="wr-Speakers">
+  {{ range . }}{{ partial "webinar_speaker.html" (dict "speaker" . "page" $) }}{{ end }}
+</section>
+{{ end }}
+
+<section class="wr-Band wr-Band_Cta">
+  <h2 class="wr-Band_Heading">Register for the Webinar</h2>
+  {{ with .Params.cta_text }}<p class="wr-Band_Text">{{ . }}</p>{{ end }}
+  <a class="wr-Band_Button" href="#register">Save my seat</a>
+</section>
+</div>
+
+{{/* Mobile only: keeps the form one tap away until it is on screen */}}
+<div class="wr-StickyCta" data-wr-sticky>
+  <a class="wr-StickyCta_Button" href="#register">Save my seat</a>
+</div>
+
+{{ end }}
+
+{{ define "bodyScripts" }}
+<script>
+  (function () {
+    var card = document.getElementById('register');
+    if (!card) return;
+    var form = card.querySelector('[data-wr-form]');
+    var success = card.querySelector('.wr-Success');
+    var error = form.querySelector('.wr-Form_Error');
+    var submit = form.querySelector('.wr-Form_Submit');
+
+    function showSuccess() {
+      form.hidden = true;
+      success.hidden = false;
+      registered = true;
+      updateSticky();
+    }
+
+    // Sticky mobile CTA: hidden while the form, the bottom CTA band or the footer is on screen, and after registering.
+    var sticky = document.querySelector('[data-wr-sticky]');
+    var registered = false;
+    var onScreen = new Set();
+    function updateSticky() {
+      if (sticky) sticky.classList.toggle('wr-StickyCta_Visible', !registered && onScreen.size === 0);
+    }
+    if (sticky && 'IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) onScreen.add(entry.target); else onScreen.delete(entry.target);
+        });
+        updateSticky();
+      });
+      observer.observe(card);
+      ['.wr-Band_Cta', 'footer'].forEach(function (selector) {
+        var el = document.querySelector(selector);
+        if (el) observer.observe(el);
+      });
+    }
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!form.reportValidity()) return;
+      error.hidden = true;
+
+      // Without a Brevo action URL (local preview) just show the success state.
+      if (!form.action || form.getAttribute('action') === null) { showSuccess(); return; }
+
+      submit.disabled = true;
+      // Same request Brevo's own embed script sends: the form action with ?isAjax=1, answered with JSON.
+      fetch(form.action + '?isAjax=1', { method: 'POST', body: new FormData(form) })
+        .then(function (res) { return res.json(); })
+        .then(function (data) {
+          if (data && data.success === false) throw new Error('Brevo rejected the submission');
+          showSuccess();
+        })
+        .catch(function () { error.hidden = false; })
+        .finally(function () { submit.disabled = false; });
+    });
+
+    card.querySelector('.wr-Success_Reset').addEventListener('click', function () {
+      form.reset();
+      success.hidden = true;
+      form.hidden = false;
+    });
+  })();
+</script>
+{{ end }}

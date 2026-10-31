@@ -55,6 +55,11 @@ pagerSize = 6
   parent = 'products'
   weight = 6
 [[menu.main]]
+  identifier = 'webinars'
+  url = '/webinars/'
+  name = 'Webinars'
+  weight = 25
+[[menu.main]]
   url = '/contact'
   name = 'Contact'
   weight = 40
