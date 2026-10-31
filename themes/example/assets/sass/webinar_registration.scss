@@ -763,9 +763,13 @@
       .wr-Meta_Primary { font-size: 19px; white-space: nowrap; }
     }
 
-    // Narrow phones: Date above Time, so both time zones fit on one line
+    // Narrow phones: Date above Time, centred, so both time zones fit on one line
     @media (max-width: 559px) {
       grid-template-columns: 1fr;
+
+      .wr-Meta_Cell { align-items: center; text-align: center; }
+      .wr-Meta_Value { align-items: center; }
+      .wr-ThankYou_Times { justify-content: center; }
     }
 
     @media (max-width: 359px) {
