@@ -1,0 +1,37 @@
+{{/* Speaker row. FivexL speakers reference a /specialist/ page via `specialist`; guests are described inline. */}}
+{{ $name := .speaker.name }}
+{{ $linkedin := .speaker.linkedin }}
+{{ $photo := "" }}
+{{ $profile := "" }}
+
+{{ with .speaker.specialist }}
+  {{ with site.GetPage (printf "/specialist/%s" .) }}
+    {{ $name = $name | default .Params.name }}
+    {{ $profile = .RelPermalink }}
+    {{ range .Params.links }}{{ if eq .icon "linkedin" }}{{ $linkedin = $linkedin | default .url }}{{ end }}{{ end }}
+    {{ with .Resources.GetMatch .Params.author_headshot }}{{ $photo = . }}{{ end }}
+  {{ end }}
+{{ end }}
+
+{{ with .speaker.photo }}{{ with $.page.Resources.GetMatch . }}{{ $photo = . }}{{ end }}{{ end }}
+
+<div class="wr-Speaker">
+  {{ if $photo }}
+    {{ $img := $photo.Fill "1080x720 Center webp" }}
+    <img class="wr-Speaker_Photo" src="{{ $img.RelPermalink }}" width="540" height="360" alt="{{ $name }}" loading="lazy">
+  {{ else }}
+    <div class="wr-Speaker_Photo wr-Speaker_Photo_Initials" aria-hidden="true">
+      {{ range first 2 (split $name " ") }}{{ substr . 0 1 }}{{ end }}
+    </div>
+  {{ end }}
+  <div class="wr-Speaker_Body">
+    <h3 class="wr-Speaker_Name">{{ $name }}{{ with .speaker.company }}, {{ . }}{{ end }}</h3>
+    {{ with .speaker.bio }}<div class="wr-Speaker_Bio">{{ . | markdownify }}</div>{{ end }}
+    {{ if or $linkedin $profile }}
+    <div class="wr-Speaker_Links">
+      {{ with $linkedin }}<a class="wr-Speaker_Link" href="{{ . }}" target="_blank" rel="noopener">Connect on LinkedIn</a>{{ end }}
+      {{ with $profile }}<a class="wr-Speaker_Link" href="{{ . }}">About {{ index (split $name " ") 0 }}</a>{{ end }}
+    </div>
+    {{ end }}
+  </div>
+</div>

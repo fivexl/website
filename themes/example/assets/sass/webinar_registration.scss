@@ -1,0 +1,905 @@
+@import 'variables';
+
+// Webinar registration and thank-you pages
+.wr {
+  &-Page {
+    background: #F4F4F4;
+    color: #1A1A1A;
+  }
+
+  &-VisuallyHidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  // Hero (spec: Hero Section Spec.md)
+  &-Hero {
+    padding: 72px 24px 88px;
+  }
+
+  &-Hero_Inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(unquote("min(100%, 420px)"), 1fr));
+    gap: 56px;
+    align-items: start;
+  }
+
+  &-Hero_Content {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  &-Badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &-Badge {
+    font-size: 13px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: #fff;
+    border: 1px solid #DDDDDD;
+    color: #333333;
+  }
+
+  &-Badge_Accent {
+    background: #18ADF0;
+    border-color: #18ADF0;
+    color: #fff;
+  }
+
+  &-Title {
+    font-size: clamp(36px, 4.6vw, 58px);
+    line-height: 1.08;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+    margin: 0;
+  }
+
+  &-Intro {
+    display: contents;
+
+    p, ul {
+      font-size: 19px;
+      line-height: 1.6;
+      color: #333333;
+      text-wrap: pretty;
+      margin: 0;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: -14px; // sit closer to the "You'll learn:" line than the 28px column gap
+    }
+
+    li {
+      position: relative;
+      padding-left: 22px;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 2px;
+        top: 0.65em;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #18ADF0;
+      }
+    }
+  }
+
+  // On one-column layouts, show the date card right after the title (before the description)
+  @media (max-width: 949px) {
+    &-Meta { order: 1; }
+    &-Intro > * { order: 2; }
+  }
+
+  // Date / Time / Duration card
+  &-Meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 1px;
+    background: #E4E4E4;
+    border: 1px solid #E4E4E4;
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 0;
+
+    // Phones: Date and Time side by side, Duration full width below,
+    // so no empty grey cell is left next to Duration.
+    @media (max-width: 599px) {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+      .wr-Meta_Cell { padding: 16px 18px; }
+      .wr-Meta_Cell:last-child { grid-column: 1 / -1; }
+      .wr-Meta_Primary { font-size: 19px; }
+
+      @media (max-width: 359px) {
+        .wr-Meta_Cell { padding: 14px; }
+        .wr-Meta_Primary { font-size: 16px; }
+      }
+
+      // Time zones on one line: "8am CET / 1am CT"
+      .wr-Meta_Times {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: baseline;
+
+        .wr-Meta_Primary + .wr-Meta_Primary::before {
+          content: '/';
+          margin: 0 10px;
+          font-weight: 400;
+          color: #B5B5B5;
+        }
+      }
+    }
+  }
+
+  &-Meta_Cell {
+    background: #fff;
+    padding: 20px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &-Meta_Label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #13A3E6;
+
+    &::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #18ADF0;
+    }
+  }
+
+  &-Meta_Value {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin: 0;
+  }
+
+  &-Meta_Primary {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    color: #1A1A1A;
+  }
+
+  &-Meta_Secondary {
+    font-size: 14px;
+    color: #666666;
+  }
+
+  // Right hero column: form card with speaker photos below
+  &-Hero_Side {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  &-HeroSpeakers {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 24px;
+    text-align: center;
+
+    @media (max-width: 480px) { gap: 12px; }
+  }
+
+  &-HeroSpeaker_Photo {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 16px;
+    margin-bottom: 16px;
+  }
+
+  &-HeroSpeaker_Name {
+    font-size: clamp(15px, 4vw, 20px);
+    font-weight: 700;
+    color: #1A1A1A;
+    margin: 0 0 6px;
+  }
+
+  &-HeroSpeaker_Title {
+    font-size: clamp(13px, 3.6vw, 15px);
+    line-height: 1.5;
+    color: #555555;
+    margin: 0;
+  }
+
+  // Form card
+  &-Form {
+    background: #fff;
+    border-radius: 14px;
+    padding: 36px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 12px 32px rgba(0, 0, 0, 0.06);
+    scroll-margin-top: 96px;
+
+
+    @media (max-width: 480px) {
+      padding: 24px;
+    }
+  }
+
+  &-Form_Form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    &[hidden] { display: none; }
+  }
+
+  &-Form_Head {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 4px;
+  }
+
+  &-Form_Heading {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+
+  &-Form_Sub {
+    font-size: 15px;
+    color: #666666;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  &-Form_Dev {
+    background: #fff4d6;
+    border-radius: 6px;
+    padding: 0.5rem 0.75rem;
+    font-size: 13px;
+    margin: 0;
+  }
+
+  &-Form_Row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  &-Form_Input {
+    font: inherit;
+    font-size: 16px;
+    padding: 14px 16px;
+    border: 1px solid #D6D6D6;
+    border-radius: 8px;
+    outline: none;
+    width: 100%;
+    min-width: 0;
+    background: #fff;
+    color: #1A1A1A;
+
+    &:focus {
+      border-color: #18ADF0;
+      box-shadow: 0 0 0 3px rgba(24, 173, 240, 0.18);
+    }
+  }
+
+  &-Form_Consent {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #555555;
+
+    a {
+      color: #13A3E6;
+      text-decoration: underline;
+    }
+  }
+
+  &-Form_Checkbox {
+    width: 18px;
+    height: 18px;
+    margin: 3px 0 0;
+    accent-color: #18ADF0;
+    flex-shrink: 0;
+  }
+
+  &-Form_Error {
+    color: #c62828;
+    font-size: 14px;
+    margin: 0;
+  }
+
+  &-Form_Submit {
+    width: 100%;
+    font: inherit;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    background: #18ADF0;
+    color: #fff;
+    border: 0;
+    border-radius: 8px;
+    padding: 17px;
+    margin-top: 4px;
+    cursor: pointer;
+
+    &:hover { background: #0F96D4; }
+    &:disabled { opacity: 0.7; cursor: progress; }
+  }
+
+  // Success state
+  &-Success {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 14px;
+    padding: 24px 0;
+
+    &[hidden] { display: none; }
+  }
+
+  &-Success_Icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #18ADF0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-Success_Heading {
+    font-size: 26px;
+    font-weight: 800;
+    margin: 0;
+  }
+
+  &-Success_Text {
+    font-size: 15px;
+    color: #555555;
+    max-width: 320px;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  &-Success_Reset {
+    font: inherit;
+    font-size: 14px;
+    color: #13A3E6;
+    text-decoration: underline;
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  // Content sections
+  &-Section {
+    max-width: calc(1200px + 4rem); // matches the hero's content width plus padding
+    margin: 0 auto;
+    padding: 3rem 1rem 0;
+
+    @media (min-width: 968px) {
+      padding: 4rem 2rem 0;
+    }
+
+  }
+
+  &-Section_Heading {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    margin: 0 0 1.25rem;
+  }
+
+  &-Section_Text {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    max-width: 760px;
+    margin: 0;
+  }
+
+  // Centered sections (Who should attend, What you'll learn)
+  &-Section_Centered {
+    text-align: center;
+    padding-top: 5rem;
+
+    .wr-Hero + & { padding-top: 0; }
+
+    .wr-Section_Heading {
+      font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+      margin-bottom: 1.5rem;
+    }
+
+    .wr-Section_Text {
+      font-size: clamp(1.0625rem, 1.6vw, 1.25rem);
+      max-width: 760px;
+      margin-inline: auto;
+    }
+  }
+
+  // Who Should Attend: white band with numbered rows
+  &-AudienceBand .wr-Section_Centered {
+    padding-top: 0;
+  }
+
+  // Who Should Attend: row of four cards, same width as the "What you'll learn" grid
+  &-Audience {
+    list-style: none;
+    padding: 0;
+    margin: 2.5rem auto 0;
+    max-width: 960px;
+    display: grid;
+    gap: 16px;
+    text-align: left;
+
+    @media (min-width: 768px) {
+      grid-template-columns: 1fr 1fr;
+      gap: 20px 24px;
+    }
+  }
+
+  &-Audience_Item {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 14px;
+    padding: 28px 32px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 12px 32px rgba(0, 0, 0, 0.06);
+  }
+
+  // Same type as the "What you'll learn" headings
+  &-Audience_Text {
+    font-size: clamp(1.0625rem, 1.4vw, 1.1875rem);
+    font-weight: 500;
+    line-height: 1.4;
+    color: #1A1A1A;
+  }
+
+  &-Pill {
+    display: inline-block;
+    background: $accentColor;
+    color: $accentText;
+    border-radius: 999px;
+    padding: 0.35rem 1.25rem;
+    margin: 0 0 1rem;
+  }
+
+  &-Learn {
+    list-style: none;
+    padding: 0;
+    margin: 2.5rem auto 0;
+    max-width: 960px;
+    display: grid;
+    gap: 2rem;
+    text-align: left;
+
+    @media (min-width: 768px) {
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem 3rem;
+    }
+  }
+
+  &-Learn_Item {
+    display: flex;
+    gap: 28px; // 36px icon + 28px = 64px text offset, shared with the audience list
+    align-items: flex-start;
+  }
+
+  &-Learn_Icon {
+    flex: 0 0 auto;
+    width: 36px;
+    height: 36px;
+    color: $accentColor;
+  }
+
+  &-Learn_Heading {
+    font-size: clamp(1.125rem, 1.6vw, 1.3125rem);
+    font-weight: 500;
+    line-height: 1.4;
+    margin: 0 0 0.75rem;
+  }
+
+  &-Learn_Text {
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  &-Reserve {
+    margin: 3rem auto 0;
+    max-width: 100%; // .ButtonCTA is width: max-content and overflows 320px screens
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  // Full-width blue bands (Meet Your Hosts, Register for the Webinar)
+  &-Band {
+    background: $accentColor;
+    color: $accentText;
+    text-align: center;
+    padding: 4rem 1rem;
+    margin-top: 5rem;
+
+    @media (min-width: 968px) {
+      padding: 5.5rem 2rem;
+    }
+  }
+
+  &-Band_Heading {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin: 0;
+  }
+
+  &-Band_Cta .wr-Band_Heading {
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  }
+
+  &-Band_Text {
+    max-width: 760px;
+    margin: 1.5rem auto 0;
+    font-size: 1.125rem;
+    line-height: 1.6;
+  }
+
+  &-Band_Button {
+    display: inline-block;
+    margin-top: 3rem;
+    background: #fff;
+    color: $textPrimary;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 1.125rem;
+    border-radius: 4px;
+    padding: 1rem 2.25rem;
+
+    &:hover, &:focus, &:visited { color: $textPrimary; }
+  }
+
+  // Speakers
+  &-Speakers {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  &-Speaker {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-top: 4rem;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 4rem;
+      padding-top: 5rem;
+    }
+  }
+
+  &-Speaker_Photo {
+    flex: 0 0 auto;
+    display: block;
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+
+    @media (min-width: 768px) {
+      width: 45%;
+    }
+  }
+
+  &-Speaker_Photo_Initials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e2e2e2;
+    color: #999;
+    font-size: 4rem;
+    font-weight: 700;
+  }
+
+  &-Speaker_Body {
+    flex: 1;
+
+    @media (min-width: 768px) {
+      padding-top: 1.5rem;
+    }
+  }
+
+  &-Speaker_Name {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    line-height: 1.2;
+    margin: 0 0 1.25rem;
+  }
+
+  &-Speaker_Bio {
+    color: #555;
+    font-size: 1.0625rem;
+    line-height: 1.65;
+
+    p { margin: 0 0 1.25rem; }
+    strong { color: #333; font-weight: 600; }
+  }
+
+  &-Speaker_Links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    margin-top: 1.25rem;
+  }
+
+  &-Speaker_Link {
+    color: $textAccent;
+  }
+
+  // Thank-you page
+  // Thank-you page
+  &-ThankYou {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 24px 72px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  &-ThankYou_Icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: #18ADF0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-ThankYou_Pill {
+    margin: 20px 0 0;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: #fff;
+    border: 1px solid #DDDDDD;
+    font-size: 13px;
+    font-weight: 600;
+    color: #333333;
+  }
+
+  &-ThankYou_Title {
+    max-width: 11em; // breaks after "Thank you"
+    margin: 40px 0 0;
+    font-size: clamp(40px, 7vw, 64px);
+    line-height: 1.05;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  &-ThankYou_Event {
+    max-width: 680px;
+    margin: 20px 0 0;
+    font-size: clamp(20px, 2.6vw, 28px);
+    font-weight: 500;
+    line-height: 1.3;
+    color: #333333;
+  }
+
+  &-ThankYou_Text {
+    max-width: 560px;
+    margin-top: 36px;
+
+    p {
+      font-size: 17px;
+      line-height: 1.7;
+      color: #555555;
+      text-wrap: pretty;
+      margin: 0;
+    }
+  }
+
+  &-ThankYou_Card {
+    width: 100%;
+    max-width: 580px;
+    margin-top: 40px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    text-align: left;
+  }
+
+  &-ThankYou_Meta {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 1px;
+    background: #E4E4E4;
+    border-bottom: 1px solid #E4E4E4;
+    margin: 0;
+
+    @media (max-width: 599px) {
+      .wr-Meta_Cell { padding: 16px 18px; }
+      .wr-Meta_Primary { font-size: 19px; white-space: nowrap; }
+    }
+
+    // Narrow phones: Date above Time, centred, so both time zones fit on one line
+    @media (max-width: 559px) {
+      grid-template-columns: 1fr;
+
+      .wr-Meta_Cell { align-items: center; text-align: center; }
+      .wr-Meta_Value { align-items: center; }
+      .wr-ThankYou_Times { justify-content: center; }
+    }
+
+    @media (max-width: 359px) {
+      .wr-Meta_Cell { padding: 14px; }
+      .wr-Meta_Primary { font-size: 16px; }
+    }
+  }
+
+  // Time zones on one line: "8am CET / 9am EET"
+  &-ThankYou_Times {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: baseline;
+
+    .wr-Meta_Primary:not(:last-of-type)::after {
+      content: '/';
+      margin: 0 10px;
+      font-weight: 400;
+      color: #B5B5B5;
+    }
+  }
+
+  &-ThankYou_Actions {
+    padding: 20px;
+  }
+
+  &-ThankYou_ActionsLabel {
+    margin: 0 0 12px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #666666;
+  }
+
+  // Google, Apple, Outlook side by side; stacked on narrow phones
+  &-ThankYou_Buttons {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+
+    @media (max-width: 479px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &-ThankYou_Join {
+    margin: 14px 0 0;
+    font-size: 15px;
+    color: #555555;
+    text-align: center;
+
+    a {
+      color: #13A3E6;
+      font-weight: 600;
+    }
+  }
+
+  &-ThankYou_Button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 8px;
+    background: #18ADF0;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color 0.15s;
+
+    &:hover,
+    &:focus-visible {
+      background: #0F96D4;
+      color: #fff;
+    }
+  }
+
+  &-ThankYou_More {
+    max-width: 640px;
+    margin: 36px 0 0;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555555;
+
+    a {
+      color: #13A3E6;
+      font-weight: 600;
+    }
+  }
+
+  // Sticky "Save my seat" bar, mobile only
+  &-StickyCta {
+    display: none;
+
+    @media (max-width: 949px) {
+      display: block;
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 50;
+      padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+      background: rgba(255, 255, 255, 0.96);
+      box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+      transform: translateY(110%);
+      transition: transform 0.25s ease;
+    }
+  }
+
+  &-StickyCta_Visible {
+    transform: translateY(0);
+  }
+
+  &-StickyCta_Button {
+    display: block;
+    text-align: center;
+    background: #18ADF0;
+    color: #fff;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 8px;
+    padding: 15px;
+
+    &:hover, &:focus, &:visited { color: #fff; }
+    &:hover { background: #0F96D4; }
+  }
+}

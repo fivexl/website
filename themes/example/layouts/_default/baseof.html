@@ -12,7 +12,9 @@
         {{- block "main" . }}{{- end }}
         </div>
         </div>
+        {{- if not .Params.hide_email_subscription -}}
         {{- partial "email_subscription.html" . -}}
+        {{- end -}}
         {{- partial "footer.html" . -}}
         {{- block "bodyScripts" . -}}{{- end -}}
     </body>

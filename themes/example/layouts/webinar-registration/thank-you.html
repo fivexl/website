@@ -1,0 +1,97 @@
+{{ define "headStyles" }}
+{{/* Self-hosted Montserrat stops at 700; the title needs 800. */}}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap">
+{{ end }}
+
+{{ define "main" }}
+{{ $event := .Parent }}
+
+<div class="wr-Page">
+<section class="wr-ThankYou">
+  <div class="wr-ThankYou_Icon" aria-hidden="true">
+    <svg width="30" height="30" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </div>
+  <p class="wr-ThankYou_Pill">You’re on the list</p>
+
+  <h1 class="wr-ThankYou_Title">{{ .Title }}</h1>
+  {{ with $event }}<p class="wr-ThankYou_Event">{{ .Title }}</p>{{ end }}
+
+  <div class="wr-ThankYou_Text">{{ .Content }}</div>
+
+  {{ with $event }}
+  <div class="wr-ThankYou_Card">
+    <dl class="wr-ThankYou_Meta">
+      <div class="wr-Meta_Cell">
+        <dt class="wr-Meta_Label">Date</dt>
+        <dd class="wr-Meta_Value">
+          <span class="wr-Meta_Primary">{{ time.Format "2 January" .Params.event_date }}</span>
+          <span class="wr-Meta_Secondary">{{ time.Format "Monday, 2006" .Params.event_date }}</span>
+        </dd>
+      </div>
+      <div class="wr-Meta_Cell">
+        <dt class="wr-Meta_Label">Time</dt>
+        <dd class="wr-Meta_Value wr-ThankYou_Times">
+          {{ range (slice | append .Params.time_primary) }}<span class="wr-Meta_Primary">{{ . }}</span>{{ end }}
+          {{ with .Params.time_secondary }}<span class="wr-Meta_Secondary">{{ . }}</span>{{ end }}
+        </dd>
+      </div>
+    </dl>
+
+    {{ $start := (time.AsTime .Params.event_start_utc).UTC }}
+    {{ $end := (time.AsTime .Params.event_end_utc).UTC }}
+    {{ $pageURL := printf "https://fivexl.io%s" .RelPermalink }}
+    {{/* join_url: the live stream link, once it exists. Until then the event links to the registration page. */}}
+    {{ $location := .Params.join_url | default $pageURL }}
+    {{ $details := printf "FivexL webinar. Details: %s" $pageURL }}
+    {{ with .Params.join_url }}{{ $details = printf "FivexL webinar. Join the live stream: %s" . }}{{ end }}
+
+    {{ $google := printf "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%s&dates=%s/%s&details=%s&location=%s"
+        (urlquery .Title) ($start.Format "20060102T150405Z") ($end.Format "20060102T150405Z") (urlquery $details) (urlquery $location) }}
+
+    {{/* Outlook shows "+" literally, so spaces are encoded as %20 */}}
+    {{ $outlook := printf "https://outlook.office.com/calendar/0/deeplink/compose?path=%%2Fcalendar%%2Faction%%2Fcompose&rru=addevent&subject=%s&startdt=%s&enddt=%s&body=%s&location=%s"
+        (replace (urlquery .Title) "+" "%20") (urlquery ($start.Format "2006-01-02T15:04:05Z")) (urlquery ($end.Format "2006-01-02T15:04:05Z")) (replace (urlquery $details) "+" "%20") (urlquery $location) }}
+
+    {{/* .ics file for Apple Calendar (also opens in Outlook desktop and most other apps). Lines must end in CRLF. */}}
+    {{ $icsText := slice
+        "BEGIN:VCALENDAR" "VERSION:2.0" "PRODID:-//FivexL//Webinar//EN" "CALSCALE:GREGORIAN" "METHOD:PUBLISH"
+        "BEGIN:VEVENT"
+        (printf "UID:%s@fivexl.io" (replace (strings.Trim .RelPermalink "/") "/" "-"))
+        (printf "DTSTAMP:%s" ($start.Format "20060102T150405Z"))
+        (printf "DTSTART:%s" ($start.Format "20060102T150405Z"))
+        (printf "DTEND:%s" ($end.Format "20060102T150405Z"))
+        (printf "SUMMARY:%s" (replace (replace .Title ";" "\\;") "," "\\,"))
+        (printf "DESCRIPTION:%s" (replace (replace $details ";" "\\;") "," "\\,"))
+        (printf "LOCATION:%s" $location)
+        (printf "URL:%s" $location)
+        "END:VEVENT" "END:VCALENDAR" }}
+    {{ $ics := resources.FromString (printf "%sevent.ics" (strings.TrimPrefix "/" .RelPermalink)) (printf "%s\r\n" (delimit $icsText "\r\n")) }}
+
+    <div class="wr-ThankYou_Actions">
+      <p class="wr-ThankYou_ActionsLabel">Add to your calendar</p>
+      <div class="wr-ThankYou_Buttons">
+        <a class="wr-ThankYou_Button" href="{{ $google }}" target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 10h17M8 3v4M16 3v4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          Google
+        </a>
+        <a class="wr-ThankYou_Button" href="{{ $ics.RelPermalink }}" download="fivexl-webinar.ics">
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 10h17M8 3v4M16 3v4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          Apple
+        </a>
+        <a class="wr-ThankYou_Button" href="{{ $outlook }}" target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 10h17M8 3v4M16 3v4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          Outlook
+        </a>
+      </div>
+      {{ with .Params.join_url }}<p class="wr-ThankYou_Join">Live stream: <a href="{{ . }}" target="_blank" rel="noopener">watch on YouTube</a></p>{{ end }}
+    </div>
+  </div>
+  {{ end }}
+
+  <p class="wr-ThankYou_More">While you wait, read our latest posts on the <a href="/blog/">FivexL blog</a> or follow us on <a href="https://www.linkedin.com/company/5xl" target="_blank" rel="noopener">LinkedIn</a>.</p>
+</section>
+</div>
+
+{{ end }}
