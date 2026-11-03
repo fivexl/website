@@ -81,6 +81,10 @@
         <input type="hidden" name="email_address_check" value="">
         <input type="hidden" name="locale" value="en">
 
+        {{/* Cloudflare Turnstile, when the Brevo form has a captcha. Brevo checks the token on its side.
+             The widget is invisible; on localhost use Cloudflare's test key 1x00000000000000000000AA. */}}
+        {{ with .Params.turnstile_sitekey }}<div class="cf-turnstile" data-sitekey="{{ . }}" data-language="en"></div>{{ end }}
+
         <p class="wr-Form_Error" role="alert" hidden>Something went wrong. Please try again.</p>
         <button class="wr-Form_Submit" type="submit">Save my seat</button>
       </form>
@@ -227,8 +231,14 @@
       if (!form.action || form.getAttribute('action') === null) { showSuccess(); return; }
 
       submit.disabled = true;
-      // Same request Brevo's own embed script sends: the form action with ?isAjax=1, answered with JSON.
-      fetch(form.action + '?isAjax=1', { method: 'POST', body: new FormData(form) })
+      captchaToken()
+        .then(function (token) {
+          var body = new FormData(form);
+          // Brevo's embed sends the Turnstile token as g-recaptcha-response; the widget adds cf-turnstile-response itself.
+          if (token) body.set('g-recaptcha-response', token);
+          // Same request Brevo's own embed script sends: the form action with ?isAjax=1, answered with JSON.
+          return fetch(form.action + '?isAjax=1', { method: 'POST', body: body });
+        })
         .then(function (res) { return res.json(); })
         .then(function (data) {
           if (data && data.success === false) throw new Error('Brevo rejected the submission');
@@ -236,15 +246,37 @@
           if (form.dataset.thankYou) { window.location.href = form.dataset.thankYou; return; }
           showSuccess();
         })
-        .catch(function () { error.hidden = false; })
+        .catch(function () {
+          error.hidden = false;
+          // Each Turnstile token works once, so get a fresh one for the next try.
+          if (captcha && window.turnstile) window.turnstile.reset(captcha);
+        })
         .finally(function () { submit.disabled = false; });
     });
 
+    // Invisible Turnstile check. Its token usually arrives within a second or two of the page loading,
+    // so wait up to 10 seconds for it if someone submits very quickly.
+    var captcha = form.querySelector('.cf-turnstile');
+    function captchaToken() {
+      if (!captcha) return Promise.resolve('');
+      return new Promise(function (resolve, reject) {
+        var waited = 0;
+        (function check() {
+          var token = window.turnstile && window.turnstile.getResponse(captcha);
+          if (token) return resolve(token);
+          if ((waited += 250) > 10000) return reject(new Error('No captcha token'));
+          setTimeout(check, 250);
+        })();
+      });
+    }
+
     card.querySelector('.wr-Success_Reset').addEventListener('click', function () {
       form.reset();
+      if (captcha && window.turnstile) window.turnstile.reset(captcha);
       success.hidden = true;
       form.hidden = false;
     });
   })();
 </script>
+{{ with .Params.turnstile_sitekey }}<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>{{ end }}
 {{ end }}

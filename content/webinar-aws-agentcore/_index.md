@@ -28,6 +28,8 @@ form_subtext: 'Free. The recording goes to everyone who registers.'
 # (https://<id>.sibforms.com/serve/...). Field names default to FIRSTNAME, LASTNAME,
 # EMAIL and OPT_IN; override any of them with brevo_fields.
 brevo_form_action: 'https://1b3fd6c9.sibforms.com/serve/MUIFAJXeitYlzfqr8iXmjkRlB6mgstmrnUjELzsxe9mp9sWM8cxvfIink3FQqkLBnFeITPUdrffhZE8flyayIOpdqTJFSYDrbf6yU51zl7HSr5Y14RxrktTot_IuaVMQW70ozKV47O4rqivaNlMK4TvMdOenRVWMPca0VwiKB4mFjeNwHKDx1sdROolA6SSE2w60goMDI9zukdBrZA=='
+# Cloudflare Turnstile site key: the same widget as the captcha in the Brevo form settings.
+turnstile_sitekey: '0x4AAAAAAABbGaideoQ1O15c'
 # brevo_fields:
 #   email: 'EMAIL'
 
