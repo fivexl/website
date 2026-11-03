@@ -50,7 +50,10 @@
 
     <div class="wr-Hero_Side">
     <div class="wr-Form" id="register">
+      {{/* After a successful registration, send people to the thank-you page in this bundle (if there is one) */}}
+      {{ $thankYou := where .RegularPages "Layout" "thank-you" | first 1 }}
       <form class="wr-Form_Form" data-wr-form
+        {{ range $thankYou }}data-thank-you="{{ .RelPermalink }}"{{ end }}
         {{ with .Params.brevo_form_action }}action="{{ . }}"{{ end }} method="post" novalidate>
         <div class="wr-Form_Head">
           <h2 class="wr-Form_Heading">Register now</h2>
@@ -229,6 +232,8 @@
         .then(function (res) { return res.json(); })
         .then(function (data) {
           if (data && data.success === false) throw new Error('Brevo rejected the submission');
+          // Brevo's own "confirmation page" redirect never runs for this background request, so redirect here.
+          if (form.dataset.thankYou) { window.location.href = form.dataset.thankYou; return; }
           showSuccess();
         })
         .catch(function () { error.hidden = false; })
