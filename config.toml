@@ -101,11 +101,13 @@ disableKinds = ['category'] # Categories disabled initially
     email = "info@fivexl.io"
   [params.banner]
     enabled = true
-    label = ""
-    date = ""
-    name = "What FivexL reads, ships, and argues about on AWS — once a month."
-    cta = "Subscribe"
-    url = "/newsletter/"
+    label = "Live webinar"
+    date = "November 11"
+    name = "Amazon Bedrock AgentCore: run an AI agent proof-of-concept without touching your product"
+    # Optional shorter name for phones
+    name_short = "Amazon Bedrock AgentCore"
+    cta = "Register"
+    url = "/webinars/aws-agentcore/"
 
 [imaging]
   quality = 80
