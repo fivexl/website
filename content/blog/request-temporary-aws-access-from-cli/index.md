@@ -1,9 +1,9 @@
 ---
 title: 'Request Temporary AWS Access from the CLI: SSO Elevator 5.0'
-author_id: 'FivexL'
+author_id: 'Bhavika Mantri'
 date: 2026-10-20
 description: 'SSO Elevator 5.0 adds an organization-wide CLI for requesting temporary AWS access through IAM Identity Center, verifies callers with a signed STS proof, and keeps Slack secrets out of Terraform state.'
-author: FivexL
+author: Bhavika Mantri
 category: AWS
 panel_image: fivexl-05.png
 tags: ['AWS', 'Just-in-Time Access', 'Terraform', 'Security', 'Identity Center', 'open source']
