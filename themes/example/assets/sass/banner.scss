@@ -29,8 +29,13 @@
     opacity: 0.5;
   }
 
-  &-Date, &-Name {
+  &-Date, &-Name, &-NameShort {
     font-weight: 500;
+  }
+
+  // Shorter name shown on phones instead of the full one (params.banner.name_short)
+  &-NameShort {
+    display: none;
   }
 
   &-CTA {
@@ -77,6 +82,24 @@
     &-CTA {
       display: block;
       margin: 0.35rem 0 0;
+    }
+
+    // Block layout drops the flex gap, so space the separators by hand
+    &-Sep {
+      margin: 0 0.35rem;
+    }
+
+    &--short &-Name {
+      display: none;
+    }
+
+    &--short &-NameShort {
+      display: inline;
+    }
+
+    &--short &-CTA {
+      display: inline;
+      margin-left: 0.4rem;
     }
 
     &-Close {

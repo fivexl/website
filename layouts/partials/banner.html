@@ -1,9 +1,10 @@
 {{ with site.Params.banner }}{{ if .enabled }}
-<div class="bnr" id="site-banner" role="banner">
+<div class="bnr{{ with .name_short }} bnr--short{{ end }}" id="site-banner" role="banner">
   <p class="bnr-Text">
     {{ with .label }}<span class="bnr-Label">{{ . }}</span><span class="bnr-Sep">·</span>{{ end }}
     {{ with .date }}<span class="bnr-Date">{{ . }}</span><span class="bnr-Sep">·</span>{{ end }}
     <span class="bnr-Name">{{ .name }}</span>
+    {{- with .name_short }}<span class="bnr-NameShort">{{ . }}</span>{{ end }}
     <a class="bnr-CTA" href="{{ .url }}"{{ if hasPrefix .url "http" }} target="_blank" rel="noopener"{{ end }}>{{ .cta }} ›</a>
   </p>
   <button class="bnr-Close" id="site-banner-close" aria-label="Dismiss banner">&times;</button>
