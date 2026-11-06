@@ -81,6 +81,13 @@
         <input type="hidden" name="email_address_check" value="">
         <input type="hidden" name="locale" value="en">
 
+        {{/* UTM tags from the page link (e.g. ?utm_source=linkedin), filled in by the script below.
+             Names match the hidden fields and contact attributes in the Brevo form. */}}
+        <input type="hidden" name="UTM_SOURCE" data-utm="utm_source" value="">
+        <input type="hidden" name="UTM_MEDIUM" data-utm="utm_medium" value="">
+        <input type="hidden" name="UTM_CAMPAIGN" data-utm="utm_campaign" value="">
+        <input type="hidden" name="UTM_CONTENT" data-utm="utm_content" value="">
+
         {{/* Cloudflare Turnstile, when the Brevo form has a captcha. Brevo checks the token on its side.
              The widget is invisible; on localhost use Cloudflare's test key 1x00000000000000000000AA. */}}
         {{ with .Params.turnstile_sitekey }}<div class="cf-turnstile" data-sitekey="{{ . }}" data-language="en"></div>{{ end }}
@@ -193,6 +200,13 @@
     var success = card.querySelector('.wr-Success');
     var error = form.querySelector('.wr-Form_Error');
     var submit = form.querySelector('.wr-Form_Submit');
+
+    // Copy UTM tags from the page link into the hidden fields, so Brevo records where each registration came from.
+    var params = new URLSearchParams(window.location.search);
+    form.querySelectorAll('[data-utm]').forEach(function (input) {
+      var value = params.get(input.dataset.utm);
+      if (value) input.value = value.slice(0, 200);
+    });
 
     function showSuccess() {
       form.hidden = true;
