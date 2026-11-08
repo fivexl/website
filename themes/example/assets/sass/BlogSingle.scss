@@ -104,6 +104,9 @@
   .image-right { margin-left: auto; margin-right: 1rem; }
   .image-center { margin-inline: auto; }
 
+  // The flex column shrinks children to their content; code blocks span the text column instead.
+  .highlight { width: 100%; }
+
   // Table styles for blog posts
   table {
     width: 100%;
