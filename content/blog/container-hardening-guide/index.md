@@ -14,7 +14,7 @@ tags: [ 'aws', 'container', 'guide', 'security', 'docker', 'fivexl-way']
 
 This guide is for engineers who build container images and run them on Amazon ECS or Kubernetes. It is opinionated: each practice says what we do, why, and how, with a snippet you can copy.
 
-Most attacks are a matter of cost. An opportunistic attacker sprays a fresh CVE across the internet and keeps whatever breaks easily. Suppose the break-in leaves them in a container with no shell, no package manager, no download tools, no writable filesystem, no network route out and no useful credentials. Then every next step costs real work, and most of them move on to an easier target. A determined attacker with resources will keep going. For them, the same controls slow each step down and make each step visible to your detection.
+Most attacks are a matter of cost. An opportunistic attacker sprays exploits for fresh CVEs across the internet and keeps whatever breaks easily. Suppose the break-in leaves them in a container with no shell, no package manager, no download tools, no writable filesystem, no network route out and no useful credentials. Then every next step costs real work, and most of them move on to an easier target. A determined attacker with resources will keep going. For them, the same controls slow each step down and make each step visible to your detection.
 
 The guide reflects how we build our own images. The base images, example Dockerfiles and CI live in [github.com/fivexl/secure-container-image](https://github.com/fivexl/secure-container-image). That repository also ships an Agent Skill that applies the Build practices to an existing Dockerfile; see [Let an Agent Apply These Practices](#let-an-agent-apply-these-practices).
 
@@ -25,7 +25,7 @@ The guide has two parts. **Build** covers what goes into the image and how the p
 **Build**
 
 - [Start from a minimal base image](#start-from-a-minimal-base-image): no shell, no package manager, no download tools; keep `:debug` and `-dev` tags out of production.
-- [Remove the reasons a shell stays](#remove-the-reasons-a-shell-stays): rewrite entrypoint scripts in Go and probe health with lprobe.
+- [Remove the reasons a shell stays](#remove-the-reasons-a-shell-stays): rewrite entrypoint scripts in Go and probe health with [lprobe](https://github.com/fivexl/lprobe).
 - [Use multi-stage builds](#use-multi-stage-builds): the compiler and build tools never reach the runtime image.
 - [Keep build secrets out of the image](#keep-build-secrets-out-of-the-image): secret and SSH mounts, a `.dockerignore`, and OIDC instead of static keys in CI.
 - [Run as a non-root user](#run-as-a-non-root-user-and-treat-the-base-contract-as-an-api): a numeric uid, and the base image's uid, entrypoint and paths treated as an API.
