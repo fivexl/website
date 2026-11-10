@@ -4,7 +4,7 @@ description: "We architect and build scalable cloud-based production-ready appli
 menu:
   main:
     name: Career
-    weight: 40
+    weight: 33
     url: /career
 double_panel:
   layout: 'services'

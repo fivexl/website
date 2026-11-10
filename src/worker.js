@@ -1,3 +1,5 @@
+import { handleResources } from "./resources.js";
+
 const PERMANENT_REDIRECTS = new Map([
   ["/blog/overture-case-study/", "/case-studies/ovrture-case-study/"],
   ["/blog/qameta-case-study-/", "/case-studies/qameta-case-study/"],
@@ -45,6 +47,11 @@ export default {
     if (url.hostname === "www.fivexl.io") {
       url.hostname = "fivexl.io";
       return Response.redirect(url.toString(), 301);
+    }
+
+    if (url.pathname.startsWith("/api/resources/")) {
+      const response = await handleResources(request, env, url);
+      if (response) return response;
     }
 
     const redirectTarget = PERMANENT_REDIRECTS.get(url.pathname);
