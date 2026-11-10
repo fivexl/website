@@ -118,13 +118,13 @@ disableKinds = ['category'] # Categories disabled initially
     email = "info@fivexl.io"
   [params.banner]
     enabled = true
-    label = "Live webinar"
-    date = "November 11"
-    name = "Amazon Bedrock AgentCore: run an AI agent proof-of-concept without touching your product"
+    label = "Free guide"
+    date = ""
+    name = "FivexL Container Hardening Guide: how we build and run hardened container images on AWS"
     # Optional shorter name for phones
-    name_short = "Amazon Bedrock AgentCore"
-    cta = "Register"
-    url = "/webinars/aws-agentcore/"
+    name_short = "Container Hardening Guide"
+    cta = "Get the guide"
+    url = "/resources/container-security/container-hardening-guide/"
 
 [imaging]
   quality = 80

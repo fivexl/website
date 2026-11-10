@@ -121,6 +121,11 @@
 </section>
 </div>
 
+{{/* Phones only: keeps the form one tap away until it is on screen, as on the webinar page */}}
+<div class="wr-StickyCta" data-wr-sticky>
+  <a class="wr-StickyCta_Button" href="#get">Get the guide</a>
+</div>
+
 <script>
   (function () {
     var form = document.querySelector('[data-rs-form]');
@@ -129,6 +134,22 @@
     var error = form.querySelector('.wr-Form_Error');
     var submit = form.querySelector('.wr-Form_Submit');
     var captcha = form.querySelector('.cf-turnstile');
+
+    // Sticky phone button: hidden while the form, the bottom band or the footer is on screen.
+    var sticky = document.querySelector('[data-wr-sticky]');
+    var onScreen = new Set();
+    if (sticky && 'IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) onScreen.add(entry.target); else onScreen.delete(entry.target);
+        });
+        sticky.classList.toggle('wr-StickyCta_Visible', onScreen.size === 0);
+      });
+      ['#get', '.wr-Band_Cta', 'footer'].forEach(function (selector) {
+        var el = document.querySelector(selector);
+        if (el) observer.observe(el);
+      });
+    }
 
     // Invisible Turnstile check; its token usually arrives a second or two after the page loads.
     function captchaToken() {
