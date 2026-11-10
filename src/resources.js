@@ -1,17 +1,12 @@
 // Email-gated PDF downloads for /resources/.
 //
 // The PDFs live in a private R2 bucket (binding RESOURCES_BUCKET) and have no public URL.
-// 1. The page POSTs the form to /api/resources/download.
-// 2. The Worker checks the captcha, sends the contact to the Brevo form, and only if Brevo
-//    accepts it returns a signed link to /api/resources/file/<key> that expires after a few minutes.
+// 1. The page sends the form straight to Brevo, the same way as the webinar form.
+// 2. When Brevo accepts it, the page POSTs to /api/resources/download, and the Worker returns
+//    a signed link to /api/resources/file/<key> that expires after a few minutes.
 // 3. That link streams the PDF from R2.
 //
-// Configuration (wrangler.toml [vars] and secrets):
-//   BREVO_FORM_ACTION     vars    Brevo form submit URL (the `action` of the Brevo embed form)
-//   RESOURCE_FIELD        vars    Brevo hidden field / contact attribute for the resource, e.g. RESOURCE
-//   DOWNLOAD_SIGNING_KEY  secret  Random string used to sign download links
-//   TURNSTILE_SECRET      secret  Optional. Turnstile secret key; when set, the Worker checks the
-//                                 captcha itself. When unset, the token is passed on to Brevo.
+// Secret (Runtime variables and secrets): DOWNLOAD_SIGNING_KEY, a random string that signs the links.
 
 const LINK_TTL_SECONDS = 300;
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -47,66 +42,24 @@ function safeEqual(a, b) {
   return diff === 0;
 }
 
-async function verifyTurnstile(env, token, ip) {
-  const body = new FormData();
-  body.set("secret", env.TURNSTILE_SECRET);
-  body.set("response", token);
-  if (ip) body.set("remoteip", ip);
-  const res = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", { method: "POST", body });
-  const data = await res.json().catch(() => ({}));
-  return data.success === true;
-}
-
-// Same request Brevo's own embed script sends: the form action with ?isAjax=1, answered with JSON.
-async function submitToBrevo(env, { firstName, lastName, email, resource, token }) {
-  const body = new FormData();
-  body.set("FIRSTNAME", firstName);
-  body.set("LASTNAME", lastName);
-  body.set("EMAIL", email);
-  body.set("OPT_IN", "1");
-  body.set(env.RESOURCE_FIELD || "RESOURCE", resource);
-  body.set("email_address_check", "");
-  body.set("locale", "en");
-  // Without our own Turnstile secret, Brevo checks the captcha on its side.
-  if (token && !env.TURNSTILE_SECRET) body.set("g-recaptcha-response", token);
-  const res = await fetch(`${env.BREVO_FORM_ACTION}?isAjax=1`, { method: "POST", body });
-  if (!res.ok) return false;
-  const data = await res.json().catch(() => null);
-  return Boolean(data) && data.success !== false;
-}
-
 async function handleDownloadRequest(request, env) {
   if (request.method !== "POST") return json(405, { error: "Method not allowed" });
-  if (!env.RESOURCES_BUCKET || !env.BREVO_FORM_ACTION || !env.DOWNLOAD_SIGNING_KEY) {
+  if (!env.RESOURCES_BUCKET || !env.DOWNLOAD_SIGNING_KEY) {
     return json(503, { error: "Downloads are not configured" });
   }
 
+  // The same fields the page has just sent to Brevo, plus the file name.
   const form = await request.formData().catch(() => null);
   if (!form) return json(400, { error: "Invalid request" });
-  const firstName = String(form.get("first_name") || "").trim().slice(0, 100);
-  const lastName = String(form.get("last_name") || "").trim().slice(0, 100);
-  const email = String(form.get("email") || "").trim();
+  const email = String(form.get("EMAIL") || "").trim();
   const key = String(form.get("file") || "");
-  const resource = String(form.get("resource") || "").slice(0, 200);
-  const token = String(form.get("captcha") || "");
 
-  if (!firstName || !lastName) return json(400, { error: "Please enter your first and last name." });
   if (!EMAIL_PATTERN.test(email) || email.length > 254) return json(400, { error: "Please enter a valid email address." });
-  if (form.get("consent") !== "1") return json(400, { error: "Please accept the Privacy Policy." });
+  if (form.get("OPT_IN") !== "1") return json(400, { error: "Please accept the Privacy Policy." });
   if (!KEY_PATTERN.test(key) || key.includes("..")) return json(400, { error: "Unknown resource" });
 
-  if (env.TURNSTILE_SECRET) {
-    const ok = await verifyTurnstile(env, token, request.headers.get("cf-connecting-ip"));
-    if (!ok) return json(403, { error: "The captcha check failed. Please try again." });
-  }
-
-  // Check the file exists before we put the contact in Brevo.
   const head = await env.RESOURCES_BUCKET.head(key);
   if (!head) return json(404, { error: "Unknown resource" });
-
-  if (!(await submitToBrevo(env, { firstName, lastName, email, resource: resource || key, token }))) {
-    return json(502, { error: "Something went wrong. Please try again." });
-  }
 
   const expires = Math.floor(Date.now() / 1000) + LINK_TTL_SECONDS;
   const sig = await sign(env, key, expires);

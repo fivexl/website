@@ -108,9 +108,11 @@ disableKinds = ['category'] # Categories disabled initially
 [params]
   relatedBlogsLength = 3
   description = "FivexL blog and case studies - Expert AWS insights, DevOps best practices, cloud engineering guidance, and real-world success stories"
-  # Downloadable resources (/resources/). The Brevo form, R2 bucket and signing key
-  # are configured on the Worker (wrangler.toml, src/resources.js).
+  # Downloadable resources (/resources/). The browser sends the form to Brevo; the R2 bucket
+  # and the signing key for download links are configured on the Worker (wrangler.toml, src/resources.js).
   [params.resources]
+    # Brevo form submit URL: the `action` of the <form> in Brevo's HTML embed code.
+    brevo_form_action = "https://1b3fd6c9.sibforms.com/serve/MUIFANiAX83PL1mqWIzQrnIs4KRd8gHB7NLubx9BeUCmFebc3R3SFR494cKHpQFpIM9asaCFD5aMuYJRsLo5FBmgqPCf07FkuCPJXvNvKwYcm9z2NJCI3vlATzkf364fkHfzHFf9RDw5hprVrHJuuGmeuySHv2op6pwGlg7Hf-aJ5h6MmYkLIwjbksS_5OhDY4MBivj82YCazpQEjA=="
     # Cloudflare Turnstile site key: the same widget as the captcha in the Brevo form settings.
     turnstile_sitekey = "0x4AAAAAAABbGaideoQ1O15c"
   [params.author]
