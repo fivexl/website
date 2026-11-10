@@ -6,3 +6,17 @@ main = "src/worker.js"
 directory = "./public"
 binding = "ASSETS"
 run_worker_first = true
+
+# Email-gated PDFs for /resources/ (see src/resources.js). The bucket is private:
+# files are only served through short-lived signed links after the Brevo form accepts an email.
+[[r2_buckets]]
+binding = "RESOURCES_BUCKET"
+bucket_name = "resources"
+
+[vars]
+# Brevo form submit URL: the `action` of the <form> in Brevo's HTML embed code.
+BREVO_FORM_ACTION = "https://1b3fd6c9.sibforms.com/serve/MUIFANiAX83PL1mqWIzQrnIs4KRd8gHB7NLubx9BeUCmFebc3R3SFR494cKHpQFpIM9asaCFD5aMuYJRsLo5FBmgqPCf07FkuCPJXvNvKwYcm9z2NJCI3vlATzkf364fkHfzHFf9RDw5hprVrHJuuGmeuySHv2op6pwGlg7Hf-aJ5h6MmYkLIwjbksS_5OhDY4MBivj82YCazpQEjA=="
+# Brevo hidden field (contact attribute) that records which resource was downloaded.
+RESOURCE_FIELD = "RESOURCE"
+# Secret, set with `wrangler secret put` or in the dashboard: DOWNLOAD_SIGNING_KEY.
+# The Brevo form has its own Turnstile captcha, so Brevo checks it and TURNSTILE_SECRET stays unset.

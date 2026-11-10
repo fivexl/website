@@ -3,7 +3,7 @@ title: Blog
 menu:
   main:
     name: Blog
-    weight: 20
+    weight: 30
     url: /blog
 ---
 

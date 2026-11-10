@@ -1,0 +1,186 @@
+{{ define "headStyles" }}
+{{/* Self-hosted Montserrat stops at 700; the webinar-style headings need 800. */}}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap">
+{{ end }}
+
+{{ define "main" }}
+{{/* Landing page for one downloadable guide, laid out like the webinar registration page:
+     the shared hero, description and form, who it's for, what you'll learn. The form sends the details to
+     the Worker (src/resources.js), which adds the contact to Brevo and returns a short-lived download link. */}}
+{{ $sitekey := site.Params.resources.turnstile_sitekey }}
+
+<div class="bls-PanelWrapper">{{- partial "DoublePanel.html" ( dict
+    "Params" ( dict
+        "title" .Title
+        "panel_image" (.Params.panel_image | default "panel.*")
+        "featured_page" .
+    )
+    "IsSection" false
+) -}}</div>
+
+<div class="wr-Page">
+{{/* Description on the left, the form on the right, as on the webinar registration page */}}
+<section class="wr-Hero">
+  <div class="wr-Hero_Inner">
+    <div class="wr-Hero_Content">
+      <ul class="wr-Badges">
+        <li class="wr-Badge wr-Badge_Accent">{{ .Params.label | default "Free guide" }}</li>
+        <li class="wr-Badge"><a class="rs-BadgeLink" href="{{ .Parent.RelPermalink }}">{{ .Parent.Title }}</a></li>
+      </ul>
+      {{ with .Params.subtitle }}<p class="rs-Lead">{{ . }}</p>{{ end }}
+      <div class="wr-Intro">{{ .Content }}</div>
+      {{ with .Params.meta }}
+      <dl class="wr-Meta">
+        {{ range . }}
+        <div class="wr-Meta_Cell">
+          <dt class="wr-Meta_Label">{{ .label }}</dt>
+          <dd class="wr-Meta_Value">
+            <span class="wr-Meta_Primary">{{ .value }}</span>
+            {{ with .note }}<span class="wr-Meta_Secondary">{{ . }}</span>{{ end }}
+          </dd>
+        </div>
+        {{ end }}
+      </dl>
+      {{ end }}
+    </div>
+
+    <div class="wr-Hero_Side">
+    <div class="wr-Form" id="get">
+      <form class="wr-Form_Form" data-rs-form action="/api/resources/download" method="post" novalidate>
+        <div class="wr-Form_Head">
+          <h2 class="wr-Form_Heading">Get the free guide</h2>
+          <p class="wr-Form_Sub">Enter your details and the download starts straight away.</p>
+        </div>
+        <div class="wr-Form_Row">
+          <label class="wr-VisuallyHidden" for="rs-first">First name</label>
+          <input class="wr-Form_Input" id="rs-first" name="first_name" type="text" placeholder="First name*" autocomplete="given-name" required>
+          <label class="wr-VisuallyHidden" for="rs-last">Last name</label>
+          <input class="wr-Form_Input" id="rs-last" name="last_name" type="text" placeholder="Last name*" autocomplete="family-name" required>
+        </div>
+        <label class="wr-VisuallyHidden" for="rs-email">Work email</label>
+        <input class="wr-Form_Input" id="rs-email" name="email" type="email" placeholder="Work email*" autocomplete="email" required>
+        <label class="wr-Form_Consent">
+          <input class="wr-Form_Checkbox" type="checkbox" name="consent" value="1" required>
+          <span>By submitting this form, you acknowledge and agree that FivexL will process your personal information in accordance with the <a href="/privacy-policy/">Privacy Policy</a>.</span>
+        </label>
+        <input type="hidden" name="file" value="{{ .Params.file }}">
+        <input type="hidden" name="resource" value="{{ .Params.download_id }}">
+        {{ with $sitekey }}<div class="cf-turnstile" data-sitekey="{{ . }}" data-language="en"></div>{{ end }}
+        <p class="wr-Form_Error" role="alert" hidden></p>
+        <button class="wr-Form_Submit" type="submit">Download the guide</button>
+      </form>
+
+      <div class="wr-Success" data-rs-done hidden>
+        <div class="wr-Success_Icon" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h2 class="wr-Success_Heading">Your download is ready</h2>
+        <p class="wr-Success_Text">If it didn't start on its own, use the button below. The link works for 5 minutes.</p>
+        <a class="wr-Form_Submit rs-Done_Link" data-rs-link href="#">Download the PDF</a>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+{{ with .Params.audience }}
+<div class="wr-AudienceBand">
+<section class="wr-Section wr-Section_Centered">
+  <p class="wr-Pill">Audience</p>
+  <h2 class="wr-Section_Heading">Who It's For</h2>
+  <ul class="wr-Audience">
+    {{ range . }}<li class="wr-Audience_Item"><span class="wr-Audience_Text">{{ . }}</span></li>{{ end }}
+  </ul>
+</section>
+</div>
+{{ end }}
+
+{{ with .Params.learn }}
+<section class="wr-Section wr-Section_Centered">
+  <p class="wr-Pill">What you'll learn</p>
+  <h2 class="wr-Section_Heading">Inside the Guide</h2>
+  <ul class="wr-Learn">
+    {{ range . }}
+    <li class="wr-Learn_Item">
+      <svg class="wr-Learn_Icon" width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="20" fill="currentColor"/><path d="M11 20h17M22 14l6 6-6 6" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div>
+        <h3 class="wr-Learn_Heading">{{ .heading }}</h3>
+        <p class="wr-Learn_Text">{{ .text }}</p>
+      </div>
+    </li>
+    {{ end }}
+  </ul>
+</section>
+{{ end }}
+
+<section class="wr-Band wr-Band_Cta">
+  <h2 class="wr-Band_Heading">Get the Free Guide</h2>
+  <a class="wr-Band_Button" href="#get">Download the guide</a>
+</section>
+</div>
+
+<script>
+  (function () {
+    var form = document.querySelector('[data-rs-form]');
+    if (!form) return;
+    var done = document.querySelector('[data-rs-done]');
+    var error = form.querySelector('.wr-Form_Error');
+    var submit = form.querySelector('.wr-Form_Submit');
+    var captcha = form.querySelector('.cf-turnstile');
+
+    // Invisible Turnstile check; its token usually arrives a second or two after the page loads.
+    function captchaToken() {
+      if (!captcha) return Promise.resolve('');
+      return new Promise(function (resolve, reject) {
+        var waited = 0;
+        (function check() {
+          var token = window.turnstile && window.turnstile.getResponse(captcha);
+          if (token) return resolve(token);
+          if ((waited += 250) > 10000) return reject(new Error('No captcha token'));
+          setTimeout(check, 250);
+        })();
+      });
+    }
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!form.reportValidity()) return;
+      error.hidden = true;
+      submit.disabled = true;
+      captchaToken()
+        .then(function (token) {
+          var body = new FormData(form);
+          if (token) body.set('captcha', token);
+          return fetch(form.action, { method: 'POST', body: body });
+        })
+        .then(function (res) {
+          return res.json().catch(function () { return {}; }).then(function (data) {
+            // The Worker's error messages are written for visitors; anything else gets the generic one.
+            if (!res.ok || !data.url) throw { userMessage: data.error };
+            return data.url;
+          });
+        })
+        .then(function (url) {
+          done.querySelector('[data-rs-link]').href = url;
+          form.hidden = true;
+          done.hidden = false;
+          // The file is sent as an attachment, so loading it in a hidden frame downloads it without leaving the page.
+          var frame = document.createElement('iframe');
+          frame.hidden = true;
+          frame.src = url;
+          document.body.appendChild(frame);
+        })
+        .catch(function (err) {
+          error.textContent = (err && err.userMessage) || 'Something went wrong. Please try again.';
+          error.hidden = false;
+          // Each Turnstile token works once, so get a fresh one for the next try.
+          if (captcha && window.turnstile) window.turnstile.reset(captcha);
+        })
+        .finally(function () { submit.disabled = false; });
+    });
+  }());
+</script>
+{{ with $sitekey }}<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>{{ end }}
+{{ end }}

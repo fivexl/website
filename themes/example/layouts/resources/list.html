@@ -1,0 +1,48 @@
+{{ define "main" }}
+{{/* /resources/ is the library: the shared hero with a featured guide, topics, and a row per topic.
+     A topic page (/resources/<topic>/) lists that topic's guides. */}}
+{{ $isLibrary := gt (len .Sections) 0 }}
+{{ $featured := where .RegularPagesRecursive "Params.featured" true | default .RegularPagesRecursive | first 1 }}
+
+{{ range $featured }}
+<div class="bls-PanelWrapper">{{- partial "DoublePanel.html" ( dict
+    "Params" ( dict
+        "sub_heading" (cond $isLibrary "RESOURCE LIBRARY" ($.Title | upper))
+        "title" .Title
+        "panel_image" (.Params.panel_image | default "panel.*")
+        "cta_text" "GET THE GUIDE"
+        "featured_page" .
+    )
+    "Permalink" .Permalink
+    "IsSection" true
+) -}}</div>
+{{ end }}
+
+<div class="rs-Page">
+  <div class="rs-Inner">
+    {{ with .Content }}<div class="rs-Lede">{{ . }}</div>{{ end }}
+
+    {{ if $isLibrary }}
+    <section class="rs-Section">
+      <h2 class="rs-Section_Title">TOPICS</h2>
+      <ul class="rs-Topics">
+        {{ range .Sections.ByWeight }}<li><a class="rs-Topic" href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}
+      </ul>
+    </section>
+
+    {{ range .Sections.ByWeight }}
+    <section class="rs-Section">
+      <h2 class="rs-Section_Title"><a href="{{ .RelPermalink }}">{{ .Title | upper }} <span aria-hidden="true">→</span></a></h2>
+      <div class="rs-Grid">{{ range .RegularPages }}{{ partial "resources/card.html" . }}{{ end }}</div>
+    </section>
+    {{ end }}
+    {{ else }}
+    <section class="rs-Section">
+      <a class="rs-Back" href="{{ .Parent.RelPermalink }}">← Resource Library</a>
+      <h2 class="rs-Section_Title">GUIDES</h2>
+      <div class="rs-Grid">{{ range .RegularPages }}{{ partial "resources/card.html" . }}{{ end }}</div>
+    </section>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

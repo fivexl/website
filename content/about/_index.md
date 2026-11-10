@@ -4,7 +4,7 @@ description: "FivexL is a group of independent Cloud Engineering Specialists. Wh
 menu:
   main:
     name: About
-    weight: 30
+    weight: 36
     url: /about
 double_panel:
   layout: 'services'

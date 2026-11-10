@@ -1,0 +1,14 @@
+{{/* A resource card linking to its landing page. Context: the resource page. */}}
+<a class="rs-Card" href="{{ .RelPermalink }}">
+  <div class="rs-Card_Visual">
+    {{ with .Resources.GetMatch (.Params.cover | default "cover.*") }}
+    {{ $img := .Resize "360x webp q85" }}
+    <img class="rs-Card_Cover" src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}" alt="" loading="lazy">
+    {{ end }}
+  </div>
+  <div class="rs-Card_Body">
+    <p class="rs-Card_Label">{{ .Params.label | default "Free guide" }}</p>
+    <h3 class="rs-Card_Title">{{ .Title }}</h3>
+    <p class="rs-Card_Meta">PDF{{ with .Params.pages }} · {{ . }} pages{{ end }}</p>
+  </div>
+</a>
