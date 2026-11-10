@@ -7,8 +7,9 @@
 
 {{ define "main" }}
 {{/* Landing page for one downloadable guide, laid out like the webinar registration page:
-     the shared hero, description and form, who it's for, what you'll learn. The form sends the details to
-     the Worker (src/resources.js), which adds the contact to Brevo and returns a short-lived download link. */}}
+     the shared hero, description and form, who it's for, what you'll learn. The form goes straight to
+     Brevo, like the webinar form; once Brevo accepts it, the Worker (src/resources.js) returns a
+     short-lived download link. */}}
 {{ $sitekey := site.Params.resources.turnstile_sitekey }}
 
 <div class="bls-PanelWrapper">{{- partial "DoublePanel.html" ( dict
@@ -48,25 +49,28 @@
 
     <div class="wr-Hero_Side">
     <div class="wr-Form" id="get">
-      <form class="wr-Form_Form" data-rs-form action="/api/resources/download" method="post" novalidate>
+      <form class="wr-Form_Form" data-rs-form action="{{ site.Params.resources.brevo_form_action }}" method="post" novalidate>
         <div class="wr-Form_Head">
           <h2 class="wr-Form_Heading">Get the free guide</h2>
           <p class="wr-Form_Sub">Enter your details and the download starts straight away.</p>
         </div>
         <div class="wr-Form_Row">
           <label class="wr-VisuallyHidden" for="rs-first">First name</label>
-          <input class="wr-Form_Input" id="rs-first" name="first_name" type="text" placeholder="First name*" autocomplete="given-name" required>
+          <input class="wr-Form_Input" id="rs-first" name="FIRSTNAME" type="text" placeholder="First name*" autocomplete="given-name" required>
           <label class="wr-VisuallyHidden" for="rs-last">Last name</label>
-          <input class="wr-Form_Input" id="rs-last" name="last_name" type="text" placeholder="Last name*" autocomplete="family-name" required>
+          <input class="wr-Form_Input" id="rs-last" name="LASTNAME" type="text" placeholder="Last name*" autocomplete="family-name" required>
         </div>
         <label class="wr-VisuallyHidden" for="rs-email">Work email</label>
-        <input class="wr-Form_Input" id="rs-email" name="email" type="email" placeholder="Work email*" autocomplete="email" required>
+        <input class="wr-Form_Input" id="rs-email" name="EMAIL" type="email" placeholder="Work email*" autocomplete="email" required>
         <label class="wr-Form_Consent">
-          <input class="wr-Form_Checkbox" type="checkbox" name="consent" value="1" required>
+          <input class="wr-Form_Checkbox" type="checkbox" name="OPT_IN" value="1" required>
           <span>By submitting this form, you acknowledge and agree that FivexL will process your personal information in accordance with the <a href="/privacy-policy/">Privacy Policy</a>.</span>
         </label>
         <input type="hidden" name="file" value="{{ .Params.file }}">
-        <input type="hidden" name="resource" value="{{ .Params.download_id }}">
+        <input type="hidden" name="RESOURCE" value="{{ .Params.download_id }}">
+        {{/* Fields Brevo's own embed sends with every submission */}}
+        <input type="hidden" name="email_address_check" value="">
+        <input type="hidden" name="locale" value="en">
         {{ with $sitekey }}<div class="cf-turnstile" data-sitekey="{{ . }}" data-language="en"></div>{{ end }}
         <p class="wr-Form_Error" role="alert" hidden></p>
         <button class="wr-Form_Submit" type="submit">Download the guide</button>
@@ -172,9 +176,18 @@
       submit.disabled = true;
       captchaToken()
         .then(function (token) {
+          // 1. Send the contact straight to Brevo: the same request Brevo's own embed script sends.
           var body = new FormData(form);
-          if (token) body.set('captcha', token);
-          return fetch(form.action, { method: 'POST', body: body });
+          body.delete('file');
+          // Brevo's embed sends the Turnstile token as g-recaptcha-response.
+          if (token) body.set('g-recaptcha-response', token);
+          return fetch(form.action + '?isAjax=1', { method: 'POST', body: body });
+        })
+        .then(function (res) { return res.json(); })
+        .then(function (data) {
+          if (data && data.success === false) throw new Error('Brevo rejected the submission');
+          // 2. Brevo accepted the contact, so ask the Worker for the download link.
+          return fetch('/api/resources/download', { method: 'POST', body: new FormData(form) });
         })
         .then(function (res) {
           return res.json().catch(function () { return {}; }).then(function (data) {
