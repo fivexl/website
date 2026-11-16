@@ -89,6 +89,36 @@
   </div>
 </section>
 
+{{/* Teaser: the table of contents and the start of the first practice. Click a page to see it
+     full size; the arrow keys or the on-screen arrows move between pages. */}}
+{{ with .Params.preview }}
+{{ $page := $ }}
+<section class="wr-Section wr-Section_Centered rs-Preview">
+  <p class="wr-Pill">Preview</p>
+  <h2 class="wr-Section_Heading">Look Inside</h2>
+  <ul class="rs-Preview_List">
+    {{ range $i, $name := . }}
+    {{ with $page.Resources.GetMatch $name }}
+    {{ $thumb := .Resize "400x webp q85" }}
+    {{ $full := .Resize "1100x webp q85" }}
+    <li class="rs-Preview_Item">
+      <button class="rs-Preview_Page" type="button" data-rs-full="{{ $full.RelPermalink }}" aria-label="Show page {{ add $i 1 }} of the preview full size">
+        <img src="{{ $thumb.RelPermalink }}" width="{{ $thumb.Width }}" height="{{ $thumb.Height }}" alt="Page {{ add $i 1 }} of the {{ $page.Title }}" loading="lazy">
+      </button>
+    </li>
+    {{ end }}
+    {{ end }}
+  </ul>
+</section>
+
+<dialog class="rs-Lightbox" data-rs-lightbox>
+  <button class="rs-Lightbox_Close" type="button" aria-label="Close">×</button>
+  <img class="rs-Lightbox_Image" alt="">
+  <button class="rs-Lightbox_Arrow rs-Lightbox_Prev" type="button" data-rs-step="-1" aria-label="Previous page">‹</button>
+  <button class="rs-Lightbox_Arrow rs-Lightbox_Next" type="button" data-rs-step="1" aria-label="Next page">›</button>
+</dialog>
+{{ end }}
+
 {{ with .Params.audience }}
 <div class="wr-AudienceBand">
 <section class="wr-Section wr-Section_Centered">
@@ -152,6 +182,46 @@
       ['#get', '.wr-Band_Cta', 'footer'].forEach(function (selector) {
         var el = document.querySelector(selector);
         if (el) observer.observe(el);
+      });
+    }
+
+    // Preview: open a page full size. The arrow keys or the on-screen arrows move between pages;
+    // a click outside the page or Esc closes it.
+    var lightbox = document.querySelector('[data-rs-lightbox]');
+    if (lightbox && lightbox.showModal) {
+      var lightboxImage = lightbox.querySelector('.rs-Lightbox_Image');
+      var pages = Array.prototype.slice.call(document.querySelectorAll('[data-rs-full]'));
+      var current = 0;
+      var prev = lightbox.querySelector('.rs-Lightbox_Prev');
+      var next = lightbox.querySelector('.rs-Lightbox_Next');
+
+      function show(index) {
+        current = Math.max(0, Math.min(pages.length - 1, index));
+        lightboxImage.src = pages[current].getAttribute('data-rs-full');
+        lightboxImage.alt = pages[current].querySelector('img').alt;
+        prev.disabled = current === 0;
+        next.disabled = current === pages.length - 1;
+        lightbox.scrollTop = 0;
+      }
+
+      pages.forEach(function (button, index) {
+        button.addEventListener('click', function () {
+          show(index);
+          lightbox.showModal();
+        });
+      });
+      lightbox.querySelectorAll('[data-rs-step]').forEach(function (arrow) {
+        arrow.addEventListener('click', function (e) {
+          e.stopPropagation();
+          show(current + Number(arrow.getAttribute('data-rs-step')));
+        });
+      });
+      lightbox.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowLeft') { e.preventDefault(); show(current - 1); }
+        if (e.key === 'ArrowRight') { e.preventDefault(); show(current + 1); }
+      });
+      lightbox.addEventListener('click', function (e) {
+        if (e.target !== lightboxImage) lightbox.close();
       });
     }
 

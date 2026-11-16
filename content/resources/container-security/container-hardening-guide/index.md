@@ -28,6 +28,15 @@ meta:
     value: 'November 2026'
     note: 'Reviewed every quarter'
 
+# Pages of the PDF shown in the "Look Inside" preview, starting with the table of
+# contents. Each opens full size.
+preview:
+  - 'preview-03.png'
+  - 'preview-04.png'
+  - 'preview-06.png'
+  - 'preview-07.png'
+  - 'preview-08.png'
+
 audience:
   - 'Engineers who build container images'
   - 'Teams running containers on Amazon ECS'
