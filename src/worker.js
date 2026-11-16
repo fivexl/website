@@ -8,6 +8,7 @@ const PERMANENT_REDIRECTS = new Map([
   ["/blog/firi-case-study/", "/case-studies/firi-case-study/"],
   ["/blog/ovrture-case-study/", "/case-studies/ovrture-case-study/"],
   ["/blog/container-hardening-guide/", "/resources/container-security/container-hardening-guide/"],
+  ["/specialist/yousef-de-baz/", "/about/"],
   ["/tags/ecs-service-conncet/", "/tags/ecs-service-connect/"],
   ["/tags/", "/blog/"],
 ]);
