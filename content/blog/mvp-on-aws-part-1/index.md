@@ -1,10 +1,10 @@
 ---
 title: 'AWS Account Setup for Startups: Security and Cost Control Step by Step'
-author_id: 
+author_id: 'Andrey Devyatkin'
 date: 2025-11-13
 description: 'A step-by-step AWS account setup guide for founders and small engineering teams - covering root hardening, MFA, budgets, CloudTrail, GuardDuty, and Slack alerts to avoid surprise bills and security disasters.'
-author: FivexL
-author_link: https://fivexl.io/
+author: Andrey Devyatkin
+author_link: https://fivexl.io/specialist/andrey-devyatkin/
 category: AWS, DevOps, Security
 panel_image: AWS-Partner.png
 tags: ['AWS', 'MVP', 'Security', 'Cost Control', 'CloudTrail', 'GuardDuty', 'Budgets']
