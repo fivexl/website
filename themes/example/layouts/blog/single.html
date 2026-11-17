@@ -9,7 +9,23 @@
         </div>
         <article class="bls">
             <section class="bls-Content">
-                <h8>Date: {{ time.Format "January 2, 2006" .Params.date }}<br><br></h8>
+                {{/* Author names after the date, linked to their /specialist/ page when they have one;
+                     "FivexL team" when the post has no author_id */}}
+                {{ $ids := .Params.author_id }}
+                {{ if and $ids (not (reflect.IsSlice $ids)) }}{{ $ids = slice $ids }}{{ end }}
+                {{ $authors := slice }}
+                {{ range $ids }}
+                    {{ $id := . }}
+                    {{ $name := $id }}
+                    {{ range where (where site.RegularPages "Section" "specialist") "Params.author_id" $id | first 1 }}
+                        {{ $name = printf `<a href="%s">%s</a>` .RelPermalink (.Params.name | htmlEscape) }}
+                    {{ else }}
+                        {{ $name = $id | htmlEscape }}
+                    {{ end }}
+                    {{ $authors = $authors | append $name }}
+                {{ end }}
+                {{ if not $authors }}{{ $authors = slice "FivexL team" }}{{ end }}
+                <h8>Date: {{ time.Format "January 2, 2006" .Params.date }}{{ with $authors }}<br>Author{{ if gt (len .) 1 }}s{{ end }}: {{ delimit . ", " " and " | safeHTML }}{{ end }}<br><br></h8>
                 {{- .Content -}}
             </section>
 

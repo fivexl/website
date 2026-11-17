@@ -15,7 +15,7 @@
                 {{ if reflect.IsSlice .Page.Params.author_id }}
                     <div class="fcs-Authors">
                     {{ range .Page.Params.author_id }}
-                        {{ range where (where site.Pages "Section" "author") "Params.author_id" "in" .  }}
+                        {{ range where (where site.Pages "Section" "specialist") "Params.author_id" "in" .  }}
                             <div class="fcs-AuthorWrapper">
                                 {{ $Permalink := .Permalink }}
                                 {{ with .Resources.GetMatch .Params.author_headshot }}
@@ -29,7 +29,7 @@
                         {{ end }}
                     {{ end }}
                 {{ else }}
-                    {{ range where (where site.Pages "Section" "author") "Params.author_id" "in" .Page.Params.author_id  }}
+                    {{ range where (where site.Pages "Section" "specialist") "Params.author_id" "in" .Page.Params.author_id  }}
                         <div class="fcs-AuthorWrapper">
                             {{ $Permalink := .Permalink }}
                             {{ with .Resources.GetMatch .Params.author_headshot }}

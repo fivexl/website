@@ -1,10 +1,10 @@
 ---
 title: 'MVP: PostgreSQL on AWS in 10 Minutes'
-author_id: 
+author_id: 'Vladimir-Samoylov'
 date: 2025-12-16
 description: 'A practical guide to setting up Aurora PostgreSQL for MVPs. Learn day-zero choices for SSL, logging, encryption, and parameter groups that save future weekends and prepare you for SOC 2 / HIPAA.'
-author: FivexL
-author_link: https://fivexl.io/
+author: Vladimir Samoylov
+author_link: https://fivexl.io/specialist/vladimir-samoylov/
 category: AWS, DevOps, Database
 panel_image: Vladimir_stairs.png
 tags: ['AWS', 'MVP', 'PostgreSQL', 'Aurora', 'RDS', 'Database', 'Security', 'Terraform']
