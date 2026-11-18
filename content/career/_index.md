@@ -1,6 +1,6 @@
 ---
 title: "Want to be a part of FivexL?"
-description: "We architect and build scalable cloud-based production-ready application delivery platforms for startups so they can launch fast."
+description: "We architect and build scalable cloud-based production-ready application delivery platforms so our customers can launch fast."
 menu:
   main:
     name: Career
@@ -9,7 +9,7 @@ menu:
 double_panel:
   layout: 'services'
   heading: "Join Us"
-  subheading: "FivexL: Where Your Skills Help Startups Excel with AWS Infrastructure"
+  subheading: "Join a small, remote AWS and AI consultancy"
   icon_links:
     - { url: "https://github.com/fivexl", icon: "github" }
     - { url: "https://www.linkedin.com/company/5xl", icon: "linkedin" }
@@ -72,7 +72,7 @@ Have an understanding of software development processes (Agile/Kanban/Lean);
 Understand concepts such as: Infrastructure as Code, Immutable infrastructure, Configuration drift, Continuous Integration, Continuous Delivery.
 {{< /column >}}
 {{< /two_columns >}}
-{{< steps_section heading="What need to do?" >}}
+{{< steps_section heading="How we hire engineers" >}}
 
 {{< steps_section_item number=1 text="Fill the form, tell us about your motivation." >}}
 {{< steps_section_item number=2 text="Submit a task assignment. All applicants who submit a task assignment will receive feedback from us." >}}
