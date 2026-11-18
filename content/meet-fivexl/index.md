@@ -12,7 +12,7 @@ double_panel:
   layout: 'services'
   heading: "Meet FivexL"
   subheading: "A security-first AWS and AI consultancy of hand-picked senior engineers, for startups and scale-ups that handle patient data under HIPAA."
-  media_panel: { image: "/contact/featured.png", alt: "The FivexL team" }
+  media_panel: { image: "/meet-fivexl/team.jpg", alt: "The FivexL team" }
 ---
 
 {{< two_columns heading="What we do today" >}}
@@ -21,7 +21,7 @@ double_panel:
 
 This is our established work. We build and run AWS infrastructure for startups and scale-ups with sensitive data, most of them health tech companies that handle patient data under HIPAA.
 
-We start from our own blueprints: Right Start, a productized AWS landing zone, and an ECS blueprint for running containers in production. Security comes first in every design. We build the controls our customers' compliance work needs; the audit itself stays with their auditors.
+Every project starts from our own blueprints: Right Start, a productized AWS landing zone, and an ECS blueprint for running containers in production. Security comes first in every design. We build the controls our customers' compliance work needs; the audit itself stays with their auditors.
 {{< /column >}}
 
 {{< column >}}
@@ -88,10 +88,10 @@ Our engineers join customer teams to bring AI agents and AI features into produc
   <div class="mf-StoryInner">
     <h2 class="twc-Heading">Our story</h2>
     <figure class="mf-Photo">
-      <img src="/meet-fivexl/santa-queue-2019.jpg" alt="The queue for Santa's house in Las Palmas, 21 December 2019, with a stroller in the foreground" width="1500" height="2000" loading="lazy">
+      <img src="/meet-fivexl/santa-queue-2019.jpg" alt="The queue for Santa's house in Las Palmas, 21 December 2019, with a stroller in the foreground" width="840" height="1120" loading="lazy">
       <figcaption>Las Palmas, 21 December 2019. The queue where FivexL started.</figcaption>
     </figure>
-    <ol class="mf-Timeline">
+    <ol class="mf-Timeline" role="list">
       <li>
         <span class="mf-Year">2019</span>
         <div>
@@ -164,7 +164,7 @@ Our engineers join customer teams to bring AI agents and AI features into produc
 {{< /unsafe >}}
 
 {{< simple_section heading="Open source" >}}
-We publish what we build for ourselves: 42 public repositories on [github.com/fivexl](https://github.com/fivexl). A few we use on most projects:
+We publish what we build for ourselves: more than 40 public repositories on [github.com/fivexl](https://github.com/fivexl). A few we use on most projects:
 
 - [cloudtrail-to-slack](https://github.com/fivexl/terraform-aws-cloudtrail-to-slack) (100+ stars): alerts in Slack for the AWS CloudTrail events you care about.
 - [sso-elevator](https://github.com/fivexl/terraform-aws-sso-elevator): temporary AWS access, requested and approved in Slack.
