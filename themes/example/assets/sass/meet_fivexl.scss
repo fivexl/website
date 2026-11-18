@@ -22,7 +22,7 @@
     margin-top: 0.5rem;
     font-size: 0.9rem;
     text-align: center;
-    color: $textSecondary;
+    color: #555;
   }
 }
 
@@ -60,7 +60,8 @@
 .mf-Year {
   font-size: clamp(1.25rem, 2vw, 1.75rem);
   font-weight: 700;
-  color: $textAccent;
+  // $textAccent is 2.5:1 on white; this darker shade passes WCAG AA
+  color: #0B78B0;
 }
 
 .mf-Count {

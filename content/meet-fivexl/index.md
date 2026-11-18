@@ -97,7 +97,7 @@ Our engineers join customer teams to bring AI agents and AI features into produc
         <div>
           <h3>The queue for Santa</h3>
           <p>On 21 December, standing in the queue for Santa's house in Las Palmas with Andrey's daughter, Andrey and Artem decide to join forces. Anastasia joins them as our third co-founder, to build the brand and the marketing. The first project runs on AWS and HashiStack.</p>
-          <p class="mf-Count">Consultants: 2 · Revenue: €70k (half year)</p>
+          <p class="mf-Count">Consultants: 2</p>
         </div>
       </li>
       <li>
@@ -146,7 +146,7 @@ Our engineers join customer teams to bring AI agents and AI features into produc
         <span class="mf-Year">2025</span>
         <div>
           <h3>From services to products</h3>
-          <p>Anastasia returns as Marketing Director. Berit and Aleksandr join. Customers buy Right Start and the ECS blueprint as products. Anton moves into a full-time consulting role. Work starts on our own product. We narrow our focus to US health tech companies that handle patient data.</p>
+          <p>Anastasia takes on the Marketing Director role. Berit and Aleksandr join. Customers buy Right Start and the ECS blueprint as products. Anton moves into a full-time consulting role. Work starts on our own product. We narrow our focus to US health tech companies that handle patient data.</p>
           <p class="mf-Count">Consultants: 8 · Revenue: €987k</p>
         </div>
       </li>
