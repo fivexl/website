@@ -34,6 +34,10 @@ Our engineers join customer teams to bring AI agents and AI features into produc
 {{< /column >}}
 {{< /two_columns >}}
 
+{{< simple_section heading="See us before you meet us" >}}
+Our [YouTube channel](https://www.youtube.com/@fivexl) has videos by the people you would work with. Watch one or two before your interview to hear how we think and how we talk about our work.
+{{< /simple_section >}}
+
 {{< unsafe >}}
 <div class="abt">
   <section class="twc">
@@ -179,6 +183,12 @@ We publish what we build for ourselves: more than 40 public repositories on [git
 
 {{< simple_section heading="The team" >}}
 Fourteen people, eleven of them consultants. Meet them on our [about page](/about/).
+{{< /simple_section >}}
+
+{{< simple_section heading="More from FivexL" >}}
+- [Newsletter](/newsletter/): what we learned and shipped each month.
+- [Webinars](/webinars/): live sessions where we go deep on one topic.
+- [YouTube](https://www.youtube.com/@fivexl): videos from the team.
 {{< /simple_section >}}
 
 {{< unsafe >}}
