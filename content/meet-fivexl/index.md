@@ -42,7 +42,7 @@ Our engineers join customer teams to bring AI agents and AI features into produc
       <div class="twc-ColumnsWrapper abt-ValuesGrid">
         <div>
           <h3>League</h3>
-          <p>We pool what we know. Nobody solves a hard problem alone: another senior engineer reviews the design, and what one of us learns, the rest of us can use.</p>
+          <p>Being a solo consultant is lonely. We band together so we can support each other, achieve more, and open doors that stay closed to solopreneurs and freelancers. Nobody solves a hard problem alone: another senior engineer reviews the design, and what one of us learns, the rest of us can use.</p>
         </div>
         <div>
           <h3>Location-independent</h3>
