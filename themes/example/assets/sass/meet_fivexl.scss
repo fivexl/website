@@ -1,0 +1,68 @@
+.mf-Story {
+  padding: clamp(3rem, 6vw, 6rem) 1.5rem;
+  color: $textPrimary;
+}
+
+.mf-StoryInner {
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+.mf-Photo {
+  margin: 0 auto 3rem;
+  max-width: 420px;
+
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  figcaption {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    text-align: center;
+    color: $textSecondary;
+  }
+}
+
+.mf-Timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    display: grid;
+    grid-template-columns: 4.5rem 1fr;
+    gap: 1rem;
+    padding: 1.5rem 0;
+    border-top: 1px solid #ececec;
+
+    @media (min-width: 768px) {
+      grid-template-columns: 6rem 1fr;
+      gap: 2rem;
+    }
+  }
+
+  h3 {
+    margin: 0 0 0.5rem;
+    font-size: clamp(1.25rem, 2vw, 1.6rem);
+    color: $textSecondary;
+  }
+
+  p {
+    margin: 0 0 0.5rem;
+    font-size: clamp(0.95rem, 1vw, 1.1rem);
+    line-height: 1.5;
+  }
+}
+
+.mf-Year {
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  font-weight: 700;
+  color: $textAccent;
+}
+
+.mf-Count {
+  font-weight: 700;
+}
