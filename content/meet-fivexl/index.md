@@ -8,6 +8,7 @@ sitemap:
   disable: true
 transparent_nav: true
 hide_email_subscription: true
+share_image: team.jpg
 double_panel:
   layout: 'services'
   heading: "Meet FivexL"
@@ -44,12 +45,12 @@ Our engineers join customer teams to bring AI agents and AI features into produc
           <p>We pool what we know. Nobody solves a hard problem alone: another senior engineer reviews the design, and what one of us learns, the rest of us can use.</p>
         </div>
         <div>
-          <h3>Lovely</h3>
-          <p>Experts are rare, so we hire slowly and only people we'd trust with our customers. We work with people we like, trust and respect, and we keep the core team tight.</p>
+          <h3>Location-independent</h3>
+          <p>We have no office and no commute. Our team spans many countries, and our customers are mostly in the US and Europe. We bring good work to talented people where they already live, so nobody has to move to a big city and trade their quality of life for a career. Everyone chooses where they work and how they plan their day, and shows up for their team and their customers.</p>
         </div>
         <div>
-          <h3>Location-independent</h3>
-          <p>We have no office and no commute. Our customers are all over the world, and so are we. You choose where and when you work, and you show up for your team and your customers.</p>
+          <h3>Lovely</h3>
+          <p>Experts are rare, so we hire slowly and only people we'd trust with our customers. We work with people we like, trust and respect, and we keep the core team tight.</p>
         </div>
         <div>
           <h3>Lifetime Learners</h3>
@@ -106,7 +107,7 @@ Our engineers join customer teams to bring AI agents and AI features into produc
           <h3>The rules</h3>
           <p>The rules: stay small, stay cosy, stick out, stay niche, know your customer and say no to the rest, keep learning, give people a chance.</p>
           <p>The customer and stack: remote only, startups, AWS, Terraform, security as job zero.</p>
-          <p>The first summer practice brings in Vladimir (our fourth co-founder) and Ivan. Olga joins as project assistant and later becomes our financial controller. We open-source cloudtrail-to-slack.</p>
+          <p>The first summer practice brings in Vladimir (our fourth co-founder) and Ivan. Olga joins as project assistant and later becomes our financial and administrative manager. We open-source cloudtrail-to-slack.</p>
           <p class="mf-Count">Consultants: 5 · Revenue: €168k</p>
         </div>
       </li>
