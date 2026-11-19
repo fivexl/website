@@ -25,6 +25,6 @@ Recommended Cloudflare build settings:
 
 - Build command: `hugo --minify`
 - Build output directory: `public`
-- Hugo version: latest available in the Cloudflare build image; this repo has been verified locally with Hugo `0.162.1`.
+- Build variable `HUGO_VERSION = 0.162.1`: the build image's default Hugo (0.147.x) fails to render this site.
 
 Redirects and `410 Gone` responses are repo-owned in [src/worker.js](src/worker.js). The Worker also preserves the current `www.fivexl.io` to `fivexl.io` permanent redirect.
