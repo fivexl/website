@@ -142,7 +142,7 @@ double_panel:
         <span class="mf-Year">2024</span>
         <div>
           <h3>Acceleration</h3>
-          <p>Guilherme joins. Right Start ships to its first customer as a productized landing zone. AWS Advanced Tier. AWS Summit talks. Get-together in Las Palmas.</p>
+          <p>Guilherme joins. Right Start ships to its first customer as a productized landing zone. AWS Advanced Tier. AWS Summit talks. At our get-together in Las Palmas, Vladimir becomes a partner and takes on business development.</p>
           <p class="mf-Count">Consultants: 6 · Revenue: €737k</p>
         </div>
       </li>
