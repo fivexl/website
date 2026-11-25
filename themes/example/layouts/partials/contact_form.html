@@ -49,6 +49,14 @@
 {{/* One form per page is expected; the script skips forms it has already set up, so it is safe twice. */}}
 <script>
   (function () {
+
+    // While sending: disable the button, show a spinner and "Sending…", then put the label back.
+    function setBusy(button, busy) {
+      button.disabled = busy;
+      button.setAttribute('aria-busy', busy ? 'true' : 'false');
+      if (busy) { button.dataset.label = button.textContent; button.textContent = 'Sending…'; }
+      else if (button.dataset.label) { button.textContent = button.dataset.label; }
+    }
     var fallback = 'Something went wrong. Please try again{{ with $cfg.email }}, or email us at {{ . }}{{ end }}.';
 
     // Invisible Turnstile check; its token usually arrives a second or two after the page loads.
@@ -78,7 +86,7 @@
         e.preventDefault();
         if (!form.reportValidity()) return;
         error.hidden = true;
-        submit.disabled = true;
+        setBusy(submit, true);
         captchaToken(captcha)
           .then(function (token) {
             var body = new FormData(form);
@@ -102,7 +110,7 @@
             // Each Turnstile token works once, so get a fresh one for the next try.
             if (captcha && window.turnstile) window.turnstile.reset(captcha);
           })
-          .finally(function () { submit.disabled = false; });
+          .finally(function () { setBusy(submit, false); });
       });
     });
   }());

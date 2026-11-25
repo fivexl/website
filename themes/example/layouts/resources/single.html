@@ -161,6 +161,14 @@
 
 <script>
   (function () {
+
+    // While sending: disable the button, show a spinner and "Sending…", then put the label back.
+    function setBusy(button, busy) {
+      button.disabled = busy;
+      button.setAttribute('aria-busy', busy ? 'true' : 'false');
+      if (busy) { button.dataset.label = button.textContent; button.textContent = 'Sending…'; }
+      else if (button.dataset.label) { button.textContent = button.dataset.label; }
+    }
     var form = document.querySelector('[data-rs-form]');
     if (!form) return;
     var done = document.querySelector('[data-rs-done]');
@@ -242,7 +250,7 @@
       e.preventDefault();
       if (!form.reportValidity()) return;
       error.hidden = true;
-      submit.disabled = true;
+      setBusy(submit, true);
       captchaToken()
         .then(function (token) {
           // 1. Send the contact straight to Brevo: the same request Brevo's own embed script sends.
@@ -281,7 +289,7 @@
           // Each Turnstile token works once, so get a fresh one for the next try.
           if (captcha && window.turnstile) window.turnstile.reset(captcha);
         })
-        .finally(function () { submit.disabled = false; });
+        .finally(function () { setBusy(submit, false); });
     });
   }());
 </script>

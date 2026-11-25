@@ -182,7 +182,33 @@ $frmError: #c62828;
   cursor: pointer;
 
   &:hover { background: $frmBlueHover; }
-  &:disabled { opacity: 0.7; cursor: progress; }
+  &:disabled { opacity: 0.85; cursor: progress; }
+
+  // Sending: a small spinner before "Sending…" (set by the form's script)
+  &[aria-busy="true"] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    &::before {
+      content: "";
+      width: 18px;
+      height: 18px;
+      border: 2.5px solid rgba(255, 255, 255, 0.45);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: frm-spin 0.8s linear infinite;
+    }
+  }
+}
+
+@keyframes frm-spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .frm-Submit[aria-busy="true"]::before { animation-duration: 2.4s; }
 }
 
 // After sending
