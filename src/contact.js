@@ -12,7 +12,7 @@
 // Errors the visitor can fix come back as { error }; for the rest (empty error) the page shows its own
 // message with the site's email address.
 // Variable (wrangler.toml [vars]):
-//   ATTIO_LIST            Slug or ID of the Attio list new leads go to, e.g. "inbound_leads".
+//   ATTIO_LIST            Slug or ID of the Attio list new leads go to ("inbound": the Inbound Leads list).
 
 const ATTIO_API = "https://api.attio.com/v2";
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -36,7 +36,8 @@ async function verifyTurnstile(env, token, ip) {
   return data.success === true;
 }
 
-async function attio(env, method, path, body) {
+// `step` names the call in error references: find, create, name, note or list.
+async function attio(env, step, method, path, body) {
   const res = await fetch(`${ATTIO_API}${path}`, {
     method,
     headers: {
@@ -48,9 +49,12 @@ async function attio(env, method, path, body) {
   });
   const data = await res.json().catch(() => ({}));
   if (!res.ok) {
-    // Logged for `wrangler tail` / Workers logs; the visitor only sees a generic message.
-    console.error("Attio", method, path, res.status, JSON.stringify(data).slice(0, 500));
-    throw new Error(`Attio ${res.status}`);
+    // Logged for Workers Logs. The visitor sees a generic message plus a short reference
+    // (step, status and Attio's error code, never the key), so a failed test shows the cause.
+    console.error("Attio", step, method, path, res.status, JSON.stringify(data).slice(0, 500));
+    const error = new Error(`Attio ${res.status}`);
+    error.ref = [step, res.status, data.code].filter(Boolean).join(" ");
+    throw error;
   }
   return data;
 }
@@ -65,7 +69,7 @@ function personalName(fullName) {
 // Find the person by email, or create them. An existing person's name is only filled in when
 // Attio has none, so a typo in the form never overwrites what the team has entered.
 async function findOrCreatePerson(env, email, fullName) {
-  const found = await attio(env, "POST", "/objects/people/records/query", {
+  const found = await attio(env, "find", "POST", "/objects/people/records/query", {
     filter: { email_addresses: email },
     limit: 1,
   });
@@ -75,13 +79,13 @@ async function findOrCreatePerson(env, email, fullName) {
     const id = person.id.record_id;
     const currentName = person.values && person.values.name && person.values.name[0];
     if (!(currentName && currentName.full_name)) {
-      await attio(env, "PATCH", `/objects/people/records/${id}`, { data: { values: { name: personalName(fullName) } } });
+      await attio(env, "name", "PATCH", `/objects/people/records/${id}`, { data: { values: { name: personalName(fullName) } } });
     }
     return id;
   }
 
   const values = { email_addresses: [email], name: personalName(fullName) };
-  const created = await attio(env, "POST", "/objects/people/records", { data: { values } });
+  const created = await attio(env, "create", "POST", "/objects/people/records", { data: { values } });
   return created.data.id.record_id;
 }
 
@@ -113,7 +117,7 @@ async function handleContact(request, env) {
   try {
     const recordId = await findOrCreatePerson(env, email, fullName);
 
-    await attio(env, "POST", "/notes", {
+    await attio(env, "note", "POST", "/notes", {
       data: {
         parent_object: "people",
         parent_record_id: recordId,
@@ -125,12 +129,13 @@ async function handleContact(request, env) {
 
     if (env.ATTIO_LIST) {
       // PUT asserts the entry: the person is added once, and a repeat submission doesn't duplicate it.
-      await attio(env, "PUT", `/lists/${encodeURIComponent(env.ATTIO_LIST)}/entries`, {
+      await attio(env, "list", "PUT", `/lists/${encodeURIComponent(env.ATTIO_LIST)}/entries`, {
         data: { parent_record_id: recordId, parent_object: "people", entry_values: {} },
       });
     }
-  } catch {
-    return json(502, { error: "" });
+  } catch (err) {
+    console.error("Contact form", err && err.stack);
+    return json(502, { error: "", ref: (err && err.ref) || "worker" });
   }
 
   return json(200, { ok: true });

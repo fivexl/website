@@ -19,4 +19,9 @@ bucket_name = "resources"
 # and secrets: ATTIO_API_KEY and TURNSTILE_SECRET_KEY.
 [vars]
 # Slug of the Attio list new contacts are added to (Attio > the list > settings). Empty: no list.
-ATTIO_LIST = "inbound_leads"
+ATTIO_LIST = "inbound"
+
+# Workers Logs: keeps console output (e.g. Attio errors from the contact form) and shows it under
+# Workers & Pages > website > Logs.
+[observability]
+enabled = true
