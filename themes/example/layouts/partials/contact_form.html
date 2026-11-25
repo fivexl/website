@@ -1,0 +1,109 @@
+{{/* Contact form: Full name, Work email, Project description.
+     It posts to the Worker (src/contact.js), which creates or updates the person in Attio.
+     Uses the shared form style (components/form.scss).
+     Context: dict "page" (the page, for the note title), "heading", "subheading", and optional "card"
+     (true: white card with shadow). */}}
+{{ $cfg := site.Params.contact }}
+{{ $sitekey := $cfg.turnstile_sitekey }}
+{{ $id := printf "cf-%s" (.page.File.UniqueID | default "form") }}
+<div class="frm-Wrap{{ if .card }} frm{{ end }}">
+  <form class="frm-Form cf-Form" data-contact-form action="/api/contact" method="post" novalidate>
+    {{ if or .heading .subheading }}
+    <div class="frm-Head">
+      {{ with .heading }}<h2 class="frm-Heading">{{ . }}</h2>{{ end }}
+      {{ with .subheading }}<p class="frm-Sub">{{ . }}</p>{{ end }}
+    </div>
+    {{ end }}
+    <div class="frm-Field">
+      <label class="frm-Label" for="{{ $id }}-name">Full name<span aria-hidden="true">*</span></label>
+      <input class="frm-Input" id="{{ $id }}-name" name="full_name" type="text" autocomplete="name" maxlength="200" required>
+    </div>
+    <div class="frm-Field">
+      <label class="frm-Label" for="{{ $id }}-email">Work email<span aria-hidden="true">*</span></label>
+      <input class="frm-Input" id="{{ $id }}-email" name="email" type="email" autocomplete="email" maxlength="254" required>
+    </div>
+    <div class="frm-Field">
+      <label class="frm-Label" for="{{ $id }}-description">Project description<span aria-hidden="true">*</span></label>
+      <textarea class="frm-Input frm-Textarea" id="{{ $id }}-description" name="project_description" rows="5" maxlength="5000" required></textarea>
+    </div>
+    {{/* Honeypot: hidden from people; bots that fill it are ignored by the Worker */}}
+    <div class="frm-Trap" aria-hidden="true">
+      <label for="{{ $id }}-website">Website</label>
+      <input id="{{ $id }}-website" name="website" type="text" tabindex="-1" autocomplete="off">
+    </div>
+    <input type="hidden" name="page" value="{{ .page.RelPermalink }}">
+    {{ with $sitekey }}<div class="cf-turnstile" data-sitekey="{{ . }}" data-language="en"></div>{{ end }}
+    <p class="frm-Error" role="alert" hidden></p>
+    <button class="frm-Submit" type="submit">Book a consultation</button>
+  </form>
+
+  <div class="frm-Success" data-contact-done hidden>
+    <div class="frm-Success_Icon" aria-hidden="true">
+      <svg width="26" height="26" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <p class="frm-Success_Heading">Thanks for submitting the form.</p>
+    <p class="frm-Success_Text">We'll get back to you shortly.</p>
+  </div>
+</div>
+
+{{/* One form per page is expected; the script skips forms it has already set up, so it is safe twice. */}}
+<script>
+  (function () {
+    var fallback = 'Something went wrong. Please try again{{ with $cfg.email }}, or email us at {{ . }}{{ end }}.';
+
+    // Invisible Turnstile check; its token usually arrives a second or two after the page loads.
+    function captchaToken(captcha) {
+      if (!captcha) return Promise.resolve('');
+      return new Promise(function (resolve, reject) {
+        var waited = 0;
+        (function check() {
+          var token = window.turnstile && window.turnstile.getResponse(captcha);
+          if (token) return resolve(token);
+          if ((waited += 250) > 10000) return reject(new Error('No captcha token'));
+          setTimeout(check, 250);
+        })();
+      });
+    }
+
+    document.querySelectorAll('[data-contact-form]').forEach(function (form) {
+      if (form.dataset.ready) return;
+      form.dataset.ready = '1';
+      var root = form.parentElement;
+      var done = root.querySelector('[data-contact-done]');
+      var error = form.querySelector('.frm-Error');
+      var submit = form.querySelector('.frm-Submit');
+      var captcha = form.querySelector('.cf-turnstile');
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (!form.reportValidity()) return;
+        error.hidden = true;
+        submit.disabled = true;
+        captchaToken(captcha)
+          .then(function (token) {
+            var body = new FormData(form);
+            if (token) body.set('cf-turnstile-response', token);
+            return fetch(form.action, { method: 'POST', body: body });
+          })
+          .then(function (res) {
+            return res.json().catch(function () { return {}; }).then(function (data) {
+              // The Worker's messages are written for visitors; anything else gets the fallback.
+              if (!res.ok || !data.ok) throw { userMessage: data.error };
+            });
+          })
+          .then(function () {
+            form.hidden = true;
+            done.hidden = false;
+          })
+          .catch(function (err) {
+            error.textContent = (err && err.userMessage) || fallback;
+            error.hidden = false;
+            // Each Turnstile token works once, so get a fresh one for the next try.
+            if (captcha && window.turnstile) window.turnstile.reset(captcha);
+          })
+          .finally(function () { submit.disabled = false; });
+      });
+    });
+  }());
+</script>
+{{ with $sitekey }}<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>{{ end }}

@@ -14,3 +14,9 @@ binding = "RESOURCES_BUCKET"
 bucket_name = "resources"
 
 # Secret, set in the dashboard under Runtime variables and secrets: DOWNLOAD_SIGNING_KEY.
+
+# Contact form -> Attio (see src/contact.js). Secrets, set in the dashboard under Runtime variables
+# and secrets: ATTIO_API_KEY and TURNSTILE_SECRET_KEY.
+[vars]
+# Slug of the Attio list new contacts are added to (Attio > the list > settings). Empty: no list.
+ATTIO_LIST = "inbound_leads"

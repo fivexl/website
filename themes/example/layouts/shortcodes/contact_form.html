@@ -1,0 +1,3 @@
+{{/* {{< contact_form heading="..." subheading="..." card="true" >}}: the contact form that saves people
+     in Attio (see partials/contact_form.html) */}}
+{{ partial "contact_form.html" (dict "page" .Page "heading" (.Get "heading") "subheading" (.Get "subheading") "card" (eq (.Get "card") "true")) }}
