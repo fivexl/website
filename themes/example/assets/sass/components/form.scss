@@ -1,0 +1,243 @@
+// Shared form style for every form on the site (contact, webinar registration, guide downloads, …).
+// It follows the site's type and buttons: Montserrat 400–700 (no 800), a black 700 title, labels
+// above the fields, 8px corners on inputs and the button like the header "Contact" button, and the
+// button text in normal case like every other button on the site.
+//
+//   .frm                 white card with a soft shadow (leave it off inside a popup that is already a card)
+//   .frm-Form            the <form>: fields stacked with even gaps
+//   .frm-Head / -Heading / -Sub      title and subtitle
+//   .frm-Row             two fields side by side (one column on phones)
+//   .frm-Field / -Label  a label above its field;  .frm-VisuallyHidden for a label only screen readers need
+//   .frm-Input / -Textarea, .frm-Consent / -Checkbox, .frm-Error, .frm-Submit
+//   .frm-Success / -Icon / -Heading / -Text / -Reset   the message shown after sending
+//   .frm-Trap            honeypot field, off screen
+//   .frm-Dev             a note shown only on the local server
+
+$frmText: #1A1A1A;
+$frmMuted: #666;
+$frmBorder: #D6D6D6;
+$frmBlue: #18AEF0;
+$frmBlueHover: #0F96D4;
+$frmLink: #13A3E6;
+$frmError: #c62828;
+
+.frm {
+  background: #fff;
+  border-radius: 12px;
+  padding: 36px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 12px 32px rgba(0, 0, 0, 0.06);
+  scroll-margin-top: 96px;
+  text-align: left;
+  color: $frmText;
+
+  @media (max-width: 480px) {
+    padding: 24px;
+  }
+}
+
+.frm-Form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: left;
+  color: $frmText;
+
+  &[hidden] { display: none; }
+
+  // Invisible Turnstile widget: keep it out of the layout so it adds no extra gap
+  .cf-turnstile { position: absolute; }
+}
+
+.frm-Head {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.frm-Heading {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: $frmText;
+}
+
+.frm-Sub {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+  color: $frmMuted;
+}
+
+.frm-Dev {
+  margin: 0;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  background: #fff4d6;
+  font-size: 13px;
+}
+
+.frm-Row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+
+  @media (max-width: 400px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.frm-Field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.frm-Label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+
+  span { color: $frmError; margin-left: 2px; }
+}
+
+.frm-VisuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.frm-Input {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 14px 16px;
+  font: inherit;
+  font-size: 16px;
+  color: $frmText;
+  background: #fff;
+  border: 1px solid $frmBorder;
+  border-radius: 8px;
+  outline: none;
+
+  &:focus {
+    border-color: $frmBlue;
+    box-shadow: 0 0 0 3px rgba(24, 174, 240, 0.18);
+  }
+}
+
+.frm-Textarea {
+  min-height: 140px;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.frm-Consent {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #555;
+
+  a {
+    color: $frmLink;
+    text-decoration: underline;
+  }
+}
+
+.frm-Checkbox {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin: 3px 0 0;
+  accent-color: $frmBlue;
+}
+
+.frm-Error {
+  margin: 0;
+  font-size: 14px;
+  color: $frmError;
+}
+
+.frm-Submit {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 4px;
+  padding: 16px;
+  font: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  background: $frmBlue;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+
+  &:hover { background: $frmBlueHover; }
+  &:disabled { opacity: 0.7; cursor: progress; }
+}
+
+// After sending
+.frm-Success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 24px 0;
+  text-align: center;
+
+  &[hidden] { display: none; }
+}
+
+.frm-Success_Icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: $frmBlue;
+}
+
+.frm-Success_Heading {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 700;
+  color: $frmText;
+}
+
+.frm-Success_Text {
+  max-width: 320px;
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.frm-Success_Reset {
+  padding: 0;
+  font: inherit;
+  font-size: 14px;
+  color: $frmLink;
+  text-decoration: underline;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+// Honeypot: off-screen rather than display:none, which some bots skip
+.frm-Trap {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}

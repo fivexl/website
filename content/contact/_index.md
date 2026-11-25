@@ -33,23 +33,11 @@ Get insights from certified AWS architects with real-world experience helping st
 
 {{< unsafe >}}
 <div style="max-width: 800px; margin: 60px auto; padding: 0 40px;">
-<script charset="utf-8" type="text/javascript" src="//js-eu1.hsforms.net/forms/embed/v2.js"></script>
-<div id="hubspot-form-container"></div>
-<script>
-  hbspt.forms.create({
-    portalId: "27182258",
-    formId: "8f7dd096-a9c9-4f6d-8d17-cc579f33a1da",
-    region: "eu1",
-    target: "#hubspot-form-container",
-    onFormReady: function($form) {
-      var style = document.createElement('style');
-      style.innerHTML = '.hs-form-field { margin-bottom: 20px !important; } .hs-form input[type="text"], .hs-form input[type="email"], .hs-input { width: 100% !important; max-width: 100% !important; padding: 12px 16px !important; font-size: 16px !important; border: 1px solid #ddd !important; border-radius: 4px !important; box-sizing: border-box !important; } .hs-form textarea, textarea.hs-input { width: 100% !important; max-width: 100% !important; min-height: 120px !important; padding: 12px 16px !important; font-size: 16px !important; border: 1px solid #ddd !important; border-radius: 4px !important; box-sizing: border-box !important; } .hs-form .hs-button, .hs-button.primary { background-color: #18AEF0 !important; color: #fff !important; border: none !important; padding: 1rem 2rem !important; font-family: Montserrat, sans-serif !important; font-size: 16px !important; font-weight: 700 !important; border-radius: 8px !important; cursor: pointer !important; }';
-      if ($form && $form.length) {
-        $form[0].appendChild(style);
-      }
-    }
-  });
-</script>
+{{< /unsafe >}}
+
+{{< contact_form heading="Tell us about your project" subheading="Share a few details and we'll get back to you shortly." card="true" >}}
+
+{{< unsafe >}}
 <p style="text-align: center; font-size: 14px; color: #666; margin-top: 30px; font-family: Montserrat, sans-serif;">
   This form is for project descriptions. If you're interested in pursuing a career with FivexL, please complete the application on our <a href="/career/" style="color: #f03687; text-decoration: none;">Careers page</a>.
 </p>

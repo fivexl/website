@@ -1,4 +1,5 @@
 import { handleResources } from "./resources.js";
+import { handleContactRequest } from "./contact.js";
 
 const PERMANENT_REDIRECTS = new Map([
   ["/blog/overture-case-study/", "/case-studies/ovrture-case-study/"],
@@ -53,6 +54,11 @@ export default {
 
     if (url.pathname.startsWith("/api/resources/")) {
       const response = await handleResources(request, env, url);
+      if (response) return response;
+    }
+
+    if (url.pathname === "/api/contact") {
+      const response = await handleContactRequest(request, env, url);
       if (response) return response;
     }
 

@@ -125,19 +125,19 @@ As a business owner with a team of mid-level DevOps specialists, you need someon
   <div class="retainer-popup-content">
     <button id="retainer-popup-close" class="retainer-popup-close">&times;</button>
     <div class="retainer-popup-body">
-      <h2 class="retainer-popup-title">Get a Quote</h2>
-      <p class="retainer-popup-subtitle">Tell us about your infrastructure needs and we'll get back to you shortly.</p>
-      <div id="retainer-hubspot-form"></div>
+{{< /unsafe >}}
+
+{{< contact_form heading="Get a Quote" subheading="Tell us about your infrastructure needs and we'll get back to you shortly." >}}
+
+{{< unsafe >}}
     </div>
   </div>
 </div>
 
-<script charset="utf-8" type="text/javascript" src="//js-eu1.hsforms.net/forms/embed/v2.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   var popup = document.getElementById('retainer-popup');
   var closeBtn = document.getElementById('retainer-popup-close');
-  var formLoaded = false;
   
   // Open popup when clicking any link with href="#retainer-popup"
   document.querySelectorAll('a[href="#retainer-popup"]').forEach(function(link) {
@@ -146,16 +146,6 @@ document.addEventListener('DOMContentLoaded', function() {
       popup.style.display = 'flex';
       document.body.style.overflow = 'hidden';
       
-      // Load HubSpot form only once
-      if (!formLoaded && typeof hbspt !== 'undefined') {
-        hbspt.forms.create({
-          portalId: "27182258",
-          formId: "8f7dd096-a9c9-4f6d-8d17-cc579f33a1da",
-          region: "eu1",
-          target: "#retainer-hubspot-form"
-        });
-        formLoaded = true;
-      }
     });
   });
   

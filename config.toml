@@ -115,6 +115,13 @@ disableKinds = ['category'] # Categories disabled initially
     brevo_form_action = "https://1b3fd6c9.sibforms.com/serve/MUIFANiAX83PL1mqWIzQrnIs4KRd8gHB7NLubx9BeUCmFebc3R3SFR494cKHpQFpIM9asaCFD5aMuYJRsLo5FBmgqPCf07FkuCPJXvNvKwYcm9z2NJCI3vlATzkf364fkHfzHFf9RDw5hprVrHJuuGmeuySHv2op6pwGlg7Hf-aJ5h6MmYkLIwjbksS_5OhDY4MBivj82YCazpQEjA=="
     # Cloudflare Turnstile site key: the same widget as the captcha in the Brevo form settings.
     turnstile_sitekey = "0x4AAAAAAABbGaideoQ1O15c"
+  [params.contact]
+    # Contact form (/contact/, /retainer/): sends to the Worker, which saves the person in Attio.
+    # Site key of the Cloudflare Turnstile widget for fivexl.io (the same widget as the Brevo forms and
+    # the guide downloads); its secret key goes in the Worker's TURNSTILE_SECRET_KEY. Empty: no captcha.
+    turnstile_sitekey = "0x4AAAAAAABbGaideoQ1O15c"
+    # Shown when the form can't be sent, so people can still reach us
+    email = "hello@fivexl.io"
   [params.author]
     name = "FivexL"
     email = "info@fivexl.io"
