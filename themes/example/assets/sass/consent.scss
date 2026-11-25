@@ -1,0 +1,54 @@
+// Both buttons share one style on purpose: rejecting must be as easy and as visible as accepting.
+.cns {
+  position: fixed;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 1000;
+  max-width: 640px;
+  margin-inline: auto;
+  padding: 1rem 1.25rem;
+  background: $bgSecondary;
+  color: $accentText;
+  border-radius: 8px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+
+  &[hidden] { display: none; }
+
+  &-Text {
+    margin: 0 0 1rem;
+    font-size: 15px;
+    line-height: 1.5;
+    a, a:visited { color: $accentColor; }
+  }
+
+  &-Buttons {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  &-Button {
+    flex: 1 1 10rem;
+    padding: 0.75rem 1rem;
+    border: 2px solid $accentColor;
+    border-radius: 4px;
+    background: $accentColor;
+    color: $accentText;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+
+    &:hover, &:focus-visible { background: darken($accentColor, 10%); border-color: darken($accentColor, 10%); }
+  }
+}
+
+.ftr-CookieSettings {
+  background: none;
+  border: 0;
+  padding: 0;
+  color: inherit;
+  font: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+}

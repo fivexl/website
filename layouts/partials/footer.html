@@ -7,7 +7,7 @@
             <a href="{{ .Site.BaseURL }}" alt="Link to homepage">
                 <img width="500" height="500" src="{{ $logo.Permalink }}" class="ftr-Logo" alt="FivexL logo" loading="lazy">
             </a>
-            <span class="ftr-Copyright ftr-Copyright_Desktop" role="contentinfo">Copyright &copy;{{ now.Format "2006" }} FivexL</span>
+            <span class="ftr-Copyright ftr-Copyright_Desktop" role="contentinfo">Copyright &copy;{{ now.Format "2006" }} FivexL · <a href="/privacy-policy/" class="ftr-CookieSettings">Privacy policy</a>{{ if hugo.IsProduction }} · <button type="button" class="ftr-CookieSettings" data-consent-settings>Cookie settings</button>{{ end }}</span>
         </div>
 
         <nav class="ftr-ExternalLinks">
@@ -24,7 +24,7 @@
                     </li>
                 {{ end }}
             </ul>
-            <span class="ftr-Copyright ftr-Copyright_Mobile" role="contentinfo">Copyright &copy;{{ now.Format "2006" }} FivexL</span>
+            <span class="ftr-Copyright ftr-Copyright_Mobile" role="contentinfo">Copyright &copy;{{ now.Format "2006" }} FivexL · <a href="/privacy-policy/" class="ftr-CookieSettings">Privacy policy</a>{{ if hugo.IsProduction }} · <button type="button" class="ftr-CookieSettings" data-consent-settings>Cookie settings</button>{{ end }}</span>
         </nav>
     </div>
 
@@ -32,4 +32,5 @@
 
 {{ if hugo.IsProduction }}
 {{ partial "cloudflareinsights.html" . }}
+{{ partial "consent.html" . }}
 {{ end }}
