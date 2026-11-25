@@ -22,6 +22,23 @@ bucket_name = "resources"
 ATTIO_LIST = "inbound"
 
 # Workers Logs: keeps console output (e.g. Attio errors from the contact form) and shows it under
-# Workers & Pages > website > Logs.
+# Workers & Pages > website > Logs. Invocation logs (one entry per request, with the visitor's IP,
+# location and headers) are off: we only need our own error lines. Matches the dashboard settings.
 [observability]
 enabled = true
+head_sampling_rate = 1
+redact_query_string = false
+
+[observability.logs]
+enabled = true
+head_sampling_rate = 1
+invocation_logs = false
+persist = true
+
+[observability.traces]
+enabled = false
+head_sampling_rate = 1
+persist = true
+
+[observability.issue_detection]
+enabled = false
