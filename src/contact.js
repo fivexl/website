@@ -4,7 +4,8 @@
 // 1. checks the Cloudflare Turnstile token (when TURNSTILE_SECRET_KEY is set),
 // 2. finds the person in Attio by email, or creates them,
 // 3. adds the project description as a note on the person,
-// 4. adds the person to the Attio list ATTIO_LIST (when set), once.
+// 4. adds the person to the Attio list ATTIO_LIST (when set), once, filling the list's
+//    project_description and source_page columns.
 //
 // Secrets (dashboard > Runtime variables and secrets, type Secret):
 //   ATTIO_API_KEY         Attio access token with read-write access to People, Notes and Lists.
@@ -129,8 +130,11 @@ async function handleContact(request, env) {
 
     if (env.ATTIO_LIST) {
       // PUT asserts the entry: the person is added once, and a repeat submission doesn't duplicate it.
+      // The list's own columns (Inbound Leads > Attributes). A repeat submission updates them to the latest.
+      const entryValues = { project_description: description };
+      if (page) entryValues.source_page = page;
       await attio(env, "list", "PUT", `/lists/${encodeURIComponent(env.ATTIO_LIST)}/entries`, {
-        data: { parent_record_id: recordId, parent_object: "people", entry_values: {} },
+        data: { parent_record_id: recordId, parent_object: "people", entry_values: entryValues },
       });
     }
   } catch (err) {

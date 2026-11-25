@@ -193,6 +193,14 @@
 {{ define "bodyScripts" }}
 <script>
   (function () {
+
+    // While sending: disable the button, show a spinner and "Sending…", then put the label back.
+    function setBusy(button, busy) {
+      button.disabled = busy;
+      button.setAttribute('aria-busy', busy ? 'true' : 'false');
+      if (busy) { button.dataset.label = button.textContent; button.textContent = 'Sending…'; }
+      else if (button.dataset.label) { button.textContent = button.dataset.label; }
+    }
     var card = document.getElementById('register');
     if (!card) return;
     var form = card.querySelector('[data-wr-form]');
@@ -243,7 +251,7 @@
       // Without a Brevo action URL (local preview) just show the success state.
       if (!form.action || form.getAttribute('action') === null) { showSuccess(); return; }
 
-      submit.disabled = true;
+      setBusy(submit, true);
       captchaToken()
         .then(function (token) {
           var body = new FormData(form);
@@ -264,7 +272,7 @@
           // Each Turnstile token works once, so get a fresh one for the next try.
           if (captcha && window.turnstile) window.turnstile.reset(captcha);
         })
-        .finally(function () { submit.disabled = false; });
+        .finally(function () { setBusy(submit, false); });
     });
 
     // Invisible Turnstile check. Its token usually arrives within a second or two of the page loading,
