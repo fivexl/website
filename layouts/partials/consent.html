@@ -1,0 +1,72 @@
+{{/* Cookie consent. Clay web intent fingerprints the device as soon as it loads, so its script is
+     only added after "Accept all"; Claydar.giveCookieConsent() alone would not stop that. */}}
+<div class="cns" id="consent" role="dialog" aria-live="polite" aria-label="Cookie consent" hidden>
+    <p class="cns-Text">
+        With your permission, we use Clay to identify which company you visit from, using your IP address,
+        browsing activity and browser storage, including device fingerprinting. It runs only if you accept.
+        <a href="/privacy-policy/">Privacy policy</a>
+    </p>
+    <div class="cns-Buttons">
+        <button type="button" class="cns-Button" data-consent="all">Accept all</button>
+        <button type="button" class="cns-Button" data-consent="necessary">Only necessary</button>
+    </div>
+</div>
+<script>
+(function () {
+  var KEY = 'fivexl_consent';
+  var MAX_AGE = 365 * 24 * 3600 * 1000; // ask again after 12 months
+  var banner = document.getElementById('consent');
+
+  function read() {
+    try {
+      var c = JSON.parse(localStorage.getItem(KEY));
+      return c && Date.now() - c.t < MAX_AGE ? c.v : null;
+    } catch (e) { return null; }
+  }
+  function save(v) {
+    try { localStorage.setItem(KEY, JSON.stringify({ v: v, t: Date.now() })); } catch (e) {}
+  }
+  function loadClay() {
+    var s = document.createElement('script');
+    s.src = 'https://static.claydar.com/init.v1.js?id=cYOsxg4daV';
+    s.async = true;
+    document.body.appendChild(s);
+  }
+  // Withdrawal: drop what Clay stored (names from its script), then reload so it no longer runs.
+  function clearClay() {
+    try {
+      [localStorage, sessionStorage].forEach(function (store) {
+        Object.keys(store).forEach(function (k) {
+          if (/^(claydar_|radar_)/.test(k)) store.removeItem(k);
+        });
+      });
+    } catch (e) {}
+    var host = location.hostname.replace(/^www\./, '');
+    document.cookie.split(';').forEach(function (c) {
+      var name = c.split('=')[0].trim();
+      if (!/^(claydar_|radar_)/.test(name)) return;
+      ['', '; domain=' + host, '; domain=.' + host].forEach(function (d) {
+        document.cookie = name + '=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT' + d;
+      });
+    });
+  }
+
+  var current = read();
+  if (current === 'all') loadClay();
+  else if (!current) banner.hidden = false;
+
+  banner.addEventListener('click', function (e) {
+    var v = e.target.getAttribute('data-consent');
+    if (!v) return;
+    save(v);
+    banner.hidden = true;
+    if (v === 'all' && current !== 'all') loadClay();
+    if (v === 'necessary' && current === 'all') { clearClay(); location.reload(); }
+    current = v;
+  });
+
+  document.addEventListener('click', function (e) {
+    if (e.target.closest('[data-consent-settings]')) banner.hidden = false;
+  });
+})();
+</script>
