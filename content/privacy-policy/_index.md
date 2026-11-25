@@ -10,9 +10,9 @@ This policy explains what personal data we collect through fivexl.io, why, who r
 
 ## Who we are
 
-**Data controller:** FivexL Consulting Services OÜ, Estonia
+**Data controller:** FivexL Consulting Services OÜ, registry code [14748720](https://ariregister.rik.ee/eng/company/14748720/FivexL-Consulting-Services-O%C3%9C), Estonia
 
-**Address:** TODO: registered address
+**Address:** Kotkapoja tn 2a-10, 10615 Tallinn, Harju maakond, Estonia
 
 **Contact:** hello@fivexl.io
 
