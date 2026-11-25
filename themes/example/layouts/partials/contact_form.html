@@ -88,7 +88,7 @@
           .then(function (res) {
             return res.json().catch(function () { return {}; }).then(function (data) {
               // The Worker's messages are written for visitors; anything else gets the fallback.
-              if (!res.ok || !data.ok) throw { userMessage: data.error };
+              if (!res.ok || !data.ok) throw { userMessage: data.error, ref: data.ref };
             });
           })
           .then(function () {
@@ -96,7 +96,8 @@
             done.hidden = false;
           })
           .catch(function (err) {
-            error.textContent = (err && err.userMessage) || fallback;
+            // A short reference (e.g. "list 404") helps us find the cause; it contains no secrets.
+            error.textContent = ((err && err.userMessage) || fallback) + (err && err.ref ? ' (ref: ' + err.ref + ')' : '');
             error.hidden = false;
             // Each Turnstile token works once, so get a fresh one for the next try.
             if (captcha && window.turnstile) window.turnstile.reset(captcha);
