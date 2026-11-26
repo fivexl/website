@@ -153,6 +153,8 @@ $frmError: #c62828;
   }
 }
 
+.frm-Required { color: $frmError; margin-left: 2px; }
+
 .frm-Checkbox {
   flex-shrink: 0;
   width: 18px;

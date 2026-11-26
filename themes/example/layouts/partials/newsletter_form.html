@@ -1,0 +1,119 @@
+{{/* Newsletter sign-up: the same fields as the old Brevo form (email and the consent box).
+     It posts to the Worker (src/subscribe.js), which adds the contact to the Brevo newsletter list
+     and the person to Attio. Uses the shared form style (components/form.scss).
+     Context: the page. The grey sign-up section and the /newsletter/ page each have one. */}}
+{{ $page := . }}
+{{ $sitekey := site.Params.contact.turnstile_sitekey }}
+{{/* Tag and list pages have no content file, so they get a fixed ID */}}
+{{ $id := "nl-form" }}
+{{ with .File }}{{ $id = printf "nl-%s" .UniqueID }}{{ end }}
+<div class="frm-Wrap frm">
+  <form class="frm-Form" data-subscribe-form action="/api/subscribe" method="post" novalidate>
+    <div class="frm-Field">
+      <label class="frm-Label" for="{{ $id }}-email">Work email<span aria-hidden="true">*</span></label>
+      <input class="frm-Input" id="{{ $id }}-email" name="email" type="email" autocomplete="email" maxlength="254" required>
+    </div>
+    <label class="frm-Consent">
+      <input class="frm-Checkbox" type="checkbox" name="consent" value="1" required>
+      <span>Yes, I want to receive your email newsletter with FivexL exclusive updates, offers, and tips.<span class="frm-Required" aria-hidden="true">*</span></span>
+    </label>
+    {{/* Honeypot: hidden from people; bots that fill it are ignored by the Worker */}}
+    <div class="frm-Trap" aria-hidden="true">
+      <label for="{{ $id }}-website">Website</label>
+      <input id="{{ $id }}-website" name="website" type="text" tabindex="-1" autocomplete="off">
+    </div>
+    <input type="hidden" name="source" value="newsletter">
+    <input type="hidden" name="page" value="{{ $page.RelPermalink }}">
+    {{ with $sitekey }}<div class="cf-turnstile" data-sitekey="{{ . }}" data-language="en"></div>{{ end }}
+    <p class="frm-Error" role="alert" hidden></p>
+    <button class="frm-Submit" type="submit">Subscribe</button>
+  </form>
+
+  <div class="frm-Success" data-subscribe-done hidden>
+    <div class="frm-Success_Icon" aria-hidden="true">
+      <svg width="26" height="26" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <p class="frm-Success_Heading">Your subscription has been successful!</p>
+  </div>
+</div>
+
+<script>
+  (function () {
+    var fallback = 'Something went wrong. Please try again{{ with site.Params.contact.email }}, or email us at {{ . }}{{ end }}.';
+    var sitekey = {{ $sitekey }};
+
+    // The sign-up box is on most pages, so Turnstile only loads once someone starts filling it in.
+    function loadTurnstile() {
+      // Another form on the page (e.g. the contact form) may already load it.
+      if (!sitekey || window.turnstile || document.querySelector('script[src*="challenges.cloudflare.com/turnstile"]')) return;
+      var s = document.createElement('script');
+      s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
+      s.async = true;
+      s.setAttribute('data-turnstile', '');
+      document.head.appendChild(s);
+    }
+
+    // Invisible Turnstile check; its token usually arrives a second or two after it loads.
+    function captchaToken(captcha) {
+      if (!captcha) return Promise.resolve('');
+      loadTurnstile();
+      return new Promise(function (resolve, reject) {
+        var waited = 0;
+        (function check() {
+          var token = window.turnstile && window.turnstile.getResponse(captcha);
+          if (token) return resolve(token);
+          if ((waited += 250) > 15000) return reject(new Error('No captcha token'));
+          setTimeout(check, 250);
+        })();
+      });
+    }
+
+    // While sending: disable the button, show a spinner and "Sending…", then put the label back.
+    function setBusy(button, busy) {
+      button.disabled = busy;
+      button.setAttribute('aria-busy', busy ? 'true' : 'false');
+      if (busy) { button.dataset.label = button.textContent; button.textContent = 'Sending…'; }
+      else if (button.dataset.label) { button.textContent = button.dataset.label; }
+    }
+
+    document.querySelectorAll('[data-subscribe-form]').forEach(function (form) {
+      if (form.dataset.ready) return;
+      form.dataset.ready = '1';
+      var done = form.parentElement.querySelector('[data-subscribe-done]');
+      var error = form.querySelector('.frm-Error');
+      var submit = form.querySelector('.frm-Submit');
+      var captcha = form.querySelector('.cf-turnstile');
+
+      form.addEventListener('focusin', loadTurnstile, { once: true });
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (!form.reportValidity()) return;
+        error.hidden = true;
+        setBusy(submit, true);
+        captchaToken(captcha)
+          .then(function (token) {
+            var body = new FormData(form);
+            if (token) body.set('cf-turnstile-response', token);
+            return fetch(form.action, { method: 'POST', body: body });
+          })
+          .then(function (res) {
+            return res.json().catch(function () { return {}; }).then(function (data) {
+              if (!res.ok || !data.ok) throw { userMessage: data.error, ref: data.ref };
+            });
+          })
+          .then(function () {
+            form.hidden = true;
+            done.hidden = false;
+          })
+          .catch(function (err) {
+            // A short reference (e.g. "brevo 401") helps us find the cause; it contains no secrets.
+            error.textContent = ((err && err.userMessage) || fallback) + (err && err.ref ? ' (ref: ' + err.ref + ')' : '');
+            error.hidden = false;
+            if (captcha && window.turnstile) window.turnstile.reset(captcha);
+          })
+          .finally(function () { setBusy(submit, false); });
+      });
+    });
+  }());
+</script>

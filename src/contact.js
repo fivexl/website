@@ -15,80 +15,10 @@
 // Variable (wrangler.toml [vars]):
 //   ATTIO_LIST            Slug or ID of the Attio list new leads go to ("inbound": the Inbound Leads list).
 
-const ATTIO_API = "https://api.attio.com/v2";
-const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+import { EMAIL_PATTERN, json, verifyTurnstile, findOrCreatePerson, addNote, assertListEntry } from "./form_api.js";
+
 const MAX_NAME = 200;
 const MAX_DESCRIPTION = 5000;
-
-function json(status, body) {
-  return new Response(JSON.stringify(body), {
-    status,
-    headers: { "content-type": "application/json", "cache-control": "no-store" },
-  });
-}
-
-async function verifyTurnstile(env, token, ip) {
-  const body = new FormData();
-  body.set("secret", env.TURNSTILE_SECRET_KEY);
-  body.set("response", token);
-  if (ip) body.set("remoteip", ip);
-  const res = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", { method: "POST", body });
-  const data = await res.json().catch(() => ({}));
-  return data.success === true;
-}
-
-// `step` names the call in error references: find, create, name, note or list.
-async function attio(env, step, method, path, body) {
-  const res = await fetch(`${ATTIO_API}${path}`, {
-    method,
-    headers: {
-      authorization: `Bearer ${env.ATTIO_API_KEY}`,
-      "content-type": "application/json",
-      accept: "application/json",
-    },
-    body: body ? JSON.stringify(body) : undefined,
-  });
-  const data = await res.json().catch(() => ({}));
-  if (!res.ok) {
-    // Logged for Workers Logs. The visitor sees a generic message plus a short reference
-    // (step, status and Attio's error code, never the key), so a failed test shows the cause.
-    console.error("Attio", step, method, path, res.status, JSON.stringify(data).slice(0, 500));
-    const error = new Error(`Attio ${res.status}`);
-    error.ref = [step, res.status, data.code].filter(Boolean).join(" ");
-    throw error;
-  }
-  return data;
-}
-
-// Attio's Name attribute from the form's Full name. Attio shows it as one Name field, but its API
-// needs the first and last parts too: "Ada King Lovelace" -> first "Ada", last "King Lovelace".
-function personalName(fullName) {
-  const [first, ...rest] = fullName.split(" ");
-  return [{ first_name: first, last_name: rest.join(" "), full_name: fullName }];
-}
-
-// Find the person by email, or create them. An existing person's name is only filled in when
-// Attio has none, so a typo in the form never overwrites what the team has entered.
-async function findOrCreatePerson(env, email, fullName) {
-  const found = await attio(env, "find", "POST", "/objects/people/records/query", {
-    filter: { email_addresses: email },
-    limit: 1,
-  });
-  const person = found.data && found.data[0];
-
-  if (person) {
-    const id = person.id.record_id;
-    const currentName = person.values && person.values.name && person.values.name[0];
-    if (!(currentName && currentName.full_name)) {
-      await attio(env, "name", "PATCH", `/objects/people/records/${id}`, { data: { values: { name: personalName(fullName) } } });
-    }
-    return id;
-  }
-
-  const values = { email_addresses: [email], name: personalName(fullName) };
-  const created = await attio(env, "create", "POST", "/objects/people/records", { data: { values } });
-  return created.data.id.record_id;
-}
 
 async function handleContact(request, env) {
   if (request.method !== "POST") return json(405, { error: "Method not allowed" });
@@ -118,24 +48,13 @@ async function handleContact(request, env) {
   try {
     const recordId = await findOrCreatePerson(env, email, fullName);
 
-    await attio(env, "note", "POST", "/notes", {
-      data: {
-        parent_object: "people",
-        parent_record_id: recordId,
-        title: `Website contact form${page ? ` (${page})` : ""}`,
-        format: "plaintext",
-        content: description,
-      },
-    });
+    await addNote(env, recordId, `Website contact form${page ? ` (${page})` : ""}`, description);
 
     if (env.ATTIO_LIST) {
-      // PUT asserts the entry: the person is added once, and a repeat submission doesn't duplicate it.
       // The list's own columns (Inbound Leads > Attributes). A repeat submission updates them to the latest.
       const entryValues = { project_description: description };
       if (page) entryValues.source_page = page;
-      await attio(env, "list", "PUT", `/lists/${encodeURIComponent(env.ATTIO_LIST)}/entries`, {
-        data: { parent_record_id: recordId, parent_object: "people", entry_values: entryValues },
-      });
+      await assertListEntry(env, env.ATTIO_LIST, recordId, entryValues);
     }
   } catch (err) {
     console.error("Contact form", err && err.stack);
