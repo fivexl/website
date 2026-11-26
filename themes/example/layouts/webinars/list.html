@@ -1,0 +1,88 @@
+{{ define "main" }}
+{{/* /webinars/: built like the Blog and Case Studies lists: the shared hero with a featured webinar,
+     then the webinars as blog-style cards, upcoming first, with Upcoming and Previous filter pills.
+     Each webinar is a page with type 'webinar-registration' and layout 'registration'
+     (e.g. content/webinar-aws-agentcore/_index.md); its card opens that page.
+     A webinar counts as previous once event_end_utc has passed. The site is built at deploy time, so the
+     script at the bottom marks webinars that have ended since then as previous. */}}
+{{ $all := where (where site.Pages "Type" "webinar-registration") "Layout" "registration" }}
+{{ $now := now.Unix }}
+{{ $upcoming := slice }}
+{{ $previous := slice }}
+{{ range $all }}
+  {{ $end := (time.AsTime (.Params.event_end_utc | default .Params.event_date)).Unix }}
+  {{ if gt $end $now }}{{ $upcoming = $upcoming | append . }}{{ else }}{{ $previous = $previous | append . }}{{ end }}
+{{ end }}
+{{ $upcoming = sort $upcoming "Params.event_date" "asc" }}
+{{ $previous = sort $previous "Params.event_date" "desc" }}
+
+{{/* Hero: the next webinar, or the latest one if none is planned. Its image is panel_image if the
+     webinar page sets one, otherwise its share image. */}}
+{{ range first 1 ($upcoming | append $previous) }}
+{{ $isUpcoming := in $upcoming . }}
+<div class="bls-PanelWrapper">{{- partial "DoublePanel.html" ( dict
+    "Params" ( dict
+        "sub_heading" (cond $isUpcoming "NEXT WEBINAR" "WEBINARS")
+        "title" .Title
+        "panel_image" (.Params.panel_image | default .Params.share_image | default "share-image.*")
+        "cta_text" (cond $isUpcoming "SAVE MY SEAT" "VIEW WEBINAR")
+        "featured_page" .
+    )
+    "Permalink" .Permalink
+    "IsSection" true
+) -}}</div>
+{{ end }}
+
+{{/* One list, like the blog: Upcoming and Previous pills filter it (click again to show all) */}}
+<section class="cl">
+  <h2 class="cl-Heading">WEBINARS</h2>
+  <div class="cl-TagsList wb-Filters">
+    <div class="cl-TagsGroup"><button class="cl-TagsGroup_Label" type="button" data-wb-filter="upcoming">Upcoming</button></div>
+    <div class="cl-TagsGroup"><button class="cl-TagsGroup_Label" type="button" data-wb-filter="previous">Previous</button></div>
+  </div>
+  <p class="wb-Empty" data-wb-empty hidden>No webinar is scheduled right now. Subscribe to our newsletter below to hear about the next one.</p>
+  <div class="cl-ContentWrapper" data-wb-list>
+    {{ range $upcoming }}{{ partial "webinars/card.html" (dict "page" . "status" "upcoming") }}{{ end }}
+    {{ range $previous }}{{ partial "webinars/card.html" (dict "page" . "status" "previous") }}{{ end }}
+  </div>
+</section>
+{{ end }}
+
+{{ define "bodyScripts" }}
+<script>
+  (function () {
+    var list = document.querySelector('[data-wb-list]');
+    if (!list) return;
+    var cards = Array.prototype.slice.call(list.children);
+    var empty = document.querySelector('[data-wb-empty]');
+    var buttons = document.querySelectorAll('[data-wb-filter]');
+
+    // The site is built at deploy time: a webinar that has ended since then moves to Previous,
+    // at the top of the previous ones.
+    var firstPrevious = cards.filter(function (c) { return c.dataset.status === 'previous'; })[0] || null;
+    cards.slice().reverse().forEach(function (card) {
+      if (card.dataset.status === 'upcoming' && Date.parse(card.dataset.end) <= Date.now()) {
+        card.dataset.status = 'previous';
+        list.insertBefore(card, firstPrevious);
+        firstPrevious = card;
+      }
+    });
+
+    buttons.forEach(function (button) {
+      button.addEventListener('click', function () {
+        var active = !button.classList.contains('is-active');
+        buttons.forEach(function (b) { b.classList.remove('is-active'); });
+        if (active) button.classList.add('is-active');
+        var filter = active ? button.dataset.wbFilter : '';
+        var shown = 0;
+        cards.forEach(function (card) {
+          var show = !filter || card.dataset.status === filter;
+          card.style.display = show ? '' : 'none';
+          if (show) shown++;
+        });
+        empty.hidden = !(filter === 'upcoming' && shown === 0);
+      });
+    });
+  })();
+</script>
+{{ end }}

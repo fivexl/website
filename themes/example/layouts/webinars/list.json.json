@@ -1,0 +1,12 @@
+{{- /* /webinars/index.json: what the webinar endpoint (src/webinar.js) needs to know about each webinar,
+     keyed by its page path. webinar_name is the option added to the person in Attio; recording_url is the
+     link a past webinar's form hands out. */ -}}
+{{- $out := dict -}}
+{{- range where (where site.Pages "Type" "webinar-registration") "Layout" "registration" -}}
+  {{- $out = merge $out (dict .RelPermalink (dict
+      "name" (.Params.webinar_name | default .Title)
+      "date" (cond (isset .Params "event_date") (time.Format "2006-01-02" .Params.event_date) "")
+      "recording_url" (.Params.recording_url | default "")
+  )) -}}
+{{- end -}}
+{{- $out | jsonify -}}

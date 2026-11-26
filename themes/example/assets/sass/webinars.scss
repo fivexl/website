@@ -1,0 +1,18 @@
+@import 'variables';
+
+// /webinars/: uses the shared hero (DoublePanel) and the blog card list (.cl-*); this is the extra.
+.wb {
+  // "No webinar is scheduled", lined up with the section heading
+  &-Empty {
+    box-sizing: border-box;
+    max-width: $maxContentWidth;
+    margin: 0 auto;
+    padding: 0 1rem;
+    margin-bottom: 2rem;
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  // The two pills sit side by side (the blog puts each of its first two groups on its own row)
+  &-Filters .cl-TagsGroup { flex-basis: auto; }
+}

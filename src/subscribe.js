@@ -15,9 +15,7 @@
 // Variables (wrangler.toml [vars]):
 //   BREVO_NEWSLETTER_LIST ID of the Brevo newsletter list (Contacts > Lists, e.g. 2).
 
-import { EMAIL_PATTERN, json, verifyTurnstile, serviceError, attio, findOrCreatePerson } from "./form_api.js";
-
-const BREVO_API = "https://api.brevo.com/v3";
+import { EMAIL_PATTERN, json, verifyTurnstile, attio, brevoSubscribe, findOrCreatePerson } from "./form_api.js";
 
 // One entry per kind of sign-up. `list` is the Brevo list ID; `attio(today)` gives the values set on
 // the person in Attio (People > Attributes; the slugs must match).
@@ -28,21 +26,6 @@ function sources(env) {
       attio: (today) => ({ newsletter_subscribed: true, newsletter_subscribed_at: today }),
     },
   };
-}
-
-// Create the contact in Brevo, or update an existing one, and add them to the list.
-async function brevoSubscribe(env, email, listId) {
-  const path = "/contacts";
-  const res = await fetch(`${BREVO_API}${path}`, {
-    method: "POST",
-    headers: { "api-key": env.BREVO_API_KEY, "content-type": "application/json", accept: "application/json" },
-    // emailBlacklisted: false lifts the block Brevo keeps after an earlier unsubscribe: the person has
-    // just ticked the consent box again, and without this they would be on the list but get nothing.
-    body: JSON.stringify({ email, listIds: [listId], updateEnabled: true, emailBlacklisted: false }),
-  });
-  if (res.ok) return; // 201 created, 204 updated
-  const data = await res.json().catch(() => ({}));
-  throw serviceError("Brevo", "brevo", "POST", path, res.status, data);
 }
 
 async function handleSubscribe(request, env) {

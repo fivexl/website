@@ -1,0 +1,16 @@
+{{/* A webinar card on /webinars/, in the blog card style (ContentList.html).
+     Context: dict "page" (the webinar page) and "status" ("upcoming" or "previous"). */}}
+{{ $status := .status }}
+{{ with .page }}
+{{ $permalink := .Permalink }}
+<div class="cl-ContentItem" data-status="{{ $status }}" data-end="{{ (time.AsTime (.Params.event_end_utc | default .Params.event_date)).UTC.Format "2006-01-02T15:04:05Z" }}">
+  {{ with .Resources.GetMatch (.Params.panel_image | default .Params.share_image | default "share-image.*") }}
+  <a href="{{ $permalink }}">
+    {{ partial "img" (dict "class" "cl-ContentItem_Image" "src" .Permalink "image" . "alt" .Name "sizes" "(max-width: 767px) 100vw, (max-width: 1552px) 40vw, 730px" "lazy" true ) }}
+  </a>
+  {{ end }}
+  <span class="cl-ContentItem_Date">{{ time.Format "January 2, 2006" .Params.event_date }}</span>
+  <h1 class="cl-ContentItem_Heading"><a href="{{ $permalink }}">{{ .Title }}</a></h1>
+  <p class="cl-ContentItem_Summary">{{ .Params.description | default (.Summary | plainify) | truncate 300 }}</p>
+</div>
+{{ end }}

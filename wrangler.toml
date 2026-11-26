@@ -23,6 +23,9 @@ ATTIO_LIST = "inbound"
 # Newsletter sign-up -> Brevo and Attio (see src/subscribe.js). Secret: BREVO_API_KEY.
 # ID of the Brevo newsletter list (Brevo > Contacts > Lists).
 BREVO_NEWSLETTER_LIST = "2"
+# Webinar registrations and recording requests -> Brevo and Attio (see src/webinar.js).
+# ID of the shared Brevo webinar list. Empty: webinar contacts only go to Brevo through the newsletter box.
+BREVO_WEBINAR_LIST = "15"
 
 # Workers Logs: keeps console output (e.g. Attio errors from the contact form) and shows it under
 # Workers & Pages > website > Logs. Invocation logs (one entry per request, with the visitor's IP,

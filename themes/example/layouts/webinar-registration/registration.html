@@ -1,13 +1,20 @@
 {{ define "main" }}
+{{/* A webinar has ended once event_end_utc has passed. Then the page hides registration (everything marked
+     data-wr-live) and shows data-wr-ended instead: a "Watch the recording" button when recording_url is set,
+     otherwise the newsletter sign-up. The script at the bottom also switches if it ends after the last deploy.
+     To test registration on an ended webinar, open the page with ?registration=open. */}}
+{{ $endTime := time.AsTime (.Params.event_end_utc | default .Params.event_date) }}
+{{ $ended := le $endTime.Unix now.Unix }}
 {{ $f := merge (dict "first_name" "FIRSTNAME" "last_name" "LASTNAME" "email" "EMAIL" "consent" "OPT_IN") (.Params.brevo_fields | default dict) }}
 
-<div class="wr-Page">
+<div class="wr-Page{{ if $ended }} wr-Page_Ended{{ end }}" data-wr-page data-end="{{ $endTime.UTC.Format "2006-01-02T15:04:05Z" }}">
 <section class="wr-Hero">
   <div class="wr-Hero_Inner">
 
     <div class="wr-Hero_Content">
       <ul class="wr-Badges">
-        <li class="wr-Badge wr-Badge_Accent">{{ .Params.badge_primary | default "Free live webinar" }}</li>
+        <li class="wr-Badge wr-Badge_Accent" data-wr-live>{{ .Params.badge_primary | default "Free live webinar" }}</li>
+        <li class="wr-Badge wr-Badge_Accent" data-wr-ended>{{ cond (isset .Params "recording_url") "Webinar recording" "Past webinar" }}</li>
         {{ range .Params.badges }}<li class="wr-Badge">{{ . }}</li>{{ end }}
       </ul>
 
@@ -42,11 +49,70 @@
     </div>
 
     <div class="wr-Hero_Side">
-    <div class="frm" id="register">
+    <div class="frm wr-Ended" data-wr-ended>
+      <div class="frm-Head">
+        <h2 class="frm-Heading" data-wr-rec-heading>{{ if .Params.recording_url }}Watch the recording{{ else }}This webinar has ended{{ end }}</h2>
+        <p class="frm-Sub" data-wr-rec-sub>{{ if .Params.recording_url }}Enter your details to get the link to the recording.{{ else }}Subscribe to our newsletter to hear about the next webinar.{{ end }}</p>
+      </div>
+      {{ if .Params.recording_url }}
+      {{/* Recording form: the Worker (src/webinar.js, kind=recording) saves the request to Attio and Brevo and
+           returns the link, so the link itself is not in the page. */}}
+      <form class="frm-Form" data-wr-rec-form data-page="{{ .RelPermalink }}" novalidate>
+        <div class="frm-Row">
+          <div class="frm-Field">
+            <label class="frm-Label" for="wr-rec-first">First name<span aria-hidden="true">*</span></label>
+            <input class="frm-Input" id="wr-rec-first" name="first_name" type="text" autocomplete="given-name" maxlength="200" required>
+          </div>
+          <div class="frm-Field">
+            <label class="frm-Label" for="wr-rec-last">Last name<span aria-hidden="true">*</span></label>
+            <input class="frm-Input" id="wr-rec-last" name="last_name" type="text" autocomplete="family-name" maxlength="200" required>
+          </div>
+        </div>
+        <div class="frm-Field">
+          <label class="frm-Label" for="wr-rec-email">Work email<span aria-hidden="true">*</span></label>
+          <input class="frm-Input" id="wr-rec-email" name="email" type="email" autocomplete="email" maxlength="254" required>
+        </div>
+        <label class="frm-Consent">
+          <input class="frm-Checkbox" type="checkbox" name="consent" value="1" required>
+          <span>By submitting this form, you acknowledge and agree that FivexL will process your personal information in accordance with the <a href="/privacy-policy/">Privacy Policy</a>.<span class="frm-Required" aria-hidden="true">*</span></span>
+        </label>
+        <label class="frm-Consent">
+          <input class="frm-Checkbox" type="checkbox" name="newsletter" value="1">
+          <span>I'd like to receive FivexL's monthly newsletter, technical insights and invitations to upcoming webinars.</span>
+        </label>
+        <div class="frm-Trap" aria-hidden="true">
+          <label for="wr-rec-website">Website</label>
+          <input id="wr-rec-website" name="website" type="text" tabindex="-1" autocomplete="off">
+        </div>
+        <input type="hidden" name="kind" value="recording">
+        <input type="hidden" name="page" value="{{ .RelPermalink }}">
+        <input type="hidden" name="utm_source" data-utm="utm_source" value="">
+        <input type="hidden" name="utm_medium" data-utm="utm_medium" value="">
+        <input type="hidden" name="utm_campaign" data-utm="utm_campaign" value="">
+        <input type="hidden" name="utm_content" data-utm="utm_content" value="">
+        {{ with .Params.turnstile_sitekey }}<div class="cf-turnstile" data-sitekey="{{ . }}" data-language="en"></div>{{ end }}
+        <p class="frm-Error" role="alert" hidden></p>
+        <button class="frm-Submit" type="submit">Get the recording</button>
+      </form>
+
+      <div class="wr-Rec_Done" data-wr-rec-done hidden>
+        <a class="frm-Submit wr-Ended_Link" data-wr-rec-link href="#" target="_blank" rel="noopener">Watch the recording</a>
+        <div class="wr-Rec_Copy">
+          <input class="frm-Input wr-Rec_Url" data-wr-rec-url type="text" readonly aria-label="Link to the recording">
+          <button class="wr-Rec_CopyButton" data-wr-rec-copy type="button">Copy link</button>
+        </div>
+      </div>
+      {{ else }}
+      <div class="wr-Ended_Newsletter">{{ partial "newsletter_form.html" $ }}</div>
+      {{ end }}
+    </div>
+
+    <div class="frm" id="register" data-wr-live>
       {{/* After a successful registration, send people to the thank-you page in this bundle (if there is one) */}}
       {{ $thankYou := where .RegularPages "Layout" "thank-you" | first 1 }}
       <form class="frm-Form" data-wr-form
         {{ range $thankYou }}data-thank-you="{{ .RelPermalink }}"{{ end }}
+        data-page="{{ .RelPermalink }}"
         {{ with .Params.brevo_form_action }}action="{{ . }}"{{ end }} method="post" novalidate>
         <div class="frm-Head">
           <h2 class="frm-Heading">Register now</h2>
@@ -73,7 +139,13 @@
 
         <label class="frm-Consent">
           <input class="frm-Checkbox" type="checkbox" name="{{ $f.consent }}" value="1" required>
-          <span>By submitting this form, you acknowledge and agree that FivexL will process your personal information in accordance with the <a href="/privacy-policy/">Privacy Policy</a>.</span>
+          <span>By submitting this form, you acknowledge and agree that FivexL will process your personal information in accordance with the <a href="/privacy-policy/">Privacy Policy</a>.<span class="frm-Required" aria-hidden="true">*</span></span>
+        </label>
+
+        {{/* Optional. Not sent to Brevo's form: the Worker (src/webinar.js) adds ticked contacts to the newsletter list. */}}
+        <label class="frm-Consent">
+          <input class="frm-Checkbox" type="checkbox" name="newsletter" value="1">
+          <span>I'd like to receive FivexL's monthly newsletter, technical insights and invitations to upcoming webinars.</span>
         </label>
 
         {{/* Fields Brevo's own embed sends with every submission */}}
@@ -94,6 +166,9 @@
         <p class="frm-Error" role="alert" hidden>Something went wrong. Please try again.</p>
         <button class="frm-Submit" type="submit">Save my seat</button>
       </form>
+      {{/* A second invisible Turnstile check for our Worker, which saves the registration to Attio.
+           Each token works once and Brevo uses the first one. Outside the form, so Brevo never gets it. */}}
+      {{ with .Params.turnstile_sitekey }}<div class="cf-turnstile" data-wr-attio-captcha data-sitekey="{{ . }}" data-language="en"></div>{{ end }}
 
       <div class="frm-Success" hidden>
         <div class="frm-Success_Icon" aria-hidden="true">
@@ -163,7 +238,7 @@
     </li>
     {{ end }}
   </ul>
-  <a class="ButtonCTA wr-Reserve" href="#register">Hurry – reserve your spot!</a>
+  <a class="ButtonCTA wr-Reserve" href="#register" data-wr-live>Hurry – reserve your spot!</a>
 </section>
 {{ end }}
 
@@ -176,17 +251,26 @@
 </section>
 {{ end }}
 
-<section class="wr-Band wr-Band_Cta">
+<section class="wr-Band wr-Band_Cta" data-wr-live>
   <h2 class="wr-Band_Heading">Register for the Webinar</h2>
   {{ with .Params.cta_text }}<p class="wr-Band_Text">{{ . }}</p>{{ end }}
   <a class="wr-Band_Button" href="#register">Save my seat</a>
 </section>
+
+{{/* Past webinar: the closing band points to the other webinars instead */}}
+<section class="wr-Band wr-Band_Cta" data-wr-ended>
+  <h2 class="wr-Band_Heading">More Webinars</h2>
+  <p class="wr-Band_Text">See our upcoming and previous webinars.</p>
+  <a class="wr-Band_Button" href="/webinars/">See all webinars</a>
+</section>
 </div>
 
 {{/* Mobile only: keeps the form one tap away until it is on screen */}}
+{{ if not $ended }}
 <div class="wr-StickyCta" data-wr-sticky>
   <a class="wr-StickyCta_Button" href="#register">Save my seat</a>
 </div>
+{{ end }}
 
 {{ end }}
 
@@ -201,6 +285,18 @@
       if (busy) { button.dataset.label = button.textContent; button.textContent = 'Sending…'; }
       else if (button.dataset.label) { button.textContent = button.dataset.label; }
     }
+    // Ended since the last deploy: switch to the ended view and skip the registration form.
+    // For testing, ?registration=open in the address shows the form on an ended webinar too.
+    var page = document.querySelector('[data-wr-page]');
+    var forceOpen = new URLSearchParams(window.location.search).get('registration') === 'open';
+    if (page && forceOpen) page.classList.remove('wr-Page_Ended');
+    else if (page && Date.parse(page.dataset.end) <= Date.now()) page.classList.add('wr-Page_Ended');
+    if (page && page.classList.contains('wr-Page_Ended')) {
+      var stickyCta = document.querySelector('[data-wr-sticky]');
+      if (stickyCta) stickyCta.remove();
+      return;
+    }
+
     var card = document.getElementById('register');
     if (!card) return;
     var form = card.querySelector('[data-wr-form]');
@@ -255,6 +351,7 @@
       captchaToken()
         .then(function (token) {
           var body = new FormData(form);
+          body.delete('newsletter');
           // Brevo's embed sends the Turnstile token as g-recaptcha-response; the widget adds cf-turnstile-response itself.
           if (token) body.set('g-recaptcha-response', token);
           // Same request Brevo's own embed script sends: the form action with ?isAjax=1, answered with JSON.
@@ -263,6 +360,9 @@
         .then(function (res) { return res.json(); })
         .then(function (data) {
           if (data && data.success === false) throw new Error('Brevo rejected the submission');
+          return saveToAttio();
+        })
+        .then(function () {
           // Brevo's own "confirmation page" redirect never runs for this background request, so redirect here.
           if (form.dataset.thankYou) { window.location.href = form.dataset.thankYou; return; }
           showSuccess();
@@ -275,17 +375,39 @@
         .finally(function () { setBusy(submit, false); });
     });
 
+    // After Brevo has registered them: send the same details to our Worker for Attio (src/webinar.js).
+    // The person is already registered, so this never shows an error; it waits at most 6 seconds.
+    var attioCaptcha = card.querySelector('[data-wr-attio-captcha]');
+    function saveToAttio() {
+      var get = function (id) { var el = document.getElementById(id); return el ? el.value : ''; };
+      var send = tokenFrom(attioCaptcha, 6000).catch(function () { return ''; }).then(function (token) {
+        var body = new FormData();
+        body.set('first_name', get('wr-first'));
+        body.set('last_name', get('wr-last'));
+        body.set('email', get('wr-email'));
+        body.set('page', form.dataset.page);
+        body.set('website', form.elements.email_address_check.value);
+        if (form.elements.newsletter.checked) body.set('newsletter', '1');
+        form.querySelectorAll('[data-utm]').forEach(function (input) { body.set(input.dataset.utm, input.value); });
+        if (token) body.set('cf-turnstile-response', token);
+        // keepalive: the request still finishes if the page moves on to the thank-you page.
+        return fetch('/api/webinar', { method: 'POST', body: body, keepalive: true });
+      }).catch(function () {});
+      return Promise.race([send, new Promise(function (resolve) { setTimeout(resolve, 6000); })]);
+    }
+
     // Invisible Turnstile check. Its token usually arrives within a second or two of the page loading,
     // so wait up to 10 seconds for it if someone submits very quickly.
     var captcha = form.querySelector('.cf-turnstile');
-    function captchaToken() {
-      if (!captcha) return Promise.resolve('');
+    function captchaToken() { return tokenFrom(captcha, 10000); }
+    function tokenFrom(widget, timeout) {
+      if (!widget) return Promise.resolve('');
       return new Promise(function (resolve, reject) {
         var waited = 0;
         (function check() {
-          var token = window.turnstile && window.turnstile.getResponse(captcha);
+          var token = window.turnstile && window.turnstile.getResponse(widget);
           if (token) return resolve(token);
-          if ((waited += 250) > 10000) return reject(new Error('No captcha token'));
+          if ((waited += 250) > timeout) return reject(new Error('No captcha token'));
           setTimeout(check, 250);
         })();
       });
@@ -294,8 +416,93 @@
     card.querySelector('.frm-Success_Reset').addEventListener('click', function () {
       form.reset();
       if (captcha && window.turnstile) window.turnstile.reset(captcha);
+      if (attioCaptcha && window.turnstile) window.turnstile.reset(attioCaptcha);
       success.hidden = true;
       form.hidden = false;
+    });
+  })();
+</script>
+<script>
+  // Recording form on a past webinar: sends name and email to the Worker, then shows the link it returns
+  // with Watch and Copy buttons.
+  (function () {
+    var form = document.querySelector('[data-wr-rec-form]');
+    if (!form) return;
+    var fallback = 'Something went wrong. Please try again{{ with site.Params.contact.email }}, or email us at {{ . }}{{ end }}.';
+    var error = form.querySelector('.frm-Error');
+    var submit = form.querySelector('.frm-Submit');
+    var captcha = form.querySelector('.cf-turnstile');
+    var done = document.querySelector('[data-wr-rec-done]');
+    var link = done.querySelector('[data-wr-rec-link]');
+    var urlField = done.querySelector('[data-wr-rec-url]');
+    var copy = done.querySelector('[data-wr-rec-copy]');
+
+    var params = new URLSearchParams(window.location.search);
+    form.querySelectorAll('[data-utm]').forEach(function (input) {
+      var value = params.get(input.dataset.utm);
+      if (value) input.value = value.slice(0, 200);
+    });
+
+    function token() {
+      if (!captcha) return Promise.resolve('');
+      return new Promise(function (resolve, reject) {
+        var waited = 0;
+        (function check() {
+          var t = window.turnstile && window.turnstile.getResponse(captcha);
+          if (t) return resolve(t);
+          if ((waited += 250) > 10000) return reject(new Error('No captcha token'));
+          setTimeout(check, 250);
+        })();
+      });
+    }
+
+    function setBusy(busy) {
+      submit.disabled = busy;
+      submit.setAttribute('aria-busy', busy ? 'true' : 'false');
+      if (busy) { submit.dataset.label = submit.textContent; submit.textContent = 'Sending…'; }
+      else if (submit.dataset.label) { submit.textContent = submit.dataset.label; }
+    }
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!form.reportValidity()) return;
+      error.hidden = true;
+      setBusy(true);
+      token()
+        .then(function (t) {
+          var body = new FormData(form);
+          if (t) body.set('cf-turnstile-response', t);
+          return fetch('/api/webinar', { method: 'POST', body: body });
+        })
+        .then(function (res) {
+          return res.json().catch(function () { return {}; }).then(function (data) {
+            if (!res.ok || !data.ok || !data.url) throw { userMessage: data.error, ref: data.ref };
+            return data.url;
+          });
+        })
+        .then(function (url) {
+          link.href = url;
+          urlField.value = url;
+          form.hidden = true;
+          done.hidden = false;
+          document.querySelector('[data-wr-rec-sub]').textContent = 'Thanks! Here’s the recording. You can watch it now or copy the link for later.';
+        })
+        .catch(function (err) {
+          error.textContent = ((err && err.userMessage) || fallback) + (err && err.ref ? ' (ref: ' + err.ref + ')' : '');
+          error.hidden = false;
+          if (captcha && window.turnstile) window.turnstile.reset(captcha);
+        })
+        .finally(function () { setBusy(false); });
+    });
+
+    copy.addEventListener('click', function () {
+      function copied() { copy.textContent = 'Copied'; setTimeout(function () { copy.textContent = 'Copy link'; }, 2000); }
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(urlField.value).then(copied, function () { urlField.select(); });
+      } else {
+        urlField.select();
+        try { document.execCommand('copy'); copied(); } catch (e) {}
+      }
     });
   })();
 </script>

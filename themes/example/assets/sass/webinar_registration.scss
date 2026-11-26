@@ -724,3 +724,62 @@
     &:hover { background: #0F96D4; }
   }
 }
+
+// Past webinar: registration is hidden and the "This webinar has ended" card shows instead
+// (see the comment at the top of webinar-registration/registration.html).
+.wr-Page_Ended [data-wr-live],
+.wr-Page:not(.wr-Page_Ended) [data-wr-ended] {
+  display: none !important;
+}
+
+.wr-Ended_Link {
+  display: block;
+  box-sizing: border-box;
+  text-align: center;
+  text-decoration: none;
+}
+
+.wr-Ended .frm-Head { margin-bottom: 20px; }
+
+// The newsletter form inside the card: no second card around it
+.wr-Ended_Newsletter .frm {
+  padding: 0;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+// Recording form on a past webinar: after sending, the Watch button, then the link with a Copy button
+.wr-Rec_Done {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  &[hidden] { display: none; }
+}
+
+.wr-Rec_Copy {
+  display: flex;
+  gap: 8px;
+}
+
+.wr-Rec_Url {
+  flex: 1;
+  min-width: 0;
+  font-size: 14px;
+  color: #444;
+}
+
+.wr-Rec_CopyButton {
+  flex: none;
+  padding: 0 18px;
+  border: 1.5px solid #18AEF0;
+  border-radius: 8px;
+  background: #fff;
+  color: #18AEF0;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+
+  &:hover { background: #F0FAFF; }
+}

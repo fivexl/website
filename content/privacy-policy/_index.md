@@ -1,10 +1,10 @@
 ---
 title: "Privacy Policy"
-date: 2026-11-25
+date: 2026-11-26
 draft: false
 ---
 
-This notice explains how FivexL Consulting Services OÜ handles the personal data you send us through the forms on this website: the newsletter sign-up, the contact and quote request form, webinar registration, and guide downloads.
+This notice explains how FivexL Consulting Services OÜ handles the personal data you send us through the forms on this website: the newsletter sign-up, the contact and quote request form, webinar registration, webinar recording requests, and guide downloads.
 
 By subscribing to our newsletter, you consent to FivexL Consulting Services OÜ processing your email to send updates, follow-ups, and occasional offers. You can unsubscribe anytime.
 
@@ -54,21 +54,24 @@ Your full name, work email address, the project description you write, and which
 
 We keep your enquiry for as long as needed to respond to it and, if we work together, for the duration of our business relationship, unless a longer period is required by law.
 
-## Webinar Registration and Guide Downloads
+## Webinar Registration, Webinar Recordings and Guide Downloads
 
 ### What we collect
 
-- **Webinar registration:** your first name, last name, work email address, and, if you came from a link that contains them, the campaign tags in that link (such as which channel or campaign it came from).
+- **Webinar registration:** your first name, last name, work email address, the webinar you registered for and when, whether you ticked the optional newsletter box, and, if you came from a link that contains them, the campaign tags in that link (such as which channel or campaign it came from).
+- **Webinar recording requests:** your first name, last name, work email address, the webinar whose recording you asked for and when, whether you ticked the optional newsletter box, and the campaign tags in the link you came from, if it contains them.
 - **Guide downloads:** your first name, last name, work email address, and which guide you downloaded.
 
 ### Why we process your data (purposes & legal basis)
 
-- To register you for the webinar and send you the event details and the recording, or to give you the guide you asked for (legal basis: providing the service you requested, GDPR Art. 6(1)(b)).
+- To register you for the webinar and send you the event details and the recording, or to give you the recording or guide you asked for (legal basis: providing the service you requested, GDPR Art. 6(1)(b)).
 - To understand which webinars, guides and campaigns people are interested in, so we can improve our content (legal basis: our legitimate interest, GDPR Art. 6(1)(f)).
+- If you tick the optional newsletter box when registering for a webinar or asking for a recording, to send you our newsletter as described above (legal basis: your consent, GDPR Art. 6(1)(a)).
 
 ### How we use your data
 
-- Your details are recorded in Brevo, and may also be recorded in our CRM system.
+- Webinar registrations and recording requests are recorded in our CRM system, where our team can see which webinars you registered for or watched the recording of. They are also recorded in Brevo.
+- Guide downloads are recorded in Brevo, and may also be recorded in our CRM system.
 - We do not sell your data.
 
 ### Retention
@@ -79,8 +82,8 @@ We keep your details for as long as needed for the webinar or guide you signed u
 
 We share your data only with trusted processors that help us provide these services:
 
-- **Brevo**: email delivery, newsletter subscription management, webinar registrations and guide downloads.
-- **Attio**: our CRM system, which stores newsletter subscribers and contact requests, and may store webinar registrations and guide downloads.
+- **Brevo**: email delivery, newsletter subscription management, webinar registrations, webinar recording requests and guide downloads.
+- **Attio**: our CRM system, which stores newsletter subscribers, contact requests, webinar registrations and recording requests, and may store guide downloads.
 - **Cloudflare**: website hosting and spam protection. To block automated spam, Cloudflare Turnstile checks technical information from your browser when you send a form (legal basis: our legitimate interest in keeping our forms free of abuse, GDPR Art. 6(1)(f)).
 
 If data is transferred outside the EEA, we use appropriate safeguards (such as Standard Contractual Clauses).
@@ -101,4 +104,4 @@ For privacy questions or to exercise your rights: hello@fivexl.io
 
 ---
 
-*Last updated: 25 November 2026*
+*Last updated: 26 November 2026*
