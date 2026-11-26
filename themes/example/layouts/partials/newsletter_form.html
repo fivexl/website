@@ -4,7 +4,9 @@
      Context: the page. The grey sign-up section and the /newsletter/ page each have one. */}}
 {{ $page := . }}
 {{ $sitekey := site.Params.contact.turnstile_sitekey }}
-{{ $id := printf "nl-%s" (.File.UniqueID | default "form") }}
+{{/* Tag and list pages have no content file, so they get a fixed ID */}}
+{{ $id := "nl-form" }}
+{{ with .File }}{{ $id = printf "nl-%s" .UniqueID }}{{ end }}
 <div class="frm-Wrap frm">
   <form class="frm-Form" data-subscribe-form action="/api/subscribe" method="post" novalidate>
     <div class="frm-Field">
