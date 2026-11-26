@@ -16,14 +16,15 @@
 {{ $upcoming = sort $upcoming "Params.event_date" "asc" }}
 {{ $previous = sort $previous "Params.event_date" "desc" }}
 
-{{/* Hero: the next webinar, or the latest one if none is planned. Its image is panel_image if the
+{{/* Hero: the next webinar, or the latest one if none is planned, under its short_title (or webinar_name),
+     since full titles are too long for it. Its image is panel_image if the
      webinar page sets one, otherwise its share image. */}}
 {{ range first 1 ($upcoming | append $previous) }}
 {{ $isUpcoming := in $upcoming . }}
 <div class="bls-PanelWrapper">{{- partial "DoublePanel.html" ( dict
     "Params" ( dict
-        "sub_heading" (cond $isUpcoming "NEXT WEBINAR" "WEBINARS")
-        "title" .Title
+        "sub_heading" (cond $isUpcoming "NEXT WEBINAR" "")
+        "title" (.Params.short_title | default .Params.webinar_name | default .Title)
         "panel_image" (.Params.panel_image | default .Params.share_image | default "share-image.*")
         "cta_text" (cond $isUpcoming "SAVE MY SEAT" "VIEW WEBINAR")
         "featured_page" .

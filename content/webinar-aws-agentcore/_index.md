@@ -15,6 +15,8 @@ badges: ['FivexL', 'AWS']
 
 # Short name for Attio: added to the person's Webinar name attribute when they register (src/webinar.js)
 webinar_name: 'Amazon Bedrock AgentCore'
+# Shorter title for the cover on /webinars/, where the full title is too long.
+short_title: 'PoC on Amazon Bedrock AgentCore'
 event_date: 2026-11-11
 event_start_utc: 2026-11-11T07:00:00Z
 event_end_utc: 2026-11-11T08:00:00Z

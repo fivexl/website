@@ -1,5 +1,7 @@
 ---
 title: 'FivexL Container Hardening Guide'
+# Shown on the guide's card
+date: 2026-11-10
 description: 'How we build and run hardened container images on AWS, from the base image to the running task. Free 88-page guide with snippets for Amazon ECS and Kubernetes.'
 type: 'resources'
 # Shown first on /resources/
@@ -9,6 +11,8 @@ subtitle: 'How we build and run hardened container images on AWS, from the base 
 cover: 'cover.png'
 # Wide image for the hero (made from the cover)
 panel_image: 'panel.png'
+# The same image with the book in the middle, for the guide's card on /resources/
+card_image: 'card.png'
 
 # The PDF in the private R2 bucket (see wrangler.toml), and the value saved in the
 # Brevo RESOURCE field so you can see who downloaded it.

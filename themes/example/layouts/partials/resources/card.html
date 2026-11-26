@@ -1,14 +1,13 @@
-{{/* A resource card linking to its landing page. Context: the resource page. */}}
-<a class="rs-Card" href="{{ .RelPermalink }}">
-  <div class="rs-Card_Visual">
-    {{ with .Resources.GetMatch (.Params.cover | default "cover.*") }}
-    {{ $img := .Resize "360x webp q85" }}
-    <img class="rs-Card_Cover" src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}" alt="" loading="lazy">
-    {{ end }}
-  </div>
-  <div class="rs-Card_Body">
-    <p class="rs-Card_Label">{{ .Params.label | default "Free guide" }}</p>
-    <h3 class="rs-Card_Title">{{ .Title }}</h3>
-    <p class="rs-Card_Meta">PDF{{ with .Params.pages }} · {{ . }} pages{{ end }}</p>
-  </div>
-</a>
+{{/* A guide card in the blog card style (ContentList.html): the card image (card_image, else the wide panel image), date, title and
+     description. Context: the guide page. */}}
+{{ $permalink := .RelPermalink }}
+<div class="cl-ContentItem">
+  {{ with .Resources.GetMatch (.Params.card_image | default .Params.panel_image | default "panel.*") }}
+  <a href="{{ $permalink }}">
+    {{ partial "img" (dict "class" "cl-ContentItem_Image" "src" .Permalink "image" . "alt" .Name "sizes" "(max-width: 767px) 100vw, (max-width: 1552px) 40vw, 730px" "lazy" true ) }}
+  </a>
+  {{ end }}
+  {{ if not .Date.IsZero }}<span class="cl-ContentItem_Date">{{ .Date.Format "January 2, 2006" }}</span>{{ end }}
+  <h1 class="cl-ContentItem_Heading"><a href="{{ $permalink }}">{{ .Title }}</a></h1>
+  <p class="cl-ContentItem_Summary">{{ .Params.description | default (.Summary | plainify) | truncate 300 }}</p>
+</div>
