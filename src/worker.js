@@ -1,6 +1,7 @@
 import { handleResources } from "./resources.js";
 import { handleContactRequest } from "./contact.js";
 import { handleSubscribeRequest } from "./subscribe.js";
+import { handleWebinarRequest } from "./webinar.js";
 
 const PERMANENT_REDIRECTS = new Map([
   ["/blog/overture-case-study/", "/case-studies/ovrture-case-study/"],
@@ -65,6 +66,11 @@ export default {
 
     if (url.pathname === "/api/subscribe") {
       const response = await handleSubscribeRequest(request, env, url);
+      if (response) return response;
+    }
+
+    if (url.pathname === "/api/webinar") {
+      const response = await handleWebinarRequest(request, env, url);
       if (response) return response;
     }
 

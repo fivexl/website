@@ -2,17 +2,21 @@
 title: 'Amazon Bedrock AgentCore: run an AI agent proof-of-concept without touching your product'
 description: 'Free live webinar with FivexL and AWS on using Amazon Bedrock AgentCore to run a fast, secure AI agent proof-of-concept without touching your product codebase. November 11, 2026.'
 url: '/webinars/aws-agentcore/'
-# Temporary: /webinars/ redirects here until the webinars list page exists. Remove this alias when adding it.
-aliases: ['/webinars/']
 type: 'webinar-registration'
 layout: 'registration'
 outputs: ['html']
 hide_email_subscription: true
 # Preview image for links shared on LinkedIn, Slack, X etc. (1200×628)
 share_image: 'share-image.jpg'
+# Hero and card image on /webinars/ (the hero panel covers its left side). Reused from a blog post.
+panel_image: 'panel.png'
 
 badges: ['FivexL', 'AWS']
 
+# Short name for Attio: added to the person's Webinar name attribute when they register (src/webinar.js)
+webinar_name: 'Amazon Bedrock AgentCore'
+# Shorter title for the cover on /webinars/, where the full title is too long.
+short_title: 'PoC on Amazon Bedrock AgentCore'
 event_date: 2026-11-11
 event_start_utc: 2026-11-11T07:00:00Z
 event_end_utc: 2026-11-11T08:00:00Z
@@ -21,6 +25,8 @@ duration: '30–45 min'
 duration_note: '+ live Q&A'
 # Live stream. Used in the calendar events and on the thank-you page.
 join_url: 'https://www.youtube.com/watch?v=APpN-wAf1_0'
+# After the webinar: the form on the page asks for name and email, then shows this link (src/webinar.js).
+recording_url: 'https://www.youtube.com/live/APpN-wAf1_0'
 
 form_subtext: 'Free. The recording goes to everyone who registers.'
 

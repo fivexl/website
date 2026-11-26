@@ -317,3 +317,9 @@ $rsGradient: linear-gradient(160deg, #F13687 0%, #9A5BB5 45%, #1E88E5 100%);
     cursor: pointer;
   }
 }
+
+// Topic pills on /resources/ and the topic pages, in the blog pill style (ContentList.scss)
+.rs-Pills {
+  .cl-TagsGroup { flex-basis: auto; }
+  .cl-TagsGroup_Label { text-decoration: none; }
+}
