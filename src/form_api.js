@@ -1,4 +1,5 @@
-// Helpers shared by the website's form endpoints (src/contact.js, src/subscribe.js, src/webinar.js):
+// Helpers shared by the website's form endpoints (src/contact.js, src/subscribe.js, src/webinar.js,
+// src/resources.js):
 // JSON replies, the Turnstile check, Brevo contacts and Attio people records.
 
 const ATTIO_API = "https://api.attio.com/v2";
@@ -123,4 +124,28 @@ export async function assertListEntry(env, list, recordId, entryValues) {
   return attio(env, "list", "PUT", `/lists/${encodeURIComponent(list)}/entries`, {
     data: { parent_record_id: recordId, parent_object: "people", entry_values: entryValues || {} },
   });
+}
+
+// Make sure `title` (e.g. a webinar or guide name) is an option of the multi-select, so it can be added to
+// the person. Creating options needs the Attio key to have Object Configuration set to read-write.
+async function ensureOption(env, attribute, title) {
+  const path = `/objects/people/attributes/${attribute}/options`;
+  const options = await attio(env, "options", "GET", path);
+  if ((options.data || []).some((option) => option.title === title)) return;
+  await attio(env, "option", "POST", path, { data: { title } });
+}
+
+// Values to add `title` to one of the person's multi-selects (empty if it is already there, or if the
+// option can't be created: then the rest is still saved and the error is logged).
+export async function addToMultiselect(env, person, attribute, title) {
+  const current = (person.values[attribute] || []).map((v) => v.option && v.option.title);
+  if (current.includes(title)) return {};
+  try {
+    await ensureOption(env, attribute, title);
+    // PATCH adds to a multi-select's existing values instead of replacing them.
+    return { [attribute]: [title] };
+  } catch (err) {
+    console.error(`Attio: couldn't add "${title}" as a ${attribute} option`, err && (err.ref || err.stack));
+    return {};
+  }
 }

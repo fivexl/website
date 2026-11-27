@@ -46,7 +46,7 @@ async function gone(env, request) {
 }
 
 export default {
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
     const url = new URL(request.url);
 
     if (url.hostname === "www.fivexl.io") {
@@ -55,7 +55,7 @@ export default {
     }
 
     if (url.pathname.startsWith("/api/resources/")) {
-      const response = await handleResources(request, env, url);
+      const response = await handleResources(request, env, url, ctx);
       if (response) return response;
     }
 

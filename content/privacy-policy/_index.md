@@ -60,7 +60,7 @@ We keep your enquiry for as long as needed to respond to it and, if we work toge
 
 - **Webinar registration:** your first name, last name, work email address, the webinar you registered for and when, whether you ticked the optional newsletter box, and, if you came from a link that contains them, the campaign tags in that link (such as which channel or campaign it came from).
 - **Webinar recording requests:** your first name, last name, work email address, the webinar whose recording you asked for and when, whether you ticked the optional newsletter box, and the campaign tags in the link you came from, if it contains them.
-- **Guide downloads:** your first name, last name, work email address, and which guide you downloaded.
+- **Guide downloads:** your first name, last name, work email address, and which guide you downloaded and when.
 
 ### Why we process your data (purposes & legal basis)
 
@@ -71,7 +71,7 @@ We keep your enquiry for as long as needed to respond to it and, if we work toge
 ### How we use your data
 
 - Webinar registrations and recording requests are recorded in our CRM system, where our team can see which webinars you registered for or watched the recording of. They are also recorded in Brevo.
-- Guide downloads are recorded in Brevo, and may also be recorded in our CRM system.
+- Guide downloads are recorded in Brevo and in our CRM system, where our team can see which guides you downloaded.
 - We do not sell your data.
 
 ### Retention
@@ -83,7 +83,7 @@ We keep your details for as long as needed for the webinar or guide you signed u
 We share your data only with trusted processors that help us provide these services:
 
 - **Brevo**: email delivery, newsletter subscription management, webinar registrations, webinar recording requests and guide downloads.
-- **Attio**: our CRM system, which stores newsletter subscribers, contact requests, webinar registrations and recording requests, and may store guide downloads.
+- **Attio**: our CRM system, which stores newsletter subscribers, contact requests, webinar registrations, recording requests and guide downloads.
 - **Cloudflare**: website hosting and spam protection. To block automated spam, Cloudflare Turnstile checks technical information from your browser when you send a form (legal basis: our legitimate interest in keeping our forms free of abuse, GDPR Art. 6(1)(f)).
 
 If data is transferred outside the EEA, we use appropriate safeguards (such as Standard Contractual Clauses).
