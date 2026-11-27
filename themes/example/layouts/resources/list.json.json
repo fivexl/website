@@ -1,0 +1,11 @@
+{{- /* /resources/index.json: what the guide download endpoint (src/resources.js) needs to know about each
+     guide, keyed by its file in the R2 bucket. name is the option added to the person's Guide downloads
+     in Attio (guide_name, or the title). Topic pages get
+     the same list for their own guides; the Worker reads /resources/index.json. */ -}}
+{{- $out := dict -}}
+{{- range .RegularPagesRecursive -}}
+  {{- if .Params.file -}}
+  {{- $out = merge $out (dict .Params.file (dict "name" (.Params.guide_name | default .Title) "page" .RelPermalink)) -}}
+  {{- end -}}
+{{- end -}}
+{{- $out | jsonify -}}

@@ -2,7 +2,7 @@
 {{/* Landing page for one downloadable guide, laid out like the webinar registration page:
      the shared hero, description and form, who it's for, what you'll learn. The form goes straight to
      Brevo, like the webinar form; once Brevo accepts it, the Worker (src/resources.js) returns a
-     short-lived download link. */}}
+     short-lived download link and saves the download to Attio. */}}
 {{ $sitekey := site.Params.resources.turnstile_sitekey }}
 
 <div class="bls-PanelWrapper">{{- partial "DoublePanel.html" ( dict
@@ -74,6 +74,9 @@
         <p class="frm-Error" role="alert" hidden></p>
         <button class="frm-Submit" type="submit">Download the guide</button>
       </form>
+      {{/* A second invisible check for saving the download to Attio: each Turnstile token works once,
+           and the first one goes to Brevo. Outside the form, so Brevo doesn't get its token. */}}
+      {{ with $sitekey }}<div class="cf-turnstile" data-rs-attio-captcha data-sitekey="{{ . }}" data-language="en"></div>{{ end }}
 
       <div class="frm-Success" data-rs-done hidden>
         <div class="frm-Success_Icon" aria-hidden="true">
@@ -175,6 +178,7 @@
     var error = form.querySelector('.frm-Error');
     var submit = form.querySelector('.frm-Submit');
     var captcha = form.querySelector('.cf-turnstile');
+    var attioCaptcha = document.querySelector('[data-rs-attio-captcha]');
 
     // Sticky phone button: hidden while the form, the bottom band or the footer is on screen.
     var sticky = document.querySelector('[data-wr-sticky]');
@@ -233,14 +237,15 @@
     }
 
     // Invisible Turnstile check; its token usually arrives a second or two after the page loads.
-    function captchaToken() {
-      if (!captcha) return Promise.resolve('');
+    function captchaToken(widget, timeout) {
+      widget = widget || captcha;
+      if (!widget) return Promise.resolve('');
       return new Promise(function (resolve, reject) {
         var waited = 0;
         (function check() {
-          var token = window.turnstile && window.turnstile.getResponse(captcha);
+          var token = window.turnstile && window.turnstile.getResponse(widget);
           if (token) return resolve(token);
-          if ((waited += 250) > 10000) return reject(new Error('No captcha token'));
+          if ((waited += 250) > (timeout || 10000)) return reject(new Error('No captcha token'));
           setTimeout(check, 250);
         })();
       });
@@ -263,8 +268,14 @@
         .then(function (res) { return res.json(); })
         .then(function (data) {
           if (data && data.success === false) throw new Error('Brevo rejected the submission');
-          // 2. Brevo accepted the contact, so ask the Worker for the download link.
-          return fetch('/api/resources/download', { method: 'POST', body: new FormData(form) });
+          // 2. Brevo accepted the contact, so ask the Worker for the download link. The second token lets
+          //    the Worker also save the download to Attio; without it the download still works.
+          return captchaToken(attioCaptcha, 5000).catch(function () { return ''; }).then(function (token) {
+            var body = new FormData(form);
+            body.delete('cf-turnstile-response');
+            if (token) body.set('cf-turnstile-response', token);
+            return fetch('/api/resources/download', { method: 'POST', body: body });
+          });
         })
         .then(function (res) {
           return res.json().catch(function () { return {}; }).then(function (data) {
@@ -288,6 +299,7 @@
           error.hidden = false;
           // Each Turnstile token works once, so get a fresh one for the next try.
           if (captcha && window.turnstile) window.turnstile.reset(captcha);
+          if (attioCaptcha && window.turnstile) window.turnstile.reset(attioCaptcha);
         })
         .finally(function () { setBusy(submit, false); });
     });
